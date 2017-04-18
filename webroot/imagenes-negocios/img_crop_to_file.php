@@ -20,7 +20,7 @@ $angle = $_POST['rotation'];
 
 $jpeg_quality = 100;
 
-$output_filename = "temp/croppedImg_".rand();
+$output_filename = "temp/fototemp_".rand();
 
 // uncomment line below to save the cropped image in the same location as the original image.
 //$output_filename = dirname($imgUrl). "/croppedImg_".rand();

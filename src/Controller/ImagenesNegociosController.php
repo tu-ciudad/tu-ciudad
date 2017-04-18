@@ -28,10 +28,7 @@ class ImagenesNegociosController extends AppController
         $this->set(compact('imagenesNegocios'));
         $this->set('_serialize', ['imagenesNegocios']);
     }
-    public function crop()
-        {
-            $this->set('_serialize');
-        }
+   
     /**
      * View method
      *

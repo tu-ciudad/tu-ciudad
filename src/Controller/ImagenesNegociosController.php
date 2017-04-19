@@ -89,7 +89,7 @@ $MyImageCom->resize(300,300);//width,height,Red,Green,Blue
 $MyImageCom->save(ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'ImagenesNegocios' . DIRECTORY_SEPARATOR . 'foto' . DIRECTORY_SEPARATOR . $mensaje);
 unlink(ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'ImagenesNegocios' . DIRECTORY_SEPARATOR . 'foto' .DIRECTORY_SEPARATOR. $imagenesNegocio->foto);
 */
-$ruta = ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'ImagenesNegocios' . DIRECTORY_SEPARATOR . 'foto' . DIRECTORY_SEPARATOR . $mensaje;
+$ruta = '/files/ImagenesNegocios/foto/' . $mensaje;
                 $this->Flash->success(__('The imagenes negocio has been saved.'));
                 return $this->setAction('redimension',$ruta);
                // return $this->redirect(['action' => 'redimension',$ruta]);

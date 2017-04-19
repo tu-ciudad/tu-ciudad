@@ -89,9 +89,10 @@ $MyImageCom->resize(300,300);//width,height,Red,Green,Blue
 $MyImageCom->save(ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'ImagenesNegocios' . DIRECTORY_SEPARATOR . 'foto' . DIRECTORY_SEPARATOR . $mensaje);
 unlink(ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'ImagenesNegocios' . DIRECTORY_SEPARATOR . 'foto' .DIRECTORY_SEPARATOR. $imagenesNegocio->foto);
 */
-$ruta = '/files/ImagenesNegocios/foto/' . $mensaje;
+$ruta =  '..' . '/' . 'files' . '/' . 'ImagenesNegocios' . '/' . 'foto' . '/' . $mensaje;
+$ruta1 = '/files/ImagenesNegocios/foto/' . $mensaje;
                 $this->Flash->success(__('The imagenes negocio has been saved.'));
-                return $this->setAction('redimension',$ruta);
+                return $this->setAction('redimension',$ruta,$ruta1);
                // return $this->redirect(['action' => 'redimension',$ruta]);
             }
             $this->Flash->error(__('The imagenes negocio could not be saved. Please, try again.'));
@@ -147,11 +148,12 @@ $ruta = '/files/ImagenesNegocios/foto/' . $mensaje;
         return $this->redirect(['action' => 'index']);
     }
 
-    public function redimension($ruta)
+    public function redimension($ruta,$ruta1)
     {
          if ($this->request->is('post')) {
         }
-        $this->set(compact('ruta'));
-        $this->set('_serialize', ['ruta']);
+        $this->set(compact(['ruta','ruta1']));
+        $this->set('_serialize', ['ruta','ruta1']);
+        
     }
 }

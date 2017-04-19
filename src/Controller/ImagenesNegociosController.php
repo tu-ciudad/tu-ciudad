@@ -68,7 +68,6 @@ class ImagenesNegociosController extends AppController
       {
         $ruta = $ruta->foto;
         }
-       
             $query->delete()
     ->where(['negocios_id' => $imagenesNegocio->negocios_id, 'ubicacion' => $imagenesNegocio->ubicacion])
     ->execute();
@@ -79,9 +78,9 @@ class ImagenesNegociosController extends AppController
             $conexion = ConnectionManager::get('default');
             $res = $conexion->execute('Call renombrarfoto(?)',[$imagenesNegocio->foto])->fetchAll('assoc');
             $mensaje = $res[0]['@mensaje'];
-      //     rename( ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'ImagenesNegocios' . DIRECTORY_SEPARATOR . 'foto' .DIRECTORY_SEPARATOR. $imagenesNegocio->foto, ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'ImagenesNegocios' . DIRECTORY_SEPARATOR . 'foto' . DIRECTORY_SEPARATOR . $mensaje);
+           rename( ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'ImagenesNegocios' . DIRECTORY_SEPARATOR . 'foto' .DIRECTORY_SEPARATOR. $imagenesNegocio->foto, ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'ImagenesNegocios' . DIRECTORY_SEPARATOR . 'foto' . DIRECTORY_SEPARATOR . $mensaje);
 
-// Redimension
+/* Redimension
 
 $this->loadComponent('Image'); 
 $MyImageCom = $this->Image;
@@ -89,11 +88,11 @@ $MyImageCom->prepare(ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATO
 $MyImageCom->resize(300,300);//width,height,Red,Green,Blue
 $MyImageCom->save(ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'ImagenesNegocios' . DIRECTORY_SEPARATOR . 'foto' . DIRECTORY_SEPARATOR . $mensaje);
 unlink(ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'ImagenesNegocios' . DIRECTORY_SEPARATOR . 'foto' .DIRECTORY_SEPARATOR. $imagenesNegocio->foto);
-//  Redimension
-
+*/
+$ruta = ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'ImagenesNegocios' . DIRECTORY_SEPARATOR . 'foto' . DIRECTORY_SEPARATOR . $mensaje;
                 $this->Flash->success(__('The imagenes negocio has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
+                return $this->setAction('redimension',$ruta);
+               // return $this->redirect(['action' => 'redimension',$ruta]);
             }
             $this->Flash->error(__('The imagenes negocio could not be saved. Please, try again.'));
         }
@@ -146,5 +145,13 @@ unlink(ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . 
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function redimension($ruta)
+    {
+         if ($this->request->is('post')) {
+        }
+        $this->set(compact('ruta'));
+        $this->set('_serialize', ['ruta']);
     }
 }

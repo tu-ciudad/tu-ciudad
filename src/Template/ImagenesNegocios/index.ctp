@@ -10,9 +10,16 @@
 <br>
  <?= $this->element('sidebar-imagenesnegocios') ?>
 
+
+<style type="text/css">
+    img {
+        max-width: 200px;
+        margin: 10px;
+    }
+</style>
 <div class="col-md-8 index  columns content">
     <h3><?= __('Imagenes Negocios') ?></h3>
-    <table class="nav nav-stacked">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>

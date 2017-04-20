@@ -154,9 +154,5 @@ $ruta1 = '/files/ImagenesNegocios/foto/' . $mensaje;
         }
         $this->set(compact(['ruta','ruta1']));
         $this->set('_serialize', ['ruta','ruta1']);
-<<<<<<< HEAD
-=======
-        
->>>>>>> origin/master
     }
 }

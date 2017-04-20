@@ -117,12 +117,18 @@ class NegociosController extends AppController
         $negocio = $this->Negocios->get($id, [
             'contain' => []
         ]);
-        if ($this->request->is('get')) {
             $negocio = $this->Negocios->patchEntity($negocio, $this->request->getData());
             $query = TableRegistry::get('ImagenesNegocios')->find();
-            $imagenes = $query->select(['foto','ubicacion'])->where(['negocios_id' => $negocio->id])->toArray();
+            $imagenes = $query->select(['foto','ubicacion'])->where(['negocios_id' => $negocio->id]);
+            foreach($imagenes as $imagen):
+             if ($imagen->ubicacion = 'perfil'){
+                $fperfil = '../files/ImagenesNegocios/foto/'. $imagen->foto;
+             }   
+            endforeach;
+            $this->set(compact('negocio','fperfil'));
+            $this->set('_serialize', ['negocio','fperfil']);
             //Ahora ya tengo la info de las imagenes y del comercio, solo la tengo que poner en el sitio.
              //   return $this->redirect(['action' => 'index']);
-            }
+            
     }
 }

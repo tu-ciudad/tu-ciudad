@@ -82,7 +82,7 @@ if(!is_writable(dirname($output_filename))){
 	imagejpeg($final_image, $output_filename, $jpeg_quality);
 	$response = Array(
 	    "status" => 'success',
-	    //"url" => $output_filename
+	    "url" => $output_filename
     );
 }
 print json_encode($response);

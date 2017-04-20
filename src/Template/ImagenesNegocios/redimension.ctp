@@ -10,189 +10,161 @@
 <br>
 <style>
     
-/* Apply these styles only when #preview-pane has
-   been placed within the Jcrop widget */
-.jcrop-holder #preview-pane {
-  display: block;
-  position: absolute;
-  //z-index: 2000;
-  top: 10px;
-  right: -280px;
-  padding: 6px;
-  border: 1px rgba(0,0,0,.4) solid;
-  background-color: white;
-
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-
-  -webkit-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
-}
-
-/* The Javascript code will set the aspect ratio of the crop
-   area based on the size of the thumbnail preview,
-   specified here */
-#preview-pane .preview-container {
-  width: 200px;
-  height: 200px;
-  overflow: hidden;
-}
+ #yourId{ 
+        width: 400px;  /* MANDATORY */  /*ancho del div y del recorte de la imagen*/
+        height: 400px; /* MANDATORY */  /*alto del div y del recorte de la imagen*/
+        position: relative;  /* MANDATORY */
+        
+        /margin: 50px 70px 20px;
+        border: 3px  solid #FFF;
+        box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        border-radius: 2px;
+        background-image: url(../img/placeholder.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
+      } 
       
 			
 			
     </style>
-<?= $this->Html->css('jquery.Jcrop.css') ?>
-<?= $this->Html->script('jquery.Jcrop.min.js') ?>
+<?= $this->Html->css('croppic.css') ?>
+<?= $this->Html->css('main.css') ?>
+<?= $this->Html->script('croppic') ?>
 <?= $this->element('sidebar-imagenesnegocios') ?>
 
 <h4><?= $ruta; ?></h4>
 
-<!--	
-<div id="destino"></div>
-<input type="text" name="" value="<?= $ruta; ?>">
--->
+
+
+
 	<div class="col-md-8 col-md-push-1">
-		 <img src="<?= $ruta1; ?>" id="target">
-		 <input type="button" value="cortar" onclick="enviar();">
+		<div id="yourId"></div>
 	</div>
-   <div id="preview-pane">
-    <div class="preview-container">
-      <img src="<?= $ruta1; ?>" class="jcrop-preview" alt="Preview" />
-    </div>
-  </div>
-    
- 	
+	
+	
 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> -->
+	<script src=" https://code.jquery.com/jquery-2.1.3.min.js"></script>
+   
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery.mousewheel.min.js"></script>
+   	<script src="croppic.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+		var croppicHeaderOptions = {
+				//uploadUrl:'img_save_to_file.php',
+				cropData:{
+					"dummyData":1,
+					"dummyData2":"asdas"
+				},
+				cropUrl:'img_crop_to_file.php',
+				customUploadButtonId:'cropContainerHeaderButton',
+				modal:false,
+				processInline:true,
+				loaderHtml:'<div class="loader bubblingG"><span id="bubblingG_1"></span><span id="bubblingG_2"></span><span id="bubblingG_3"></span></div> ',
+				onBeforeImgUpload: function(){ console.log('onBeforeImgUpload') },
+				onAfterImgUpload: function(){ console.log('onAfterImgUpload') },
+				onImgDrag: function(){ console.log('onImgDrag') },
+				onImgZoom: function(){ console.log('onImgZoom') },
+				onBeforeImgCrop: function(){ console.log('onBeforeImgCrop') },
+				onAfterImgCrop:function(){ console.log('onAfterImgCrop') },
+				onReset:function(){ console.log('onReset') },
+				onError:function(errormessage){ console.log('onError:'+errormessage) }
+		}	
+		var croppic = new Croppic('croppic', croppicHeaderOptions);
+		
+		
+		var croppicContainerModalOptions = {
+				uploadUrl:'img_save_to_file.php',
+				cropUrl:'img_crop_to_file.php',
+				modal:true,
+				imgEyecandyOpacity:0.4,
+				loaderHtml:'<div class="loader bubblingG"><span id="bubblingG_1"></span><span id="bubblingG_2"></span><span id="bubblingG_3"></span></div> ',
+				onBeforeImgUpload: function(){ console.log('onBeforeImgUpload') },
+				onAfterImgUpload: function(){ console.log('onAfterImgUpload') },
+				onImgDrag: function(){ console.log('onImgDrag') },
+				onImgZoom: function(){ console.log('onImgZoom') },
+				onBeforeImgCrop: function(){ console.log('onBeforeImgCrop') },
+				onAfterImgCrop:function(){ console.log('onAfterImgCrop') },
+				onReset:function(){ console.log('onReset') },
+				onError:function(errormessage){ console.log('onError:'+errormessage) }
+		}
+		var cropContainerModal = new Croppic('cropContainerModal', croppicContainerModalOptions);
+		
+		
+		var croppicContaineroutputOptions = {
+				uploadUrl:'img_save_to_file.php',
+				cropUrl:'img_crop_to_file.php', 
+				outputUrlId:'cropOutput',
+				modal:false,
+				loaderHtml:'<div class="loader bubblingG"><span id="bubblingG_1"></span><span id="bubblingG_2"></span><span id="bubblingG_3"></span></div> ',
+				onBeforeImgUpload: function(){ console.log('onBeforeImgUpload') },
+				onAfterImgUpload: function(){ console.log('onAfterImgUpload') },
+				onImgDrag: function(){ console.log('onImgDrag') },
+				onImgZoom: function(){ console.log('onImgZoom') },
+				onBeforeImgCrop: function(){ console.log('onBeforeImgCrop') },
+				onAfterImgCrop:function(){ console.log('onAfterImgCrop') },
+				onReset:function(){ console.log('onReset') },
+				onError:function(errormessage){ console.log('onError:'+errormessage) }
+		}
+		
+		var cropContaineroutput = new Croppic('cropContaineroutput', croppicContaineroutputOptions);
+		
+		var croppicContainerEyecandyOptions = {
+				uploadUrl:'img_save_to_file.php',
+				cropUrl:'img_crop_to_file.php',
+				imgEyecandy:false,				
+				loaderHtml:'<div class="loader bubblingG"><span id="bubblingG_1"></span><span id="bubblingG_2"></span><span id="bubblingG_3"></span></div> ',
+				onBeforeImgUpload: function(){ console.log('onBeforeImgUpload') },
+				onAfterImgUpload: function(){ console.log('onAfterImgUpload') },
+				onImgDrag: function(){ console.log('onImgDrag') },
+				onImgZoom: function(){ console.log('onImgZoom') },
+				onBeforeImgCrop: function(){ console.log('onBeforeImgCrop') },
+				onAfterImgCrop:function(){ console.log('onAfterImgCrop') },
+				onReset:function(){ console.log('onReset') },
+				onError:function(errormessage){ console.log('onError:'+errormessage) }
+		}
+		
+		var cropContainerEyecandy = new Croppic('cropContainerEyecandy', croppicContainerEyecandyOptions);
+		
+		var croppicContaineroutputMinimal = {
+				uploadUrl:'img_save_to_file.php',
+				cropUrl:'img_crop_to_file.php', 
+				modal:false,
+				doubleZoomControls:false,
+			    rotateControls: false,
+				loaderHtml:'<div class="loader bubblingG"><span id="bubblingG_1"></span><span id="bubblingG_2"></span><span id="bubblingG_3"></span></div> ',
+				onBeforeImgUpload: function(){ console.log('onBeforeImgUpload') },
+				onAfterImgUpload: function(){ console.log('onAfterImgUpload') },
+				onImgDrag: function(){ console.log('onImgDrag') },
+				onImgZoom: function(){ console.log('onImgZoom') },
+				onBeforeImgCrop: function(){ console.log('onBeforeImgCrop') },
+				onAfterImgCrop:function(){ console.log('onAfterImgCrop') },
+				onReset:function(){ console.log('onReset') },
+				onError:function(errormessage){ console.log('onError:'+errormessage) }
+		}
+		var cropContaineroutput = new Croppic('cropContainerMinimal', croppicContaineroutputMinimal);
+		
+		var croppicContainerPreloadOptions = {
+				uploadUrl:'img_save_to_file.php',
+				cropUrl:'img_crop_to_file.php',
+				loadPicture:'<?= $ruta; ?>',
+				
+		}
+		var cropContainerPreload = new Croppic('cropContainerPreload', croppicContainerPreloadOptions);
 
-
-<div class="modal fade" id="modal-yes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"  data-keyboard="false" data-backdrop="static">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header btn-success">
-success
-            </div>
-            <div class="modal-body">
-            <div id="preview-pane">
-    <div class="preview-container">
-      <img src="<?= $ruta1; ?>" class="jcrop-preview" alt="Preview" />
-    </div>
-  </div>
-<button><?= $this->Html->link(__('Go Back'), ['action' => 'add']) ?></button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="modal-no" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header btn-danger">
-Error
-            </div>
-            <div class="modal-body">
-Seleccione un area!!
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-    <script type="text/javascript">
-        var x='';
-        var y='';
-        var w='';
-        var h='';
-        var imgurl='<?= $ruta; ?>';
-        var imgurl1='<?= $ruta1; ?>';
-        var jcrop_api;
-        var boundx;
-        var boundy;
-
-        // Grab some information about the preview pane
-        $preview = $('#preview-pane'),
-        $pcnt = $('#preview-pane .preview-container'),
-        $pimg = $('#preview-pane .preview-container img'),
-
-        xsize = $pcnt.width(),
-        ysize = $pcnt.height();
-
-        function showCoords(c)
-          {
-              // variables can be accessed here as
-              // c.x, c.y, c.x2, c.y2, c.w, c.h
-              //alert(c.x+' '+c.y+' '+c.x2+' '+c.y2+' '+c.w+' '+c.h)
-              x=c.x;
-              y=c.y;
-              w=c.w;
-              h=c.h;
-          };    
-        
-        jQuery(function($) {
-            $('#target').Jcrop({
-                onChange: updatePreview,
-      			onSelect: showCoords,
-                bgColor:     'grey',
-                bgOpacity:   .4,
-                aspectRatio: xsize / ysize,
-            },function(){
-      // Use the API to get the real image size
-      var bounds = this.getBounds();
-      boundx = bounds[0];
-      boundy = bounds[1];
-      // Store the API in the jcrop_api variable
-      jcrop_api = this;
-
-      // Move the preview into the jcrop container for css positioning
-      $preview.appendTo(jcrop_api.ui.holder);
-    });
-            function updatePreview(c)
-    {
-    		  c.x1=c.x;
-              c.y1=c.y;
-              c.w1=c.w;
-              c.h1=c.h;
-      if (parseInt(c.w) > 0)
-      {
-        var rx = xsize / c.w1;
-        var ry = ysize / c.h1;
-
-        $pimg.css({
-          width: Math.round(rx * boundx) + 'px',
-          height: Math.round(ry * boundy) + 'px',
-          marginLeft: '-' + Math.round(rx * c.x1) + 'px',
-          marginTop: '-' + Math.round(ry * c.y1) + 'px'
-        });
-      }
-    };
-        });
-        function enviar()
-        {
-            if (parseInt(w)) {
-                $.ajax({
-                url:'cortar.php',
-                type:'POST',
-                data:'x='+x+'&y='+y+'&w='+w+'&h='+h+'&imgurl='+imgurl+'&imgurl1='+imgurl1,
-                success: function(data) {
-           			$('#modal-yes').modal('toggle');
-
-                    
-         	 		},
-         	 	error : function(xhr, status) {
-        				alert('Disculpe, existió un problema');
-    					}       
-                    
-
-                    });
-            }else{
-                $('#modal-no').modal('toggle');
-            }
-            
-        }
-        function goBack() {
-    window.history.back()
-}
-    </script>
+		var croppicOpt = {
+        //uploadUrl:'img_save_to_file.php',
+        cropUrl:'img_crop_to_file.php',  //realiza el proceso de corte
+        outputUrlId:'outputUrlId', //link de donde se guardó
+        loadPicture:'<?= $ruta; ?>',
+    } 
+    var croppic = new Croppic('yourId', croppicOpt);
+		
+		
+	</script>

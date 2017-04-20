@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Negocios Controller
@@ -110,5 +111,18 @@ class NegociosController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function perfil($id = null){
+        $negocio = $this->Negocios->get($id, [
+            'contain' => []
+        ]);
+        if ($this->request->is('get')) {
+            $negocio = $this->Negocios->patchEntity($negocio, $this->request->getData());
+            $query = TableRegistry::get('ImagenesNegocios')->find();
+            $imagenes = $query->select(['foto','ubicacion'])->where(['negocios_id' => $negocio->id])->toArray();
+            //Ahora ya tengo la info de las imagenes y del comercio, solo la tengo que poner en el sitio.
+             //   return $this->redirect(['action' => 'index']);
+            }
     }
 }

@@ -151,7 +151,7 @@ $ruta = '/files/ImagenesNegocios/foto/' . $mensaje;
     {
          if ($this->request->is('post')) {
         }
-        $this->set(compact('ruta'));
-        $this->set('_serialize', ['ruta']);
+        $this->set(compact(['ruta','ruta1']));
+        $this->set('_serialize', ['ruta','ruta1']);
     }
 }

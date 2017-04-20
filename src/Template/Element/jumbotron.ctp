@@ -59,15 +59,15 @@
                 <div class="lib-panel">
                     <div class="row box-shadow border-1">
                         <div class="col-md-4 col-sm-4 avatar">
-                            <img class="lib-img-show src-image" src=<?= $fperfil ?>>
+                            <img class="lib-img-show src-image" src="img/asd.png">
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="lib-row lib-header">
-                                <?= $negocio->nombre ?>
+                                Example library
                                 <div class="lib-header-seperator"></div>
                             </div>
                             <div class="lib-row lib-desc">
-                                <?= $negocio->descripcion ?>
+                                Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor
                             </div>
                         </div>
                         <div class="col-md-2 col-sm-2 border-col-2">

@@ -20,10 +20,10 @@ $angle = $_POST['rotation'];
 
 $jpeg_quality = 100;
 
-$output_filename = "temp/fototemp_".rand();
+$output_filename = $imgUrl;
 
 // uncomment line below to save the cropped image in the same location as the original image.
-//$output_filename = dirname($imgUrl). "/croppedImg_".rand();
+//$output_filename = dirname($imgUrl). "/";
 
 $what = getimagesize($imgUrl);
 
@@ -79,10 +79,10 @@ if(!is_writable(dirname($output_filename))){
 	imagecopyresampled($final_image, $cropped_rotated_image, 0, 0, $imgX1, $imgY1, $cropW, $cropH, $cropW, $cropH);
 	// finally output png image
 	//imagepng($final_image, $output_filename.$type, $png_quality);
-	imagejpeg($final_image, $output_filename.$type, $jpeg_quality);
+	imagejpeg($final_image, $output_filename, $jpeg_quality);
 	$response = Array(
 	    "status" => 'success',
-	    "url" => $output_filename.$type
+	    //"url" => $output_filename
     );
 }
 print json_encode($response);

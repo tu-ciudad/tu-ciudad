@@ -18,10 +18,9 @@
     <fieldset>
         <legend><?= __('Add Imagenes Negocio') ?></legend>
         <?php
-            echo $this->Form->control('ubicacion');
+            echo $this->Form->select('ubicacion', ['Ubicacion' => ['perfil','otra']]);
             echo $this->Form->control('negocios_id', ['options' => $negocios]);
             echo $this->Form->control('foto',['type' => 'file']);
-          //  echo $this->Form->control('foto_dir', ['type' => 'hidden']);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

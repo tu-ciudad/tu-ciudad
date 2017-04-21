@@ -17,7 +17,9 @@ class ImagenesProductosControllerTest extends IntegrationTestCase
      */
     public $fixtures = [
         'app.imagenes_productos',
-        'app.productos'
+        'app.productos',
+        'app.negocios',
+        'app.lugares'
     ];
 
     /**

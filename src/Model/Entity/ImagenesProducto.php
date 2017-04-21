@@ -9,7 +9,7 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $foto
  * @property int $numero
- * @property int $publicaciones_id
+ * @property int $productos_id
  *
  * @property \App\Model\Entity\Producto $producto
  */

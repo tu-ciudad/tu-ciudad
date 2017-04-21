@@ -37,7 +37,7 @@ class ImagenesProductosTable extends Table
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Productos', [
-            'foreignKey' => 'publicaciones_id',
+            'foreignKey' => 'productos_id',
             'joinType' => 'INNER'
         ]);
     }
@@ -74,7 +74,7 @@ class ImagenesProductosTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['publicaciones_id'], 'Productos'));
+        $rules->add($rules->existsIn(['productos_id'], 'Productos'));
 
         return $rules;
     }

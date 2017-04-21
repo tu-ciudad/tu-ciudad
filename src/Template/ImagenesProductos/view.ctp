@@ -22,16 +22,16 @@
             <td><?= h($imagenesProducto->foto) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Producto') ?></th>
-            <td><?= $imagenesProducto->has('producto') ? $this->Html->link($imagenesProducto->producto->id, ['controller' => 'Productos', 'action' => 'view', $imagenesProducto->producto->id]) : '' ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($imagenesProducto->id) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Numero') ?></th>
             <td><?= $this->Number->format($imagenesProducto->numero) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Productos Id') ?></th>
+            <td><?= $this->Number->format($imagenesProducto->productos_id) ?></td>
         </tr>
     </table>
 </div>

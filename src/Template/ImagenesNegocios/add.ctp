@@ -18,7 +18,7 @@
     <fieldset>
         <legend><?= __('Add Imagenes Negocio') ?></legend>
         <?php
-            echo $this->Form->select('ubicacion', ['Ubicacion' => ['perfil','otra']]);
+            echo $this->Form->control('ubicacion', ['options' => ['perfil'=>'perfil']]); //nombre y valor al que equivalen
             echo $this->Form->control('negocios_id', ['options' => $negocios]);
             echo $this->Form->control('foto',['type' => 'file']);
         ?>

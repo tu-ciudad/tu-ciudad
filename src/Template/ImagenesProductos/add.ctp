@@ -18,7 +18,7 @@
         <?php
             echo $this->Form->control('foto');
             echo $this->Form->control('numero');
-            echo $this->Form->control('publicaciones_id', ['options' => $productos]);
+            echo $this->Form->control('productos_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

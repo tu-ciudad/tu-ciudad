@@ -19,7 +19,7 @@
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('foto') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('numero') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('publicaciones_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('productos_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -29,7 +29,7 @@
                 <td><?= $this->Number->format($imagenesProducto->id) ?></td>
                 <td><?= h($imagenesProducto->foto) ?></td>
                 <td><?= $this->Number->format($imagenesProducto->numero) ?></td>
-                <td><?= $imagenesProducto->has('producto') ? $this->Html->link($imagenesProducto->producto->id, ['controller' => 'Productos', 'action' => 'view', $imagenesProducto->producto->id]) : '' ?></td>
+                <td><?= $this->Number->format($imagenesProducto->productos_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $imagenesProducto->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $imagenesProducto->id]) ?>

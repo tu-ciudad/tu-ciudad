@@ -4,7 +4,7 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Publicacione Entity
+ * Producto Entity
  *
  * @property int $id
  * @property string $titulo
@@ -14,9 +14,8 @@ use Cake\ORM\Entity;
  * @property int $negocios_id
  *
  * @property \App\Model\Entity\Negocio $negocio
- * @property \App\Model\Entity\Tag[] $tags
  */
-class Publicacione extends Entity
+class Producto extends Entity
 {
 
     /**

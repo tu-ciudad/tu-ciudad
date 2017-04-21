@@ -4,17 +4,16 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * ImagenesPublicacione Entity
+ * ImagenesProducto Entity
  *
  * @property int $id
  * @property string $foto
  * @property int $numero
  * @property int $publicaciones_id
- * @property string $foto_dir
  *
- * @property \App\Model\Entity\Publicacione $publicacione
+ * @property \App\Model\Entity\Producto $producto
  */
-class ImagenesPublicacione extends Entity
+class ImagenesProducto extends Entity
 {
 
     /**

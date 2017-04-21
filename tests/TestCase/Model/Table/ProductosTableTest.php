@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\ImagenesPublicacionesTable;
+use App\Model\Table\ProductosTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\ImagenesPublicacionesTable Test Case
+ * App\Model\Table\ProductosTable Test Case
  */
-class ImagenesPublicacionesTableTest extends TestCase
+class ProductosTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\ImagenesPublicacionesTable
+     * @var \App\Model\Table\ProductosTable
      */
-    public $ImagenesPublicaciones;
+    public $Productos;
 
     /**
      * Fixtures
@@ -24,13 +24,9 @@ class ImagenesPublicacionesTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.imagenes_publicaciones',
-        'app.publicaciones',
+        'app.productos',
         'app.negocios',
-        'app.lugares',
-        'app.tags',
-        'app.negocios_tags',
-        'app.publicaciones_tags'
+        'app.lugares'
     ];
 
     /**
@@ -41,8 +37,8 @@ class ImagenesPublicacionesTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('ImagenesPublicaciones') ? [] : ['className' => 'App\Model\Table\ImagenesPublicacionesTable'];
-        $this->ImagenesPublicaciones = TableRegistry::get('ImagenesPublicaciones', $config);
+        $config = TableRegistry::exists('Productos') ? [] : ['className' => 'App\Model\Table\ProductosTable'];
+        $this->Productos = TableRegistry::get('Productos', $config);
     }
 
     /**
@@ -52,7 +48,7 @@ class ImagenesPublicacionesTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->ImagenesPublicaciones);
+        unset($this->Productos);
 
         parent::tearDown();
     }

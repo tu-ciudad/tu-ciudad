@@ -4,10 +4,10 @@ namespace App\Test\Fixture;
 use Cake\TestSuite\Fixture\TestFixture;
 
 /**
- * ImagenesPublicacionesFixture
+ * ImagenesProductosFixture
  *
  */
-class ImagenesPublicacionesFixture extends TestFixture
+class ImagenesProductosFixture extends TestFixture
 {
 
     /**
@@ -26,7 +26,7 @@ class ImagenesPublicacionesFixture extends TestFixture
         ],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
-            'fk_imagenes_publicaciones_publicaciones1' => ['type' => 'foreign', 'columns' => ['publicaciones_id'], 'references' => ['publicaciones', 'id'], 'update' => 'noAction', 'delete' => 'noAction', 'length' => []],
+            'fk_imagenes_publicaciones_publicaciones1' => ['type' => 'foreign', 'columns' => ['publicaciones_id'], 'references' => ['productos', 'id'], 'update' => 'noAction', 'delete' => 'noAction', 'length' => []],
         ],
         '_options' => [
             'engine' => 'InnoDB',

@@ -58,7 +58,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 </head>
 <body data-spy="scroll" class="fixed-sn" onconte-xtmenu='return false' onkey-down='return false'>
         
-    <?= $this->element('nav') ?>
+   
 
 
 

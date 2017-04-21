@@ -2,14 +2,10 @@
 /**
   * @var \App\View\AppView $this
   */
+$this->layout = 'add';
 ?>
-<br>
-<br>
-<br>
-<br>
-<br>
-<?= $this->layout = 'add'; ?>
-<?= $this->element('sidebar-imagenesnegocios') ?>
+
+
 
 <div class="imagenesNegocios form col-md-8 columns content">
 <div id="yourId"></div>
@@ -27,23 +23,4 @@
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+

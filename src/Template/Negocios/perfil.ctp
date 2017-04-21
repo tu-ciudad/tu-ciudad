@@ -321,13 +321,13 @@
 
     <!-- imagen modal -->
     <!-- <img id="myImg" src="http://placehold.it/700x400" alt="Northern Lights, Norway" width="300" height="200"> 
-<! The Modal -->
+<! The Modal 
     <div id="myModal" class="modal">
         <span class="close"><br>×</span>
         <img class="modal-content" id="img01">
         <div id="caption"></div>
     </div>
-
+-->
 
 
 

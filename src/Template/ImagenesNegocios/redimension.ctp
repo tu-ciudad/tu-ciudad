@@ -2,12 +2,8 @@
 /**
   * @var \App\View\AppView $this
   */
+$this->layout = 'add';
 ?>
-<br>
-<br>
-<br>
-<br>
-<br>
 <style>
     
  #yourId{ 
@@ -30,18 +26,17 @@
 			
     </style>
 <?= $this->Html->css('croppic.css') ?>
-<?= $this->Html->css('main.css') ?>
+
 <?= $this->Html->script('croppic') ?>
-<?= $this->element('sidebar-imagenesnegocios') ?>
-
-<h4><?= $ruta; ?></h4>
 
 
 
 
-	<div class="col-md-8 col-md-push-1">
+
+
+
 		<div id="yourId"></div>
-	</div>
+
 	
 	
 

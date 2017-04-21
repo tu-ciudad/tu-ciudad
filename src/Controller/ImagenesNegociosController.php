@@ -102,6 +102,67 @@ $ruta1 = '/files/ImagenesNegocios/foto/' . $mensaje;
         $this->set('_serialize', ['imagenesNegocio']);
     }
 
+
+
+
+
+public function add1()
+    {
+        $imagenesNegocio = $this->ImagenesNegocios->newEntity();
+        if ($this->request->is(['post','delete'])) {
+            $imagenesNegocio = $this->ImagenesNegocios->patchEntity($imagenesNegocio, $this->request->getData());
+            //borro una imagen si ya existe
+            $query = $this->ImagenesNegocios->query();
+            $ruta = $this->ImagenesNegocios->find()->select(['foto'])->where(['negocios_id' => $imagenesNegocio->negocios_id, 'ubicacion' => $imagenesNegocio->ubicacion])
+    ->toArray();
+    if ($ruta != null){
+      if(is_array($ruta)){
+          $ruta = $ruta[0]->foto;
+          }
+      else 
+      {
+        $ruta = $ruta->foto;
+        }
+            $query->delete()
+    ->where(['negocios_id' => $imagenesNegocio->negocios_id, 'ubicacion' => $imagenesNegocio->ubicacion])
+    ->execute();
+            unlink( ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'ImagenesNegocios' . DIRECTORY_SEPARATOR . 'foto' . DIRECTORY_SEPARATOR . $ruta);
+        }
+            //.................................
+            if ($this->ImagenesNegocios->save($imagenesNegocio)) {
+            $conexion = ConnectionManager::get('default');
+            $res = $conexion->execute('Call renombrarfoto(?)',[$imagenesNegocio->foto])->fetchAll('assoc');
+            $mensaje = $res[0]['@mensaje'];
+           rename( ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'ImagenesNegocios' . DIRECTORY_SEPARATOR . 'foto' .DIRECTORY_SEPARATOR. $imagenesNegocio->foto, ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'ImagenesNegocios' . DIRECTORY_SEPARATOR . 'foto' . DIRECTORY_SEPARATOR . $mensaje);
+
+/* Redimension
+
+$this->loadComponent('Image'); 
+$MyImageCom = $this->Image;
+$MyImageCom->prepare(ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'ImagenesNegocios' . DIRECTORY_SEPARATOR . 'foto' .DIRECTORY_SEPARATOR. $imagenesNegocio->foto);
+$MyImageCom->resize(300,300);//width,height,Red,Green,Blue
+$MyImageCom->save(ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'ImagenesNegocios' . DIRECTORY_SEPARATOR . 'foto' . DIRECTORY_SEPARATOR . $mensaje);
+unlink(ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'ImagenesNegocios' . DIRECTORY_SEPARATOR . 'foto' .DIRECTORY_SEPARATOR. $imagenesNegocio->foto);
+*/
+$ruta =  '..' . '/' . 'files' . '/' . 'ImagenesNegocios' . '/' . 'foto' . '/' . $mensaje;
+$ruta1 = '/files/ImagenesNegocios/foto/' . $mensaje;
+                $this->Flash->success(__('The imagenes negocio has been saved.'));
+                return $this->setAction('redimension',$ruta,$ruta1);
+               // return $this->redirect(['action' => 'redimension',$ruta]);
+            }
+            $this->Flash->error(__('The imagenes negocio could not be saved. Please, try again.'));
+        }
+        $negocios = $this->ImagenesNegocios->Negocios->find('list', ['limit' => 200]);
+        $this->set(compact('imagenesNegocio', 'negocios'));
+        $this->set('_serialize', ['imagenesNegocio']);
+    }
+
+
+
+
+
+
+
     /**
      * Edit method
      *

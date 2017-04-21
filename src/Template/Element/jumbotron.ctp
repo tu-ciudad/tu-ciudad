@@ -68,6 +68,17 @@
                             </div>
                             <div class="lib-row lib-desc">
                                 <?= $negocio->descripcion ?>
+                                <button class="btnmodal btn btn-primary">show modal</button>
+
+                                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog modal-lg1">
+                                    <div class="modal-content">
+                                       
+                                      <iframe src="" frameborder="0" class="iframe-modal"></iframe>
+                                      </div>
+                                  </div>
+                                </div>
+    
                             </div>
                         </div>
                         <div class="col-md-2 col-sm-2 border-col-2">
@@ -117,3 +128,16 @@
             </div>
             </div>
 </div>
+
+<script>
+$('.btnmodal').click(function(){
+
+    $('.modal').on('shown.bs.modal',function(){      //correct here use 'shown.bs.modal' event which comes in bootstrap3
+  $(this).find('iframe').attr('src','http://localhost:8765/imagenes-negocios/add1')
+})
+      $('.modal').modal();
+   
+   
+    
+});
+</script>

@@ -1861,3 +1861,14 @@ section {
 .c-hamburger--htx.is-active span::after {
   transition-delay: 0s, 0.3s;
 }
+
+.iframe-modal {
+    height: 480px;
+    width: 480px;
+}
+
+@media (min-width: 992px) {
+  .modal-lg1 {
+    width: 500px;
+  }
+}

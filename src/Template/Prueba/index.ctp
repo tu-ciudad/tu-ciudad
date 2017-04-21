@@ -320,14 +320,14 @@
 
     <!-- imagen modal -->
     <!-- <img id="myImg" src="http://placehold.it/700x400" alt="Northern Lights, Norway" width="300" height="200"> 
-<! The Modal -->
+<! The Modal 
     <div id="myModal" class="modal">
         <span class="close"><br>×</span>
         <img class="modal-content" id="img01">
         <div id="caption"></div>
     </div>
 
-
+-->
 
 
     <div class="col-md-2 location hidden-xs hidden-sm ">
@@ -352,14 +352,34 @@
         
 
 
-            <div id="map-container"  class="col-md-8 col-md-push-1 img-rounded "></div>
+            <!-- <div id="map-container"  class="col-md-8 col-md-push-1 img-rounded "></div> -->
+                       
 
+        <button class="btnmodal btn btn-primary">show modal</button>
 
-        
-
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg1">
+    <div class="modal-content">
+       
+      <iframe src="" frameborder="0" class="iframe-modal"></iframe>
+      </div>
+  </div>
+</div>
     </section>
 
 <?= $this->element('footer') ?>
+<script>
+$('.btnmodal').click(function(){
+
+    $('.modal').on('shown.bs.modal',function(){      //correct here use 'shown.bs.modal' event which comes in bootstrap3
+  $(this).find('iframe').attr('src','http://localhost:8765/imagenes-negocios/add1')
+})
+      $('.modal').modal();
+   
+   
+    
+});
+</script>
 
 <script>
         var jumboHeight = $('.jumbotron').outerHeight();

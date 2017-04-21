@@ -349,13 +349,13 @@
     </div>
 
     <section id="sec2" class="contact-section" style="height: 70vh;">
-        <div class="top ">
+        
 
 
-            <div id="map-container" align="center" class="col-md-8 col-md-push-1 img-rounded "></div>
+            <div id="map-container"  class="col-md-8 col-md-push-1 img-rounded "></div>
 
 
-        </div>
+        
 
     </section>
 
@@ -384,30 +384,152 @@
 
         
     </script>
-     <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script>
+        //CountDown
+        $('.countdown-product').downCount({
+            date: '8/1/2017 12:00:00',
+            offset: +1
+        }, function() {
+            //alert('WOOT WOOT, done!');
+        });
+
+        
+    </script>
+  <script async defer
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDkKG7urAJ1fTHIXbcuQDoePM2ReP-LKtQ&callback&sensor=false">
+    </script>
     <script>
         function init_map() {
-            var var_location = new google.maps.LatLng(-37.013179, -62.417755);
+            var location = new google.maps.LatLng(-37.013179, -62.417755);
 
-            var var_mapoptions = {
-                center: var_location,
-                zoom: 16,
-
+            var mapoptions = {
+                center: location,
+                zoom: 17,
+                 styles: [
+          {elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},
+          {elementType: 'labels.text.fill', stylers: [{color: '#523735'}]},
+          {elementType: 'labels.text.stroke', stylers: [{color: '#f5f1e6'}]},
+          {
+            featureType: 'administrative',
+            elementType: 'geometry.stroke',
+            stylers: [{color: '#c9b2a6'}]
+          },
+          {
+            featureType: 'administrative.land_parcel',
+            elementType: 'geometry.stroke',
+            stylers: [{color: '#dcd2be'}]
+          },
+          {
+            featureType: 'administrative.land_parcel',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#ae9e90'}]
+          },
+          {
+            featureType: 'landscape.natural',
+            elementType: 'geometry',
+            stylers: [{color: '#dfd2ae'}]
+          },
+          {
+            featureType: 'poi',
+            elementType: 'geometry',
+            stylers: [{color: '#dfd2ae'}]
+          },
+          {
+            featureType: 'poi',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#93817c'}]
+          },
+          {
+            featureType: 'poi.park',
+            elementType: 'geometry.fill',
+            stylers: [{color: '#a5b076'}]
+          },
+          {
+            featureType: 'poi.park',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#447530'}]
+          },
+          {
+            featureType: 'road',
+            elementType: 'geometry',
+            stylers: [{color: '#f5f1e6'}]
+          },
+          {
+            featureType: 'road.arterial',
+            elementType: 'geometry',
+            stylers: [{color: '#fdfcf8'}]
+          },
+          {
+            featureType: 'road.highway',
+            elementType: 'geometry',
+            stylers: [{color: '#f8c967'}]
+          },
+          {
+            featureType: 'road.highway',
+            elementType: 'geometry.stroke',
+            stylers: [{color: '#e9bc62'}]
+          },
+          {
+            featureType: 'road.highway.controlled_access',
+            elementType: 'geometry',
+            stylers: [{color: '#e98d58'}]
+          },
+          {
+            featureType: 'road.highway.controlled_access',
+            elementType: 'geometry.stroke',
+            stylers: [{color: '#db8555'}]
+          },
+          {
+            featureType: 'road.local',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#806b63'}]
+          },
+          {
+            featureType: 'transit.line',
+            elementType: 'geometry',
+            stylers: [{color: '#dfd2ae'}]
+          },
+          {
+            featureType: 'transit.line',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#8f7d77'}]
+          },
+          {
+            featureType: 'transit.line',
+            elementType: 'labels.text.stroke',
+            stylers: [{color: '#ebe3cd'}]
+          },
+          {
+            featureType: 'transit.station',
+            elementType: 'geometry',
+            stylers: [{color: '#dfd2ae'}]
+          },
+          {
+            featureType: 'water',
+            elementType: 'geometry.fill',
+            stylers: [{color: '#b9d3c2'}]
+          },
+          {
+            featureType: 'water',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#92998d'}]
+          }
+        ],
                 scrollwheel: false
             };
 
-            var var_marker = new google.maps.Marker({
-                position: var_location,
-                map: var_map,
-                title: "Venice"
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                title: "Guaminí"
             });
 
-            var var_map = new google.maps.Map(document.getElementById("map-container"),
-                var_mapoptions);
+            var map = new google.maps.Map(document.getElementById("map-container"),
+                mapoptions);
 
-            var_marker.setMap(var_map);
+            marker.setMap(map);
 
-        }
+        };
 
         google.maps.event.addDomListener(window, 'load', init_map);
     </script>

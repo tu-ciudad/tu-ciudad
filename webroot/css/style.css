@@ -1346,7 +1346,10 @@ section {
     /z-index: 1000;
 }
 .top {
-    margin-top: -40px;
+   margin-top: -40px;
+   height: 128px;
+   width: 128px;
+   background: url('/img/map1.png')  center center ;
     
 }
 .left {
@@ -1369,9 +1372,10 @@ section {
     /border-left-width: 5px;
    /box-shadow: -3px 0px 5px -3px 
 }
-#map-container { height: 300px;
-    
-          box-shadow: 1px 1px 3px ;
+#map-container { 
+    height: 350px;
+    margin: 10px;
+    box-shadow: 1px 1px 3px ;
           
          }
 .headd {
@@ -1520,7 +1524,7 @@ section {
 }
 
 .lib-panel .lib-row.lib-header {
-    background-color: #FFFFFF;
+    background-color: #FAFAFA;
     font-size: 20px;
     padding: 10px 20px 0 20px;
 }
@@ -1619,6 +1623,7 @@ section {
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -o-transition: all .3s ease; 
+    background-color: #FAFAFA;
     
     }
 /* Visitor */

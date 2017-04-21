@@ -20,7 +20,7 @@
 
                 </div>
                 <div class="avatar">
-                    <img alt="" class="" src="img/asd.png">
+                    <img alt="" class="" src=<?= $fperfil ?>>
                 </div>
                 <div class="info">
                     <div class="title">

@@ -122,7 +122,7 @@ class NegociosController extends AppController
             $imagenes = $query->select(['foto','ubicacion'])->where(['negocios_id' => $negocio->id]);
             foreach($imagenes as $imagen):
              if ($imagen->ubicacion = 'perfil'){
-                $fperfil = '../files/ImagenesNegocios/foto/'. $imagen->foto;
+                $fperfil = '../../files/ImagenesNegocios/foto/'. $imagen->foto;
              }   
             endforeach;
             $this->set(compact('negocio','fperfil'));

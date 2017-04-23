@@ -55,8 +55,14 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
+    <style>
+       body { 
+        margin: 0px;
+    }
+    </style>
+    
 </head>
-<body data-spy="scroll" class="fixed-sn" onconte-xtmenu='return false' onkey-down='return false'>
+<body>
         
    
 

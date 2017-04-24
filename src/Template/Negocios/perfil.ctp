@@ -376,17 +376,7 @@
             parallax();
         });
     </script>
-<script>
-        //CountDown
-        $('.countdown').downCount({
-            date: '8/1/2017 12:00:00',
-            offset: +1
-        }, function() {
-            //alert('WOOT WOOT, done!');
-        });
 
-        
-    </script>
     <script>
         //CountDown
         $('.countdown-product').downCount({

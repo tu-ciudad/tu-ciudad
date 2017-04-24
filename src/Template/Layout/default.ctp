@@ -37,18 +37,15 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
      <?= $this->Html->css('normalize.css') ?>
      <?= $this->Html->css('bootstrap.min.css') ?>
-     <?= $this->Html->css('style-organized.css') ?>
-     <?= $this->Html->css('scrolling-nav.css') ?>
-     <?= $this->Html->css('onepage-scroll.css') ?>
+     <?= $this->Html->css('style.css') ?>
+     
      <?= $this->Html->css('font-awesome.min.css') ?> 
-     <?= $this->Html->css('font-awesome-animation.min.css') ?>
-     <?= $this->Html->css('ofersec.css') ?>
-     <?= $this->Html->css('owl.css') ?>
-     <?= $this->Html->css('owl_002.css') ?>
-     <?= $this->Html->css('animate.css') ?>
+     
+    
+     
     
 
-    <?= $this->Html->script(array('jquery-3.2.1.min', 'pace.min', 'bootstrap.min', 'parallax', 'scrolling-nav', 'jquery.easing.min', 'countdown', 'afixx')); ?>
+    <?= $this->Html->script(array('jquery-3.2.1.min', 'pace.min', 'bootstrap.min', 'scrolling-nav', 'countdown', 'afixx')); ?>
 
     
 
@@ -69,8 +66,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <?= $this->fetch('content') ?>
     </div>
 
-<!--
-   <?= $this->element('footer') ?> -->
 
 </body>
 </html>

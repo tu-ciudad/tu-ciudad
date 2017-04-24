@@ -1490,10 +1490,7 @@ section {
   display:none;
 }
 
-.src-image {
-  /display: none;
-    
-}
+
 .sinpadding [class*="col-"] {
     padding: 0;
 }

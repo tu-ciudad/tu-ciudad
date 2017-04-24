@@ -6,7 +6,7 @@
 
 
                         <div class="br">
-                            <img src="img/adidas.jpg" class="img-responsive" alt="...">
+                            <img src="../../img/adidas.jpg" class="img-responsive" alt="...">
                             <div class=" recomended">
 
                                 <p class="col-md-6 textr">Comercio #1</p>
@@ -23,7 +23,7 @@
 
 
                         <div class="br">
-                            <img src="img/adidas.jpg" class="img-responsive" alt="...">
+                            <img src="../../img/adidas.jpg" class="img-responsive" alt="...">
                             <div class=" recomended">
 
                                 <p class="col-md-6 textr">Comercio #1</p>

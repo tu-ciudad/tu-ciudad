@@ -4,7 +4,9 @@
   * @var \App\View\AppView $this
   */
 ?>
-<?= $this->Html->script('http://maps.google.com/maps/api/js?sensor=false') ?>
+<script async defer
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDkKG7urAJ1fTHIXbcuQDoePM2ReP-LKtQ&callback=initMap">
+    </script>
 <?= $this->element('jumbotron') ?>
    
     <div class="container-fluid">
@@ -13,13 +15,13 @@
 
             <?= $this->element('sidebar-left') ?>
 
-            <div class="col-md-12 col-lg-7 thumbnail bot" align="center" id="sec0">
+            <div class="col-md-12 col-lg-7 thumbnail" align="center" id="sec0">
 
                 <div class="producto">
                     <div class="card">
                         <div class="grid-top">
                             <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class=" card img-fluid img-responsive" src="img/productos/pi4.jpg" alt="">
+                                <img class=" card img-fluid img-responsive" src="../../img/productos/pi4.jpg" alt="">
                                 <div class="b-wrapper">
                                     <h3 class="b-animate b-from-left b-delay03 ">
                                         <span>Bag</span>
@@ -36,7 +38,7 @@
                     <div class="card">
                         <div class="grid-top">
                             <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="img/productos/pi5.jpg" alt="">
+                                <img class="card img-fluid img-responsive" src="../../img/productos/pi5.jpg" alt="">
                                 <div class="b-wrapper">
                                     <h3 class="b-animate b-from-left    b-delay03 ">
                                         <span>Shoe</span>
@@ -54,7 +56,7 @@
                     <div class="card">
                         <div class="grid-top">
                             <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="img/productos/pi.jpg" alt="">
+                                <img class="card img-fluid img-responsive" src="../../img/productos/pi.jpg" alt="">
                                 <div class="b-wrapper">
                                     <h3 class="b-animate b-from-left    b-delay03 ">
                                         <span>T-Shirt</span>
@@ -73,7 +75,7 @@
                     <div class="card">
                         <div class="grid-top">
                             <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="img/productos/pi1.jpg" alt="">
+                                <img class="card img-fluid img-responsive" src="../../img/productos/pi1.jpg" alt="">
                                 <div class="b-wrapper">
                                     <h3 class="b-animate b-from-left    b-delay03 ">
                                         <span>Shoe</span>
@@ -91,7 +93,7 @@
                     <div class="card">
                         <div class="grid-top">
                             <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="img/productos/pi2.jpg" alt="">
+                                <img class="card img-fluid img-responsive" src="../../img/productos/pi2.jpg" alt="">
                                 <div class="b-wrapper">
                                     <h3 class="b-animate b-from-left    b-delay03 ">
                                         <span>Bag</span>
@@ -109,7 +111,7 @@
                     <div class="card">
                         <div class="grid-top">
                             <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="img/productos/pi3.jpg" alt="">
+                                <img class="card img-fluid img-responsive" src="../../img/productos/pi3.jpg" alt="">
                                 <div class="b-wrapper">
                                     <h3 class="b-animate b-from-left    b-delay03 ">
                                         <span>Shirt</span>
@@ -141,7 +143,7 @@
                                 </div>
                                 <figure class="layer">
                                     <a href="javascript:void(0);">
-                                        <img class="card-img-top img-fluid img-responsive" src="img/productos/pi4.jpg" alt="">
+                                        <img class="card-img-top img-fluid img-responsive" src="../../img/productos/pi4.jpg" alt="">
                                     </a>
                                 </figure>
 
@@ -196,7 +198,7 @@
                                 </div>
                                 <figure class="layer">
                                     <a href="javascript:void(0);">
-                                        <img class="card-img-top img-fluid img-responsive" src="img/productos/pi4.jpg" alt="">
+                                        <img class="card-img-top img-fluid img-responsive" src="../../img/productos/pi4.jpg" alt="">
                                     </a>
                                 </figure>
 
@@ -251,7 +253,7 @@
                                 </div>
                                 <figure class="layer">
                                     <a href="javascript:void(0);">
-                                        <img class="card-img-top img-fluid img-responsive" src="img/productos/pi4.jpg" alt="">
+                                        <img class="card-img-top img-fluid img-responsive" src="../../img/productos/pi4.jpg" alt="">
                                     </a>
                                 </figure>
 
@@ -396,9 +398,7 @@
 
         
     </script>
-  <script async defer
-      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDkKG7urAJ1fTHIXbcuQDoePM2ReP-LKtQ&callback&sensor=false">
-    </script>
+  
     <script>
         function init_map() {
             var location = new google.maps.LatLng(-37.013179, -62.417755);
@@ -549,3 +549,4 @@
       });
     }
   })();
+</script>

@@ -37,7 +37,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
      <?= $this->Html->css('normalize.css') ?>
      <?= $this->Html->css('bootstrap.min.css') ?>
-     <?= $this->Html->css('style.css') ?>
+     <?= $this->Html->css('style-organized.css') ?>
      <?= $this->Html->css('scrolling-nav.css') ?>
      <?= $this->Html->css('onepage-scroll.css') ?>
      <?= $this->Html->css('font-awesome.min.css') ?> 

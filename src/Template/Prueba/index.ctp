@@ -1,24 +1,78 @@
+
 <?php
 /**
   * @var \App\View\AppView $this
   */
 ?>
-<?= $this->Html->script('http://maps.google.com/maps/api/js?sensor=false') ?>
-<?= $this->element('jumbotron') ?>
+<script async defer
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDkKG7urAJ1fTHIXbcuQDoePM2ReP-LKtQ&callback=initMap">
+    </script>
+<br>
+<br>
+<br>
+<br>
    
+    <button class="btnmodal btn btn-primary">show modal</button>
+
+  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg1">
+       <div class="modal-content">
+         <form enctype="multipart/form-data" method="post" accept-charset="utf-8" class="form-group" id="fperfil" action="/imagenes-negocios/add1" onsubmit="return false">
+             <div style="display: none;">
+                 <input type="hidden" name="_method" value="POST">
+             </div>
+             <fieldset>
+                 <div class="input select required">
+                     <label for="ubicacion">Ubicacion</label>
+                     <select name="ubicacion" required="required" id="ubicacion">
+                         <option value="perfil">perfil</option>
+                     </select>
+                 </div>
+                 <div class="input select">
+                     <label for="negocios-id">Negocios</label>
+                     <select name="negocios_id" id="negocios-id">
+                        <option value="1">1</option>
+                     </select>
+                 </div>
+                 <div class="input file">
+                     <label class="labelf" for="foto">Seleccione una imagen</label>
+                     <input type="file" name="foto" id="foto">
+                 </div>
+             </fieldset>
+             <button class="btn btn-primary" type="submit">Submit</button>
+         </form> 
+                                      
+      </div>
+  </div>
+ </div>
+
+
+ <script>
+$('.btnmodal').click(function(){
+
+    $('.modal').on('shown.bs.modal',function(){      //correct here use 'shown.bs.modal' event which comes in bootstrap3
+  $(this).find('iframe').attr('src','http://localhost:8765/imagenes-negocios/add1')
+})
+      $('.modal').modal();
+   
+   
+    
+});
+
+</script>
     <div class="container-fluid">
 
         <div class="row">
 
             <?= $this->element('sidebar-left') ?>
 
-            <div class="col-md-12 col-lg-7 thumbnail bot" align="center" id="sec0">
+            <div class="col-md-12 col-lg-7 thumbnail" align="center" id="sec0">
 
                 <div class="producto">
                     <div class="card">
                         <div class="grid-top">
                             <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class=" card img-fluid img-responsive" src="img/productos/pi4.jpg" alt="">
+                                <img class=" card img-fluid img-responsive" src="../../img/productos/pi4.jpg" alt="">
                                 <div class="b-wrapper">
                                     <h3 class="b-animate b-from-left b-delay03 ">
                                         <span>Bag</span>
@@ -35,7 +89,7 @@
                     <div class="card">
                         <div class="grid-top">
                             <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="img/productos/pi5.jpg" alt="">
+                                <img class="card img-fluid img-responsive" src="../../img/productos/pi5.jpg" alt="">
                                 <div class="b-wrapper">
                                     <h3 class="b-animate b-from-left    b-delay03 ">
                                         <span>Shoe</span>
@@ -53,7 +107,7 @@
                     <div class="card">
                         <div class="grid-top">
                             <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="img/productos/pi.jpg" alt="">
+                                <img class="card img-fluid img-responsive" src="../../img/productos/pi.jpg" alt="">
                                 <div class="b-wrapper">
                                     <h3 class="b-animate b-from-left    b-delay03 ">
                                         <span>T-Shirt</span>
@@ -72,7 +126,7 @@
                     <div class="card">
                         <div class="grid-top">
                             <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="img/productos/pi1.jpg" alt="">
+                                <img class="card img-fluid img-responsive" src="../../img/productos/pi1.jpg" alt="">
                                 <div class="b-wrapper">
                                     <h3 class="b-animate b-from-left    b-delay03 ">
                                         <span>Shoe</span>
@@ -90,7 +144,7 @@
                     <div class="card">
                         <div class="grid-top">
                             <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="img/productos/pi2.jpg" alt="">
+                                <img class="card img-fluid img-responsive" src="../../img/productos/pi2.jpg" alt="">
                                 <div class="b-wrapper">
                                     <h3 class="b-animate b-from-left    b-delay03 ">
                                         <span>Bag</span>
@@ -108,7 +162,7 @@
                     <div class="card">
                         <div class="grid-top">
                             <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="img/productos/pi3.jpg" alt="">
+                                <img class="card img-fluid img-responsive" src="../../img/productos/pi3.jpg" alt="">
                                 <div class="b-wrapper">
                                     <h3 class="b-animate b-from-left    b-delay03 ">
                                         <span>Shirt</span>
@@ -140,7 +194,7 @@
                                 </div>
                                 <figure class="layer">
                                     <a href="javascript:void(0);">
-                                        <img class="card-img-top img-fluid img-responsive" src="img/productos/pi4.jpg" alt="">
+                                        <img class="card-img-top img-fluid img-responsive" src="../../img/productos/pi4.jpg" alt="">
                                     </a>
                                 </figure>
 
@@ -195,7 +249,7 @@
                                 </div>
                                 <figure class="layer">
                                     <a href="javascript:void(0);">
-                                        <img class="card-img-top img-fluid img-responsive" src="img/productos/pi4.jpg" alt="">
+                                        <img class="card-img-top img-fluid img-responsive" src="../../img/productos/pi4.jpg" alt="">
                                     </a>
                                 </figure>
 
@@ -250,7 +304,7 @@
                                 </div>
                                 <figure class="layer">
                                     <a href="javascript:void(0);">
-                                        <img class="card-img-top img-fluid img-responsive" src="img/productos/pi4.jpg" alt="">
+                                        <img class="card-img-top img-fluid img-responsive" src="../../img/productos/pi4.jpg" alt="">
                                     </a>
                                 </figure>
 
@@ -326,12 +380,12 @@
         <img class="modal-content" id="img01">
         <div id="caption"></div>
     </div>
-
 -->
 
 
+
     <div class="col-md-2 location hidden-xs hidden-sm ">
-        <img src="img/map1.png" class="top " alt="">
+        <div class="top" alt=""></div>
         <address>
   <strong>Example Inc.</strong>
   <br>
@@ -349,37 +403,17 @@
     </div>
 
     <section id="sec2" class="contact-section" style="height: 70vh;">
-        
-
-
-            <!-- <div id="map-container"  class="col-md-8 col-md-push-1 img-rounded "></div> -->
-                       
-
-        <button class="btnmodal btn btn-primary">show modal</button>
-
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg1">
-    <div class="modal-content">
        
-      <iframe src="" frameborder="0" class="iframe-modal"></iframe>
-      </div>
-  </div>
-</div>
+
+
+            <div id="map-container" align="center" class="col-md-8 col-md-push-1 img-rounded "></div>
+
+
+       
+
     </section>
 
 <?= $this->element('footer') ?>
-<script>
-$('.btnmodal').click(function(){
-
-    $('.modal').on('shown.bs.modal',function(){      //correct here use 'shown.bs.modal' event which comes in bootstrap3
-  $(this).find('iframe').attr('src','http://localhost:8765/imagenes-negocios/add1')
-})
-      $('.modal').modal();
-   
-   
-    
-});
-</script>
 
 <script>
         var jumboHeight = $('.jumbotron').outerHeight();
@@ -389,21 +423,11 @@ $('.btnmodal').click(function(){
             $('.bg-1').css('height', (jumboHeight - scrolled) + 'px');
         }
 
-        $(window).scroll(function(e) {
+        $(window).scroll(function() {
             parallax();
         });
     </script>
-<script>
-        //CountDown
-        $('.countdown').downCount({
-            date: '8/1/2017 12:00:00',
-            offset: +1
-        }, function() {
-            //alert('WOOT WOOT, done!');
-        });
 
-        
-    </script>
     <script>
         //CountDown
         $('.countdown-product').downCount({
@@ -415,9 +439,7 @@ $('.btnmodal').click(function(){
 
         
     </script>
-  <script async defer
-      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDkKG7urAJ1fTHIXbcuQDoePM2ReP-LKtQ&callback&sensor=false">
-    </script>
+  
     <script>
         function init_map() {
             var location = new google.maps.LatLng(-37.013179, -62.417755);

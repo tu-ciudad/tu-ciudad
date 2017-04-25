@@ -702,16 +702,14 @@
 
                 that.destroy();
 				
-                that.obj.append('<header class="btn-success" style="font-size: 40px; text-align: center;">success</header>'+
-				'<h3 class="btn-warning" style="text-align: center;">Seras redirigido!</h3>');
-				location.href ="/imagenes-negocios";
-               
+                that.obj.append('<img class="croppedImg" src="' + response.url + '">');
+                if (that.options.outputUrlId !== '') { $('#' + that.options.outputUrlId).val(response.url); }
 
-               
+                that.croppedImg = that.obj.find('.croppedImg');
 
-             
+                that.init();
 
-                
+                that.hideLoader();
 		    }
             if (response.status == 'error') {
                 if (that.options.onError) that.options.onError.call(that,response.message);

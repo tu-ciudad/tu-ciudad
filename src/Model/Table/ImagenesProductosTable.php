@@ -36,10 +36,20 @@ class ImagenesProductosTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
+        $this->addBehavior('Josegonzalez/Upload.Upload', [
+    'foto' => [
+    'path' => 'webroot{DS}files{DS}{model}{DS}{field}{DS}',
+        'keepFilesOnDelete' => false,
+        'keepFoldersOnDelete' => false,
+        'keepFilesOnUpdate' => false
+    ],
+]);
+
         $this->belongsTo('Productos', [
             'foreignKey' => 'productos_id',
             'joinType' => 'INNER'
-        ]);
+        ]
+        );
     }
 
     /**
@@ -50,6 +60,13 @@ class ImagenesProductosTable extends Table
      */
     public function validationDefault(Validator $validator)
     {
+
+        $validator->provider('upload', \Josegonzalez\Upload\Validation\UploadValidation::class);
+    // OR
+         $validator->provider('upload', \Josegonzalez\Upload\Validation\ImageValidation::class);
+    // OR
+         $validator->provider('upload', \Josegonzalez\Upload\Validation\DefaultValidation::class);
+
         $validator
             ->integer('id')
             ->allowEmpty('id', 'create');
@@ -62,6 +79,15 @@ class ImagenesProductosTable extends Table
             ->requirePresence('numero', 'create')
             ->notEmpty('numero');
 
+        $validator
+            ->add('foto', [
+                'validExtension' => [
+                    'rule' => ['mimeType',['image/gif' , 'image/jpeg', 'image/png', 'image/jpg']], // default  ['gif', 'jpeg', 'png', 'jpg']
+                    'last' => true,
+                    'message' => __('Solo puede subir imagenes del tipo: png, jpg o jpeg')
+                ]
+    ]);
+        
         return $validator;
     }
 

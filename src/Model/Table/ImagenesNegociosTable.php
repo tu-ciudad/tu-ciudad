@@ -36,14 +36,14 @@ class ImagenesNegociosTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->addBehavior('Josegonzalez/Upload.Upload', [
+ /*       $this->addBehavior('Josegonzalez/Upload.Upload', [
     'foto' => [
     'path' => 'webroot{DS}files{DS}{model}{DS}{field}{DS}',
         'keepFilesOnDelete' => false,
         'keepFoldersOnDelete' => false,
         'keepFilesOnUpdate' => false
     ],
-]);
+]);*/
         $this->belongsTo('Negocios', [
             'foreignKey' => 'negocios_id',
             'joinType' => 'INNER'
@@ -61,12 +61,12 @@ class ImagenesNegociosTable extends Table
     public function validationDefault(Validator $validator)
     {
 
-        $validator->provider('upload', \Josegonzalez\Upload\Validation\UploadValidation::class);
+    /*    $validator->provider('upload', \Josegonzalez\Upload\Validation\UploadValidation::class);
     // OR
          $validator->provider('upload', \Josegonzalez\Upload\Validation\ImageValidation::class);
     // OR
          $validator->provider('upload', \Josegonzalez\Upload\Validation\DefaultValidation::class);
-
+*/
         $validator
             ->integer('id')
             ->allowEmpty('id', 'create');
@@ -89,7 +89,7 @@ class ImagenesNegociosTable extends Table
                     'message' => __('Solo puede subir imagenes del tipo: png, jpg o jpeg')
                 ]
     ]);
-
+/*
         $validator->add('foto', 'fileBelowMaxSize', [
         'rule' => ['isBelowMaxSize', 10048576],
         'message' => 'This file is too large',
@@ -108,7 +108,7 @@ class ImagenesNegociosTable extends Table
         'message' => 'This image should not be wider than 200px',
         'provider' => 'upload'
     ]);
-
+*/
 
         $validator
             ->allowEmpty('foto_dir');

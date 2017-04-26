@@ -3,6 +3,7 @@
 *	!!! THIS IS JUST AN EXAMPLE !!!, PLEASE USE ImageMagick or some other quality image processing libraries
 */
 $imgUrl = $_POST['imgUrl'];
+$old = $_POST['imgUrl'];
 // original sizes
 $imgInitW = $_POST['imgInitW'];
 $imgInitH = $_POST['imgInitH'];
@@ -80,6 +81,7 @@ if(!is_writable(dirname($output_filename))){
 	// finally output png image
 	//imagepng($final_image, $output_filename.$type, $png_quality);
 	imagejpeg($final_image, $output_filename.$type, $jpeg_quality);
+	unlink($old);
 	$response = Array(
 	    "status" => 'success',
 	    "url" => $output_filename.$type

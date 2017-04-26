@@ -3,6 +3,8 @@
   * @var \App\View\AppView $this
   */
 $this->layout = 'add';
+
+
 ?>
 <?= $this->Html->css('croppic.css') ?>
 <?= $this->Html->css('main.css') ?>
@@ -10,8 +12,8 @@ $this->layout = 'add';
 <?= $this->Html->script('croppic') ?>
 <style>
 #yourId{ 
-        width: 500px;  /* MANDATORY */  /*ancho del div y del recorte de la imagen*/
-        height: 500px; /* MANDATORY */  /*alto del div y del recorte de la imagen*/
+        width: 400px;  /* MANDATORY */  /*ancho del div y del recorte de la imagen*/
+        height: 400px; /* MANDATORY */  /*alto del div y del recorte de la imagen*/
         position: relative;  /* MANDATORY */
         
         /margin: 50px 70px 20px;
@@ -25,12 +27,35 @@ $this->layout = 'add';
         box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
       } 
  </style>
-
-
-
-
-
 <div id="yourId"></div> <!-- este llama al form para el recorte -->
+ <form enctype="multipart/form-data" method="post" accept-charset="utf-8" class="form-group" id="fperfil" action="/imagenes-negocios/add1" onsubmit="return false">
+             <div style="display: none;">
+                 <input type="hidden" name="_method" value="POST">
+             </div>
+             <fieldset>
+                 <div class="input select required">
+                     <label for="ubicacion">Ubicacion</label>
+                     <select name="ubicacion" required="required" id="ubicacion">
+                         <option value="perfil">perfil</option>
+                     </select>
+                 </div>
+                 <div class="input select">
+                     <label for="negocios-id">Negocios</label>
+                     <select name="negocios_id" id="negocios-id">
+                        <option value="1">1</option>
+                     </select>
+                 </div>
+                 <div class="input file">
+                     <label class="labelf" for="foto">url</label>
+                     <input type="text" name="foto" id="foto" >
+                 </div>
+             </fieldset>
+             <button class="btn btn-primary" type="submit">Submit</button>
+         </form> 
+
+
+
+
 
 
 <script src=" https://code.jquery.com/jquery-2.1.3.min.js"></script>
@@ -42,7 +67,8 @@ $this->layout = 'add';
         var croppicOpt = {
         uploadUrl:'img_save_to_file.php',
         cropUrl:'img_crop_to_file.php',  //realiza el proceso de corte
-        outputUrlId:'outputUrlId', //link de donde se guardó
+
+        outputUrlId:'foto', //link de donde se guardó
         processInline:false,
     } 
     var croppic = new Croppic('yourId', croppicOpt);
@@ -51,14 +77,6 @@ $this->layout = 'add';
         
         
     </script>
-
-
-
-
-
-
-
-
 
 
 

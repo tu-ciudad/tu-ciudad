@@ -28,7 +28,7 @@ $this->layout = 'add';
       } 
  </style>
 <div id="yourId"></div> <!-- este llama al form para el recorte -->
- <form enctype="multipart/form-data" method="post" accept-charset="utf-8" class="form-group" id="fperfil" action="/imagenes-negocios/add1" onsubmit="return false">
+ <form enctype="multipart/form-data" method="post" accept-charset="utf-8" class="form-group" id="fperfil" action="/imagenes-negocios/add1">
              <div style="display: none;">
                  <input type="hidden" name="_method" value="POST">
              </div>

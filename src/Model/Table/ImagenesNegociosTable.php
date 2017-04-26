@@ -81,7 +81,7 @@ class ImagenesNegociosTable extends Table
         $validator
             ->allowEmpty('foto');
         
-        $validator
+  /*      $validator
             ->add('foto', [
                 'validExtension' => [
                     'rule' => ['mimeType',['image/gif' , 'image/jpeg', 'image/png', 'image/jpg']], // default  ['gif', 'jpeg', 'png', 'jpg']

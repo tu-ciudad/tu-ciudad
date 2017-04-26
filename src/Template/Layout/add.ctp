@@ -48,7 +48,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
      <?= $this->Html->css('animate.css') ?>
     
 
-    <?= $this->Html->script(array('jquery-3.2.1.min', 'pace.min', 'bootstrap.min', 'parallax', 'scrolling-nav', 'countdown', 'afixx')); ?>
+    <?= $this->Html->script(array('jquery-3.2.1.min', 'pace.min', 'bootstrap.min')); ?>
 
     
 

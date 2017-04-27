@@ -6,31 +6,7 @@
 ?>
 <script async defer src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDkKG7urAJ1fTHIXbcuQDoePM2ReP-LKtQ&callback=initMap"></script>
 
- 
-<div class="container">
-    <div class="profile clearfix">
-        <img align="left" class="image-lg" src="../../img/portada_850x280.jpg" alt="Profile image example"/>
-        <img align="left" class="image-profile thumbnail" src="../../img/asd.png" alt="Profile image example"/>
-        <div class="user">
-        <div class="profile-text clearfix">
-            <h1>Local Perfil</h1>
-            
-             
-            <p><span class="glyphicon glyphicon-globe"></span> St. Revutskogo, Kiev, Ukraine</p>                                    
-            <p><span class="glyphicon glyphicon-gift"></span> Regaleria, bazar, escolar</p>                                
-         
-        </div>
-        <div class="actions clearfix">
-             <div class="btn-group">
-                  <button class="btn btn-default btn-md tip btn-responsive" title="" data-original-title="Add to friends"><span class=" glyphicon glyphicon-earphone glyphicon glyphicon-white"></span> llamar</button>
-                  <button class="btn btn-default btn-md tip btn-responsive" title="" data-original-title="Send message"><span class="glyphicon glyphicon-envelope glyphicon glyphicon-white"></span> Mensaje</button>
-                 <button class="btn btn-default btn-md tip btn-responsive" title="" data-original-title="Recommend"><span class="glyphicon glyphicon-share-alt glyphicon glyphicon-white"></span> Recomendar</button>
-            </div>
-        </div>
-        </div>
-    </div>
-</div> <!-- /container -->  
-<br>
+
     <div class="container-fluid">
 
         <div class="row">

@@ -16,7 +16,7 @@ $this->layout = 'add';
         height: 400px; /* MANDATORY */  /*alto del div y del recorte de la imagen*/
         position: relative;  /* MANDATORY */
         
-        /margin: 50px 70px 20px;
+        margin: 0 auto;
         border: 3px  solid #FFF;
         box-sizing: content-box;
         -moz-box-sizing: content-box;
@@ -24,33 +24,28 @@ $this->layout = 'add';
         background-image: url(../img/placeholder.png);
         background-repeat: no-repeat;
         background-position: center;
-        box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
+        /box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
       } 
  </style>
 <div id="yourId"></div> <!-- este llama al form para el recorte -->
- <form enctype="multipart/form-data" method="post" accept-charset="utf-8" class="form-group" id="fperfil" action="/imagenes-negocios/add1">
+ <form enctype="multipart/form-data" method="post" accept-charset="utf-8" class="form-group" id="fperfil" action="/imagenes-negocios/add1" onsubmit="window.parent.closeModal();">
              <div style="display: none;">
                  <input type="hidden" name="_method" value="POST">
              </div>
              <fieldset>
-                 <div class="input select required">
-                     <label for="ubicacion">Ubicacion</label>
-                     <select name="ubicacion" required="required" id="ubicacion">
-                         <option value="perfil">perfil</option>
-                     </select>
-                 </div>
-                 <div class="input select">
-                     <label for="negocios-id">Negocios</label>
-                     <select name="negocios_id" id="negocios-id">
-                        <option value="1">1</option>
-                     </select>
-                 </div>
-                 <div class="input file">
-                     <label class="labelf" for="foto">url</label>
-                     <input type="text" name="foto" id="foto" >
-                 </div>
+               
+                         <input type="hidden" name="ubicacion" required="required" id="ubicacion" value="perfil">
+                 
+                        <input type="hidden" name="negocios_id" id="negocios-id" value="1">
+                   
+                 
+                     
+                     <input type="hidden" name="foto" id="foto" >
+            
              </fieldset>
-             <button class="btn btn-primary" type="submit">Submit</button>
+             <br>
+
+             <button style="width: 100%; position: absolute;" class="btn btn-primary" type="submit">Submit</button>
          </form> 
 
 
@@ -77,8 +72,6 @@ $this->layout = 'add';
         
         
     </script>
-
-
 
 
 

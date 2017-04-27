@@ -7,7 +7,7 @@
 <script async defer
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDkKG7urAJ1fTHIXbcuQDoePM2ReP-LKtQ&callback=initMap">
     </script>
-<?= $this->element('jumbotron') ?>
+<?= $this->element('jumbotron02') ?>
    
     <div class="container-fluid">
 

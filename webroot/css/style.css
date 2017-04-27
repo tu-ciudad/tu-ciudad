@@ -411,8 +411,11 @@ section {
 .iframe-modal {
     height: 480px;
     width: 480px;
+    overflow:hidden;
 }
-
+iframe {
+    overflow:hidden;
+}
 @media (min-width: 992px) {
     .modal-lg1 {
         width: 480px;
@@ -1997,68 +2000,28 @@ figure {
       box-shadow: none; }
 
 
-      /****************************prueba-css-jumb*********************/
+     
 /* ==========================================================================
-   Author's custom styles
+    /****************************jumbo nuevo only css*********************
    ========================================================================== */
 
-body
-{
-    font-family: 'Open Sans', sans-serif;
-}
-
-.profile img.image-lg{
+.profile img.image-lg{ /*portada*/
     z-index: 0;
     width: 100%;  
     margin-bottom: 10px;
     
 }
-
 .image-profile
-{   
+{   /*imagen perfil original*/
     margin: -125px 10px 0px 50px;
     z-index: 9;
-    width: 20%; 
+    width: 100%; 
+    opacity: 1;
 }
 .profile-text {
     float: left;
-    margin-top: -20px;
-}
-
-@media (max-width:992px)
-{
-.profile-text {
-    font-weight: 500;
-    font-size:11px;
-    float: left;
-}
-.profile-text h1 {
-    font-weight: 600;
-    font-size:19px;
-    /float: left;
-}
-.image-profile
-{
-    margin: -90px 10px 0px 25px;
-    z-index: 9;
-    width: 20%; 
-}
-}
-
-@media (max-width:768px)
-{
-    
-.profile-text>h1{
-    font-weight: 700;
-    font-size:16px;
-}
-
-.image-profile
-{
-    margin: -45px 10px 0px 25px;
-    z-index: 9;
-    width: 20%; 
-}
+    margin-top: -25px;
+    margin-left: 5%;
 }
 
 .profile .user {
@@ -2073,8 +2036,115 @@ body
 .profile .actions .btn {
   margin-bottom: 0px;
 }
+/*------------boton "combiar" imagen--------*/
+div.show-image {
+    position: relative;
+    float:left;
+    width: 20%;
 
-  
+}
+
+div.show-image button.btn-default {
+    position:absolute;
+    display:none;
+   -webkit-transition: all 0.25s ease-in;
+   -moz-transition: all 0.25s ease-in;
+   -ms-transition: all 0.25s ease-in;
+   -o-transition: all 0.25s ease-in;
+   transition: all 0.25s ease-in;
+}
+div.show-image:hover button.btn-default {
+    position:absolute;
+    display: block;
+    opacity: 1;
+    border-radius: 0px;    
+}
+
+div.show-image button.update {
+    width: 100%;
+    margin: -125px 10px 0px 50px; /*el mismo margin que la imagen*/
+    /top: calc(0% + 6px);
+    /left: calc(100% - 67px);
+}
+/********************************
+************@media querys********/
+@media (max-width:1200px)
+{
+.profile-text {
+    font-weight: 500;
+    font-size:11px;
+    float: left;
+    margin-left: 7%;
+}
+.image-profile
+{
+    margin: -110px 10px 0px 25px;
+    z-index: 9;
+    /width: 20%; 
+}
+div.show-image button.update {
+     width: 100%;
+     margin: -110px 10px 0px 25px; /*el mismo margin que la imagen*/
+    /top: calc(0% + 6px);
+    /left: calc(100% - 67px);
+}
+}
+
+@media (max-width:992px)
+{
+.profile-text {
+    font-weight: 500;
+    font-size:11px;
+    float: left;
+    margin-left: 5%;
+}
+.profile-text h1 {
+    font-weight: 600;
+    font-size:19px;
+    /float: left;
+}
+.image-profile
+{
+    margin: -80px 10px 0px 25px;
+    z-index: 9;
+    /width: 20%; 
+}
+div.show-image button.update {
+     width: 100%;
+     margin: -80px 10px 0px 25px; /*el mismo margin que la imagen*/
+    /top: calc(0% + 6px);
+    /left: calc(100% - 67px);
+}
+}
+
+@media (max-width:768px)
+{
+.profile-text {
+    font-weight: 500;
+    font-size:11px;
+    float: left;
+    margin-left: 16%;
+}
+
+.profile-text>h1{
+    font-weight: 700;
+    font-size:16px;
+}
+
+.image-profile
+{
+    margin: -8px 10px 0px 10px;
+    z-index: 9;
+    width: 150%; 
+}
+div.show-image button.update {
+     width: 150%;
+     margin: -8px 10px 0px 10px; /*el mismo margin que la imagen*/
+    /top: calc(0% + 6px);
+    /left: calc(100% - 67px);
+}
+}
+
 @media (max-width: 768px) {
   .btn-responsive {
     padding:2px 4px;
@@ -2091,4 +2161,11 @@ body
     line-height: 1.2;
   }
 }
+
+/************************************
+*************fin media querys********/
+
+/*************************fin jumbo nuevo*******************/
+
+
 

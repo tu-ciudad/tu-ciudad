@@ -141,3 +141,8 @@ $('.btnmodal').click(function(){
     
 });
 </script>
+<script>
+window.closeModal = function(){
+    $('.modal').modal('hide');
+};
+</script>

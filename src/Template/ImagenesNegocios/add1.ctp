@@ -112,20 +112,20 @@ $this->layout = 'add';
                  <input type="hidden" name="_method" value="POST">
              </div>
              <fieldset>
-                <div class="field">
+                
                     <input type="hidden" name="ubicacion" required="required" id="ubicacion" value="perfil">
-                </div>
-                 <div class="fiend">
+               
+                
                     <input type="hidden" name="negocios_id" id="negocios-id" value="1">
-                 </div>
+                
                    
-                 <div class="actions">
-                     
-                     <input type="text" name="foto" id="foto" style="visibility: hidden;" required>
+                 <div class="field">
+                     <br>
+                     <input type="text" name="foto" id="foto" style="position: absolute; opacity: 0;" required >
                  </div>
                      
             
-             <input style="width: 100%; position: absolute;" class="btn btn-primary" type="submit" value="Guardar" >
+             <button style="width: 100%; position: absolute;" class="btn btn-primary" type="submit"  id="dis">Guardar</button>
              </fieldset>
              <br>
 
@@ -138,10 +138,6 @@ $this->layout = 'add';
 
 <script src=" https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script>
-       
-      
-        
-
         var croppicOpt = {
         uploadUrl:'img_save_to_file.php',
         cropUrl:'img_crop_to_file.php',  //realiza el proceso de corte
@@ -149,13 +145,23 @@ $this->layout = 'add';
         outputUrlId:'foto', //link de donde se guardó
         processInline:false,
     } 
-    var croppic = new Croppic('yourId', croppicOpt);
-     
-  
-        
-        
-    </script>
+    var croppic = new Croppic('yourId', croppicOpt);     
+</script>
 
+<script> //cambia el texto de la validacion (si hay imagen subida y cortada)
+  $('#fperfil input[type=text]').on('change invalid', function() {
+    var textfield = $(this).get(0);
+    
+    // 'setCustomValidity not only sets the message, but also marks
+    // the field as invalid. In order to see whether the field really is
+    // invalid, we have to remove the message first
+    textfield.setCustomValidity('');
+    
+    if (!textfield.validity.valid) {
+      textfield.setCustomValidity('Debe subir una imagen!');  
+    }
+});
+</script>
 
 
 

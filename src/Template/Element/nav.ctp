@@ -3,7 +3,7 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="navbar  navbar-fixed-top border-bot" id="navi" data-spy="affix" data-offset-top="50" role="navigation">
+<nav class="navbar  navbar-fixed-top border-bot"  role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header footer-distributed1">

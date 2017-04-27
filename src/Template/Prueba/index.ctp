@@ -4,62 +4,33 @@
   * @var \App\View\AppView $this
   */
 ?>
-<script async defer
-      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDkKG7urAJ1fTHIXbcuQDoePM2ReP-LKtQ&callback=initMap">
-    </script>
+<script async defer src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDkKG7urAJ1fTHIXbcuQDoePM2ReP-LKtQ&callback=initMap"></script>
+
+ 
+<div class="container">
+    <div class="profile clearfix">
+        <img align="left" class="image-lg" src="../../img/portada_850x280.jpg" alt="Profile image example"/>
+        <img align="left" class="image-profile thumbnail" src="../../img/asd.png" alt="Profile image example"/>
+        <div class="user">
+        <div class="profile-text clearfix">
+            <h1>Local Perfil</h1>
+            
+             
+            <p><span class="glyphicon glyphicon-globe"></span> St. Revutskogo, Kiev, Ukraine</p>                                    
+            <p><span class="glyphicon glyphicon-gift"></span> Regaleria, bazar, escolar</p>                                
+         
+        </div>
+        <div class="actions clearfix">
+             <div class="btn-group">
+                  <button class="btn btn-default btn-md tip btn-responsive" title="" data-original-title="Add to friends"><span class=" glyphicon glyphicon-earphone glyphicon glyphicon-white"></span> llamar</button>
+                  <button class="btn btn-default btn-md tip btn-responsive" title="" data-original-title="Send message"><span class="glyphicon glyphicon-envelope glyphicon glyphicon-white"></span> Mensaje</button>
+                 <button class="btn btn-default btn-md tip btn-responsive" title="" data-original-title="Recommend"><span class="glyphicon glyphicon-share-alt glyphicon glyphicon-white"></span> Recomendar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div> <!-- /container -->  
 <br>
-<br>
-<br>
-<br>
-   
-    <button class="btnmodal btn btn-primary">show modal</button>
-
-  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg1">
-       <div class="modal-content">
-         <form enctype="multipart/form-data" method="post" accept-charset="utf-8" class="form-group" id="fperfil" action="/imagenes-negocios/add1" onsubmit="return false">
-             <div style="display: none;">
-                 <input type="hidden" name="_method" value="POST">
-             </div>
-             <fieldset>
-                 <div class="input select required">
-                     <label for="ubicacion">Ubicacion</label>
-                     <select name="ubicacion" required="required" id="ubicacion">
-                         <option value="perfil">perfil</option>
-                     </select>
-                 </div>
-                 <div class="input select">
-                     <label for="negocios-id">Negocios</label>
-                     <select name="negocios_id" id="negocios-id">
-                        <option value="1">1</option>
-                     </select>
-                 </div>
-                 <div class="input file">
-                     <label class="labelf" for="foto">Seleccione una imagen</label>
-                     <input type="file" name="foto" id="foto">
-                 </div>
-             </fieldset>
-             <button class="btn btn-primary" type="submit">Submit</button>
-         </form> 
-                                      
-      </div>
-  </div>
- </div>
-
-
- <script>
-$('.btnmodal').click(function(){
-
-    $('.modal').on('shown.bs.modal',function(){      //correct here use 'shown.bs.modal' event which comes in bootstrap3
-  $(this).find('iframe').attr('src','http://localhost:8765/imagenes-negocios/add1')
-})
-      $('.modal').modal();
-   
-   
-    
-});
-
-</script>
     <div class="container-fluid">
 
         <div class="row">

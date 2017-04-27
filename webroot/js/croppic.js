@@ -12,6 +12,7 @@
 		that.id = id;
 		that.obj = $('#' + id);
 		that.outputDiv = that.obj;
+		var ubicacion = '../../webroot/files/ImagenesNegocios/foto/';
 
 		// DEFAULT OPTIONS
 		that.options = {
@@ -702,7 +703,7 @@
 
                 that.destroy();
 				
-                that.obj.append('<img class="croppedImg" src="' + response.url + '">');
+                that.obj.append('<img class="croppedImg" src="../../files/ImagenesNegocios/foto/' + response.url + '">');
                 if (that.options.outputUrlId !== '') { $('#' + that.options.outputUrlId).val(response.url); }
 
                 that.croppedImg = that.obj.find('.croppedImg');

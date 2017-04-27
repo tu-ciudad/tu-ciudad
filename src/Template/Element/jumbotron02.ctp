@@ -5,7 +5,7 @@
         <div class="show-image">
         <img align="left" class="image-profile thumbnail" src=<?= $fperfil ?> >
           <button class="update btn btn-default btnmodal">
-          <span class=" glyphicon glyphicon-cog glyphicon glyphicon-white"></span> Cambiar</button>
+          <span class="glyphicon glyphicon-camera glyphicon glyphicon-white"></span> Cambiar</button>
             <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                  <div class="modal-dialog modal-lg1">
                    <div class="modal-content">
@@ -36,21 +36,38 @@
 </div> <!-- /container -->  
 <br>
 
+<div id="snackbar"> <!-- cartel de success, recargar pagina -->
+<button type="button" class="close" data-dismiss="#snackbar" aria-label="Close" onclick="window.closeSnackbar();" >
+    <span aria-hidden="true"> &times;</span>
+  </button> 
+    <strong>
+      <span class="glyphicon glyphicon-refresh glyphicon glyphicon-white"></span>
+      <a href="#" class="alert-link" onClick="window.location.reload()">&nbsp;Recarga</a>
+    </strong> la pagina para ver los cambios!&nbsp;&nbsp; </div> <!-- fin de cartel -->
 
 <script>
-$('.btnmodal').click(function(){
+$('.btnmodal').click(function(){ //onclick en fpefil, abre modal con iframe dentro
 
     $('.modal').on('shown.bs.modal',function(){      //correct here use 'shown.bs.modal' event which comes in bootstrap3
-  $(this).find('iframe').attr('src','http://localhost:8765/imagenes-negocios/add1')
+  $(this).find('iframe').attr('src','/imagenes-negocios/add1')
 })
       $('.modal').modal();
-   
-   
-    
 });
 </script>
 <script>
-window.closeModal = function(){
+window.closeModal = function(){ //onsubmit cerrar modal y mostar snackbar
     $('.modal').modal('hide');
+// Get the snackbar DIV
+    var x = document.getElementById("snackbar")
+
+    // Add the "show" class to DIV
+    x.className = "show";
+
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 8000);
 };
+window.closeSnackbar = function(){ //boton X de snackbar
+    var y = document.getElementById("snackbar")
+    y.className = "hidden";
+    }
 </script>

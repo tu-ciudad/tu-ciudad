@@ -1,4 +1,5 @@
  <!-- jumbotron nuevo fb style -->
+
 <div class="container">
     <div class="profile clearfix"> <!-- imagenes -->
         <img align="left" class="image-lg" src="../../img/portada_850x280.jpg" alt="Profile image example"/>
@@ -32,9 +33,13 @@
             </div> <!-- /botones derecha -->
         </div>
         </div>
+     
     </div>
-</div> <!-- /container -->  
+</div>
+ <!-- /container -->  
+
 <br>
+
 
 <div id="snackbar"> <!-- cartel de success, recargar pagina -->
 <button type="button" class="close" data-dismiss="#snackbar" aria-label="Close" onclick="window.closeSnackbar();" >

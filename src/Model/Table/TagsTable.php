@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
  * Tags Model
  *
  * @property \Cake\ORM\Association\BelongsToMany $Negocios
- * @property \Cake\ORM\Association\BelongsToMany $Publicaciones
+ * @property \Cake\ORM\Association\BelongsToMany $Productos
  *
  * @method \App\Model\Entity\Tag get($primaryKey, $options = [])
  * @method \App\Model\Entity\Tag newEntity($data = null, array $options = [])
@@ -42,10 +42,10 @@ class TagsTable extends Table
             'targetForeignKey' => 'negocio_id',
             'joinTable' => 'negocios_tags'
         ]);
-        $this->belongsToMany('Publicaciones', [
+        $this->belongsToMany('Productos', [
             'foreignKey' => 'tag_id',
-            'targetForeignKey' => 'publicacione_id',
-            'joinTable' => 'publicaciones_tags'
+            'targetForeignKey' => 'producto_id',
+            'joinTable' => 'productos_tags'
         ]);
     }
 

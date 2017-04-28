@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\TagsTable;
+use App\Model\Table\ProductosTagsTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\TagsTable Test Case
+ * App\Model\Table\ProductosTagsTable Test Case
  */
-class TagsTableTest extends TestCase
+class ProductosTagsTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\TagsTable
+     * @var \App\Model\Table\ProductosTagsTable
      */
-    public $Tags;
+    public $ProductosTags;
 
     /**
      * Fixtures
@@ -24,12 +24,12 @@ class TagsTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.tags',
+        'app.productos_tags',
+        'app.productos',
         'app.negocios',
         'app.lugares',
-        'app.negocios_tags',
-        'app.productos',
-        'app.productos_tags'
+        'app.tags',
+        'app.negocios_tags'
     ];
 
     /**
@@ -40,8 +40,8 @@ class TagsTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Tags') ? [] : ['className' => 'App\Model\Table\TagsTable'];
-        $this->Tags = TableRegistry::get('Tags', $config);
+        $config = TableRegistry::exists('ProductosTags') ? [] : ['className' => 'App\Model\Table\ProductosTagsTable'];
+        $this->ProductosTags = TableRegistry::get('ProductosTags', $config);
     }
 
     /**
@@ -51,7 +51,7 @@ class TagsTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Tags);
+        unset($this->ProductosTags);
 
         parent::tearDown();
     }
@@ -72,6 +72,16 @@ class TagsTableTest extends TestCase
      * @return void
      */
     public function testValidationDefault()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test buildRules method
+     *
+     * @return void
+     */
+    public function testBuildRules()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

@@ -12,8 +12,8 @@
         <li><?= $this->Html->link(__('New Tag'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Negocios'), ['controller' => 'Negocios', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Negocio'), ['controller' => 'Negocios', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Publicaciones'), ['controller' => 'Publicaciones', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Publicacione'), ['controller' => 'Publicaciones', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Productos'), ['controller' => 'Productos', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Producto'), ['controller' => 'Productos', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="tags view large-9 medium-8 columns content">
@@ -64,8 +64,8 @@
         <?php endif; ?>
     </div>
     <div class="related">
-        <h4><?= __('Related Publicaciones') ?></h4>
-        <?php if (!empty($tag->publicaciones)): ?>
+        <h4><?= __('Related Productos') ?></h4>
+        <?php if (!empty($tag->productos)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
@@ -76,18 +76,18 @@
                 <th scope="col"><?= __('Negocios Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
-            <?php foreach ($tag->publicaciones as $publicaciones): ?>
+            <?php foreach ($tag->productos as $productos): ?>
             <tr>
-                <td><?= h($publicaciones->id) ?></td>
-                <td><?= h($publicaciones->titulo) ?></td>
-                <td><?= h($publicaciones->cuerpo) ?></td>
-                <td><?= h($publicaciones->fecha) ?></td>
-                <td><?= h($publicaciones->precio) ?></td>
-                <td><?= h($publicaciones->negocios_id) ?></td>
+                <td><?= h($productos->id) ?></td>
+                <td><?= h($productos->titulo) ?></td>
+                <td><?= h($productos->cuerpo) ?></td>
+                <td><?= h($productos->fecha) ?></td>
+                <td><?= h($productos->precio) ?></td>
+                <td><?= h($productos->negocios_id) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Publicaciones', 'action' => 'view', $publicaciones->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Publicaciones', 'action' => 'edit', $publicaciones->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Publicaciones', 'action' => 'delete', $publicaciones->id], ['confirm' => __('Are you sure you want to delete # {0}?', $publicaciones->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['controller' => 'Productos', 'action' => 'view', $productos->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'Productos', 'action' => 'edit', $productos->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Productos', 'action' => 'delete', $productos->id], ['confirm' => __('Are you sure you want to delete # {0}?', $productos->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

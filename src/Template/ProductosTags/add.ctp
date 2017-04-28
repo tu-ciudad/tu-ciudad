@@ -6,19 +6,19 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Publicaciones Tags'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Publicaciones'), ['controller' => 'Publicaciones', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Publicacione'), ['controller' => 'Publicaciones', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Productos Tags'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List Productos'), ['controller' => 'Productos', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Producto'), ['controller' => 'Productos', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Tags'), ['controller' => 'Tags', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Tag'), ['controller' => 'Tags', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="publicacionesTags form large-9 medium-8 columns content">
-    <?= $this->Form->create($publicacionesTag) ?>
+<div class="productosTags form large-9 medium-8 columns content">
+    <?= $this->Form->create($productosTag) ?>
     <fieldset>
-        <legend><?= __('Add Publicaciones Tag') ?></legend>
+        <legend><?= __('Add Productos Tag') ?></legend>
         <?php
-            echo $this->Form->control('publicaciones_id', ['options' => $publicaciones]);
+            echo $this->Form->control('productos_id', ['options' => $productos]);
             echo $this->Form->control('tags_id', ['options' => $tags]);
         ?>
     </fieldset>

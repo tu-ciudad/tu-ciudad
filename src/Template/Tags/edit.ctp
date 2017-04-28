@@ -15,8 +15,8 @@
         <li><?= $this->Html->link(__('List Tags'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Negocios'), ['controller' => 'Negocios', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Negocio'), ['controller' => 'Negocios', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Publicaciones'), ['controller' => 'Publicaciones', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Publicacione'), ['controller' => 'Publicaciones', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Productos'), ['controller' => 'Productos', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Producto'), ['controller' => 'Productos', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="tags form large-9 medium-8 columns content">
@@ -26,7 +26,7 @@
         <?php
             echo $this->Form->control('nombre');
             echo $this->Form->control('negocios._ids', ['options' => $negocios]);
-            echo $this->Form->control('publicaciones._ids', ['options' => $publicaciones]);
+            echo $this->Form->control('productos._ids', ['options' => $productos]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

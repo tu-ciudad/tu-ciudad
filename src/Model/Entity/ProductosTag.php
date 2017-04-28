@@ -4,15 +4,16 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Tag Entity
+ * ProductosTag Entity
  *
  * @property int $id
- * @property string $nombre
+ * @property int $productos_id
+ * @property int $tags_id
  *
- * @property \App\Model\Entity\Negocio[] $negocios
- * @property \App\Model\Entity\Producto[] $productos
+ * @property \App\Model\Entity\Producto $producto
+ * @property \App\Model\Entity\Tag $tag
  */
-class Tag extends Entity
+class ProductosTag extends Entity
 {
 
     /**

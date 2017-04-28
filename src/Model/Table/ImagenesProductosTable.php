@@ -35,16 +35,6 @@ class ImagenesProductosTable extends Table
         $this->setTable('imagenes_productos');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
-
-        $this->addBehavior('Josegonzalez/Upload.Upload', [
-    'foto' => [
-    'path' => 'webroot{DS}files{DS}{model}{DS}{field}{DS}',
-        'keepFilesOnDelete' => false,
-        'keepFoldersOnDelete' => false,
-        'keepFilesOnUpdate' => false
-    ],
-]);
-
         $this->belongsTo('Productos', [
             'foreignKey' => 'productos_id',
             'joinType' => 'INNER'
@@ -60,13 +50,6 @@ class ImagenesProductosTable extends Table
      */
     public function validationDefault(Validator $validator)
     {
-
-        $validator->provider('upload', \Josegonzalez\Upload\Validation\UploadValidation::class);
-    // OR
-         $validator->provider('upload', \Josegonzalez\Upload\Validation\ImageValidation::class);
-    // OR
-         $validator->provider('upload', \Josegonzalez\Upload\Validation\DefaultValidation::class);
-
         $validator
             ->integer('id')
             ->allowEmpty('id', 'create');

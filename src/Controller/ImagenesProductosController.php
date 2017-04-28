@@ -2,6 +2,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Datasource\ConnectionManager;
+use Cake\Filesystem\File;
 
 /**
  * ImagenesProductos Controller
@@ -54,12 +56,37 @@ class ImagenesProductosController extends AppController
         $imagenesProducto = $this->ImagenesProductos->newEntity();
         if ($this->request->is('post')) {
             $imagenesProducto = $this->ImagenesProductos->patchEntity($imagenesProducto, $this->request->getData());
-            if ($this->ImagenesProductos->save($imagenesProducto)) {
-                $this->Flash->success(__('The imagenes producto has been saved.'));
+             //borro una imagen si ya existe
+            $query = $this->ImagenesProductos->query();
+            $ruta = $this->ImagenesProductos->find()->select(['foto'])->where(['productos_id' => $imagenesProducto->productos_id, 'numero' => $imagenesProducto->numero])
+    ->toArray();
+    if ($ruta != null){
+      if(is_array($ruta)){
+          $ruta = $ruta[0]->foto;
+          }
+      else 
+      {
+        $ruta = $ruta->foto;
+        }
+            $query->delete()
+    ->where(['productos_id' => $imagenesProducto->productos_id, 'numero' => $imagenesProducto->numero])
+    ->execute();
+            unlink( ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'ImagenesProductos' . DIRECTORY_SEPARATOR . 'foto' . DIRECTORY_SEPARATOR . $ruta);
+        }
+        //.................................
 
-                return $this->redirect(['action' => 'index']);
+
+
+if ($this->ImagenesProductos->save($imagenesProducto)) {
+            $conexion = ConnectionManager::get('default');
+            $res = $conexion->execute('Call renombrarfotoprod(?)',[$imagenesProducto->foto])->fetchAll('assoc');
+            $mensaje = $res[0]['@mensaje'];
+           rename( ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'ImagenesProductos' . DIRECTORY_SEPARATOR . 'foto' .DIRECTORY_SEPARATOR. $imagenesProducto->foto, ROOT . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'ImagenesProductos' . DIRECTORY_SEPARATOR . 'foto' . DIRECTORY_SEPARATOR . $mensaje);
+
+                $this->Flash->success(__('The imagenes negocio has been saved.'));
+                return $this->redirect(['action' => 'index']);;
             }
-            $this->Flash->error(__('The imagenes producto could not be saved. Please, try again.'));
+            $this->Flash->error(__('The imagenes negocio could not be saved. Please, try again.'));
         }
         $productos = $this->ImagenesProductos->Productos->find('list', ['limit' => 200]);
         $this->set(compact('imagenesProducto', 'productos'));

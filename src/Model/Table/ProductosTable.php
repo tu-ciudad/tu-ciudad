@@ -10,6 +10,7 @@ use Cake\Validation\Validator;
  * Productos Model
  *
  * @property \Cake\ORM\Association\BelongsTo $Negocios
+ * @property \Cake\ORM\Association\BelongsToMany $Tags
  *
  * @method \App\Model\Entity\Producto get($primaryKey, $options = [])
  * @method \App\Model\Entity\Producto newEntity($data = null, array $options = [])
@@ -40,6 +41,11 @@ class ProductosTable extends Table
             'foreignKey' => 'negocios_id',
             'joinType' => 'INNER'
         ]);
+        $this->belongsToMany('Tags', [
+            'foreignKey' => 'producto_id',
+            'targetForeignKey' => 'tag_id',
+            'joinTable' => 'productos_tags'
+        ]);
     }
 
     /**
@@ -63,7 +69,7 @@ class ProductosTable extends Table
             ->notEmpty('cuerpo');
 
         $validator
-            ->date('fecha')
+            ->dateTime('fecha')
             ->requirePresence('fecha', 'create')
             ->notEmpty('fecha');
 

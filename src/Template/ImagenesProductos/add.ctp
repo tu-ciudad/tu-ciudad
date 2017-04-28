@@ -16,7 +16,6 @@
     <fieldset>
         <legend><?= __('Add Imagenes Producto') ?></legend>
         <?php
-            echo $this->Form->control('foto');
             echo $this->Form->control('numero');
             echo $this->Form->control('foto',['type' => 'file']);
             echo $this->Form->control('productos_id');

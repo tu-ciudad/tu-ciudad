@@ -3,8 +3,8 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
+<nav class="col-md-2 columns" id="actions-sidebar">
+    <ul class="nav nav-stacked">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Imagenes Producto'), ['action' => 'edit', $imagenesProducto->id]) ?> </li>
         <li><?= $this->Form->postLink(__('Delete Imagenes Producto'), ['action' => 'delete', $imagenesProducto->id], ['confirm' => __('Are you sure you want to delete # {0}?', $imagenesProducto->id)]) ?> </li>
@@ -14,9 +14,9 @@
         <li><?= $this->Html->link(__('New Producto'), ['controller' => 'Productos', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="imagenesProductos view large-9 medium-8 columns content">
+<div class="imagenesProductos col-md-8 index  columns content">
     <h3><?= h($imagenesProducto->id) ?></h3>
-    <table class="vertical-table">
+    <table class="table table-striped">
         <tr>
             <th scope="row"><?= __('Foto') ?></th>
             <td><?= h($imagenesProducto->foto) ?></td>

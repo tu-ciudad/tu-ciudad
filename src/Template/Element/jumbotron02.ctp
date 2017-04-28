@@ -5,9 +5,9 @@
         <img align="left" class="image-lg" src="../../img/portada_850x280.jpg" alt="Profile image example"/>
         <div class="show-image">
         <img align="left" class="image-profile thumbnail" src=<?= $fperfil ?> >
-          <button class="update btn btn-default btnmodal">
+          <button class="update btn btn-default btnmodal" data-toggle="modal" data-target="#myModal">
           <span class="glyphicon glyphicon-camera glyphicon glyphicon-white"></span> Cambiar</button>
-            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div id="myModal" class="modal ifrmodal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                  <div class="modal-dialog modal-lg1">
                    <div class="modal-content">
                                          
@@ -50,14 +50,29 @@
       <a href="#" class="alert-link" onClick="window.location.reload()">&nbsp;Recarga</a>
     </strong> la pagina para ver los cambios!&nbsp;&nbsp; </div> <!-- fin de cartel -->
 
-<script>
+
+<script>//abre cualquier modal de tipo: target=mymodalid con su respectivo id=mymodalid 
+  function centerModal() {
+    $(this).css('display', 'block');
+    var $dialog = $(this).find(".modal-dialog");
+    var offset = ($(window).height() - $dialog.height()) / 2;
+    // Center modal vertically in window
+    $dialog.css("margin-top", offset);
+}
+
+$('.modal').on('show.bs.modal', centerModal);
+$(window).on("resize", function () {
+    $('.modal:visible').each(centerModal);
+});
+</script>
+<script> //carga el iframe al abrir el modal, y lo recarga cada ves que se abre el modal
 $('.btnmodal').click(function(){ //onclick en fpefil, abre modal con iframe dentro
 
-    $('.modal').on('shown.bs.modal',function(){      //correct here use 'shown.bs.modal' event which comes in bootstrap3
+    $('.ifrmodal').on('shown.bs.modal',function(){      //correct here use 'shown.bs.modal' event which comes in bootstrap3
   $(this).find('iframe').attr('src','/imagenes-negocios/add1')
-})
-      $('.modal').modal();
 });
+  });
+
 </script>
 <script>
 window.closeModal = function(){ //onsubmit cerrar modal y mostar snackbar

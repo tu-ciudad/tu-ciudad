@@ -3,17 +3,17 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
+<nav class="col-md-2 columns" id="actions-sidebar">
+    <ul class="nav nav-stacked">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Producto'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Negocios'), ['controller' => 'Negocios', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Negocio'), ['controller' => 'Negocios', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="productos index large-9 medium-8 columns content">
+<div class="productos index col-md-8 columns content">
     <h3><?= __('Productos') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+    <table class="table table-striped" cellpadding="0" cellspacing="0">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>

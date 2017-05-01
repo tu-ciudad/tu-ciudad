@@ -1,22 +1,45 @@
 <style>
-  .thumb {
+  .thumbimg {
     height: 75px;
-    border: 1px solid #000;
-    margin: 10px 5px 0 0;
+    min-width: 75px;
+    background-color: rgb(233, 235, 238);
+    border: 3px solid rgb(233, 235, 238);
+    outline: 1px solid rgb(223, 224, 228);
+    margin: 10px 5px 10px 0;
   }
+  .input{
+    display: none;
+    
+}
+.labUp {
+      color: #ffffff;
+      background-color: #A5A5A5;
+      opacity: .9;
+      
+
+      -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  line-height: 16px;
+  padding: .2em .4em;
+  margin: .2em;
+}
+.px{
+  width: 990px;
+}
+
 </style>
 
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Popup image</button>
 
 <div id="myModal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog px">
     <div class="modal-content">
         <div class="modal-body">
 
-
-
-  <form action="" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="form-group" id="" > 
+<div class="row" id="divUp">
+<div class="col-md-9">
 			<div style="display: none;">
                  <input type="hidden" name="_method" value="POST">
              </div>
@@ -24,66 +47,101 @@
 
 
   <label for="name">Nombre</label>    
- 	<input name="name" type="text" placeholder="nombre">
+ 	<input name="name" type="text" id="name" placeholder="nombre" >
 
  <label for="fecha">Fecha</label>
  <input name="fecha" type="text" placeholder="fecha">
  <hr>
 
- <label for="desc" >Descripcion</label>
- <br>
- <input name="desc" type="text" placeholder="descripcion">
+ <textarea name="comentarios" rows="8" cols="70" placeholder="Descripcion" id="vDesc"></textarea>
  <hr>
-<input type="file" id="files" name="files[]" multiple />
-<output id="list"></output>
-<br>
+ <div class="">
+  <div id="views"> 
+    <div class="col-md-3">
+      <label for="foto0" class="labUp">Elejir foto 0</label><br>
+      <input type="file" accept="image/*" id="foto0" onchange="previewFile(this)" style="display: none;">
+      <img  class="thumbimg" />
+    </div>
+  </div>
+  <button id="exe" class="">+</button><button id="remover" class="">-</button>   <hr>
+  </div>
+
 <button type="submit" style="float: right;">Enviar</button>
+<br>
+<br>
 
+</div>
+<h3 align="center">Vista Previa</h2>
+    <div class="col-md-3">
+               <div class="producto">
+                     <div class="card">
+                        <div class="grid-top">
+                            <a href="#!" class="b-link-stripe b-animate-go">
+                                <img class=" card img-fluid img-responsive" src="../../img/productos/pi4.jpg" alt="" id="preview1">
+                                <div class="b-wrapper">
+                                    <h3 class="b-animate b-from-left b-delay03 ">
+                                        <span id="Text1">Nombre</span> 
+                                        <br>
+                                        <br><br>
+                                        <span id="Text3" style="font-size: 16px;">Descripcion</span>                 
+                                    </h3>
+                                </div>
+                            </a>
+                            <p><a href="single.html" id="Text2">nombre</a></p>
+                        </div>
 
-</form> 
+                    </div>
+                </div>
 
-
-
-
-
-
-
+    </div>
+</div>
         </div>
+
     </div>
   </div>
 </div>
 
-
-
 <script>
-  function handleFileSelect(evt) {
-    var files = evt.target.files; // FileList object
+ var i = 0;
+ 
+$('#exe').click(function(){
 
-    // Loop through the FileList and render image files as thumbnails.
-    for (var i = 0, f; f = files[i]; i++) {
+  var inpUp = '<input type="file" accept="image/*" id="foto'+(i += 1)+'" onchange="previewFile(this)" style="display: none;">';
+  var labUp = '<label for="foto'+ i +'" class="labUp">Elejir foto '+ i +'</label>';
+  var agregar = '<div class="col-md-3">'+ labUp +'<br>'+ inpUp +'<img  class="thumbimg" />'+ '</div>';
+      $('#views').append(agregar);
+    
+    });
+$('#remover').click(function(){
+    i -= 1;
+      $('#views .col-md-3:last').remove();
+    });
 
-      // Only process image files.
-      if (!f.type.match('image.*')) {
-        continue;
-      }
+  var asd = $('.thumbimg').attr('src');
+  console.log(asd);
 
-      var reader = new FileReader();
-
-      // Closure to capture the file information.
-      reader.onload = (function(theFile) {
-        return function(e) {
-          // Render thumbnail.
-          var span = document.createElement('span');
-          span.innerHTML = ['<img class="thumb" src="', e.target.result,
-                            '" title="', escape(theFile.name), '"/>'].join('');
-          document.getElementById('list').insertBefore(span, null);
-        };
-      })(f);
-
-      // Read in the image file as a data URL.
-      reader.readAsDataURL(f);
-    }
+function previewFile(input) {
+  var preview = input.nextElementSibling;
+  var file = input.files[0];
+  var reader = new FileReader();
+  reader.onloadend = function() {
+    preview.src = reader.result; 
+    $('#preview1').attr('src', preview.src); 
   }
+  if (file) {
+    reader.readAsDataURL(file);
+  } else {
+    preview.src = "";
+  }
+}
 
-  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+$('#divUp').change(function(){
+var name = $('input:text[name=name]').val();
+var desc = $('#vDesc').val();
+$('#Text2').text(name);
+$('#Text1').text(name);
+$('#Text3').text(desc);
+});
 </script>
+
+

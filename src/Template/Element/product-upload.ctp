@@ -1,31 +1,28 @@
 <style>
-  .thumbimg {
+
+  .thumbimg { 
     height: 75px;
-    min-width: 75px;
+    min-width: 80px;
     background-color: rgb(233, 235, 238);
     border: 3px solid rgb(233, 235, 238);
-    outline: 1px solid rgb(223, 224, 228);
+    border-radius: 3px;
     margin: 10px 5px 10px 0;
   }
-  .input{
+  .input{ 
     display: none;
     
 }
-.labUp {
-      color: #ffffff;
-      background-color: #A5A5A5;
-      opacity: .9;
+  .labUp { 
       
-
       -webkit-appearance: button;
-  -moz-appearance: button;
-  appearance: button;
-  line-height: 16px;
-  padding: .2em .4em;
-  margin: .2em;
+      -moz-appearance: button;
+      appearance: button;
+      line-height: 16px;
+      padding: .2em .4em;
+      margin: .2em;
 }
-.px{
-  width: 990px;
+  .px{
+  width: 950px;
 }
 
 </style>
@@ -36,97 +33,122 @@
 <div id="myModal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog px">
     <div class="modal-content">
-        <div class="modal-body">
+      <div class="modal-body">
 
-<div class="row" id="divUp">
-<div class="col-md-9">
-			<div style="display: none;">
-                 <input type="hidden" name="_method" value="POST">
-             </div>
-
-
-
-  <label for="name">Nombre</label>    
- 	<input name="name" type="text" id="name" placeholder="nombre" >
-
- <label for="fecha">Fecha</label>
- <input name="fecha" type="text" placeholder="fecha">
- <hr>
-
- <textarea name="comentarios" rows="8" cols="70" placeholder="Descripcion" id="vDesc"></textarea>
- <hr>
- <div class="">
-  <div id="views"> 
-    <div class="col-md-3">
-      <label for="foto0" class="labUp">Elejir foto 0</label><br>
-      <input type="file" accept="image/*" id="foto0" onchange="previewFile(this)" style="display: none;">
-      <img  class="thumbimg" />
-    </div>
-  </div>
-  <button id="exe" class="">+</button><button id="remover" class="">-</button>   <hr>
-  </div>
-
-<button type="submit" style="float: right;">Enviar</button>
-<br>
-<br>
-
-</div>
-<h3 align="center">Vista Previa</h2>
-    <div class="col-md-3">
-               <div class="producto">
-                     <div class="card">
-                        <div class="grid-top">
-                            <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class=" card img-fluid img-responsive" src="../../img/productos/pi4.jpg" alt="" id="preview1">
-                                <div class="b-wrapper">
-                                    <h3 class="b-animate b-from-left b-delay03 ">
-                                        <span id="Text1">Nombre</span> 
-                                        <br>
-                                        <br><br>
-                                        <span id="Text3" style="font-size: 16px;">Descripcion</span>                 
-                                    </h3>
-                                </div>
-                            </a>
-                            <p><a href="single.html" id="Text2">nombre</a></p>
-                        </div>
-
-                    </div>
-                </div>
-
-    </div>
-</div>
+  <div class="row" id="divUp"> <!-- comienza el "form" de cargar imagen con textos -->
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-4">   
+        <label for="name">Nombre</label>
+          <input name="name" type="text" id="name" placeholder="nombre" class="form-control">
         </div>
+        <div class="col-md-4">
+        <label for="fecha">Fecha de carga</label>
+            <div class='input-group date'>
+                    <input type='text' name="fecha" class="form-control" id="fecha" value="<?php echo date("d-m-Y");?>" disabled />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+            </div>
+        </div> 
+            <label for="precio">Precio</label>
+            <div class=" col-md-4 input-group">
+              <span class="input-group-addon">$</span>
+              <input type="text" name="precio" id="precio" class="form-control" aria-label="Amount (to the nearest dollar)">
+            </div>
+       
+               
+      </div>
 
+      <hr>
+      <textarea name="comentarios" rows="8" cols="80" placeholder="Descripcion" id="vDesc" class="form-control"></textarea>
+      <hr>
+      <div class="">
+        <div id="views" align="center"> 
+          <div class="col-md-3">
+            <label for="foto0" class="btn btn-default"><i class="fa fa-upload" aria-hidden="true"></i> Foto 0</label><br>
+            <input type="file" accept="image/*" id="foto0" onchange="previewFile(this)" style="display: none;">
+            <img  class="thumbimg" />
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div align="center">
+               <button id="exe" class="btn btn-success" data-toggle="tooltip" title="Agregar foto">
+               <span class="glyphicon glyphicon-plus"></span></button>&nbsp;
+               <button id="remover" class="btn btn-danger" data-toggle="tooltip" title="Eliminar ultima foto">
+               <span class="glyphicon glyphicon-minus"></span></button>   
+          </div>
+        </div>
+        <hr>
+      </div>
+  </div>  <!-- /termina form -->
+
+       <!-- comienza vista previa -->
+          <div class="col-md-4">
+          <center>
+          <h3 align="center">Vista Previa</h3>
+            <div class="producto">
+              <div class="card">
+                <div class="grid-top">
+                  <a href="#!" class="b-link-stripe b-animate-go">
+                    <img class=" card img-fluid img-responsive" src="../../img/productos/pi4.jpg" alt="" id="preview1">
+                    <div class="b-wrapper">
+                      <h3 class="b-animate b-from-left b-delay03 ">
+                        <span id="Text1">Nombre</span> 
+                        <br>
+                        <br>
+                        <br>
+                        <span id="Text3" style="font-size: 16px;">Descripcion</span>                 
+                      </h3>
+                    </div>
+                  </a>
+                  <p><a id="Text2">nombre</a></p>
+                </div>
+              </div>
+            </div>
+            </center>
+            </div> <!-- termina vista Previa -->
+            <br>
+             <h3 id="resultado"></h3>
+            <button type="submit" style="right: 70px; position:absolute; bottom: 10px; " id="send" class="btn btn-primary">
+            <span class="glyphicon glyphicon-ok"></span>&nbsp; Guardar producto</button>
+
+          
+
+
+      </div>
     </div>
+   </div>
+  </div>
+
   </div>
 </div>
 
 <script>
- var i = 0;
+ var i = 0; //define el valor inicial del ID del input file
  
-$('#exe').click(function(){
+$('#exe').click(function(){ //funcion del boton +
 
   var inpUp = '<input type="file" accept="image/*" id="foto'+(i += 1)+'" onchange="previewFile(this)" style="display: none;">';
-  var labUp = '<label for="foto'+ i +'" class="labUp">Elejir foto '+ i +'</label>';
+  var labUp = '<label for="foto'+ i +'" class="btn btn-default"><i class="fa fa-upload" aria-hidden="true"></i> Foto '+ i +'</label>';
   var agregar = '<div class="col-md-3">'+ labUp +'<br>'+ inpUp +'<img  class="thumbimg" />'+ '</div>';
-      $('#views').append(agregar);
+      $('#views').append(agregar); //agrega el input con el preview adentro de views
     
     });
-$('#remover').click(function(){
-    i -= 1;
-      $('#views .col-md-3:last').remove();
+$('#remover').click(function(){ //funcion del boton - para borrar input
+    i -= 1; //resta 1 a i, para continuar con el orden los ID de los input
+      $('#views .col-md-3:last').remove(); //remueve el ultimo input
     });
 
-  var asd = $('.thumbimg').attr('src');
-  console.log(asd);
 
-function previewFile(input) {
+//funcion para leer los input y mostrar imagen
+function previewFile(input) { 
   var preview = input.nextElementSibling;
   var file = input.files[0];
   var reader = new FileReader();
   reader.onloadend = function() {
-    preview.src = reader.result; 
-    $('#preview1').attr('src', preview.src); 
+    preview.src = reader.result; //agrega la imagen al preview del input
+    $('#preview1').attr('src', preview.src);  //cambia la imagen de vista previa
   }
   if (file) {
     reader.readAsDataURL(file);
@@ -135,12 +157,65 @@ function previewFile(input) {
   }
 }
 
-$('#divUp').change(function(){
+
+//agrega los cambios a la vista previa cuanod detecta cambios en modal:
+$('#divUp').change(function(){ 
+var name = $('input:text[name=name]').val(); //toma el valor del input name
+var desc = $('#vDesc').val(); //toma el valor del textarea de descripcion
+var fdate = $('#fecha').val();
+$('#Text2').text(name); //nombre vPrevia abajo
+$('#Text1').text(name); //nombre vPrevia hover
+$('#Text3').text(desc); //descripcion vPrevia hover
+console.log(fdate);
+});
+
+$('#send').click(function(){ //envio de datos por ajax
 var name = $('input:text[name=name]').val();
 var desc = $('#vDesc').val();
-$('#Text2').text(name);
-$('#Text1').text(name);
-$('#Text3').text(desc);
+var fdate = $('#fecha').val();
+var precio = $('#precio').val();
+
+  var parametros = {
+        "nombre": name,
+        "fecha": fdate,
+        "precio": precio,
+        "descripcion": desc,
+        //"fotos":
+      }
+
+    $.ajax({
+        data:   parametros,
+        url:  "test.php",
+        type:   "post",
+
+        beforeSend:function(){
+          console.log('se esta procesando tu peticion');
+        }
+      })
+      .done(function(data){
+      $.each(data,function(i,value){
+          console.log(i+" "+value);
+        });
+      });
+
+      // $.getJSON('test.php',{
+      //   nombre: name,
+      //   fecha: fdate,
+      //   precio: precio,
+      //   descripcion: desc,
+      //   metodo: "Get"
+      // },function(data){
+      //   $.each(data,function(i,value){
+      //     console.log(i+" "+value);
+      //   });
+      // });
+
+
+
+});
+
+$(document).ready(function(){ //pophover tooltip de botones
+    $('[data-toggle="tooltip"]').tooltip(); 
 });
 </script>
 

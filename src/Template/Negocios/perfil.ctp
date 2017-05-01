@@ -335,7 +335,7 @@
 
 
     <div class="col-md-2 location hidden-xs hidden-sm ">
-        <div class="top" alt=""></div>
+        <div class="topmap" alt=""></div>
         <address>
   <strong>Example Inc.</strong>
   <br>

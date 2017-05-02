@@ -4,7 +4,7 @@
     <div class="profile clearfix"> <!-- imagenes -->
         <img align="left" class="image-lg" src="../../img/portada_850x280.jpg" alt="Profile image example"/>
         <div class="show-image">
-        <img align="left" class="image-profile thumbnail" src=<?= $fperfil ?> >
+        <img align="left" class="image-profile thumbnail" src=<?= $fperfil ?> id="imgf">
           <button class="update btn btn-default btnmodal" data-toggle="modal" data-target="#myModal">
           <span class="glyphicon glyphicon-camera glyphicon glyphicon-white"></span> Cambiar</button>
             <div id="myModal" class="modal ifrmodal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -75,6 +75,12 @@ $('.btnmodal').click(function(){ //onclick en fpefil, abre modal con iframe dent
 
 </script>
 <script>
+var srcc = 0; 
+function changeImg(){ //recibe la variable de la imagen recortada y le cambia el src al la imagen del perfil sin recargar
+$('#imgf').attr('src', srcc);
+} 
+</script>
+<script>
 window.closeModal = function(){ //onsubmit cerrar modal y mostar snackbar
     $('.modal').modal('hide');
 // Get the snackbar DIV
@@ -85,6 +91,8 @@ window.closeModal = function(){ //onsubmit cerrar modal y mostar snackbar
 
     // After 3 seconds, remove the show class from DIV
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 8000);
+
+   
 };
 window.closeSnackbar = function(){ //boton X de snackbar
     var y = document.getElementById("snackbar")

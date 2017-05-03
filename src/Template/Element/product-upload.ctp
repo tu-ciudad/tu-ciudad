@@ -59,7 +59,8 @@
        
                
       </div>
-
+          
+        
       <hr>
       <textarea name="comentarios" rows="8" cols="80" placeholder="Descripcion" id="vDesc" class="form-control"></textarea>
       <hr>
@@ -174,12 +175,14 @@ var name = $('input:text[name=name]').val();
 var desc = $('#vDesc').val();
 var fdate = $('#fecha').val();
 var precio = $('#precio').val();
+var nid = "1";
 
   var parametros = {
         "nombre": name,
         "fecha": fdate,
         "precio": precio,
         "descripcion": desc,
+        "negocios-id": nid,
         //"fotos":
       }
 

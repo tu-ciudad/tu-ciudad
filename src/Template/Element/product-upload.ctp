@@ -176,6 +176,14 @@ var desc = $('#vDesc').val();
 var fdate = $('#fecha').val();
 var precio = $('#precio').val();
 var nid = "1";
+ var file_data = $("#foto0").prop("files")[0];
+ var form_data = new FormData();
+ form_data.append("file", file_data);
+ form_data.append("name", name);
+ form_data.append("descripcion", desc);
+ form_data.append("precio", precio);
+ form_data.append("negocios-id", nid);
+  form_data.append("fecha", fdate);
 
   var parametros = {
         "nombre": name,
@@ -187,9 +195,12 @@ var nid = "1";
       }
 
     $.ajax({
-        data:   parametros,
-        url:  "/productos/add",
+        data:   form_data,
+        url:  "test.php",
         type:   "post",
+        cache: false,
+        contentType: false,
+        processData: false,
 
         beforeSend:function(){
           console.log('se esta procesando tu peticion');

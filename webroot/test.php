@@ -1,18 +1,18 @@
 <?php
 
  
- $nombre = $_POST['nombre'];
+ $nombre = $_POST['name'];
  $fecha = $_POST['fecha'];
- $precio = $_POST['descripcion'];
- $descripcion = $_POST['precio'];
+ $precio = $_POST['precio'];
+ $descripcion = $_POST['descripcion'];
  
 
 
- 	echo ($nombre." ".$fecha." ".$precio." ".$descripcion);
+ 	echo ($nombre);
  	// echo $nombre;
- 	// echo $fecha;
- 	// echo $precio;
- 	// echo $descripcion;
+ 	echo $fecha;
+ 	echo $precio;
+ 	echo $descripcion;
 
 
 ?>

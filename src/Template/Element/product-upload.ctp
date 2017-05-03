@@ -59,8 +59,7 @@
        
                
       </div>
-           <input type="text" value="1" id="negocios-id" class="hidden">
-        
+
       <hr>
       <textarea name="comentarios" rows="8" cols="80" placeholder="Descripcion" id="vDesc" class="form-control"></textarea>
       <hr>
@@ -181,7 +180,6 @@ var precio = $('#precio').val();
         "fecha": fdate,
         "precio": precio,
         "descripcion": desc,
-        "negocios-id": negocios-id,
         //"fotos":
       }
 

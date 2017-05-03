@@ -13,7 +13,7 @@
 
         <div class="row">
 
-            <?= $this->element('sidebar-left') ?>
+          <!--   <?= $this->element('sidebar-left') ?> -->
 
             <div class="col-md-12 col-lg-7 thumbnail" align="center" id="sec0">
 

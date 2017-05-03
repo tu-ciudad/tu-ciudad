@@ -45,7 +45,7 @@
         <div class="col-md-4">
         <label for="fecha">Fecha de carga</label>
             <div class='input-group date'>
-                    <input type='text' name="fecha" class="form-control" id="fecha" value="<?php echo date("d-m-Y");?>" disabled />
+                    <input type='text' name="fecha" class="form-control" id="fecha" value="<?php echo date("Y-m-d H:i:s");?>" disabled />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -190,7 +190,7 @@ var nid = "1";
         "fecha": fdate,
         "precio": precio,
         "descripcion": desc,
-        "negocios-id": nid,
+        "negocios_id": nid,
         //"fotos":
       }
 

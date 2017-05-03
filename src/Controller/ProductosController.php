@@ -52,13 +52,15 @@ class ProductosController extends AppController
     public function add()
     {
         $this->autoRender = false;
+        $producto = $this->Productos->newEntity();
         if ($this->request->is('ajax')) {
-            $nombre = $this->request->data['nombre'];
-            $fecha = $this->request->data['fecha'];
-            $precio = $this->request->data['precio'];
-            $descripcion = $this->request->data['descripcion'];
-            $negocios = $this->request->data['negocios-id'];
-            echo ($nombre." ".$fecha." ".$precio." ".$descripcion." ".$negocios);
+            $producto = $this->Productos->patchEntity($producto, $this->request->getData());
+    //        $nombre = $this->request->data['nombre'];
+            $producto->fecha = $this->request->data['fecha'];
+    //        $precio = $this->request->data['precio'];
+    //       $descripcion = $this->request->data['descripcion'];
+    //        $producto->negocios_id = $this->request->data['negocios-id'];
+            echo ($producto->nombre." ".$producto->fecha." ".$producto->precio." ".$producto->descripcion." ".$producto->negocios_id);
 
           /*  if ($this->Productos->save($producto)) {
                 $this->Flash->success(__('The producto has been saved.'));

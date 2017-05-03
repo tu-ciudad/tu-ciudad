@@ -187,7 +187,7 @@ var precio = $('#precio').val();
 
     $.ajax({
         data:   parametros,
-        url:  "test.php",
+        url:  "/productos/add",
         type:   "post",
 
         beforeSend:function(){

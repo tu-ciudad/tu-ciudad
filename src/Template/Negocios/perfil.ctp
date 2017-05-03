@@ -541,3 +541,33 @@
     }
   })();
 </script>
+
+<script> //script de horarios y dias
+var d = new Date();
+var weekday = new Array(7);
+weekday[0] =  "Sunday";
+weekday[1] = "Monday";
+weekday[2] = "Tuesday";
+weekday[3] = "Wednesday";
+weekday[4] = "Thursday";
+weekday[5] = "Friday";
+weekday[6] = "Saturday";
+
+var n = weekday[d.getDay()];
+
+var daysOfTheWeek = document.getElementsByTagName("li");
+
+dayOfTheWeek(daysOfTheWeek);
+
+function dayOfTheWeek (weekDays) {
+    for(var i = 0; i < weekDays.length; i++)
+  { 
+
+    if(weekDays[i].getAttribute("name") == n)
+    {
+        weekDays[i].className = 'active';
+      weekDays[i].childNodes[0].className = 'active';
+    }
+  }
+}
+</script>

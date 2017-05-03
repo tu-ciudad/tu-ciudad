@@ -1,6 +1,6 @@
 <div class="col-md-2 ">
                 <div class="clearfix visible-lg ">
-                    <ul class="nav nav-stacked" data-spy="affix" data-offset-top="432" id="sidebar">
+                    <ul class="nav nav-stacked" data-spy="affix"  id="sidebar">
 
                         <li class="header label headd">
                             <h4 text-align="left" style="z-index:1003;">Shop Name</h4>
@@ -25,3 +25,10 @@
                     </ul>
                 </div>
             </div>
+
+<script>$('#sidebar').affix({
+      offset: {
+        top: $('#sidefix').height(),
+        
+      }
+}); </script>

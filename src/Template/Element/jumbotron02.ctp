@@ -1,6 +1,6 @@
  <!-- jumbotron nuevo fb style -->
 
-<div class="container">
+<div class="container" id="sidefix">
     <div class="profile clearfix"> <!-- imagenes -->
         <img align="left" class="image-lg" src="../../img/portada_850x280.jpg" alt="Profile image example"/>
         <div class="show-image">

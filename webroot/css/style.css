@@ -2,6 +2,8 @@
 html {
     width: 100%;
     height: 100%;
+     max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -15,7 +17,7 @@ body {
 
 section {
     /*seccion header de local*/
-    height: calc(90% - 50px);
+    /height: calc(90% - 50px);
 }
 
 
@@ -646,7 +648,7 @@ iframe {
     .footer-distributed .footer-right {
         display: block;
         width: 100%;
-        margin-bottom: 40px;
+        margin-bottom: 10px;
         text-align: center;
     }
     .footer-distributed .footer-center i {
@@ -1107,7 +1109,7 @@ iframe {
 }
 .br {
     /margin-bottom: 10px;
-    margin: 8px 12px;
+    /margin: 8px 12px;
     /height: 300px;
     
 }
@@ -1122,10 +1124,15 @@ iframe {
     text-align: left;
     
 }
+
+.recm {
+    width: 300px;
+}
+
 .thumb {
     background-color: #fafafa;
     padding: 4px 4px;
-    margin-right: -15px;
+    /margin-right: -15px;
      border: 1px solid;
     border-color: #DFE0E4 ;
 }
@@ -1134,40 +1141,22 @@ iframe {
 }
 #sidebar-right.affix-top {
         position: static;
-        /top: 50px;
-        /margin-left: -10px;
-        /height: 100vh;
-        /padding: 0px 8px;
-        /margin: -0px 1px;
-       /margin-left: -2px;
-        /width: 100vh;
         opacity: 1;
         color: #5bc solid;
-   / background-color: #fafafa;
         z-index: 000;
-       / bottom:0;
     }
 
-    #sidebar-right.affix-bottom {
-    bottom: 300px;
-        position: relative;
-  }
-    #sidebar-right.affix {
+    #sidebar-right1.affix {
         position: fixed;
         top: 50px;
-        /bottom: 0px;
-        /margin-left: -2px;
-        margin-right: 15px;
-        /padding: 0px;
-      
-        /width: 100vh;
         opacity: 1;
          color: #5bc solid;
-    /background-color: #fafafa;
-        /z-index: -900;
         
     }
-
+ #sidebar-right.affix-bottom {
+    top: auto ;
+        position: absolute;
+  }
 /*****************fin-sidebar-right*******************/
 
 /********************perfil*********************/
@@ -1546,6 +1535,13 @@ iframe {
     box-shadow: 1px 1px 3px ;
           
          }
+@media (max-width: 880px) {
+ #map-container { 
+    height: 350px;
+    margin-top: -20px;
+    box-shadow: 1px 1px 3px ;
+}
+}
 
 .footer {
     display: block;

@@ -193,9 +193,9 @@ var precio = $('#precio').val();
         }
       })
       .done(function(data){
-      $.each(data,function(i,value){
-          console.log(i+" "+value);
-        });
+      
+          console.log(data);
+       
       });
 
       // $.getJSON('test.php',{

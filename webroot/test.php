@@ -8,11 +8,11 @@
  
 
 
- 	//echo ($nombre." ".$fecha." ".$precio." ".$descripcion);
- 	echo $nombre;
- 	echo $fecha;
- 	echo $precio;
- 	echo $descripcion;
+ 	echo ($nombre." ".$fecha." ".$precio." ".$descripcion);
+ 	// echo $nombre;
+ 	// echo $fecha;
+ 	// echo $precio;
+ 	// echo $descripcion;
 
 
 ?>

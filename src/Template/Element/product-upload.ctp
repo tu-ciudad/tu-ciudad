@@ -179,7 +179,7 @@ var nid = "1";
  var file_data = $("#foto0").prop("files")[0];
  var form_data = new FormData();
  form_data.append("file", file_data);
- form_data.append("name", name);
+ form_data.append("nombre", name);
  form_data.append("descripcion", desc);
  form_data.append("precio", precio);
  form_data.append("negocios-id", nid);
@@ -189,14 +189,14 @@ var nid = "1";
         "nombre": name,
         "fecha": fdate,
         "precio": precio,
-        "descripcion": desc,
+        "cuerpo": desc,
         "negocios_id": nid,
         //"fotos":
       }
 
     $.ajax({
         data:   form_data,
-        url:  "test.php",
+        url:  "/productos/add",
         type:   "post",
         cache: false,
         contentType: false,

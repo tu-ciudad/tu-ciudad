@@ -51,16 +51,17 @@ class ProductosController extends AppController
      */
     public function add()
     {
+        //arreglar el problema, cuando paso el nombre hay un error.. las variables estan pasadas en la linea 182 del otro doc
         $this->autoRender = false;
         $producto = $this->Productos->newEntity();
         if ($this->request->is('ajax')) {
-            $producto = $this->Productos->patchEntity($producto, $this->request->getData());
-    //        $nombre = $this->request->data['nombre'];
+     //        $producto = $this->Productos->patchEntity($producto, $this->request->getData());
+            $producto->nombre = $this->request->data['nombre'];
             $producto->fecha = $this->request->data['fecha'];
-    //        $precio = $this->request->data['precio'];
-    //       $descripcion = $this->request->data['descripcion'];
-    //        $producto->negocios_id = $this->request->data['negocios-id'];
-            echo ($producto->nombre." ".$producto->fecha." ".$producto->precio." ".$producto->descripcion." ".$producto->negocios_id);
+            $producto->precio = $this->request->data['precio'];
+            $producto->cuerpo = $this->request->data['descripcion'];
+            $producto->negocios_id = $this->request->data['negocios-id'];
+            echo ($producto->nombre." ".$producto->fecha." ".$producto->precio." ".$producto->cuerpo." ".$producto->negocios_id);
 
           /*  if ($this->Productos->save($producto)) {
                 $this->Flash->success(__('The producto has been saved.'));

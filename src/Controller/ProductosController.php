@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Productos Controller
@@ -55,30 +56,27 @@ class ProductosController extends AppController
         $this->autoRender = false;
         //$data = $this->request->data;
         //echo "<pre>",print_r($data),"</pre>";
-      // $producto = $this->Productos->patchEntity($producto, $this->request->data());
         if ($this->request->is('ajax')) {
-            
-     //        $producto = $this->Productos->patchEntity($producto, $this->request->getData());
-            $nombre = $this->request->data['nombre'];
-            $fecha = $this->request->data['fecha'];
-            $precio = $this->request->data['precio'];
-            $cuerpo = $this->request->data['descripcion'];
-            $negocios_id = $this->request->data['negocios-id'];
-
+            $producto = $this->Productos->newEntity(); //ver como asignar los valores que vienen automaticamente
+            $producto->titulo = $this->request->data['titulo'];
+            $producto->fecha = $this->request->data['fecha'];
+            $producto->precio = $this->request->data['precio'];
+            $producto->cuerpo = $this->request->data['cuerpo'];
+            $producto->negocios_id = $this->request->data['negociosid'];
             $sourcePath = $_FILES['file']['tmp_name'];       // Storing source path of the file in a variable
             $targetPath = WWW_ROOT . 'files' .DS.$_FILES['file']['name']; // Target path where file is to be stored
             move_uploaded_file($sourcePath, $targetPath);    // Moving Uploaded file
-
-            echo ($nombre." ".$fecha." ".$precio." ".$cuerpo." ".$negocios_id);
+            $producto->fecha = date('Y-m-d H:i:s');
+            echo ($producto);
             echo print_r($sourcePath);
             echo print_r($targetPath);
-
-          /*  if ($this->Productos->save($producto)) {
-                $this->Flash->success(__('The producto has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }*/
-        }
+            $this->Productos->save($producto);
+         /*   $query = $Productos->query();
+            $query->insert(['titulo', 'cuerpo','fecha','precio','negocios_id'])
+            ->values(['titulo'=>$producto->nombre, 'cuerpo'=>$producto->cuerpo,'fecha' => date('Y-m-d H:i:s'),'precio'=>$producto->precio,'negocios_id'=>$producto->negocios_id])
+            ->execute();
+            debug($query);
+       */ }
     }
 
     /**

@@ -45,7 +45,7 @@
         <div class="col-md-4">
         <label for="fecha">Fecha de carga</label>
             <div class='input-group date'>
-                    <input type='text' name="fecha" class="form-control" id="fecha" value="<?php echo date("Y-m-d H:i:s");?>" disabled />
+                    <input type='text' name="fecha" class="form-control" id="fecha" value="<?php echo date('Y-m-d H:i:s');?>" disabled />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -182,10 +182,10 @@ var nid = "1"; //id de negocio
  var file_data = $("#foto0").prop("files")[0]; //obtiene las propiedades del input type="file" id="foto0"
  var form_data = new FormData(); //crea un form data (seria como un array de campos, pero con el formato de form, que crea las variables $_FILES y de mas de un archivo)
  form_data.append("file", file_data); //le agrega al array form_data la variable con el file
- form_data.append("nombre", name); //agrega campo de texto dentro del form_data
- form_data.append("descripcion", desc); //""
+ form_data.append("titulo", name); //agrega campo de texto dentro del form_data
+ form_data.append("cuerpo", desc); //""
  form_data.append("precio", precio);
- form_data.append("negocios-id", nid);
+ form_data.append("negociosid", nid);
 form_data.append("fecha", fdate); //""
 
     $.ajax({

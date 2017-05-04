@@ -167,50 +167,53 @@ var fdate = $('#fecha').val();
 $('#Text2').text(name); //nombre vPrevia abajo
 $('#Text1').text(name); //nombre vPrevia hover
 $('#Text3').text(desc); //descripcion vPrevia hover
-console.log(fdate);
 });
 
 $('#send').click(function(){ //envio de datos por ajax
-var name = $('input:text[name=name]').val();
-var desc = $('#vDesc').val();
-var fdate = $('#fecha').val();
-var precio = $('#precio').val();
-var nid = "1";
- var file_data = $("#foto0").prop("files")[0];
- var form_data = new FormData();
- form_data.append("file", file_data);
- form_data.append("nombre", name);
- form_data.append("descripcion", desc);
+
+  //************obtiene valores de los campos de texto************/////
+var name = $('input:text[name=name]').val(); //valor del input text name
+var desc = $('#vDesc').val(); //valor del input text id="vDesc"
+var fdate = $('#fecha').val(); //valor de fecha en el input type="date" id="fecha"
+var precio = $('#precio').val(); //valor del campo de text id="precio"
+var nid = "1"; //id de negocio
+//***********************fin-valores de capo de textos//////////////
+
+ var file_data = $("#foto0").prop("files")[0]; //obtiene las propiedades del input type="file" id="foto0"
+ var form_data = new FormData(); //crea un form data (seria como un array de campos, pero con el formato de form, que crea las variables $_FILES y de mas de un archivo)
+ form_data.append("file", file_data); //le agrega al array form_data la variable con el file
+ form_data.append("nombre", name); //agrega campo de texto dentro del form_data
+ form_data.append("descripcion", desc); //""
  form_data.append("precio", precio);
  form_data.append("negocios-id", nid);
-  form_data.append("fecha", fdate);
-
-  var parametros = {
-        "nombre": name,
-        "fecha": fdate,
-        "precio": precio,
-        "cuerpo": desc,
-        "negocios_id": nid,
-        //"fotos":
-      }
+form_data.append("fecha", fdate); //""
 
     $.ajax({
-        data:   form_data,
-        url:  "/productos/add",
+        data:   form_data, //datao array de data
+        url:  "productos/add", //controller
         type:   "post",
-        cache: false,
-        contentType: false,
-        processData: false,
+        cache: false, //nose pero se necesita para el FormData
+        contentType: false, //"idem"
+        processData: false, //"idem"
 
-        beforeSend:function(){
+        beforeSend:function(){ //antes de enviar mostrar eso en console log
           console.log('se esta procesando tu peticion');
         }
       })
-      .done(function(data){
+      .done(function(data){ //al terminar mostrar el echo en la consola
       
           console.log(data);
        
       });
+
+  // var parametros = { //es una array solo con textos, no se esta usando en este momento
+  //       "nombre": name,
+  //       "fecha": fdate,
+  //       "precio": precio,
+  //       "cuerpo": desc,
+  //       "negocios_id": nid,
+  //       //"fotos":
+  //     }
 
       // $.getJSON('test.php',{
       //   nombre: name,

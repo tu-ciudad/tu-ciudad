@@ -53,15 +53,25 @@ class ProductosController extends AppController
     {
         //arreglar el problema, cuando paso el nombre hay un error.. las variables estan pasadas en la linea 182 del otro doc
         $this->autoRender = false;
-        $producto = $this->Productos->newEntity();
+        //$data = $this->request->data;
+        //echo "<pre>",print_r($data),"</pre>";
+      // $producto = $this->Productos->patchEntity($producto, $this->request->data());
         if ($this->request->is('ajax')) {
+            
      //        $producto = $this->Productos->patchEntity($producto, $this->request->getData());
-            $producto->nombre = $this->request->data['nombre'];
-            $producto->fecha = $this->request->data['fecha'];
-            $producto->precio = $this->request->data['precio'];
-            $producto->cuerpo = $this->request->data['descripcion'];
-            $producto->negocios_id = $this->request->data['negocios-id'];
-            echo ($producto->nombre." ".$producto->fecha." ".$producto->precio." ".$producto->cuerpo." ".$producto->negocios_id);
+            $nombre = $this->request->data['nombre'];
+            $fecha = $this->request->data['fecha'];
+            $precio = $this->request->data['precio'];
+            $cuerpo = $this->request->data['descripcion'];
+            $negocios_id = $this->request->data['negocios-id'];
+
+            $sourcePath = $_FILES['file']['tmp_name'];       // Storing source path of the file in a variable
+            $targetPath = WWW_ROOT . 'files' .DS.$_FILES['file']['name']; // Target path where file is to be stored
+            move_uploaded_file($sourcePath, $targetPath);    // Moving Uploaded file
+
+            echo ($nombre." ".$fecha." ".$precio." ".$cuerpo." ".$negocios_id);
+            echo print_r($sourcePath);
+            echo print_r($targetPath);
 
           /*  if ($this->Productos->save($producto)) {
                 $this->Flash->success(__('The producto has been saved.'));

@@ -57,26 +57,28 @@ class ProductosController extends AppController
         //$data = $this->request->data;
         //echo "<pre>",print_r($data),"</pre>";
         if ($this->request->is('ajax')) {
-            $producto = $this->Productos->newEntity(); //ver como asignar los valores que vienen automaticamente
-            $producto->titulo = $this->request->data['titulo'];
-            $producto->fecha = $this->request->data['fecha'];
-            $producto->precio = $this->request->data['precio'];
-            $producto->cuerpo = $this->request->data['cuerpo'];
-            $producto->negocios_id = $this->request->data['negociosid'];
+            $producto = $this->Productos->newEntity(); //se pueden asignar todos juntos pero tengo que poner unos campos en una lista blanca (verificar eso despues)
+            $producto->set('titulo', $this->request->data['titulo']);
+            $producto->set('fecha ', $this->request->data['fecha']);
+            $producto->set('precio', $this->request->data['precio']);
+            $producto->set('cuerpo', $this->request->data['cuerpo']);
+            $producto->set('negocios_id', $this->request->data['negociosid']);
             $sourcePath = $_FILES['file']['tmp_name'];       // Storing source path of the file in a variable
             $targetPath = WWW_ROOT . 'files' .DS.$_FILES['file']['name']; // Target path where file is to be stored
             move_uploaded_file($sourcePath, $targetPath);    // Moving Uploaded file
             $producto->fecha = date('Y-m-d H:i:s');
-            echo ($producto);
             echo print_r($sourcePath);
             echo print_r($targetPath);
-            $this->Productos->save($producto);
-         /*   $query = $Productos->query();
-            $query->insert(['titulo', 'cuerpo','fecha','precio','negocios_id'])
-            ->values(['titulo'=>$producto->nombre, 'cuerpo'=>$producto->cuerpo,'fecha' => date('Y-m-d H:i:s'),'precio'=>$producto->precio,'negocios_id'=>$producto->negocios_id])
-            ->execute();
-            debug($query);
-       */ }
+            if($this->Productos->save($producto)){ //Cargue el producto, ahora cargo las imagenes
+                                                   //Para que el metodo sea infable cada negocio SOLO debe poder tener un producto con cada titulo, no debe poder repetirse, sino hay que cambiar el funcionamiento (añadir esta verificacion arriba)
+                $producto_id = $this->Productos->find()->select(['id'])->where(['negocios_id' => $producto->get('negocios_id'), 'ubicacion' => $prod->ubicacion])
+//terminar consulta
+
+
+
+
+            };
+ }
     }
 
     /**

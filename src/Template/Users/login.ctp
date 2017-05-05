@@ -1,10 +1,13 @@
 <!-- File: src/Template/Users/login.ctp -->
-
+<style>
+	
+</style>
 <br>
 <br>
 <br>
 <br>
 <br>
+<center>
 <div class="users form">
 <?= $this->Flash->render() ?>
 <?= $this->Form->create() ?>
@@ -16,3 +19,4 @@
 <?= $this->Form->button(__('Login')); ?>
 <?= $this->Form->end() ?>
 </div>
+</center>

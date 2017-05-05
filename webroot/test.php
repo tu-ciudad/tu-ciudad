@@ -1,21 +1,15 @@
 <?php
 
- 
- $nombre = $_POST['nombre'];
- $fecha = $_POST['fecha'];
- $precio = $_POST['precio'];
- $descripcion = $_POST['descripcion'];
-       $sourcePath = $_FILES['file']['tmp_name'];       // Storing source path of the file in a variable
-            $targetPath = "files/".$_FILES['file']['name']; // Target path where file is to be stored
-            move_uploaded_file($sourcePath,$targetPath) ;    // Moving Uploaded file
+for($i=0; $i<count($_FILES['file']['name']); $i++){
+$target_path = "files/";
+$ext = explode('.', basename( $_FILES['file']['name'][$i]));
+$target_path = $target_path . md5(uniqid()) . "." . $ext[count($ext)-1]; 
 
-
-
- 	echo ($nombre);
- 	// echo $nombre;
- 	echo $fecha;
- 	echo $precio;
- 	echo $descripcion;
-
+if(move_uploaded_file($_FILES['file']['tmp_name'][$i], $target_path)) {
+    echo "The file has been uploaded successfully <br />";
+} else{
+    echo "There was an error uploading the file, please try again! <br />";
+}
+}
 
 ?>

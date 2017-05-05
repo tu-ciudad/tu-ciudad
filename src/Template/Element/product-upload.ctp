@@ -65,21 +65,29 @@
       <textarea name="comentarios" rows="8" cols="80" placeholder="Descripcion" id="vDesc" class="form-control"></textarea>
       <hr>
       <div class="">
+
+
         <div id="views" align="center"> 
-          <div class="col-md-3">
+         <form enctype="multipart/form-data" action="/productos/add" method="post">
+    <div class="col-md-3">
             <label for="foto0" class="btn btn-default"><i class="fa fa-upload" aria-hidden="true"></i> Foto 0</label><br>
-            <input type="file" accept="image/*" id="foto0" onchange="previewFile(this)" style="display: none;">
+            <input type="file" accept="image/*" id="foto0" name="file[]" onchange="previewFile(this)" style="display: none;" >
             <img  class="thumbimg" />
           </div>
-        </div>
-        <div class="col-md-3">
-          <div align="center">
+  
                <button id="exe" class="btn btn-success" data-toggle="tooltip" title="Agregar foto">
                <span class="glyphicon glyphicon-plus"></span></button>&nbsp;
                <button id="remover" class="btn btn-danger" data-toggle="tooltip" title="Eliminar ultima foto">
                <span class="glyphicon glyphicon-minus"></span></button>   
-          </div>
+        <button type="submit" style="right: 70px; position:absolute; bottom: 10px; " id="send" class="btn btn-primary">
+            <span class="glyphicon glyphicon-ok"></span>&nbsp; Guardar producto</button>
+</form>
         </div>
+
+
+
+
+        
         <hr>
       </div>
   </div>  <!-- /termina form -->
@@ -111,8 +119,7 @@
             </div> <!-- termina vista Previa -->
             <br>
              <h3 id="resultado"></h3>
-            <button type="submit" style="right: 70px; position:absolute; bottom: 10px; " id="send" class="btn btn-primary">
-            <span class="glyphicon glyphicon-ok"></span>&nbsp; Guardar producto</button>
+            
 
           
 
@@ -126,20 +133,61 @@
 </div>
 
 <script>
- var i = 0; //define el valor inicial del ID del input file
- 
-$('#exe').click(function(){ //funcion del boton +
+var i = 0;
+$(document).ready(function(){
+    $('#exe').click(function(e){
 
-  var inpUp = '<input type="file" accept="image/*" id="foto'+(i += 1)+'" onchange="previewFile(this)" style="display: none;">';
+  var inpUp = '<input type="file" accept="image/*" id="foto'+(i += 1)+'" name="file[]" onchange="previewFile(this)" style="display: none;">';
   var labUp = '<label for="foto'+ i +'" class="btn btn-default"><i class="fa fa-upload" aria-hidden="true"></i> Foto '+ i +'</label>';
   var agregar = '<div class="col-md-3">'+ labUp +'<br>'+ inpUp +'<img  class="thumbimg" />'+ '</div>';
-      $('#views').append(agregar); //agrega el input con el preview adentro de views
+      //$('#views').append(agregar); //agrega el input con el preview adentro de views
     
+        e.preventDefault();
+        $(this).before(agregar);
     });
-$('#remover').click(function(){ //funcion del boton - para borrar input
+});
+$('#remover').click(function(e){ //funcion del boton - para borrar input
+  e.preventDefault();
     i -= 1; //resta 1 a i, para continuar con el orden los ID de los input
-      $('#views .col-md-3:last').remove(); //remueve el ultimo input
+      $('form .col-md-3:last').remove(); //remueve el ultimo input
     });
+
+$('body').on('click', '#send', function(e){
+        e.preventDefault();
+        var formData = new FormData($(this).parents('form')[0]);
+        //console.log(formData);
+     var name = $('input:text[name=name]').val(); //valor del input text name
+var desc = $('#vDesc').val(); //valor del input text id="vDesc"
+var fdate = $('#fecha').val(); //valor de fecha en el input type="date" id="fecha"
+var precio = $('#precio').val(); //valor del campo de text id="precio"
+var nid = "1"; //id de negocio 
+ formData.append("titulo", name); //agrega campo de texto dentro del form_data
+ formData.append("cuerpo", desc); //""
+ formData.append("precio", precio);
+ formData.append("negociosid", nid);
+ formData.append("fecha", fdate); //""
+ console.log(name+" "+desc+" "+precio+" "+fdate);
+
+
+        $.ajax({
+            url: 'productos/add',
+            type: 'POST',
+            xhr: function() {
+                var myXhr = $.ajaxSettings.xhr();
+                return myXhr;
+            },
+            success: function (data) {
+                alert("Data Uploaded: "+data);
+            },
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+        return false;
+});
+
+
 
 
 //funcion para leer los input y mostrar imagen
@@ -169,67 +217,7 @@ $('#Text1').text(name); //nombre vPrevia hover
 $('#Text3').text(desc); //descripcion vPrevia hover
 });
 
-$('#send').click(function(){ //envio de datos por ajax
 
-  //************obtiene valores de los campos de texto************/////
-var name = $('input:text[name=name]').val(); //valor del input text name
-var desc = $('#vDesc').val(); //valor del input text id="vDesc"
-var fdate = $('#fecha').val(); //valor de fecha en el input type="date" id="fecha"
-var precio = $('#precio').val(); //valor del campo de text id="precio"
-var nid = "1"; //id de negocio
-//***********************fin-valores de capo de textos//////////////
-
- var file_data = $("#foto0").prop("files")[0]; //obtiene las propiedades del input type="file" id="foto0"
- var form_data = new FormData(); //crea un form data (seria como un array de campos, pero con el formato de form, que crea las variables $_FILES y de mas de un archivo)
- form_data.append("file", file_data); //le agrega al array form_data la variable con el file
- form_data.append("titulo", name); //agrega campo de texto dentro del form_data
- form_data.append("cuerpo", desc); //""
- form_data.append("precio", precio);
- form_data.append("negociosid", nid);
-form_data.append("fecha", fdate); //""
-
-    $.ajax({
-        data:   form_data, //datao array de data
-        url:  "productos/add", //controller
-        type:   "post",
-        cache: false, //nose pero se necesita para el FormData
-        contentType: false, //"idem"
-        processData: false, //"idem"
-
-        beforeSend:function(){ //antes de enviar mostrar eso en console log
-          console.log('se esta procesando tu peticion');
-        }
-      })
-      .done(function(data){ //al terminar mostrar el echo en la consola
-      
-          console.log(data);
-       
-      });
-
-  // var parametros = { //es una array solo con textos, no se esta usando en este momento
-  //       "nombre": name,
-  //       "fecha": fdate,
-  //       "precio": precio,
-  //       "cuerpo": desc,
-  //       "negocios_id": nid,
-  //       //"fotos":
-  //     }
-
-      // $.getJSON('test.php',{
-      //   nombre: name,
-      //   fecha: fdate,
-      //   precio: precio,
-      //   descripcion: desc,
-      //   metodo: "Get"
-      // },function(data){
-      //   $.each(data,function(i,value){
-      //     console.log(i+" "+value);
-      //   });
-      // });
-
-
-
-});
 
 $(document).ready(function(){ //pophover tooltip de botones
     $('[data-toggle="tooltip"]').tooltip(); 

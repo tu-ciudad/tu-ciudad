@@ -63,13 +63,24 @@ class ProductosController extends AppController
             $producto->set('precio', $this->request->data['precio']);
             $producto->set('cuerpo', $this->request->data['cuerpo']);
             $producto->set('negocios_id', $this->request->data['negociosid']);
-            $sourcePath = $_FILES['file']['tmp_name'];       // Storing source path of the file in a variable
-            $targetPath = WWW_ROOT . 'files' .DS.$_FILES['file']['name']; // Target path where file is to be stored
-            move_uploaded_file($sourcePath, $targetPath);    // Moving Uploaded file
+                for($i=0; $i<count($_FILES['file']['name']); $i++){
+                $target_path = WWW_ROOT . 'files' .DS;
+                $ext = explode('.', basename( $_FILES['file']['name'][$i]));
+                $target_path = $target_path . md5(uniqid()) . "." . $ext[count($ext)-1]; 
+
+
+
+                if(move_uploaded_file($_FILES['file']['tmp_name'][$i], $target_path)) {
+                    echo "The file has been uploaded successfully <br />";
+                } else{
+                    echo "There was an error uploading the file, please try again! <br />";
+                }
+            }   
+         
+
             $producto->fecha = date('Y-m-d H:i:s');
-            echo print_r($sourcePath);
-            echo print_r($targetPath);
-            if($this->Productos->save($producto)){ //Cargue el producto, ahora cargo las imagenes
+           
+          /*  if($this->Productos->save($producto)){ //Cargue el producto, ahora cargo las imagenes
                                                    //Para que el metodo sea infable cada negocio SOLO debe poder tener un producto con cada titulo, no debe poder repetirse, sino hay que cambiar el funcionamiento (añadir esta verificacion arriba)
                 $producto_id = $this->Productos->find()->select(['id'])->where(['negocios_id' => $producto->get('negocios_id'), 'ubicacion' => $prod->ubicacion])
 //terminar consulta
@@ -77,7 +88,7 @@ class ProductosController extends AppController
 
 
 
-            };
+            };*/
  }
     }
 

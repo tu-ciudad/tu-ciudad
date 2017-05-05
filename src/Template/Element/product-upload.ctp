@@ -45,7 +45,19 @@
   background: -o-linear-gradient(left, white 68%, gray 32%);
   background: linear-gradient(to right, white 68%, gray 32%);
 }
-
+.close {
+  position: absolute;
+  right: 3px;
+  top: 0px;
+  font-size: 26px;
+  transition: all .08s linear;
+}
+.close:hover {
+  top: -2px;
+  right: 2px;
+  color: red;
+  font-size: 30px;
+}
 </style>
 
 
@@ -55,7 +67,7 @@
   <div class="modal-dialog px">
     <div class="modal-content">
       <div class="modal-body grdient">
-
+<span class="close" data-dismiss="modal" aria-label="Close">×</span>
   <div class="row" id="divUp"> <!-- comienza el "form" de cargar imagen con textos -->
     <div class="col-md-8">
       <div class="row">
@@ -119,7 +131,7 @@
           <center>
           <h3 align="center">Vista Previa</h3>
             <div class="producto">
-              <div class="card">
+              <div class="card thumbnail" style="margin: 5px;">
                 <div class="grid-top">
                   <a href="#!" class="b-link-stripe b-animate-go">
                     <img class=" card img-fluid img-responsive" src="../../img/productos/pi4.jpg" alt="" id="preview1">
@@ -264,6 +276,10 @@ $('#Text3').text(desc); //descripcion vPrevia hover
 $(document).ready(function(){ //pophover tooltip de botones
     $('[data-toggle="tooltip"]').tooltip(); 
 });
+
+
+  $('.close').modal('hide');
+
 </script>
 
 

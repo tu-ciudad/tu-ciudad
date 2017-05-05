@@ -1509,9 +1509,7 @@ iframe {
    background: url('/img/map1.png')  center center ;
     
 }
-.left {
-    margin-left: 2vh;
-}
+
 .location {
     height: 70vh;
     background-color: #fafafa;

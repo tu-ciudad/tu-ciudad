@@ -36,7 +36,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
 
      <?= $this->Html->css('normalize.css') ?>
-     <?= $this->Html->css('bootstrap.min.css') ?>
+     <?= $this->Html->css('bootstrap.css') ?>
      <?= $this->Html->css('style.css') ?>
      
      <?= $this->Html->css('font-awesome.min.css') ?> 
@@ -45,7 +45,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
      
     
 
-    <?= $this->Html->script(array('jquery-3.2.1.min', 'pace.min', 'bootstrap.min', 'scrolling-nav', 'countdown', 'afixx')); ?>
+    <?= $this->Html->script(array('jquery-3.2.1.min', 'pace.min', 'bootstrap', 'scrolling-nav', 'countdown', 'afixx')); ?>
 
     
 

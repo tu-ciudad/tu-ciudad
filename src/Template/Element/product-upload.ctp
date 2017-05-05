@@ -24,6 +24,27 @@
   .px{
   width: 950px;
 }
+.btnmore {
+  float: right;
+  position: fixed;
+  right: 365px;
+}
+
+.btnminus {
+  float: right;
+  position: fixed;
+  right: 323px;
+}
+
+.mleft {
+  margin-left: -15px;
+}
+
+.grdient {
+  background: -webkit-linear-gradient(left, white 68%, gray 32%);
+  background: -o-linear-gradient(left, white 68%, gray 32%);
+  background: linear-gradient(to right, white 68%, gray 32%);
+}
 
 </style>
 
@@ -33,14 +54,14 @@
 <div id="myModal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog px">
     <div class="modal-content">
-      <div class="modal-body">
+      <div class="modal-body grdient">
 
   <div class="row" id="divUp"> <!-- comienza el "form" de cargar imagen con textos -->
     <div class="col-md-8">
       <div class="row">
         <div class="col-md-4">   
         <label for="name">Nombre</label>
-          <input name="name" type="text" id="name" placeholder="nombre" class="form-control">
+          <input name="name" type="text" id="name" placeholder="nombre" class="form-control" required>
         </div>
         <div class="col-md-4">
         <label for="fecha">Fecha de carga</label>
@@ -64,22 +85,23 @@
       <hr>
       <textarea name="comentarios" rows="8" cols="80" placeholder="Descripcion" id="vDesc" class="form-control"></textarea>
       <hr>
+      <div class="progress" style="display: block;"> <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; ">0%</div> </div>
       <div class="">
 
 
         <div id="views" align="center"> 
          <form enctype="multipart/form-data" action="/productos/add" method="post">
-    <div class="col-md-3">
-            <label for="foto0" class="btn btn-default"><i class="fa fa-upload" aria-hidden="true"></i> Foto 0</label><br>
-            <input type="file" accept="image/*" id="foto0" name="file[]" onchange="previewFile(this)" style="display: none;" >
-            <img  class="thumbimg" />
+    <div class="col-md-3 mleft">
+            <label for="foto1" class="btn btn-default"><i class="fa fa-upload" aria-hidden="true"></i> Foto 1</label><br>
+            <input type="file" accept="image/*" id="foto1" name="file[]" onchange="previewFile(this)" style="display: none;" >
+            <img  class="thumbimg" src="../../img/placeholder.png" />
           </div>
-  
-               <button id="exe" class="btn btn-success" data-toggle="tooltip" title="Agregar foto">
+               <button id="remover" class="btn btn-danger btnminus" data-toggle="tooltip" data-placement="right" title="Eliminar ultima foto">
+               <span class="glyphicon glyphicon-minus"></span></button> 
+               <button id="exe" class="btn btn-success btnmore" data-toggle="tooltip" title="Agregar foto">
                <span class="glyphicon glyphicon-plus"></span></button>&nbsp;
-               <button id="remover" class="btn btn-danger" data-toggle="tooltip" title="Eliminar ultima foto">
-               <span class="glyphicon glyphicon-minus"></span></button>   
-        <button type="submit" style="right: 70px; position:absolute; bottom: 10px; " id="send" class="btn btn-primary">
+                 
+        <button type="submit" style="right: -260px; position:absolute; bottom: 10px; " id="send" class="btn btn-primary">
             <span class="glyphicon glyphicon-ok"></span>&nbsp; Guardar producto</button>
 </form>
         </div>
@@ -88,7 +110,7 @@
 
 
         
-        <hr>
+       
       </div>
   </div>  <!-- /termina form -->
 
@@ -133,13 +155,13 @@
 </div>
 
 <script>
-var i = 0;
+var i = 1;
 $(document).ready(function(){
     $('#exe').click(function(e){
 
   var inpUp = '<input type="file" accept="image/*" id="foto'+(i += 1)+'" name="file[]" onchange="previewFile(this)" style="display: none;">';
   var labUp = '<label for="foto'+ i +'" class="btn btn-default"><i class="fa fa-upload" aria-hidden="true"></i> Foto '+ i +'</label>';
-  var agregar = '<div class="col-md-3">'+ labUp +'<br>'+ inpUp +'<img  class="thumbimg" />'+ '</div>';
+  var agregar = '<div class="col-md-3 mleft">'+ labUp +'<br>'+ inpUp +'<img  class="thumbimg" src="../../img/placeholder.png" />'+ '</div>';
       //$('#views').append(agregar); //agrega el input con el preview adentro de views
     
         e.preventDefault();
@@ -148,41 +170,61 @@ $(document).ready(function(){
 });
 $('#remover').click(function(e){ //funcion del boton - para borrar input
   e.preventDefault();
-    i -= 1; //resta 1 a i, para continuar con el orden los ID de los input
+    if (i > 1){
+       i -=1 ; //resta 1 a i, para continuar con el orden los ID de los input
       $('form .col-md-3:last').remove(); //remueve el ultimo input
+   }
     });
 
 $('body').on('click', '#send', function(e){
         e.preventDefault();
         var formData = new FormData($(this).parents('form')[0]);
         //console.log(formData);
-     var name = $('input:text[name=name]').val(); //valor del input text name
-var desc = $('#vDesc').val(); //valor del input text id="vDesc"
-var fdate = $('#fecha').val(); //valor de fecha en el input type="date" id="fecha"
-var precio = $('#precio').val(); //valor del campo de text id="precio"
-var nid = "1"; //id de negocio 
- formData.append("titulo", name); //agrega campo de texto dentro del form_data
- formData.append("cuerpo", desc); //""
- formData.append("precio", precio);
- formData.append("negociosid", nid);
- formData.append("fecha", fdate); //""
- console.log(name+" "+desc+" "+precio+" "+fdate);
+        var name = $('input:text[name=name]').val(); //valor del input text name
+        var desc = $('#vDesc').val(); //valor del input text id="vDesc"
+        var fdate = $('#fecha').val(); //valor de fecha en el input type="date" id="fecha"
+        var precio = $('#precio').val(); //valor del campo de text id="precio"
+        var nid = "1"; //id de negocio 
+         formData.append("titulo", name); //agrega campo de texto dentro del formData
+         formData.append("cuerpo", desc); //""
+         formData.append("precio", precio);
+         formData.append("negociosid", nid);
+         formData.append("fecha", fdate); //""
 
 
         $.ajax({
             url: 'productos/add',
             type: 'POST',
-            xhr: function() {
-                var myXhr = $.ajaxSettings.xhr();
-                return myXhr;
-            },
+            data: formData, //data que envia
+            async: true, //para la barra de progreso
+            xhr: function() { //no tocas de aca a la linea 220, es la barra de progreso
+                var xhr = $.ajaxSettings.xhr();
+                  //Upload Progress
+                  xhr.upload.addEventListener("progress", function (evt) {
+                     if (evt.lengthComputable) {
+                    var percentComplete = (evt.loaded / evt.total) * 100; 
+                    $('div.progress').css({ "visibility": "visible" });
+                    $('div.progress > div.progress-bar').css({ "width": percentComplete + "%" });
+                    $("div.progress > div.progress-bar").text( percentComplete + "%" ); } }, false);
+ 
+                  //Download progress
+                   xhr.addEventListener("progress", function (evt)
+                   {
+                   if (evt.lengthComputable)
+                    { var percentComplete = (evt.loaded / evt.total) *100;
+                   $("div.progress > div.progress-bar").css({ "width": percentComplete + "%" });
+                   $("div.progress > div.progress-bar").text( percentComplete + "%" ); } },
+                  false);
+                return xhr;
+            }, //barra de progreso fin
             success: function (data) {
                 alert("Data Uploaded: "+data);
             },
-            data: formData,
+            
             cache: false,
             contentType: false,
-            processData: false
+            processData: false,
+
         });
         return false;
 });

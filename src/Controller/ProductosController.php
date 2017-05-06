@@ -72,8 +72,9 @@ class ProductosController extends AppController
                 $nombre = md5(uniqid()) . "." . $ext[count($ext)-1];
                 $target_path = $target_path . $nombre;
                 if(move_uploaded_file($_FILES['file']['tmp_name'][$i], $target_path)) {
+                    list($width, $height) = getimagesize($_FILES['file']['tmp_name'][$i] );
                         echo "The file has been uploaded successfully <br />";
-                        echo($i);
+                        echo($i." ".$width." ".$height);
                         $query = $ImagenesProductos->query(); 
                          $query->insert(['foto','numero','productos_id'])->values([
                         'foto' => $nombre,

@@ -57,39 +57,38 @@ class ProductosController extends AppController
         //$data = $this->request->data;
         //echo "<pre>",print_r($data),"</pre>";
         if ($this->request->is('ajax')) {
+            $ImagenesProductos = TableRegistry::get('ImagenesProductos');
+            $query = $ImagenesProductos->query(); 
             $producto = $this->Productos->newEntity(); //se pueden asignar todos juntos pero tengo que poner unos campos en una lista blanca (verificar eso despues)
             $producto->set('titulo', $this->request->data['titulo']);
-            $producto->set('fecha ', $this->request->data['fecha']);
+            $producto->set('fecha', date('Y-m-d H:i:s'));
             $producto->set('precio', $this->request->data['precio']);
             $producto->set('cuerpo', $this->request->data['cuerpo']);
             $producto->set('negocios_id', $this->request->data['negociosid']);
-                for($i=0; $i<count($_FILES['file']['name']); $i++){
+             if($this->Productos->save($producto)){
+            for($i=0; $i<count($_FILES['file']['name']); $i++){
                 $target_path = WWW_ROOT . 'files' .DS;
                 $ext = explode('.', basename( $_FILES['file']['name'][$i]));
-                $target_path = $target_path . md5(uniqid()) . "." . $ext[count($ext)-1]; 
-
-
-
+                $nombre = md5(uniqid()) . "." . $ext[count($ext)-1];
+                $target_path = $target_path . $nombre;
                 if(move_uploaded_file($_FILES['file']['tmp_name'][$i], $target_path)) {
-                    echo "The file has been uploaded successfully <br />";
-                } else{
+                        echo "The file has been uploaded successfully <br />";
+                        echo($i);
+                        $query = $ImagenesProductos->query(); 
+                         $query->insert(['foto','numero','productos_id'])->values([
+                        'foto' => $nombre,
+                        'numero' => $i,
+                        'productos_id' => $producto->get('id')
+                        ])
+                        ->execute();
+                 } else{
                     echo "There was an error uploading the file, please try again! <br />";
-                }
-            }   
-         
-
-            $producto->fecha = date('Y-m-d H:i:s');
-           
-          /*  if($this->Productos->save($producto)){ //Cargue el producto, ahora cargo las imagenes
-                                                   //Para que el metodo sea infable cada negocio SOLO debe poder tener un producto con cada titulo, no debe poder repetirse, sino hay que cambiar el funcionamiento (añadir esta verificacion arriba)
-                $producto_id = $this->Productos->find()->select(['id'])->where(['negocios_id' => $producto->get('negocios_id'), 'ubicacion' => $prod->ubicacion])
-//terminar consulta
-
-
-
-
-            };*/
- }
+                 }
+                   
+                }   
+                                    //En este caso no puedo guardar el objeto, porque como es una recursion, me va a guardar el id insertado en un campo, y me va a modificar siempre el mismo registro, guardandome la ultima foto, porque contiene el id de la primera insercion. La guardo despues del for asi hago un insert con todos los valores
+            }
+        }
     }
 
     /**

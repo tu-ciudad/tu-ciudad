@@ -3,6 +3,10 @@
   position: relative;
   width: 70%;
   max-height: 400px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.08) 0 1px 3px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.08) 0 1px 3px;
+    -ms-box-shadow: rgba(0, 0, 0, 0.08) 0 1px 3px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0 1px 3px; 
   }
  
 
@@ -28,6 +32,10 @@
     height: auto;
     margin: 0 !important;
     width: auto;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.08) 0 1px 3px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.08) 0 1px 3px;
+    -ms-box-shadow: rgba(0, 0, 0, 0.08) 0 1px 3px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0 1px 3px; 
 }
 #carousel-custom .carousel-indicators li img {
     display: block;
@@ -90,13 +98,21 @@
   background-color: #466b99;
   border-color: #3b5a7c;
 }
-
-
-[class*="col-md-8"].gtt {
-    float: none;
-    display: table-cell;
-    vertical-align: top;
+.divi span {
+  display: block;
+  //position: absolute;
+  top: 22.5px;
+  left: 8.5px;
+  right: 8.5px;
+  height: 1px;
+  background: transparent;
+  margin-top: 30px;
+  //margin-bottom: 50px;
 }
+
+ 
+
+
 </style>
 
 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalProduct">modal product</button>
@@ -107,7 +123,6 @@
       <div class="modal-body" style="background-color: #FAFAFA;">
 		<span class="close" data-dismiss="modal" aria-label="Close">×</span>
 <!-- cuerpo -->
-
 
     <div class="row">
 <div class=" col-sm-4 col-xs-4">
@@ -184,23 +199,25 @@
                 </li>
             </ul><!-- end countdown -->
 	</center>
-
+<center  class="divi"><span></span></center>
 </div>
-<div class="col-md-8 gtt">
+	<div class="col-md-8 ">
 
-	<center>
-		<p style=" bottom: 0px;"> compartir producto
-<a class="btn btn-primary social-login-btn social-facebook" href="/auth/facebook"><i class="fa fa-facebook"></i></a>
-<a class="btn btn-primary social-login-btn social-twitter" href="/auth/twitter"><i class="fa fa-twitter"></i></a>
-<a class="btn btn-primary social-login-btn social-linkedin" href="/auth/linkedin"><i class="fa fa-linkedin"></i></a>
-<a class="btn btn-primary social-login-btn social-google" href="/auth/google"><i class="fa fa-google-plus"></i></a>
-</p>
-	</center>
-</div>
+		<center>
+			<p style=" bottom: 0px;"> 
+			<h3><span class="glyphicon glyphicon-share-alt"></span> Compartir</h3>
+	<a class="btn btn-primary social-login-btn social-facebook" href="/auth/facebook"><i class="fa fa-facebook"></i></a>
+	<a class="btn btn-primary social-login-btn social-twitter" href="/auth/twitter"><i class="fa fa-twitter"></i></a>
+	<a class="btn btn-primary social-login-btn social-linkedin" href="/auth/linkedin"><i class="fa fa-linkedin"></i></a>
+	<a class="btn btn-primary social-login-btn social-google" href="/auth/google"><i class="fa fa-google-plus"></i></a>
+			</p>
+		</center>
+	</div>
+
+</div> <!-- fin row -->
 <!-- fin cuerpo -->
-</div>
-
       </div>
   	</div>
   </div>
 </div>
+

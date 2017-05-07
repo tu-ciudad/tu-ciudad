@@ -2382,3 +2382,203 @@ However, delay the fade out process for 2.5 seconds */
     margin: 0 auto;
 }
 /************************************fin-tabla-horarios************************************/
+/***********************************product-upload************************/
+
+  .thumbimg { 
+    height: 75px;
+    min-width: 80px;
+    background-color: rgb(233, 235, 238);
+    border: 3px solid rgb(233, 235, 238);
+    border-radius: 3px;
+    margin: 10px 5px 10px 0;
+  }
+  .input{ 
+    display: none;
+    
+}
+  .labUp { 
+      
+      -webkit-appearance: button;
+      -moz-appearance: button;
+      appearance: button;
+      line-height: 16px;
+      padding: .2em .4em;
+      margin: .2em;
+}
+  .px{
+  width: 950px;
+}
+.btnmore {
+  float: right;
+  position: fixed;
+  right: 365px;
+}
+
+.btnminus {
+  float: right;
+  position: fixed;
+  right: 323px;
+}
+
+.mleft {
+  margin-left: -15px;
+}
+
+.grdient {
+  background: -webkit-linear-gradient(left, white 68%, gray 32%);
+  background: -o-linear-gradient(left, white 68%, gray 32%);
+  background: linear-gradient(to right, white 68%, gray 32%);
+}
+.close {
+  position: absolute;
+  right: 3px;
+  top: 0px;
+  font-size: 26px;
+  transition: all .1s ease-in-out;
+}
+.close:hover {
+    color: red;
+  transform: scale(1);
+}
+/***********************************fin-product-upload****************************/
+
+/*****************************modal-product***********************/
+.pclose {
+  position: absolute;
+  right: 7px;
+  top: 7px;
+  transition: all .05s ease-in-out;
+ 
+}
+.pclose:hover {
+    color: red;
+    //top: 6px;
+   transform: scale(1);
+}
+.carousel-inner {
+  position: relative;
+  width: 70%;
+  max-height: 400px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.08) 0 1px 3px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.08) 0 1px 3px;
+    -ms-box-shadow: rgba(0, 0, 0, 0.08) 0 1px 3px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0 1px 3px; 
+  }
+ 
+
+#carousel-custom {
+    left: 0;
+    margin: 20px auto;
+    width: 350px;
+}
+#carousel-custom .carousel-indicators {
+    //margin: 10px 0 0;
+    overflow: auto;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: 100%;
+    overflow:hidden;
+    left: 57px;
+    top: 0px;
+}
+#carousel-custom .carousel-indicators li {
+    //background-color: transparent;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    display: inline-block;
+    height: auto;
+    margin: 0 !important;
+    width: auto;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.08) 0 1px 3px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.08) 0 1px 3px;
+    -ms-box-shadow: rgba(0, 0, 0, 0.08) 0 1px 3px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0 1px 3px; 
+
+}
+#carousel-custom .carousel-indicators li img {
+    display: block;
+    /opacity: 0.5;
+}
+#carousel-custom .carousel-indicators li.active img {
+    opacity: 1;
+}
+#carousel-custom .carousel-indicators li:hover img {
+    opacity: 0.99;
+    transform: scale(1.2);
+}
+#carousel-custom .carousel-outer {
+    position: relative;
+}
+.carousel-indicators li img {
+  height: 66px;
+  width: 52px;
+    transition: all .1s ease-in-out;}
+
+
+  .social-login-btn {
+  margin: 5px;
+  width: 20%;
+  font-size: 250%;
+  padding: 0;
+}
+
+.marg{
+    padding: 0;
+    margin: 0; 
+}
+
+.social-google {
+  background-color: #da573b;
+  border-color: #be5238;
+}
+.social-google:hover{
+  background-color: #be5238;
+  border-color: #9b4631;
+}
+
+.social-twitter {
+  background-color: #1daee3;
+  border-color: #3997ba;
+}
+.social-twitter:hover {
+  background-color: #3997ba;
+  border-color: #347b95;
+}
+
+.social-facebook {
+    position: relative;
+    top: 3px;
+  background-color: #4c699e;
+  border-color: #47618d;
+}
+.social-facebook:hover {
+  background-color: #47618d;
+  border-color: #3c5173;
+}
+
+.social-linkedin {
+  background-color: #4875B4;
+  border-color: #466b99;
+}
+.social-linkedin:hover {
+  background-color: #466b99;
+  border-color: #3b5a7c;
+}
+
+._4-i0{
+    background-color:#f6f7f9;
+    border-bottom:1px solid #e5e5e5;
+    border-radius:3px 3px 0 0;
+    color: #1d2129;
+    font-weight:bold;
+    line-height:19px;
+    padding:10px 12px
+    }
+ #bordd {
+   border-radius:3px 3px 0 0;  
+ }
+
+
+/**********************************************/
+   

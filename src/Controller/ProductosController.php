@@ -65,30 +65,33 @@ class ProductosController extends AppController
             $producto->set('precio', $this->request->data['precio']);
             $producto->set('cuerpo', $this->request->data['cuerpo']);
             $producto->set('negocios_id', $this->request->data['negociosid']);
-             if($this->Productos->save($producto)){
+          //   if($this->Productos->save($producto)){
             for($i=0; $i<count($_FILES['file']['name']); $i++){
                 $target_path = WWW_ROOT . 'files' .DS;
                 $ext = explode('.', basename( $_FILES['file']['name'][$i]));
                 $nombre = md5(uniqid()) . "." . $ext[count($ext)-1];
-                $target_path = $target_path . $nombre;
+                $target_path = $target_path . $nombre ;
+                $response_target = ',..' .DS. 'files' .DS. $nombre;
                 if(move_uploaded_file($_FILES['file']['tmp_name'][$i], $target_path)) {
                     list($width, $height) = getimagesize($_FILES['file']['tmp_name'][$i] );
-                        echo "The file has been uploaded successfully <br />";
-                        echo($i." ".$width." ".$height);
-                        $query = $ImagenesProductos->query(); 
+                        //echo "The file has been uploaded successfully <br />";
+                        //echo json_encode($response_target);
+                        //foreach($response_target as $a)
+                         echo ($response_target);
+                    /*    $query = $ImagenesProductos->query(); 
                          $query->insert(['foto','numero','productos_id'])->values([
                         'foto' => $nombre,
                         'numero' => $i,
                         'productos_id' => $producto->get('id')
                         ])
-                        ->execute();
+                        ->execute();*/
                  } else{
                     echo "There was an error uploading the file, please try again! <br />";
                  }
                    
                 }   
                                     //En este caso no puedo guardar el objeto, porque como es una recursion, me va a guardar el id insertado en un campo, y me va a modificar siempre el mismo registro, guardandome la ultima foto, porque contiene el id de la primera insercion. La guardo despues del for asi hago un insert con todos los valores
-            }
+           // }
         }
     }
 

@@ -172,8 +172,27 @@ $('body').on('click', '#send', function(e){
                 return xhr;
             }, //barra de progreso fin
             success: function (data) {
-                alert("Data Uploaded: "+data);
-            },
+                //alert("Data Uploaded: "+data);
+                var tmp = data.split(",");
+                for (var i = 1; i < tmp.length; i++) {
+
+                  console.log(i+":"+tmp[i]);
+                
+
+                $('#appe').append('<li><a data-toggle="tab" href="#cont'+ [i] +'">'+ [i] +'</a></li>');
+                 $('#content').append('<div id="cont'+ [i] +'" class="tab-pane fade in ">'+'</div>');
+                $('#cont'+[i]).append('<div id="yourId'+ [i] +'" class="cropp"></div>');
+                 var croppicOpt = {
+                      //uploadUrl:'img_save_to_file.php',
+                      cropUrl:'imagenes-negocios/img_crop_to_file.php',  //realiza el proceso de corte
+                      outputUrlId:'outputUrlId', //link de donde se guardó
+                      loadPicture: tmp[i],
+                  } 
+                  var  yourId = 'yourId'+[i];
+                  var croppic = new Croppic( 'yourId'+[i] , croppicOpt);
+          
+          }  
+        },
             
             cache: false,
             contentType: false,
@@ -213,9 +232,9 @@ $('#Text1').text(name); //nombre vPrevia hover
 $('#Text3').text(desc); //descripcion vPrevia hover
 });
 
-
-
-$(document).ready(function(){ //pophover tooltip de botones
+</script>
+<script>//pophover tooltip de botones
+$(document).on("load", function(){ 
     $('[data-toggle="tooltip"]').tooltip(); 
 });
 

@@ -67,13 +67,14 @@ class ProductosController extends AppController
             $producto->set('negocios_id', $this->request->data['negociosid']);
              if($this->Productos->save($producto)){
             for($i=0; $i<count($_FILES['file']['name']); $i++){
-                $target_path = WWW_ROOT . 'files' .DS;
+                $target_path = WWW_ROOT . 'files' .DS. 'ImagenesProductos' .DS;
                 $ext = explode('.', basename( $_FILES['file']['name'][$i]));
                 $nombre = md5(uniqid()) . "." . $ext[count($ext)-1];
                 $target_path = $target_path . $nombre ;
-                $response_target = ',..' .DS. 'files' .DS. $nombre;
+                
                 if(move_uploaded_file($_FILES['file']['tmp_name'][$i], $target_path)) {
                     list($width, $height) = getimagesize($_FILES['file']['tmp_name'][$i] );
+                    $response_target = ',..' .DS. 'files' .DS. 'ImagenesProductos' .DS. $nombre . '&' . $width . '&' . $height;
                         //echo "The file has been uploaded successfully <br />";
                         //echo json_encode($response_target);
                         //foreach($response_target as $a)

@@ -1,5 +1,7 @@
 <style>
-
+.heig {
+  min-height: 513px;
+}
 </style>
 
 
@@ -8,7 +10,7 @@
 <div id="myModal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog px">
     <div class="modal-content">
-      <div class="modal-body grdient">
+      <div class="modal-body grdient heig">
 <span class="close" data-dismiss="modal" aria-label="Close">×</span>
   <div class="row" id="divUp"> <!-- comienza el "form" de cargar imagen con textos -->
     <div class="col-md-8">
@@ -101,6 +103,16 @@
 
 
       </div>
+<div id="cropPro"></div>
+
+
+
+<button class="btn btn-primary btnNext hidden" id="bnext">Next</button>
+
+
+
+
+        <div id="result"></div>
     </div>
    </div>
   </div>
@@ -172,28 +184,59 @@ $('body').on('click', '#send', function(e){
                 return xhr;
             }, //barra de progreso fin
             success: function (data) {
-                //alert("Data Uploaded: "+data);
+                
+                $('.heig').removeClass('grdient');
+                $('#divUp').addClass('hidden');
+                
+                $('#cropPro').append(
+                  '<ul class="nav nav-tabs hidden" id="appe">'+
+                  '<li class="active hidden"><a data-toggle="tab"  href="#cont0">Cortar</a>'+
+                  '</li></ul>');
+                $('#cropPro').append('<div class="tab-content" id="content">'+
+                  '<div id="cont0" class="tab-pane fade in "></div></div>');
+                var v = 0;
                 var tmp = data.split(",");
                 for (var i = 1; i < tmp.length; i++) {
+                  
+                  var dim = tmp[i].split("&");
+                  if (dim[1] === dim[2]){
+                    //console.log(dim[0]+'correcto');
+                  } else {
+                    v = v + 1;
+                    console.log(v);
+                    //console.log(dim[0]+'falso');
+                    console.log('agrega crop de '+[v]);
+                    $('#appe').append('<li><a data-toggle="tab" class="hidden" id="id'+ [v] +'" href="#cont'+ [v] +'">'+ [v] +'</a></li>');
+                $('#content').append('<div id="cont'+ [v] +'" class="tab-pane fade in">'+'</div>');
+                $('#cont'+[v]).append('<div id="yourId'+ [v] +'" class="cropp"></div>'+'<br>'+'<a class="btn btn-primary btnNext" >Next</a>');
+              
+                 var croppicOpt = {
+                      cropUrl:'imagenes-negocios/img_crop_producto.php',  //realiza el proceso de corte
+                      outputUrlId:'output'+[v], //link de donde se guardó
+                      loadPicture: dim[0],
+                  } 
+                  var  yourId = 'yourId'+[v];
+                  var croppic = new Croppic( 'yourId'+[v] , croppicOpt);
+                  k = k + 1;
+                  }
 
+                  //console.log(dim);
+                 
                   console.log(i+":"+tmp[i]);
                 
 
-                $('#appe').append('<li><a data-toggle="tab" href="#cont'+ [i] +'">'+ [i] +'</a></li>');
-                 $('#content').append('<div id="cont'+ [i] +'" class="tab-pane fade in ">'+'</div>');
-                $('#cont'+[i]).append('<div id="yourId'+ [i] +'" class="cropp"></div>');
-                 var croppicOpt = {
-                      //uploadUrl:'img_save_to_file.php',
-                      cropUrl:'imagenes-negocios/img_crop_to_file.php',  //realiza el proceso de corte
-                      outputUrlId:'outputUrlId', //link de donde se guardó
-                      loadPicture: tmp[i],
-                  } 
-                  var  yourId = 'yourId'+[i];
-                  var croppic = new Croppic( 'yourId'+[i] , croppicOpt);
-          
-          }  
-        },
-            
+                
+
+                          
+        }
+        if (k !== 0){
+        $('#cropPro').append('<h1 class="success">Debe recortar '+ [k] +' imagenes</h1>');
+        $('#bnext').removeClass('hidden');
+        window.parent.k=k; 
+      } else {
+         $('#cropPro').append('<h1 class="success">neinnnn</h1>');
+      }
+         },   
             cache: false,
             contentType: false,
             processData: false,

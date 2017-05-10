@@ -33,8 +33,8 @@
 <style>
     
  .cropp{ 
-        width: 400px;  /* MANDATORY */  /*ancho del div y del recorte de la imagen*/
-        height: 400px; /* MANDATORY */  /*alto del div y del recorte de la imagen*/
+        width: 250px;  /* MANDATORY */  /*ancho del div y del recorte de la imagen*/
+        height: 250px; /* MANDATORY */  /*alto del div y del recorte de la imagen*/
         position: relative;  /* MANDATORY */
         
         /margin: 50px 70px 20px;
@@ -42,32 +42,21 @@
         box-sizing: content-box;
         -moz-box-sizing: content-box;
         border-radius: 2px;
-        background-image: url(../img/placeholder.png);
+        /background-image: url(../img/placeholder.png);
         background-repeat: no-repeat;
         background-position: center;
-        box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
+        /box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
       } 
       
-            
+  .thumbRes {
+    width: 100px;
+  }          
             
     </style>
 <?= $this->Html->css('croppic.css') ?>
 
-<?= $this->Html->script('croppic') ?>
-<ul class="nav nav-tabs" id="appe">
-  <li class="active"><a data-toggle="tab" href="#cont0">Cortar</a></li>
-</ul>
+<?= $this->Html->script('croppic-product') ?>
 
-<div class="tab-content" id="content">
- <div id="cont0" class="tab-pane fade in ">'+'</div>
-</div>
-
-
-
-
-
-
-        <div id=""></div>
 
     
     
@@ -80,9 +69,31 @@
    
     
     <script>
+                var k = 0;
+                var h = 0;
+                var j = 0;
+                function cropped(){
+                h = h + 1;
+                j = h + 1;
+                k = k - 1;
+                console.log(h);
+                if (h > 0){
+                    $('#cont'+[h]).addClass('hidden');
+                    $('#cont'+[j]).addClass('active');
+                    var srch = $('#cont'+[h]+' .croppedImg').attr('src');
+                    $('#result').append('<img class="thumbRes" src="'+ srch +'">')
+                    $('#restantes').text(k);
+                }
+             };
+        $('.btnNext').click(function(){
+        $('#cont1').removeClass('hidden');
+        $('#id0').addClass('hidden');
+        $('#cont1').addClass('active');
+        $('.btnNext').addClass('hidden');
+        $('.success').addClass('hidden');
+        $('#result').append('<h2>Imagenes restantes: <div id="restantes">'+[k]+'</div></h2>');
 
-       
-        
+      });
         
     </script>
 

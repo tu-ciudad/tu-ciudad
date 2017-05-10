@@ -19,7 +19,7 @@ $cropH = $_POST['cropH'];
 // rotation angle
 $angle = $_POST['rotation'];
 
-$jpeg_quality = 100;
+$jpeg_quality = 70;
 
 $out = explode(".", $imgUrl);
 //$output_filename = "temp/croppedImg_".rand();

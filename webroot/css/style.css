@@ -2392,7 +2392,7 @@ However, delay the fade out process for 2.5 seconds */
     border-radius: 3px;
     margin: 10px 5px 10px 0;
   }
-  .input{ 
+  //.input{ 
     display: none;
     
 }

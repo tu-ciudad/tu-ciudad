@@ -2,6 +2,7 @@
 .heig {
   min-height: 513px;
 }
+
 </style>
 
 
@@ -9,7 +10,7 @@
 
 <div id="myModal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog px">
-    <div class="modal-content">
+    <div class="modal-content ">
       <div class="modal-body grdient heig">
 <span class="close" data-dismiss="modal" aria-label="Close">×</span>
   <div class="row" id="divUp"> <!-- comienza el "form" de cargar imagen con textos -->
@@ -103,7 +104,9 @@
 
 
       </div>
+      <center>
 <div id="cropPro"></div>
+      </center>
 
 
 
@@ -111,9 +114,12 @@
 
 
 
-
-        <div id="result"></div>
+<div class="modal-footer hidden" id="foot" style="padding: 0; padding-top: 10px; position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; ">
+    <div id="result"></div>
     </div>
+        
+    </div>
+    
    </div>
   </div>
 
@@ -184,32 +190,37 @@ $('body').on('click', '#send', function(e){
                 return xhr;
             }, //barra de progreso fin
             success: function (data) {
-                
-                $('.heig').removeClass('grdient');
-                $('#divUp').addClass('hidden');
-                
+                $('#foot').removeClass('hidden'); //remueve el hidden del footer modal
+                $('.modal-body').removeClass('grdient'); //remueve el gris del modal
+                $('#divUp').addClass('hidden'); //esconde todo lo de adentro del modal
                 $('#cropPro').append(
                   '<ul class="nav nav-tabs hidden" id="appe">'+
                   '<li class="active hidden"><a data-toggle="tab"  href="#cont0">Cortar</a>'+
-                  '</li></ul>');
+                  '</li></ul>'); //crea pestaña 0 en hidden
                 $('#cropPro').append('<div class="tab-content" id="content">'+
-                  '<div id="cont0" class="tab-pane fade in "></div></div>');
-                var v = 0;
-                var tmp = data.split(",");
+                  '<div id="cont0" class="tab-pane fade in "></div></div>'); //crea content 0 en hidden
+
+                var v = 0; //---- va a ser el numero de croppic
+                var tmp = data.split(","); //----separa la data a partir de , yguarda en tmp
+                //----asigna a tmp[i] la data separada
                 for (var i = 1; i < tmp.length; i++) {
                   
-                  var dim = tmp[i].split("&");
+                  var dim = tmp[i].split("&"); //obtiene de tmp[i] las dimensiones
+                  //----dim[0]=url..dim[1]=width..dim[2]=height..
+                  //si las dimensiones son iguales no hace nada
                   if (dim[1] === dim[2]){
                     //console.log(dim[0]+'correcto');
+                    //----si no son iguales asigna el valor de v para los id
                   } else {
                     v = v + 1;
                     console.log(v);
                     //console.log(dim[0]+'falso');
-                    console.log('agrega crop de '+[v]);
+                    //console.log('agrega crop de '+[v]);
+                    //----crea la pestaña para V, y su content
                     $('#appe').append('<li><a data-toggle="tab" class="hidden" id="id'+ [v] +'" href="#cont'+ [v] +'">'+ [v] +'</a></li>');
-                $('#content').append('<div id="cont'+ [v] +'" class="tab-pane fade in">'+'</div>');
-                $('#cont'+[v]).append('<div id="yourId'+ [v] +'" class="cropp"></div>'+'<br>'+'<a class="btn btn-primary btnNext" >Next</a>');
-              
+                    $('#content').append('<div id="cont'+ [v] +'" class="tab-pane fade in">'+'</div>');
+                    $('#cont'+[v]).append('<div id="yourId'+ [v] +'" class="cropp"></div>'+'<br>'+'<a class="btn btn-primary btnNext" >Next</a>');
+                  //----crea el croppic para 
                  var croppicOpt = {
                       cropUrl:'imagenes-negocios/img_crop_producto.php',  //realiza el proceso de corte
                       outputUrlId:'output'+[v], //link de donde se guardó
@@ -217,7 +228,7 @@ $('body').on('click', '#send', function(e){
                   } 
                   var  yourId = 'yourId'+[v];
                   var croppic = new Croppic( 'yourId'+[v] , croppicOpt);
-                  k = k + 1;
+                  k = k + 1; //k=  la cantidad de pestañas
                   }
 
                   //console.log(dim);
@@ -229,10 +240,11 @@ $('body').on('click', '#send', function(e){
 
                           
         }
+        //--- si k no es 0., debe recortar k imagenes
         if (k !== 0){
         $('#cropPro').append('<h1 class="success">Debe recortar '+ [k] +' imagenes</h1>');
         $('#bnext').removeClass('hidden');
-        window.parent.k=k; 
+        window.parent.k=k; //se envia k a index.ctp
       } else {
          $('#cropPro').append('<h1 class="success">neinnnn</h1>');
       }

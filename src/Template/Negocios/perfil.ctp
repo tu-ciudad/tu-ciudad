@@ -333,7 +333,7 @@
 -->
 
 
-
+<div id="bott">
     <div class="col-md-2 location hidden-xs hidden-sm ">
         <div class="topmap" alt=""></div>
         <address>
@@ -364,7 +364,7 @@
     </section>
 
 <?= $this->element('footer') ?>
-
+</div>
 <script>
         var jumboHeight = $('.jumbotron').outerHeight();
 

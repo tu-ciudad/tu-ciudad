@@ -19,7 +19,7 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar">
-                <ul class="nav navbar-nav ">
+                <ul class="nav navbar-nav">
                     <li>
                         <a class="btn-trans"<?= $this->Html->link('LOCALES', array('controller' => 'prueba', 'action' => 'index')) ?> 
                         
@@ -32,7 +32,7 @@
                     <li>
                         <a class="btn-trans" href="ofertas.html">OFERTAS</a>
                     </li>
-                    <li class="dropdown col-md-push-4">
+                    <li class="dropdown ">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Links <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li>
@@ -52,7 +52,16 @@
                             </li>
                          </ul>
                     </li>
+                   
                 </ul>
+ <ul class="navbar-form navbar-right" role="search">
+                      
+                                <div class="input-group " >
+                                    <input type="text" class="form-control" placeholder="Buscar...">
+                                    <span class="input-group-btn"><button class="btn btn-primary " type="button"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button></span>
+                                </div>
+                              
+                    </ul>
                 <!-- 
                 <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
@@ -62,51 +71,7 @@
       </form>
                 -->
                 
-<ul class="nav navbar-nav navbar-right navindex">
-                    <!-- 
-        <li><p class="navbar-text">Already have an account?</p></li>
-          -->
 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
-                        <ul id="login-dp" class="dropdown-menu animate1">
-                            <li>
-                                <div class="row ">
-                                    <div class="col-md-12">
-                                        Login via
-                                        <div class="social-buttons">
-                                            <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                                            <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
-                                        </div>
-                                        or
-                                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-                                            <div class="form-group">
-                                                <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-                                                <div class="help-block text-right"><a href="">Forget the password ?</a></div>
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label>
-                                             <input type="checkbox"> keep me logged-in
-                                             </label>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="bottom text-center">
-                                        New here ? <a href="#"><b>Join Us</b></a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
 
             </div>
             <!-- /.navbar-collapse -->

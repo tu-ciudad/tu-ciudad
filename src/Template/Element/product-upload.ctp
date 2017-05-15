@@ -190,6 +190,7 @@ $('body').on('click', '#send', function(e){
                 return xhr;
             }, //barra de progreso fin
             success: function (data) {
+              console.log(data);
                 $('#foot').removeClass('hidden'); //remueve el hidden del footer modal
                 $('.modal-body').removeClass('grdient'); //remueve el gris del modal
                 $('#divUp').addClass('hidden'); //esconde todo lo de adentro del modal
@@ -213,7 +214,7 @@ $('body').on('click', '#send', function(e){
                     //----si no son iguales asigna el valor de v para los id
                   } else {
                     v = v + 1;
-                    console.log(v);
+                   // console.log(v);
                     //console.log(dim[0]+'falso');
                     //console.log('agrega crop de '+[v]);
                     //----crea la pestaña para V, y su content
@@ -233,7 +234,7 @@ $('body').on('click', '#send', function(e){
 
                   //console.log(dim);
                  
-                  console.log(i+":"+tmp[i]);
+                 // console.log(i+":"+tmp[i]);
                 
 
                 

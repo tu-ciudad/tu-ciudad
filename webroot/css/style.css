@@ -1157,16 +1157,10 @@ iframe {
     #sidebar-right1.affix {
         position: fixed;
         top: 50px;
-        opacity: 1;
-         color: #5bc solid;
-
-        
+        /opacity: 1;
+         /color: #5bc solid; 
     }
- #sidebar-right1.affix-bottom {
-    /top: auto;
-    bottom: -350px;
-    position: relative;
-  }
+
 
   .nopadding-md-3 [class*="col-"] {
     padding: 0;

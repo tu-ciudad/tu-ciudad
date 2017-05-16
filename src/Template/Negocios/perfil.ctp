@@ -333,7 +333,7 @@
 -->
 
 
-<div id="bott">
+<div id="fbot"></div>
     <div class="col-md-2 location hidden-xs hidden-sm ">
         <div class="topmap" alt=""></div>
         <address>
@@ -358,13 +358,12 @@
 
             <div id="map-container" align="center" class="col-md-8 col-md-push-1 img-rounded "></div>
 
-
        
 
     </section>
 
 <?= $this->element('footer') ?>
-</div>
+
 <script>
         var jumboHeight = $('.jumbotron').outerHeight();
 
@@ -376,8 +375,46 @@
         $(window).scroll(function() {
             parallax();
         });
-    </script>
 
+
+    </script>
+<script>
+        //hace el affixTop del elemento
+        var stickySidebar = $('#sidebar-right1').offset().top;
+
+        $(window).scroll(function() {  
+            if ($(window).scrollTop() > stickySidebar - navH) {
+                $('#sidebar-right1').addClass('affix');
+
+            }
+            else {
+                $('#sidebar-right1').removeClass('affix');
+            }  
+        });
+
+      
+       var elAlt = $('#sidebar-right1').height(); //altura elemto de affix (2do y 3er recomendado)
+       var sec2Dis = $('#sec2').offset().top ; //distancia entre el #sec2 y el top
+       var firstRecm = $('#firstRecm').height() + 10; //altura del primer recomendado + 10px del margin
+       var navH = $('#navbar').height(); //altura de la navbar
+       var  distSec2el = sec2Dis - elAlt - navH;
+       var  disTop = distSec2el - navH - firstRecm - elAlt;
+
+$(window).scroll(function() {  
+    if($(window).scrollTop() + elAlt + navH >= sec2Dis - 20){
+        //el -20 es del margin entre el sec2 y el cuerpo de la pagina
+       console.log('disTop: ' +disTop+'..elAlt '+elAlt+'..sec2: '+ $('#sec2').offset().top)
+       /*fija el elemento en la posicion de colicion con el sec2*/
+        $('#sidebar-right1').css('top', disTop);
+        $('#sidebar-right1').css('position','relative');
+    }
+    else {
+        //$('#sidebar-right1').removeClass('affix-bottom');
+        $('#sidebar-right1').css('top','');
+        $('#sidebar-right1').css('position','');
+    }  
+});
+</script>
     <script>
         //CountDown
         $('.countdown-product').downCount({

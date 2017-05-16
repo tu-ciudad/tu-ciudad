@@ -2,7 +2,8 @@
 <div class="col-md-2 visible-lg " >
 
                 <div class="nav nav-stacked  affix-top " id="sidebar-right">
-                    <div class="thumb">
+                    <div id="firstRecm">
+                    <div class="thumb" >
                         <div class="br">
                         <div class=" recomended ">
                             <img src="../../img/adidas.jpeg" class="img-responsive " alt="...">
@@ -10,6 +11,7 @@
                                 <p class="col-md-6 textr">Comercio #1</p>
                                 <button class="btn btn-primary sign "><i class="fa fa-sign-in fa-lg  " aria-hidden="true" ></i> Entrar</button>
                             </div>
+                        </div>
                         </div>
                         </div>
                         <div id="sidebar-right1">
@@ -38,29 +40,6 @@
 
                     <!--/sidebar-nav-fixed -->
                 </div>
+                
             </div>
 </div>
-<script>
-var stickySidebar = $('#sidebar-right1').offset().top;
-
-$(window).scroll(function() {  
-    if ($(window).scrollTop() > stickySidebar - 50) {
-        $('#sidebar-right1').addClass('affix');
-    }
-    else {
-        $('#sidebar-right1').removeClass('affix');
-    }  
-});
-
-var bot = $('#bott').offset().bottom;
-$(window).scroll(function() {
-   if($(window).scrollTop() > bot + 100) {
-       $('#sidebar-right1').removeClass('affix');
-       $('#sidebar-right1').addClass('affix-bottom');
-   } else {
-       $('#sidebar-right1').removeClass('affix-bottom');
-       
-   }
-});
-
-</script>

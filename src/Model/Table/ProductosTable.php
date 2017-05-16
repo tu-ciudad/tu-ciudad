@@ -75,8 +75,7 @@ class ProductosTable extends Table
 
         $validator
             ->decimal('precio')
-            ->requirePresence('precio', 'create')
-            ->notEmpty('precio');
+            ->allowEmpty('precio');
 
         return $validator;
     }

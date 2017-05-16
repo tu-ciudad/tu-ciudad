@@ -21,7 +21,7 @@ class ProductosFixture extends TestFixture
         'titulo' => ['type' => 'string', 'length' => 45, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'cuerpo' => ['type' => 'string', 'length' => 500, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'fecha' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
-        'precio' => ['type' => 'decimal', 'length' => 10, 'precision' => 2, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => ''],
+        'precio' => ['type' => 'decimal', 'length' => 10, 'precision' => 2, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => ''],
         'negocios_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_indexes' => [
             'fk_publicaciones_negocios1_idx' => ['type' => 'index', 'columns' => ['negocios_id'], 'length' => []],
@@ -47,7 +47,7 @@ class ProductosFixture extends TestFixture
             'id' => 1,
             'titulo' => 'Lorem ipsum dolor sit amet',
             'cuerpo' => 'Lorem ipsum dolor sit amet',
-            'fecha' => '2017-04-28 12:43:21',
+            'fecha' => '2017-05-16 13:21:32',
             'precio' => 1.5,
             'negocios_id' => 1
         ],

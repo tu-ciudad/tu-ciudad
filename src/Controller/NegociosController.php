@@ -117,16 +117,27 @@ class NegociosController extends AppController
         $negocio = $this->Negocios->get($id, [
             'contain' => []
         ]);
+        //traigo informacion de local
             $negocio = $this->Negocios->patchEntity($negocio, $this->request->getData());
             $query = TableRegistry::get('ImagenesNegocios')->find();
             $imagenes = $query->select(['foto','ubicacion'])->where(['negocios_id' => $negocio->id]);
             foreach($imagenes as $imagen):
-             if ($imagen->ubicacion = 'perfil'){
+                if ($imagen->ubicacion = 'perfil'){
                 $fperfil = '../../files/ImagenesNegocios/foto/'. $imagen->foto;
-             }   
+                }   
             endforeach;
-            $this->set(compact('negocio','fperfil'));
-            $this->set('_serialize', ['negocio','fperfil']);
+        //traigo informacion de productos
+            $query2 = TableRegistry::get('productos')->find();
+            $productos = $query2->select(['id','titulo','cuerpo','fecha','precio'])->where(['negocios_id' => $negocio->id]);
+        //traigo las imagenes del producto
+            foreach($productos as $producto):
+                $query3 = TableRegistry::get('ImagenesProductos')->find();
+                $imgproductos = $query3->select(['foto','numero'])->where(['productos_id' => $producto->id])->execute();   
+                $imagenesproductos[] = $imgproductos;
+            endforeach;
+ 
+            $this->set(compact('negocio','fperfil','productos','imagenesproductos'));
+            $this->set('_serialize', ['negocio','fperfil','productos','imagenesproductos']);
             //Ahora ya tengo la info de las imagenes y del comercio, solo la tengo que poner en el sitio.
              //   return $this->redirect(['action' => 'index']);
             

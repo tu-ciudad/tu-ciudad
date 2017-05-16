@@ -358,7 +358,13 @@
 
             <div id="map-container" align="center" class="col-md-8 col-md-push-1 img-rounded "></div>
 
-       
+       <div class="social-float-parent">
+    <div id="social-float">float...</div>
+    <div id="social-float1">float...</div>
+    <div id="social-float2">float...</div>
+    <div id="social-float3">float...</div>
+    <div id="social-float4">float...</div>
+</div>
 
     </section>
 
@@ -403,7 +409,7 @@
 $(window).scroll(function() {  
     if($(window).scrollTop() + elAlt + navH >= sec2Dis - 20){
         //el -20 es del margin entre el sec2 y el cuerpo de la pagina
-       console.log('disTop: ' +disTop+'..elAlt '+elAlt+'..sec2: '+ $('#sec2').offset().top)
+       //console.log('disTop: ' +disTop+'..elAlt '+elAlt+'..sec2: '+ $('#sec2').offset().top)
        /*fija el elemento en la posicion de colicion con el sec2*/
         $('#sidebar-right1').css('top', disTop);
         $('#sidebar-right1').css('position','relative');
@@ -413,6 +419,59 @@ $(window).scroll(function() {
         $('#sidebar-right1').css('top','');
         $('#sidebar-right1').css('position','');
     }  
+});
+
+     var stickyArt = $('#artAffix').offset().top;
+
+        $(window).scroll(function() {  
+            if ($(window).scrollTop() > stickyArt - navH) {
+                $('#artAffix').addClass('affix');
+                $('#artAffix').addClass('col-md-2');
+
+            }
+            else {
+                $('#artAffix').removeClass('affix');
+                $('#artAffix').removeClass('col-md-2');
+            }  
+        });
+
+        var artH = $('#artAffix').height() ; //+10 de margin 
+        var navBefore = $('#sidebar').height();
+        var  distSec2art = sec2Dis - artH - navH;
+        var  disTopArt = distSec2art + navH - navBefore - artH ;
+        $(window).scroll(function() {  
+    if($(window).scrollTop() + artH + navH >= sec2Dis - 20){
+        //el -20 es del margin entre el sec2 y el cuerpo de la pagina
+       //console.log('disTop: ' +disTop+'..elAlt '+elAlt+'..sec2: '+ $('#sec2').offset().top)
+       /*fija el elemento en la posicion de colicion con el sec2*/
+        $('#artAffix').css('top', disTopArt);
+        $('#artAffix').css('position','relative');
+        $('#sidetest').css('border','');
+        $('#artAffix').removeClass('col-md-2');
+    }
+    else {
+        //$('#sidebar-right1').removeClass('affix-bottom');
+        $('#artAffix').css('top','');
+        $('#artAffix').css('position','');
+    }  
+});
+      
+      
+
+
+
+      function checkOffset() {
+    
+    if($(document).scrollTop() + window.innerHeight < $('#sec2').offset().top)
+        $('#social-float').css('position', 'fixed'); // restore when you scroll up
+    $('#social-float').text('artH: '+artH);
+    $('#social-float1').text('sec2Dis: '+sec2Dis);
+    $('#social-float2').text('navBefore: '+navBefore);
+    $('#social-float3').text('disTopArt: '+disTopArt);
+    $('#social-float4').text('ScrollTop '+ $(window).scrollTop());
+}
+$(document).scroll(function() {
+    checkOffset();
 });
 </script>
     <script>

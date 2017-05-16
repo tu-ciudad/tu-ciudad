@@ -1038,30 +1038,31 @@ iframe {
         border-bottom-right-radius: 6px;
         
     }
-    #sidebar.affix {
-        position: fixed;
-        top: 50px;
-        
-        margin-left: -15px;
-        width:  32vh;
-        opacity: 1;
-        z-index: 900;
+    .sidebar-left {
+        position: relative;
+        left: 0;
+        padding: 0;
+        /top: 50px;
+        /margin-left: -15px;
+        /width:  32vh;
+        /opacity: 1;
+        /z-index: 900;
         background-color: #fafafa;
-        height: 100vh;
+        /height: 100vh;
         border: 1px solid;
-    border-color: #DFE0E4 ;
+        border-color: #DFE0E4 ;
     }
     
   
 }
 
-#sidebar li.active {
+.sidebar-left li.active {
     border: 0 #5bc solid;
     border-right-width: 5px;
     border-left-width: 5px;
 }
 
-#sidebar a {
+.sidebar-left a {
     color: #5bc solid;
     background-color: #fafafa;
 }
@@ -1084,6 +1085,27 @@ iframe {
     background-color: #fafafa;
 }
 
+/*****articulos recom sidebar-left*****/
+.art120 {
+        margin: 10px;
+    }
+#artAffix.affix {
+    position: fixed;
+    top: 50px;
+
+    left: 0;
+    padding: 0;
+    background-color: #fafafa;
+    border: 1px solid;
+    border-color: #DFE0E4 ;
+}
+
+div.social-float-parent {  background: #f8f8f8; position: relative; }
+div#social-float { width: 200px; position: fixed; right: 10px; bottom: 10px; background: #777; }
+div#social-float1 { width: 200px; position: fixed; right: 210px; bottom: 10px; background: #777; }
+div#social-float2 { width: 200px; position: fixed; right: 410px; bottom: 10px; background: #777; }
+div#social-float3 { width: 200px; position: fixed; right: 610px; bottom: 10px; background: #777; }
+div#social-float4 { width: 200px; position: fixed; right: 810px; bottom: 10px; background: #777; }
 /*****************fin-sidebar-left********************/
 
 /********************sidebar-right*******************/

@@ -1,6 +1,6 @@
-<div class="col-md-2 ">
+<div class="col-md-2 sidebar-left" id="sidetest">
                 <div class="clearfix visible-lg ">
-                    <ul class="nav nav-stacked" data-spy="affix"  id="sidebar">
+                    <ul class="nav nav-stacked"  id="sidebar">
 
                         <li class="header label headd">
                             <h4 text-align="left" style="z-index:1003;">Shop Name</h4>
@@ -19,16 +19,37 @@
                                   </span>
                                 </div>
                             </div>
-
+                        
                         </li>
 
                     </ul>
-                </div>
-            </div>
 
-<script>$('#sidebar').affix({
-      offset: {
-        top: $('#sidefix').height(),
+                </div>
+    <div class="" id="artAffix">
+    <li class="header label headd" >
+    <hr>
+        <h4 text-align="left" style="z-index:1003;">Sugerencias</h4>
+        <hr style="margin-bottom: 0;">
+
+    </li>
+        <div class="art120">
+        <center>
+            <img src="../../img/productos/art120.png" alt="">
+        </center><br>
+        </div>
+        <div class="art120">
+        <center>
+            <img src="../../img/productos/art120.png" alt="">
+        </center><br>
+        </div>
+        <div class="art120">
+        <center>
+            <img src="../../img/productos/art120.png" alt="">
+        </center><br>
+        </div>
         
-      }
-}); </script>
+    </div>
+</div>
+
+<script>
+</script>

@@ -1,8 +1,30 @@
-<style>
+<div class="producto">
+                    <div class="card">
+                        <div class="grid-top">
+                            <a href="#!" class="b-link-stripe b-animate-go" data-toggle="modal" data-target="#modalProduct">
+                                <img class=" card img-fluid img-responsive" src="../../img/productos/pi4.jpg" alt="">
+                                <div class="b-wrapper">
+                                    <h3 class="b-animate b-from-left b-delay03 ">
+                                        <span>Bag</span>
+                                           
+                                    </h3>
+                                </div>
+  
+                            
+                            </a>
+                            <p><a href="single.html">Content here</a></p>
+                        </div>
 
-</style>
+                    </div>
+                </div>
 
-<button type="button" class="btn btn-warning" style="" data-toggle="modal" data-target="#modalProduct">modal product</button>
+
+
+
+
+
+
+
 
 <div id="modalProduct" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog px">
@@ -10,7 +32,7 @@
     <h4 class="modal-title _4-i0">Local Name</h4>
       <span class="close pclose" data-dismiss="modal" aria-label="Close">×</span>
       <div class="modal-body" style="background-color: #FAFAFA;">
-	
+    
 <!-- cuerpo -->
 
     <div class="row">
@@ -50,15 +72,15 @@
 </div>
 </div>
 <div class="col-md-8">
-	<center>
-	<h2>Producto Name
-	<ul class="list list-inline">
+    <center>
+    <h2>Producto Name
+    <ul class="list list-inline">
          <li><del class="text-danger"><h3>$99.99</h3></del></li>
          <li><h5 class="text-primary">$49.99</h5></li>
      </ul>
      </h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore totam delectus atque vel similique illo, praesentium, ratione eligendi esse officiis, accusantium nisi! Quis modi quia accusantium, sunt ab exercitationem nam.</p>
-	<br><br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore totam delectus atque vel similique illo, praesentium, ratione eligendi esse officiis, accusantium nisi! Quis modi quia accusantium, sunt ab exercitationem nam.</p>
+    <br><br>
             <p style="font-weight:bold;">La oferta finaliza en: </p>                         
             <ul class="countdown list-inline">
                 <li class="round">
@@ -78,7 +100,7 @@
                     <p>Secs</p>
                 </li>
             </ul><!-- end countdown -->
-	</center>
+    </center>
 
 </div>
 </div></div>
@@ -97,22 +119,22 @@
     </ol>
  </div></div>
  <div class="col-md-6">
-		<center>
-			<p> 
-	<h4 class="marg"><span class="glyphicon glyphicon-share-alt"></span> Compartir</h4>
-	<a class="btn btn-primary social-login-btn social-facebook" href="/auth/facebook"><i class="fa fa-facebook"></i></a>
-	<a class="btn btn-primary social-login-btn social-twitter" href="/auth/twitter"><i class="fa fa-twitter"></i></a>
-	<a class="btn btn-primary social-login-btn social-linkedin" href="/auth/linkedin"><i class="fa fa-linkedin"></i></a>
-	<a class="btn btn-primary social-login-btn social-google" href="/auth/google"><i class="fa fa-google-plus"></i></a>
-			</p>
-		</center>
+        <center>
+            <p> 
+    <h4 class="marg"><span class="glyphicon glyphicon-share-alt"></span> Compartir</h4>
+    <a class="btn btn-primary social-login-btn social-facebook" href="/auth/facebook"><i class="fa fa-facebook"></i></a>
+    <a class="btn btn-primary social-login-btn social-twitter" href="/auth/twitter"><i class="fa fa-twitter"></i></a>
+    <a class="btn btn-primary social-login-btn social-linkedin" href="/auth/linkedin"><i class="fa fa-linkedin"></i></a>
+    <a class="btn btn-primary social-login-btn social-google" href="/auth/google"><i class="fa fa-google-plus"></i></a>
+            </p>
+        </center>
  </div>  
-	</div>
+    </div>
 
 <!-- fin row -->
 <!-- fin cuerpo -->
       
-  	</div>
+    </div>
   </div>
 </div>
 

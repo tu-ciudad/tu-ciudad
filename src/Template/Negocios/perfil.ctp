@@ -343,13 +343,6 @@
 
             <div id="map-container" align="center" class="col-md-8 col-md-push-1 img-rounded "></div>
 
-       <div class="social-float-parent">
-    <div id="social-float">float...</div>
-    <div id="social-float1">float...</div>
-    <div id="social-float2">float...</div>
-    <div id="social-float3">float...</div>
-    <div id="social-float4">float...</div>
-</div>
 
     </section>
 
@@ -445,19 +438,6 @@ $(window).scroll(function() {
 
 
 
-      function checkOffset() {
-    
-    if($(document).scrollTop() + window.innerHeight < $('#sec2').offset().top)
-        $('#social-float').css('position', 'fixed'); // restore when you scroll up
-    $('#social-float').text('artH: '+artH);
-    $('#social-float1').text('sec2Dis: '+sec2Dis);
-    $('#social-float2').text('navBefore: '+navBefore);
-    $('#social-float3').text('disTopArt: '+disTopArt);
-    $('#social-float4').text('ScrollTop '+ $(window).scrollTop());
-}
-$(document).scroll(function() {
-    checkOffset();
-});
 </script>
     <script>
         //CountDown

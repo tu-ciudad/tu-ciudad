@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Users Controller
@@ -18,6 +19,11 @@ class PruebaController extends AppController
      */
     public function index()
     {
-        $this->set('_serialize');
+        $tags = TableRegistry::get('tags');
+        $query = $tags->query();
+        $tags = $query->select('nombre')->execute(); 
+        $this->set(compact('tags'));
+        $this->set('_serialize','tags'); 
+
     }
 }

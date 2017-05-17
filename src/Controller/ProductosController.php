@@ -58,7 +58,6 @@ class ProductosController extends AppController
         //echo "<pre>",print_r($data),"</pre>";
         if ($this->request->is('ajax')) {
             $ImagenesProductos = TableRegistry::get('ImagenesProductos');
-            $tags = TableRegistry::get('tags')->find('all');
             $query = $ImagenesProductos->query(); 
             $producto = $this->Productos->newEntity(); //se pueden asignar todos juntos pero tengo que poner unos campos en una lista blanca (verificar eso despues)
             $producto->set('titulo', $this->request->data['titulo']);

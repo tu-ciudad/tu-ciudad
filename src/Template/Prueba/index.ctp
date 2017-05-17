@@ -60,7 +60,10 @@
 <?= $this->Html->css('croppic.css') ?>
 
 <?= $this->Html->script('croppic-product') ?>
-
+<br>
+<br>
+<br>
+<br>
    <h3 id="data"></h3>
     
     

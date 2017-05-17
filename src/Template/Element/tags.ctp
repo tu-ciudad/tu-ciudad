@@ -53,8 +53,8 @@
 
 
 
-         var data = ["<?=  $vectortags[0] ?>"];
-           $('#data').text(data);
+         var data = <?=  $vectortags ?>;
+          
             var input2 = document.querySelector('textarea[name=tags2]'),
                 // init Tagify script on the above inputs
              

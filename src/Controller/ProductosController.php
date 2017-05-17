@@ -65,7 +65,9 @@ class ProductosController extends AppController
             $producto->set('precio', $this->request->data['precio']);
             $producto->set('cuerpo', $this->request->data['cuerpo']);
             $producto->set('negocios_id', $this->request->data['negociosid']);
+            $tags = $this->request->data['tags'];
              if($this->Productos->save($producto)){
+            }
             for($i=0; $i<count($_FILES['file']['name']); $i++){
                 $target_path = WWW_ROOT . 'files' .DS. 'ImagenesProductos' .DS;
                 $ext = explode('.', basename( $_FILES['file']['name'][$i]));

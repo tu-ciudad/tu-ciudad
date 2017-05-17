@@ -25,7 +25,6 @@ class PruebaController extends AppController
             $vectortags[] = $tag[0];
         }
         $vectortags = json_encode($vectortags);
-        debug($vectortags);
         $this->set(compact('vectortags'));
         $this->set('_serialize','vectortags'); 
 

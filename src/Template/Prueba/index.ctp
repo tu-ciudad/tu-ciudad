@@ -61,7 +61,7 @@
 
 <?= $this->Html->script('croppic-product') ?>
 
-  <!-- <input type="text" id="data" value=<?= $tags ?> > -->
+   <h3 id="data"></h3>
     
     
 

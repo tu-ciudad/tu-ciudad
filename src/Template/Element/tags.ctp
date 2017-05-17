@@ -49,24 +49,12 @@
         <!-- Initialize Tagify for both Input and Textaera -->
         <script>
         var status = "200";
-$(function(){
-      $.ajax({
-        type: 'POST',
-        url: 'tags/all',
-        //dataType: "json",
-        data:  status ,
-        success: function(data) {
-            console.log(data);
-           
-        }
-
-    });
-        });
 
 
 
-         var data = '<?php  $tags; ?>'
-           
+
+         var data = ["<?=  $vectortags[0] ?>"];
+           $('#data').text(data);
             var input2 = document.querySelector('textarea[name=tags2]'),
                 // init Tagify script on the above inputs
              

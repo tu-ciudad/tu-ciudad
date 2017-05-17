@@ -6,8 +6,9 @@ tags {
   overflow: hidden;
 }
 
-tags:hover {
-  border-color: #CCC;
+tag:hover {
+  border-color: #DDD;
+  box-shadow: 1px 1px rgba(221, 221, 221, 0.8);
 }
 
 tags tag {
@@ -16,6 +17,9 @@ tags tag {
   vertical-align: top;
   position: relative;
   cursor: default;
+  border: 1px solid #DDD;
+  background-color: #F5F5F5;
+  border-radius: 3px;
   -webkit-transition: .13s ease-out;
   -o-transition: .13s ease-out;
   transition: .13s ease-out;
@@ -121,7 +125,7 @@ tags tag x {
   border-radius: 50px;
   position: absolute;
   z-index: 1;
-  right: calc(0.5em - 2px);
+  right: calc(0.5em - 4px);
   top: 50%;
   cursor: pointer;
   -webkit-transform: translateY(-50%);

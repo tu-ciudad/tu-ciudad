@@ -72,6 +72,12 @@
                 console.log(e, e.detail);
                 val = $('#tag').val();
                 console.log(val);
+                //var array = JSON.parse("[" + jsonObj + "]");
+                var data_array = val.split(", ");
+                var jsonObj = JSON.stringify(data_array);
+          //console.log(array);
+          console.log(data_array);
+          console.log(jsonObj);
             }
 
             // remove tag callback
@@ -83,7 +89,8 @@
                 console.log(e, e.detail);
             }
 
-          
+
+
 
             ////////////////////////////////////////////
 

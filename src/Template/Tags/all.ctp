@@ -14,5 +14,5 @@
     </ul>
 </nav>
 <div >
-<h1><?= $tags; ?></h1>
+<h1><?= $resultado; ?></h1>
 </div>

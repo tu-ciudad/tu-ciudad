@@ -19,11 +19,13 @@ class PruebaController extends AppController
      */
     public function index()
     {
-        $tags = TableRegistry::get('tags');
-        $query = $tags->query();
-        $tags = $query->select('nombre')->execute(); 
-        $this->set(compact('tags'));
-        $this->set('_serialize','tags'); 
+        $query = TableRegistry::get('tags')->find();
+        $tags = $query->select('nombre')->execute();
+        foreach($tags as $tag){
+            $vectortags[] = $tag[0];
+        }
+        $this->set(compact('vectortags'));
+        $this->set('_serialize','vectortags'); 
 
     }
 }

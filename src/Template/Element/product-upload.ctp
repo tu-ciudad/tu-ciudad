@@ -161,10 +161,12 @@ $('body').on('click', '#send', function(e){
         var fdate = $('#fecha').val(); //valor de fecha en el input type="date" id="fecha"
         var precio = $('#precio').val(); //valor del campo de text id="precio"
         var nid = "1"; //id de negocio 
+        var val = $('#tag').val();
          formData.append("titulo", name); //agrega campo de texto dentro del formData
          formData.append("cuerpo", desc); //""
          formData.append("precio", precio);
          formData.append("negociosid", nid);
+         formData.append("tags", val);
          formData.append("fecha", fdate); //""
 
 

@@ -1,5 +1,5 @@
 <div class="col-md-2 sidebar-left" id="sidetest">
-                <div class="clearfix visible-lg ">
+                <div class="clearfix visible-lg cucu">
                     <ul class="nav nav-stacked"  id="sidebar">
 
                         <li class="header label headd">

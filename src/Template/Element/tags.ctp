@@ -40,7 +40,7 @@
          
           
               
-                    <textarea name='tags2' id="tag" placeholder='Movie names'>The Matrix, Pulp Fiction, Mad Max</textarea>
+                    <textarea name='tags2' id="tag" placeholder='Tags'></textarea>
             
      
 
@@ -48,14 +48,13 @@
         </form>
         <!-- Initialize Tagify for both Input and Textaera -->
         <script>
+        var status = "200";
 $(function(){
-             $.ajax({
+      $.ajax({
         type: 'POST',
         url: 'tags/all',
-        dataType: "json",
-        data: {
-            "loaded"
-        },
+        //dataType: "json",
+        data:  status ,
         success: function(data) {
             console.log(data);
            

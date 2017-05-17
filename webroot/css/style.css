@@ -1,11 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Cookie');
 html {
-    width: 100%;
-    height: 100%;
-     max-width: 100%;
-    overflow-x: hidden;
+   
 }
-
+//body.modal-open { overflow:inherit; padding-right:inherit !important; }
 body {
     /padding-top: 5px;
     padding-top: 65px;
@@ -1100,6 +1097,8 @@ iframe {
     border-color: #DFE0E4 ;
 }
 
+
+
 div.social-float-parent {  background: #f8f8f8; position: relative; }
 div#social-float { width: 200px; position: fixed; right: 10px; bottom: 10px; background: #777; }
 div#social-float1 { width: 200px; position: fixed; right: 210px; bottom: 10px; background: #777; }
@@ -1550,7 +1549,7 @@ div#social-float4 { width: 200px; position: fixed; right: 810px; bottom: 10px; b
     height: 70vh;
     background-color: #fafafa;
     padding: 90px 15px;
-    width: 32vh;
+    /width: 32vh;
     z-index: 901;
    /box-shadow: 0px 1px 1px;
        border-right: 1px solid;

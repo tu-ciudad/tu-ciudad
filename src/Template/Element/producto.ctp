@@ -1,7 +1,7 @@
 <div class="producto">
                     <div class="card">
                         <div class="grid-top">
-                            <a href="#!" class="b-link-stripe b-animate-go" data-toggle="modal" data-target="#modalProduct">
+                            <a href="" class="b-link-stripe b-animate-go" data-toggle="modal" data-target="#modalProduct">
                                 <img class=" card img-fluid img-responsive" src="../../img/productos/pi4.jpg" alt="">
                                 <div class="b-wrapper">
                                     <h3 class="b-animate b-from-left b-delay03 ">

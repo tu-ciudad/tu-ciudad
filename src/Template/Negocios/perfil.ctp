@@ -4,9 +4,7 @@
   * @var \App\View\AppView $this
   */
 ?>
-<script async defer
-      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDkKG7urAJ1fTHIXbcuQDoePM2ReP-LKtQ&callback=initMap">
-    </script>
+
 <?= $this->element('jumbotron02') ?>
    
     <div class="container-fluid">
@@ -348,20 +346,7 @@
 
 <?= $this->element('footer') ?>
 
-<script>
-        var jumboHeight = $('.jumbotron').outerHeight();
 
-        function parallax() {
-            var scrolled = $(window).scrollTop();
-            $('.bg-1').css('height', (jumboHeight - scrolled) + 'px');
-        }
-
-        $(window).scroll(function() {
-            parallax();
-        });
-
-
-    </script>
 <script>
         //hace el affixTop del elemento
         var stickySidebar = $('#sidebar-right1').offset().top;
@@ -424,19 +409,21 @@ $(window).scroll(function() {
        /*fija el elemento en la posicion de colicion con el sec2*/
         $('#artAffix').css('top', disTopArt);
         $('#artAffix').css('position','relative');
-        $('#sidetest').css('border','');
+        //$('#artAffix').css('border','1px solid');
+        //$('#artAffix').css('background-color','#fafafa');
         $('#artAffix').removeClass('col-md-2');
+        //$('#artAffix').removeClass('affix');
+        $('#sidetest').css('border','0');
     }
     else {
         //$('#sidebar-right1').removeClass('affix-bottom');
         $('#artAffix').css('top','');
         $('#artAffix').css('position','');
+        $('#sidetest').css('border','1px solid');
+        $('#sidetest').css('border-color','#DFE0E4');
     }  
 });
       
-      
-
-
 
 </script>
     <script>
@@ -450,7 +437,9 @@ $(window).scroll(function() {
 
         
     </script>
-  
+  <script async defer
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDkKG7urAJ1fTHIXbcuQDoePM2ReP-LKtQ&callback=initMap">
+    </script>
     <script>
         function init_map() {
             var location = new google.maps.LatLng(-37.013179, -62.417755);
@@ -587,7 +576,6 @@ $(window).scroll(function() {
         google.maps.event.addDomListener(window, 'load', init_map);
     </script>
     
-
 <script> //script de horarios y dias
 var d = new Date();
 var weekday = new Array(7);

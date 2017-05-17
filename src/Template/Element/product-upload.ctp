@@ -2,7 +2,10 @@
 .heig {
   min-height: 513px;
 }
-
+#divUp label {
+  position: relative;
+  bottom:auto; right:auto; cursor:pointer; font:auto;
+}
 </style>
 
 

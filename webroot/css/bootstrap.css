@@ -5863,8 +5863,9 @@ button.close {
   background: transparent;
   border: 0;
 }
+/*cambio 1*/
 .modal-open {
-  overflow: hidden;
+  overflow: hidden; 
 }
 .modal {
   position: fixed;
@@ -5874,7 +5875,7 @@ button.close {
   left: 0;
   z-index: 1050;
   display: none;
-  overflow: hidden;
+  overflow: scroll;
   -webkit-overflow-scrolling: touch;
   outline: 0;
 }

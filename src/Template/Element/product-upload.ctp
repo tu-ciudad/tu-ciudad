@@ -166,7 +166,7 @@ $('body').on('click', '#send', function(e){
          formData.append("cuerpo", desc); //""
          formData.append("precio", precio);
          formData.append("negociosid", nid);
-         formData.append("tags", jsonObj);
+         formData.append("tags", tags);
          formData.append("fecha", fdate); //""
 
 

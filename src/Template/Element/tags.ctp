@@ -49,7 +49,7 @@
         <!-- Initialize Tagify for both Input and Textaera -->
         <script>
         var status = "200";
-
+        var tags = 0;
 
 
 
@@ -75,6 +75,7 @@
                 //var array = JSON.parse("[" + jsonObj + "]");
                 var data_array = val.split(", ");
                 var jsonObj = JSON.stringify(data_array);
+                var tags = jsonObj;
           //console.log(array);
           console.log(data_array);
           console.log(jsonObj);

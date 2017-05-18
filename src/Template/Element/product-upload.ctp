@@ -131,6 +131,7 @@
 </div>
 
 <script>
+
 var i = 1;
 $(document).ready(function(){
     $('#exe').click(function(e){
@@ -166,7 +167,7 @@ $('body').on('click', '#send', function(e){
          formData.append("cuerpo", desc); //""
          formData.append("precio", precio);
          formData.append("negociosid", nid);
-         formData.append("tags", tags);
+         formData.append("tags", final);
          formData.append("fecha", fdate); //""
 
 

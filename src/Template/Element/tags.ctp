@@ -41,8 +41,7 @@
           
               
                     <textarea name='tags2' id="tag" placeholder='Tags'></textarea>
-            
-     
+            <button id="test" href="#">asd</button>
 
     
         </form>
@@ -50,17 +49,40 @@
         <script>
         var status = "200";
         var tags = 0;
+        var final = new Array();
+        $('#test').click(function(e){
+            e.preventDefault();
+            
 
+                val = $('#tag').val();
+                //console.log(val);
+                var data_array = val.split(", ");
+                for (i = 0; i < data_array.length; i++){
+                    for (x = 0; x < data.length; x++){
+                        if(data_array[i] == data[x].nombre){
+                            console.log(data[x].id +': '+ data_array[i] )
+                            final.push(data[x].id);
+                        }
+                    }
+                    
+                }
+                console.log(final);
 
+        });
+    
+             var data = <?=  $vectortags ?>;
+             var diss = new Array();
+             for(var i = 0; i < data.length; i++) {
+                 diss.push(data[i].nombre);
+                 }
+                 console.log(diss);
 
-         var data = <?=  $vectortags ?>;
-          
             var input2 = document.querySelector('textarea[name=tags2]'),
                 // init Tagify script on the above inputs
              
                 tagify2 = new Tagify(input2, {
                     enforeWhitelist : true,
-                    whitelist       : data,
+                    whitelist       : diss,
                     callbacks       : {
                         add    : onAddTag,
                         remove : onRemoveTag
@@ -69,25 +91,24 @@
 
             // add tag callback
             function onAddTag(e){
-                console.log(e, e.detail);
-                val = $('#tag').val();
-                console.log(val);
-                //var array = JSON.parse("[" + jsonObj + "]");
-                var data_array = val.split(", ");
-                var jsonObj = JSON.stringify(data_array);
-                var tags = jsonObj;
+                //console.log(e, e.detail);
+                
+
+
+                //var jsonObj = JSON.stringify(data_array);
+                //var tags = jsonObj;
           //console.log(array);
-          console.log(data_array);
-          console.log(jsonObj);
+          //console.log(data_array);
+          //console.log('array: '+jsonObj);
             }
 
             // remove tag callback
             function onRemoveTag(e){
-                console.log(e, e.detail);
+               // console.log(e, e.detail);
             }
 
             function onDuplicateAdded(e){
-                console.log(e, e.detail);
+               // console.log(e, e.detail);
             }
 
 

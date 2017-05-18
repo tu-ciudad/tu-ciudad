@@ -58,7 +58,7 @@ class ProductosController extends AppController
         //echo "<pre>",print_r($data),"</pre>";
         if ($this->request->is('ajax')) {
             $ImagenesProductos = TableRegistry::get('ImagenesProductos');
-            $query = $ImagenesProductos->query(); 
+            $productos_tags = TableRegistry::get('productos_tags');
             $producto = $this->Productos->newEntity(); //se pueden asignar todos juntos pero tengo que poner unos campos en una lista blanca (verificar eso despues)
             $producto->set('titulo', $this->request->data['titulo']);
             $producto->set('fecha', date('Y-m-d H:i:s'));
@@ -67,7 +67,18 @@ class ProductosController extends AppController
             $producto->set('negocios_id', $this->request->data['negociosid']);
             $tags = $this->request->data['tags'];
              if($this->Productos->save($producto)){
-            }
+                //traigo los ids de los tags
+        $tagstable = TableRegistry::get('tags');
+        $query = $tagstable->query();
+        $vectortags = json_decode($vectortags);
+        foreach($vectortags as $vectortag){
+            $query = $tagstable->query();
+            $idtag = $query->select('id')->where(['nombre'=>$vectortag])->execute();
+            //guardo los tags
+                $querytags = $productos_tags->query();
+                $querytags->insert(['productos_id','tags_id']->values(['productos_id'=>$producto->get('id'),
+                                                                        'tags_id'=>$idtag])->execute;
+        }  
             for($i=0; $i<count($_FILES['file']['name']); $i++){
                 $target_path = WWW_ROOT . 'files' .DS. 'ImagenesProductos' .DS;
                 $ext = explode('.', basename( $_FILES['file']['name'][$i]));

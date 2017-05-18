@@ -155,6 +155,28 @@ $('#remover').click(function(e){ //funcion del boton - para borrar input
 
 $('body').on('click', '#send', function(e){
         e.preventDefault();
+        /*comienzo funcion tags*/
+         var tags = new Array();
+      
+       
+                 val = $('#tag').val();
+                //console.log(val);
+                //compara  por cada tag agregado que exista en el array original
+                var data_array = val.split(", ");
+                for (i = 0; i < data_array.length; i++){
+                    for (x = 0; x < data.length; x++){
+                        if(data_array[i] == data[x].nombre){
+                            //console.log(data[x].id +': '+ data_array[i] )
+                            tags.push(data[x].id);
+                        }
+                    }
+                    
+                }
+                console.log(tags); /*fin tags*/
+         
+
+
+
         var formData = new FormData($(this).parents('form')[0]);
         //console.log(formData);
         var name = $('input:text[name=name]').val(); //valor del input text name
@@ -167,7 +189,7 @@ $('body').on('click', '#send', function(e){
          formData.append("cuerpo", desc); //""
          formData.append("precio", precio);
          formData.append("negociosid", nid);
-         formData.append("tags", final);
+         formData.append("tags", tags);
          formData.append("fecha", fdate); //""
 
 

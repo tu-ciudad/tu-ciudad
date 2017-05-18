@@ -41,41 +41,20 @@
           
               
                     <textarea name='tags2' id="tag" placeholder='Tags'></textarea>
-            <button id="test" href="#">asd</button>
+
 
     
         </form>
         <!-- Initialize Tagify for both Input and Textaera -->
         <script>
-        var status = "200";
-        var tags = 0;
-        var final = new Array();
-        $('#test').click(function(e){
-            e.preventDefault();
-            
-
-                val = $('#tag').val();
-                //console.log(val);
-                var data_array = val.split(", ");
-                for (i = 0; i < data_array.length; i++){
-                    for (x = 0; x < data.length; x++){
-                        if(data_array[i] == data[x].nombre){
-                            console.log(data[x].id +': '+ data_array[i] )
-                            final.push(data[x].id);
-                        }
-                    }
-                    
-                }
-                console.log(final);
-
-        });
+        
     
              var data = <?=  $vectortags ?>;
              var diss = new Array();
              for(var i = 0; i < data.length; i++) {
                  diss.push(data[i].nombre);
                  }
-                 console.log(diss);
+                // console.log(diss);
 
             var input2 = document.querySelector('textarea[name=tags2]'),
                 // init Tagify script on the above inputs

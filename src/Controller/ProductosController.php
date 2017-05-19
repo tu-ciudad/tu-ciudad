@@ -66,13 +66,15 @@ class ProductosController extends AppController
             $producto->set('cuerpo', $this->request->data['cuerpo']);
             $producto->set('negocios_id', $this->request->data['negociosid']);
             $tags = $this->request->data['tags'];
-             if($this->Productos->save($producto)){
+            $arraytags = explode(",", $tags),
+            var_dump($arraytags);
+            if($this->Productos->save($producto)){
                 //traigo los ids de los tags
-       foreach($tags as $tag){
+   /*    foreach($tags as $tag):
                 $querytags = $productos_tags->query();
                 $querytags->insert(['productos_id','tags_id'])->values(['productos_id' => $producto->get('id'),
                                                                         'tags_id' => $tag])->execute();
-        } 
+        endforeach;*/
             for($i=0; $i<count($_FILES['file']['name']); $i++){
                 $target_path = WWW_ROOT . 'files' .DS. 'ImagenesProductos' .DS;
                 $ext = explode('.', basename( $_FILES['file']['name'][$i]));

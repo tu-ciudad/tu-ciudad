@@ -173,7 +173,7 @@ $('body').on('click', '#send', function(e){
                     
                 }
                 console.log(tags); /*fin tags*/
-         
+         var asd = JSON.stringify(tags);
 
 
 
@@ -189,7 +189,7 @@ $('body').on('click', '#send', function(e){
          formData.append("cuerpo", desc); //""
          formData.append("precio", precio);
          formData.append("negociosid", nid);
-         formData.append("tags", tags);
+         formData.append("tags", asd);
          formData.append("fecha", fdate); //""
 
 

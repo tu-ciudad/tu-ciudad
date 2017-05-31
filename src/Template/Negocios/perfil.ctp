@@ -7,7 +7,7 @@
 
 <?= $this->element('jumbotron02') ?>
    
-    <div class="container-fluid">
+    <div class="container-fluid" id="content">
 
         <div class="row">
 
@@ -16,7 +16,6 @@
             <div class="col-md-12 col-lg-7 thumbnail" align="center" id="sec0">
 <?= $this->element('tabla-horarios') ?>
 <hr>
-<!-- *********************prodcuto******************** -->
                <div class="producto">
                     <div class="card">
                         <div class="grid-top">
@@ -31,12 +30,24 @@
   
                             
                             </a>
-                            <p><a href="single.html">Content here</a></p>
+                            <p><a href="#">Content here</a></p>
                         </div>
 
                     </div>
                 </div>
-   <div class="row">
+                 
+<!-- modal del pructo -->
+
+<div id="modalProduct" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog px">
+    <div class="modal-content">
+    <h4 class="modal-title _4-i0">Local Name</h4>
+      <span class="close pclose" data-dismiss="modal" aria-label="Close">×</span>
+      <div class="modal-body" style="background-color: #FAFAFA;">
+    
+<!-- cuerpo -->
+
+    <div class="row">
 <div class=" col-sm-4 col-xs-4">
 <div id='carousel-custom' class='carousel slide' data-ride='carousel'>
     <div class='carousel-outer'>
@@ -138,7 +149,9 @@
     </div>
   </div>
 </div>
-<!-- /******************fin producto************** -->
+
+
+
 
 
                 <div class="producto">
@@ -545,8 +558,8 @@ $(window).scroll(function() {
         $('#sidetest').css('border','1px solid');
         $('#sidetest').css('border-color','#DFE0E4');
     }  
-});
-      
+});     
+    
 
 </script>
     <script>
@@ -729,11 +742,3 @@ function dayOfTheWeek (weekDays) {
 }
 </script>
 
-<!-- modal del prodcuto -->
-<div id="modalProduct" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog px">
-    <div class="modal-content">
-    <h4 class="modal-title _4-i0">Local Name</h4>
-      <span class="close pclose" data-dismiss="modal" aria-label="Close">×</span>
-      <div class="modal-body" style="background-color: #FAFAFA;">
-    

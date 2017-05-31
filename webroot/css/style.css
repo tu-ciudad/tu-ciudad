@@ -18,6 +18,18 @@ section {
 }
 
 
+@media (max-width: 1200px) {
+   #content {
+    margin-right:  25px;
+    margin-left: 25px;
+}
+}
+@media (max-width: 900px) {
+   #content {
+    margin-right:  10px;
+    margin-left: 10px;
+}
+}
 
 /**************scrolling-nav***************/
 
@@ -453,19 +465,19 @@ iframe {
     
 }
 
-.jumbotron {
+/* .jumbotron {
     height: 450px;
     background:transparent;
     /color: white;
-}
-
+} */
+/* 
 @media screen and (max-width: 640px)
 {
     .jumbotron {
         
         height: 380px;
-    }
-}
+    } */
+}*/
 @media screen and (max-width: 640px){
     .bg-1 { 
         height: 380px;
@@ -1045,9 +1057,11 @@ iframe {
         /opacity: 1;
         /z-index: 900;
         background-color: #fafafa;
-        /height: 100vh;
+        height: 100%;
         border: 1px solid;
+        padding-bottom: 40px;
         border-color: #DFE0E4 ;
+       
     }
     
   
@@ -1186,6 +1200,12 @@ div#social-float4 { width: 200px; position: fixed; right: 810px; bottom: 10px; b
   .nopadding-md-3 [class*="col-"] {
     padding: 0;
 }
+@media (max-width: 1267px) {
+   .thumb {
+    width: 280px;
+   }
+}
+
 /*****************fin-sidebar-right*******************/
 
 /********************perfil*********************/
@@ -2039,6 +2059,7 @@ figure {
     z-index: 0;
     width: 100%;  
     margin-bottom: 10px;
+    height: 375px;
     
 }
 .image-profile
@@ -2617,4 +2638,132 @@ However, delay the fade out process for 2.5 seconds */
 
 
 /**********************************************/
-   
+/*******************comercios**********************/
+
+.comercio-card .card {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  transition: all 0.3s ease-in; 
+  margin-bottom: 15px;
+  width: 350px;
+  
+}
+.comercio-card .card:hover {
+    border-color: rgba(29, 150, 197, 1.0);
+    cursor: pointer;
+    }
+
+@media screen and (max-width: 640px){
+   .comercio-card .card {
+    width: 300px;
+   } 
+}
+
+.comercio-card .card-img-top {
+  border-top-right-radius: calc(0.25rem - 1px);
+  border-top-left-radius: calc(0.25rem - 1px);
+  height: 200px;
+}
+.comercio-card .card-block {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+.comercio-card .card-title {
+  margin-bottom: 0.75rem;
+  text-align: center;
+  color: black;
+}
+
+.comercio-card .card-text:last-child {
+  margin-bottom: 0;
+  text-align: center;
+  color: #4f4f4f;
+}
+
+.comercio-card a:link {text-decoration:none; } /* Link no visitado*/
+.comercio-card a:visited {text-decoration:none; } /*Link visitado*/
+.comercio-card a:active {text-decoration:none;  } /*Link activo*/
+.comercio-card a:hover {text-decoration:nounderline; } /*Mause sobre el link*/  
+
+.comercio .jumbotron {
+    background-color: #F8F8F8;
+    height: 250px;
+    text-align: center;
+}
+
+.comercio .title {
+
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 37px;
+    padding-bottom: 10px;
+}
+.comercio .jumrec {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    padding: 0 15px;
+    font-size: 17px;
+    color: #393939;
+    text-align: center;
+}
+
+.comercio .navbar-nav {
+  float: none;
+  text-align: center;
+}
+
+.comercio .navbar-nav li {
+  float: none;
+  display: inline-block;
+
+}
+.comercio .navbar-nav li:hover {
+  background-color: #f2f2f2;
+
+}
+.comercio .navbar-nav .dropdown-menu li {
+    width: 100%;
+}
+
+.comercio input[type=text] {
+    position: absolute;
+    top: -30px;
+    width: 50px;
+    box-sizing: border-box;
+    border: 0px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: inherit;
+    background-image: url('../img/search.png');
+    background-position: 5px 10px; 
+    background-repeat: no-repeat;
+    padding: 14px 20px 14px 40px;
+    cursor: pointer;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+.comercio input[type=text]:focus {
+    background-color: white;
+    cursor: grab;
+    width: 200px;
+}
+/*********************fin-comercios****************************/

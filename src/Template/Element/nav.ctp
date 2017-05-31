@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a class="btn-trans"<?= $this->Html->link('LOCALES', array('controller' => 'prueba', 'action' => 'index')) ?> 
+                        <a class="btn-trans"<?= $this->Html->link('LOCALES', array('controller' => 'comercios', 'action' => 'index')) ?> 
                         
                         </a>
 
@@ -31,6 +31,12 @@
                     </li>
                     <li>
                         <a class="btn-trans" href="ofertas.html">OFERTAS</a>
+                    </li>
+                    <li>
+                        <a class="btn-trans"<?= $this->Html->link('Tests', array('controller' => 'prueba', 'action' => 'index')) ?> 
+                        
+                        </a>
+
                     </li>
                     <li class="dropdown ">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Links <span class="caret"></span></a>

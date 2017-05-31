@@ -2,7 +2,7 @@
 
 <div class="container" id="sidefix">
     <div class="profile clearfix"> <!-- imagenes -->
-        <img align="left" class="image-lg" src="../../img/portada_850x280.jpg" alt="Profile image example"/>
+        <img align="left" class="image-lg" src="../../img/2009.jpeg" alt="Profile image example"/>
         <div class="show-image">
         <img align="left" class="image-profile thumbnail" src=<?= $fperfil ?> id="imgf">
           <button class="update btn btn-default btnmodal" data-toggle="modal" data-target="#myModal">

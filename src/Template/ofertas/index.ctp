@@ -1,246 +1,103 @@
- <?php
-/**
-  * @var \App\View\AppView $this
-  */
-?>
-<style>
+ <style>
+    .oferpage .blogShort{ border-bottom:1px solid #ddd;}
+    .oferpage .add{background: #333; padding: 10%; height: 300px;}
 
+    .oferpage .nav-sidebar { 
+        width: 100%;
+        padding: 30px 0; 
+        border-right: 1px solid #ddd;
+    }
+    .oferpage .nav-sidebar a {
+        color: #333;
+        -webkit-transition: all 0.08s linear;
+        -moz-transition: all 0.08s linear;
+        -o-transition: all 0.08s linear;
+        transition: all 0.08s linear;
+    }
+    .oferpage .nav-sidebar a:hover {
+        background-color: #fafafa;
+    }
+   .oferpage  .nav-sidebar .active a { 
+        cursor: default;
+        background-color: #5383d3; 
+        color: #fff; 
+    }
+    .oferpage .nav-sidebar .active a:hover {
+        /background-color: #E50000;   
+    }
+    .oferpage .nav-sidebar .text-overflow a,
+    .oferpage .nav-sidebar .text-overflow .media-body {
+        white-space: nowrap;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis; 
+    }
 
-</style>
+    .oferpage .btn-blog {
+        color: #ffffff;
+        background-color: #E50000;
+        border-color: #E50000;
+        border-radius:0;
+        margin-bottom:10px
+    }
+    .oferpage .btn-blog:hover,
+    .oferpage .btn-blog:focus,
+    .oferpage .btn-blog:active,
+    .oferpage .btn-blog.active,
+    .oferpage .open .dropdown-toggle.btn-blog {
+        color: white;
+        background-color:#0b56a8;
+        border-color: #0b56a8;
+    }
+    .oferpage article h2{color:#333333;}
+   .oferpage h2{color:#0b56a8;}
+     .oferpage .margin10{margin-bottom:10px; margin-right:10px;}
+     
+     .oferpage .container .text-style
+    {
+      text-align: justify;
+      line-height: 23px;
+      margin: 0 13px 0 0;
+      font-size: 19px;
+    }
 
- <div class="mainpage">
+    .oferpage .navlef .col-md-2{
+        padding-left: 0;
+    }
+ </style>
+ <div class="oferpage">
     <div class="header">
     <div class="jumbotron">
     <div class="jumbox">
    
-    <h1><span class="title footer-distributed1"> 
-                
-                    <h3>Tu<span>Ciudad</span></h3></span>
-     </h1>
-     <div class="titlesub"><h3>¡Desde donde estés!</h3></div>
+    <h2><span class="title"> Todas las ofertas! &nbsp;&nbsp;</span><img src="../img/discount.png" alt="">
+     </h2>
+    
         </div>
     
     </div>
     </div>
+
+
+<div class="navlef">
+    <div class="col-md-2">
+    <nav class="nav-sidebar">
+        <ul class="nav tabs">
+          <li class="active"><a href="#tab1" data-toggle="tab">Lorem ipsum</a></li>
+          <li class=""><a href="#tab2" data-toggle="tab">Dolor asit amet</a></li>
+          <li class=""><a href="#tab3" data-toggle="tab">Stet clita</a></li>                               
+        </ul>
+    </nav>
+        <div><h2 class="add">Place for content</h2></div>
+
 </div>
 
-
-<div class="container">
-
- <div class="mainpage">
-    <div class="jumbotron">
-    <h2><span class="title"> Comercios en Guaminí &nbsp;&nbsp;</span><img src="../img/store.png" alt=""></h2>
-        
-    </div>
 </div>
-    <div class="row">
-        
-            
-            <div class="comercio-card col-md-4 col-sm-6 " >
-            <a href="/negocios/perfil/1">
-                <div class="card" style="">
-                    <img class="card-img-top" src="../../img/comercio1.jpg" alt="Card image cap">
-                    <div class="card-block">
-                        <h4 class="card-title">Comercio Name 1</h4>
-                        <p class="card-text">Some quick example text to build on the Comercio Name and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </a>
-            </div>
-            <div class="comercio-card col-md-4 col-sm-6 " >
-            <a href="/negocios/perfil/2">
-                <div class="card" style="">
-                    <img class="card-img-top" src="../../img/comercio2.jpg" alt="Card image cap">
-                    <div class="card-block">
-                        <h4 class="card-title">Comercio Name 2</h4>
-                        <p class="card-text">Some quick example text to build on the Comercio Name and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </a>
-            </div>
-            <div class="comercio-card col-md-4 col-sm-6 " >
-            <a href="/negocios/perfil/3">
-                <div class="card" style="">
-                    <img class="card-img-top" src="../../img/comercio3.jpg" alt="Card image cap">
-                    <div class="card-block">
-                        <h4 class="card-title">Comercio Name 3</h4>
-                        <p class="card-text">Some quick example text to build on the Comercio Name and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </a>
-            </div>
-             </div>
- <br>
-          <center><a href="/comercios"><button  class="btn btn-default">Ver Todos</button></a></center> 
-          <br>  
+<div class="proDes col-md-10">
+<!-- breadcrumb -->
+<?= $this->element('breadcrumb') ?>
 
-     <div class="mainpage">
-     <div class="artDes">
-        <div class="jumbotron">
-        <h2><span class="title"> Articulos destacados &nbsp;&nbsp;</span><img src="../img/cart.png" alt=""></h2>
-        </div>
-        </div>
-   
- <div class="proDes">
-     <div class="producto">
-                    <div class="card">
-                        <div class="grid-top">
-                            <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="../../img/productos/200x200/pi5.jpg" alt="">
-                                <div class="b-wrapper">
-                                    <h3 class="b-animate b-from-left    b-delay03 ">
-                                        <span>Shoe</span>
-                                    </h3>
-                                </div>
-                            </a>
-
-
-                            <p><a href="single.html">readable content</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="producto">
-                    <div class="card">
-                        <div class="grid-top">
-                            <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="../../img/productos/200x200/pi.jpg" alt="">
-                                <div class="b-wrapper">
-                                    <h3 class="b-animate b-from-left    b-delay03 ">
-                                        <span>T-Shirt</span>
-                                    </h3>
-                                </div>
-                            </a>
-
-
-                            <p><a href="single.html">Contrary to popular</a></p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="producto">
-                    <div class="card">
-                        <div class="grid-top">
-                            <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="../../img/productos/200x200/fashion_01.jpg" alt="">
-                                <div class="b-wrapper">
-                                    <h3 class="b-animate b-from-left    b-delay03 ">
-                                        <span>Shoe</span>
-                                    </h3>
-                                </div>
-                            </a>
-
-
-                            <p><a href="single.html">Clssical Latin</a></p>
-                        </div>
-                    </div>
-                </div>
-
-           <div class="producto">
-                    <div class="card">
-                        <div class="grid-top">
-                            <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="../../img/productos/200x200/pi4.jpg" alt="">
-                                <div class="b-wrapper">
-                                    <h3 class="b-animate b-from-left    b-delay03 ">
-                                        <span>Shoe</span>
-                                    </h3>
-                                </div>
-                            </a>
-
-
-                            <p><a href="single.html">Clssical Latin</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="producto">
-                    <div class="card">
-                        <div class="grid-top">
-                            <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="../../img/productos/200x200/pi2.jpg" alt="">
-                                <div class="b-wrapper">
-                                    <h3 class="b-animate b-from-left    b-delay03 ">
-                                        <span>Bag</span>
-                                    </h3>
-                                </div>
-                            </a>
-
-
-                            <p><a href="single.html">content here</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="producto">
-                    <div class="card">
-                        <div class="grid-top">
-                            <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="../../img/productos/200x200/pi3.jpg" alt="">
-                                <div class="b-wrapper">
-                                    <h3 class="b-animate b-from-left    b-delay03 ">
-                                        <span>Shirt</span>
-                                    </h3>
-                                </div>
-                            </a>
-
-
-                            <p><a href="single.html">Seffered Alteration</a></p>
-                        </div>
-                    </div>
-                </div>
-                
-                   <div class="producto">
-                    <div class="card">
-                        <div class="grid-top">
-                            <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="../../img/productos/200x200/pi1.jpg" alt="">
-                                <div class="b-wrapper">
-                                    <h3 class="b-animate b-from-left    b-delay03 ">
-                                        <span>Shoe</span>
-                                    </h3>
-                                </div>
-                            </a>
-
-
-                            <p><a href="single.html">Clssical Latin</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="producto">
-                    <div class="card">
-                        <div class="grid-top">
-                            <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="../../img/productos/200x200/pi2.jpg" alt="">
-                                <div class="b-wrapper">
-                                    <h3 class="b-animate b-from-left    b-delay03 ">
-                                        <span>Bag</span>
-                                    </h3>
-                                </div>
-                            </a>
-
-
-                            <p><a href="single.html">content here</a></p>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <br>
-          <center><button href="#" class="btn btn-default">Ver más</button></center> 
-          <br>     
- </div>
-    </div>
-        
-        <div class="mainpage">
-     <div class="artDes">
-        <div class="jumbotron">
-        <h2><span class="title"> Ofertas destacadas! &nbsp;&nbsp;</span><img src="../img/discount.png" alt=""></h2>
-        </div>
-        </div>
-
-        <div class="proDes">
+<center>
             <div class="productof store style1">
                             <div class="header">
                                 <div class="badges">
@@ -680,30 +537,7 @@
                             <!-- end caption -->
                         </div>
                         <br>
-         <br>
-          <center><button href="#" class="btn btn-default">Ver más</button></center> 
-          <br>  
+        
+        </center>
         </div>
-
-    </div>
-<div class="mainpage">
-     <div class="artDes">
-        <div class="jumbotron">
-        <h2><span class="title cookie">  
-                
-                    <co>Tu<co/><span>Ciudad</span><as class="opens"> en el mapa &nbsp;&nbsp; </as> </span><img src="../img/worldwide.png" style="max-width: 64px;" alt=""></h2>
-        </div>
-        </div>
-<div class="proDes">
-        <?= $this->element('map-index') ?>
 </div>
-</div>
-            </div> <!-- fin container principal -->
-
-
-<br>
-<br>
-<br>
-
-
-        <?= $this->element('footer') ?>

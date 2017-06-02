@@ -14,6 +14,7 @@
             <?= $this->element('sidebar-left') ?>
 
             <div class="col-md-12 col-lg-7 thumbnail" align="center" id="sec0">
+            <?= $this->element('breadcrumb') ?>
 <?= $this->element('tabla-horarios') ?>
 <hr>
                <div class="producto">

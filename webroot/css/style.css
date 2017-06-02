@@ -28,6 +28,7 @@ section {
    #content {
     margin-right:  10px;
     margin-left: 10px;
+    
 }
 }
 
@@ -2767,3 +2768,147 @@ However, delay the fade out process for 2.5 seconds */
     width: 200px;
 }
 /*********************fin-comercios****************************/
+/***************************main-page*****************************/
+.mainpage .header .jumbotron {
+    background-color: inherit;
+    background-image:url('../img/rain_cup.jpg') ;
+    background-position: center center; 
+    background-repeat: no-repeat;
+    height: 300px;
+    text-align: center;
+}
+.mainpage .header .jumbotron .jumbox  {
+    margin: 0 auto;
+    margin-top: 0 auto;
+    background-color: rgba(248, 248, 248, 0.1);
+    /height: 500px;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 100px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    
+}
+    .mainpage .jumbotron {
+    background-color: #F8F8F8;
+    height: 100px;
+    text-align: center;
+    padding: 1px;
+    box-shadow:  1px 1px #ccc;
+}
+
+.mainpage .title {
+    margin-top: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+   / display: inline-block;
+   / margin-bottom: 20px;
+    font-size: 37px;
+    /padding-bottom: 10px;
+}
+
+.mainpage .artDes {
+    margin-top: 25px;
+}
+
+.mainpage #sec0 {
+    margin-left: 0;
+}
+.mainpage .proDes {
+    background-color: #F8F8F8;
+    /height: 500px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.jumbox .footer-distributed1 h3 {
+    /*-----logo navbar tuciudad---------*/
+    color: #ffffff;
+    font: normal 75px 'Cookie', cursive;
+    text-shadow: 1px 2px 2px rgba(1, 1, 1, 0.9);
+    /margin: -75px;
+    /margin-top: 10px;
+    vertical-align: middle;
+    z-index: 1000;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.jumbox .footer-distributed1 h3 span {
+    color: #5383d3;
+    font: normal 75px 'Cookie', cursive;
+}
+.cookie co {
+    /*-----logo navbar tuciudad---------*/
+    color: #ffffff;
+    font: normal 42px 'Cookie', cursive;
+    text-shadow: 1px 2px 2px rgba(1, 1, 1, 0.9);
+}
+
+.cookie co span {
+    color: #5383d3;
+    font: normal 42px 'Cookie', cursive;
+}
+
+.opens {
+    text-decoration: inherit;
+     text-shadow: 1px 2px 2px rgba(1, 1, 1, 0);
+    color: rgb(51, 51, 51);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 37px;
+}
+
+.jumbox .titlesub {
+    color: #5383d3;
+    font-family: 'Open Sans', sans-serif;
+    font-style: oblique;
+    text-shadow: 1px 2px 2px rgba(1, 1, 1, 0.9);
+}
+
+/****************************fin-main-page********************************/
+/********************************ofertas-page***************************************/
+.oferpage .header .jumbotron {
+    background-color: inherit;
+    background-image:url('../img/lantern.jpg') ;
+    background-position: center center; 
+    background-repeat: no-repeat;
+    height: 300px;
+    text-align: center;
+}
+.oferpage .header .jumbotron .jumbox  {
+    margin: 0 auto;
+    margin-top: 0 auto;
+    background-color: rgba(248, 248, 248, 0.1);
+    /height: 500px;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 100px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 5px;
+    
+}
+    .oferpage .jumbotron {
+    background-color: #F8F8F8;
+    height: 100px;
+    text-align: center;
+    padding: 1px;
+    box-shadow:  1px 1px #ccc;
+}
+.oferpage .title {
+    margin-top: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+   / display: inline-block;
+   / margin-bottom: 20px;
+    font-size: 43px;
+    /padding-bottom: 10px;
+    color: #fafafa;
+    text-shadow: 1px 1px 1px rgba(1, 1, 1, 0.9);
+}
+/************************************fin-ofertas-page***********************************/

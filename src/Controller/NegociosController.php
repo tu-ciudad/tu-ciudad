@@ -120,22 +120,25 @@ class NegociosController extends AppController
         //traigo informacion de local
             $negocio = $this->Negocios->patchEntity($negocio, $this->request->getData());
             $query = TableRegistry::get('ImagenesNegocios')->find();
-            $imagenes = $query->select(['foto','ubicacion'])->where(['negocios_id' => $negocio->id]);
+            $imagenes = $query->select(['foto','ubicacion'])->where(['negocios_id' => $negocio->id])->toArray();
             foreach($imagenes as $imagen):
                 if ($imagen->ubicacion = 'perfil'){
                 $fperfil = '../../files/ImagenesNegocios/foto/'. $imagen->foto;
                 }   
             endforeach;
         //traigo informacion de productos
-            $query2 = TableRegistry::get('productos')->find();
-            $productos = $query2->select(['id','titulo','cuerpo','fecha','precio'])->where(['negocios_id' => $negocio->id]);
+            $query2 = TableRegistry::get('Productos')->find();
+            $productos = $query2->select(['id','titulo','cuerpo','fecha','precio'])->where(['negocios_id' => $negocio->id])->toArray();
         //traigo las imagenes del producto
             foreach($productos as $producto):
                 $query3 = TableRegistry::get('ImagenesProductos')->find();
-                $imgproductos = $query3->select(['foto','numero'])->where(['productos_id' => $producto->id])->execute();   
-                $imagenesproductos[] = $imgproductos;
+                $imgproductos = $query3->select(['foto','numero'])->where(['productos_id' => $producto->id])->toArray();
+                foreach($imgproductos as $imgproducto):
+                    $imgproducto->foto = '../../files/ImagenesProductos/'. $imgproducto->foto;
+                endforeach;   
+            $imagenesproductos[] = $imgproductos;
+
             endforeach;
- 
             $this->set(compact('negocio','fperfil','productos','imagenesproductos'));
             $this->set('_serialize', ['negocio','fperfil','productos','imagenesproductos']);
             //Ahora ya tengo la info de las imagenes y del comercio, solo la tengo que poner en el sitio.

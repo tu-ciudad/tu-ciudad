@@ -18,7 +18,7 @@
           </div>
         <div class="user"> 
         <div class="profile-text clearfix">
-            <h1>Local Perfil</h1> <!-- texto local + info -->
+            <h1><?= $negocio->nombre ?></h1> <!-- texto local + info -->
             
              
             <p><span class="glyphicon glyphicon-globe"></span> St. Revutskogo, Kiev, Ukraine</p>                                    

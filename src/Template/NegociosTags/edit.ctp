@@ -25,7 +25,7 @@
         <legend><?= __('Edit Negocios Tag') ?></legend>
         <?php
             echo $this->Form->control('negocios_id', ['options' => $negocios]);
-            echo $this->Form->control('tags_id', ['options' => $tags]);
+            echo $this->Form->control('tags_negocios_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

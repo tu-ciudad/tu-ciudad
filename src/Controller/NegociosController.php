@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 
+use Cake\Datasource\ConnectionManager;
 use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
 
@@ -119,11 +120,16 @@ class NegociosController extends AppController
         ]);
         //traigo informacion de local
             $negocio = $this->Negocios->patchEntity($negocio, $this->request->getData());
+            $fportada = null;
+            $fperfil = null;
             $query = TableRegistry::get('ImagenesNegocios')->find();
             $imagenes = $query->select(['foto','ubicacion'])->where(['negocios_id' => $negocio->id])->toArray();
             foreach($imagenes as $imagen):
-                if ($imagen->ubicacion = 'perfil'){
+                if ($imagen->ubicacion == 'perfil'){
                 $fperfil = '../../files/ImagenesNegocios/foto/'. $imagen->foto;
+                }
+                if ($imagen->ubicacion == 'portada'){
+                $fportada = '../../files/ImagenesNegocios/foto/'. $imagen->foto;
                 }   
             endforeach;
         //traigo informacion de productos
@@ -137,10 +143,34 @@ class NegociosController extends AppController
                     $imgproducto->foto = '../../files/ImagenesProductos/'. $imgproducto->foto;
                 endforeach;   
             $imagenesproductos[] = $imgproductos;
-
             endforeach;
-            $this->set(compact('negocio','fperfil','productos','imagenesproductos'));
-            $this->set('_serialize', ['negocio','fperfil','productos','imagenesproductos']);
+            if(is_null($fperfil)){
+                $fperfil = '../../img/fotodeperfil.png';
+            }
+            if(is_null($fportada)){
+                $fportada = '../../img/fotodeportada.png';
+            }
+        //traigo la ciudad de la cual es el comercio
+            $query4 = TableRegistry::get('Lugares')->find();
+            $ubicacion = $query4->select(['nombre'])->where(['id' => $negocio->lugares_id])->toArray();
+        //traigo los tags del comercio
+            $tagsnegocio = null;
+            $conexion = ConnectionManager::get('default');
+            $tags = $conexion->execute('Call traertags(?)',[$negocio->id])->fetchAll('assoc');
+            //nada mas me falta algo que los saque del vector y los ponga interlacados por ,
+          //  $tagsnegocio = implode(',',$tags);
+            foreach ($tags as $tag) {
+                if(is_null($tagsnegocio)){
+                    $tagsnegocio = implode($tag);
+                 } else {
+                  $tagsnegocio = $tagsnegocio .' '.'-'.' '. implode($tag);
+                }
+            }
+            if (is_null($tagsnegocio)) {
+             $tagsnegocio = ' ';
+            }
+            $this->set(compact('negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio'));
+            $this->set('_serialize', ['negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio']);
             //Ahora ya tengo la info de las imagenes y del comercio, solo la tengo que poner en el sitio.
              //   return $this->redirect(['action' => 'index']);
             

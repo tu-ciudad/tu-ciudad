@@ -76,7 +76,7 @@ public function isAuthorized($user)
 
     public function beforeFilter(Event $event)
     {
-        $this->Auth->allow(['index','home']);
+        $this->Auth->allow(['index','home','view','perfil']);
     }
 
     /**

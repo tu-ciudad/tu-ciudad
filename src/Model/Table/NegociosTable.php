@@ -35,7 +35,6 @@ class NegociosTable extends Table
         $this->setTable('negocios');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
-
         $this->belongsTo('Lugares', [
             'foreignKey' => 'lugares_id',
             'joinType' => 'INNER'

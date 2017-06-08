@@ -59,27 +59,23 @@
                         <!-- me art lab slider -->
                         <div class='carousel-inner '>
 
-                      <?php  foreach ($imagenesproductos[$i] as $imagen):  ?>
-                            <div class='item'>
-                                <img src=<?= $imagen->foto ?> alt="" />
-                            </div>
-                      <?php      endforeach; ?>
-                            <div class='item active'>
-                                <img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/image2xxl.jpg' alt=''/>
-                            </div>
-                            <div class='item'>
-                                <img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/image3xxl.jpg' alt=''/>
-                            </div>
-                                
-                            <div class='item'>
-                                <img src='http://images.asos-media.com/inv/media/3/6/7/0/4850763/multi/image1xxl.jpg' alt='' />
-                            </div>
-                            <div class='item'>
-                                <img src='http://images.asos-media.com/inv/media/5/2/1/3/4603125/gold/image1xxl.jpg' alt='' />
-                            </div>
-                            <div class='item'>
-                                <img src='http://images.asos-media.com/inv/media/5/3/6/8/4948635/mink/image1xxl.jpg' alt='' />
-                            </div>
+                      <?php $q=0;  
+                      foreach ($imagenesproductos[$i] as $imagen): 
+                         if ($q==0) {?>
+                                <div class='item active'>
+                                   <img src=<?= $imagen->foto ?> alt="" />
+                                 </div>
+                            <?php
+                           }
+                           else{?>
+                               <div class='item'>
+                                    <img src=<?= $imagen->foto ?> alt="" />
+                               </div>
+                           <?php
+                          }
+                           $q = $q + 1;
+                      endforeach; ?>
+
                             
                         </div>
                             
@@ -95,8 +91,9 @@
                     <center>
                     <h2><?= $producto->titulo ?>
                     <ul class="list list-inline">
+
                          <li><del class="text-danger"><h3>$99.99</h3></del></li>
-                         <li><h5 class="text-primary">$49.99</h5></li>
+                         <li><h5 class="text-primary">$<?= $producto->precio ?></h5></li>
                      </ul>
                      </h2>
                     <p><?= $producto->cuerpo ?></p>
@@ -139,11 +136,6 @@
                               $p=$p+1;
                                     endforeach; ?>
 
-                        <li data-target='#carousel-custom'<?= $i?> data-slide-to='1'><img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/image2xxl.jpg' alt='' /></li>
-                        <li data-target='#carousel-custom'<?= $i?> data-slide-to='2'><img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/image3xxl.jpg' alt='' /></li>
-                        <li data-target='#carousel-custom'<?= $i?> data-slide-to='3'><img src='http://images.asos-media.com/inv/media/3/6/7/0/4850763/multi/image1xxl.jpg' alt='' /></li>
-                        <li data-target='#carousel-custom'<?= $i?> data-slide-to='4'><img src='http://images.asos-media.com/inv/media/5/2/1/3/4603125/gold/image1xxl.jpg' alt='' /></li>
-                        <li data-target='#carousel-custom'<?= $i?> data-slide-to='5'><img src='http://images.asos-media.com/inv/media/5/3/6/8/4948635/mink/image1xxl.jpg' alt='' /></li>
                         
 
                     </ol>

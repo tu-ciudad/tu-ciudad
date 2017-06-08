@@ -2,7 +2,7 @@
 
 <div class="container" id="sidefix">
     <div class="profile clearfix"> <!-- imagenes -->
-        <img align="left" class="image-lg" src="../../img/2009.jpeg" alt="Profile image example"/>
+        <img align="left" class="image-lg" src=<?= $fportada ?> alt="Profile image example"/>
         <div class="show-image">
         <img align="left" class="image-profile thumbnail" src=<?= $fperfil ?> id="imgf">
           <button class="update btn btn-default btnmodal" data-toggle="modal" data-target="#myModal">
@@ -21,8 +21,8 @@
             <h1><?= $negocio->nombre ?></h1> <!-- texto local + info -->
             
              
-            <p><span class="glyphicon glyphicon-globe"></span> St. Revutskogo, Kiev, Ukraine</p>                                    
-            <p><span class="glyphicon glyphicon-gift"></span> Regaleria, bazar, escolar</p>                                
+            <p><span class="glyphicon glyphicon-globe"></span> <?= $negocio->direccion ?> , <?= $ubicacion[0]->nombre ?></p>                                    
+            <p><span class="glyphicon glyphicon-gift"></span> <?= $tagsnegocio ?></p>                                
          
         </div> <!-- /texto-local+info -->
         <div class="actions clearfix">

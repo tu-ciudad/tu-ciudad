@@ -24,12 +24,12 @@
             <td><?= $negociosTag->has('negocio') ? $this->Html->link($negociosTag->negocio->id, ['controller' => 'Negocios', 'action' => 'view', $negociosTag->negocio->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Tag') ?></th>
-            <td><?= $negociosTag->has('tag') ? $this->Html->link($negociosTag->tag->id, ['controller' => 'Tags', 'action' => 'view', $negociosTag->tag->id]) : '' ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($negociosTag->id) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Tags Negocios Id') ?></th>
+            <td><?= $this->Number->format($negociosTag->tags_negocios_id) ?></td>
         </tr>
     </table>
 </div>

@@ -20,7 +20,7 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('negocios_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('tags_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('tags_negocios_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -29,7 +29,7 @@
             <tr>
                 <td><?= $this->Number->format($negociosTag->id) ?></td>
                 <td><?= $negociosTag->has('negocio') ? $this->Html->link($negociosTag->negocio->id, ['controller' => 'Negocios', 'action' => 'view', $negociosTag->negocio->id]) : '' ?></td>
-                <td><?= $negociosTag->has('tag') ? $this->Html->link($negociosTag->tag->id, ['controller' => 'Tags', 'action' => 'view', $negociosTag->tag->id]) : '' ?></td>
+                <td><?= $this->Number->format($negociosTag->tags_negocios_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $negociosTag->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $negociosTag->id]) ?>

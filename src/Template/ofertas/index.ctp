@@ -83,9 +83,20 @@
     <div class="col-md-2">
     <nav class="nav-sidebar">
         <ul class="nav tabs">
-          <li class="active"><a href="#tab1" data-toggle="tab">Lorem ipsum</a></li>
-          <li class=""><a href="#tab2" data-toggle="tab">Dolor asit amet</a></li>
-          <li class=""><a href="#tab3" data-toggle="tab">Stet clita</a></li>                               
+          <li class="active"><a href="#tab1" data-toggle="tab">Todas</a></li>
+          <li class=""><a href="#tab2" data-toggle="tab">tag 1</a></li>
+          <li class=""><a href="#tab3" data-toggle="tab">tag 2</a></li>
+          <li class=""><a href="#tab4" data-toggle="tab">tag 3</a></li>
+          <li class=""><a href="#tab5" data-toggle="tab">tag 4</a></li>
+          <li class=""><a href="#tab6" data-toggle="tab">tag 5</a></li>
+          <li class="navbar-form navbar-right" role="search">
+                      
+                                <div class="input-group " >
+                                    <input type="text" class="form-control" placeholder="Buscar tag">
+                                    <span class="input-group-btn"><button class="btn btn-primary " type="button"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button></span>
+                                </div>
+                              
+                    </li>                               
         </ul>
     </nav>
         <div><h2 class="add">Place for content</h2></div>

@@ -12,6 +12,9 @@
 		cursor: default;
 		
 	}
+	.breadcrumb {
+		box-shadow: 1px 1px #ccc;
+	}
 </style>
 <ol class="breadcrumb">
   <li><a href="#">Home</a></li>

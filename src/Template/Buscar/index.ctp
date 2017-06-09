@@ -4,16 +4,16 @@
   */
 ?>
 <style>
-.comercio .header .jumbotron {
+.buscar .header .jumbotron {
      background-color: inherit;
-    background-image:url('../img/nature.jpg') ;
+    background-image:url('../img/buscar.jpg') ;
     background-position: center center; 
     background-repeat: no-repeat;
     height: 300px;
     text-align: center;
     box-shadow: 1px 2px 1px #ccc;
 }
-.comercio .header .jumbotron .jumbox  {
+.buscar .header .jumbotron .jumbox  {
     margin: 0 auto;
     margin-top: 0 auto;
     background-color: rgba(248, 248, 248, 0.1);
@@ -27,14 +27,14 @@
     border-radius: 5px;
     
 }
-    .comercio .jumbotron {
+    .buscar .jumbotron {
     background-color: #F8F8F8;
     height: 100px;
     text-align: center;
     padding: 1px;
     box-shadow:  1px 1px #ccc;
 }
-.comercio .title {
+.buscar .title {
     margin-top: 0;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -45,43 +45,67 @@
     color: #fafafa;
     text-shadow: 1px 1px 1px rgba(1, 1, 1, 0.9);
 }
+
+.buscar .navbar .container-fluid {
+	margin: 0;
+	padding: 0;
+}
+.buscar .bshadow {
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+.buscar .navbar-nav {
+  float: none;
+  text-align: center;
+}
+
+.buscar .navbar-nav li {
+  float: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  
+
+}
+.buscar .navbar-nav  .active a{
+    cursor: default;
+        background-color: #5383d3; 
+        color: #fff;
+}
+.buscar .navbar-nav  .active a:hover{
+    cursor: default;
+        background-color: #5383d3; 
+        color: #fff;
+}
+.buscar .navbar-nav li:hover {
+  background-color: #BABABA;
+
+}
 </style>
 
-<div class="comercio">
+<div class="buscar">
 	<div class="header">
     <div class="jumbotron">
     <div class="jumbox">
-	<h1><span class="title"> Comercios en Guaminí &nbsp;&nbsp;</span><img src="../img/store.png" style="top: -15px;" alt=""></h1>
+	<h1><span class="title"> Busqueda &nbsp;&nbsp;</span><img src="../img/store.png" style="top: -15px;" alt=""></h1>
 		
 	</div>
 	</div>
 	</div>
 </div>
-<div class="comercio">
+<div class="buscar">
 <nav class="navbar navbar-default bshadow">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Todos</a></li>
-      <li><a href="#">Ropa</a></li>
-      <li><a href="#">Regaleria</a></li>
-      <li><a href="#">Electrodomesticos</a></li>
-      <li><a href="#">Bazar</a></li>
-      <li><a href="#">Jugueteria</a></li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Más
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Page 1-1</a></li>
-          <li><a href="#">Page 1-2</a></li>
-          <li><a href="#">Page 1-3</a></li>
-        </ul>
-      </li>
+      <li class="col-md-5 active"><a href="#">Articulos</a></li>
+      <li class="col-md-5"><a href="#">Comercios</a></li>
       
-      <li>
+      
+      <!-- <li>
       <div class="comercio">	
       <input type="text" name="search" placeholder="Buscar..">
       </div>
-      </li>
+      </li> -->
     </ul>
   </div>
 </nav>

@@ -10,9 +10,10 @@
                 <button class="c-hamburger c-hamburger--htx pull-right visible-xs" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                       <span>toggle menu</span>
                   </button>
-                <div class="navbar-brand  footer-distributed1" >
-                <?= $this->Html->link('', array('controller' => 'prueba', 'action' => 'index')) ?>
+                <div class="navbar-brand  footer-distributed1 logoLink" >
+               <a href="/"> 
                     <h3>Tu<span>Ciudad</span></h3>
+                    </a>
                 </div>
             </div>
             
@@ -27,10 +28,10 @@
 
                     </li>
                     <li>
-                        <a class="btn-trans">SERVICIOS</a>
-                    </li>
+                            <a class="btn-trans" <?= $this->Html->link('ARTICULOS', array('controller' => 'Articulos', 'action' => 'index')) ?> </a>
+                            </li>
                     <li>
-                        <a class="btn-trans" href="ofertas.html">OFERTAS</a>
+                        <a class="btn-trans" <?= $this->Html->link('OFERTAS', array('controller' => 'ofertas', 'action' => 'index')) ?></a>
                     </li>
                     <li>
                         <a class="btn-trans"<?= $this->Html->link('Tests', array('controller' => 'prueba', 'action' => 'index')) ?> 

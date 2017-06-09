@@ -228,7 +228,7 @@
                 </div>
                 <br>
                 <br>
-          <center><a class="btn btn-default" <?= $this->Html->link('Ver Más', array('controller' => 'Comercios', 'action' => 'index')) ?> </a></center> 
+          <center><a class="btn btn-default" <?= $this->Html->link('Ver Más', array('controller' => 'Articulos', 'action' => 'index')) ?> </a></center> 
           <br>     
  </div>
     </div>
@@ -681,7 +681,7 @@
                         </div>
                         <br>
          <br>
-          <center><a class="btn btn-default" <?= $this->Html->link('Ver Más', array('controller' => 'Articulos', 'action' => 'index')) ?> </a></center> 
+          <center><a class="btn btn-default" <?= $this->Html->link('Ver Más', array('controller' => 'Ofertas', 'action' => 'index')) ?> </a></center> 
           <br>  
         </div>
 

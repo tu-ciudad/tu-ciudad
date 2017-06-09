@@ -1,0 +1,73 @@
+objetivo: primera beta basica estable.
+fecha limite: !debatir.
+
+funcionalidad minima e indispenzable: 
+	esta beta debera contener un index, perfil, pagina articulos, pagina ofertas, pagina comercios, pagina de resultados de busqueda.
+	el sistema de carga de contenido debe estar a un punto en el que (aunque no este totalmente pulido) cualquiera de los dos (front & back) pueda cargar comercios y articulos sin tener que modificar codigo.
+	el sistema de busqueda debe estar implementado (aunque no disponga de una IA de busqueda pulida).
+	el perfil debera contener:
+		-articulos y articulos en ofertas.
+		-datos de contacto: nombre, telefono, ubicacion, mail.
+		-mapa.
+		-comercios recomendados *(1).
+		-horarios del comercio.
+	
+	*(1): el sistema de comercios recomendados debe estar integrado en su forma mas basica funcional, aunque no sean creados por un algoritmo, que se puedan poner comercios recomendados de forma manual sin tener que tocar el codigo. 
+	
+		
+funcionalidad minima e indispenzable (hablando tecnicamente):
+	index:
+		(1)debe mostrar comercios, productos y ofertas "nuevos" cada vez que se recargue la pagina.
+		(2)debe contener un mapa con todos las ubicaciones.
+	
+		Frontend
+		1- (funcional) 
+		2- (funcional [falta pulir])
+		
+		Backend
+		1- (falta)
+		2- (falta)
+	
+	perfil: 
+		(1)productos y ofertas
+		(2)imagen perfil y portada
+		(3)recomendados
+		(4)mapa
+		(5)datos de contacto
+		
+		Frontend
+		1-  (funcional [falta pulir])
+		2-  (funcional)
+		3-  (en desarrollo [solo visual incompleta]) 
+		4-  (funcional)
+		5-  (en desarrollo)
+		
+		Backend
+		1- (funcional en desarrollo)
+		2- (funcional)
+		3- (falta)
+		4- (falta)
+		5- (funcional)
+	
+	Pagina articulos & pagina ofertas:
+		(1)debe mostrar ofertas con posibilidad de ordenar por precio, porcentaje de descuento, mas de: o menos de: (precio) *esto ultimo puede no estar en la primera beta.
+		(2)debe mostrarse de forma aleatoria cada ves  que se recargue la pagina
+		
+		*Frontend en desarrollo
+		*backend falta
+
+		**en cada articulo debe haber alguna forma de entrar al comercio de cada articulo. (frontend)
+	Pagina comercios:
+		(1) primero debe mostrar los comercios destacados, seguidos de los demas.
+		(2) sistema de busqueda por interacion 
+		
+		*Frontend funcional
+		*backend falta 
+	
+	Pagina de busqueda:
+		(1)debe mostrar los resultados por tags de coemrcios o articulos.
+		
+		*frontend falta
+		*backend falta
+		
+		

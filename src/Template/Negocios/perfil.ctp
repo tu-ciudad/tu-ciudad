@@ -14,32 +14,43 @@
             <?= $this->element('sidebar-left') ?>
 
             <div class="col-md-12 col-lg-7 thumbnail" align="center" id="sec0">
-            <?= $this->element('breadcrumb') ?>
+        
 <?= $this->element('tabla-horarios') ?>
 <hr>
 
+<div class="productos-container">
+<div class="container">
 <?php
  $i = 0;
  foreach ($productos as $producto): ?>
-               <div class="producto">
-                    <div class="card">
-                        <div class="grid-top">
-                            <a href="" class="b-link-stripe b-animate-go" data-toggle="modal" data-target=#<?= $i?>>
-                                <img class=" card img-fluid img-responsive" src=<?= $imagenesproductos[$i][0]->foto ?> alt="">
-                                <div class="b-wrapper">
-                                    <h3 class="b-animate b-from-left b-delay03 ">
-                                        <span><?= $producto->titulo ?></span>
-                                           
-                                    </h3>
-                                </div>
-  
-                            
-                            </a>
-                            <p><a href="#"><?= $producto->titulo ?></a></p>
-                        </div>
+               <div class="producto1 col-xs-6 col-sm-4 col-md-3 col-lg-4"> <!-- producto -->
+        <div class="item" data-toggle="modal" data-target=#<?= $i?>>
 
+                    <img class="" src=<?= $imagenesproductos[$i][0]->foto ?> alt="">
+                    
+                    <div class="content">
+                        <h3>
+                            <span><?= $producto->titulo ?></span>
+                        </h3>
+                        
+                        <h5>
+                        <a href="#" >
+                            <span><?= $negocio->nombre ?></span>
+                        </a>
+                        </h5>
                     </div>
-                </div>
+
+                    <div class="content-bot"> 
+                        
+                       <h3>  
+                            <span>$<?= $producto->precio ?></span><sup>00</sup>
+                       </h3>
+                    </div>
+
+
+            
+        </div>
+    </div> <!-- /producto -->
                  
                 <!-- modal del pructo -->
                 <div id=<?= $i?> class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -163,8 +174,8 @@
                 <?php
                 $i=$i+1;
  endforeach; ?>
-
-
+</div>
+</div>
 
 
 
@@ -174,173 +185,7 @@
 
                 
 
-                    <hr>
-
-                        <div class="productof store style1">
-                            <div class="header">
-                                <div class="badges">
-                                    <span class="product-badge  right danger-background  semi-circle">-20%</span>
-                                </div>
-                                <figure class="layer">
-                                    <a href="javascript:void(0);">
-                                        <img class="card-img-top img-fluid img-responsive" src="../../img/productos/pi4.jpg" alt="">
-                                    </a>
-                                </figure>
-
-                                <div class="icons ">
-                                    <h1>
-                                        -20%!!!
-
-
-
-                                    </h1>
-                                    <h2>Local #1</h2>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-gift"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-search"></i></a>
-                                    <br>
-                                </div>
-                                <ul class="countdown-product">
-                                    <li>
-                                        <span class="days">223</span>
-                                        <p>Days</p>
-                                    </li>
-                                    <li>
-                                        <span class="hours">13</span>
-                                        <p>Hours</p>
-                                    </li>
-                                    <li>
-                                        <span class="minutes">21</span>
-                                        <p>Mins</p>
-                                    </li>
-                                    <li>
-                                        <span class="seconds">26</span>
-                                        <p>Secs</p>
-                                    </li>
-                                </ul>
-                                <!-- end countdown -->
-                            </div>
-                            <div class="caption">
-                                <h6 class="regular"><a href="#">Lorem Ipsum dolor sit</a></h6>
-                                <div class="price">
-                                    <small class="amount off">$68.99</small>
-                                    <span class="amount text-primary">$59.99</span>
-                                </div>
-                                <a href="javascript:void(0);"><i class="fa fa-cart-plus mr-5"></i>Add to cart</a>
-                            </div>
-                            <!-- end caption -->
-                        </div>
-                        
-                        <div class="productof store style1">
-                            <div class="header">
-                                <div class="badges">
-                                    <span class="product-badge  right danger-background  semi-circle">-20%</span>
-                                </div>
-                                <figure class="layer">
-                                    <a href="javascript:void(0);">
-                                        <img class="card-img-top img-fluid img-responsive" src="../../img/productos/pi4.jpg" alt="">
-                                    </a>
-                                </figure>
-
-                                <div class="icons">
-                                    <h1>
-                                        -20%!!!
-
-
-
-                                    </h1>
-                                    <h2>Local #1</h2>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-gift"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-search"></i></a>
-                                    <br>
-                                </div>
-                                <ul class="countdown-product">
-                                    <li>
-                                        <span class="days">223</span>
-                                        <p>Days</p>
-                                    </li>
-                                    <li>
-                                        <span class="hours">13</span>
-                                        <p>Hours</p>
-                                    </li>
-                                    <li>
-                                        <span class="minutes">21</span>
-                                        <p>Mins</p>
-                                    </li>
-                                    <li>
-                                        <span class="seconds">26</span>
-                                        <p>Secs</p>
-                                    </li>
-                                </ul>
-                                <!-- end countdown -->
-                            </div>
-                            <div class="caption">
-                                <h6 class="regular"><a href="#">Lorem Ipsum dolor sit</a></h6>
-                                <div class="price">
-                                    <small class="amount off">$68.99</small>
-                                    <span class="amount text-primary">$59.99</span>
-                                </div>
-                                <a href="javascript:void(0);"><i class="fa fa-cart-plus mr-5"></i>Add to cart</a>
-                            </div>
-                            <!-- end caption -->
-                        </div>
-                        
-                        <div class="productof store style1">
-                            <div class="header">
-                                <div class="badges">
-                                    <span class="product-badge  right danger-background  semi-circle">-20%</span>
-                                </div>
-                                <figure class="layer">
-                                    <a href="javascript:void(0);">
-                                        <img class="card-img-top img-fluid img-responsive" src="../../img/productos/pi4.jpg" alt="">
-                                    </a>
-                                </figure>
-
-                                <div class="icons">
-                                    <h1>
-                                        -20%!!!
-
-
-
-                                    </h1>
-                                    <h2>Local #1</h2>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-gift"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-search"></i></a>
-                                    <br>
-                                </div>
-                                <ul class="countdown-product">
-                                    <li>
-                                        <span class="days">223</span>
-                                        <p>Days</p>
-                                    </li>
-                                    <li>
-                                        <span class="hours">13</span>
-                                        <p>Hours</p>
-                                    </li>
-                                    <li>
-                                        <span class="minutes">21</span>
-                                        <p>Mins</p>
-                                    </li>
-                                    <li>
-                                        <span class="seconds">26</span>
-                                        <p>Secs</p>
-                                    </li>
-                                </ul>
-                                <!-- end countdown -->
-                            </div>
-                            <div class="caption">
-                                <h6 class="regular"><a href="#">Lorem Ipsum dolor sit</a></h6>
-                                <div class="price">
-                                    <small class="amount off">$68.99</small>
-                                    <span class="amount text-primary">$59.99</span>
-                                </div>
-                                <a href="javascript:void(0);"><i class="fa fa-cart-plus mr-5"></i>Add to cart</a>
-                            </div>
-                            <!-- end caption -->
-                        </div>
-
+              
 
 
                 </div>
@@ -395,7 +240,7 @@
        
 
 
-            <div id="map-container" align="center" class="col-md-8 col-md-push-1 img-rounded "></div>
+            <div id="map" align="center" class="col-md-8 col-md-push-1 img-rounded "></div>
 
 
     </section>
@@ -403,107 +248,28 @@
 <?= $this->element('footer') ?>
 
 
+
+ <style>
+    #map {
+        height: 350px;
+        box-shadow: 1px 1px #ccc ;
+        margin-top: 50px;
+    }
+</style>
+
+
 <script>
-        //hace el affixTop del elemento
-        var stickySidebar = $('#sidebar-right1').offset().top;
-
-        $(window).scroll(function() {  
-            if ($(window).scrollTop() > stickySidebar - navH) {
-                $('#sidebar-right1').addClass('affix');
-
-            }
-            else {
-                $('#sidebar-right1').removeClass('affix');
-            }  
-        });
-
+    function initMap() {
+   var locations = [
       
-       var elAlt = $('#sidebar-right1').height(); //altura elemto de affix (2do y 3er recomendado)
-       var sec2Dis = $('#sec2').offset().top ; //distancia entre el #sec2 y el top
-       var firstRecm = $('#firstRecm').height() + 10; //altura del primer recomendado + 10px del margin
-       var navH = $('#navbar').height(); //altura de la navbar
-       var  distSec2el = sec2Dis - elAlt - navH;
-       var  disTop = distSec2el - navH - firstRecm - elAlt;
+      ['Maroubra Beach', -37.0122, -62.417804, 1]
+    ];
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 16,
+    center: new google.maps.LatLng(-37.013179, -62.417755),
+    scrollwheel: false,
 
-$(window).scroll(function() {  
-    if($(window).scrollTop() + elAlt + navH >= sec2Dis - 20){
-        //el -20 es del margin entre el sec2 y el cuerpo de la pagina
-       //console.log('disTop: ' +disTop+'..elAlt '+elAlt+'..sec2: '+ $('#sec2').offset().top)
-       /*fija el elemento en la posicion de colicion con el sec2*/
-        $('#sidebar-right1').css('top', disTop);
-        $('#sidebar-right1').css('position','relative');
-    }
-    else {
-        //$('#sidebar-right1').removeClass('affix-bottom');
-        $('#sidebar-right1').css('top','');
-        $('#sidebar-right1').css('position','');
-    }  
-});
-
-     var stickyArt = $('#artAffix').offset().top;
-
-        $(window).scroll(function() {  
-            if ($(window).scrollTop() > stickyArt - navH) {
-                $('#artAffix').addClass('affix');
-                $('#artAffix').addClass('col-md-2');
-
-            }
-            else {
-                $('#artAffix').removeClass('affix');
-                $('#artAffix').removeClass('col-md-2');
-            }  
-        });
-
-        var artH = $('#artAffix').height() ; //+10 de margin 
-        var navBefore = $('#sidebar').height();
-        var  distSec2art = sec2Dis - artH - navH;
-        var  disTopArt = distSec2art + navH - navBefore - artH ;
-        $(window).scroll(function() {  
-    if($(window).scrollTop() + artH + navH >= sec2Dis - 20){
-        //el -20 es del margin entre el sec2 y el cuerpo de la pagina
-       //console.log('disTop: ' +disTop+'..elAlt '+elAlt+'..sec2: '+ $('#sec2').offset().top)
-       /*fija el elemento en la posicion de colicion con el sec2*/
-        $('#artAffix').css('top', disTopArt);
-        $('#artAffix').css('position','relative');
-        //$('#artAffix').css('border','1px solid');
-        //$('#artAffix').css('background-color','#fafafa');
-        $('#artAffix').removeClass('col-md-2');
-        //$('#artAffix').removeClass('affix');
-        $('#sidetest').css('border','0');
-    }
-    else {
-        //$('#sidebar-right1').removeClass('affix-bottom');
-        $('#artAffix').css('top','');
-        $('#artAffix').css('position','');
-        $('#sidetest').css('border','1px solid');
-        $('#sidetest').css('border-color','#DFE0E4');
-    }  
-});     
-    
-
-</script>
-    <script>
-        //CountDown
-        $('.countdown-product').downCount({
-            date: '8/1/2017 12:00:00',
-            offset: +1
-        }, function() {
-            //alert('WOOT WOOT, done!');
-        });
-
-        
-    </script>
-  <script async defer
-      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDkKG7urAJ1fTHIXbcuQDoePM2ReP-LKtQ&callback=initMap">
-    </script>
-    <script>
-        function init_map() {
-            var location = new google.maps.LatLng(-37.013179, -62.417755);
-
-            var mapoptions = {
-                center: location,
-                zoom: 17,
-                 styles: [
+    styles: [
           {elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},
           {elementType: 'labels.text.fill', stylers: [{color: '#523735'}]},
           {elementType: 'labels.text.stroke', stylers: [{color: '#f5f1e6'}]},
@@ -613,24 +379,30 @@ $(window).scroll(function() {
             stylers: [{color: '#92998d'}]
           }
         ],
-                scrollwheel: false
-            };
+  });
 
-            var marker = new google.maps.Marker({
-                position: location,
-                map: map,
-                title: "Guaminí"
-            });
+  var infowindow = new google.maps.InfoWindow();
 
-            var map = new google.maps.Map(document.getElementById("map-container"),
-                mapoptions);
+    var marker, i;
 
-            marker.setMap(map);
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map,
+        icon: '../../img/marker_blue.png'
+      });
 
-        };
-
-        google.maps.event.addDomListener(window, 'load', init_map);
-    </script>
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkKG7urAJ1fTHIXbcuQDoePM2ReP-LKtQ&callback=initMap"
+    async defer></script>
     
 <script> //script de horarios y dias
 var d = new Date();
@@ -661,4 +433,3 @@ function dayOfTheWeek (weekDays) {
   }
 }
 </script>
-

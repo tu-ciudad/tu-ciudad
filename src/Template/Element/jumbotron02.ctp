@@ -1,3 +1,225 @@
+<style>
+  /* ==========================================================================
+    /****************************jumbo nuevo only css*********************
+   ========================================================================== */
+
+.profile img.image-lg{ /*portada*/
+    z-index: 0;
+    width: 100%;  
+    margin-bottom: 10px;
+    height: 375px;
+    box-shadow: 1px 1px #ccc;
+    
+}
+.image-profile
+{   /*imagen perfil original*/
+    margin: -125px 10px 0px 50px;
+    z-index: 9;
+    width: 100%; 
+    opacity: 1;
+}
+.profile-text {
+    float: left;
+    margin-top: -25px;
+    margin-left: 5%;
+}
+
+.profile .user {
+  position: relative;
+  padding: 0px 5px 5px;
+}
+
+.profile .actions {
+  float: right;
+}
+
+.profile .actions .btn {
+  margin-bottom: 0px;
+}
+/*------------boton "combiar" imagen--------*/
+div.show-image {
+    position: relative;
+    float:left;
+    width: 20%;
+
+}
+
+div.show-image button.btn-default {
+    position:absolute;
+    display:none;
+   -webkit-transition: all 0.25s ease-in;
+   -moz-transition: all 0.25s ease-in;
+   -ms-transition: all 0.25s ease-in;
+   -o-transition: all 0.25s ease-in;
+   transition: all 0.25s ease-in;
+}
+div.show-image:hover button.btn-default {
+    position:absolute;
+    display: block;
+    opacity: 1;
+    border-radius: 0px;    
+}
+
+div.show-image button.update {
+    width: 100%;
+    margin: -125px 10px 0px 50px; /*el mismo margin que la imagen*/
+    /top: calc(0% + 6px);
+    /left: calc(100% - 67px);
+}
+/********************************
+************@media querys********/
+@media (max-width:1200px)
+{
+.profile-text {
+    font-weight: 500;
+    font-size:11px;
+    float: left;
+    margin-left: 7%;
+}
+.image-profile
+{
+    margin: -110px 10px 0px 25px;
+    z-index: 9;
+    /width: 20%; 
+}
+div.show-image button.update {
+     width: 100%;
+     margin: -110px 10px 0px 25px; /*el mismo margin que la imagen*/
+    /top: calc(0% + 6px);
+    /left: calc(100% - 67px);
+}
+}
+
+@media (max-width:992px)
+{
+.profile-text {
+    font-weight: 500;
+    font-size:11px;
+    float: left;
+    margin-left: 5%;
+}
+.profile-text h1 {
+    font-weight: 600;
+    font-size:19px;
+    /float: left;
+}
+.image-profile
+{
+    margin: -80px 10px 0px 25px;
+    z-index: 9;
+    /width: 20%; 
+}
+div.show-image button.update {
+     width: 100%;
+     margin: -80px 10px 0px 25px; /*el mismo margin que la imagen*/
+    /top: calc(0% + 6px);
+    /left: calc(100% - 67px);
+}
+}
+
+@media (max-width:768px)
+{
+.profile-text {
+    font-weight: 500;
+    font-size:11px;
+    float: left;
+    margin-left: 16%;
+}
+
+.profile-text>h1{
+    font-weight: 700;
+    font-size:16px;
+}
+
+.image-profile
+{
+    margin: -8px 10px 0px 10px;
+    z-index: 9;
+    width: 150%; 
+}
+div.show-image button.update {
+     width: 150%;
+     margin: -8px 10px 0px 10px; /*el mismo margin que la imagen*/
+    /top: calc(0% + 6px);
+    /left: calc(100% - 67px);
+}
+}
+
+@media (max-width: 768px) {
+  .btn-responsive {
+    padding:2px 4px;
+    font-size:80%;
+    line-height: 1;
+    border-radius:3px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .btn-responsive {
+    padding:4px 9px;
+    font-size:90%;
+    line-height: 1.2;
+  }
+}
+
+/************************************
+*************fin media querys********/
+/**************alert success animation (de recargar pagina)*************/
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #dff0d8; /* Black background color */
+    color: rgb(60, 118, 75); /* White text color */
+    border-color: rgba(60, 118, 61, .5);
+    border: 1px solid ;
+    text-align: center; /* Centered text */
+    border-radius: 4px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 83%; /* Center the snackbar */
+    top: 100px; /* 30px from the bottom */
+
+}
+#snackbar a {
+    color: inherit;
+}
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+    visibility: visible; /* Show the snackbar */
+
+/* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
+However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 1s, fadeout 1s 7s;
+    animation: fadein 1s, fadeout 1s 7s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;} 
+    to {top: 100px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 100px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {top: 100px; opacity: 1;} 
+    to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {top: 100px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+}
+
+/*************************fin jumbo nuevo*******************/
+</style>
  <!-- jumbotron nuevo fb style -->
 
 <div class="container" id="sidefix">

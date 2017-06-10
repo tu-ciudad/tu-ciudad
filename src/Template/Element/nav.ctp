@@ -61,13 +61,13 @@
                     </li>
                    
                 </ul>
- <ul class="navbar-form navbar-right" role="search">
-                      
+ <ul class="navbar-form navbar-right navi-search" role="search">
+                      <form action="/buscar">
                                 <div class="input-group " >
-                                    <input type="text" class="form-control" placeholder="Buscar...">
-                                    <span class="input-group-btn"><button class="btn btn-primary " type="button"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button></span>
+                                    <input type="text" class="form-control hidden-sm" placeholder="Buscar...">
+                                    <span class="input-group-btn"><button class="btn btn-primary " type="submit"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button></span>
                                 </div>
-                              
+                         </form>     
                     </ul>
                 <!-- 
                 <form class="navbar-form navbar-left" role="search">

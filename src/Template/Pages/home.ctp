@@ -33,10 +33,10 @@
         
     </div>
 </div>
-    <div class="row">
+    <div class="comercio-grid">
         
             
-            <div class="comercio-card col-md-4 col-sm-6 " >
+            <div class="comercio-card  " >
             <a href="/negocios/perfil/1">
                 <div class="card" style="">
                     <img class="card-img-top" src="../../img/comercio1.jpg" alt="Card image cap">
@@ -47,7 +47,7 @@
                 </div>
             </a>
             </div>
-            <div class="comercio-card col-md-4 col-sm-6 " >
+            <div class="comercio-card " >
             <a href="/negocios/perfil/2">
                 <div class="card" style="">
                     <img class="card-img-top" src="../../img/comercio2.jpg" alt="Card image cap">
@@ -58,7 +58,7 @@
                 </div>
             </a>
             </div>
-            <div class="comercio-card col-md-4 col-sm-6 " >
+            <div class="comercio-card " >
             <a href="/negocios/perfil/3">
                 <div class="card" style="">
                     <img class="card-img-top" src="../../img/comercio3.jpg" alt="Card image cap">

@@ -2649,7 +2649,14 @@ However, delay the fade out process for 2.5 seconds */
 
 /**********************************************/
 /*******************comercios**********************/
-
+.comercio-grid {
+     display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
 .comercio-card .card {
   position: relative;
   display: -webkit-box;
@@ -2666,9 +2673,35 @@ However, delay the fade out process for 2.5 seconds */
   border-radius: 0.25rem;
   transition: all 0.3s ease-in; 
   margin-bottom: 15px;
-  width: 350px;
+  /width: calc(50% - 5px);
+  margin: 5px;
   
 }
+.comercio-card {
+    transition: all 0.3s ease-in; 
+}
+@media (max-width: 640px) {
+    .comercio-card  {
+    width: calc(50% - 5px);
+    }
+    .comercio-card .card {
+    max-width: 200px;
+    }
+
+}
+@media (min-width: 640px) {
+    .comercio-card  {
+    width: calc(33.33% - 5px);
+    }
+
+}
+@media (min-width: 900px) {
+    .comercio-card  {
+     width: 33.33% ;
+    }
+    
+}
+
 .comercio-card .card:hover {
     border-color: rgba(29, 150, 197, 1.0);
     cursor: pointer;

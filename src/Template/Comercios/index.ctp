@@ -87,10 +87,10 @@
 </nav>
 </div>
 <div class="container">
-	<div class="row">
-		
+
+		<div class="comercio-grid">
 			
-			<div class="comercio-card col-md-4 col-sm-6 " >
+			<div class="comercio-card  " >
 			<a href="#">
 				<div class="card" style="">
 			  		<img class="card-img-top" src="../../img/comercio1.jpg" alt="Card image cap">
@@ -101,7 +101,7 @@
 				</div>
 			</a>
 			</div>
-			<div class="comercio-card col-md-4 col-sm-6 " >
+			<div class="comercio-card  " >
 			<a href="#">
 				<div class="card" style="">
 			  		<img class="card-img-top" src="../../img/comercio2.jpg" alt="Card image cap">
@@ -112,7 +112,7 @@
 				</div>
 			</a>
 			</div>
-			<div class="comercio-card col-md-4 col-sm-6 " >
+			<div class="comercio-card  " >
 			<a href="#">
 				<div class="card" style="">
 			  		<img class="card-img-top" src="../../img/comercio3.jpg" alt="Card image cap">
@@ -123,13 +123,13 @@
 				</div>
 			</a>
 			</div>
-<div class="clearfix"></div>
-			</div>
+
+	
                     
-		<div class="row">
+	
 		
 			
-			<div class="comercio-card col-md-4 col-sm-6 " >
+			<div class="comercio-card  " >
 			<a href="#">
 				<div class="card" style="">
 			  		<img class="card-img-top" src="../../img/comercio4.jpg" alt="Card image cap">
@@ -140,7 +140,7 @@
 				</div>
 			</a>
 			</div>
-			<div class="comercio-card col-md-4 col-sm-6 " >
+			<div class="comercio-card  " >
 			<a href="#">
 				<div class="card" style="">
 			  		<img class="card-img-top" src="../../img/comercio5.jpg" alt="Card image cap">
@@ -151,7 +151,7 @@
 				</div>
 			</a>
 			</div>
-			<div class="comercio-card col-md-4 col-sm-6 " >
+			<div class="comercio-card " >
 			<a href="#">
 				<div class="card" style="">
 			  		<img class="card-img-top" src="../../img/comercio6.jpg" alt="Card image cap">
@@ -163,11 +163,11 @@
 			</a>
 			</div>
 
-			</div>
-			<div class="row">
+			
+			
 		
 			
-			<div class="comercio-card col-md-4 col-sm-6 " >
+			<div class="comercio-card  " >
 			<a href="#">
 				<div class="card" style="">
 			  		<img class="card-img-top" src="../../img/comercio7.jpg" alt="Card image cap">
@@ -178,7 +178,7 @@
 				</div>
 			</a>
 			</div>
-			<div class="comercio-card col-md-4 col-sm-6 " >
+			<div class="comercio-card  " >
 			<a href="#">
 				<div class="card" style="">
 			  		<img class="card-img-top" src="../../img/comercio8.jpg" alt="Card image cap">
@@ -189,7 +189,7 @@
 				</div>
 			</a>
 			</div>
-			<div class="comercio-card col-md-4 col-sm-6 " >
+			<div class="comercio-card" >
 			<a href="#">
 				<div class="card" style="">
 			  		<img class="card-img-top" src="../../img/comercio9.jpg" alt="Card image cap">
@@ -202,9 +202,9 @@
 			</div>
 
 
-			</div>
+			
 	</div>
-	
+	</div>
 
 
 <?= $this->element('footer') ?>

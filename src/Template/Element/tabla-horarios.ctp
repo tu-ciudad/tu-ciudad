@@ -2,7 +2,8 @@
 	/*********************************tabla-horarios*************************************/
 .place-schedule {
     margin-bottom: 1em;
-    box-shadow: 1px 1px rgba(204, 204, 204, 0.5); 
+    /box-shadow: 1px 1px #ccc;
+    border-radius: 0.25rem; 
     
 }
 

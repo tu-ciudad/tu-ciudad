@@ -7,21 +7,34 @@
                             <hr>
 
                         </li>
-                        <li><a href="#sec0">Articulos</a></li>
+                        <li class="active"><a href="#sec0">Articulos</a></li>
                         <li><a href="#sec1">Ofertas</a></li>
                         <li><a href="#sec2">Ubicacion</a></li>
-                        <!-- <li>
-                            <div class="col-lg-12">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Buscar...">
-                                    <span class="input-group-btn">
-                                  <button class="btn btn-primary " type="button"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
-                                  </span>
-                                </div>
+                        <br>
+                        <br>
+                            <div class="nav sort">
+                            <li class="label label-gray" >Ordenar</li>
+                                <li id="sort">
+                                    <li class="nasted-sort active"><a href="#sort-relevante">Más relevantes</a></li>
+                                    <li class="nasted-sort"><a href="#sort-precio-down">Menor precio</a></li>
+                                    <li class="nasted-sort"><a href="#sort-precio-up">Mayor precio</a></li>
+                                </li>
                             </div>
-                        
-                        </li> -->
-
+                            
+                            <br>
+                            <br>
+                            <li class="label label-gray" >Categorías</li>
+                       <div class="nav categorias">
+                            
+                            <li><a href="#">asdasd</a></li>
+                            <li><a href="#">asdasd</a></li>
+                            <li><a href="#">2123</a></li>
+                            <li><a href="#">asd12</a></li>
+                            <li><a href="#">ghgfh</a></li>
+                            <li><a href="#">45dfdf</a></li>
+                            <li><a href="#">g3235f gghdfbg</a></li>
+                            <li><a href="#">g435f</a></li>
+                       </div>
                     </ul>
 
                 </div>

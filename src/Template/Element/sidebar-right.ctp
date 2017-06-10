@@ -4,7 +4,8 @@
      }
     
     .recom-container .card {
-        width: 300px;        
+        width: 300px; 
+        margin-left:0;       
     }
     .recom-container .card-img-top {
         height: 150px;

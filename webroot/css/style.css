@@ -1069,17 +1069,37 @@ iframe {
   
 }
 
-.sidebar-left li.active {
-    border: 0 #5bc solid;
-    border-right-width: 5px;
-    border-left-width: 5px;
+.sidebar-left li.active a {
+    cursor: default;
+        background-color: #5383d3; 
+        color: #fff; 
 }
-
+.label-gray {
+    font-size: 15px;
+    background-color: #eee;
+    color: #212121; 
+    box-shadow: 1px 1px #CCC;
+    margin-bottom: 3px;
+}
 .sidebar-left a {
     color: #5bc solid;
     background-color: #fafafa;
 }
 
+.sort .nasted-sort  {
+  position: relative;
+  display: block;
+  margin-left: 20px;
+  border-left: 5px solid #B2B2B2;
+}
+.sort li.active {
+     border-left: 5px solid rgb(83, 131, 211);
+     border-right: 0;
+}
+.sort li.active a {
+    color: #5383d3;
+    background-color: #fafafa;
+}
 .border-right {
     border-right: 1px solid #ddd;
 }
@@ -1096,6 +1116,34 @@ iframe {
 
 .bgnav {
     background-color: #fafafa;
+}
+
+.categorias {
+     display: flex;
+    flex-wrap: wrap;
+    /max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.categorias li a{
+    -webkit-border-radius:4px;
+    border-radius:4px;
+    background-color:#eee;
+    color:#444;
+    /line-height:22px;
+    padding:1px 10px;
+    display:inline-block;
+    /max-width:85%;
+    vertical-align:middle;
+    margin: 3px;
+    
+
+}
+.categorias li a:hover{
+    text-decoration:none;
+    background-color:#ddd
 }
 
 /*****articulos recom sidebar-left*****/
@@ -2699,7 +2747,7 @@ However, delay the fade out process for 2.5 seconds */
     .comercio-card  {
      width: 33.33% ;
     }
-    
+
 }
 
 .comercio-card .card:hover {

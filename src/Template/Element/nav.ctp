@@ -78,6 +78,42 @@
       </form>
                 -->
                 
+<ul class="nav navbar-nav navbar-right navindex" style="position: absolute; right: 0px;">
+                    <!-- 
+        <li><p class="navbar-text">Already have an account?</p></li>
+          -->
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+                        <ul id="login-dp" class="dropdown-menu animate1">
+                            <li>
+                                <div class="row ">
+                                    <div class="col-md-12">
+                                        Login via
+                                        <div class="social-buttons">
+                                            <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                                            <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                                        </div>
+                                        or
+                                       <div class="users form">
+<?= $this->Flash->render() ?>
+<?= $this->Form->create() ?>
+    <fieldset>
+        <?= $this->Form->control('email') ?>
+        <?= $this->Form->control('password') ?>
+    </fieldset>
+<?= $this->Form->button(__('Login')); ?>
+<?= $this->Form->end() ?>
+</div>
+                                    </div>
+                                    <div class="bottom text-center">
+                                        New here ? <a href="#"><b>Join Us</b></a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
 
 
             </div>

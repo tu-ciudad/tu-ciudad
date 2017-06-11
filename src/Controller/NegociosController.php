@@ -4,6 +4,8 @@ namespace App\Controller;
 use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
 use Cake\Datasource\ConnectionManager;
+use Cake\Datasource\EntityInterface;
+use Cake\ORM\Query;
 
 /**
  * Negocios Controller
@@ -193,11 +195,13 @@ class NegociosController extends AppController
     }
 
         public function edit($id=1){
-        $negocio = $this->Negocios->get($id, [
-            'contain' => []
-        ]);
+
+            $negocio = $this->Negocios->find()->where(['users_id' =>  $this->Auth->user('id')])->limit('1');
+        //si esto esta vacio tengo que redirigir a error 500
         //traigo informacion de local
-            $negocio = $this->Negocios->patchEntity($negocio, $this->request->getData());
+            foreach ($negocio as $neg) {
+                $negocio = $this->Negocios->patchEntity($neg, $this->request->getData());
+            }
             $fportada = null;
             $fperfil = null;
             $query = TableRegistry::get('ImagenesNegocios')->find();

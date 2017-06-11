@@ -58,9 +58,9 @@ class AppController extends Controller
             'authError' => 'Error de autenticacion',
             'logoutRedirect' => [
                 'controller' => 'Pages',
-                'action' => 'display',
-                'home'
-            ]
+                'action' => 'display'
+            ],
+            'unauthorizedRedirect' => false
         ]);
     }
     

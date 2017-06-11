@@ -62,21 +62,15 @@
                    
                 </ul>
  <ul class="navbar-form navbar-right navi-search" role="search">
-                      <form action="/buscar">
+                      <form class="form-search" method="get" action="/buscar">
                                 <div class="input-group " >
-                                    <input type="text" class="form-control hidden-sm" placeholder="Buscar...">
+                                    <input type="text" id="dato" name="articulos" class="form-control hidden-sm" placeholder="Buscar...">
                                     <span class="input-group-btn"><button class="btn btn-primary " type="submit"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button></span>
                                 </div>
                          </form>     
                     </ul>
-                <!-- 
-                <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-                -->
+                 
+              
                 
 <ul class="nav navbar-nav navbar-right navindex" style="position: absolute; right: 0px;">
                     <!-- 

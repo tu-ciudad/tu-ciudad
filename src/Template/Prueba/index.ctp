@@ -132,4 +132,5 @@
                   var croppic = new Croppic( 'yourIdasd' , croppicOpt);
 </script>
 
-   
+
+

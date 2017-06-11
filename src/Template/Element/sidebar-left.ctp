@@ -7,13 +7,14 @@
                             <hr>
 
                         </li>
-                        <li class="active"><a href="#sec0">Articulos</a></li>
-                        <li><a href="#sec1">Ofertas</a></li>
-                        <li><a href="#sec2">Ubicacion</a></li>
+                        <li class="active"><a href="#sec0"><span class="glyphicon glyphicon-shopping-cart"></span> Articulos</a></li>
+                        <li><a href="#sec1"><span class="glyphicon glyphicon-tags"></span> Ofertas</a></li>
+                        <li><a href="#sec2"><span class="glyphicon glyphicon-map-marker"></span> Ubicacion</a></li>
+                        <li><a href="#horarios"><span class="glyphicon glyphicon-calendar"></span> Horarios</a></li>
                         <br>
                         <br>
                             <div class="nav sort">
-                            <li class="label label-gray" >Ordenar</li>
+                            <li class="label label-gray" >Ordenar <span class="glyphicon glyphicon-sort"></span></li>
                                 <li id="sort">
                                     <li class="nasted-sort active"><a href="#sort-relevante">Más relevantes</a></li>
                                     <li class="nasted-sort"><a href="#sort-precio-down">Menor precio</a></li>
@@ -23,7 +24,7 @@
                             
                             <br>
                             <br>
-                            <li class="label label-gray" >Categorías</li>
+                            <li class="label label-gray" >Categorías  <i class="glyphicon glyphicon-tags"></i></li>
                        <div class="nav categorias">
                             
                             <li><a href="#">asdasd</a></li>

@@ -169,6 +169,7 @@
 }
 /************************************fin-tabla-horarios************************************/
 </style>
+<div id="horarios"></div>
 <div class='col-md-12 col-centered' >
 <div class='place-schedule'>
 <div class='schedule-tab' role='tabpanel'>

@@ -1081,6 +1081,9 @@ iframe {
     box-shadow: 1px 1px #CCC;
     margin-bottom: 3px;
 }
+.sidebar-left .glyphicon-tags {
+    font-size: 12px;
+}
 .sidebar-left a {
     color: #5bc solid;
     background-color: #fafafa;

@@ -218,6 +218,16 @@ However, delay the fade out process for 2.5 seconds */
     to {top: 0; opacity: 0;}
 }
 
+.fa-green {
+  color: rgb(95, 184, 138);
+  font-weight: bold;
+}
+.m-orange {
+  color: rgb(211, 85, 21);
+}
+.m-blue {
+  color: rgb(0, 148, 255);
+}
 /*************************fin jumbo nuevo*******************/
 </style>
  <!-- jumbotron nuevo fb style -->
@@ -249,9 +259,25 @@ However, delay the fade out process for 2.5 seconds */
         </div> <!-- /texto-local+info -->
         <div class="actions clearfix">
              <div class="btn-group"><!-- botones derecha -->
-                  <button class="btn btn-default btn-md tip btn-responsive" title="" data-original-title="Add to friends"><span class=" glyphicon glyphicon-earphone glyphicon glyphicon-white"></span> llamar</button>
-                  <button class="btn btn-default btn-md tip btn-responsive" title="" data-original-title="Send message"><span class="glyphicon glyphicon-envelope glyphicon glyphicon-white"></span> Mensaje</button>
-                 <button class="btn btn-default btn-md tip btn-responsive" title="" data-original-title="Recommend"><span class="glyphicon glyphicon-share-alt glyphicon glyphicon-white"></span> Recomendar</button>
+                <div class="btn-group" role="group">
+                  <button class="btn btn-default btn-md dropdown-toggle tip btn-responsive" title="" id="dropcell" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class=" glyphicon glyphicon-earphone glyphicon glyphicon-white"></span> llamar <span class="caret"></span></button>
+                  <ul class="dropdown-menu" aria-labelledby="dropcell">
+                        <li><a href="#"><i class="fa fa-whatsapp fa-green" aria-hidden="true"></i> +54 2923 485002</a></li>
+                        
+                        
+                  </ul>
+                </div>
+                  <div class="btn-group" role="group">
+                      <button type="button" class="btn btn-default btn-md dropdown-toggle tip btn-responsive" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-envelope"></span> Mensaje
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-envelope m-orange"></span> Comercio@gmail.com</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-envelope m-blue"></span> +54 2923 485002</a></li>
+                      </ul>
+                  </div>
+                 <button class="btn btn-default btn-md tip btn-responsive" title="" data-original-title="Recommend" id="shareBtn"><span class="glyphicon glyphicon-share-alt glyphicon glyphicon-white"></span> Recomendar</button>
             </div> <!-- /botones derecha -->
         </div>
         </div>

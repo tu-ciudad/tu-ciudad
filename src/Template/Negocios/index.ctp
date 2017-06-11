@@ -3,22 +3,17 @@
   * @var \App\View\AppView $this
   */
 ?>
-<br>
-<br>
-<br>
-<br>
-<br>
-<nav class="col-md-2 columns" id="actions-sidebar">
-    <ul class="nav nav-stacked">
+<nav class="large-3 medium-4 columns" id="actions-sidebar">
+    <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Negocio'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Lugares'), ['controller' => 'Lugares', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Lugare'), ['controller' => 'Lugares', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="negocios index col-md-8 columns content">
+<div class="negocios index large-9 medium-8 columns content">
     <h3><?= __('Negocios') ?></h3>
-    <table class="table table-striped">
+    <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
@@ -27,6 +22,9 @@
                 <th scope="col"><?= $this->Paginator->sort('direccion') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('descripcion') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('lugares_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('perfilfb') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('email') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('users_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -39,6 +37,9 @@
                 <td><?= h($negocio->direccion) ?></td>
                 <td><?= h($negocio->descripcion) ?></td>
                 <td><?= $negocio->has('lugare') ? $this->Html->link($negocio->lugare->id, ['controller' => 'Lugares', 'action' => 'view', $negocio->lugare->id]) : '' ?></td>
+                <td><?= h($negocio->perfilfb) ?></td>
+                <td><?= h($negocio->email) ?></td>
+                <td><?= $this->Number->format($negocio->users_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $negocio->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $negocio->id]) ?>

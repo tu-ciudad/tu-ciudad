@@ -23,8 +23,9 @@
             echo $this->Form->control('password');
             echo $this->Form->control('creado');
             echo $this->Form->control('ultima_conexion', ['empty' => true]);
-            echo $this->Form->control('rol');
-        ?>
+            echo $this->Form->control('rol', [
+            'options' => ['admin' => 'Admin', 'local' => 'local']
+        ]) ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>

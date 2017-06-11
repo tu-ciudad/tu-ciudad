@@ -95,15 +95,13 @@
                                             <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
                                         </div>
                                         or
-                                       <div class="users form">
-<?= $this->Flash->render() ?>
-<?= $this->Form->create() ?>
+<form method="POST" action="/users/login">
     <fieldset>
-        <?= $this->Form->control('email') ?>
-        <?= $this->Form->control('password') ?>
+       <input type="text" name="email">
+       <input type="password" name="password">
     </fieldset>
-<?= $this->Form->button(__('Login')); ?>
-<?= $this->Form->end() ?>
+<button type="submit">submit</button>
+</form>
 </div>
                                     </div>
                                     <div class="bottom text-center">

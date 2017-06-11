@@ -63,20 +63,24 @@ class AppController extends Controller
             ]
         ]);
     }
-public function isAuthorized($user)
-{
-    // Admin can access every action
-    if (isset($user['rol']) && $user['rol'] === 'admin') {
+    
+    public function isAuthorized($user)
+    {
+        // Admin can access every action
+        if (isset($user['rol']) && $user['rol'] === 'admin') {
+            return true;
+        }
+        if (in_array($this->request->getParam('action'), ['login','logout'])) {
         return true;
     }
-
-    // Default deny
-    return false;
-}
+        // Default deny
+        return false;
+    }
 
     public function beforeFilter(Event $event)
     {
-        $this->Auth->allow(['index','home','view','perfil']);
+        $this->Auth->allow(['perfil','view','index','logout','home','display']);
+        $this->Auth->config('authError', "Woopsie, you are not authorized to access this area.");
     }
 
     /**

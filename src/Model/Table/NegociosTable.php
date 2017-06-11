@@ -10,6 +10,9 @@ use Cake\Validation\Validator;
  * Negocios Model
  *
  * @property \Cake\ORM\Association\BelongsTo $Lugares
+ * @property \Cake\ORM\Association\BelongsTo $Users
+ * @property \Cake\ORM\Association\BelongsToMany $Tags
+ * @property \Cake\ORM\Association\BelongsToMany $Tags
  *
  * @method \App\Model\Entity\Negocio get($primaryKey, $options = [])
  * @method \App\Model\Entity\Negocio newEntity($data = null, array $options = [])
@@ -35,9 +38,24 @@ class NegociosTable extends Table
         $this->setTable('negocios');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
+
         $this->belongsTo('Lugares', [
             'foreignKey' => 'lugares_id',
             'joinType' => 'INNER'
+        ]);
+        $this->belongsTo('Users', [
+            'foreignKey' => 'users_id',
+            'joinType' => 'INNER'
+        ]);
+        $this->belongsToMany('Tags', [
+            'foreignKey' => 'negocio_id',
+            'targetForeignKey' => 'tag_id',
+            'joinTable' => 'negocios_tags'
+        ]);
+        $this->belongsToMany('Tags', [
+            'foreignKey' => 'negocio_id',
+            'targetForeignKey' => 'tag_id',
+            'joinTable' => 'tags_negocios'
         ]);
     }
 
@@ -66,6 +84,13 @@ class NegociosTable extends Table
         $validator
             ->allowEmpty('descripcion');
 
+        $validator
+            ->allowEmpty('perfilfb');
+
+        $validator
+            ->email('email')
+            ->allowEmpty('email');
+
         return $validator;
     }
 
@@ -78,8 +103,14 @@ class NegociosTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
+        $rules->add($rules->isUnique(['email']));
         $rules->add($rules->existsIn(['lugares_id'], 'Lugares'));
+        $rules->add($rules->existsIn(['users_id'], 'Users'));
 
         return $rules;
+    }
+    public function isOwnedBy($articleId, $userId)
+    {
+        return $this->exists(['id' => $articleId, 'users_id' => $userId]);
     }
 }

@@ -38,8 +38,20 @@
             <td><?= $negocio->has('lugare') ? $this->Html->link($negocio->lugare->id, ['controller' => 'Lugares', 'action' => 'view', $negocio->lugare->id]) : '' ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Perfilfb') ?></th>
+            <td><?= h($negocio->perfilfb) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Email') ?></th>
+            <td><?= h($negocio->email) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($negocio->id) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Users Id') ?></th>
+            <td><?= $this->Number->format($negocio->users_id) ?></td>
         </tr>
     </table>
 </div>

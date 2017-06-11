@@ -12,6 +12,9 @@ use Cake\ORM\Entity;
  * @property string $direccion
  * @property string $descripcion
  * @property int $lugares_id
+ * @property string $perfilfb
+ * @property string $email
+ * @property int $users_id
  *
  * @property \App\Model\Entity\Lugare $lugare
  */

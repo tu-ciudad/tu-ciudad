@@ -1,9 +1,9 @@
 <?php
 namespace App\Controller;
 
-use Cake\Datasource\ConnectionManager;
 use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
+use Cake\Datasource\ConnectionManager;
 
 /**
  * Negocios Controller
@@ -18,6 +18,19 @@ class NegociosController extends AppController
      *
      * @return \Cake\Network\Response|null
      */
+    public function isAuthorized($user)
+{
+    // The owner of an article can edit and delete it
+    if (in_array($this->request->getParam('action'), ['edit'])) {
+        $negocioId = (int)$this->request->getParam('pass.0');
+        if ($this->Negocios->isOwnedBy($negocioId, $user['id'])) {
+            return true;
+        }
+    }
+
+    return parent::isAuthorized($user);
+}
+
     public function index()
     {
         $this->paginate = [
@@ -64,7 +77,8 @@ class NegociosController extends AppController
             $this->Flash->error(__('The negocio could not be saved. Please, try again.'));
         }
         $lugares = $this->Negocios->Lugares->find('list', ['limit' => 200]);
-        $this->set(compact('negocio', 'lugares'));
+        $users = $this->Negocios->Users->find('list', ['limit' => 200]);
+        $this->set(compact('negocio', 'lugares','users'));
         $this->set('_serialize', ['negocio']);
     }
 
@@ -75,7 +89,7 @@ class NegociosController extends AppController
      * @return \Cake\Network\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
-    public function edit($id = null)
+ /*   public function edit($id = null)
     {
         $negocio = $this->Negocios->get($id, [
             'contain' => []
@@ -114,7 +128,71 @@ class NegociosController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
+
     public function perfil($id = null){
+        $negocio = $this->Negocios->get($id, [
+            'contain' => []
+        ]);
+
+        //traigo informacion de local
+            $negocio = $this->Negocios->patchEntity($negocio, $this->request->getData());
+            $fportada = null;
+            $fperfil = null;
+            $query = TableRegistry::get('ImagenesNegocios')->find();
+            $imagenes = $query->select(['foto','ubicacion'])->where(['negocios_id' => $negocio->id])->toArray();
+            foreach($imagenes as $imagen):
+                if ($imagen->ubicacion == 'perfil'){
+                $fperfil = '../../files/ImagenesNegocios/foto/'. $imagen->foto;
+                }
+                if ($imagen->ubicacion == 'portada'){
+                $fportada = '../../files/ImagenesNegocios/foto/'. $imagen->foto;
+                }   
+            endforeach;
+        //traigo informacion de productos
+            $query2 = TableRegistry::get('Productos')->find();
+            $productos = $query2->select(['id','titulo','cuerpo','fecha','precio'])->where(['negocios_id' => $negocio->id])->toArray();
+        //traigo las imagenes del producto
+            foreach($productos as $producto):
+                $query3 = TableRegistry::get('ImagenesProductos')->find();
+                $imgproductos = $query3->select(['foto','numero'])->where(['productos_id' => $producto->id])->toArray();
+                foreach($imgproductos as $imgproducto):
+                    $imgproducto->foto = '../../files/ImagenesProductos/'. $imgproducto->foto;
+                endforeach;   
+            $imagenesproductos[] = $imgproductos;
+            endforeach;
+            if(is_null($fperfil)){
+                $fperfil = '../../img/fotodeperfil.png';
+            }
+            if(is_null($fportada)){
+                $fportada = '../../img/fotodeportada.png';
+            }
+        //traigo la ciudad de la cual es el comercio
+            $query4 = TableRegistry::get('Lugares')->find();
+            $ubicacion = $query4->select(['nombre'])->where(['id' => $negocio->lugares_id])->toArray();
+        //traigo los tags del comercio
+            $tagsnegocio = null;
+            $conexion = ConnectionManager::get('default');
+            $tags = $conexion->execute('Call traertags(?)',[$negocio->id])->fetchAll('assoc');
+            //nada mas me falta algo que los saque del vector y los ponga interlacados por ,
+          //  $tagsnegocio = implode(',',$tags);
+            foreach ($tags as $tag) {
+                if(is_null($tagsnegocio)){
+                    $tagsnegocio = implode($tag);
+                 } else {
+                  $tagsnegocio = $tagsnegocio .' '.'-'.' '. implode($tag);
+                }
+            }
+            if (is_null($tagsnegocio)) {
+             $tagsnegocio = ' ';
+            }
+            $this->set(compact('negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio'));
+            $this->set('_serialize', ['negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio']);
+            //Ahora ya tengo la info de las imagenes y del comercio, solo la tengo que poner en el sitio.
+             //   return $this->redirect(['action' => 'index']);
+            
+    }
+
+        public function edit($id=1){
         $negocio = $this->Negocios->get($id, [
             'contain' => []
         ]);

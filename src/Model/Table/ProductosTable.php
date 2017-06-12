@@ -42,7 +42,7 @@ class ProductosTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->belongsToMany('Tags', [
-            'foreignKey' => 'producto_id',
+            'foreignKey' => 'productos_id',
             'targetForeignKey' => 'tag_id',
             'joinTable' => 'productos_tags'
         ]);
@@ -75,7 +75,8 @@ class ProductosTable extends Table
 
         $validator
             ->decimal('precio')
-            ->allowEmpty('precio');
+            ->requirePresence('precio', 'create')
+            ->notEmpty('precio');
 
         return $validator;
     }

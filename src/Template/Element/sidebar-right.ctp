@@ -3,6 +3,9 @@
         right: 0;
      }
     
+      .recom-container .comercio-card {
+        margin-bottom: 10px;
+     }
     .recom-container .card {
         width: 300px; 
         margin-left:0;       

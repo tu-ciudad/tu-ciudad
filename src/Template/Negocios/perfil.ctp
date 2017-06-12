@@ -47,7 +47,7 @@
                        </h3>
                     </div>
 
-
+<span class="hidden">producto id</span>
             
         </div>
     </div> <!-- /producto -->

@@ -41,6 +41,7 @@
                 <th scope="col"><?= __('Lugares Id') ?></th>
                 <th scope="col"><?= __('Perfilfb') ?></th>
                 <th scope="col"><?= __('Email') ?></th>
+                <th scope="col"><?= __('Users Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($tag->negocios as $negocios): ?>
@@ -53,6 +54,7 @@
                 <td><?= h($negocios->lugares_id) ?></td>
                 <td><?= h($negocios->perfilfb) ?></td>
                 <td><?= h($negocios->email) ?></td>
+                <td><?= h($negocios->users_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Negocios', 'action' => 'view', $negocios->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Negocios', 'action' => 'edit', $negocios->id]) ?>

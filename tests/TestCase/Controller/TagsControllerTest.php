@@ -19,7 +19,8 @@ class TagsControllerTest extends IntegrationTestCase
         'app.tags',
         'app.negocios',
         'app.lugares',
-        'app.negocios_tags',
+        'app.users',
+        'app.tags_negocios',
         'app.productos',
         'app.productos_tags'
     ];

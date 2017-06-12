@@ -19,8 +19,6 @@
         <legend><?= __('Add Tag') ?></legend>
         <?php
             echo $this->Form->control('nombre');
-            echo $this->Form->control('negocios._ids', ['options' => $negocios]);
-            echo $this->Form->control('productos._ids', ['options' => $productos]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

@@ -2,7 +2,6 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-use Cake\ORM\TableRegistry;
 
 /**
  * Tags Controller
@@ -59,9 +58,7 @@ class TagsController extends AppController
             }
             $this->Flash->error(__('The tag could not be saved. Please, try again.'));
         }
-        $negocios = $this->Tags->Negocios->find('list', ['limit' => 200]);
-        $productos = $this->Tags->Productos->find('list', ['limit' => 200]);
-        $this->set(compact('tag', 'negocios', 'productos'));
+        $this->set(compact('tag'));
         $this->set('_serialize', ['tag']);
     }
 
@@ -110,17 +107,5 @@ class TagsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
-    }
-
-        public function all(){
-    //    $tags = TableRegistry::get('tags')->find();
-     //   $resultado = $tags->select('nombre')->execute()->toArray;
-      //  debug($resultado);
-        $tags = $this->Tags->find();
-        foreach($tags as $tag){
-            debug($tag->nombre);
-        }
-        $this->set(compact('resultado'));
-        $this->set('_serialize','resultado'); 
     }
 }

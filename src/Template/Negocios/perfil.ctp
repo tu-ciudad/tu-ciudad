@@ -47,7 +47,7 @@
                        </h3>
                     </div>
 
-<input type="hidden" id="pid<?= $i?>" value="producto id"></input>
+<input type="hidden" id="pid<?= $i?>" value=<?= $producto->id ?>></input>
             
         </div>
     </div> <!-- /producto -->

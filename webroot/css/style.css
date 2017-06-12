@@ -1007,7 +1007,29 @@ iframe {
     width: 15%;
 }
 /*******************fin-navbar******************/
+/**************nav-logged*******************/
+.nav-logged {
+position: absolute; 
+right: 20px;
+top: 10px;
+}
 
+.nav-logged .rosca {
+    height: 40px;
+ 
+}
+.nav-logged .user {
+    color: #fafafa;
+    font-size: 15px;
+    cursor: pointer;
+    vertical-align: center;
+
+}
+.nav-logged .glyphicon-cog {
+    color: #fafafa;
+    font-size: 30px;
+    cursor: pointer;
+}
 /*********************sidebar-left***********************/
 .headd {
     color: #000000;

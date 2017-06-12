@@ -72,39 +72,24 @@
                  
               
                 
-<ul class="nav navbar-nav navbar-right navindex" style="position: absolute; right: 100px;">
-                    <!-- 
-        <li><p class="navbar-text">Already have an account?</p></li>
-          -->
+<ul class="nav navbar-nav navbar-right nav-logged" style="">
+                   
+<li class="dropdown ">  
 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
-                        <ul id="login-dp" class="dropdown-menu animate1">
+                        <div class="dropdown-toggle rosca" data-toggle="dropdown"><span class="user">useraccount@gmail.com </span><span class="glyphicon glyphicon-cog"></span></div>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="../../../../negocios/perfil/1">Ir a perfil</a></li>
+                            <li><a href="../../../../negocios/edit/1">Editar perfil</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Agregar producto</a></li>
+                            <li><a href="#">Editar producto</a></li>
+                            <li role="separator" class="divider"></li>
                             <li>
-                                <div class="row ">
-                                    <div class="col-md-12">
-                                        Login via
-                                        <div class="social-buttons">
-                                            <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                                            <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
-                                        </div>
-                                        or
-<form method="POST" action="/users/login">
-    <fieldset>
-       <input type="text" name="email">
-       <input type="password" name="password">
-    </fieldset>
-<button type="submit">submit</button>
-</form>
-</div>
-                                    </div>
-                                    <div class="bottom text-center">
-                                        New here ? <a href="#"><b>Join Us</b></a>
-                                    </div>
-                                </div>
+                             <a href="/users/logout">Cerrar sesión</a> 
                             </li>
-                        </ul>
+                         </ul>
                     </li>
+
                 </ul>
 
 

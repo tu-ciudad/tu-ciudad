@@ -180,18 +180,15 @@
   </div>
 </nav>
 </div>
-<div class="non-search">
-	<header>
-		<h2 class="tittle">No encontramos lo que buscas :( </h2>
-	</header>
-</div>
+
 
 <div class="container">
  <div class="mainpage">
     <div class="jumbotron">
-    <h2><span class="title"><img src="../img/search.png" alt=""> No encontramos lo que buscas :(</span></h2>
-        
+    <h2><span class="title"> No encontramos lo que buscas :(</span></h2>
+        <h4 style="color: #666666;">Pero no te preocupes! </h4>
     </div>
+
 </div>
 </div>
 <hr>

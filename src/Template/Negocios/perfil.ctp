@@ -4,9 +4,7 @@
   * @var \App\View\AppView $this
   */
 ?>
-<SCRIPT LANGUAGE="JavaScript">
-document.write("<iframe src=\"http:\/\/www.facebook.com\/plugins\/like.php?href="+document.URL+"&layout=button_count&show_faces=false&width=80&action=like&font=verdana&colorscheme=light\" scrolling=\"no\" frameborder=\"0\" style=\"border:none; overflow:hidden; width:80px; height:22px\" allowTransparency=\"true\"><\/iframe>");
-</SCRIPT>
+
 <?= $this->element('jumbotron02') ?>
    
     <div class="container-fluid" id="content">

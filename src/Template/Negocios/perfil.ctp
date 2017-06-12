@@ -47,7 +47,7 @@
                        </h3>
                     </div>
 
-
+<input type="hidden" id="pid<?= $i?>" value="producto id"></input>
             
         </div>
     </div> <!-- /producto -->
@@ -458,4 +458,11 @@ document.getElementById('shareBtn').onclick = function() {
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script>
+  $('.item').click(function(){
+    var p_id = $('input#pid').val();
+    console.log(p_id);
+  });
 </script>

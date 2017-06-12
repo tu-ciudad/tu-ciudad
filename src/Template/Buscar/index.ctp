@@ -168,7 +168,7 @@
   <div class="container-fluid">
     <ul class="nav navbar-nav">
       <li class="col-md-5 active"><a href="#">Articulos</a></li>
-      <li class="col-md-5"><a href="#">Comercios</a></li>
+      <li class="col-md-5"><a href="../buscar?comercios">Comercios</a></li>
       
       
       <!-- <li>

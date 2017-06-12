@@ -4,11 +4,11 @@ namespace App\Controller;
 use App\Controller\AppController;
 
 /**
- * TagsNegocios Controller
+ * Tagsnegocios Controller
  *
- * @property \App\Model\Table\TagsNegociosTable $TagsNegocios
+ * @property \App\Model\Table\TagsnegociosTable $Tagsnegocios
  */
-class TagsNegociosController extends AppController
+class TagsnegociosController extends AppController
 {
 
     /**
@@ -18,27 +18,27 @@ class TagsNegociosController extends AppController
      */
     public function index()
     {
-        $tagsNegocios = $this->paginate($this->TagsNegocios);
+        $tagsnegocios = $this->paginate($this->Tagsnegocios);
 
-        $this->set(compact('tagsNegocios'));
-        $this->set('_serialize', ['tagsNegocios']);
+        $this->set(compact('tagsnegocios'));
+        $this->set('_serialize', ['tagsnegocios']);
     }
 
     /**
      * View method
      *
-     * @param string|null $id Tags Negocio id.
+     * @param string|null $id Tagsnegocio id.
      * @return \Cake\Network\Response|null
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function view($id = null)
     {
-        $tagsNegocio = $this->TagsNegocios->get($id, [
+        $tagsnegocio = $this->Tagsnegocios->get($id, [
             'contain' => []
         ]);
 
-        $this->set('tagsNegocio', $tagsNegocio);
-        $this->set('_serialize', ['tagsNegocio']);
+        $this->set('tagsnegocio', $tagsnegocio);
+        $this->set('_serialize', ['tagsnegocio']);
     }
 
     /**
@@ -48,60 +48,60 @@ class TagsNegociosController extends AppController
      */
     public function add()
     {
-        $tagsNegocio = $this->TagsNegocios->newEntity();
+        $tagsnegocio = $this->Tagsnegocios->newEntity();
         if ($this->request->is('post')) {
-            $tagsNegocio = $this->TagsNegocios->patchEntity($tagsNegocio, $this->request->getData());
-            if ($this->TagsNegocios->save($tagsNegocio)) {
-                $this->Flash->success(__('The tags negocio has been saved.'));
+            $tagsnegocio = $this->Tagsnegocios->patchEntity($tagsnegocio, $this->request->getData());
+            if ($this->Tagsnegocios->save($tagsnegocio)) {
+                $this->Flash->success(__('The tagsnegocio has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The tags negocio could not be saved. Please, try again.'));
+            $this->Flash->error(__('The tagsnegocio could not be saved. Please, try again.'));
         }
-        $this->set(compact('tagsNegocio'));
-        $this->set('_serialize', ['tagsNegocio']);
+        $this->set(compact('tagsnegocio'));
+        $this->set('_serialize', ['tagsnegocio']);
     }
 
     /**
      * Edit method
      *
-     * @param string|null $id Tags Negocio id.
+     * @param string|null $id Tagsnegocio id.
      * @return \Cake\Network\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
     public function edit($id = null)
     {
-        $tagsNegocio = $this->TagsNegocios->get($id, [
+        $tagsnegocio = $this->Tagsnegocios->get($id, [
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $tagsNegocio = $this->TagsNegocios->patchEntity($tagsNegocio, $this->request->getData());
-            if ($this->TagsNegocios->save($tagsNegocio)) {
-                $this->Flash->success(__('The tags negocio has been saved.'));
+            $tagsnegocio = $this->Tagsnegocios->patchEntity($tagsnegocio, $this->request->getData());
+            if ($this->Tagsnegocios->save($tagsnegocio)) {
+                $this->Flash->success(__('The tagsnegocio has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The tags negocio could not be saved. Please, try again.'));
+            $this->Flash->error(__('The tagsnegocio could not be saved. Please, try again.'));
         }
-        $this->set(compact('tagsNegocio'));
-        $this->set('_serialize', ['tagsNegocio']);
+        $this->set(compact('tagsnegocio'));
+        $this->set('_serialize', ['tagsnegocio']);
     }
 
     /**
      * Delete method
      *
-     * @param string|null $id Tags Negocio id.
+     * @param string|null $id Tagsnegocio id.
      * @return \Cake\Network\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
-        $tagsNegocio = $this->TagsNegocios->get($id);
-        if ($this->TagsNegocios->delete($tagsNegocio)) {
-            $this->Flash->success(__('The tags negocio has been deleted.'));
+        $tagsnegocio = $this->Tagsnegocios->get($id);
+        if ($this->Tagsnegocios->delete($tagsnegocio)) {
+            $this->Flash->success(__('The tagsnegocio has been deleted.'));
         } else {
-            $this->Flash->error(__('The tags negocio could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The tagsnegocio could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);

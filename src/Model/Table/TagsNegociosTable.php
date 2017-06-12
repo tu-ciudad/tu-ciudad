@@ -7,17 +7,17 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * TagsNegocios Model
+ * Tagsnegocios Model
  *
- * @method \App\Model\Entity\TagsNegocio get($primaryKey, $options = [])
- * @method \App\Model\Entity\TagsNegocio newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\TagsNegocio[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\TagsNegocio|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\TagsNegocio patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\TagsNegocio[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\TagsNegocio findOrCreate($search, callable $callback = null, $options = [])
+ * @method \App\Model\Entity\Tagsnegocio get($primaryKey, $options = [])
+ * @method \App\Model\Entity\Tagsnegocio newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\Tagsnegocio[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\Tagsnegocio|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Tagsnegocio patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\Tagsnegocio[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\Tagsnegocio findOrCreate($search, callable $callback = null, $options = [])
  */
-class TagsNegociosTable extends Table
+class TagsnegociosTable extends Table
 {
 
     /**
@@ -29,8 +29,8 @@ class TagsNegociosTable extends Table
     public function initialize(array $config)
     {
         parent::initialize($config);
-    
-        $this->setTable('tags_negocios');
+
+        $this->setTable('tagsnegocios');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
     }
@@ -49,8 +49,23 @@ class TagsNegociosTable extends Table
 
         $validator
             ->requirePresence('nombre', 'create')
-            ->notEmpty('nombre');
+            ->notEmpty('nombre')
+            ->add('nombre', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->isUnique(['nombre']));
+
+        return $rules;
     }
 }

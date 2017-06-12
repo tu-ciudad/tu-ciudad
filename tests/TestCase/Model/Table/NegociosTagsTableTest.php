@@ -27,7 +27,9 @@ class NegociosTagsTableTest extends TestCase
         'app.negocios_tags',
         'app.negocios',
         'app.lugares',
-        'app.tags'
+        'app.users',
+        'app.tags',
+        'app.tags_negocios'
     ];
 
     /**

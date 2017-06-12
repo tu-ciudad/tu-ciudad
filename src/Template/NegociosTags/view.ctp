@@ -12,8 +12,6 @@
         <li><?= $this->Html->link(__('New Negocios Tag'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Negocios'), ['controller' => 'Negocios', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Negocio'), ['controller' => 'Negocios', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Tags'), ['controller' => 'Tags', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Tag'), ['controller' => 'Tags', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="negociosTags view large-9 medium-8 columns content">
@@ -28,8 +26,8 @@
             <td><?= $this->Number->format($negociosTag->id) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Tags Negocios Id') ?></th>
-            <td><?= $this->Number->format($negociosTag->tags_negocios_id) ?></td>
+            <th scope="row"><?= __('Tagsnegocios Id') ?></th>
+            <td><?= $this->Number->format($negociosTag->tagsnegocios_id) ?></td>
         </tr>
     </table>
 </div>

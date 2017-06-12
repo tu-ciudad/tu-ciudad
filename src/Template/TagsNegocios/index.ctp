@@ -6,11 +6,11 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Tags Negocio'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('New Tagsnegocio'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="tagsNegocios index large-9 medium-8 columns content">
-    <h3><?= __('Tags Negocios') ?></h3>
+<div class="tagsnegocios index large-9 medium-8 columns content">
+    <h3><?= __('Tagsnegocios') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -20,14 +20,14 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($tagsNegocios as $tagsNegocio): ?>
+            <?php foreach ($tagsnegocios as $tagsnegocio): ?>
             <tr>
-                <td><?= $this->Number->format($tagsNegocio->id) ?></td>
-                <td><?= h($tagsNegocio->nombre) ?></td>
+                <td><?= $this->Number->format($tagsnegocio->id) ?></td>
+                <td><?= h($tagsnegocio->nombre) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $tagsNegocio->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $tagsNegocio->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $tagsNegocio->id], ['confirm' => __('Are you sure you want to delete # {0}?', $tagsNegocio->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $tagsnegocio->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $tagsnegocio->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $tagsnegocio->id], ['confirm' => __('Are you sure you want to delete # {0}?', $tagsnegocio->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

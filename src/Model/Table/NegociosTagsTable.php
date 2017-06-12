@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
  * NegociosTags Model
  *
  * @property \Cake\ORM\Association\BelongsTo $Negocios
- * @property \Cake\ORM\Association\BelongsTo $TagsNegocios
+ * @property \Cake\ORM\Association\BelongsTo $Tagsnegocios
  *
  * @method \App\Model\Entity\NegociosTag get($primaryKey, $options = [])
  * @method \App\Model\Entity\NegociosTag newEntity($data = null, array $options = [])
@@ -37,13 +37,12 @@ class NegociosTagsTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        
         $this->belongsTo('Negocios', [
             'foreignKey' => 'negocios_id',
             'joinType' => 'INNER'
         ]);
-        $this->belongsTo('TagsNegocios', [
-            'foreignKey' => 'tags_negocios_id',
+        $this->belongsTo('Tagsnegocios', [
+            'foreignKey' => 'tagsnegocios_id',
             'joinType' => 'INNER'
         ]);
     }
@@ -73,7 +72,7 @@ class NegociosTagsTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['negocios_id'], 'Negocios'));
-        $rules->add($rules->existsIn(['tags_negocios_id'], 'TagsNegocios'));
+        $rules->add($rules->existsIn(['tagsnegocios_id'], 'Tagsnegocios'));
 
         return $rules;
     }

@@ -8,17 +8,17 @@
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Form->postLink(
                 __('Delete'),
-                ['action' => 'delete', $tagsNegocio->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $tagsNegocio->id)]
+                ['action' => 'delete', $tagsnegocio->id],
+                ['confirm' => __('Are you sure you want to delete # {0}?', $tagsnegocio->id)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('List Tags Negocios'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List Tagsnegocios'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
-<div class="tagsNegocios form large-9 medium-8 columns content">
-    <?= $this->Form->create($tagsNegocio) ?>
+<div class="tagsnegocios form large-9 medium-8 columns content">
+    <?= $this->Form->create($tagsnegocio) ?>
     <fieldset>
-        <legend><?= __('Edit Tags Negocio') ?></legend>
+        <legend><?= __('Edit Tagsnegocio') ?></legend>
         <?php
             echo $this->Form->control('nombre');
         ?>

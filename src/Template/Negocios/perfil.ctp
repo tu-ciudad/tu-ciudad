@@ -358,7 +358,7 @@ document.getElementById('shareBtn').onclick = function() {
         $('#caru > div > img').attr('src', pImagen);
         $('#carui > li > img').attr('src', pImagen);
 
-        
+          //j es la posicion de la imagen, arranca del 3 porque el 1 es la cantidad de imagenes y el 2 es la primer imagen
          var j = 3;
          for ( var i = 1; i < numImagen; i++ ) {
           //agrega las imagenes que falta (elementos virtuales)

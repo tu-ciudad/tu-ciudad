@@ -7,7 +7,7 @@
 <div id="modalProduct" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog px">
     <div class="modal-content">
-    <h4 class="modal-title _4-i0">Local Name</h4>
+    <h4 class="modal-title _4-i0" id="l-name"><?= $negocio->nombre ?></h4>
       <span class="close pclose" data-dismiss="modal" aria-label="Close">×</span>
       <div class="modal-body" style="background-color: #FAFAFA;">
 	

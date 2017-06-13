@@ -24,8 +24,8 @@
  $i = 0;
  foreach ($productos as $producto): ?>
                <div class="producto1 col-xs-6 col-sm-4 col-md-3 col-lg-4"> <!-- producto -->
-        <div class="item" data-toggle="modal" data-target=#<?= $i?>>
-                    <input type="hidden" id="pid<?= $i?>" value=<?= $i?>></input>
+        <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
+                   
 
                     <img class="" src=<?= $imagenesproductos[$i][0]->foto ?> alt="">
                     
@@ -52,124 +52,7 @@
         </div>
     </div> <!-- /producto -->
                  
-                <!-- modal del pructo -->
-                <div id=<?= $i?> class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                  <div class="modal-dialog px">
-                    <div class="modal-content">
-                    <h4 class="modal-title _4-i0"><?= $negocio->nombre ?></h4>
-
-                      <span class="close pclose" data-dismiss="modal" aria-label="Close">×</span>
-                      <div class="modal-body" style="background-color: #FAFAFA;">
-                    
-                <!-- cuerpo -->
-
-                    <div class="row">
-                <div class=" col-sm-4 col-xs-4">
-                <div id='carousel-custom'<?= $i?> class='carousel slide' data-ride='carousel'>
-                    <div class='carousel-outer'>
-                        <!-- me art lab slider -->
-                        <div class='carousel-inner '>
-
-                      <?php $q=0;  
-                      foreach ($imagenesproductos[$i] as $imagen): 
-                         if ($q==0) {?>
-                                <div class='item active'>
-                                   <img src=<?= $imagen->foto ?> alt="" />
-                                 </div>
-                            <?php
-                           }
-                           else{?>
-                               <div class='item'>
-                                    <img src=<?= $imagen->foto ?> alt="" />
-                               </div>
-                           <?php
-                          }
-                           $q = $q + 1;
-                      endforeach; ?>
-
-                            
-                        </div>
-                            
-                        <!-- sag sol -->
-                       
-                    </div>
-                    
-                    <!-- thumb -->
-                    
-                </div>
-                </div>
-                <div class="col-md-8">
-                    <center>
-                    <h2><?= $producto->titulo ?>
-                    <ul class="list list-inline">
-
-                         <li><del class="text-danger"><h3>$99.99</h3></del></li>
-                         <li><h5 class="text-primary">$<?= $producto->precio ?></h5></li>
-                     </ul>
-                     </h2>
-                    <p><?= $producto->cuerpo ?></p>
-                    <br><br>
-                            <p style="font-weight:bold;">La oferta finaliza en: </p>                         
-                            <ul class="countdown list-inline">
-                                <li class="round">
-                                    <span class="days">100</span>
-                                    <p>Days</p>
-                                </li>
-                                <li class="round">
-                                    <span class="hours">15</span>
-                                    <p>Hours</p>
-                                </li>
-                                <li class="round">
-                                    <span class="minutes">28</span>
-                                    <p>Mins</p>
-                                </li>
-                                <li class="round">
-                                    <span class="seconds">30</span>
-                                    <p>Secs</p>
-                                </li>
-                            </ul><!-- end countdown -->
-                    </center>
-
-                </div>
-                </div></div>
-                <div class="modal-footer" id="" style="padding: 0;">
-                <div class="col-md-6">
-                <div id='carousel-custom'<?= $i?> data-ride='carousel'>
-                  <ol class='carousel-indicators' >
-
-                          <?php
-                            foreach ($imagenesproductos[$i] as $imagen):
-                            $p=0;  ?>
-
-                        <li data-target='#carousel-custom'<?= $i?> data-slide-to=<?= $p ?> class='active'><img src=<?= $imagen->foto ?> alt='' /></li>
-
-                              <?php
-                              $p=$p+1;
-                                    endforeach; ?>
-
-                        
-
-                    </ol>
-                 </div></div>
-                 <div class="col-md-6">
-                        <center>
-                            <p> 
-                    <h4 class="marg"><span class="glyphicon glyphicon-share-alt"></span> Compartir</h4>
-                    <a class="btn btn-primary social-login-btn social-facebook" href="/auth/facebook"><i class="fa fa-facebook"></i></a>
-                    <a class="btn btn-primary social-login-btn social-twitter" href="/auth/twitter"><i class="fa fa-twitter"></i></a>
-                    <a class="btn btn-primary social-login-btn social-linkedin" href="/auth/linkedin"><i class="fa fa-linkedin"></i></a>
-                    <a class="btn btn-primary social-login-btn social-google" href="/auth/google"><i class="fa fa-google-plus"></i></a>
-                            </p>
-                        </center>
-                 </div>  
-                    </div>
-
-                <!-- fin row -->
-                <!-- fin cuerpo -->
-                      
-                    </div>
-                  </div>
-                </div>
+                
 
                 <?php
                 $i=$i+1;
@@ -238,7 +121,7 @@
 
     <section id="sec2" class="contact-section" style="height: 70vh;">
        
-
+   <?= $this->element('modal-product') ?>
 
             <div id="map" align="center" class="col-md-8 col-md-push-1 img-rounded "></div>
 
@@ -458,4 +341,30 @@ document.getElementById('shareBtn').onclick = function() {
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+</script>
+<script>
+  function pmodal(elem){
+    var id = $(elem).attr('pid');
+        nNombre = $('#pid' + id + ' li:nth-child(1)').text();
+        pTitulo = $('#pid' + id + ' li:nth-child(2)').text();
+        pPrecio = $('#pid' + id + ' li:nth-child(3)').text();
+        pCuerpo = $('#pid' + id + ' li:nth-child(4)').text();
+        pImagen = $('#pid' + id + ' li:nth-child(5)').text();
+        //numImagen = $('#pid' + id + ' > ul > li:first-child').text();
+
+        $('#pTitulo').text(pTitulo);
+        $('#pPrecio').text(pPrecio);
+        $('#pCuerpo').text(pCuerpo);
+        $('#caru > div > img').attr('src', pImagen);
+        $('#carui > li > img').attr('src', pImagen);
+        // $('#caru').append('<div class='+'item active'+'>'+'<img src='+ pImagen +' /></div>');
+        // var j = 0;
+        // for ( var i = 0; i < numImagen; i++ ) {
+          
+        // }
+
+     console.log(id )
+    };
+
+
 </script>

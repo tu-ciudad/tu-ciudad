@@ -18,25 +18,9 @@
 <div id='carousel-custom' class='carousel slide' data-ride='carousel'>
     <div class='carousel-outer'>
         <!-- me art lab slider -->
-        <div class='carousel-inner '>
+        <div class='carousel-inner ' id="caru">
             <div class='item active'>
                 <img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/print/image1xxl.jpg' alt="" />
-            </div>
-            <div class='item'>
-                <img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/image2xxl.jpg' alt=''/>
-            </div>
-            <div class='item'>
-                <img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/image3xxl.jpg' alt=''/>
-            </div>
-                
-            <div class='item'>
-                <img src='http://images.asos-media.com/inv/media/3/6/7/0/4850763/multi/image1xxl.jpg' alt='' />
-            </div>
-            <div class='item'>
-                <img src='http://images.asos-media.com/inv/media/5/2/1/3/4603125/gold/image1xxl.jpg' alt='' />
-            </div>
-            <div class='item'>
-                <img src='http://images.asos-media.com/inv/media/5/3/6/8/4948635/mink/image1xxl.jpg' alt='' />
             </div>
             
         </div>
@@ -51,13 +35,15 @@
 </div>
 <div class="col-md-8">
 	<center>
-	<h2>Producto Name
+	<h2 id="pTitulo">Producto Name
 	<ul class="list list-inline">
          <li><del class="text-danger"><h3>$99.99</h3></del></li>
-         <li><h5 class="text-primary">$49.99</h5></li>
+         
      </ul>
+
      </h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore totam delectus atque vel similique illo, praesentium, ratione eligendi esse officiis, accusantium nisi! Quis modi quia accusantium, sunt ab exercitationem nam.</p>
+     <li><h5 class="text-primary" id="pPrecio">$49.99</h5></li>
+	<p id="pCuerpo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore totam delectus atque vel similique illo, praesentium, ratione eligendi esse officiis, accusantium nisi! Quis modi quia accusantium, sunt ab exercitationem nam.</p>
 	<br><br>
             <p style="font-weight:bold;">La oferta finaliza en: </p>                         
             <ul class="countdown list-inline">
@@ -85,13 +71,9 @@
 <div class="modal-footer" id="" style="padding: 0;">
 <div class="col-md-6">
 <div id='carousel-custom' data-ride='carousel'>
-  <ol class='carousel-indicators' >
+  <ol class='carousel-indicators' id="carui">
         <li data-target='#carousel-custom' data-slide-to='0' class='active'><img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/print/image1xxl.jpg' alt='' /></li>
-        <li data-target='#carousel-custom' data-slide-to='1'><img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/image2xxl.jpg' alt='' /></li>
-        <li data-target='#carousel-custom' data-slide-to='2'><img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/image3xxl.jpg' alt='' /></li>
-        <li data-target='#carousel-custom' data-slide-to='3'><img src='http://images.asos-media.com/inv/media/3/6/7/0/4850763/multi/image1xxl.jpg' alt='' /></li>
-        <li data-target='#carousel-custom' data-slide-to='4'><img src='http://images.asos-media.com/inv/media/5/2/1/3/4603125/gold/image1xxl.jpg' alt='' /></li>
-        <li data-target='#carousel-custom' data-slide-to='5'><img src='http://images.asos-media.com/inv/media/5/3/6/8/4948635/mink/image1xxl.jpg' alt='' /></li>
+        
         
 
     </ol>
@@ -115,4 +97,32 @@
   	</div>
   </div>
 </div>
+
+<?php
+ $i = 0;
+ foreach ($productos as $producto): ?>
+
+<ul id="pid<?= $i?>" class="hidden">
+    <li><?= $negocio->nombre ?></li>
+   <li><?= $producto->titulo ?></li>
+   <li><?= $producto->precio ?></li>
+   <li><?= $producto->cuerpo ?></li>
+   <li><?= $imagenesproductos[$i][0]->foto ?></li>
+   <ul>
+  <!--  <li><?= count($imagenesproductos[$i]) ?></li>
+   <?php
+
+        foreach ($imagenesproductos[$i] as $imagen):
+        ?>
+
+        <li><?= $imagen->foto ?></li>
+        <?php
+
+        endforeach; ?> -->
+
+   </ul>
+        </ul>
+<?php
+                $i=$i+1;
+ endforeach; ?>
 

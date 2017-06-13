@@ -1,8 +1,3 @@
-<style>
-
-</style>
-
-<button type="button" class="btn btn-warning" style="" data-toggle="modal" data-target="#modalProduct">modal product</button>
 
 <div id="modalProduct" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog px">
@@ -109,7 +104,7 @@
    <li><?= $producto->cuerpo ?></li>
    <li><?= $imagenesproductos[$i][0]->foto ?></li>
    <ul>
-  <!--  <li><?= count($imagenesproductos[$i]) ?></li>
+   <li><?= count($imagenesproductos[$i]) ?></li>
    <?php
 
         foreach ($imagenesproductos[$i] as $imagen):
@@ -118,7 +113,7 @@
         <li><?= $imagen->foto ?></li>
         <?php
 
-        endforeach; ?> -->
+        endforeach; ?> 
 
    </ul>
         </ul>

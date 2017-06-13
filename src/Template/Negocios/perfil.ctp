@@ -345,26 +345,37 @@ document.getElementById('shareBtn').onclick = function() {
 <script>
   function pmodal(elem){
     var id = $(elem).attr('pid');
-        nNombre = $('#pid' + id + ' li:nth-child(1)').text();
-        pTitulo = $('#pid' + id + ' li:nth-child(2)').text();
-        pPrecio = $('#pid' + id + ' li:nth-child(3)').text();
-        pCuerpo = $('#pid' + id + ' li:nth-child(4)').text();
-        pImagen = $('#pid' + id + ' li:nth-child(5)').text();
-        //numImagen = $('#pid' + id + ' > ul > li:first-child').text();
-
+        nNombre = $('#pid' + id + ' > li:nth-child(1)').text();
+        pTitulo = $('#pid' + id + ' > li:nth-child(2)').text();
+        pPrecio = $('#pid' + id + ' > li:nth-child(3)').text();
+        pCuerpo = $('#pid' + id + ' > li:nth-child(4)').text();
+        pImagen = $('#pid' + id + ' > li:nth-child(5)').text();
+        numImagen = $('#pid' + id + ' > ul > li:first-child').text();
+        //asigno los datos del producto al modal incluyendo la primer imagen
         $('#pTitulo').text(pTitulo);
         $('#pPrecio').text(pPrecio);
         $('#pCuerpo').text(pCuerpo);
         $('#caru > div > img').attr('src', pImagen);
         $('#carui > li > img').attr('src', pImagen);
-        // $('#caru').append('<div class='+'item active'+'>'+'<img src='+ pImagen +' /></div>');
-        // var j = 0;
-        // for ( var i = 0; i < numImagen; i++ ) {
-          
-        // }
 
-     console.log(id )
+        
+         var j = 3;
+         for ( var i = 1; i < numImagen; i++ ) {
+          //agrega las imagenes que falta (elementos virtuales)
+          allImagenes = $('#pid' + id + ' > ul > li:nth-child('+ j +')').text();
+
+          $('#caru').append('<div class="item dom">'+'<img src='+ allImagenes +' /></div>');
+         
+         $('#carui').append('<li data-target='+'#carousel-custom'+' class="dom" data-slide-to='+ i +'><img src='+ allImagenes +' /></li>');
+         j = j + 1;
+         }
+     console.log(numImagen )
     };
 
-
+    $('#modalProduct').on('hidden.bs.modal', function (e) {
+      //elimina la imagenes (elementos virtuales) que crea, y deja solo la primera
+      $('.dom').remove();
+      $('#caru > div > img').addClass('active');
+      
+    });
 </script>

@@ -12,6 +12,7 @@
     height: 300px;
     text-align: center;
     box-shadow: 1px 2px 1px #ccc;
+    margin-bottom: 0;
 }
 .buscar .header .jumbotron .jumbox  {
     margin: 0 auto;
@@ -52,24 +53,44 @@
 }
 .buscar .bshadow {
     border-bottom: 1px solid #ccc;
-    border-right: 1px solid #ccc;
+    border-right: 0px solid #ccc;
 }
+.buscar .navbar-nav > li > a {
+      padding-top: 0;
+      padding-bottom: 0px;
+  }
 .buscar .navbar-nav {
   float: none;
   text-align: center;
 }
-
+.buscar .navbar {
+  border-top: 0px;
+}
 .buscar .navbar-nav li {
   float: none;
   display: inline-block;
   margin: 0;
-  padding: 0;
   
 
 }
+.buscar .navbar-nav  .active {
+   background-color: #5383d3; 
+}
+.buscar .navbar-nav  .active:hover, .buscar .navbar-nav  .active:focus {
+   background-color: #5383d3; 
+}
 .buscar .navbar-nav  .active a{
-    cursor: default;
+        cursor: default;
         background-color: #5383d3; 
+        color: #fff;
+        padding: 5px;
+}
+.buscar .navbar-nav .active:hover{
+        border: 0px;
+}
+.buscar .navbar-nav li:hover{
+        
+        border: 2px solid #5383d3;
         color: #fff;
 }
 .buscar .navbar-nav  .active a:hover, .buscar .navbar-nav  .active a:active, .buscar .navbar-nav  .active a:focus{
@@ -77,10 +98,7 @@
         background-color: #5383d3; 
         color: #fff;
 }
-.buscar .navbar-nav li:hover {
-  background-color: #BABABA;
 
-}
 .non-search .tittle {
 	font-family: Arial,Helvetica,"Nimbus Sans L",sans-serif;
 	color: #666666;
@@ -166,9 +184,9 @@
 <div class="buscar">
 <nav class="navbar navbar-default bshadow">
   <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <li class="col-md-5 active"><a href="#">Articulos</a></li>
-      <li class="col-md-5"><a href="../buscar?comercios">Comercios</a></li>
+    <ul class="nav navbar-nav ">
+      <li class="col-md-5 active" id="artiCat"><a href="#"><h4>Productos</h4></a></li>
+      <li class="col-md-5" id="comerCat"><a href="../buscar?comercios"><h4>Comercios</h4></a></li>
       
       
       <!-- <li>
@@ -199,40 +217,40 @@
 	<div class="categorias">
 		
 		<ul class="list">
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=asdasd+asdasd" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
 		</ul>
 		<ul class="list">
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
 		</ul>
 		<ul class="list">
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
-			<li><a href="#" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
+			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
 		</ul>
 
 	</div>
@@ -241,3 +259,23 @@
 <div style="height: 1000px;"></div>
 
 <?= $this->element('footer') ?>
+
+<script>
+  var url = window.location.href; 
+
+  var firstplit = url.split('?');
+      secondplit = firstplit[1].split('=')
+
+  console.log(secondplit[0]);
+
+  if (secondplit[0] == 'productos') {
+      $('#comerCat > a').attr('href', '?comercios='+ secondplit[1]);
+      $('#artiCat > a').attr('href', '?productos='+ secondplit[1]);
+  } 
+  if (secondplit[0] == 'comercios') {
+      $('#artiCat').removeClass('active');
+      $('#comerCat').addClass('active');
+      $('#artiCat > a').attr('href', '?productos='+ secondplit[1]);
+      $('#comerCat > a').attr('href', '?comercios='+ secondplit[1]);
+  } 
+</script>

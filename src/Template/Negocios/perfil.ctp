@@ -9,7 +9,7 @@
    
     <div class="container-fluid" id="content">
 
-        <div class="row">
+        <div class="row perf">
 
             <?= $this->element('sidebar-left') ?>
 
@@ -344,6 +344,7 @@ document.getElementById('shareBtn').onclick = function() {
 </script>
 <script>
   function pmodal(elem){
+$('#caru  > .item').addClass('active');
     var id = $(elem).attr('pid');
         nNombre = $('#pid' + id + ' > li:nth-child(1)').text();
         pTitulo = $('#pid' + id + ' > li:nth-child(2)').text();
@@ -364,7 +365,7 @@ document.getElementById('shareBtn').onclick = function() {
           //agrega las imagenes que falta (elementos virtuales)
           allImagenes = $('#pid' + id + ' > ul > li:nth-child('+ j +')').text();
 
-          $('#caru').append('<div class="item dom">'+'<img src='+ allImagenes +' /></div>');
+          $('#caru').append('<div class="item thumbnail dom">'+'<img src='+ allImagenes +' /></div>');
          
          $('#carui').append('<li data-target='+'#carousel-custom'+' class="dom" data-slide-to='+ i +'><img src='+ allImagenes +' /></li>');
          j = j + 1;
@@ -375,7 +376,8 @@ document.getElementById('shareBtn').onclick = function() {
     $('#modalProduct').on('hidden.bs.modal', function (e) {
       //elimina la imagenes (elementos virtuales) que crea, y deja solo la primera
       $('.dom').remove();
-      $('#caru > div > img').addClass('active');
+      $('#caru  > .item').addClass('active');
       
     });
 </script>
+<?= dump($tagsnegocio) ?>

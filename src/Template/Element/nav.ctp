@@ -28,7 +28,7 @@
 
                     </li>
                     <li>
-                            <a class="btn-trans" <?= $this->Html->link('ARTICULOS', array('controller' => 'Articulos', 'action' => 'index')) ?> </a>
+                            <a class="btn-trans" <?= $this->Html->link('PRODUCTOS', array('controller' => 'Articulos', 'action' => 'index')) ?> </a>
                             </li>
                     <li>
                         <a class="btn-trans" <?= $this->Html->link('OFERTAS', array('controller' => 'ofertas', 'action' => 'index')) ?></a>
@@ -64,7 +64,7 @@
  <ul class="navbar-form navbar-left navi-search" role="search">
                       <form class="form-search" method="get" action="/buscar">
                                 <div class="input-group " >
-                                    <input type="text" id="dato" name="articulos" class="form-control hidden-sm" placeholder="Buscar...">
+                                    <input type="text" id="dato" name="productos" class="form-control hidden-sm" placeholder="Buscar...">
                                     <span class="input-group-btn"><button class="btn btn-primary " type="submit"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button></span>
                                 </div>
                          </form>     

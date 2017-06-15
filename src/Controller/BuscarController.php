@@ -26,9 +26,9 @@ class BuscarController extends AppController
         
     if ($this->request->is('get')){
         $conexion = ConnectionManager::get('default');
-        $variable = $this->request->query['articulos'];
-        if (isset($this->request->query['articulos'])){
-            $tags = explode(' ',$this->request->query['articulos']);
+        $variable = $this->request->query['productos'];
+        if (isset($this->request->query['productos'])){
+            $tags = explode(' ',$this->request->query['productos']);
             foreach ($tags as $tag){
             $consulta = $conexion->execute('Call traerproductostags(?)',[$tag])->fetchAll('assoc');
             $productos[] = $consulta;

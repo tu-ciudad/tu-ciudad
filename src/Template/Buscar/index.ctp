@@ -204,7 +204,7 @@
  <div class="mainpage">
     <div class="jumbotron">
     <h2><span class="title"> No encontramos lo que buscas :(</span></h2>
-        <h4 style="color: #666666;">Pero no te preocupes! </h4>
+        <h4 style="color: #666666;">Pero no te preocupes! <?= dump($variable) ?> </h4>
     </div>
 
 </div>

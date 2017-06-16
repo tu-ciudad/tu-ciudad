@@ -113,7 +113,7 @@ $this->layout = 'add';
              </div>
              <fieldset>
                 
-                    <input type="hidden" name="ubicacion" required="required" id="ubicacion" value="perfil">
+                    <input type="hidden" name="ubicacion" required="required" id="ubicacion" value="portada">
                
                 
                     <input type="hidden" name="negocios_id" id="negocios-id" value="1">

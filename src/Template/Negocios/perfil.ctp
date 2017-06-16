@@ -380,4 +380,4 @@ $('#caru  > .item').addClass('active');
       
     });
 </script>
-<?= dump($tagsnegocio) ?>
+<?= dump($productos) ?>

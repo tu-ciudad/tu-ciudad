@@ -1,16 +1,9 @@
 
-<?php
-/**
-  * @var \App\View\AppView $this
-  */
-?>
-
-
 <style>
-  body {
-    background-color: inherit;
-    text-decoration: inherit;
-  }
+	body {
+		background-color: inherit;
+		text-decoration: inherit;
+	}
 
 
 i {
@@ -37,9 +30,9 @@ i {
 }
 
 .conmain {
-  margin-top: 50px;
-  margin-left: 50px;
-  margin-right: 50px;
+	margin-top: 50px;
+	margin-left: 50px;
+	margin-right: 50px;
 }
 </style>
 <link rel="stylesheet" href="css/dataTables.bootstrap.css">
@@ -49,7 +42,7 @@ i {
   
   <!-- upper section -->
   <div class="row">
-  <div class="col-sm-3">
+	<div class="col-sm-3">
       <!-- left -->
       <h3><i class="glyphicon glyphicon-briefcase"></i> Toolbox</h3>
       <hr>
@@ -66,36 +59,36 @@ i {
       
       <hr>
       
-    </div><!-- /span-3 -->
+  	</div><!-- /span-3 -->
     <div class="col-sm-9">
-        
-      <!-- column 2 --> 
+      	
+      <!-- column 2 -->	
        <h3><i class="glyphicon glyphicon-dashboard"></i> Bootply Dashboard</h3>  
             
        <hr>
       
-     <div class="row">
-            <!-- center left--> 
-          <div class="col-md-7">
-       
+	   <div class="row">
+            <!-- center left-->	
+         	<div class="col-md-7">
+			 
                         <?= $this->element('submit-producto') ?>   
               
-            </div><!--/col-->
+          	</div><!--/col-->
          
             <!--center-right-->
-          <div class="col-md-5">
+        	<div class="col-md-5">
               
                 <ul class="nav nav-justified">
-              <li><a href="#"><i class="glyphicon glyphicon-cog"></i></a></li>
+         			<li><a href="#"><i class="glyphicon glyphicon-cog"></i></a></li>
                     <li><a href="#"><i class="glyphicon glyphicon-heart"></i></a></li>
-              <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-comment"></i><span class="count">3</span></a><ul class="dropdown-menu" role="menu"><li><a href="#">1. Is there a way..</a></li><li><a href="#">2. Hello, admin. I would..</a></li><li><a href="#"><strong>All messages</strong></a></li></ul></li>
-              <li><a href="#"><i class="glyphicon glyphicon-user"></i></a></li>
-              <li><a title="Add Widget" data-toggle="modal" href="#addWidgetModal"><span class="glyphicon glyphicon-plus-sign"></span></a></li>
-            </ul>  
+         			<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-comment"></i><span class="count">3</span></a><ul class="dropdown-menu" role="menu"><li><a href="#">1. Is there a way..</a></li><li><a href="#">2. Hello, admin. I would..</a></li><li><a href="#"><strong>All messages</strong></a></li></ul></li>
+         			<li><a href="#"><i class="glyphicon glyphicon-user"></i></a></li>
+         			<li><a title="Add Widget" data-toggle="modal" href="#addWidgetModal"><span class="glyphicon glyphicon-plus-sign"></span></a></li>
+       			</ul>  
               
                 <hr>
               
-        <p>
+				<p>
                   This is a responsive dashboard-style layout that uses <a href="http://www.getbootstrap.com">Bootstrap 3</a>. You can use this template as a starting point to create something more unique.
                 </p>
                 <p>
@@ -123,10 +116,10 @@ i {
                   </a>
                 </div>
               
-      </div><!--/col-span-6-->
+			</div><!--/col-span-6-->
      
        </div><!--/row-->
-    </div><!--/col-span-9-->
+  	</div><!--/col-span-9-->
     
   </div><!--/row-->
   <!-- /upper section -->
@@ -654,7 +647,7 @@ i {
       
       <div class="panel panel-default">
         <div class="panel-heading"><div class="panel-title"><h4>Engagement</h4></div></div>
-        <div class="panel-body">  
+        <div class="panel-body">	
           <div class="col-xs-4 text-center"><img src="http://placehold.it/80/BBBBBB/FFF" class="img-circle img-responsive"></div>
           <div class="col-xs-4 text-center"><img src="http://placehold.it/80/EFEFEF/555" class="img-circle img-responsive"></div>
           <div class="col-xs-4 text-center"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive"></div>
@@ -700,111 +693,8 @@ i {
 <script src="js/dataTables.bootstrap.js"></script>
 <script src="js/jquery.dataTables.js"></script>
 <script>
-    $(document).ready(function () {
+	  $(document).ready(function () {
                 $('#dataTables-example').dataTable();
             });
 
 </script>
-<style>
-    
- .cropp{ 
-        width: 250px;  /* MANDATORY */  /*ancho del div y del recorte de la imagen*/
-        height: 250px; /* MANDATORY */  /*alto del div y del recorte de la imagen*/
-        position: relative;  /* MANDATORY */
-        /margin: 90px auto;
-        /margin: 50px 70px 20px;
-        border: 3px  solid #FFF;
-        box-sizing: content-box;
-        -moz-box-sizing: content-box;
-        border-radius: 2px;
-        /background-image: url(../img/placeholder.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        /box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
-      } 
-
-      .cropp1{ 
-        width: 200px;  /* MANDATORY */  /*ancho del div y del recorte de la imagen*/
-        height: 200px; /* MANDATORY */  /*alto del div y del recorte de la imagen*/
-        position: relative;  /* MANDATORY */
-        /margin: 90px auto;
-        /margin: 50px 70px 20px;
-        border: 3px  solid #FFF;
-        box-sizing: content-box;
-        -moz-box-sizing: content-box;
-        border-radius: 2px;
-        /background-image: url(../img/placeholder.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        /box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
-      } 
-      
-  .thumbRes {
-    width: 100px;
-     background-color: rgb(233, 235, 238);
-    border: 3px solid rgb(233, 235, 238);
-    border-radius: 3px;
-    margin-right: 10px;
-  }          
-            
-    </style>
-<?= $this->Html->css('croppic.css') ?>
-
-<?= $this->Html->script('croppic-product') ?>
-<br>
-<br>
-<br>
-<br>
-   <h3 id="data"></h3>
-    
-    <div id="yourIdasd" class="cropp1"></div>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!-- <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> -->
-   <!-- <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script> -->
-   
-    
-    <script>
-                var k = 0;
-                var h = 0;
-                var j = 0;
-                //---al apretar el cortar, el coppic-product.js llama a esta funcion, que esconde el content actual y muestra el siguiente
-                function cropped(){
-                h = h + 1;
-                j = h + 1;
-                k = k - 1;
-                console.log(h);
-                if (h > 0){
-                    $('#cont'+[h]).addClass('hidden');
-                    $('#cont'+[j]).addClass('active');
-                    var srch = $('#cont'+[h]+' .croppedImg').attr('src');
-                    $('#result').append('<img class="thumbRes" src="'+ srch +'">')
-                    $('#restantes').text(k);
-                }
-             };
-             //---el btnNext llama al content del primer croppic
-        $('.btnNext').click(function(){
-        $('#cropPro').prepend('<h2 style="margin: 0;">Imagenes restantes: <div id="restantes">'+[k]+'</div></h2>');
-        $('#cont1').removeClass('hidden');
-        $('#id0').addClass('hidden');
-        $('#cont1').addClass('active');
-        $('.btnNext').addClass('hidden');
-        $('.success').addClass('hidden');
-        
-
-      });
-        
-    </script>
-<script>
-    var croppicOpt = {
-        uploadUrl:'imagenes-negocios/img_save_to_file.php',
-                      cropUrl:'imagenes-negocios/img_crop_to_file.php',  //realiza el proceso de corte
-                      
-                      //loadPicture: dim[0],
-                  } 
-                  var croppic = new Croppic( 'yourIdasd' , croppicOpt);
-</script>
-
-

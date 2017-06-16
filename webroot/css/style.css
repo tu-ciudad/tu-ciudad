@@ -2551,14 +2551,14 @@ However, delay the fade out process for 2.5 seconds */
 }
 .btnmore {
   float: right;
-  position: fixed;
-  right: 365px;
+  //position: fixed;
+  //right: 365px;
 }
 
 .btnminus {
   float: right;
-  position: fixed;
-  right: 323px;
+  //position: fixed;
+  //right: 323px;
 }
 
 .mleft {
@@ -3109,7 +3109,7 @@ However, delay the fade out process for 2.5 seconds */
 }
 .producto1 .item:hover {
     
-   box-shadow: 0px 2px 2px #D9D9D9;
+   box-shadow: 0px 0px 1px 1px rgba(217, 217, 217, 0.85);
    
 
 }
@@ -3131,7 +3131,7 @@ However, delay the fade out process for 2.5 seconds */
 .producto1 .item .content h3  {
      text-align: center;
      font-weight: 100;
-
+     color: rgb(40, 44, 48);
 }
 .producto1 .item:hover .content  {
    opacity: 1;

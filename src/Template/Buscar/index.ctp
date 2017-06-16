@@ -209,6 +209,48 @@
 
 </div>
 </div>
+<div class="productos-container">
+<div class="container">
+  <img class="" src=<?= $variable[0][0]->foto ?> alt="">
+<?php
+ $i = 0;
+ foreach ($productos as $producto): ?>
+               <div class="producto1 col-xs-6 col-sm-4 col-md-3 col-lg-4"> <!-- producto -->
+        <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
+                   
+
+                    <img class="" src=<?= $imagenesproductos[$i][0]->foto ?> alt="">
+                    
+                    <div class="content">
+                        <h3>
+                            <span><?= $producto->titulo ?></span>
+                        </h3>
+                        
+                        <h5>
+                        <a href="#" >
+                            <span><?= $negocio->nombre ?></span>
+                        </a>
+                        </h5>
+                    </div>
+
+                    <div class="content-bot"> 
+                        
+                       <h3>  
+                            <span>$<?= $producto->precio ?></span><sup>00</sup>
+                       </h3>
+                    </div>
+
+            
+        </div>
+    </div> <!-- /producto -->
+                 
+                
+
+                <?php
+                $i=$i+1;
+ endforeach; ?>
+</div>
+</div>
 <hr>
 <div class="non-search">
 	<header>

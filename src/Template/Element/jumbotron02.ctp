@@ -235,7 +235,7 @@ However, delay the fade out process for 2.5 seconds */
 <div class="container" id="sidefix">
     <div class="profile clearfix"> <!-- imagenes -->
         <img align="left" class="image-lg" src=<?= $fportada ?> alt="Profile image example"/>
-        <div class="show-image">
+        <!-- <div class="show-image">
         <img align="left" class="image-profile thumbnail" src=<?= $fperfil ?> id="imgf">
           <button class="update btn btn-default btnmodal" data-toggle="modal" data-target="#myModal">
           <span class="glyphicon glyphicon-camera glyphicon glyphicon-white"></span> Cambiar</button>
@@ -247,7 +247,7 @@ However, delay the fade out process for 2.5 seconds */
                      </div>
                  </div>
                </div>
-          </div>
+          </div> -->
         <div class="user"> 
         <div class="profile-text clearfix">
             <h1><?= $negocio->nombre ?></h1> <!-- texto local + info -->

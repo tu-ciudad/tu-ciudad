@@ -344,6 +344,7 @@ $('#caru  > .item').addClass('active');
         $('#pTitulo').text(pTitulo);
         $('#pPrecio').text(pPrecio);
         $('#pCuerpo').text(pCuerpo);
+        $('#l-name').text(nNombre);
         $('#caru > div > img').attr('src', pImagen);
         $('#carui > li > img').attr('src', pImagen);
 

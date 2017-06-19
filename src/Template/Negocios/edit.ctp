@@ -49,12 +49,12 @@ i {
   
   <!-- upper section -->
   <div class="row">
-  <div class="col-sm-3">
+  <div class="col-sm-4">
       <!-- left -->
       <h3><i class="glyphicon glyphicon-briefcase"></i> Toolbox</h3>
       <hr>
       
-      <ul class="nav nav-stacked">
+      <!-- <ul class="nav nav-stacked">
         <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-flash"></i> Alerts</a></li>
         <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-link"></i> Links</a></li>
         <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-list-alt"></i> Reports</a></li>
@@ -62,40 +62,8 @@ i {
         <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-briefcase"></i> Tools</a></li>
         <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-time"></i> Real-time</a></li>
         <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-plus"></i> Advanced..</a></li>
-      </ul>
-      
-      <hr>
-      
-    </div><!-- /span-3 -->
-    <div class="col-sm-9">
-        
-      <!-- column 2 --> 
-       <h3><i class="glyphicon glyphicon-dashboard"></i> Bootply Dashboard</h3>  
-            
-       <hr>
-      
-     <div class="row">
-            <!-- center left--> 
-          <div class="col-md-7">
-       
-                        <?= $this->element('submit-producto') ?>   
-              
-            </div><!--/col-->
-         
-            <!--center-right-->
-          <div class="col-md-5">
-
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <div class="panel-title"><h4>Foto de portada<button class="btn btn-primary" style="float: right;" data-toggle="modal" href="#addWidgetModal"><i class="fa fa-cog" aria-hidden="true"></i></span> Cambiar</button></h4>
-                    </div>
-                </div>
-                <div class="panel-body" style="padding: 5px; padding-bottom: 0; margin-bottom: 0;">  
-                    <div class=""><img src="<?= $fportada ?>" class="thumbnail img-responsive"></div>
-                </div>
-            </div><!--/panel-->
-
-              <div class="panel panel-info">
+      </ul> -->
+       <div class="panel panel-info">
                 <div class="panel-heading">
                     <div class="panel-title"><h4>Informacion de contacto<button class="btn btn-primary" style="float: right;" data-toggle="modal" href="#addWidgetModal"><i class="fa fa-cog" aria-hidden="true"></i></span> Cambiar</button></h4>
                     </div>
@@ -132,6 +100,38 @@ i {
                     </table>
                 </div>
             </div><!--/panel-->
+      <hr>
+      
+    </div><!-- /span-3 -->
+    <div class="col-sm-8">
+        
+      <!-- column 2 --> 
+       <h3><i class="glyphicon glyphicon-dashboard"></i> Bootply Dashboard</h3>  
+            
+       <hr>
+      
+     <div class="row">
+            <!-- center left--> 
+          <div class="col-md-7">
+       
+                        <?= $this->element('submit-producto') ?>   
+              
+            </div><!--/col-->
+         
+            <!--center-right-->
+          <div class="col-md-5">
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title"><h4>Foto de portada<button class="btn btn-primary" style="float: right;" data-toggle="modal" href="#cambiarPortada"><i class="fa fa-cog" aria-hidden="true"></i></span> Cambiar</button></h4>
+                    </div>
+                </div>
+                <div class="panel-body" style="padding: 5px; padding-bottom: 0; margin-bottom: 0;">  
+                    <div class=""><img src="<?= $fportada ?>" class="thumbnail img-responsive"></div>
+                </div>
+            </div><!--/panel-->
+
+             
 
               
        
@@ -144,6 +144,9 @@ i {
   </div><!--/row-->
   <hr>
   <!-- /upper section -->
+  <h3><i class="glyphicon glyphicon-dashboard"></i> Productos</h3>  
+            
+       <hr>
    <div id="page-inner"> 
                
         
@@ -202,7 +205,7 @@ i {
 
                                                     
                                                 </div>
-                                            </div> <!-- /producto --> -->
+                                            </div>  -->
                                                          
                                                         
 
@@ -218,48 +221,7 @@ i {
                     </div>
                     <!--End Advanced Tables -->
          
-  <!-- lower section -->
-  <div class="row">
-    
-    <div class="col-md-12">
-      <hr>
-      <a href="#"><strong><i class="glyphicon glyphicon-list-alt"></i> Reports</strong></a>  
-      <hr>    
-    </div>
-    <div class="col-md-8">
-      
-      <table class="table table-striped">
-        <thead>
-          <tr><th>Visits</th><th>ROI</th><th>Source</th><th>Description and Notes</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>45</td><td>2.45%</td><td>Direct</td><td>Sam sapien massa, aliquam in cursus ut, ullamcorper in tortor. 
-          Aliquam mauris arcu, tristique a lobortis vitae, condimentum feugiat justo.</td></tr>
-          <tr><td>289</td><td>56.2%</td><td>Referral</td><td>After RWD massa, aliquam in cursus ut, ullamcorper in tortor. 
-          Aliquam mauris arcu, tristique a lobortis vitae, condimentum feugiat justo.</td></tr>
-          <tr><td>98</td><td>25%</td><td>Type</td><td>Wil sapien massa, aliquam in cursus ut, ullamcorper in tortor. 
-          Liquam mauris arcu, tristique a lobortis vitae, condimentum feugiat justo.</td></tr>
-          <tr><td>109</td><td>8%</td><td>..</td><td>Forfoot aliquam in cursus ut, ullamcorper in tortor. 
-          Okma mauris arcu, tristique a lobortis vitae, condimentum feugiat justo.</td></tr>
-          <tr><td>34</td><td>14%</td><td>..</td><td>Mikel sapien massa, aliquam in cursus ut, ullamcorper in tortor. 
-          Maliquam mauris arcu, tristique a lobortis vitae, condimentum feugiat justo.</td></tr>
-        </tbody>
-      </table>
-      
-      <hr>              
-      
- 
-      
-      <div class="panel panel-default">
-        <div class="panel-heading"><h4>New Requests</h4></div>
-        <div class="panel-body">
-          <div class="list-group">
-            <a href="#" class="list-group-item active">Hosting virtual mailbox serv..</a>
-            <a href="#" class="list-group-item">Dedicated server doesn't..</a>
-            <a href="#" class="list-group-item">RHEL 6 install on new..</a>
-          </div>
-        </div>
-      </div>
+  
       
       <hr>
       
@@ -270,23 +232,10 @@ i {
 
     
     </div>
-    <div class="col-md-4">
-      
-      <ul class="nav nav-pills nav-stacked">
-        <li class="nav-header"></li>
-        <li><a href="#"><i class="glyphicon glyphicon-list"></i> Layouts &amp; Templates</a></li>
-        <li class="divider"></li>
-        <li><a href="#"><i class="glyphicon glyphicon-briefcase"></i> Toolbox</a></li>
-        <li><a href="#"><i class="glyphicon glyphicon-link"></i> Widgets</a></li>
-        <li><a href="#"><i class="glyphicon glyphicon-list-alt"></i> Reports</a></li>
-        <li><a href="#"><i class="glyphicon glyphicon-book"></i> Pages</a></li>
-        <li class="divider"></li>
-        <li><a href="#"><i class="glyphicon glyphicon-star"></i> Social Media</a></li>
-      </ul>
-      
+    
       <hr>
               
-       <div class="panel panel-default">
+      <!--  <div class="panel panel-default">
                   <div class="panel-heading"><h4>Processing Status</h4></div>
                   <div class="panel-body">
                     
@@ -309,9 +258,9 @@ i {
                       </div>
                     </div>
 
-                  </div><!--/panel-body-->
-              </div><!--/panel-->       
-      
+                  </div>
+              </div>       
+       -->
       
     
     </div><!--/col-->
@@ -329,15 +278,77 @@ i {
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title">Add Widget</h4>
+        <h4 class="modal-title">Datos de contacto</h4>
       </div>
-      <div class="modal-body">
-        <p>Add a widget stuff here..</p>
+      <form enctype="multipart/form-data" action="/productos/add" method="post">
+      <div class="modal-body" style="padding: 0;">
+      <table class="table table-striped table-hover" style="margin: 0;">
+                        <tbody>
+                            <tr>
+                                <th>Nombre:</th>
+                                <th><input type="text" id="foto1" name="nombre" value="<?= $negocio->nombre ?>"></th>
+                            </tr>
+                            <tr>
+                                <th>Direccion:</th>
+                                <th><input type="text" id="foto1" name="direccion" value="<?= $negocio->direccion ?>"></th>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <th><input type="text" id="foto1" name="descripcion" value="<?= $negocio->descripcion ?>"></th>
+                            </tr>
+                            <tr>
+                                <th>Email:</th>
+                                <th><input type="text" id="foto1" name="email" value="<?= $negocio->email ?>"></th>
+                            </tr>
+                            <tr>
+                                <th>Telefono:</th>
+                                <th><input type="text" id="foto1" name="telefono" value="<?= $negocio->telefono ?>"></th>
+                            </tr>
+                            <tr>
+                                <th>Tags:</th>
+                                <th><input type="text" id="foto1" name="tags" value="<?= $tagsnegocio ?>"></th>
+                            </tr>
+                        </tbody>
+                    </table>
+               
+
+
+
+
+         
+         
+          
+        
       </div>
       <div class="modal-footer">
         <a href="#" class="btn">Close</a>
-        <a href="#" class="btn btn-primary">Save changes</a>
+        <button type="submit" class="btn btn-primary">Save changes</button>
       </div>
+      </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dalog -->
+</div><!-- /.modal -->
+
+
+<div class="modal" id="cambiarPortada">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Portada</h4>
+      </div>
+      <form enctype="multipart/form-data" action="/productos/add" method="post">
+      <div class="modal-body">
+        <p>Cambiar foto de portada</p>
+        <br>
+          <input type="file" accept="image/*" id="foto1" name="portada">
+        
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn">Close</a>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+      </form>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dalog -->
 </div><!-- /.modal -->

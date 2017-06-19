@@ -26,11 +26,85 @@
          list-style:none;
         
     }
+
+    @media (min-width: 900px) {
+
+      .comercio-card {
+          width: 300px;
+          position: absolute;
+          top: 470px;
+
+      }
+      .comercio-card .card-title{
+          margin: 3px;
+      }
+
+      .comercio-card .card{
+          margin: 0;
+          border: 0;
+      }
+      .comercio-card .card:hover {
+        border-color: rgba(0, 0, 0, 0.15);
+      }
+     .comercio-card .card-img-top {
+        height: 120px;
+        background-image: url(../../img/comercio1.jpg);
+        background-position: center center;
+         display:inline-block;
+         opacity: 1;
+         filter: alpha(opacity=100);
+         transition: all 0.3 ease-in;
+}
+    .comercio-card .card-img-top:hover {
+      opacity: 1;
+    }
+    .comercio-card .card-img-top:hover:after {
+      content: 'Ver más de este comercio';
+      font-size: 20px;
+      color: black;
+      position: absolute;
+      top: 0;
+      left: -1px;
+      width: 100%;
+      height: 120px;
+      opacity: 1;
+      background-color: rgba(255, 255, 255,0.8);
+    }
+}
+/*
+ #pTitulo {
+  margin: 0;
+ }
+ .modal-body {
+  padding-bottom: 3px;
+ }
+ .pPrecio {
+  margin-top: 5px;
+ }
+ .pCuerpo {
+  margin-top: 5px;
+  margin-bottom: 15px;
+ }*/
+ .modal-backdrop { 
+    background: #000; /* For browsers that do not support gradients */
+    opacity: 1 !important;
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.6) 540px, rgba(0, 0, 0, 0.99) 50px); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(0, 0, 0, 0.6) 534px, rgba(0, 0, 0, 0.99) 50px); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(0, 0, 0, 0.6) 540px, rgba(0, 0, 0, 0.99) 50px); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(0, 0, 0, 0.6) 540px, rgba(0, 0, 0, 0.99) 50px); /* Standard syntax */
+ }
+
+  .modal {
+    transition: all 0.1s ease-in !important;
+  }
+  .modal.fade .modal-dialog {
+    transform: translate(0, 0);
+  }
 </style>
 <div id="modalProduct" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog px">
     <div class="modal-content">
-    <h4 class="modal-title _4-i0 nNombre" id="l-name"></h4>
+    <h4 class="modal-title _4-i0 nNombre" id="l-name">asdasd</h4>
       <span class="close pclose" data-dismiss="modal" aria-label="Close">×</span>
       <div class="modal-body" style="background-color: #FAFAFA;">
 	
@@ -67,20 +141,19 @@
      </h2>
      <h2 class="text-danger pPrecio" id="pPrecio">$49.99</h2>
 	<p class="pCuerpo" id="pCuerpo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore totam delectus atque vel similique illo, praesentium, ratione eligendi esse officiis, accusantium nisi! Quis modi quia accusantium, sunt ab exercitationem nam.</p>
-	<br><br>
+	
     
-            <div class="related categorias">
-            
-                <h4 style="position: absolute; top: -5px; margin-left: 5px">relacionados: </h4>
-                <li><a href="#">asdasd</a></li>
-                            <li><a href="#">asdasd</a></li>
-                            <li><a href="#">2123</a></li>
-                            <li><a href="#">asd12</a></li>
-                            <li><a href="#">ghgfh</a></li>
-                            <li><a href="#">45dfdf</a></li>
-                            <li><a href="#">g3235f gghdfbg</a></li>
-                            <li><a href="#">g435f</a></li>
-            </div>
+            <div class="comercio-card  " >
+              <a href="../negocios/perfil/1">
+                <div class="card" style="">
+                    <div class="card-img-top" style="background-image: no-repeat center center;" src="" alt="Card image cap"></div>
+                  <div class="card-block">
+                      <h4 class="card-title">Comercio Name</h4>
+                      <p class="card-text"></p>
+                    </div>
+                </div>
+              </a>
+              </div>
 
 	</center>
 

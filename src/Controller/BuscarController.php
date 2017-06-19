@@ -21,7 +21,7 @@ class BuscarController extends AppController
      *
      * @return \Cake\Network\Response|null
      */
-    public function index()
+    public function buscar()
     {
         
     if ($this->request->is('get')){

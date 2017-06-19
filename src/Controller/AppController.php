@@ -51,10 +51,7 @@ class AppController extends Controller
                 ]
             ],
             'authorize' => ['Controller'],
-            'loginRedirect' => [
-                'controller' => 'Users',
-                'action' => 'index'
-            ],
+
             'authError' => 'Error de autenticacion',
             'logoutRedirect' => [
                 'controller' => 'Pages',
@@ -79,7 +76,7 @@ class AppController extends Controller
 
     public function beforeFilter(Event $event)
     {
-        $this->Auth->allow(['perfil','view','index','logout','home','display']);
+        $this->Auth->allow(['perfil','logout','home','display','buscar','editar']);
         $this->Auth->config('authError', "Woopsie, you are not authorized to access this area.");
     }
 

@@ -2,8 +2,10 @@
 
 </style>
 
-        <link rel="stylesheet" href="css/tagify.css">
-        <script src="js/tagify.js"></script>
+        
+        <?= $this->Html->css('tagify.css') ?>
+<?= $this->Html->script('tagify') ?>
+ 
 
         <style>
             p{ line-height:1.4; }

@@ -23,7 +23,7 @@ class PruebaController extends AppController
         $query = $tagstable->find();
         $data = $query->toArray();
         $vectortags = json_encode($data);
-        debug($vectortags);
+        //debug($vectortags);
         
         $this->set(compact('vectortags'));
         $this->set('_serialize','vectortags'); 

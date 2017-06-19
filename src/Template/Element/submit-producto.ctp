@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div class="panel panel-info">
         <div class="panel-heading">
           <div class="panel-title">
             <i class="glyphicon glyphicon-wrench pull-right"></i>

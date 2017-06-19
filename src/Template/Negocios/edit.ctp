@@ -5,660 +5,448 @@
   */
 ?>
 
-<?= $this->element('jumbotron02') ?>
-   
-    <div class="container-fluid" id="content">
 
-        <div class="row">
+<style>
+  body {
+    background-color: inherit;
+    text-decoration: inherit;
+  }
 
-            <?= $this->element('sidebar-left') ?>
 
-            <div class="col-md-12 col-lg-7 thumbnail" align="center" id="sec0">
-            <?= $this->element('breadcrumb') ?>
-<?= $this->element('tabla-horarios') ?>
-<hr>
-
-<?php
- $i = 0;
- foreach ($productos as $producto): ?>
-               <div class="producto">
-                    <div class="card">
-                        <div class="grid-top">
-                            <a href="" class="b-link-stripe b-animate-go" data-toggle="modal" data-target=#<?= $i?>>
-                                <img class=" card img-fluid img-responsive" src=<?= $imagenesproductos[$i][0]->foto ?> alt="">
-                                <div class="b-wrapper">
-                                    <h3 class="b-animate b-from-left b-delay03 ">
-                                        <span><?= $producto->titulo ?></span>
-                                           
-                                    </h3>
-                                </div>
+i {
+  font-size:18px;
+}
   
-                            
-                            </a>
-                            <p><a href="#"><?= $producto->titulo ?></a></p>
-                        </div>
-
-                    </div>
-                </div>
-                 
-                <!-- modal del pructo -->
-                <div id=<?= $i?> class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                  <div class="modal-dialog px">
-                    <div class="modal-content">
-                    <h4 class="modal-title _4-i0"><?= $negocio->nombre ?></h4>
-
-                      <span class="close pclose" data-dismiss="modal" aria-label="Close">×</span>
-                      <div class="modal-body" style="background-color: #FAFAFA;">
-                    
-                <!-- cuerpo -->
-
-                    <div class="row">
-                <div class=" col-sm-4 col-xs-4">
-                <div id='carousel-custom'<?= $i?> class='carousel slide' data-ride='carousel'>
-                    <div class='carousel-outer'>
-                        <!-- me art lab slider -->
-                        <div class='carousel-inner '>
-
-                      <?php $q=0;  
-                      foreach ($imagenesproductos[$i] as $imagen): 
-                         if ($q==0) {?>
-                                <div class='item active'>
-                                   <img src=<?= $imagen->foto ?> alt="" />
-                                 </div>
-                            <?php
-                           }
-                           else{?>
-                               <div class='item'>
-                                    <img src=<?= $imagen->foto ?> alt="" />
-                               </div>
-                           <?php
-                          }
-                           $q = $q + 1;
-                      endforeach; ?>
-
-                            
-                        </div>
-                            
-                        <!-- sag sol -->
-                       
-                    </div>
-                    
-                    <!-- thumb -->
-                    
-                </div>
-                </div>
-                <div class="col-md-8">
-                    <center>
-                    <h2><?= $producto->titulo ?>
-                    <ul class="list list-inline">
-
-                         <li><del class="text-danger"><h3>$99.99</h3></del></li>
-                         <li><h5 class="text-primary">$<?= $producto->precio ?></h5></li>
-                     </ul>
-                     </h2>
-                    <p><?= $producto->cuerpo ?></p>
-                    <br><br>
-                            <p style="font-weight:bold;">La oferta finaliza en: </p>                         
-                            <ul class="countdown list-inline">
-                                <li class="round">
-                                    <span class="days">100</span>
-                                    <p>Days</p>
-                                </li>
-                                <li class="round">
-                                    <span class="hours">15</span>
-                                    <p>Hours</p>
-                                </li>
-                                <li class="round">
-                                    <span class="minutes">28</span>
-                                    <p>Mins</p>
-                                </li>
-                                <li class="round">
-                                    <span class="seconds">30</span>
-                                    <p>Secs</p>
-                                </li>
-                            </ul><!-- end countdown -->
-                    </center>
-
-                </div>
-                </div></div>
-                <div class="modal-footer" id="" style="padding: 0;">
-                <div class="col-md-6">
-                <div id='carousel-custom'<?= $i?> data-ride='carousel'>
-                  <ol class='carousel-indicators' >
-
-                          <?php
-                            foreach ($imagenesproductos[$i] as $imagen):
-                            $p=0;  ?>
-
-                        <li data-target='#carousel-custom'<?= $i?> data-slide-to=<?= $p ?> class='active'><img src=<?= $imagen->foto ?> alt='' /></li>
-
-                              <?php
-                              $p=$p+1;
-                                    endforeach; ?>
-
-                        
-
-                    </ol>
-                 </div></div>
-                 <div class="col-md-6">
-                        <center>
-                            <p> 
-                    <h4 class="marg"><span class="glyphicon glyphicon-share-alt"></span> Compartir</h4>
-                    <a class="btn btn-primary social-login-btn social-facebook" href="/auth/facebook"><i class="fa fa-facebook"></i></a>
-                    <a class="btn btn-primary social-login-btn social-twitter" href="/auth/twitter"><i class="fa fa-twitter"></i></a>
-                    <a class="btn btn-primary social-login-btn social-linkedin" href="/auth/linkedin"><i class="fa fa-linkedin"></i></a>
-                    <a class="btn btn-primary social-login-btn social-google" href="/auth/google"><i class="fa fa-google-plus"></i></a>
-                            </p>
-                        </center>
-                 </div>  
-                    </div>
-
-                <!-- fin row -->
-                <!-- fin cuerpo -->
-                      
-                    </div>
-                  </div>
-                </div>
-
-                <?php
-                $i=$i+1;
- endforeach; ?>
 
 
+.nav>li .count {
+  position: absolute;
+  top: 10%;
+  right: 25%;
+  font-size: 10px;
+  font-weight: normal;
+  background: rgba(41,200,41,0.75);
+  color: rgb(255,255,255);
+  line-height: 1em;
+  padding: 2px 4px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+}
 
+.conmain {
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+</style>
 
-
-
-
-
-
-                
-
-                    <hr>
-
-                        <div class="productof store style1">
-                            <div class="header">
-                                <div class="badges">
-                                    <span class="product-badge  right danger-background  semi-circle">-20%</span>
-                                </div>
-                                <figure class="layer">
-                                    <a href="javascript:void(0);">
-                                        <img class="card-img-top img-fluid img-responsive" src="../../img/productos/pi4.jpg" alt="">
-                                    </a>
-                                </figure>
-
-                                <div class="icons ">
-                                    <h1>
-                                        -20%!!!
-
-
-
-                                    </h1>
-                                    <h2>Local #1</h2>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-gift"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-search"></i></a>
-                                    <br>
-                                </div>
-                                <ul class="countdown-product">
-                                    <li>
-                                        <span class="days">223</span>
-                                        <p>Days</p>
-                                    </li>
-                                    <li>
-                                        <span class="hours">13</span>
-                                        <p>Hours</p>
-                                    </li>
-                                    <li>
-                                        <span class="minutes">21</span>
-                                        <p>Mins</p>
-                                    </li>
-                                    <li>
-                                        <span class="seconds">26</span>
-                                        <p>Secs</p>
-                                    </li>
-                                </ul>
-                                <!-- end countdown -->
-                            </div>
-                            <div class="caption">
-                                <h6 class="regular"><a href="#">Lorem Ipsum dolor sit</a></h6>
-                                <div class="price">
-                                    <small class="amount off">$68.99</small>
-                                    <span class="amount text-primary">$59.99</span>
-                                </div>
-                                <a href="javascript:void(0);"><i class="fa fa-cart-plus mr-5"></i>Add to cart</a>
-                            </div>
-                            <!-- end caption -->
-                        </div>
-                        
-                        <div class="productof store style1">
-                            <div class="header">
-                                <div class="badges">
-                                    <span class="product-badge  right danger-background  semi-circle">-20%</span>
-                                </div>
-                                <figure class="layer">
-                                    <a href="javascript:void(0);">
-                                        <img class="card-img-top img-fluid img-responsive" src="../../img/productos/pi4.jpg" alt="">
-                                    </a>
-                                </figure>
-
-                                <div class="icons">
-                                    <h1>
-                                        -20%!!!
-
-
-
-                                    </h1>
-                                    <h2>Local #1</h2>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-gift"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-search"></i></a>
-                                    <br>
-                                </div>
-                                <ul class="countdown-product">
-                                    <li>
-                                        <span class="days">223</span>
-                                        <p>Days</p>
-                                    </li>
-                                    <li>
-                                        <span class="hours">13</span>
-                                        <p>Hours</p>
-                                    </li>
-                                    <li>
-                                        <span class="minutes">21</span>
-                                        <p>Mins</p>
-                                    </li>
-                                    <li>
-                                        <span class="seconds">26</span>
-                                        <p>Secs</p>
-                                    </li>
-                                </ul>
-                                <!-- end countdown -->
-                            </div>
-                            <div class="caption">
-                                <h6 class="regular"><a href="#">Lorem Ipsum dolor sit</a></h6>
-                                <div class="price">
-                                    <small class="amount off">$68.99</small>
-                                    <span class="amount text-primary">$59.99</span>
-                                </div>
-                                <a href="javascript:void(0);"><i class="fa fa-cart-plus mr-5"></i>Add to cart</a>
-                            </div>
-                            <!-- end caption -->
-                        </div>
-                        
-                        <div class="productof store style1">
-                            <div class="header">
-                                <div class="badges">
-                                    <span class="product-badge  right danger-background  semi-circle">-20%</span>
-                                </div>
-                                <figure class="layer">
-                                    <a href="javascript:void(0);">
-                                        <img class="card-img-top img-fluid img-responsive" src="../../img/productos/pi4.jpg" alt="">
-                                    </a>
-                                </figure>
-
-                                <div class="icons">
-                                    <h1>
-                                        -20%!!!
-
-
-
-                                    </h1>
-                                    <h2>Local #1</h2>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-gift"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-search"></i></a>
-                                    <br>
-                                </div>
-                                <ul class="countdown-product">
-                                    <li>
-                                        <span class="days">223</span>
-                                        <p>Days</p>
-                                    </li>
-                                    <li>
-                                        <span class="hours">13</span>
-                                        <p>Hours</p>
-                                    </li>
-                                    <li>
-                                        <span class="minutes">21</span>
-                                        <p>Mins</p>
-                                    </li>
-                                    <li>
-                                        <span class="seconds">26</span>
-                                        <p>Secs</p>
-                                    </li>
-                                </ul>
-                                <!-- end countdown -->
-                            </div>
-                            <div class="caption">
-                                <h6 class="regular"><a href="#">Lorem Ipsum dolor sit</a></h6>
-                                <div class="price">
-                                    <small class="amount off">$68.99</small>
-                                    <span class="amount text-primary">$59.99</span>
-                                </div>
-                                <a href="javascript:void(0);"><i class="fa fa-cart-plus mr-5"></i>Add to cart</a>
-                            </div>
-                            <!-- end caption -->
-                        </div>
-
-
-
-                </div>
-
+<?= $this->Html->css('dataTables.bootstrap.css') ?>
+<!-- Main -->
+<div class="container-fluid conmain" >
+  
+  <!-- upper section -->
+  <div class="row">
+  <div class="col-sm-3">
+      <!-- left -->
+      <h3><i class="glyphicon glyphicon-briefcase"></i> Toolbox</h3>
+      <hr>
+      
+      <ul class="nav nav-stacked">
+        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-flash"></i> Alerts</a></li>
+        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-link"></i> Links</a></li>
+        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-list-alt"></i> Reports</a></li>
+        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-book"></i> Books</a></li>
+        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-briefcase"></i> Tools</a></li>
+        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-time"></i> Real-time</a></li>
+        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-plus"></i> Advanced..</a></li>
+      </ul>
+      
+      <hr>
+      
+    </div><!-- /span-3 -->
+    <div class="col-sm-9">
+        
+      <!-- column 2 --> 
+       <h3><i class="glyphicon glyphicon-dashboard"></i> Bootply Dashboard</h3>  
             
-
-             <?= $this->element('sidebar-right') ?>
-            
-            <!--/span-->
-
-
-
-        </div>
-
-
-
-    </div>
-
-    <!-- /.container -->
-
-    <!-- imagen modal -->
-    <!-- <img id="myImg" src="http://placehold.it/700x400" alt="Northern Lights, Norway" width="300" height="200"> 
-<! The Modal 
-    <div id="myModal" class="modal">
-        <span class="close"><br>×</span>
-        <img class="modal-content" id="img01">
-        <div id="caption"></div>
-    </div>
--->
-
-
-<div id="fbot"></div>
-    <div class="col-md-2 location hidden-xs hidden-sm ">
-        <div class="topmap" alt=""></div>
-        <address>
-  <strong>Example Inc.</strong>
-  <br>
-  1234 Example Street
-  <br>
-  Antartica, Example 0987
-  <br>
-  <abbr title="Phone">P:</abbr> (123) 456-7890
-</address>
-
-        <address>
-  <strong>Full Name</strong><br>
-  <a href="mailto:#">exam.ple@example.com</a>
-</address>
-    </div>
-
-    <section id="sec2" class="contact-section" style="height: 70vh;">
+       <hr>
+      
+     <div class="row">
+            <!-- center left--> 
+          <div class="col-md-7">
        
+                        <?= $this->element('submit-producto') ?>   
+              
+            </div><!--/col-->
+         
+            <!--center-right-->
+          <div class="col-md-5">
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title"><h4>Foto de portada<button class="btn btn-primary" style="float: right;" data-toggle="modal" href="#addWidgetModal"><i class="fa fa-cog" aria-hidden="true"></i></span> Cambiar</button></h4>
+                    </div>
+                </div>
+                <div class="panel-body" style="padding: 5px; padding-bottom: 0; margin-bottom: 0;">  
+                    <div class=""><img src="<?= $fportada ?>" class="thumbnail img-responsive"></div>
+                </div>
+            </div><!--/panel-->
+
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title"><h4>Informacion de contacto<button class="btn btn-primary" style="float: right;" data-toggle="modal" href="#addWidgetModal"><i class="fa fa-cog" aria-hidden="true"></i></span> Cambiar</button></h4>
+                    </div>
+                </div>
+                <div class="panel-body" style="padding: 0;">  
+                  
+                    <table class="table table-striped table-hover" style="margin-bottom: 0;">
+                        <tbody>
+                            <tr>
+                                <th>Nombre:</th>
+                                <th><?= $negocio->nombre ?></th>
+                            </tr>
+                            <tr>
+                                <th>Direccion:</th>
+                                <th><?= $negocio->direccion ?></th>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <th><?= $negocio->descripcion ?></th>
+                            </tr>
+                            <tr>
+                                <th>Email:</th>
+                                <th><?= $negocio->email ?></th>
+                            </tr>
+                            <tr>
+                                <th>Telefono:</th>
+                                <th><?= $negocio->telefono ?></th>
+                            </tr>
+                            <tr>
+                                <th>Tags:</th>
+                                <th><?= $tagsnegocio ?></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div><!--/panel-->
+
+              
+       
+              
+      </div><!--/col-span-6-->
+     
+       </div><!--/row-->
+    </div><!--/col-span-9-->
+    
+  </div><!--/row-->
+  <hr>
+  <!-- /upper section -->
+   <div id="page-inner"> 
+               
+        
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                             Advanced Tables
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>Titulo</th>
+                                            <th>Precio</th>
+                                            <th>Descripción</th>
+                                            <th>Imagenes</th>
+                                            <th>Editar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       <?php
+                                         $i = 0;
+                                         foreach ($productos as $producto): ?>
+                                             <tr class="gradeU">
+                                                <td><?= $producto->titulo ?></td>
+                                                <td><span>$<?= $producto->precio ?></span><sup>00</sup></td>
+                                                <td><?= $producto->cuerpo ?></td>
+                                                <td class="center"><img class="" src=<?= $imagenesproductos[$i][0]->foto ?> alt="" style="width: 50px;"></td>
+                                                <td class="center">
+                                                <center>
+                                                <a href="#">Editar</a> - 
+                                                <a href="#">Ver</a> - 
+                                                <a href="#">Eliminar</a></td>
+                                                </center>
+                                              </tr>
+                                                           <!--  <img class="" src=<?= $imagenesproductos[$i][0]->foto ?> alt="">
+                                                            
+                                                            <div class="content">
+                                                                <h3>
+                                                                    <span><?= $producto->titulo ?></span>
+                                                                </h3>
+                                                                
+                                                                <h5>
+                                                                <a href="#" >
+                                                                    <span><?= $negocio->nombre ?></span>
+                                                                </a>
+                                                                </h5>
+                                                            </div>
+
+                                                            <div class="content-bot"> 
+                                                                
+                                                               <h3>  
+                                                                    <span>$<?= $producto->precio ?></span><sup>00</sup>
+                                                               </h3>
+                                                            </div>
+
+                                                    
+                                                </div>
+                                            </div> <!-- /producto --> -->
+                                                         
+                                                        
+
+                                                        <?php
+                                                        $i=$i+1;
+                                         endforeach; ?>
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+         
+  <!-- lower section -->
+  <div class="row">
+    
+    <div class="col-md-12">
+      <hr>
+      <a href="#"><strong><i class="glyphicon glyphicon-list-alt"></i> Reports</strong></a>  
+      <hr>    
+    </div>
+    <div class="col-md-8">
+      
+      <table class="table table-striped">
+        <thead>
+          <tr><th>Visits</th><th>ROI</th><th>Source</th><th>Description and Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>45</td><td>2.45%</td><td>Direct</td><td>Sam sapien massa, aliquam in cursus ut, ullamcorper in tortor. 
+          Aliquam mauris arcu, tristique a lobortis vitae, condimentum feugiat justo.</td></tr>
+          <tr><td>289</td><td>56.2%</td><td>Referral</td><td>After RWD massa, aliquam in cursus ut, ullamcorper in tortor. 
+          Aliquam mauris arcu, tristique a lobortis vitae, condimentum feugiat justo.</td></tr>
+          <tr><td>98</td><td>25%</td><td>Type</td><td>Wil sapien massa, aliquam in cursus ut, ullamcorper in tortor. 
+          Liquam mauris arcu, tristique a lobortis vitae, condimentum feugiat justo.</td></tr>
+          <tr><td>109</td><td>8%</td><td>..</td><td>Forfoot aliquam in cursus ut, ullamcorper in tortor. 
+          Okma mauris arcu, tristique a lobortis vitae, condimentum feugiat justo.</td></tr>
+          <tr><td>34</td><td>14%</td><td>..</td><td>Mikel sapien massa, aliquam in cursus ut, ullamcorper in tortor. 
+          Maliquam mauris arcu, tristique a lobortis vitae, condimentum feugiat justo.</td></tr>
+        </tbody>
+      </table>
+      
+      <hr>              
+      
+ 
+      
+      <div class="panel panel-default">
+        <div class="panel-heading"><h4>New Requests</h4></div>
+        <div class="panel-body">
+          <div class="list-group">
+            <a href="#" class="list-group-item active">Hosting virtual mailbox serv..</a>
+            <a href="#" class="list-group-item">Dedicated server doesn't..</a>
+            <a href="#" class="list-group-item">RHEL 6 install on new..</a>
+          </div>
+        </div>
+      </div>
+      
+      <hr>
+      
+      <div class="alert alert-info">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        Please remember to <a href="#">Logout</a> for classified security.
+      </div>
+
+    
+    </div>
+    <div class="col-md-4">
+      
+      <ul class="nav nav-pills nav-stacked">
+        <li class="nav-header"></li>
+        <li><a href="#"><i class="glyphicon glyphicon-list"></i> Layouts &amp; Templates</a></li>
+        <li class="divider"></li>
+        <li><a href="#"><i class="glyphicon glyphicon-briefcase"></i> Toolbox</a></li>
+        <li><a href="#"><i class="glyphicon glyphicon-link"></i> Widgets</a></li>
+        <li><a href="#"><i class="glyphicon glyphicon-list-alt"></i> Reports</a></li>
+        <li><a href="#"><i class="glyphicon glyphicon-book"></i> Pages</a></li>
+        <li class="divider"></li>
+        <li><a href="#"><i class="glyphicon glyphicon-star"></i> Social Media</a></li>
+      </ul>
+      
+      <hr>
+              
+       <div class="panel panel-default">
+                  <div class="panel-heading"><h4>Processing Status</h4></div>
+                  <div class="panel-body">
+                    
+                    <small>Complete</small>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%">
+                        <span class="sr-only">72% Complete</span>
+                      </div>
+                    </div>
+                    <small>In Progress</small>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                        <span class="sr-only">20% Complete</span>
+                      </div>
+                    </div>
+                    <small>At Risk</small>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                        <span class="sr-only">80% Complete</span>
+                      </div>
+                    </div>
+
+                  </div><!--/panel-body-->
+              </div><!--/panel-->       
+      
+      
+    
+    </div><!--/col-->
+    
+  </div><!--/row-->
+  
+</div><!--/container-->
+<!-- /Main -->
 
 
-            <div id="map-container" align="center" class="col-md-8 col-md-push-1 img-rounded "></div>
 
 
-    </section>
+<div class="modal" id="addWidgetModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Add Widget</h4>
+      </div>
+      <div class="modal-body">
+        <p>Add a widget stuff here..</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn">Close</a>
+        <a href="#" class="btn btn-primary">Save changes</a>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dalog -->
+</div><!-- /.modal -->
+
+
+</div>
+
+
+
 
 <?= $this->element('footer') ?>
 
 
+<?= $this->Html->script('dataTables.bootstrap') ?>
+<?= $this->Html->script('jquery.dataTables') ?>
+
 <script>
-        //hace el affixTop del elemento
-        var stickySidebar = $('#sidebar-right1').offset().top;
-
-        $(window).scroll(function() {  
-            if ($(window).scrollTop() > stickySidebar - navH) {
-                $('#sidebar-right1').addClass('affix');
-
-            }
-            else {
-                $('#sidebar-right1').removeClass('affix');
-            }  
-        });
-
-      
-       var elAlt = $('#sidebar-right1').height(); //altura elemto de affix (2do y 3er recomendado)
-       var sec2Dis = $('#sec2').offset().top ; //distancia entre el #sec2 y el top
-       var firstRecm = $('#firstRecm').height() + 10; //altura del primer recomendado + 10px del margin
-       var navH = $('#navbar').height(); //altura de la navbar
-       var  distSec2el = sec2Dis - elAlt - navH;
-       var  disTop = distSec2el - navH - firstRecm - elAlt;
-
-$(window).scroll(function() {  
-    if($(window).scrollTop() + elAlt + navH >= sec2Dis - 20){
-        //el -20 es del margin entre el sec2 y el cuerpo de la pagina
-       //console.log('disTop: ' +disTop+'..elAlt '+elAlt+'..sec2: '+ $('#sec2').offset().top)
-       /*fija el elemento en la posicion de colicion con el sec2*/
-        $('#sidebar-right1').css('top', disTop);
-        $('#sidebar-right1').css('position','relative');
-    }
-    else {
-        //$('#sidebar-right1').removeClass('affix-bottom');
-        $('#sidebar-right1').css('top','');
-        $('#sidebar-right1').css('position','');
-    }  
-});
-
-     var stickyArt = $('#artAffix').offset().top;
-
-        $(window).scroll(function() {  
-            if ($(window).scrollTop() > stickyArt - navH) {
-                $('#artAffix').addClass('affix');
-                $('#artAffix').addClass('col-md-2');
-
-            }
-            else {
-                $('#artAffix').removeClass('affix');
-                $('#artAffix').removeClass('col-md-2');
-            }  
-        });
-
-        var artH = $('#artAffix').height() ; //+10 de margin 
-        var navBefore = $('#sidebar').height();
-        var  distSec2art = sec2Dis - artH - navH;
-        var  disTopArt = distSec2art + navH - navBefore - artH ;
-        $(window).scroll(function() {  
-    if($(window).scrollTop() + artH + navH >= sec2Dis - 20){
-        //el -20 es del margin entre el sec2 y el cuerpo de la pagina
-       //console.log('disTop: ' +disTop+'..elAlt '+elAlt+'..sec2: '+ $('#sec2').offset().top)
-       /*fija el elemento en la posicion de colicion con el sec2*/
-        $('#artAffix').css('top', disTopArt);
-        $('#artAffix').css('position','relative');
-        //$('#artAffix').css('border','1px solid');
-        //$('#artAffix').css('background-color','#fafafa');
-        $('#artAffix').removeClass('col-md-2');
-        //$('#artAffix').removeClass('affix');
-        $('#sidetest').css('border','0');
-    }
-    else {
-        //$('#sidebar-right1').removeClass('affix-bottom');
-        $('#artAffix').css('top','');
-        $('#artAffix').css('position','');
-        $('#sidetest').css('border','1px solid');
-        $('#sidetest').css('border-color','#DFE0E4');
-    }  
-});     
-    
-
-</script>
-    <script>
-        //CountDown
-        $('.countdown-product').downCount({
-            date: '8/1/2017 12:00:00',
-            offset: +1
-        }, function() {
-            //alert('WOOT WOOT, done!');
-        });
-
-        
-    </script>
-  <script async defer
-      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDkKG7urAJ1fTHIXbcuQDoePM2ReP-LKtQ&callback=initMap">
-    </script>
-    <script>
-        function init_map() {
-            var location = new google.maps.LatLng(-37.013179, -62.417755);
-
-            var mapoptions = {
-                center: location,
-                zoom: 17,
-                 styles: [
-          {elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},
-          {elementType: 'labels.text.fill', stylers: [{color: '#523735'}]},
-          {elementType: 'labels.text.stroke', stylers: [{color: '#f5f1e6'}]},
-          {
-            featureType: 'administrative',
-            elementType: 'geometry.stroke',
-            stylers: [{color: '#c9b2a6'}]
-          },
-          {
-            featureType: 'administrative.land_parcel',
-            elementType: 'geometry.stroke',
-            stylers: [{color: '#dcd2be'}]
-          },
-          {
-            featureType: 'administrative.land_parcel',
-            elementType: 'labels.text.fill',
-            stylers: [{color: '#ae9e90'}]
-          },
-          {
-            featureType: 'landscape.natural',
-            elementType: 'geometry',
-            stylers: [{color: '#dfd2ae'}]
-          },
-          {
-            featureType: 'poi',
-            elementType: 'geometry',
-            stylers: [{color: '#dfd2ae'}]
-          },
-          {
-            featureType: 'poi',
-            elementType: 'labels.text.fill',
-            stylers: [{color: '#93817c'}]
-          },
-          {
-            featureType: 'poi.park',
-            elementType: 'geometry.fill',
-            stylers: [{color: '#a5b076'}]
-          },
-          {
-            featureType: 'poi.park',
-            elementType: 'labels.text.fill',
-            stylers: [{color: '#447530'}]
-          },
-          {
-            featureType: 'road',
-            elementType: 'geometry',
-            stylers: [{color: '#f5f1e6'}]
-          },
-          {
-            featureType: 'road.arterial',
-            elementType: 'geometry',
-            stylers: [{color: '#fdfcf8'}]
-          },
-          {
-            featureType: 'road.highway',
-            elementType: 'geometry',
-            stylers: [{color: '#f8c967'}]
-          },
-          {
-            featureType: 'road.highway',
-            elementType: 'geometry.stroke',
-            stylers: [{color: '#e9bc62'}]
-          },
-          {
-            featureType: 'road.highway.controlled_access',
-            elementType: 'geometry',
-            stylers: [{color: '#e98d58'}]
-          },
-          {
-            featureType: 'road.highway.controlled_access',
-            elementType: 'geometry.stroke',
-            stylers: [{color: '#db8555'}]
-          },
-          {
-            featureType: 'road.local',
-            elementType: 'labels.text.fill',
-            stylers: [{color: '#806b63'}]
-          },
-          {
-            featureType: 'transit.line',
-            elementType: 'geometry',
-            stylers: [{color: '#dfd2ae'}]
-          },
-          {
-            featureType: 'transit.line',
-            elementType: 'labels.text.fill',
-            stylers: [{color: '#8f7d77'}]
-          },
-          {
-            featureType: 'transit.line',
-            elementType: 'labels.text.stroke',
-            stylers: [{color: '#ebe3cd'}]
-          },
-          {
-            featureType: 'transit.station',
-            elementType: 'geometry',
-            stylers: [{color: '#dfd2ae'}]
-          },
-          {
-            featureType: 'water',
-            elementType: 'geometry.fill',
-            stylers: [{color: '#b9d3c2'}]
-          },
-          {
-            featureType: 'water',
-            elementType: 'labels.text.fill',
-            stylers: [{color: '#92998d'}]
-          }
-        ],
-                scrollwheel: false
-            };
-
-            var marker = new google.maps.Marker({
-                position: location,
-                map: map,
-                title: "Guaminí"
+    $(document).ready(function () {
+                $('#dataTables-example').dataTable();
             });
 
-            var map = new google.maps.Map(document.getElementById("map-container"),
-                mapoptions);
-
-            marker.setMap(map);
-
-        };
-
-        google.maps.event.addDomListener(window, 'load', init_map);
-    </script>
-    
-<script> //script de horarios y dias
-var d = new Date();
-var weekday = new Array(7);
-weekday[0] =  "Sunday";
-weekday[1] = "Monday";
-weekday[2] = "Tuesday";
-weekday[3] = "Wednesday";
-weekday[4] = "Thursday";
-weekday[5] = "Friday";
-weekday[6] = "Saturday";
-
-var n = weekday[d.getDay()];
-
-var daysOfTheWeek = document.getElementsByTagName("li");
-
-dayOfTheWeek(daysOfTheWeek);
-
-function dayOfTheWeek (weekDays) {
-    for(var i = 0; i < weekDays.length; i++)
-  { 
-
-    if(weekDays[i].getAttribute("name") == n)
-    {
-        weekDays[i].className = 'active';
-      weekDays[i].childNodes[0].className = 'active';
-    }
-  }
-}
 </script>
+<!-- <style>
+    
+ .cropp{ 
+        width: 250px;  /* MANDATORY */  /*ancho del div y del recorte de la imagen*/
+        height: 250px; /* MANDATORY */  /*alto del div y del recorte de la imagen*/
+        position: relative;  /* MANDATORY */
+        /margin: 90px auto;
+        /margin: 50px 70px 20px;
+        border: 3px  solid #FFF;
+        box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        border-radius: 2px;
+        /background-image: url(../img/placeholder.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        /box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
+      } 
+
+      .cropp1{ 
+        width: 200px;  /* MANDATORY */  /*ancho del div y del recorte de la imagen*/
+        height: 200px; /* MANDATORY */  /*alto del div y del recorte de la imagen*/
+        position: relative;  /* MANDATORY */
+        /margin: 90px auto;
+        /margin: 50px 70px 20px;
+        border: 3px  solid #FFF;
+        box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        border-radius: 2px;
+        /background-image: url(../img/placeholder.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        /box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
+      } 
+      
+  .thumbRes {
+    width: 100px;
+     background-color: rgb(233, 235, 238);
+    border: 3px solid rgb(233, 235, 238);
+    border-radius: 3px;
+    margin-right: 10px;
+  }          
+
+<br>
+<br>
+<br>
+   <h3 id="data"></h3>
+    
+    <div id="yourIdasd" class="cropp1"></div> -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> -->
+   <!-- <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script> -->
+   
+    
+    <script>
+                var k = 0;
+                var h = 0;
+                var j = 0;
+                //---al apretar el cortar, el coppic-product.js llama a esta funcion, que esconde el content actual y muestra el siguiente
+                function cropped(){
+                h = h + 1;
+                j = h + 1;
+                k = k - 1;
+                console.log(h);
+                if (h > 0){
+                    $('#cont'+[h]).addClass('hidden');
+                    $('#cont'+[j]).addClass('active');
+                    var srch = $('#cont'+[h]+' .croppedImg').attr('src');
+                    $('#result').append('<img class="thumbRes" src="'+ srch +'">')
+                    $('#restantes').text(k);
+                }
+             };
+             //---el btnNext llama al content del primer croppic
+        $('.btnNext').click(function(){
+        $('#cropPro').prepend('<h2 style="margin: 0;">Imagenes restantes: <div id="restantes">'+[k]+'</div></h2>');
+        $('#cont1').removeClass('hidden');
+        $('#id0').addClass('hidden');
+        $('#cont1').addClass('active');
+        $('.btnNext').addClass('hidden');
+        $('.success').addClass('hidden');
+        
+
+      });
+        
+    </script>
+
+
 

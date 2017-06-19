@@ -705,7 +705,7 @@ i {
             });
 
 </script>
-<style>
+<!-- <style>
     
  .cropp{ 
         width: 250px;  /* MANDATORY */  /*ancho del div y del recorte de la imagen*/
@@ -757,7 +757,7 @@ i {
 <br>
    <h3 id="data"></h3>
     
-    <div id="yourIdasd" class="cropp1"></div>
+    <div id="yourIdasd" class="cropp1"></div> -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

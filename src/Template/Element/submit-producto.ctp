@@ -1,7 +1,7 @@
 <div class="panel panel-success">
         <div class="panel-heading">
           <div class="panel-title">
-            <i class="glyphicon glyphicon-wrench pull-right"></i>
+            <i class="glyphicon glyphicon-plus pull-right"></i>
             <h4>Agregar producto</h4>
           </div>
         </div>
@@ -10,7 +10,7 @@
           
           
         <div class="col-md-6">   
-        <label for="name">Nombre</label>
+        
           <input name="name" type="text" id="name" placeholder="nombre" class="form-control" required>
         </div>
         <div class="col-md-4 hidden">
@@ -22,10 +22,10 @@
                     </span>
             </div>
         </div> 
-            <label for="precio">Precio</label>
-            <div class=" col-md-3 input-group">
+            
+            <div class=" col-md-4 input-group">
               <span class="input-group-addon">$</span>
-              <input type="text" name="precio" id="precio" class="form-control" aria-label="Amount (to the nearest dollar)">
+              <input type="text" name="precio" id="precio" class="form-control" placeholder="Precio" aria-label="Amount (to the nearest dollar)">
             </div>
        
               <hr>
@@ -66,8 +66,7 @@
        
       </div> 
       
-           <hr>    
-            
+           
             
          
           

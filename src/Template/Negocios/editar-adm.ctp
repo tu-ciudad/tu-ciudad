@@ -55,7 +55,7 @@ i {
 }
 
 .paging_simple_numbers {
-  
+
 }
 </style>
 
@@ -68,34 +68,29 @@ i {
   <div class="row">
   <div class="col-sm-4">
       <!-- left -->
-      <h3><i class="glyphicon glyphicon-briefcase"></i> Productos</h3>
+      <h3><i class="glyphicon glyphicon-briefcase"></i> Admin Panel</h3>
       <hr>
       
-      <!-- <ul class="nav nav-stacked">
-        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-flash"></i> Alerts</a></li>
-        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-link"></i> Links</a></li>
-        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-list-alt"></i> Reports</a></li>
-        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-book"></i> Books</a></li>
-        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-briefcase"></i> Tools</a></li>
-        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-time"></i> Real-time</a></li>
-        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-plus"></i> Advanced..</a></li>
-      </ul> -->
-       <?= $this->element('submit-producto') ?>   
-       
+      <ul class="nav nav-stacked">
+        <li><a href="" target="ext"><i class="glyphicon glyphicon-flash"></i> Alerts</a></li>
 
-      
-    </div><!-- /span-3 -->
-    <div class="col-sm-8">
-        
-      <!-- column 2 --> 
-       <h3><i class="glyphicon glyphicon-dashboard"></i> Información</h3>  
+        <li><a href="#" target="ext"><i class="glyphicon glyphicon-list-alt"></i> Comercio: 
+        <select>
+              <option value="volvo">asdfqwe</option>
+              <option value="saab">Saab</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select></a>
             
-       <hr>
-      
-     <div class="row">
-            <!-- center left--> 
-          <div class="col-md-6">
-            <div class="panel panel-info">
+          </li>
+        
+        <li><a href="" target="ext"><i class="glyphicon glyphicon-briefcase"></i> Tools</a></li>
+        <li><a href="" target="ext"><i class="glyphicon glyphicon-time"></i> Real-time</a></li>
+        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-plus"></i> Agregar comercio</a></li>
+      </ul> 
+        <hr>
+       
+<div class="panel panel-info">
                 <div class="panel-heading">
                     <div class="panel-title"><h4>Informacion de contacto<button class="btn btn-primary pull" style="float: right;" data-toggle="modal" href="#addWidgetModal"><i class="glyphicon glyphicon-wrench" aria-hidden="true"></i></span> Editar</button></h4>
                     </div>
@@ -132,14 +127,21 @@ i {
                     </table>
                 </div>
             </div><!--/panel-->
-                       
-                 <hr>
       
-      <div class="alert alert-info">
-        <button type="button" class="close" data-dismiss="alert">×</button>
-        Por favor recuerda <a href="#">Cerrar sesión</a> por razones de seguridad.
-      </div>
-<hr>
+    </div><!-- /span-3 -->
+    <div class="col-sm-8">
+        
+      <!-- column 2 --> 
+       <h3><i class="glyphicon glyphicon-dashboard"></i> Información</h3>  
+            
+       <hr>
+      
+     <div class="row">
+            <!-- center left--> 
+          <div class="col-md-6">
+          <?= $this->element('submit-producto') ?>  
+            
+
             </div><!--/col-->
          
             <!--center-right-->
@@ -156,7 +158,7 @@ i {
             </div><!--/panel-->
 
              
-
+          
               
        
               

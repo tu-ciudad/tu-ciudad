@@ -2526,8 +2526,8 @@ However, delay the fade out process for 2.5 seconds */
 /***********************************product-upload************************/
 
   .thumbimg { 
-    height: 75px;
-    min-width: 80px;
+    height: 60px;
+    min-width: 60px;
     background-color: rgb(233, 235, 238);
     border: 3px solid rgb(233, 235, 238);
     border-radius: 3px;

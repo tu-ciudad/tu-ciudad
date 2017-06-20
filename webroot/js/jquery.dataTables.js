@@ -2521,7 +2521,7 @@
 		var tableId = settings.sTableId;
 		var previousSearch = settings.oPreviousSearch;
 		var features = settings.aanFeatures;
-		var input = '<input type="search" class="'+classes.sFilterInput+'"/>';
+		var input = '<input type="search" class="form-control '+classes.sFilterInput+'" placeholder="Buscar producto"/>';
 	
 		var str = settings.oLanguage.sSearch;
 		str = str.match(/_INPUT_/) ?
@@ -10603,7 +10603,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+			"sInfo": "Mostrando  _END_ de _TOTAL_ productos",
 	
 	
 			/**
@@ -10624,7 +10624,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+			"sInfoEmpty": "Mostrando  _END_ de _TOTAL_ productos",
 	
 	
 			/**
@@ -10733,7 +10733,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "Show _MENU_ entries",
+			"sLengthMenu": "Mostrar _MENU_ productos",
 	
 	
 			/**
@@ -10813,7 +10813,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
+			"sSearch": "",
 	
 	
 			/**
@@ -13350,7 +13350,7 @@
 		"sNoFooter": "no-footer",
 	
 		/* Paging buttons */
-		"sPageButton": "paginate_button",
+		"sPageButton": "paginate_button btn btn-default",
 		"sPageButtonActive": "current",
 		"sPageButtonDisabled": "disabled",
 	
@@ -13429,7 +13429,7 @@
 		"sPageButtonDisabled": "ui-state-disabled",
 	
 		/* Features */
-		"sPaging": "dataTables_paginate fg-buttonset ui-buttonset fg-buttonset-multi "+
+		"sPaging": "dataTables_paginate btn-group fg-buttonset ui-buttonset fg-buttonset-multi "+
 			"ui-buttonset-multi paging_", /* Note that the type is postfixed */
 	
 		/* Sorting */
@@ -13499,7 +13499,7 @@
 	
 	$.extend( extPagination, {
 		simple: function ( page, pages ) {
-			return [ 'previous', 'next' ];
+			return [ 'anterior', 'siguiente' ];
 		},
 	
 		full: function ( page, pages ) {

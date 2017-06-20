@@ -6,7 +6,7 @@
 .profile img.image-lg{ /*portada*/
     z-index: 0;
     width: 100%;  
-    margin-bottom: 10px;
+    /margin-bottom: 10px;
     height: 375px;
     box-shadow: 1px 1px #ccc;
     
@@ -232,8 +232,8 @@ However, delay the fade out process for 2.5 seconds */
 </style>
  <!-- jumbotron nuevo fb style -->
 
-<div class="container" id="sidefix">
-    <div class="profile clearfix"> <!-- imagenes -->
+<div class="container-fluid " id="sidefix" style="padding-left: 15px; padding-right: 15px; margin-bottom: 0; padding-bottom: 0;">
+    <div class="profile clearfix thumbnail" style="padding-left: 0; padding-right: 0;"> <!-- imagenes -->
         <img align="left" class="image-lg" src=<?= $fportada ?> alt="Profile image example"/>
         <!-- <div class="show-image">
         <img align="left" class="image-profile thumbnail" src=<?= $fperfil ?> id="imgf">
@@ -257,7 +257,16 @@ However, delay the fade out process for 2.5 seconds */
             <p><span class="glyphicon glyphicon-gift"></span> <?= $tagsnegocio ?></p>                                
          
         </div> <!-- /texto-local+info -->
-        <div class="actions clearfix">
+        
+        <div class="profile-text " style="float: center; margin: 0 auto; margin-left: 15%; ">
+          <h4>
+             <?= $negocio->descripcion ?>
+          </h4>
+           
+        
+        </div>
+       
+        <div class="actions clearfix" style="margin-right: 5%;">
              <div class="btn-group"><!-- botones derecha -->
                 <div class="btn-group" role="group">
                   <button class="btn btn-default btn-md dropdown-toggle tip btn-responsive" title="" id="dropcell" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class=" glyphicon glyphicon-earphone glyphicon glyphicon-white"></span> llamar <span class="caret"></span></button>
@@ -286,7 +295,7 @@ However, delay the fade out process for 2.5 seconds */
 </div>
  <!-- /container -->  
 
-<br>
+
 
 
 <div id="snackbar"> <!-- cartel de success, recargar pagina -->

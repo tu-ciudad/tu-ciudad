@@ -104,18 +104,18 @@
     <div class="col-md-2 location hidden-xs hidden-sm ">
         <div class="topmap" alt=""></div>
         <address>
-  <strong>Example Inc.</strong>
+  <strong><?= $negocio->nombre ?>.</strong>
   <br>
-  1234 Example Street
+  <?= $negocio->direccion ?> 
   <br>
-  Antartica, Example 0987
+  <?= $ubicacion[0]->nombre ?>
   <br>
-  <abbr title="Phone">P:</abbr> (123) 456-7890
+  <abbr title="Phone">T:</abbr> <?= $negocio->telefono ?>
 </address>
 
         <address>
-  <strong>Full Name</strong><br>
-  <a href="mailto:#">exam.ple@example.com</a>
+  <strong>Email</strong><br>
+  <a href="mailto:#"><?= $negocio->email ?></a>
 </address>
     </div>
 

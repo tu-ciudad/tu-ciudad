@@ -30,9 +30,11 @@
     @media (min-width: 900px) {
 
       .comercio-card {
-          width: 300px;
+          width: 230px;
           position: absolute;
-          top: 470px;
+          top: 125%;
+          left: calc(50% - 115px);
+
 
       }
       .comercio-card .card-title{
@@ -41,17 +43,21 @@
 
       .comercio-card .card{
           margin: 0;
-          border: 0;
+          
       }
       .comercio-card .card:hover {
         border-color: rgba(0, 0, 0, 0.15);
       }
      .comercio-card .card-img-top {
-        height: 120px;
+
+        
+        width: 100%;
+        max-height: 100px;
+        overflow: hidden;
         background-image: url(../../img/comercio1.jpg);
         background-position: center center;
          display:inline-block;
-         opacity: 1;
+         opacity: .8;
          filter: alpha(opacity=100);
          transition: all 0.3 ease-in;
 }
@@ -64,14 +70,14 @@
       color: black;
       position: absolute;
       top: 0;
-      left: -1px;
+      left: 0px;
       width: 100%;
-      height: 120px;
+      height: 100px;
       opacity: 1;
       background-color: rgba(255, 255, 255,0.8);
     }
 }
-/*
+
  #pTitulo {
   margin: 0;
  }
@@ -84,14 +90,15 @@
  .pCuerpo {
   margin-top: 5px;
   margin-bottom: 15px;
- }*/
+ }
  .modal-backdrop { 
     background: #000; /* For browsers that do not support gradients */
-    opacity: 1 !important;
-    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.6) 540px, rgba(0, 0, 0, 0.99) 50px); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(rgba(0, 0, 0, 0.6) 534px, rgba(0, 0, 0, 0.99) 50px); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(rgba(0, 0, 0, 0.6) 540px, rgba(0, 0, 0, 0.99) 50px); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(rgba(0, 0, 0, 0.6) 540px, rgba(0, 0, 0, 0.99) 50px); /* Standard syntax */
+    opacity: 0.9 !important;
+    /*background: -webkit-linear-gradient(rgba(0, 0, 0, 0.6) 540px, rgba(0, 0, 0, 0.99) 50px); /* For Safari 5.1 to 6.0 
+    background: -o-linear-gradient(rgba(0, 0, 0, 0.6) 534px, rgba(0, 0, 0, 0.99) 50px);  For Opera 11.1 to 12.0 
+    background: -moz-linear-gradient(rgba(0, 0, 0, 0.6) 540px, rgba(0, 0, 0, 0.99) 50px); /* For Firefox 3.6 to 15 
+    background: linear-gradient(rgba(0, 0, 0, 0.6) 540px, rgba(0, 0, 0, 0.99) 50px); /* Standard syntax 
+    */
  }
 
   .modal {
@@ -100,6 +107,10 @@
   .modal.fade .modal-dialog {
     transform: translate(0, 0);
   }
+   .carousel-indicators li img{
+      width: 60px;
+      height: 60px;
+    }
 </style>
 <div id="modalProduct" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog px">

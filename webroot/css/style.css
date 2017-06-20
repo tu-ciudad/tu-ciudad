@@ -736,6 +736,7 @@ iframe {
     border-bottom-color: rgba(40, 44, 48, 0.3);
     border-bottom: 0;
     background-color: rgba(40, 44, 48, 1);
+    box-shadow: 0 1px 2px rgba(40, 44, 48, 1);;
 }
 .border-bot1 { /* narvar del index*/
     border-bottom-color: rgba(40, 44, 48, 0.3);
@@ -2105,7 +2106,7 @@ figure {
     color: #ffffff;
     background-color: #0cd4d2;
     opacity: 1; }*/
-    .btn.btn-default:hover, .btn.btn-default:active, .btn.btn-default:focus {
+   /* .btn.btn-default:hover, .btn.btn-default:active, .btn.btn-default:focus {
       color: #ffffff;
       background-color: #A5A5A5;
       opacity: .9;
@@ -2113,7 +2114,7 @@ figure {
       -moz-box-shadow: none;
       -ms-box-shadow: none;
       box-shadow: none;
-      /border-color: #A5A5A5; } 
+      /border-color: #A5A5A5; } */
 
 .btn.btn-default1 {
     color: #ffffff;
@@ -2644,19 +2645,26 @@ However, delay the fade out process for 2.5 seconds */
     height: auto;
     margin: 0 !important;
     width: auto;
-    box-shadow: 1px 2px 2px #D9D9D9;
+    
 
 }
 #carousel-custom .carousel-indicators li img {
     display: block;
     /opacity: 0.5;
+    display: block;
+    overflow: hidden;
+      -webkit-background-clip: padding-box;
+background-clip: padding-box;
+border: 1px solid #B1C3DA;
+border-radius: 5%
 }
 #carousel-custom .carousel-indicators li.active img {
     opacity: 1;
 }
 #carousel-custom .carousel-indicators li:hover img {
-    opacity: 0.99;
-    transform: scale(1.2);
+
+    transform: scale(1.08);
+    
 }
 #carousel-custom .carousel-outer {
     position: relative;

@@ -26,6 +26,10 @@
          list-style:none;
         
     }
+    .carousel-indicators li img{
+      width: 60px;
+      height: 60px;
+    }
 </style>
 <div id="modalProduct" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog px">

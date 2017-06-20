@@ -61,6 +61,7 @@ i {
 
 <?= $this->Html->css('dataTables.bootstrap.css') ?>
 <!-- Main -->
+ <?= $this->element('modal-product') ?>
 <div class="edit-page">
 <div class="container-fluid conmain" >
   
@@ -204,7 +205,7 @@ i {
                                                 <td class="center">
                                                 <center>
                                                 <a href="#">Editar</a> - 
-                                                <a href="#">Ver</a> - 
+                                                 <a data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">Ver</a> - 
                                                 <a href="#">Eliminar</a></td>
                                                 </center>
                                               </tr>
@@ -480,5 +481,42 @@ i {
         
     </script>
 
+<script>
+  function pmodal(elem){
+$('#caru  > .item').addClass('active');
+    var id = $(elem).attr('pid');
+        nNombre = $('#pid' + id + ' > li:nth-child(1)').text();
+        pTitulo = $('#pid' + id + ' > li:nth-child(2)').text();
+        pPrecio = $('#pid' + id + ' > li:nth-child(3)').text();
+        pCuerpo = $('#pid' + id + ' > li:nth-child(4)').text();
+        pImagen = $('#pid' + id + ' > li:nth-child(5)').text();
+        numImagen = $('#pid' + id + ' > ul > li:first-child').text();
+        //asigno los datos del producto al modal incluyendo la primer imagen
+        $('#pTitulo').text(pTitulo);
+        $('#pPrecio').text(pPrecio);
+        $('#pCuerpo').text(pCuerpo);
+        $('#caru > div > img').attr('src', pImagen);
+        $('#carui > li > img').attr('src', pImagen);
 
+          //j es la posicion de la imagen, arranca del 3 porque el 1 es la cantidad de imagenes y el 2 es la primer imagen
+         var j = 3;
+         for ( var i = 1; i < numImagen; i++ ) {
+          //agrega las imagenes que falta (elementos virtuales)
+          allImagenes = $('#pid' + id + ' > ul > li:nth-child('+ j +')').text();
+
+          $('#caru').append('<div class="item thumbnail dom">'+'<img src='+ allImagenes +' /></div>');
+         
+         $('#carui').append('<li data-target='+'#carousel-custom'+' class="dom" data-slide-to='+ i +'><img src='+ allImagenes +' /></li>');
+         j = j + 1;
+         }
+     console.log(numImagen )
+    };
+
+    $('#modalProduct').on('hidden.bs.modal', function (e) {
+      //elimina la imagenes (elementos virtuales) que crea, y deja solo la primera
+      $('.dom').remove();
+      $('#caru  > .item').addClass('active');
+      
+    });
+</script>
 

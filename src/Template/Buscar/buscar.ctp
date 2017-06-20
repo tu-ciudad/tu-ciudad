@@ -408,3 +408,4 @@ $('#caru  > .item').addClass('active');
       
     });
 </script>
+<?= dump($variable) ?>

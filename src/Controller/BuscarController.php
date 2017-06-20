@@ -26,8 +26,9 @@ class BuscarController extends AppController
         
     if ($this->request->is('get')){
         $conexion = ConnectionManager::get('default');
-        $variable = $this->request->query['productos'];
+        $comercios= 0;
         if (isset($this->request->query['productos'])){
+            $variable = $this->request->query['productos'];
             $productos=null;
             $tags = explode(' ',$this->request->query['productos']);
             foreach ($tags as $tag){
@@ -53,13 +54,15 @@ class BuscarController extends AppController
             foreach ($tags as $tag){
                 $consulta = $conexion->execute('Call traercomercios(?)',[$tag])->fetchAll('assoc');
                 foreach ($consulta as $comercio){
+                    $comercio['foto'] = '../../files/ImagenesNegocios/foto/'.$comercio['foto'];
                     $comercios[] = $comercio;
                 }
             }
             $variable = $comercios;
+            $comercios = 1;
         }
-        $this->set(compact('variable'));
-        $this->set('_serialize', ['variable']);
+        $this->set(compact('variable','comercios'));
+        $this->set('_serialize', ['variable','comercios']);
     }
 
     }

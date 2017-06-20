@@ -211,16 +211,18 @@ if (!$variable) {
     <h2><span class="title"> No encontramos lo que buscas :(</span></h2>
         <h4 style="color: #666666;">Pero no te preocupes! </h4>
     </div>
+</div>
+</div>
 <?php
 
-            }
+            } else {
 ?>
-</div>
-</div>
+
 <div class="productos-container">
 <div class="container thumbnail">
   
 <?php
+if ($comercios == 0){
  $i = 0;
  foreach ($variable as $producto): ?>
                <div class="producto1 col-xs-6 col-sm-4 col-md-3 col-lg-3"> <!-- producto -->
@@ -256,10 +258,47 @@ if (!$variable) {
 
                 <?php
                 $i=$i+1;
- endforeach; ?>
+ endforeach;
+  ?>
  <?= $this->element('modal-producto-busqueda') ?>
 </div>
 </div>
+<?php
+} else {
+   $i = 0;
+ foreach ($variable as $comercio): ?>
+                              <div class="producto1 col-xs-6 col-sm-4 col-md-3 col-lg-3"> <!-- producto -->
+        <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
+                   
+
+                    <img class="" src=<?= $comercio['foto']?> alt="">
+                    
+                    <div class="content">
+                        <h3>
+                            <span><?= $comercio['nombre'] ?></span>
+                        </h3>
+                        
+                        <h5>
+                        <a href="#" >
+                            <span><?= $comercio['descripcion'] ?></span>
+                        </a>
+                        </h5>
+                    </div>
+
+            
+        </div>
+    </div> <!-- /producto -->
+                 
+                 
+                
+
+                <?php
+                $i=$i+1;
+ endforeach;
+
+}
+}
+?>
 <hr>
 <div class="non-search">
 	<header>

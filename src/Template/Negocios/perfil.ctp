@@ -7,23 +7,24 @@
 
 <?= $this->element('jumbotron02') ?>
    
-    <div class="container-fluid" id="content">
+    <div class=" container-fluid" id="content" >
 
-        <div class="row perf">
+        <div class=" perf  " >
 
             <?= $this->element('sidebar-left') ?>
 
-            <div class="col-md-12 col-lg-7 thumbnail" align="center" id="sec0">
+            <div class="col-md-12 col-lg-7  " align="center" id="sec0" >
         
 <?= $this->element('tabla-horarios') ?>
-<hr>
+<div style="margin-bottom: 10px;"></div>
 
-<div class="productos-container">
+<div class="productos-container thumbnail ">
 <div class="container">
 <?php
  $i = 0;
  foreach ($productos as $producto): ?>
-               <div class="producto1 col-xs-6 col-sm-4 col-md-3 col-lg-4"> <!-- producto -->
+               <div class="col-xs-6 col-sm-4 col-md-3 col-lg-4"> <!-- producto -->
+               <div class="producto1">
         <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
                    
 
@@ -49,7 +50,7 @@
                     </div>
 
             
-        </div>
+        </div></div>
     </div> <!-- /producto -->
                  
                 

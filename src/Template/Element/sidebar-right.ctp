@@ -1,13 +1,15 @@
 <style>
     .recom-container {
-        right: 0;
+       max-width: 100%;
      }
 .recom-container .comercio-card {
-        margin-bottom: 10px;  
+        margin-bottom: 10px; 
+        width: 100%; 
+
      }
     
     .recom-container .card {
-        width: 300px; 
+         margin-right: 0;
         margin-left:0;       
     }
     .recom-container .card-img-top {
@@ -20,10 +22,10 @@
 
     .recom-container  .mainpage .jumbotron {
     background-color: #F8F8F8;
-    width: 300px;
+    width: 100%;
     height: 50px;
     text-align: center;
-    padding: 1px;
+    /padding: 1px;
     box-shadow:  1px 1px #ccc;
     margin-bottom: 10px;
 }
@@ -34,9 +36,12 @@
     font-size: 20px;
     /padding-bottom: 10px;
 }
+    .comercol .col-md-3 {
+        /width: 23%;
+    }
 </style>
-
-<div class="recom-container col-md-2 visible-lg">
+<div class="comercol col-lg-3 visible-lg">
+<div class="recom-container   img-responsive  ">
 
  <div class="mainpage">
     <div class="jumbotron">
@@ -85,3 +90,4 @@
 
 
 
+</div>

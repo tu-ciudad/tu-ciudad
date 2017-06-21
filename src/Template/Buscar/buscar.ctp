@@ -4,15 +4,18 @@
   */
 ?>
 <style>
+
 .buscar .header .jumbotron {
      background-color: inherit;
     background-image:url('../img/buscar.jpg') ;
     background-position: center center; 
     background-repeat: no-repeat;
+    width: 100% !important;
     height: 300px;
     text-align: center;
     box-shadow: 1px 2px 1px #ccc;
     margin-bottom: 0;
+
 }
 .buscar .header .jumbotron .jumbox  {
     margin: 0 auto;
@@ -216,17 +219,19 @@ if (!$variable) {
 <?php
 
             } else {
+              if ($comercios == 0){
 ?>
 
 <div class="productos-container">
 <div class="container thumbnail">
   
 <?php
-if ($comercios == 0){
+
  $i = 0;
  foreach ($variable as $producto): ?>
-               <div class="producto1 col-xs-6 col-sm-4 col-md-3 col-lg-3"> <!-- producto -->
-        <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
+               <div class=" col-xs-6 col-sm-4 col-md-3 col-lg-2 "> <!-- producto -->
+               <div class="producto1" >
+                       <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
                    
 
                     <img class="" src=<?= $producto['0']->foto ?> alt="">
@@ -252,6 +257,8 @@ if ($comercios == 0){
 
             
         </div>
+        </div>
+
     </div> <!-- /producto -->
                  
                 
@@ -265,30 +272,26 @@ if ($comercios == 0){
 </div>
 <?php
 } else {
+  ?>
+  <div class="container">
+
+    <div class="comercio-grid">
+  <?php
    $i = 0;
  foreach ($variable as $comercio): ?>
-                              <div class="producto1 col-xs-6 col-sm-4 col-md-3 col-lg-3"> <!-- producto -->
-        <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
-                   
 
-                    <img class="" src=<?= $comercio['foto']?> alt="">
-                    
-                    <div class="content">
-                        <h3>
-                            <span><?= $comercio['nombre'] ?></span>
-                        </h3>
-                        
-                        <h5>
-                        <a href="#" >
-                            <span><?= $comercio['descripcion'] ?></span>
-                        </a>
-                        </h5>
-                    </div>
-
-            
+ <div class="comercio-card  " >
+      <a href="../negocios/perfil/1">
+        <div class="card" style="">
+            <img class="card-img-top" src="<?= $comercio['foto']?>" alt="Card image cap">
+          <div class="card-block">
+              <h4 class="card-title"><?= $comercio['nombre'] ?></h4>
+              <p class="card-text"><?= $comercio['descripcion'] ?></p>
+            </div>
         </div>
-    </div> <!-- /producto -->
-                 
+      </a>
+      </div>
+                              
                  
                 
 
@@ -299,6 +302,7 @@ if ($comercios == 0){
 }
 }
 ?>
+</div></div>
 <hr>
 <div class="non-search">
 	<header>

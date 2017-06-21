@@ -169,8 +169,8 @@
 }
 /************************************fin-tabla-horarios************************************/
 </style>
-<div id="horarios"></div>
-<div class='col-md-12 col-centered' >
+<div id="horarios "></div>
+<div class='col-md-12 col-centered thumbnail' >
 <div class='place-schedule'>
 <div class='schedule-tab' role='tabpanel'>
 <ul class='nav nav-tabs nav-justified' role='tablist'>

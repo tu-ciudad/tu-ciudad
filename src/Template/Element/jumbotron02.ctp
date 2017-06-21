@@ -232,8 +232,8 @@ However, delay the fade out process for 2.5 seconds */
 </style>
  <!-- jumbotron nuevo fb style -->
 
-<div class="container-fluid " id="sidefix" style="padding-left: 60px; padding-right: 60px; margin-bottom: 0; padding-bottom: 0;">
-    <div class="profile clearfix thumbnail" style="padding-left: 0; padding-right: 0;"> <!-- imagenes -->
+<div class="container-fluid " id="sidefix" style="padding-left: 15px; padding-right: 15px; margin-right: 15px; margin-left: 15px; margin-bottom: 0; padding-bottom: 0;">
+    <div class="profile clearfix thumbnail " style="padding-left: 0; padding-right: 0;"> <!-- imagenes -->
         <img align="left" class="image-lg" src=<?= $fportada ?> alt="Profile image example"/>
         <!-- <div class="show-image">
         <img align="left" class="image-profile thumbnail" src=<?= $fperfil ?> id="imgf">

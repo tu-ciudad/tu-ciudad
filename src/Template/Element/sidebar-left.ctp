@@ -1,4 +1,5 @@
-<div class="col-md-2 sidebar-left visible-lg" id="sidetest">
+<div class="container-fluid col-md-2">
+<div class="sidebar-left visible-lg" id="sidetest">
                 <div class="clearfix  cucu">
                     <ul class="nav nav-stacked"  id="sidebar">
 
@@ -63,4 +64,5 @@
         </div>
         
     </div> -->
+</div>
 </div>

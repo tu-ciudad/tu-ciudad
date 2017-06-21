@@ -42,12 +42,88 @@
 
         <div id="views" align="center"> 
          <form enctype="multipart/form-data" action="/productos/add" method="post">
-    <div class="col-md-3 mleft">
-            <label for="foto1" class="btn btn-default"><i class="fa fa-upload" aria-hidden="true"></i> Foto 1</label><br>
+   
+    <style>
+
+      .mleft .col-md-3{
+          padding-left: 0; 
+          padding-right: 0;
+          max-height: 90px;
+      }
+      .label-input  {
+        width: 80px;
+        height: 80px;
+        background-color: #eee;
+        border-radius: 5px;
+        margin: 5px;
+        border: 1px solid;
+      }
+      .label-input img {
+        width: 80px;
+        height: 80px;
+        background-color: transparent;
+        border-radius: 5px;
+      } 
+      
+
+      .label-input:hover {
+        box-shadow: 1px 1px #ccc;
+      }
+      .label-input:hover:after {
+          content: "\f093"; 
+          position: absolute;
+          font-family: FontAwesome;
+          font-size: 24px;
+          top: 30px;
+          left: 37px;
+          color: white;
+          text-shadow: 0px 0px 6px black;
+      }
+     /* .labelthumb:after {
+          content: "\f093"; 
+          font-family: FontAwesome;
+          font-size: 24px;
+          left:60px;
+          position:absolute;
+          /top: 25px;
+         
+       }
+      .labelthumb {
+        border-radius: 5px;
+        /position: absolute;
+        width: 80px;
+        height: 80px;
+        top: 0;
+        left: 15px;
+
+      }
+      .labelthumb-plus {
+        width: 80px;
+        height: 80px;
+        background-color: #fafafa;
+      }
+      .labelthumb-plus:after {
+          position:absolute;
+          content: "\f067"; 
+          font-family: FontAwesome;
+          font-size: 24px;
+          left:0;
+          top: 0;
+      }
+      .fleft {
+        float: left;
+      }*/
+
+    </style>
+     <div class="row mleft" id="subimp" style="border: 1px solid;">
+          <div class="col-md-3 " >
+            <label for="foto1" class="label-input">
+            <img src="" id="resultfoto1" class="labelthumb" alt="" onchange="agregar();"></label>
             <input type="file" accept="image/*" id="foto1" name="file[]" style="display: none;" onchange="base64(this);" >
-            <img  class="thumbimg" id="resultfoto1" src="../../img/placeholder.png" />
           </div>
-               <button id="remover" class="btn btn-danger btnminus" data-toggle="tooltip" data-placement="right" title="Eliminar ultima foto">
+          
+    </div>
+            <!--    <button id="remover" class="btn btn-danger btnminus" data-toggle="tooltip" data-placement="right" title="Eliminar ultima foto">
                <span class="glyphicon glyphicon-minus"></span></button> 
                <button id="exe" class="btn btn-success btnmore" data-toggle="tooltip" title="Agregar foto">
                <span class="glyphicon glyphicon-plus"></span></button>&nbsp;
@@ -59,7 +135,7 @@
                   Post
                 </button>
               </div>
-            </div>   
+            </div> -->   
 </form>
         </div>
 
@@ -85,15 +161,15 @@
 
 var i = 1;
 $(document).ready(function(){
-    $('#exe').click(function(e){
+    $('.labelthumb').change(function(){
 
   var inpUp = '<input type="file" accept="image/*" id="foto'+(i += 1)+'" name="file[]" onchange="base64(this);" style="display: none;">';
-  var labUp = '<label for="foto'+ i +'" class="btn btn-default"><i class="fa fa-upload" aria-hidden="true"></i> Foto '+ i +'</label>';
-  var agregar = '<div class="col-md-3 mleft">'+ labUp +'<br>'+ inpUp +'<img  class="thumbimg" id="resultfoto'+ i +'" src="../../img/placeholder.png" />'+ '</div>';
+  var labUp = '<label for="foto'+ i +'" class="label-input"><img  class="labelthumb" id="resultfoto'+ i +'" src="" /></label>';
+  var agregar = '<div class="col-md-3">'+ labUp + inpUp + '</div>';
       //$('#views').append(agregar); //agrega el input con el preview adentro de views
   
         e.preventDefault();
-        $(this).before(agregar);
+        $('#subimp').append(agregar);
         $('#cant').text(i); //cantidad de imagenes
         console.log($('#cant').text());
     });
@@ -200,64 +276,8 @@ $('body').on('click', '#send', function(e){
             }, //barra de progreso fin
             success: function (data) {
               console.log(data);
-                $('#foot').removeClass('hidden'); //remueve el hidden del footer modal
-                $('.modal-body').removeClass('grdient'); //remueve el gris del modal
-                $('#divUp').addClass('hidden'); //esconde todo lo de adentro del modal
-                $('#cropPro').append(
-                  '<ul class="nav nav-tabs hidden" id="appe">'+
-                  '<li class="active hidden"><a data-toggle="tab"  href="#cont0">Cortar</a>'+
-                  '</li></ul>'); //crea pestaña 0 en hidden
-                $('#cropPro').append('<div class="tab-content" id="content">'+
-                  '<div id="cont0" class="tab-pane fade in "></div></div>'); //crea content 0 en hidden
-
-                var v = 0; //---- va a ser el numero de croppic
-                var tmp = data.split(","); //----separa la data a partir de , yguarda en tmp
-                //----asigna a tmp[i] la data separada
-                for (var i = 1; i < tmp.length; i++) {
-                  
-                  var dim = tmp[i].split("&"); //obtiene de tmp[i] las dimensiones
-                  //----dim[0]=url..dim[1]=width..dim[2]=height..
-                  //si las dimensiones son iguales no hace nada
-                  if (dim[1] === dim[2]){
-                    //console.log(dim[0]+'correcto');
-                    //----si no son iguales asigna el valor de v para los id
-                  } else {
-                    v = v + 1;
-                   // console.log(v);
-                    //console.log(dim[0]+'falso');
-                    //console.log('agrega crop de '+[v]);
-                    //----crea la pestaña para V, y su content
-                    $('#appe').append('<li><a data-toggle="tab" class="hidden" id="id'+ [v] +'" href="#cont'+ [v] +'">'+ [v] +'</a></li>');
-                    $('#content').append('<div id="cont'+ [v] +'" class="tab-pane fade in">'+'</div>');
-                    $('#cont'+[v]).append('<div id="yourId'+ [v] +'" class="cropp"></div>'+'<br>'+'<a class="btn btn-primary btnNext" >Next</a>');
-                  //----crea el croppic para 
-                 var croppicOpt = {
-                      cropUrl:'imagenes-negocios/img_crop_producto.php',  //realiza el proceso de corte
-                      outputUrlId:'output'+[v], //link de donde se guardó
-                      loadPicture: dim[0],
-                  } 
-                  var  yourId = 'yourId'+[v];
-                  var croppic = new Croppic( 'yourId'+[v] , croppicOpt);
-                  k = k + 1; //k=  la cantidad de pestañas
-                  }
-
-                  //console.log(dim);
-                 
-                 // console.log(i+":"+tmp[i]);
-                
-
-                
-
-                          
-        }
-        //--- si k no es 0., debe recortar k imagenes
-        if (k !== 0){
-        $('#cropPro').append('<h1 class="success">Debe recortar '+ [k] +' imagenes</h1>');
-        $('#bnext').removeClass('hidden');
-        window.parent.k=k; //se envia k a index.ctp
-      } else {
-         $('#cropPro').append('<h1 class="success">neinnnn</h1>');
-      }
+              
+       
          },   
             cache: false,
             contentType: false,
@@ -267,35 +287,6 @@ $('body').on('click', '#send', function(e){
         return false;
 });
 
-
-
-
-//funcion para leer los input y mostrar imagen
-// function previewFile(input) { 
-//   var preview = input.nextElementSibling;
-//   var file = input.files[0];
-//   var reader = new FileReader();
-//   reader.onloadend = function() {
-//     preview.src = reader.result; //agrega la imagen al preview del input
-//     $('#preview1').attr('src', preview.src);  //cambia la imagen de vista previa
-//   }
-//   if (file) {
-//     reader.readAsDataURL(file);
-//   } else {
-//     preview.src = "";
-//   }
-// }
-
-
-//agrega los cambios a la vista previa cuanod detecta cambios en modal:
-$('#divUp').change(function(){ 
-var name = $('input:text[name=name]').val(); //toma el valor del input name
-var desc = $('#vDesc').val(); //toma el valor del textarea de descripcion
-var fdate = $('#fecha').val();
-$('#Text2').text(name); //nombre vPrevia abajo
-$('#Text1').text(name); //nombre vPrevia hover
-$('#Text3').text(desc); //descripcion vPrevia hover
-});
 
 </script>
 <script>//pophover tooltip de botones

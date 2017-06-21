@@ -66,6 +66,7 @@ class ProductosController extends AppController
             $producto->set('cuerpo', $this->request->data['cuerpo']);
             $producto->set('negocios_id', $this->request->data['negociosid']);
             $tags = $this->request->data['tags'];
+            $cantidad =  $this->request->data['cantidad'];
             $arraytags = explode(",", $tags);
             if($this->Productos->save($producto)){
                 //traigo los ids de los tags
@@ -74,22 +75,27 @@ class ProductosController extends AppController
                 $querytags->insert(['productos_id','tags_id'])->values(['productos_id' => $producto->get('id'),
                                                                         'tags_id' => $tag])->execute();
         endforeach;
-            for($i=0; $i<count($_FILES['file']['name']); $i++){
+
+            for($i=1; $i <= $cantidad; $i++){
                 $target_path = WWW_ROOT . 'files' .DS. 'ImagenesProductos' .DS;
-                $ext = explode('.', basename( $_FILES['file']['name'][$i]));
+                //$ext = explode('.', basename( $_FILES['file']['name'][$i]));
+                $baseFromJavascript = $this->request->data['foto' . $i];
+                $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $baseFromJavascript));
                 $nombre = md5(uniqid()) . "." . $ext[count($ext)-1];
                 $target_path = $target_path . $nombre ;
-                
-                if(move_uploaded_file($_FILES['file']['tmp_name'][$i], $target_path)) {
-                    list($width, $height) = getimagesize($_FILES['file']['tmp_name'][$i] );
-                    $response_target = ',..' .DS. 'files' .DS. 'ImagenesProductos' .DS. $nombre . '&' . $width . '&' . $height;
+                //$jpeg_quality = 100;
+                if(file_put_contents($target_path . "jpg", $data)) {
+                    //$img = imagecreatefrompng($target_path . "png");
+                    //imagejpeg($img, $target_path . "jpg", $jpeg_quality);
+                    //list($width, $height) = getimagesize($_FILES['file']['tmp_name'][$i] );
+                    //$response_target = ',..' .DS. 'files' .DS. 'ImagenesProductos' .DS. $nombre . '&' . $width . '&' . $height;
                         //echo "The file has been uploaded successfully <br />";
                         //echo json_encode($response_target);
                         //foreach($response_target as $a)
-                         echo ($response_target);
+                         //echo ($response_target);
                         $query = $ImagenesProductos->query(); 
                          $query->insert(['foto','numero','productos_id'])->values([
-                        'foto' => $nombre,
+                        'foto' => $nombre . "jpg",
                         'numero' => $i,
                         'productos_id' => $producto->get('id')
                         ])

@@ -1,3 +1,7 @@
+<link rel="stylesheet" type="text/css" href="css/iEdit.css">
+<script type="text/javascript" src="js/iEdit.js"></script>
+
+
 <div class="panel panel-success">
         <div class="panel-heading">
           <div class="panel-title">
@@ -40,8 +44,8 @@
          <form enctype="multipart/form-data" action="/productos/add" method="post">
     <div class="col-md-3 mleft">
             <label for="foto1" class="btn btn-default"><i class="fa fa-upload" aria-hidden="true"></i> Foto 1</label><br>
-            <input type="file" accept="image/*" id="foto1" name="file[]" onchange="previewFile(this)" style="display: none;" >
-            <img  class="thumbimg" src="../../img/placeholder.png" />
+            <input type="file" accept="image/*" id="foto1" name="file[]" style="display: none;" onchange="base64(this);" >
+            <img  class="thumbimg" id="resultfoto1" src="../../img/placeholder.png" />
           </div>
                <button id="remover" class="btn btn-danger btnminus" data-toggle="tooltip" data-placement="right" title="Eliminar ultima foto">
                <span class="glyphicon glyphicon-minus"></span></button> 
@@ -74,7 +78,7 @@
         </div><!--/panel content-->
       </div><!--/panel-->
 
-
+<li id="cant" class="hidden">1</li>
 
 
       <script>
@@ -83,13 +87,15 @@ var i = 1;
 $(document).ready(function(){
     $('#exe').click(function(e){
 
-  var inpUp = '<input type="file" accept="image/*" id="foto'+(i += 1)+'" name="file[]" onchange="previewFile(this)" style="display: none;">';
+  var inpUp = '<input type="file" accept="image/*" id="foto'+(i += 1)+'" name="file[]" onchange="base64(this);" style="display: none;">';
   var labUp = '<label for="foto'+ i +'" class="btn btn-default"><i class="fa fa-upload" aria-hidden="true"></i> Foto '+ i +'</label>';
-  var agregar = '<div class="col-md-3 mleft">'+ labUp +'<br>'+ inpUp +'<img  class="thumbimg" src="../../img/placeholder.png" />'+ '</div>';
+  var agregar = '<div class="col-md-3 mleft">'+ labUp +'<br>'+ inpUp +'<img  class="thumbimg" id="resultfoto'+ i +'" src="../../img/placeholder.png" />'+ '</div>';
       //$('#views').append(agregar); //agrega el input con el preview adentro de views
-    
+  
         e.preventDefault();
         $(this).before(agregar);
+        $('#cant').text(i); //cantidad de imagenes
+        console.log($('#cant').text());
     });
 });
 $('#remover').click(function(e){ //funcion del boton - para borrar input
@@ -97,8 +103,26 @@ $('#remover').click(function(e){ //funcion del boton - para borrar input
     if (i > 1){
        i -=1 ; //resta 1 a i, para continuar con el orden los ID de los input
       $('form .col-md-3:last').remove(); //remueve el ultimo input
+      $('#cant').text(i);
    }
     });
+//funcion de recorte
+function base64(input){
+var img = input.files[0];
+var id = input.id;
+console.log(id);
+    if(!iEdit.open(img, true, function(res){
+      $("#result"+id).attr("src", res);      
+    })){
+      alert("Whoops! That is not an image!");
+    }
+}
+
+  
+    
+
+
+
 
 $('body').on('click', '#send', function(e){
         e.preventDefault();
@@ -124,7 +148,8 @@ $('body').on('click', '#send', function(e){
 
 
 
-        var formData = new FormData($(this).parents('form')[0]);
+        var formData = new FormData();
+        
         //console.log(formData);
         var name = $('input:text[name=name]').val(); //valor del input text name
         var desc = $('#vDesc').val(); //valor del input text id="vDesc"
@@ -138,8 +163,16 @@ $('body').on('click', '#send', function(e){
          formData.append("negociosid", nid);
          formData.append("tags", tags);
          formData.append("fecha", fdate); //""
-
-
+         var cant = $('#cant').text();
+         console.log(cant);
+         var z = 0;
+        for (var x = 0; x < cant; x++){
+          z = z + 1;
+          var srci = $('#resultfoto'+z).attr('src');
+          formData.append('foto'+z, srci);
+          console.log('foto'+z);
+        }
+        formData.append("cantidad", cant);
         $.ajax({
             url: 'productos/add',
             type: 'POST',
@@ -238,20 +271,20 @@ $('body').on('click', '#send', function(e){
 
 
 //funcion para leer los input y mostrar imagen
-function previewFile(input) { 
-  var preview = input.nextElementSibling;
-  var file = input.files[0];
-  var reader = new FileReader();
-  reader.onloadend = function() {
-    preview.src = reader.result; //agrega la imagen al preview del input
-    $('#preview1').attr('src', preview.src);  //cambia la imagen de vista previa
-  }
-  if (file) {
-    reader.readAsDataURL(file);
-  } else {
-    preview.src = "";
-  }
-}
+// function previewFile(input) { 
+//   var preview = input.nextElementSibling;
+//   var file = input.files[0];
+//   var reader = new FileReader();
+//   reader.onloadend = function() {
+//     preview.src = reader.result; //agrega la imagen al preview del input
+//     $('#preview1').attr('src', preview.src);  //cambia la imagen de vista previa
+//   }
+//   if (file) {
+//     reader.readAsDataURL(file);
+//   } else {
+//     preview.src = "";
+//   }
+// }
 
 
 //agrega los cambios a la vista previa cuanod detecta cambios en modal:

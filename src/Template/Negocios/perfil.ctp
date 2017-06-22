@@ -32,7 +32,7 @@
                     
                     <div class="content">
                         <h3>
-                            <span><?= $producto->titulo ?></span>
+                            <span><?= dump($tagsproducto) ?></span> <!-- $producto->titulo -->
                         </h3>
                         
                         <h5>

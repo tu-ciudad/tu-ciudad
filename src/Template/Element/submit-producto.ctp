@@ -1,3 +1,63 @@
+    <style>
+
+      .mleft .col-md-3{
+          padding-left: 0; 
+          padding-right: 0;
+          max-height: 90px;
+      }
+      .label-input  {
+        width: 80px;
+        height: 80px;
+        background-color: #eee;
+        border-radius: 5px;
+        margin: 5px;
+        /border: 1px solid;
+        cursor: pointer;
+      }
+      .label-input img {
+        width: 80px;
+        height: 80px;
+        background-color: transparent;
+        border-radius: 5px;
+      } 
+      
+
+      .label-input:hover {
+        box-shadow: 1px 1px #ccc;
+      }
+      .label-input:hover:after {
+          content: "\f093"; 
+          position: absolute;
+          font-family: FontAwesome;
+          font-size: 24px;
+          top: 30px;
+          left: 37px;
+          color: white;
+          text-shadow: 0px 0px 6px black;
+      }
+    
+      #subimp .close {
+        margin-right: 7px;
+        margin-top: 5px;
+        color: rgba(255, 255, 255, 1);
+        opacity: .9;
+        text-shadow: 0px 1px 2px black;
+      }
+      #subimp .close:hover {
+        margin-right: 7px;
+        margin-top: 5px;
+        color: rgba(160, 0, 0, 0.9);
+        opacity: .9;
+        text-shadow: 0px 0px 4px black;
+      }
+      .empty img {
+        background: url('../../img/placeholder.png') center center; 
+        background-size: 80px 60px;
+        background-repeat: no-repeat;
+        opacity: 0.8;
+
+      }
+    </style>
 <link rel="stylesheet" type="text/css" href="css/iEdit.css">
 <script type="text/javascript" src="js/iEdit.js"></script>
 
@@ -43,82 +103,13 @@
         <div id="views" align="center"> 
          <form enctype="multipart/form-data" action="/productos/add" method="post">
    
-    <style>
 
-      .mleft .col-md-3{
-          padding-left: 0; 
-          padding-right: 0;
-          max-height: 90px;
-      }
-      .label-input  {
-        width: 80px;
-        height: 80px;
-        background-color: #eee;
-        border-radius: 5px;
-        margin: 5px;
-        border: 1px solid;
-      }
-      .label-input img {
-        width: 80px;
-        height: 80px;
-        background-color: transparent;
-        border-radius: 5px;
-      } 
-      
-
-      .label-input:hover {
-        box-shadow: 1px 1px #ccc;
-      }
-      .label-input:hover:after {
-          content: "\f093"; 
-          position: absolute;
-          font-family: FontAwesome;
-          font-size: 24px;
-          top: 30px;
-          left: 37px;
-          color: white;
-          text-shadow: 0px 0px 6px black;
-      }
-     /* .labelthumb:after {
-          content: "\f093"; 
-          font-family: FontAwesome;
-          font-size: 24px;
-          left:60px;
-          position:absolute;
-          /top: 25px;
-         
-       }
-      .labelthumb {
-        border-radius: 5px;
-        /position: absolute;
-        width: 80px;
-        height: 80px;
-        top: 0;
-        left: 15px;
-
-      }
-      .labelthumb-plus {
-        width: 80px;
-        height: 80px;
-        background-color: #fafafa;
-      }
-      .labelthumb-plus:after {
-          position:absolute;
-          content: "\f067"; 
-          font-family: FontAwesome;
-          font-size: 24px;
-          left:0;
-          top: 0;
-      }
-      .fleft {
-        float: left;
-      }*/
-
-    </style>
-     <div class="row mleft" id="subimp" style="border: 1px solid;">
-          <div class="col-md-3 " >
+     <div class="row mleft" id="subimp" style="/border: 1px solid;">
+          <div class="col-md-3 empty" id="div1">
             <label for="foto1" class="label-input">
-            <img src="" id="resultfoto1" class="labelthumb" alt="" onchange="agregar();"></label>
+            <img src="" id="resultfoto1" class="labelthumb" alt="" onload="agregar(1);" >
+            <button type="button" class="close hidden" data-dismiss="label" onclick="cerrar(1);">×</button>
+            </label>
             <input type="file" accept="image/*" id="foto1" name="file[]" style="display: none;" onchange="base64(this);" >
           </div>
           
@@ -147,8 +138,9 @@
       </div> 
       
            
-            
-         
+          <button type="submit" id="send" class="btn btn-primary">  
+          Post
+                </button>
           
           
         </div><!--/panel content-->
@@ -156,39 +148,79 @@
 
 <li id="cant" class="hidden">1</li>
 
-
+<div id="snackbar"> <!-- cartel de success, recargar pagina -->
+<button type="button" class="close" data-dismiss="#snackbar" aria-label="Close" onclick="window.closeSnackbar();" >
+    <span aria-hidden="true"> &times;</span>
+  </button> 
+    <strong>
+      &nbsp;Carga exitosa!</a>
+    </strong> la pagina se recargara en 5 segundos&nbsp;&nbsp; </div> <!-- fin de cartel -->
       <script>
 
 var i = 1;
-$(document).ready(function(){
-    $('.labelthumb').change(function(){
 
+function agregar(num) {
+if (num >= i) {
   var inpUp = '<input type="file" accept="image/*" id="foto'+(i += 1)+'" name="file[]" onchange="base64(this);" style="display: none;">';
-  var labUp = '<label for="foto'+ i +'" class="label-input"><img  class="labelthumb" id="resultfoto'+ i +'" src="" /></label>';
-  var agregar = '<div class="col-md-3">'+ labUp + inpUp + '</div>';
+  var labUp = '<label for="foto'+ i +'" id="lab'+ i +'" class="label-input"><img  class="labelthumb" id="resultfoto'+ i +'" src=" " onload="agregar('+i+');" /><button type="button" class="close hidden" id="close'+i+'" onclick="cerrar('+i+');" >×</button></label>';
+  var agregar = '<div class="col-md-3  empty" id="div'+i+'" >'+ labUp + inpUp + '</div>';
       //$('#views').append(agregar); //agrega el input con el preview adentro de views
   
-        e.preventDefault();
+        //e.preventDefault();
         $('#subimp').append(agregar);
         $('#cant').text(i); //cantidad de imagenes
-        console.log($('#cant').text());
-    });
-});
-$('#remover').click(function(e){ //funcion del boton - para borrar input
-  e.preventDefault();
-    if (i > 1){
-       i -=1 ; //resta 1 a i, para continuar con el orden los ID de los input
-      $('form .col-md-3:last').remove(); //remueve el ultimo input
+        console.log(i);
+    }};
+
+
+
+function cerrar(num){
+//al borrar un div, le asigna sus IDs al siguiente, y asi sucesivamente
+    $('#div'+num).remove();
+  var y = num + 1;
+      k = num;
+
+  for (var j = num; j < i; j++) {
+
+    $('#div'+y).attr('id', 'div' + k);
+    $('#foto'+y).attr('id', 'foto' + k);
+    $('#resultfoto'+ y).attr('onload', 'agregar('+ k +');');
+    $('#resultfoto'+ y).attr('id', 'resultfoto' + k);
+    $('#lab'+ y).attr('for', 'foto' + k);
+    $('#lab'+ y).attr('id', 'lab' + k);
+    $('#close'+ y).attr('onclick', 'cerrar(' + k + ');');
+    $('#close'+ y).attr('id', 'close'+ k);
+    k = k + 1;
+    y = y + 1;
+
+}
+    
+  i -=1 ;
+  
+ //funcion del boton - para borrar input
+  //e.preventDefault();
+  //alert('asdasdasd');
+      //$('#div'+i).remove(); //remueve el ultimo input
+     // $(this+':parent').
+      // i -=1 ; //resta 1 a i, para continuar con el orden los ID de los input
       $('#cant').text(i);
-   }
-    });
+      console.log($('#cant').text());
+    
+    
+  };
+
 //funcion de recorte
 function base64(input){
 var img = input.files[0];
 var id = input.id;
 console.log(id);
     if(!iEdit.open(img, true, function(res){
-      $("#result"+id).attr("src", res);      
+      $("#result"+id).attr("src", res); 
+      $("#result"+id).parent().parent().removeClass('empty').addClass('full');
+      
+      
+      $('#result'+id).siblings('.close').removeClass('hidden');  
+    
     })){
       alert("Whoops! That is not an image!");
     }
@@ -239,7 +271,7 @@ $('body').on('click', '#send', function(e){
          formData.append("negociosid", nid);
          formData.append("tags", tags);
          formData.append("fecha", fdate); //""
-         var cant = $('#cant').text();
+         var cant = $('#cant').text() - 1;
          console.log(cant);
          var z = 0;
         for (var x = 0; x < cant; x++){
@@ -276,6 +308,25 @@ $('body').on('click', '#send', function(e){
             }, //barra de progreso fin
             success: function (data) {
               console.log(data);
+               
+                  // Get the snackbar DIV
+                      var x = document.getElementById("snackbar")
+
+                      // Add the "show" class to DIV
+                      x.className = "show";
+
+                      // After 3 seconds, remove the show class from DIV
+                      setTimeout(function(){ 
+                         
+                          window.location.reload()
+                          }, 5000);
+
+                     
+                 
+                  
+
+
+                  
               
        
          },   

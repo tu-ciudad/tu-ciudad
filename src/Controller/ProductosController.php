@@ -81,7 +81,7 @@ class ProductosController extends AppController
                 //$ext = explode('.', basename( $_FILES['file']['name'][$i]));
                 $baseFromJavascript = $this->request->data['foto' . $i];
                 $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $baseFromJavascript));
-                $nombre = md5(uniqid()) . "." . $ext[count($ext)-1];
+                $nombre = md5(uniqid()) . "." ;
                 $target_path = $target_path . $nombre ;
                 //$jpeg_quality = 100;
                 if(file_put_contents($target_path . "jpg", $data)) {

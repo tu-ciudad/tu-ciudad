@@ -98,8 +98,15 @@ class NegociosController extends AppController
             if (is_null($tagsnegocio)) {
              $tagsnegocio = ' ';
             }
-            $this->set(compact('negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','tagsproducto'));
-            $this->set('_serialize', ['negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','tagsproducto']);
+        $tagstable = TableRegistry::get('tags');
+        $query = $tagstable->find();
+        $data = $query->toArray();
+        $vectortags = json_encode($data);
+            if (is_null($tagsnegocio)) {
+             $tagsnegocio = ' ';
+            }
+            $this->set(compact('negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags'));
+            $this->set('_serialize', ['negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags  ']);
         }
 
     public function index()

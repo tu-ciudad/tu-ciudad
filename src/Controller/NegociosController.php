@@ -105,8 +105,8 @@ class NegociosController extends AppController
             if (is_null($tagsnegocio)) {
              $tagsnegocio = ' ';
             }
-            $this->set(compact('negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags'));
-            $this->set('_serialize', ['negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags  ']);
+            $this->set(compact('negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','tagsproducto'));
+            $this->set('_serialize', ['negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','tagsproducto']);
         }
 
     public function index()

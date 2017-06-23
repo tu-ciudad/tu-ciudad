@@ -53,6 +53,7 @@ class NegociosController extends AppController
             $productos = $query2->select(['id','titulo','cuerpo','fecha','precio'])->where(['negocios_id' => $negocio->id])->toArray();
         
             foreach($productos as $producto):
+                $productostags = null;
                 //traigo los tags del producto
                 $conexion = ConnectionManager::get('default');
                 $tagsprod = $conexion->execute('Call traertagsproductos(?)',[$producto->id])->fetchAll('assoc');
@@ -62,8 +63,8 @@ class NegociosController extends AppController
                  } else {
                   $productostags = $productostags .' '.'-'.' '. implode($tag); //recorro cada tag y lo voy concatenando
                 }
-                $tagsproducto[$i] = $productostags;
             }
+            $tagsproducto[$i] = $productostags;
             $i++;
                 //traigo las imagenes del producto
                 $query3 = TableRegistry::get('ImagenesProductos')->find(); //traigo las imagenes del producto

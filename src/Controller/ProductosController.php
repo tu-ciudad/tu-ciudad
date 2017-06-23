@@ -112,7 +112,7 @@ class ProductosController extends AppController
                     $origen = $target_path . "jpg";
                     $destino = $target_path . "jpg";
                     $destino_temporal = tempnam($tmp_path,"tmp");
-                    productosController::redimensionar_jpeg($origen, $destino_temporal, 800, 800, 85);
+                    productosController::redimensionar_jpeg($origen, $destino_temporal, 500, 500, 85);
                      
                     // guardamos la imagen
                     $fp=fopen($destino,"w");

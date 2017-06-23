@@ -93,6 +93,37 @@ class ProductosController extends AppController
                         //echo json_encode($response_target);
                         //foreach($response_target as $a)
                          //echo ($response_target);
+                    //**********************************************************************
+                    $tmp_path = WWW_ROOT . 'files' .DS. 'tmp' .DS;
+                    $origen = $target_path . "jpg";
+                    $destino = $target_path . "jpg";
+                    $destino_temporal = tempnam($tmp_path,"tmp");
+                    redimensionar_jpeg($origen, $destino_temporal, 800, 800, 85);
+                     
+                    // guardamos la imagen
+                    $fp=fopen($destino,"w");
+                    fputs($fp,fread(fopen($destino_temporal,"r"),filesize($destino_temporal)));
+                    fclose($fp);
+                     
+                    // mostramos la imagen
+                   
+                     
+                    function redimensionar_jpeg($img_original, $img_nueva, $img_nueva_anchura, $img_nueva_altura, $img_nueva_calidad)
+                    {
+                        // crear una imagen desde el original 
+                        $img = ImageCreateFromJPEG($img_original);
+                        // crear una imagen nueva 
+                        $thumb = imagecreatetruecolor($img_nueva_anchura,$img_nueva_altura);
+                        // redimensiona la imagen original copiandola en la imagen 
+                        ImageCopyResized($thumb,$img,0,0,0,0,$img_nueva_anchura,$img_nueva_altura,ImageSX($img),ImageSY($img));
+                        // guardar la nueva imagen redimensionada donde indicia $img_nueva 
+                        ImageJPEG($thumb,$img_nueva,$img_nueva_calidad);
+                        ImageDestroy($img);
+                    }
+                        
+                        unlink($destino_temporal);
+
+                        //*****************************************************************
                         $query = $ImagenesProductos->query(); 
                          $query->insert(['foto','numero','productos_id'])->values([
                         'foto' => $nombre . "jpg",

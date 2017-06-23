@@ -12,9 +12,9 @@
             code{ padding:2px 3px; background:lightyellow; }
 
             tags{
-                min-width:400px;
-                max-width:600px;
+                /width: 400px;
                 margin: 1.5em 0;
+                border-radius: 5px;
             }
 
             /* for disabling the script */

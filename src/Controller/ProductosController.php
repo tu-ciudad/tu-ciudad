@@ -103,7 +103,7 @@ class ProductosController extends AppController
                  } else{
                     echo "There was an error uploading the file, please try again! <br />";
                  }
-                   
+
                 }   
                                     //En este caso no puedo guardar el objeto, porque como es una recursion, me va a guardar el id insertado en un campo, y me va a modificar siempre el mismo registro, guardandome la ultima foto, porque contiene el id de la primera insercion. La guardo despues del for asi hago un insert con todos los valores
             }

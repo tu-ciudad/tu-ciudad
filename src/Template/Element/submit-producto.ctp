@@ -1,3 +1,5 @@
+        <?= $this->Html->css('iEdit.css') ?>
+<?= $this->Html->script('iEdit') ?>
     <style>
 
       .mleft .col-md-3{
@@ -58,8 +60,8 @@
 
       }
     </style>
-<link rel="stylesheet" type="text/css" href="css/iEdit.css">
-<script type="text/javascript" src="js/iEdit.js"></script>
+
+
 
 
 <div class="panel panel-success">
@@ -282,7 +284,7 @@ $('body').on('click', '#send', function(e){
         }
         formData.append("cantidad", cant);
         $.ajax({
-            url: 'productos/add',
+            url: '../../productos/add',
             type: 'POST',
             data: formData, //data que envia
             async: true, //para la barra de progreso

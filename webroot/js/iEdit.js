@@ -36,7 +36,7 @@ $(document).ready(function(){
 		grcy: null,
 		callback: null,
 		imageType: null,
-		imageQuality: 1,
+		imageQuality: 0.85,
 
 		//Open the Image Editor with appropriate settings
 		open: function(imgObj, square, callback, imageType, imageQuality){

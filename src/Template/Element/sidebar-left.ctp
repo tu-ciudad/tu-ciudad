@@ -27,15 +27,16 @@
                             <br>
                             <li class="label label-gray" >Categorías  <i class="glyphicon glyphicon-tags"></i></li>
                        <div class="nav categorias">
-                            
-                            <li><a href="#">asdasd</a></li>
-                            <li><a href="#">asdasd</a></li>
-                            <li><a href="#">2123</a></li>
-                            <li><a href="#">asd12</a></li>
-                            <li><a href="#">ghgfh</a></li>
-                            <li><a href="#">45dfdf</a></li>
-                            <li><a href="#">g3235f gghdfbg</a></li>
-                            <li><a href="#">g435f</a></li>
+                            <?php
+                             $i = 0;
+                             foreach ($tagsproducto as $tags): ?>
+
+                            <li><a href="#"><?= $tags ?></a></li>
+
+
+                             <?php
+                                $i=$i+1;
+                             endforeach; ?>
                        </div>
                     </ul>
 

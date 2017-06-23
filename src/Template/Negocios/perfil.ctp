@@ -7,13 +7,13 @@
 
 <?= $this->element('jumbotron02') ?>
    
-    <div class=" container-fluid" id="content" >
+    <div class=" container-fluid" id="content" style="padding-right: 0; padding-left: 0;">
 
         <div class=" perf  " >
 
             <?= $this->element('sidebar-left') ?>
 
-            <div class="col-md-12 col-lg-7  " align="center" id="sec0" >
+            <div class="col-md-12 col-lg-7  " align="center" id="sec0" style="padding-right: 0; padding-left: 0;">
         
 <?= $this->element('tabla-horarios') ?>
 <div style="margin-bottom: 10px;"></div>
@@ -32,7 +32,7 @@
                     
                     <div class="content">
                         <h3>
-                            <span><?= dump($tagsproducto) ?></span> <!-- $producto->titulo -->
+                            <span><?= $producto->titulo ?></span> <!-- $producto->titulo -->
                         </h3>
                         
                         <h5>

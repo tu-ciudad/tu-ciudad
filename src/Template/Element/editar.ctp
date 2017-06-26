@@ -355,7 +355,7 @@ i {
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <h4 class="modal-title">Portada</h4>
       </div>
-      <form enctype="multipart/form-data" action="/productos/add" method="post">
+      <form enctype="multipart/form-data" action="/imagenes-negocios/add1" method="post">
       <div class="modal-body">
         <p>Editar foto de portada</p>
         <br>

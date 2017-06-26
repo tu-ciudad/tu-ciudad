@@ -2,15 +2,20 @@
   /* ==========================================================================
     /****************************jumbo nuevo only css*********************
    ========================================================================== */
+.profile {
+  margin-top: 20px;
 
+}
 .profile img.image-lg{ /*portada*/
     z-index: 0;
     width: 100%;  
     /margin-bottom: 10px;
-    height: 375px;
-    box-shadow: 1px 1px #ccc;
+    height: 400px;
+    
+    overflow: hidden;
     
 }
+
 .image-profile
 {   /*imagen perfil original*/
     margin: -125px 10px 0px 50px;
@@ -25,8 +30,16 @@
 }
 
 .profile .user {
-  position: relative;
-  padding: 0px 5px 5px;
+  position: absolute;
+  padding: 15px 5px 5px;
+  width: calc(100% - 30px);
+  bottom: 10px;
+
+/*******************gradient***********************/
+background: -moz-linear-gradient(top, rgba(250,250,250,0) 0%, rgba(250,250,250,0.5) 10%, rgba(250,250,250,1) 80%, rgba(250,250,250,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(250,250,250,0) 0%,rgba(250,250,250,0.5) 10%,rgba(250,250,250,1) 80%,rgba(250,250,250,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(250,250,250,0) 0%,rgba(250,250,250,0.5) 20%,rgba(250,250,250,.8) 80%,rgba(250,250,250,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00fafafa', endColorstr='#fafafa',GradientType=0 ); /* IE6-9 */
 }
 
 .profile .actions {
@@ -232,24 +245,12 @@ However, delay the fade out process for 2.5 seconds */
 </style>
  <!-- jumbotron nuevo fb style -->
 
-<div class="container-fluid " id="sidefix" style="min-width:500px; padding-left: 15px; padding-right: 15px;  margin-bottom: 0; padding-bottom: 0;">
-    <div class="profile clearfix thumbnail " style="padding-left: 0; padding-right: 0;"> <!-- imagenes -->
+<div class="container-fluid " id="sidefix" style="position: relative; min-width:500px; padding-left: 15px; padding-right: 15px;  margin-bottom: 0; padding-bottom: 0;">
+    <div class="profile clearfix  " style="padding-left: 0; padding-right: 0;"> <!-- imagenes -->
         <img align="left" class="image-lg" src=<?= $fportada ?> alt="Profile image example"/>
-        <!-- <div class="show-image">
-        <img align="left" class="image-profile thumbnail" src=<?= $fperfil ?> id="imgf">
-          <button class="update btn btn-default btnmodal" data-toggle="modal" data-target="#myModal">
-          <span class="glyphicon glyphicon-camera glyphicon glyphicon-white"></span> Cambiar</button>
-            <div id="myModal" class="modal ifrmodal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                 <div class="modal-dialog modal-lg1">
-                   <div class="modal-content">
-                                         
-                     <iframe src="" frameborder="0" class="iframe-modal" scrolling="no"></iframe>
-                     </div>
-                 </div>
-               </div>
-          </div> -->
+       
         <div class="user"> 
-        <div class="profile-text clearfix">
+        <div class="profile-text clearfix" >
             <h1><?= $negocio->nombre ?></h1> <!-- texto local + info -->
             
              
@@ -289,6 +290,9 @@ However, delay the fade out process for 2.5 seconds */
                  <button class="btn btn-default btn-md tip btn-responsive" title="" data-original-title="Recommend" id="shareBtn"><span class="glyphicon glyphicon-share-alt glyphicon glyphicon-white"></span> Recomendar</button>
             </div> <!-- /botones derecha -->
         </div>
+
+
+
         </div>
      
     </div>

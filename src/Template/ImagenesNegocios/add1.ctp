@@ -90,7 +90,7 @@ $this->layout = 'add';
 <?= $this->Html->script('croppic') ?>
 <style>
 #yourId{ 
-        width: 400px;  /* MANDATORY */  /*ancho del div y del recorte de la imagen*/
+        width: 1024px;  /* MANDATORY */  /*ancho del div y del recorte de la imagen*/
         height: 400px; /* MANDATORY */  /*alto del div y del recorte de la imagen*/
         position: relative;  /* MANDATORY */
         

@@ -31,6 +31,19 @@ class ProductosController extends AppController
         ImageDestroy($img);
     }
 
+        public function isAuthorized($user)
+{
+    // The owner of an article can edit and delete it
+    if (in_array($this->request->getParam('action'), ['add','edit','delete'])) {
+
+        if (isset($user['rol']) && $user['rol'] === 'local') {
+            return true;
+        }
+    }
+
+    return parent::isAuthorized($user);
+}
+
     public function index()
     {
         $this->paginate = [
@@ -186,7 +199,5 @@ class ProductosController extends AppController
         } else {
             $this->Flash->error(__('The producto could not be deleted. Please, try again.'));
         }
-
-        return $this->redirect(['action' => 'index']);
     }
 }

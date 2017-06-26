@@ -201,9 +201,9 @@ i {
                                                 <td class="center" style="margin: 0; padding: 2px;"><img class="" src=<?= $imagenesproductos[$i][0]->foto ?> alt="" style="width: 40px; border: 1px solid #ccc; "></td>
                                                 <td class="center">
                                                 <center>
-                                                <a href="#">Editar</a> - 
+                                                <?= $this->Html->link(__('Editar'), ['controller'=>'productos','action' => 'edit', $producto->id]) ?> - 
                                                 <a data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">Ver</a> - 
-                                                <a href="#">Eliminar</a></td>
+                                                <?= $this->Form->postLink(__('Eliminar'), ['controller'=>'productos','action' => 'delete', $producto->id], ['confirm' => __('Are you sure you want to delete # {0}?', $producto->id)]) ?>
                                                 </center>
                                               </tr>
                                                            <!--  <img class="" src=<?= $imagenesproductos[$i][0]->foto ?> alt="">

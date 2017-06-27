@@ -147,7 +147,10 @@ i {
 
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <div class="panel-title"><h4>Foto de portada<button class="btn btn-primary" style="float: right;" data-toggle="modal" href="#cambiarPortada"><i class="glyphicon glyphicon-wrench" aria-hidden="true"></i></span> Editar</button></h4>
+                    <div class="panel-title">
+                    <h4>Foto de portada
+                    <button class="btn btn-primary" id="edportada" style="float: right;" data-toggle="modal" href="#cambiarPortada"><i class="glyphicon glyphicon-wrench" aria-hidden="true"></i></span> Editar</button>
+                    </h4>
                     </div>
                 </div>
                 <div class="panel-body" style="padding: 5px; padding-bottom: 0; margin-bottom: 0;">  
@@ -244,42 +247,8 @@ i {
                         </div>
                     </div>
                     <!--End Advanced Tables -->
-         
-  
-      
-   
     
     </div>
-    
-      
-              
-      <!--  <div class="panel panel-default">
-                  <div class="panel-heading"><h4>Processing Status</h4></div>
-                  <div class="panel-body">
-                    
-                    <small>Complete</small>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%">
-                        <span class="sr-only">72% Complete</span>
-                      </div>
-                    </div>
-                    <small>In Progress</small>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                        <span class="sr-only">20% Complete</span>
-                      </div>
-                    </div>
-                    <small>At Risk</small>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                        <span class="sr-only">80% Complete</span>
-                      </div>
-                    </div>
-
-                  </div>
-              </div>       
-       -->
-      
     
     </div><!--/col-->
     
@@ -288,7 +257,7 @@ i {
 </div><!--/container-->
 <!-- /Main -->
 
-
+<!-- *****************modals******************* -->
 
 
 <div class="modal" id="addWidgetModal">
@@ -329,14 +298,6 @@ i {
                         </tbody>
                     </table>
                
-
-
-
-
-         
-         
-          
-        
       </div>
       <div class="modal-footer">
         <a href="#" class="btn">Close</a>
@@ -348,25 +309,26 @@ i {
 </div><!-- /.modal -->
 
 
-<div class="modal" id="cambiarPortada">
+
+
+<div class="modal ifrmodal" id="cambiarPortada">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <h4 class="modal-title">Portada</h4>
       </div>
-      <form enctype="multipart/form-data" action="/imagenes-negocios/add1" method="post">
+      
       <div class="modal-body">
-        <p>Editar foto de portada</p>
-        <br>
-          <input type="file" accept="image/*" id="foto1" name="portada">
+
+        <iframe src="" frameborder="0" class="iframe-modal" scrolling="no"></iframe>
         
       </div>
       <div class="modal-footer">
         <a href="#" class="btn">Close</a>
         <button type="submit" class="btn btn-primary">Save changes</button>
       </div>
-      </form>
+      
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dalog -->
 </div><!-- /.modal -->
@@ -390,93 +352,7 @@ i {
             });
 
 </script>
-<!-- <style>
-    
- .cropp{ 
-        width: 250px;  /* MANDATORY */  /*ancho del div y del recorte de la imagen*/
-        height: 250px; /* MANDATORY */  /*alto del div y del recorte de la imagen*/
-        position: relative;  /* MANDATORY */
-        /margin: 90px auto;
-        /margin: 50px 70px 20px;
-        border: 3px  solid #FFF;
-        box-sizing: content-box;
-        -moz-box-sizing: content-box;
-        border-radius: 2px;
-        /background-image: url(../img/placeholder.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        /box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
-      } 
 
-      .cropp1{ 
-        width: 200px;  /* MANDATORY */  /*ancho del div y del recorte de la imagen*/
-        height: 200px; /* MANDATORY */  /*alto del div y del recorte de la imagen*/
-        position: relative;  /* MANDATORY */
-        /margin: 90px auto;
-        /margin: 50px 70px 20px;
-        border: 3px  solid #FFF;
-        box-sizing: content-box;
-        -moz-box-sizing: content-box;
-        border-radius: 2px;
-        /background-image: url(../img/placeholder.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        /box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
-      } 
-      
-  .thumbRes {
-    width: 100px;
-     background-color: rgb(233, 235, 238);
-    border: 3px solid rgb(233, 235, 238);
-    border-radius: 3px;
-    margin-right: 10px;
-  }          
-
-<br>
-<br>
-<br>
-   <h3 id="data"></h3>
-    
-    <div id="yourIdasd" class="cropp1"></div> -->
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!-- <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> -->
-   <!-- <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script> -->
-   
-    
-    <script>
-                var k = 0;
-                var h = 0;
-                var j = 0;
-                //---al apretar el cortar, el coppic-product.js llama a esta funcion, que esconde el content actual y muestra el siguiente
-                function cropped(){
-                h = h + 1;
-                j = h + 1;
-                k = k - 1;
-                console.log(h);
-                if (h > 0){
-                    $('#cont'+[h]).addClass('hidden');
-                    $('#cont'+[j]).addClass('active');
-                    var srch = $('#cont'+[h]+' .croppedImg').attr('src');
-                    $('#result').append('<img class="thumbRes" src="'+ srch +'">')
-                    $('#restantes').text(k);
-                }
-             };
-             //---el btnNext llama al content del primer croppic
-        $('.btnNext').click(function(){
-        $('#cropPro').prepend('<h2 style="margin: 0;">Imagenes restantes: <div id="restantes">'+[k]+'</div></h2>');
-        $('#cont1').removeClass('hidden');
-        $('#id0').addClass('hidden');
-        $('#cont1').addClass('active');
-        $('.btnNext').addClass('hidden');
-        $('.success').addClass('hidden');
-        
-
-      });
-        
-    </script>
 
 
 
@@ -517,4 +393,13 @@ $('#caru  > .item').addClass('active');
       $('#caru  > .item').addClass('active');
       
     });
+</script>
+<script> //carga el iframe al abrir el modal, y lo recarga cada ves que se abre el modal
+$('#edportada').click(function(){ //onclick en fpefil, abre modal con iframe dentro
+
+    $('.ifrmodal').on('shown.bs.modal',function(){      //correct here use 'shown.bs.modal' event which comes in bootstrap3
+  $(this).find('iframe').attr('src','/imagenes-negocios/add1')
+});
+  });
+
 </script>

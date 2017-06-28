@@ -22,24 +22,24 @@
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a class="btn-trans"<?= $this->Html->link('LOCALES', array('controller' => 'comercios', 'action' => 'index')) ?> 
-                        
+                            <a class="btn-trans" href="../../buscar?productos">
+                              PRODUCTOS
+                             </a>
+                    </li>
+                    <li>
+                        <a class="btn-trans" href="../../buscar?comercios"> 
+                        COMERCIOS
                         </a>
 
                     </li>
-                    <li>
-                            <a class="btn-trans" <?= $this->Html->link('PRODUCTOS', array('controller' => 'Articulos', 'action' => 'index')) ?> </a>
-                            </li>
-                    <li>
-                        <a class="btn-trans" <?= $this->Html->link('OFERTAS', array('controller' => 'ofertas', 'action' => 'index')) ?></a>
-                    </li>
+                    
                     <li>
                         <a class="btn-trans"<?= $this->Html->link('Tests', array('controller' => 'prueba', 'action' => 'index')) ?> 
                         
                         </a>
 
                     </li>
-                    <li class="dropdown ">
+                    <!-- <li class="dropdown ">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Links <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li>
@@ -58,7 +58,7 @@
                              <?= $this->Html->link('Negocios', array('controller' => 'Negocios', 'action' => 'index')) ?> 
                             </li>
                          </ul>
-                    </li>
+                    </li> -->
                    
                 </ul>
  <ul class="navbar-form navbar-left navi-search" role="search">

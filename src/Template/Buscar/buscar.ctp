@@ -172,20 +172,51 @@
     color: #666666;
     padding: 0 auto;
 }
-.producto1
+.comercio .header .jumbotron {
+     background-color: inherit;
+    background-image:url('../img/nature.jpg') ;
+    background-position: center center; 
+    background-repeat: no-repeat;
+    height: 300px;
+    text-align: center;
+    box-shadow: 1px 2px 1px #ccc;
+}
+.comercio .header .jumbotron .jumbox  {
+    margin: 0 auto;
+    margin-top: 0 auto;
+    background-color: rgba(248, 248, 248, 0.1);
+    /height: 500px;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 100px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 5px;
+    
+}
+    .comercio .jumbotron {
+    background-color: #F8F8F8;
+    height: 100px;
+    text-align: center;
+    padding: 1px;
+    box-shadow:  1px 1px #ccc;
+}
+.comercio .title {
+    margin-top: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+   / display: inline-block;
+   / margin-bottom: 20px;
+    font-size: 43px;
+    /padding-bottom: 10px;
+    color: #fafafa;
+    text-shadow: 1px 1px 1px rgba(1, 1, 1, 0.9);
+}
 </style>
 
-<div class="buscar">
-	<div class="header">
-    <div class="jumbotron">
-    <div class="jumbox">
-	<h1><span class="title"> Busqueda &nbsp;&nbsp;</span><img src="../img/store.png" style="top: -15px;" alt=""></h1>
-		
-	</div>
-	</div>
-	</div>
-</div>
-<div class="buscar">
+
+<!-- <div class="buscar">
 <nav class="navbar navbar-default bshadow">
   <div class="container-fluid">
     <ul class="nav navbar-nav ">
@@ -198,10 +229,10 @@
       <input type="text" name="search" placeholder="Buscar..">
       </div>
       </li> -->
-    </ul>
+  <!--  </ul>
   </div>
 </nav>
-</div>
+</div> -->
 <?php
 if (!$variable) {
 
@@ -216,20 +247,36 @@ if (!$variable) {
     </div>
 </div>
 </div>
+
+
 <?php
 
             } else {
               if ($comercios == 0){
 ?>
+<div class="buscar">
+  <div class="header">
+    <div class="jumbotron">
+    <div class="jumbox">
+  <h1><span class="title"> Busqueda &nbsp;&nbsp;</span><img src="../img/store.png" style="top: -15px;" alt=""></h1>
+    
+  </div>
+  </div>
+  </div>
+</div>
+<br>
 
-<div class="productos-container">
+ <?= $this->element('side-menu-prod') ?>
+
+
+<div class="productos-container col-md-9">
 <div class="container thumbnail">
   
 <?php
 
  $i = 0;
  foreach ($variable as $producto): ?>
-               <div class=" col-xs-6 col-sm-4 col-md-3 col-lg-2 "> <!-- producto -->
+               <div class=" col-xs-6 col-sm-4 col-md-4 col-lg-3 "> <!-- producto -->
                <div class="producto1" >
                        <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
                    
@@ -270,9 +317,55 @@ if (!$variable) {
  <?= $this->element('modal-producto-busqueda') ?>
 </div>
 </div>
+
+
+
 <?php
 } else {
   ?>
+  <div class="comercio">
+  <div class="header">
+    <div class="jumbotron">
+    <div class="jumbox">
+  <h1><span class="title"> Comercios en Guaminí &nbsp;&nbsp;</span><img src="../img/store.png" style="top: -15px;" alt=""></h1>
+    
+  </div>
+  </div>
+  </div>
+</div>
+
+  <div class="comercio">
+    <nav class="navbar navbar-default bshadow">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Todos</a></li>
+          <li><a href="#">Ropa</a></li>
+          <li><a href="#">Regaleria</a></li>
+          <li><a href="#">Electrodomesticos</a></li>
+          <li><a href="#">Bazar</a></li>
+          <li><a href="#">Jugueteria</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Más
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Page 1-1</a></li>
+              <li><a href="#">Page 1-2</a></li>
+              <li><a href="#">Page 1-3</a></li>
+            </ul>
+          </li>
+          
+          <li>
+          <div class="comercio">  
+          <input type="text" name="search" placeholder="Buscar..">
+          </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    </div>
+
+
+
   <div class="container">
 
     <div class="comercio-grid">
@@ -302,7 +395,8 @@ if (!$variable) {
 }
 }
 ?>
-</div></div>
+</div>
+</div>
 <hr>
 <div class="non-search">
 	<header>

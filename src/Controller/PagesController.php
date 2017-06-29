@@ -13,11 +13,12 @@
  * @license   http://www.opensource.org/licenses/mit-license.php MIT License
  */
 namespace App\Controller;
-
+use Cake\ORM\TableRegistry;
 use Cake\Core\Configure;
 use Cake\Network\Exception\ForbiddenException;
 use Cake\Network\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
+use Cake\Datasource\ConnectionManager;
 
 /**
  * Static content controller
@@ -55,7 +56,48 @@ class PagesController extends AppController
         if (!empty($path[1])) {
             $subpage = $path[1];
         }
-        $this->set(compact('page', 'subpage'));
+        //PARTE PRODUCTOS //////////////////////////////////////////////////////////////
+        $query = TableRegistry::get('productos')->find();
+        $i = 0;
+        $productos = null;
+        $imagenesnegocios = null;
+        $imagenesproductos = null;
+        $cantidadproductos = $query->select(['*'])->count();
+        $conexion = ConnectionManager::get('default');
+        if ($cantidadproductos > 30){
+            $productos = $conexion->execute('SELECT * FROM bd_comercios.productos order by rand() limit 30')->fetchAll('assoc');
+        } else {
+            $query = TableRegistry::get('productos')->find();
+            $productos = $query->select([])->toArray();
+        }
+        //Traigo imagenes de los productos
+        foreach($productos as $producto):
+                //traigo las imagenes del producto
+                $query3 = TableRegistry::get('ImagenesProductos')->find(); //traigo las imagenes del producto
+                $imgproductos = $query3->select(['foto','numero'])->where(['productos_id' => $producto->id])->toArray();
+                foreach($imgproductos as $imgproducto):
+                    $imgproducto->foto = '../../files/ImagenesProductos/'. $imgproducto->foto;
+                endforeach;   
+            $imagenesproductos[] = $imgproductos;
+            endforeach;
+        //PARTE LOCALES //////////////////////////////////////////////////////////////
+            $query = TableRegistry::get('negocios')->find();
+            $cantidadlocales = $query->select(['*'])->count();
+            if ($cantidadlocales > 6){
+                $negocios = $conexion->execute('SELECT * FROM bd_comercios.negocios order by rand() limit 30')->fetchAll('assoc');
+            } else {
+                $query = TableRegistry::get('negocios')->find();
+                $negocios = $query->select([])->toArray();
+            }
+            foreach($negocios as $negocio):
+                $query = TableRegistry::get('ImagenesNegocios')->find();
+                $portada = $query->select(['foto','ubicacion'])->where(['negocios_id'=>$negocio->id])->toArray();
+                $portada['0']->foto = '../../files/ImagenesNegocios/foto/'. $portada['0']->foto;
+                $imagenesnegocios[] = $portada;
+            endforeach;
+
+
+        $this->set(compact('page','subpage','productos','imagenesproductos','negocios','imagenesnegocios'));
 
         try {
             $this->render(implode('/', $path));

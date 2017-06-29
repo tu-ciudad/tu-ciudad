@@ -35,40 +35,25 @@
 </div>
     <div class="comercio-grid">
         
-            
+            <?php
+            $i = 0;
+            foreach ($negocios as $negocio) {
+            ?>
             <div class="comercio-card  " >
-            <a href="/negocios/perfil/1">
+            <a href=<?= '/negocios/perfil/'.$negocio->id?>>
                 <div class="card" style="">
-                    <img class="card-img-top" src="../../img/comercio1.jpg" alt="Card image cap">
+                    <img class="card-img-top" src=<?= $imagenesnegocios[$i]['0']->foto?> alt="Card image cap">
                     <div class="card-block">
-                        <h4 class="card-title">Comercio Name 1</h4>
-                        <p class="card-text">Some quick example text to build on the Comercio Name and make up the bulk of the card's content.</p>
+                        <h4 class="card-title"><?= $negocio->nombre?></h4>
+                        <p class="card-text"><?= $negocio->descripcion?>></p>
                     </div>
                 </div>
             </a>
             </div>
-            <div class="comercio-card " >
-            <a href="/negocios/perfil/2">
-                <div class="card" style="">
-                    <img class="card-img-top" src="../../img/comercio2.jpg" alt="Card image cap">
-                    <div class="card-block">
-                        <h4 class="card-title">Comercio Name 2</h4>
-                        <p class="card-text">Some quick example text to build on the Comercio Name and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </a>
-            </div>
-            <div class="comercio-card " >
-            <a href="/negocios/perfil/3">
-                <div class="card" style="">
-                    <img class="card-img-top" src="../../img/comercio3.jpg" alt="Card image cap">
-                    <div class="card-block">
-                        <h4 class="card-title">Comercio Name 3</h4>
-                        <p class="card-text">Some quick example text to build on the Comercio Name and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </a>
-            </div>
+            <?php
+            $i = $i+1;
+            }
+            ?>
              </div>
  <br>
           <center><a href="/comercios"><button  class="btn btn-default">Ver Todos</button></a></center> 
@@ -82,14 +67,18 @@
         </div>
    
  <div class="proDes">
+     <?php
+            $i = 0;
+            foreach ($productos as $producto) {
+            ?>
      <div class="producto">
                     <div class="card">
                         <div class="grid-top">
                             <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="../../img/productos/200x200/pi5.jpg" alt="">
+                                <img class="card img-fluid img-responsive" src=<?= $imagenesproductos[$i]['0']->foto?> alt="">
                                 <div class="b-wrapper">
                                     <h3 class="b-animate b-from-left    b-delay03 ">
-                                        <span>Shoe</span>
+                                        <span><?= $productos->titulo?></span>
                                     </h3>
                                 </div>
                             </a>
@@ -99,133 +88,11 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="producto">
-                    <div class="card">
-                        <div class="grid-top">
-                            <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="../../img/productos/200x200/pi.jpg" alt="">
-                                <div class="b-wrapper">
-                                    <h3 class="b-animate b-from-left    b-delay03 ">
-                                        <span>T-Shirt</span>
-                                    </h3>
-                                </div>
-                            </a>
-
-
-                            <p><a href="single.html">Contrary to popular</a></p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="producto">
-                    <div class="card">
-                        <div class="grid-top">
-                            <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="../../img/productos/200x200/fashion_01.jpg" alt="">
-                                <div class="b-wrapper">
-                                    <h3 class="b-animate b-from-left    b-delay03 ">
-                                        <span>Shoe</span>
-                                    </h3>
-                                </div>
-                            </a>
-
-
-                            <p><a href="single.html">Clssical Latin</a></p>
-                        </div>
-                    </div>
-                </div>
-
-           <div class="producto">
-                    <div class="card">
-                        <div class="grid-top">
-                            <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="../../img/productos/200x200/pi4.jpg" alt="">
-                                <div class="b-wrapper">
-                                    <h3 class="b-animate b-from-left    b-delay03 ">
-                                        <span>Shoe</span>
-                                    </h3>
-                                </div>
-                            </a>
-
-
-                            <p><a href="single.html">Clssical Latin</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="producto">
-                    <div class="card">
-                        <div class="grid-top">
-                            <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="../../img/productos/200x200/pi2.jpg" alt="">
-                                <div class="b-wrapper">
-                                    <h3 class="b-animate b-from-left    b-delay03 ">
-                                        <span>Bag</span>
-                                    </h3>
-                                </div>
-                            </a>
-
-
-                            <p><a href="single.html">content here</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="producto">
-                    <div class="card">
-                        <div class="grid-top">
-                            <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="../../img/productos/200x200/pi3.jpg" alt="">
-                                <div class="b-wrapper">
-                                    <h3 class="b-animate b-from-left    b-delay03 ">
-                                        <span>Shirt</span>
-                                    </h3>
-                                </div>
-                            </a>
-
-
-                            <p><a href="single.html">Seffered Alteration</a></p>
-                        </div>
-                    </div>
-                </div>
-                
-                   <div class="producto">
-                    <div class="card">
-                        <div class="grid-top">
-                            <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="../../img/productos/200x200/pi1.jpg" alt="">
-                                <div class="b-wrapper">
-                                    <h3 class="b-animate b-from-left    b-delay03 ">
-                                        <span>Shoe</span>
-                                    </h3>
-                                </div>
-                            </a>
-
-
-                            <p><a href="single.html">Clssical Latin</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="producto">
-                    <div class="card">
-                        <div class="grid-top">
-                            <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src="../../img/productos/200x200/pi2.jpg" alt="">
-                                <div class="b-wrapper">
-                                    <h3 class="b-animate b-from-left    b-delay03 ">
-                                        <span>Bag</span>
-                                    </h3>
-                                </div>
-                            </a>
-
-
-                            <p><a href="single.html">content here</a></p>
-                        </div>
-                    </div>
-                </div>
+            <?php
+            $i = $i+1;
+            }
+            ?>
+              
                 <br>
                 <br>
           <center><a class="btn btn-default" <?= $this->Html->link('Ver Más', array('controller' => 'Articulos', 'action' => 'index')) ?> </a></center> 

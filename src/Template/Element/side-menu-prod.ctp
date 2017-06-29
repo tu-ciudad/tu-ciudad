@@ -1,34 +1,8 @@
 <div class="col-md-3">
-
 	<div class="side-menu thumbnail " style="padding: 0;">
-	<div class="navbar-header">
-        <div class="brand-wrapper">
-            <!-- Hamburger -->
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-            <!-- Brand -->
-            <div class="brand-name-wrapper">
-                <div class="navbar-brand" href="#">
-                    Brand
-                </div>
-            </div>
-
-           
-
-            
-        </div>
-
-    </div>
-
 		<nav class="nav-side-menu ">
-		
-			<ul class="nav  tabs" style="margin-top: 50px;">
-				<li class="active"><a href="#tab1" data-toggle="tab">Lorem Ipsum dolor</a></li>
+			<ul class="nav  tabs">
+				<li class="active"><a href="#tab1" data-toggle="tab">Todo</a></li>
 		        <li class=""><a href="#tab2" data-toggle="tab">Lorem Ipsum dolor</a></li>
 		        <li class=""><a href="#tab3" data-toggle="tab">Lorem Ipsum dolor</a></li>
 		        <li class="dropdown">
@@ -53,12 +27,6 @@
 
 
 <style>
-	.side-menu .navbar-header {
-	  width: 100%;
-	  border-bottom: 1px solid #e7e7e7;
-	  height: 50px;
-
-	}
 	 .side-menu .open .dropdown-menu {
       position: static;
       float: none;

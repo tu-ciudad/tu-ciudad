@@ -258,7 +258,7 @@ if (!$variable) {
   <div class="header">
     <div class="jumbotron">
     <div class="jumbox">
-  <h1><span class="title"> Productos &nbsp;&nbsp;</span><img src="../img/cart.png" style="top: -15px;" alt=""></h1>
+  <h1><span class="title"> Busqueda &nbsp;&nbsp;</span><img src="../img/store.png" style="top: -15px;" alt=""></h1>
     
   </div>
   </div>

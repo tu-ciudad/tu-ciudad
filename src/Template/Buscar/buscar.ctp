@@ -258,7 +258,7 @@ if (!$variable) {
   <div class="header">
     <div class="jumbotron">
     <div class="jumbox">
-  <h1><span class="title"> Busqueda &nbsp;&nbsp;</span><img src="../img/store.png" style="top: -15px;" alt=""></h1>
+  <h1><span class="title"> Productos &nbsp;&nbsp;</span><img src="../img/cart.png" style="top: -15px;" alt=""></h1>
     
   </div>
   </div>
@@ -339,18 +339,18 @@ if (!$variable) {
       <div class="container-fluid">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Todos</a></li>
-          <li><a href="#">Ropa</a></li>
-          <li><a href="#">Regaleria</a></li>
-          <li><a href="#">Electrodomesticos</a></li>
-          <li><a href="#">Bazar</a></li>
-          <li><a href="#">Jugueteria</a></li>
+          <li><a href="?comercios=Moda">Moda</a></li>
+          <li><a href="?comercios=Regaleria">Regaleria</a></li>
+          <li><a href="?comercios=Tecnología">Tecnología</a></li>
+          <li><a href="?comercios=Bazar">Bazar</a></li>
+          <li><a href="?comercios=Jugueteria">Jugueteria</a></li>
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Más
             <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Page 1-1</a></li>
-              <li><a href="#">Page 1-2</a></li>
-              <li><a href="#">Page 1-3</a></li>
+              <li><a href="?comercios=asd">Page 1-1</a></li>
+              <li><a href="?comercios=asd">Page 1-2</a></li>
+              <li><a href="?comercios=asd">Page 1-3</a></li>
             </ul>
           </li>
           

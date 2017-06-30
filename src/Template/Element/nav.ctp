@@ -22,6 +22,11 @@
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav">
                     <li>
+                            <a class="btn-trans" href="../../../../">
+                              INICIO
+                             </a>
+                    </li>
+                    <li>
                             <a class="btn-trans" href="../../buscar?productos">
                               PRODUCTOS
                              </a>

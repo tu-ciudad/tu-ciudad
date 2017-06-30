@@ -45,7 +45,7 @@
                     <img class="card-img-top" src=<?= $imagenesnegocios[$i]['0']->foto?> alt="Card image cap">
                     <div class="card-block">
                         <h4 class="card-title"><?= $negocio->nombre?></h4>
-                        <p class="card-text"><?= $negocio->descripcion?>></p>
+                        <p class="card-text"><?= $negocio->descripcion?></p>
                     </div>
                 </div>
             </a>
@@ -66,493 +66,57 @@
         </div>
         </div>
    
- <div class="proDes">
-     <?php
-            $i = 0;
-            foreach ($productos as $producto) {
-            ?>
-     <div class="producto">
-                    <div class="card">
-                        <div class="grid-top">
-                            <a href="#!" class="b-link-stripe b-animate-go">
-                                <img class="card img-fluid img-responsive" src=<?= $imagenesproductos[$i]['0']->foto?> alt="">
-                                <div class="b-wrapper">
-                                    <h3 class="b-animate b-from-left    b-delay03 ">
-                                        <span><?= $productos->titulo?></span>
-                                    </h3>
-                                </div>
-                            </a>
 
+<div class="productos-container thumbnail" style="padding-bottom: 50px; padding-top: 15px; padding-left: 15px; padding-right: 15px;">
+    <?php
+ $i = 0;
+ foreach ($productos as $producto) { ?>
+               <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3"> <!-- producto -->
+               <div class="producto1">
+        <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
+                   
 
-                            <p><a href="single.html">readable content</a></p>
-                        </div>
+                    <img class="" src=<?= $imagenesproductos[$i]['0']->foto?> alt="">
+                    
+                    <div class="content">
+                        <h3>
+                            <span><?= $producto->titulo?></span> <!-- $producto->titulo -->
+                        </h3>
+                        
+                        <h5>
+                        <a href="#" >
+                            <span>negocio name</span>
+                        </a>
+                        </h5>
                     </div>
-                </div>
-            <?php
-            $i = $i+1;
-            }
-            ?>
+
+                    <div class="content-bot"> 
+                        
+                       <h3>  
+                            <span><?= $producto->precio?></span><sup>00</sup>
+                       </h3>
+                    </div>
+
+            
+        </div></div>
+    </div> <!-- /producto -->
+                 
+                
+
+                <?php
+                $i=$i+1;
               
-                <br>
-                <br>
-          <center><a class="btn btn-default" <?= $this->Html->link('Ver Más', array('controller' => 'Articulos', 'action' => 'index')) ?> </a></center> 
+ } ?>
+
+
+                
+          <div style="position: absolute; left: calc(50% - 40px); bottom: 15px;"><a class="btn btn-default" href="/buscar?productos"> Ver Más </a></div>
           <br>     
  </div>
-    </div>
+ </div>
+    
         
-        <div class="mainpage">
-     <div class="artDes">
-        <div class="jumbotron">
-        <h2><span class="title"> Ofertas destacadas! &nbsp;&nbsp;</span><img src="../img/discount.png" alt=""></h2>
-        </div>
-        </div>
-
-        <div class="proDes">
-            <div class="productof store style1">
-                            <div class="header">
-                                <div class="badges">
-                                    <span class="product-badge  right danger-background  semi-circle">-20%</span>
-                                </div>
-                                <figure class="layer">
-                                    <a href="javascript:void(0);">
-                                        <img class="card-img-top img-fluid img-responsive" src="../../img/productos/200x200/bags_01.jpg" alt="">
-                                    </a>
-                                </figure>
-
-                                <div class="icons ">
-                                    <h1>
-                                        -20%!!!
-
-
-
-                                    </h1>
-                                    <h2>Local #1</h2>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-gift"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-search"></i></a>
-                                    <br>
-                                </div>
-                                <ul class="countdown-product">
-                                    <li>
-                                        <span class="days">223</span>
-                                        <p>Days</p>
-                                    </li>
-                                    <li>
-                                        <span class="hours">13</span>
-                                        <p>Hours</p>
-                                    </li>
-                                    <li>
-                                        <span class="minutes">21</span>
-                                        <p>Mins</p>
-                                    </li>
-                                    <li>
-                                        <span class="seconds">26</span>
-                                        <p>Secs</p>
-                                    </li>
-                                </ul>
-                                <!-- end countdown -->
-                            </div>
-                            <div class="caption">
-                                <h6 class="regular"><a href="#">Lorem Ipsum dolor sit</a></h6>
-                                <div class="price">
-                                    <small class="amount off">$68.99</small>
-                                    <span class="amount text-primary">$59.99</span>
-                                </div>
-                                <a href="javascript:void(0);"><i class="fa fa-cart-plus mr-5"></i>Add to cart</a>
-                            </div>
-                            <!-- end caption -->
-                        </div>
-                        
-                        <div class="productof store style1">
-                            <div class="header">
-                                <div class="badges">
-                                    <span class="product-badge  right danger-background  semi-circle">-20%</span>
-                                </div>
-                                <figure class="layer">
-                                    <a href="javascript:void(0);">
-                                        <img class="card-img-top img-fluid img-responsive" src="../../img/productos/200x200/pi6.jpg" alt="">
-                                    </a>
-                                </figure>
-
-                                <div class="icons">
-                                    <h1>
-                                        -20%!!!
-
-
-
-                                    </h1>
-                                    <h2>Local #1</h2>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-gift"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-search"></i></a>
-                                    <br>
-                                </div>
-                                <ul class="countdown-product">
-                                    <li>
-                                        <span class="days">223</span>
-                                        <p>Days</p>
-                                    </li>
-                                    <li>
-                                        <span class="hours">13</span>
-                                        <p>Hours</p>
-                                    </li>
-                                    <li>
-                                        <span class="minutes">21</span>
-                                        <p>Mins</p>
-                                    </li>
-                                    <li>
-                                        <span class="seconds">26</span>
-                                        <p>Secs</p>
-                                    </li>
-                                </ul>
-                                <!-- end countdown -->
-                            </div>
-                            <div class="caption">
-                                <h6 class="regular"><a href="#">Lorem Ipsum dolor sit</a></h6>
-                                <div class="price">
-                                    <small class="amount off">$68.99</small>
-                                    <span class="amount text-primary">$59.99</span>
-                                </div>
-                                <a href="javascript:void(0);"><i class="fa fa-cart-plus mr-5"></i>Add to cart</a>
-                            </div>
-                            <!-- end caption -->
-                        </div>
-                        
-                        <div class="productof store style1">
-                            <div class="header">
-                                <div class="badges">
-                                    <span class="product-badge  right danger-background  semi-circle">-20%</span>
-                                </div>
-                                <figure class="layer">
-                                    <a href="javascript:void(0);">
-                                        <img class="card-img-top img-fluid img-responsive" src="../../img/productos/200x200/pi5.jpg" alt="">
-                                    </a>
-                                </figure>
-
-                                <div class="icons ">
-                                    <h1>
-                                        -20%!!!
-
-
-
-                                    </h1>
-                                    <h2>Local #1</h2>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-gift"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-search"></i></a>
-                                    <br>
-                                </div>
-                                <ul class="countdown-product">
-                                    <li>
-                                        <span class="days">223</span>
-                                        <p>Days</p>
-                                    </li>
-                                    <li>
-                                        <span class="hours">13</span>
-                                        <p>Hours</p>
-                                    </li>
-                                    <li>
-                                        <span class="minutes">21</span>
-                                        <p>Mins</p>
-                                    </li>
-                                    <li>
-                                        <span class="seconds">26</span>
-                                        <p>Secs</p>
-                                    </li>
-                                </ul>
-                                <!-- end countdown -->
-                            </div>
-                            <div class="caption">
-                                <h6 class="regular"><a href="#">Lorem Ipsum dolor sit</a></h6>
-                                <div class="price">
-                                    <small class="amount off">$68.99</small>
-                                    <span class="amount text-primary">$59.99</span>
-                                </div>
-                                <a href="javascript:void(0);"><i class="fa fa-cart-plus mr-5"></i>Add to cart</a>
-                            </div>
-                            <!-- end caption -->
-                        </div>
-                        
-                        <div class="productof store style1">
-                            <div class="header">
-                                <div class="badges">
-                                    <span class="product-badge  right danger-background  semi-circle">-20%</span>
-                                </div>
-                                <figure class="layer">
-                                    <a href="javascript:void(0);">
-                                        <img class="card-img-top img-fluid img-responsive" src="../../img/productos/200x200/pi4.jpg" alt="">
-                                    </a>
-                                </figure>
-
-                                <div class="icons">
-                                    <h1>
-                                        -20%!!!
-
-
-
-                                    </h1>
-                                    <h2>Local #1</h2>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-gift"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-search"></i></a>
-                                    <br>
-                                </div>
-                                <ul class="countdown-product">
-                                    <li>
-                                        <span class="days">223</span>
-                                        <p>Days</p>
-                                    </li>
-                                    <li>
-                                        <span class="hours">13</span>
-                                        <p>Hours</p>
-                                    </li>
-                                    <li>
-                                        <span class="minutes">21</span>
-                                        <p>Mins</p>
-                                    </li>
-                                    <li>
-                                        <span class="seconds">26</span>
-                                        <p>Secs</p>
-                                    </li>
-                                </ul>
-                                <!-- end countdown -->
-                            </div>
-                            <div class="caption">
-                                <h6 class="regular"><a href="#">Lorem Ipsum dolor sit</a></h6>
-                                <div class="price">
-                                    <small class="amount off">$68.99</small>
-                                    <span class="amount text-primary">$59.99</span>
-                                </div>
-                                <a href="javascript:void(0);"><i class="fa fa-cart-plus mr-5"></i>Add to cart</a>
-                            </div>
-                            <!-- end caption -->
-                        </div>
-                        <div class="productof store style1">
-                            <div class="header">
-                                <div class="badges">
-                                    <span class="product-badge  right danger-background  semi-circle">-20%</span>
-                                </div>
-                                <figure class="layer">
-                                    <a href="javascript:void(0);">
-                                        <img class="card-img-top img-fluid img-responsive" src="../../img/productos/200x200/pi3.jpg" alt="">
-                                    </a>
-                                </figure>
-
-                                <div class="icons ">
-                                    <h1>
-                                        -20%!!!
-
-
-
-                                    </h1>
-                                    <h2>Local #1</h2>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-gift"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-search"></i></a>
-                                    <br>
-                                </div>
-                                <ul class="countdown-product">
-                                    <li>
-                                        <span class="days">223</span>
-                                        <p>Days</p>
-                                    </li>
-                                    <li>
-                                        <span class="hours">13</span>
-                                        <p>Hours</p>
-                                    </li>
-                                    <li>
-                                        <span class="minutes">21</span>
-                                        <p>Mins</p>
-                                    </li>
-                                    <li>
-                                        <span class="seconds">26</span>
-                                        <p>Secs</p>
-                                    </li>
-                                </ul>
-                                <!-- end countdown -->
-                            </div>
-                            <div class="caption">
-                                <h6 class="regular"><a href="#">Lorem Ipsum dolor sit</a></h6>
-                                <div class="price">
-                                    <small class="amount off">$68.99</small>
-                                    <span class="amount text-primary">$59.99</span>
-                                </div>
-                                <a href="javascript:void(0);"><i class="fa fa-cart-plus mr-5"></i>Add to cart</a>
-                            </div>
-                            <!-- end caption -->
-                        </div>
-                        
-                        <div class="productof store style1">
-                            <div class="header">
-                                <div class="badges">
-                                    <span class="product-badge  right danger-background  semi-circle">-20%</span>
-                                </div>
-                                <figure class="layer">
-                                    <a href="javascript:void(0);">
-                                        <img class="card-img-top img-fluid img-responsive" src="../../img/productos/200x200/pi2.jpg" alt="">
-                                    </a>
-                                </figure>
-
-                                <div class="icons">
-                                    <h1>
-                                        -20%!!!
-
-
-
-                                    </h1>
-                                    <h2>Local #1</h2>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-gift"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-search"></i></a>
-                                    <br>
-                                </div>
-                                <ul class="countdown-product">
-                                    <li>
-                                        <span class="days">223</span>
-                                        <p>Days</p>
-                                    </li>
-                                    <li>
-                                        <span class="hours">13</span>
-                                        <p>Hours</p>
-                                    </li>
-                                    <li>
-                                        <span class="minutes">21</span>
-                                        <p>Mins</p>
-                                    </li>
-                                    <li>
-                                        <span class="seconds">26</span>
-                                        <p>Secs</p>
-                                    </li>
-                                </ul>
-                                <!-- end countdown -->
-                            </div>
-
-                            <div class="caption">
-                                <h6 class="regular"><a href="#">Lorem Ipsum dolor sit</a></h6>
-                                <div class="price">
-                                    <small class="amount off">$68.99</small>
-                                    <span class="amount text-primary">$59.99</span>
-                                </div>
-                                <a href="javascript:void(0);"><i class="fa fa-cart-plus mr-5"></i>Add to cart</a>
-                            </div>
-                            <!-- end caption -->
-                        </div>
-
-                        <div class="productof store style1">
-                            <div class="header">
-                                <div class="badges">
-                                    <span class="product-badge  right danger-background  semi-circle">-20%</span>
-                                </div>
-                                <figure class="layer">
-                                    <a href="javascript:void(0);">
-                                        <img class="card-img-top img-fluid img-responsive" src="../../img/productos/200x200/pi1.jpg" alt="">
-                                    </a>
-                                </figure>
-
-                                <div class="icons">
-                                    <h1>
-                                        -20%!!!
-
-
-
-                                    </h1>
-                                    <h2>Local #1</h2>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-gift"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-search"></i></a>
-                                    <br>
-                                </div>
-                                <ul class="countdown-product">
-                                    <li>
-                                        <span class="days">223</span>
-                                        <p>Days</p>
-                                    </li>
-                                    <li>
-                                        <span class="hours">13</span>
-                                        <p>Hours</p>
-                                    </li>
-                                    <li>
-                                        <span class="minutes">21</span>
-                                        <p>Mins</p>
-                                    </li>
-                                    <li>
-                                        <span class="seconds">26</span>
-                                        <p>Secs</p>
-                                    </li>
-                                </ul>
-                                <!-- end countdown -->
-                            </div>
-                            <div class="caption">
-                                <h6 class="regular"><a href="#">Lorem Ipsum dolor sit</a></h6>
-                                <div class="price">
-                                    <small class="amount off">$68.99</small>
-                                    <span class="amount text-primary">$59.99</span>
-                                </div>
-                                <a href="javascript:void(0);"><i class="fa fa-cart-plus mr-5"></i>Add to cart</a>
-                            </div>
-                            <!-- end caption -->
-                        </div>
-                        <div class="productof store style1">
-                            <div class="header">
-                                <div class="badges">
-                                    <span class="product-badge  right danger-background  semi-circle">-20%</span>
-                                </div>
-                                <figure class="layer">
-                                    <a href="javascript:void(0);">
-                                        <img class="card-img-top img-fluid img-responsive" src="../../img/productos/200x200/pi.jpg" alt="">
-                                    </a>
-                                </figure>
-
-                                <div class="icons">
-                                    <h1>
-                                        -20%!!!
-
-
-
-                                    </h1>
-                                    <h2>Local #1</h2>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-gift"></i></a>
-                                    <a class="icon semi-circle" href="javascript:void(0);" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-search"></i></a>
-                                    <br>
-                                </div>
-                                <ul class="countdown-product">
-                                    <li>
-                                        <span class="days">223</span>
-                                        <p>Days</p>
-                                    </li>
-                                    <li>
-                                        <span class="hours">13</span>
-                                        <p>Hours</p>
-                                    </li>
-                                    <li>
-                                        <span class="minutes">21</span>
-                                        <p>Mins</p>
-                                    </li>
-                                    <li>
-                                        <span class="seconds">26</span>
-                                        <p>Secs</p>
-                                    </li>
-                                </ul>
-                                <!-- end countdown -->
-                            </div>
-                            <div class="caption">
-                                <h6 class="regular"><a href="#">Lorem Ipsum dolor sit</a></h6>
-                                <div class="price">
-                                    <small class="amount off">$68.99</small>
-                                    <span class="amount text-primary">$59.99</span>
-                                </div>
-                                <a href="javascript:void(0);"><i class="fa fa-cart-plus mr-5"></i>Add to cart</a>
-                            </div>
-                            <!-- end caption -->
-                        </div>
-                        <br>
-         <br>
-          <center><a class="btn btn-default" <?= $this->Html->link('Ver Más', array('controller' => 'Ofertas', 'action' => 'index')) ?> </a></center> 
-          <br>  
-        </div>
-
-    </div>
+        
 <div class="mainpage">
      <div class="artDes">
         <div class="jumbotron">
@@ -572,5 +136,44 @@
 <br>
 <br>
 
-
+<?= $this->element('modal-product') ?>
         <?= $this->element('footer') ?>
+
+        <script>
+  function pmodal(elem){
+$('#caru  > .item').addClass('active');
+    var id = $(elem).attr('pid');
+        nNombre = $('#pid' + id + ' > li:nth-child(1)').text();
+        pTitulo = $('#pid' + id + ' > li:nth-child(2)').text();
+        pPrecio = $('#pid' + id + ' > li:nth-child(3)').text();
+        pCuerpo = $('#pid' + id + ' > li:nth-child(4)').text();
+        pImagen = $('#pid' + id + ' > li:nth-child(5)').text();
+        numImagen = $('#pid' + id + ' > ul > li:first-child').text();
+        //asigno los datos del producto al modal incluyendo la primer imagen
+        $('#pTitulo').text(pTitulo);
+        $('#pPrecio').text(pPrecio);
+        $('#pCuerpo').text(pCuerpo);
+        $('#caru > div > img').attr('src', pImagen);
+        $('#carui > li > img').attr('src', pImagen);
+
+          //j es la posicion de la imagen, arranca del 3 porque el 1 es la cantidad de imagenes y el 2 es la primer imagen
+         var j = 3;
+         for ( var i = 1; i < numImagen; i++ ) {
+          //agrega las imagenes que falta (elementos virtuales)
+          allImagenes = $('#pid' + id + ' > ul > li:nth-child('+ j +')').text();
+
+          $('#caru').append('<div class="item thumbnail dom">'+'<img src='+ allImagenes +' /></div>');
+         
+         $('#carui').append('<li data-target='+'#carousel-custom'+' class="dom" data-slide-to='+ i +'><img src='+ allImagenes +' /></li>');
+         j = j + 1;
+         }
+     console.log(numImagen )
+    };
+
+    $('#modalProduct').on('hidden.bs.modal', function (e) {
+      //elimina la imagenes (elementos virtuales) que crea, y deja solo la primera
+      $('.dom').remove();
+      $('#caru  > .item').addClass('active');
+      
+    });
+</script>

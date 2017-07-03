@@ -135,6 +135,7 @@
         $('#downf').click(function(){
             $('#footer1').removeClass('hidden');
             $('#footer2').addClass('hidden');
+            $("body").animate({"scrollTop": window.scrollY-1});
 
         });
     </script>

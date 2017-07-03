@@ -116,6 +116,11 @@
 	vertical-align: top;
 
 }
+@media (min-width: 1000px) {
+  .non-search {
+    margin-left: 350px;
+  }
+}
 .non-search .categorias h3 {
 	margin: 5px 0 8px;
 	font-size: 13px;
@@ -233,6 +238,7 @@
   </div>
 </nav>
 </div> -->
+<div>
 <?php
 if (!$variable) {
 
@@ -444,7 +450,7 @@ if (!$variable) {
 	</div>
 </div>
 
-<div style="height: 1000px;"></div>
+</div>
 
 <?= $this->element('footer') ?>
 
@@ -506,4 +512,4 @@ $('#caru  > .item').addClass('active');
       
     });
 </script>
-<?= dump($variable) ?>
+<!-- <?= dump($variable) ?> -->

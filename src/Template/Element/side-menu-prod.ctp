@@ -1,5 +1,5 @@
-<div class="col-md-3">
-	<div class="side-menu thumbnail " style="padding: 0;">
+<div class="col-md-3" id="side-menu">
+	<div class="side-menu thumbnail " style="padding: 0;" data-spy="affix" data-offset-top="280">
 	<div class="navbar-header">
         <div class="brand-wrapper">
             <!-- Hamburger -->
@@ -111,4 +111,21 @@
     cursor: grab;
     width: 190px;
 }
+#side-menu .affix {
+    top: 70px;
+}
+@media (max-width: 1000px) {
+            .affix {
+                position: static;
+            }
+        }
 </style>
+
+<script>
+    $('.side-menu').on('affix.bs.affix', function () { // before affix
+    $(this).css({
+        /*'top': headerHeight,*/    // for fixed height
+            'width': $(this).outerWidth()  // variable widths
+    });
+});
+</script>

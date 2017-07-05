@@ -10,7 +10,7 @@
                 <button class="c-hamburger c-hamburger--htx pull-right visible-xs" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                       <span>toggle menu</span>
                   </button>
-                <div class="navbar-brand  footer-distributed1 logoLink" >
+                <div class="navbar-brand  footer-distributed1 logoLink" style="margin-left: 15px;">
                <a href="/"> 
                     <h3>Tu<span>Ciudad</span></h3>
                     </a>
@@ -20,7 +20,7 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" style="float: right;">
                     <li>
                             <a class="btn-trans" href="../../../../">
                               INICIO
@@ -64,9 +64,7 @@
                             </li>
                          </ul>
                     </li> -->
-                   
-                </ul>
- <ul class="navbar-form navbar-left navi-search" role="search">
+                   <ul class="navbar-form navbar-left navi-search" role="search">
                       <form class="form-search" method="get" action="/buscar">
                                 <div class="input-group " >
                                     <input type="text" id="dato" name="productos" class="form-control hidden-sm" placeholder="Buscar...">
@@ -74,10 +72,8 @@
                                 </div>
                          </form>     
                     </ul>
-                 
-              
-                
-<ul class="nav navbar-nav navbar-right navindex" style="position: absolute; right: 100px;">
+                </ul>
+ <ul class="nav navbar-nav  navindex" >
                     <!-- 
         <li><p class="navbar-text">Already have an account?</p></li>
           -->
@@ -94,14 +90,14 @@
                                             <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
                                         </div>
                                         or
-<form method="POST" action="/users/login">
-    <fieldset>
-       <input type="text" name="email">
-       <input type="password" name="password">
-    </fieldset>
-<button type="submit">submit</button>
-</form>
-</div>
+                                            <form method="POST" action="/users/login">
+                                                <fieldset>
+                                                   <input type="text" name="email">
+                                                   <input type="password" name="password">
+                                                </fieldset>
+                                            <button type="submit">submit</button>
+                                            </form>
+                                            </div>
                                     </div>
                                     <div class="bottom text-center">
                                         New here ? <a href="#"><b>Join Us</b></a>
@@ -111,6 +107,10 @@
                         </ul>
                     </li>
                 </ul>
+                 
+              
+                
+
 
 
             </div>

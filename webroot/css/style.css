@@ -750,20 +750,10 @@ iframe {
     background-color: rgba(40, 44, 48, 0.8);
     border-color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
-    /height: 1%;
-    /width: 130px;
-    /border-radius: 5px;
-    /align-content: center;
-    /margin-right: 15px;
-    /margin-left: 100%;
-    /margin-top: 3px;
-    /box-sizing: border-box;
     font: normal, 'roboto';
     font-size: 13px;
     font-weight: bold;
     letter-spacing: 2px;
-    /word-spacing: 1px;
-    /text-align: center;
     z-index: 1000;
 }
 
@@ -1642,7 +1632,7 @@ div#social-float4 { width: 200px; position: fixed; right: 810px; bottom: 10px; b
     /z-index: 1000;
 }
 .topmap {
-   margin-top: -40px;
+   /margin-top: -40px;
    height: 128px;
    width: 128px;
    background: url('/img/map1.png')  center center ;
@@ -1650,10 +1640,11 @@ div#social-float4 { width: 200px; position: fixed; right: 810px; bottom: 10px; b
 }
 
 .location {
-    height: 70vh;
+    height: 81vh;
     background-color: #fafafa;
-    padding: 90px 15px;
-    /width: 32vh;
+    top: 25px;
+    padding: 75px 30px;
+    width: auto;
     z-index: 901;
    /box-shadow: 0px 1px 1px;
        border-right: 1px solid;

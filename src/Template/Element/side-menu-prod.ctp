@@ -30,7 +30,7 @@
     </div>
 		<nav class="nav-side-menu ">
 			<ul class="nav  tabs" style="margin-top: 50px;">
-				<li class="active"><a href="?productos=Alimentos+Bebidas" >Alimentos y Bebidas</a></li>
+				<li class="active"><a href="?productos=Alimentos+Bebidas" style="border-top: 1px solid rgba(83, 131, 211,0.5);">Alimentos y Bebidas</a></li>
 				<li class="dropdown">
 		          <a href="" class="dropdown-toggle" data-toggle="dropdown">Articulos deportivos <span class="fa fa-angle-down" style="position: absolute; top: 20%; right: 20px; font-size: 28px;"></span></a>
 		          <ul class="dropdown-menu forAnimate" role="menu">
@@ -91,7 +91,7 @@
     }
     .comercio .srch input[type=text] {
     position: absolute;
-    top: 0px;
+    top: 1px;
     width: 50px;
     box-sizing: border-box;
     border: 0px solid #ccc;
@@ -109,8 +109,23 @@
 .comercio .srch input[type=text]:focus {
     background-color: white;
     cursor: grab;
-    width: 190px;
+    width: 187px;
+
 }
+.comercio .srch input[type=text]:hover {
+   -ms-transform: scale(1.1);
+      /* IE 9 */
+      -webkit-transform: scale(1.1);
+      /* Chrome, Safari, Opera */
+      transform: scale(1.1); 
+  }
+  .comercio .srch input[type=text]:focus:hover {
+   -ms-transform: scale(1);
+      /* IE 9 */
+      -webkit-transform: scale(1);
+      /* Chrome, Safari, Opera */
+      transform: scale(1); 
+  }
 #side-menu .affix {
     top: 70px;
 }

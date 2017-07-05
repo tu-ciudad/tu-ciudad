@@ -18,7 +18,7 @@
 <?= $this->element('tabla-horarios') ?>
 <div style="margin-bottom: 10px;"></div>
 
-<div class="productos-container thumbnail ">
+<div class="productos-container thumbnail " style="padding-top: 10px;">
 <div class="container">
 <?php
  $i = 0;
@@ -103,6 +103,7 @@
 
 <div id="fbot"></div>
     <div class="col-md-2 location hidden-xs hidden-sm ">
+    <h2 class="tittle-contacto">Contacto</h2>
         <div class="topmap" alt=""></div>
         <address>
   <strong><?= $negocio->nombre ?>.</strong>
@@ -120,10 +121,10 @@
 </address>
     </div>
 
-    <section id="sec2" class="contact-section" style="height: 70vh;">
+    <section id="sec2" class="contact-section" style="height: 81vh; top: 25px;">
        
    <?= $this->element('modal-product') ?>
-
+  <h2 class="tittle-map">asdfqwe en el mapa</h2>
             <div id="map" align="center" class="col-md-8 col-md-push-1 img-rounded "></div>
 
 
@@ -137,7 +138,16 @@
     #map {
         height: 350px;
         box-shadow: 1px 1px #ccc ;
-        margin-top: 50px;
+        margin-top: 90px;
+    }
+    .tittle-map {
+      position: absolute;
+      top: 10px;
+      left: 47%;
+    }
+    .tittle-contacto{
+      position: absolute;
+      top: 10px;
     }
 </style>
 
@@ -381,4 +391,4 @@ $('#caru  > .item').addClass('active');
       
     });
 </script>
-<?= dump($productos) ?>
+<!-- <?= dump($productos) ?> -->

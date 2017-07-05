@@ -171,7 +171,7 @@
 </style>
 <div id="horarios "></div>
 <div class='col-md-12 col-centered thumbnail' >
-<div class='place-schedule'>
+<div class='place-schedule' style="margin-bottom: 0;">
 <div class='schedule-tab' role='tabpanel'>
 <ul class='nav nav-tabs nav-justified' role='tablist'>
 <li role='presentation'  name="Monday">

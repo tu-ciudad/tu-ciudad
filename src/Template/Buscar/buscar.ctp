@@ -276,7 +276,7 @@ if (!$variable) {
 
 
 <div class="productos-container col-md-9">
-<div class="container thumbnail">
+<div class="container thumbnail" style="padding-top: 15px;">
   
 <?php
 

@@ -32,7 +32,7 @@ class NegociosController extends AppController
 
     return parent::isAuthorized($user);
 }
-    private function llenar($negocio){
+    private function llenar($negocio,$orden = null){
           //traigo informacion de local
             $fportada = null;
             $fperfil = null;
@@ -50,8 +50,19 @@ class NegociosController extends AppController
             endforeach;
         //traigo informacion de productos
             $query2 = TableRegistry::get('Productos')->find();
-            $productos = $query2->select(['id','titulo','cuerpo','fecha','precio'])->where(['negocios_id' => $negocio->id])->toArray();
-        
+            switch($orden) {
+                case 1:
+                   $productos = $query2->select(['id','titulo','cuerpo','fecha','precio'])->where(['negocios_id' => $negocio->id])->order(['precio' => 'DESC'])->toArray();
+                    break;
+
+                case 2:
+                    $productos = $query2->select(['id','titulo','cuerpo','fecha','precio'])->where(['negocios_id' => $negocio->id])->order(['precio' => 'ASC'])->toArray();
+                    break;
+
+                default:
+                    $productos = $query2->select(['id','titulo','cuerpo','fecha','precio'])->where(['negocios_id' => $negocio->id])->order(['fecha' => 'DESC'])->toArray();
+            }
+       
             foreach($productos as $producto):
                 $productostags = null;
                 //traigo los tags del producto
@@ -108,7 +119,7 @@ class NegociosController extends AppController
             }
             $this->set(compact('negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','tagsproducto'));
             $this->set('_serialize', ['negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','tagsproducto']);
-        }
+    }
 
     public function index()
     {
@@ -202,6 +213,14 @@ class NegociosController extends AppController
             'contain' => []
         ]);
         negociosController::llenar($negocio);
+         if ($this->request->is('get') && $this->request->query['orden']){
+            if( $this->request->query['orden'] == 1 || $this->request->query['orden'] == 2 || $this->request->query['orden'] == 3){
+                $orden = $this->request->query['orden'];
+                negociosController::llenar($negocio,$orden);
+            } else {
+                negociosController::llenar($negocio);
+            }
+        }
         //traigo informacion de local
            
             //Ahora ya tengo la info de las imagenes y del comercio, solo la tengo que poner en el sitio.

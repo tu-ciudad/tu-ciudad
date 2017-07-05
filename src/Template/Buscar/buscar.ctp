@@ -304,7 +304,7 @@ if (!$variable) {
                     <div class="content-bot"> 
                         
                        <h3>  
-                            <span>$<?= $producto['precio'] ?></span><sup>00</sup>
+                            <span>$<?= $producto['precio'] ?></span>
                        </h3>
                     </div>
 

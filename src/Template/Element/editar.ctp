@@ -158,7 +158,7 @@ i {
         <div class="panel-heading">
           <div class="panel-title">
             <h4>Horarios
-              <button class="btn btn-primary pull" style="float: right;" data-toggle="modal" href="#addWidgetModal">
+              <button class="btn btn-primary pull" style="float: right;" data-toggle="modal" href="#cambiarhorario">
                 <i class="glyphicon glyphicon-wrench" aria-hidden="true"></i>
                  Editar
               </button>
@@ -336,6 +336,184 @@ i {
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dalog -->
   </div><!-- /.modal -->
+
+<div class="modal" id="cambiarhorario">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title">Cambiar Horarios</h4>
+
+            </div>
+            <form enctype="multipart/form-data" action="/negocios/cambiohorario" method="post">
+            <div class="modal-body" style="padding: 0;">
+            <table class="table table-striped table-hover table-bordered" style="margin: 0;">
+            <thead>
+              <tr>
+                <th></th>
+                <th style="width: 50px;">
+                Cortado</th>
+                <th>Horarios</th>
+              </tr>
+            </thead>
+                              <tbody>
+                                  <tr>
+                                      <th style="width: 50px;">Lunes:</th>
+                                      <td style="width: 50px;" >
+                                        <input type="checkbox" id="check-lunes">
+                                      </td>
+                                      <td id="td-lunes">de 
+                                        <input name="lunes1" id="lunes1" type="time" step="60" value="">
+                                         a 
+                                        <input name="lunes2" id="lunes2" type="time" step="60">
+                                       
+                                      </td>
+                                      
+                                  </tr>
+                                  <tr >
+                                      <th style="width: 50px;">Martes:</th>
+                                      <td style="width: 60px;">
+                                        <input type="checkbox" id="check-martes">
+                                      </td>
+                                     <td id="td-martes">de 
+                                        <input name="martes1" id="martes1" type="time" step="60">
+                                         a 
+                                        <input name="martes2" id="martes2" type="time" step="60">
+                                      </td>
+                                  </tr>
+                                  <tr >
+                                      <th style="width: 50px;">Miercoles:</th>
+                                      <td style="width: 60px;">
+                                        <input type="checkbox" id="check-miercoles">
+                                      </td>
+                                      <td id="td-miercoles">de 
+                                        <input name="miercoles1" id="miercoles1" type="time" step="60">
+                                         a 
+                                        <input name="miercoles2" id="miercoles2" type="time" step="60">
+                                      </td>
+                                  </tr>
+                                  <tr >
+                                      <th style="width: 50px;">Jueves:</th>
+                                      <td style="width: 60px;">
+                                        <input type="checkbox" id="check-jueves">
+                                      </td>
+                                      <td id="td-jueves">de 
+                                        <input name="jueves1" id="jueves1" type="time" step="60">
+                                         a 
+                                        <input name="jueves2" id="jueves2" type="time" step="60">
+                                      </td>
+                                  </tr>
+                                  <tr >
+                                      <th style="width: 50px;">Viernes:</th>
+                                      <td style="width: 60px;">
+                                        <input type="checkbox" id="check-viernes">
+                                      </td>
+                                      <td id="td-viernes">de 
+                                        <input name="viernes1" id="viernes1" type="time" step="60">
+                                         a 
+                                        <input name="viernes2" id="viernes2" type="time" step="60">
+                                      </td>
+                                  </tr>
+                                  <tr >
+                                      <th style="width: 50px;">Sabado:</th>
+                                      <td style="width: 60px;">
+                                        <input type="checkbox" id="check-sabado">
+                                      </td>
+                                      <td id="td-sabado">de 
+                                        <input name="sabado1" id="sabado1" type="time" step="60">
+                                         a 
+                                        <input name="sabado2" id="sabado2" type="time" step="60">
+                                      </td>
+                                  </tr>
+                                  <tr >
+                                      <th style="width: 50px;">Domingo:</th>
+                                      <td style="width: 60px;">
+                                        <input type="checkbox" id="check-domingo">
+                                      </td>
+                                      <td id="td-domingo">de 
+                                        <input name="domingo1" id="domingo1" type="time" step="60">
+                                         a 
+                                        <input name="domingo2" id="domingo2" type="time" step="60">
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                     
+            </div>
+            <div class="modal-footer">
+              <a href="#" class="btn">Close</a>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dalog -->
+      </div><!-- /.modal -->
+<script>
+$('input#check-lunes').change(function(){
+  if($("input#check-lunes").is(':checked')){
+     // Code in the case checkbox is checked.
+     $('#td-lunes').append('<div id="lunes-cortado"> y de <input name="lunes3" id="lunes3" type="time" step="60"> a <input name="lunes4" id="lunes4" type="time" step="60"></div>')
+    } else {
+      $('#lunes-cortado').remove();
+}
+});
+$('input#check-martes').change(function(){
+  if($("input#check-martes").is(':checked')){
+     // Code in the case checkbox is checked.
+     $('#td-martes').append('<div id="martes-cortado"> y de <input name="martes3" id="martes3" type="time" step="60"> a <input name="martes4" id="martes4" type="time" step="60"></div>')
+    } else {
+      $('#martes-cortado').remove();
+}
+});
+$('input#check-miercoles').change(function(){
+  if($("input#check-miercoles").is(':checked')){
+     // Code in the case checkbox is checked.
+     $('#td-miercoles').append('<div id="miercoles-cortado"> y de <input name="miercoles3" id="miercoles3" type="time" step="60"> a <input name="miercoles4" id="miercoles4" type="time" step="60"></div>')
+    } else {
+      $('#miercoles-cortado').remove();
+}
+});
+$('input#check-jueves').change(function(){
+  if($("input#check-jueves").is(':checked')){
+     // Code in the case checkbox is checked.
+     $('#td-jueves').append('<div id="jueves-cortado"> y de <input name="jueves3" id="jueves3" type="time" step="60"> a <input name="jueves4" id="jueves4" type="time" step="60"></div>')
+    } else {
+      $('#jueves-cortado').remove();
+}
+});
+$('input#check-viernes').change(function(){
+  if($("input#check-viernes").is(':checked')){
+     // Code in the case checkbox is checked.
+     $('#td-viernes').append('<div id="viernes-cortado"> y de <input name="viernes3" id="viernes3" type="time" step="60"> a <input name="viernes4" id="viernes4" type="time" step="60"></div>')
+    } else {
+      $('#viernes-cortado').remove();
+}
+});
+$('input#check-sabado').change(function(){
+  if($("input#check-sabado").is(':checked')){
+     // Code in the case checkbox is checked.
+     $('#td-sabado').append('<div id="sabado-cortado"> y de <input name="sabado3" id="sabado3" type="time" step="60"> a <input name="sabado4" id="sabado4" type="time" step="60"></div>')
+    } else {
+      $('#sabado-cortado').remove();
+}
+});
+$('input#check-domingo').change(function(){
+  if($("input#check-domingo").is(':checked')){
+     // Code in the case checkbox is checked.
+     $('#td-domingo').append('<div id="domingo-cortado"> y de <input name="domingo3" id="domingo3" type="time" step="60"> a <input name="domingo4" id="domingo4" type="time" step="60"></div>')
+    } else {
+      $('#domingo-cortado').remove();
+}
+});
+  
+    
+  
+
+</script>
+
+
+
+
 
 
 </div>

@@ -62,48 +62,43 @@ i {
 <?= $this->Html->css('dataTables.bootstrap.css') ?>
 <!-- Main -->
 <div class="edit-page">
-<div class="container-fluid conmain" >
+  <div class="container-fluid conmain" >
   
   <!-- upper section -->
-  <div class="row">
-  <div class="col-sm-4">
+    <div class="row">
+      <div class="col-sm-4">
       <!-- left -->
-      <h3><i class="glyphicon glyphicon-briefcase"></i> Productos</h3>
-      <hr>
-      
-      <!-- <ul class="nav nav-stacked">
-        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-flash"></i> Alerts</a></li>
-        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-link"></i> Links</a></li>
-        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-list-alt"></i> Reports</a></li>
-        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-book"></i> Books</a></li>
-        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-briefcase"></i> Tools</a></li>
-        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-time"></i> Real-time</a></li>
-        <li><a href="http://www.bootply.com/85861" target="ext"><i class="glyphicon glyphicon-plus"></i> Advanced..</a></li>
-      </ul> -->
-       <?= $this->element('submit-producto') ?>   
+        <h3><i class="glyphicon glyphicon-briefcase"></i> Productos</h3>
+        <hr>
+        <?= $this->element('submit-producto') ?>   
        
- <?= $this->element('modal-product') ?>   
+        <?= $this->element('modal-product') ?>   
       
     </div><!-- /span-3 -->
     <div class="col-sm-8">
         
       <!-- column 2 --> 
-       <h3><i class="glyphicon glyphicon-dashboard"></i> Información</h3>  
+      <h3><i class="glyphicon glyphicon-dashboard"></i> Información</h3>  
             
-       <hr>
+      <hr>
       
-     <div class="row">
+      <div class="row">
             <!-- center left--> 
-          <div class="col-md-6">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <div class="panel-title"><h4>Informacion de contacto<button class="btn btn-primary pull" style="float: right;" data-toggle="modal" href="#addWidgetModal"><i class="glyphicon glyphicon-wrench" aria-hidden="true"></i></span> Editar</button></h4>
-                    </div>
-                </div>
-                <div class="panel-body" style="padding: 0;">  
+        <div class="col-md-6">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <div class="panel-title">
+                <h4>Informacion de contacto
+                  <button class="btn btn-primary pull" style="float: right;" data-toggle="modal" href="#addWidgetModal">
+                    <i class="glyphicon glyphicon-wrench" aria-hidden="true"></i> Editar
+                  </button>
+                </h4>
+              </div>
+            </div>
+            <div class="panel-body" style="padding: 0;">  
                   
-                    <table class="table table-striped table-hover" style="margin-bottom: 0;">
-                        <tbody>
+              <table class="table table-striped table-hover" style="margin-bottom: 0;">
+                <tbody>
                             <tr>
                                 <th>Nombre:</th>
                                 <th><?= $negocio->nombre ?></th>
@@ -128,55 +123,89 @@ i {
                                 <th>Tags:</th>
                                 <th><?= $tagsnegocio ?></th>
                             </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div><!--/panel-->
+                </tbody>
+              </table>
+            </div>
+          </div><!--/panel-->
                        
                  <hr>
       
-      <div class="alert alert-info">
-        <button type="button" class="close" data-dismiss="alert">×</button>
-        Por favor recuerda <a href="#">Cerrar sesión</a> por razones de seguridad.
-      </div>
-<hr>
-            </div><!--/col-->
+        </div><!--/col-->
          
             <!--center-right-->
-          <div class="col-md-6">
+        <div class="col-md-6">
 
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <div class="panel-title">
-                    <h4>Foto de portada
-                    <button class="btn btn-primary" id="edportada" style="float: right;" data-toggle="modal" href="#cambiarPortada"><i class="glyphicon glyphicon-wrench" aria-hidden="true"></i></span> Editar</button>
-                    </h4>
-                    </div>
-                </div>
-                <div class="panel-body" style="padding: 5px; padding-bottom: 0; margin-bottom: 0;">  
-                    <div class=""><img src="<?= $fportada ?>" class="thumbnail img-responsive"></div>
-                </div>
-            </div><!--/panel-->
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <div class="panel-title">
+                <h4>Foto de portada
+                  <button class="btn btn-primary" id="edportada" style="float: right;" data-toggle="modal" href="#cambiarPortada"><i class="glyphicon glyphicon-wrench" aria-hidden="true"></i> Editar</button>
+                </h4>
+              </div>
+            </div>
+            <div class="panel-body" style="padding: 5px; padding-bottom: 0; margin-bottom: 0;">  
+              <div class=""><img src="<?= $fportada ?>" class="thumbnail img-responsive"></div>
+            </div>
+          </div><!--/panel-->
+        </div><!--/col-span-6-->
+      </div><!--/row-->
+    <!--/col-span-9-->
 
-             
+    <div class="row">
+      
 
-              
-       
-              
-      </div><!--/col-span-6-->
-     
-       </div><!--/row-->
-    </div><!--/col-span-9-->
-    
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <h4>Horarios
+              <button class="btn btn-primary pull" style="float: right;" data-toggle="modal" href="#addWidgetModal">
+                <i class="glyphicon glyphicon-wrench" aria-hidden="true"></i>
+                 Editar
+              </button>
+            </h4>
+          </div>
+        </div>
+        <div class="panel-body" style="padding: 0;">  
+          <table class="table table-striped table-hover table-bordered" style="margin-bottom: 0;">
+            <thead>
+              <tr>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miercoles</th>
+                <th>jueves</th>
+                <th>Viernes</th>
+                <th>Sabado</th>
+                <th>Domingo</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>08:00 a 19:00</td>
+                <td>08:00 a 19:00</td>
+                <td>08:00 a 19:00</td>
+                <td>08:00 a 19:00</td>
+                <td>08:00 a 19:00</td>
+                <td>08:00 a 19:00</td>
+                <td>Cerrado</td>
+                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div><!--/panel-->
+      
+
+    </div>
   </div><!--/row-->
+  </div>
   <hr>
   <!-- /upper section -->
   <h3><i class="glyphicon glyphicon-dashboard"></i> Productos</h3>  
             
        <hr>
-   <div id="page-inner"> 
-               
-        
+                  <div id="page-inner"> 
+
                     <div class="panel panel-info">
                         <div class="panel-heading">
                              Todos los productos
@@ -203,38 +232,13 @@ i {
                                                 <td><?= $producto->cuerpo ?></td>
                                                 <td class="center" style="margin: 0; padding: 2px;"><img class="" src=<?= $imagenesproductos[$i][0]->foto ?> alt="" style="width: 40px; border: 1px solid #ccc; "></td>
                                                 <td class="center">
-                                                <center>
-                                                <?= $this->Html->link(__('Editar'), ['controller'=>'productos','action' => 'edit', $producto->id]) ?> - 
-                                                <a data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">Ver</a> - 
-                                                <?= $this->Form->postLink(__('Eliminar'), ['controller'=>'productos','action' => 'delete', $producto->id], ['confirm' => __('Are you sure you want to delete # {0}?', $producto->id)]) ?>
-                                                </center>
+                                                  <center>
+                                                  <?= $this->Html->link(__('Editar'), ['controller'=>'productos','action' => 'edit', $producto->id]) ?> - 
+                                                  <a data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">Ver</a> - 
+                                                  <?= $this->Form->postLink(__('Eliminar'), ['controller'=>'productos','action' => 'delete', $producto->id], ['confirm' => __('Are you sure you want to delete # {0}?', $producto->id)]) ?>
+                                                  </center>
+                                                </td>
                                               </tr>
-                                                           <!--  <img class="" src=<?= $imagenesproductos[$i][0]->foto ?> alt="">
-                                                            
-                                                            <div class="content">
-                                                                <h3>
-                                                                    <span><?= $producto->titulo ?></span>
-                                                                </h3>
-                                                                
-                                                                <h5>
-                                                                <a href="#" >
-                                                                    <span><?= $negocio->nombre ?></span>
-                                                                </a>
-                                                                </h5>
-                                                            </div>
-
-                                                            <div class="content-bot"> 
-                                                                
-                                                               <h3>  
-                                                                    <span>$<?= $producto->precio ?></span><sup>00</sup>
-                                                               </h3>
-                                                            </div>
-
-                                                    
-                                                </div>
-                                            </div>  -->
-                                                         
-                                                        
 
                                                         <?php
                                                         $i=$i+1;
@@ -248,7 +252,7 @@ i {
                     </div>
                     <!--End Advanced Tables -->
     
-    </div>
+                   </div>
     
     </div><!--/col-->
     
@@ -260,78 +264,78 @@ i {
 <!-- *****************modals******************* -->
 
 
-<div class="modal" id="addWidgetModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title">Datos de contacto</h4>
-      </div>
-      <form enctype="multipart/form-data" action="/productos/add" method="post">
-      <div class="modal-body" style="padding: 0;">
-      <table class="table table-striped table-hover" style="margin: 0;">
-                        <tbody>
-                            <tr>
-                                <th>Nombre:</th>
-                                <th><input type="text" class="form-control" id="foto1" name="nombre" value="<?= $negocio->nombre ?>"></th>
-                            </tr>
-                            <tr>
-                                <th>Direccion:</th>
-                                <th><input type="text" class="form-control" id="foto1" name="direccion" value="<?= $negocio->direccion ?>"></th>
-                            </tr>
-                            <tr>
-                                <th>Descripcion:</th>
-                                <th><input type="text" class="form-control" style="height: 68px;" id="foto1" name="descripcion" value="<?= $negocio->descripcion ?>"></th>
-                            </tr>
-                            <tr>
-                                <th>Email:</th>
-                                <th><input type="text" class="form-control" id="foto1" name="email" value="<?= $negocio->email ?>"></th>
-                            </tr>
-                            <tr>
-                                <th>Telefono:</th>
-                                <th><input type="text" class="form-control" id="foto1" name="telefono" value="<?= $negocio->telefono ?>"></th>
-                            </tr>
-                            <tr>
-                                <th>Tags:</th>
-                                <th><input type="text" class="form-control" id="foto1" name="tags" value="<?= $tagsnegocio ?>"></th>
-                            </tr>
-                        </tbody>
-                    </table>
-               
-      </div>
-      <div class="modal-footer">
-        <a href="#" class="btn">Close</a>
-        <button type="submit" class="btn btn-primary">Save changes</button>
-      </div>
-      </form>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dalog -->
-</div><!-- /.modal -->
+      <div class="modal" id="addWidgetModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title">Datos de contacto</h4>
+            </div>
+            <form enctype="multipart/form-data" action="/productos/add" method="post">
+            <div class="modal-body" style="padding: 0;">
+            <table class="table table-striped table-hover" style="margin: 0;">
+                              <tbody>
+                                  <tr>
+                                      <th>Nombre:</th>
+                                      <th><input type="text" class="form-control" id="foto1" name="nombre" value="<?= $negocio->nombre ?>"></th>
+                                  </tr>
+                                  <tr>
+                                      <th>Direccion:</th>
+                                      <th><input type="text" class="form-control" id="foto1" name="direccion" value="<?= $negocio->direccion ?>"></th>
+                                  </tr>
+                                  <tr>
+                                      <th>Descripcion:</th>
+                                      <th><input type="text" class="form-control" style="height: 68px;" id="foto1" name="descripcion" value="<?= $negocio->descripcion ?>"></th>
+                                  </tr>
+                                  <tr>
+                                      <th>Email:</th>
+                                      <th><input type="text" class="form-control" id="foto1" name="email" value="<?= $negocio->email ?>"></th>
+                                  </tr>
+                                  <tr>
+                                      <th>Telefono:</th>
+                                      <th><input type="text" class="form-control" id="foto1" name="telefono" value="<?= $negocio->telefono ?>"></th>
+                                  </tr>
+                                  <tr>
+                                      <th>Tags:</th>
+                                      <th><input type="text" class="form-control" id="foto1" name="tags" value="<?= $tagsnegocio ?>"></th>
+                                  </tr>
+                              </tbody>
+                          </table>
+                     
+            </div>
+            <div class="modal-footer">
+              <a href="#" class="btn">Close</a>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dalog -->
+      </div><!-- /.modal -->
 
 
 
 
-<div class="modal ifrmodal" id="cambiarPortada">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title">Portada</h4>
-      </div>
-      
-      <div class="modal-body">
-
-        <iframe src="" frameborder="0" class="iframe-modal" scrolling="no"></iframe>
+  <div class="modal ifrmodal" id="cambiarPortada">
+    <div class="modal-dialog" style="margin-left: 50px;">
+      <div class="modal-content" style="width: 1100px; ">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title">Portada</h4>
+        </div>
         
-      </div>
-      <div class="modal-footer">
-        <a href="#" class="btn">Close</a>
-        <button type="submit" class="btn btn-primary">Save changes</button>
-      </div>
-      
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dalog -->
-</div><!-- /.modal -->
+        <div class="modal-body">
+
+          <iframe src="" frameborder="0" class="iframe-modal" scrolling="no" style="width: 1100px"></iframe>
+          
+        </div>
+        <div class="modal-footer">
+          <a href="#" class="btn">Close</a>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+        
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dalog -->
+  </div><!-- /.modal -->
 
 
 </div>

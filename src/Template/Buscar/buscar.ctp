@@ -404,7 +404,7 @@ if (!$variable) {
 </div>
 </div>
 <hr>
-<div class="non-search">
+<div class="non-search" style="margin-bottom: 30px;">
 	<header>
 		<h2 class="tittle">¡Tambien puedes buscar estas categorias!</h2>
 	</header>

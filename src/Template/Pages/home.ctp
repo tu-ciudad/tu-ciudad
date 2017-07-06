@@ -26,40 +26,7 @@
 
 
 <div class="container">
-
- <div class="mainpage">
-    <div class="jumbotron">
-    <h2><span class="title"> Comercios en Guaminí &nbsp;&nbsp;</span><img src="../img/store.png" alt=""></h2>
-        
-    </div>
-</div>
-    <div class="comercio-grid">
-        
-            <?php
-            $i = 0;
-            foreach ($negocios as $negocio) {
-            ?>
-            <div class="comercio-card  " >
-            <a href=<?= '/negocios/perfil/'.$negocio->id?>>
-                <div class="card" style="">
-                    <img class="card-img-top" src=<?= $imagenesnegocios[$i]['0']->foto?> alt="Card image cap">
-                    <div class="card-block">
-                        <h4 class="card-title"><?= $negocio->nombre?></h4>
-                        <p class="card-text"><?= $negocio->descripcion?></p>
-                    </div>
-                </div>
-            </a>
-            </div>
-            <?php
-            $i = $i+1;
-            }
-            ?>
-             </div>
- <br>
-          <center><a href="/comercios"><button  class="btn btn-default">Ver Todos</button></a></center> 
-          <br>  
-
-     <div class="mainpage">
+   <div class="mainpage">
      <div class="artDes">
         <div class="jumbotron">
         <h2><span class="title"> Articulos destacados &nbsp;&nbsp;</span><img src="../img/cart.png" alt=""></h2>
@@ -93,7 +60,7 @@
                     <div class="content-bot"> 
                         
                        <h3>  
-                            <span><?= $producto->precio?></span><sup>00</sup>
+                            <span>$<?= $producto->precio?></span><sup>00</sup>
                        </h3>
                     </div>
 
@@ -113,6 +80,39 @@
           <div style="position: absolute; left: calc(50% - 40px); bottom: 15px;"><a class="btn btn-default" href="/buscar?productos"> Ver Más </a></div>
           <br>     
  </div>
+ <div class="mainpage">
+    <div class="jumbotron">
+    <h2><span class="title"> Comercios en Guaminí &nbsp;&nbsp;</span><img src="../img/store.png" alt=""></h2>
+        
+    </div>
+</div>
+    <div class="comercio-grid">
+        
+            <?php
+            $i = 0;
+            foreach ($negocios as $negocio) {
+            ?>
+            <div class="comercio-card  " >
+            <a href=<?= '/negocios/perfil/'.$negocio->id?>>
+                <div class="card" style="">
+                    <img class="card-img-top" src=<?= $imagenesnegocios[$i]['0']->foto?> alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title"><?= $negocio->nombre?></h4>
+                        <p class="card-text"><?= $negocio->descripcion?></p>
+                    </div>
+                </div>
+            </a>
+            </div>
+            <?php
+            $i = $i+1;
+            }
+            ?>
+             </div>
+ <br>
+          <center><a href="/comercios"><button  class="btn btn-default">Ver Todos</button></a></center> 
+          <br>  
+
+  
  </div>
     
         

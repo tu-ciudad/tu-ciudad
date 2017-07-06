@@ -670,6 +670,17 @@ iframe {
 /****************fin-footer***********/
 
 /**************navbar***************/
+.flexx {
+    display: flex;
+    justify-content: center;
+}
+@media (min-width: 768px) {
+  .navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+  }
+}
 .footer-distributed2 {
     /* color de navbar */
     background-color: #292C2F;

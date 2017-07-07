@@ -228,7 +228,7 @@ class NegociosController extends AppController
             
     }
 
-        public function editar(){
+    public function editar(){
 
             if($this->Auth->user('rol') == 'local'){
                     $negocio = $this->Negocios->find()->where(['users_id' =>  $this->Auth->user('id')])->limit('1');
@@ -243,4 +243,32 @@ class NegociosController extends AppController
             }
             
     }
+    public function cambiohorario(){
+
+        if ($this->request->is('post')) {
+            $id = 2;
+            //lunes
+            if (!is_null($this->request->data['lunes1'])){
+                $lunes = $this->request->data['lunes1'];
+            } else {
+                $lunes = 'Cerrado';
+            }
+            if (!is_null($this->request->data['lunes2'])){
+                $lunes = $lunes .' '.'-'.' '. $this->request->data['lunes2'];
+            }
+
+            if (!is_null($this->request->data['lunes3'])){
+                $lunes = $lunes .' '.'|'.' ' . $this->request->data['lunes3'];
+                if (!is_null($this->request->data['lunes4'])){
+                $lunes = $lunes .' '.'-'.' '. $this->request->data['lunes4'];
+                }
+            }
+            $query = TableRegistry::get('negocios')->query();
+            $results = $query->update()->set(['lunes' => $lunes])->where(['id' => $id])->execute();
+           // $this->Negocios->update()->set(['lunes' => $lunes,'martes' => $martes,'miercoles' => $miercoles,'jueves' => $jueves,'viernes' => $viernes,'sabado' => $sabado,'domingo' => $domingo,'feriado' => $feriado])->where(['id' => $id])->execute();
+            return $this->redirect(['action' => 'index']);
+        }
+
+    }
+        
 }

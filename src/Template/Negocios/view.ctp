@@ -3,8 +3,9 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
+<div style="margin-top: 50px;"></div>
+<nav class="col-md-3" id="actions-sidebar">
+    <ul class="side-nav nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Negocio'), ['action' => 'edit', $negocio->id]) ?> </li>
         <li><?= $this->Form->postLink(__('Delete Negocio'), ['action' => 'delete', $negocio->id], ['confirm' => __('Are you sure you want to delete # {0}?', $negocio->id)]) ?> </li>
@@ -14,9 +15,9 @@
         <li><?= $this->Html->link(__('New Lugare'), ['controller' => 'Lugares', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="negocios view large-9 medium-8 columns content">
-    <h3><?= h($negocio->id) ?></h3>
-    <table class="vertical-table">
+<div class="negocios view col-md-4">
+    <!-- <h3><?= h($negocio->id) ?></h3> -->
+    <table class="vertical-table table table-striped">
         <tr>
             <th scope="row"><?= __('Nombre') ?></th>
             <td><?= h($negocio->nombre) ?></td>

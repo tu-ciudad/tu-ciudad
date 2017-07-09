@@ -3,17 +3,18 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
+<div style="margin-top: 50px;"></div>
+<nav class="col-md-3" id="actions-sidebar">
+    <ul class="side-nav nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Negocio'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Lugares'), ['controller' => 'Lugares', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Lugare'), ['controller' => 'Lugares', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="negocios index large-9 medium-8 columns content">
+<div class="negocios index col-md-9">
     <h3><?= __('Negocios') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+    <table class="table table-striped" cellpadding="0" cellspacing="0">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>

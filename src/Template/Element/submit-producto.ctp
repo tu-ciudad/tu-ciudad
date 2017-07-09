@@ -216,7 +216,7 @@ function base64(input){
 var img = input.files[0];
 var id = input.id;
 console.log(id);
-    if(!iEdit.open(img, true, function(res){
+    if(!iEdit.open(img, false, function(res){
       $("#result"+id).attr("src", res); 
       $("#result"+id).parent().parent().removeClass('empty').addClass('full');
       
@@ -265,7 +265,7 @@ $('body').on('click', '#send', function(e){
         var desc = $('#vDesc').val(); //valor del input text id="vDesc"
         var fdate = $('#fecha').val(); //valor de fecha en el input type="date" id="fecha"
         var precio = $('#precio').val(); //valor del campo de text id="precio"
-        var nid = "1"; //id de negocio 
+        var nid = <?= $negocio->id ?>; //id de negocio 
        
          formData.append("titulo", name); //agrega campo de texto dentro del formData
          formData.append("cuerpo", desc); //""

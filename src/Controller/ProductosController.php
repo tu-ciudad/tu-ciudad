@@ -108,6 +108,9 @@ class ProductosController extends AppController
                 //$ext = explode('.', basename( $_FILES['file']['name'][$i]));
                 $baseFromJavascript = $this->request->data['foto' . $i];
                 $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $baseFromJavascript));
+                $dimensions = imagecreatefromstring($data);
+                $imgx = imagesx($dimensions);
+                $imgy = imagesy($dimensions);
                 $nombre = md5(uniqid()) . "." ;
                 $target_path = $target_path . $nombre ;
                 //$jpeg_quality = 100;
@@ -125,7 +128,7 @@ class ProductosController extends AppController
                     $origen = $target_path . "jpg";
                     $destino = $target_path . "jpg";
                     $destino_temporal = tempnam($tmp_path,"tmp");
-                    productosController::redimensionar_jpeg($origen, $destino_temporal, 500, 500, 85);
+                    productosController::redimensionar_jpeg($origen, $destino_temporal, $imgx, $imgy, 85);
                      
                     // guardamos la imagen
                     $fp=fopen($destino,"w");

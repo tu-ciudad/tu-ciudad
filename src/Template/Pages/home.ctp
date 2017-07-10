@@ -3,10 +3,21 @@
   * @var \App\View\AppView $this
   */
 ?>
-<style>
+<script>
+  function dimensionar(elem){
+
+    dwidth = $(elem).width();
+    dheight = $(elem).height();
+    if(dwidth > dheight){
+      $(elem).css({'width': '100%','height': 'auto'});
+      
+      
+    }
+   console.log(dwidth +' x '+ dheight);
+  }
 
 
-</style>
+</script>
 
  <div class="mainpage">
     <div class="header">
@@ -43,7 +54,7 @@
         <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
                    
 
-                    <img class="" src=<?= $imagenesproductos[$i]['0']->foto?> alt="">
+                    <img class="" onload="dimensionar(this);" src=<?= $imagenesproductos[$i]['0']->foto?> alt="">
                     
                     <div class="content">
                         <h3>

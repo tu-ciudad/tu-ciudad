@@ -9,7 +9,7 @@
 
                         </li>
                         <li class="active"><a href="#sec0"><span class="glyphicon glyphicon-shopping-cart"></span> Articulos</a></li>
-                        <li><a href="#sec1"><span class="glyphicon glyphicon-tags"></span> Ofertas</a></li>
+                    
                         <li><a href="#sec2"><span class="glyphicon glyphicon-map-marker"></span> Ubicacion</a></li>
                         <li><a href="#horarios"><span class="glyphicon glyphicon-calendar"></span> Horarios</a></li>
                         <br>
@@ -25,19 +25,7 @@
                             
                             <br>
                             <br>
-                            <li class="label label-gray" >Categorías  <i class="glyphicon glyphicon-tags"></i></li>
-                       <div class="nav categorias">
-                            <?php
-                             $i = 0;
-                             foreach ($tagsproducto as $tags): ?>
-
-                            <li><a href="#"><?= $tags ?></a></li>
-
-
-                             <?php
-                                $i=$i+1;
-                             endforeach; ?>
-                       </div>
+                            
                     </ul>
 
                 </div>

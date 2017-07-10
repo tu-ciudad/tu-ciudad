@@ -219,7 +219,21 @@
     text-shadow: 1px 1px 1px rgba(1, 1, 1, 0.9);
 }
 </style>
+<script>
+  function dimensionar(elem){
 
+    dwidth = $(elem).width();
+    dheight = $(elem).height();
+    if(dwidth > dheight){
+      $(elem).css({'width': '100%','height': 'auto'});
+      
+      
+    }
+   console.log(dwidth +' x '+ dheight);
+  }
+
+
+</script>
 
 <!-- <div class="buscar">
 <nav class="navbar navbar-default bshadow">
@@ -287,7 +301,7 @@ if (!$variable) {
                        <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
                    
 
-                    <img class="" src=<?= $producto['0']->foto ?> alt="">
+                    <img class="" onload="dimensionar(this);" src=<?= $producto['0']->foto ?> alt="">
                     
                     <div class="content">
                         <h3>

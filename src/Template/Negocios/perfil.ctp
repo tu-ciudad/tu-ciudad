@@ -4,7 +4,21 @@
   * @var \App\View\AppView $this
   */
 ?>
+<script>
+  function dimensionar(elem){
 
+    dwidth = $(elem).width();
+    dheight = $(elem).height();
+    if(dwidth > dheight){
+      $(elem).css({'width': '100%','height': 'auto'});
+      
+      
+    }
+   console.log(dwidth +' x '+ dheight);
+  }
+
+
+</script>
 <?= $this->element('jumbotron02') ?>
    
     <div class=" container-fluid" id="content" style="padding-right: 0; padding-left: 0;">
@@ -28,7 +42,7 @@
         <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
                    
 
-                    <img class="" src=<?= $imagenesproductos[$i][0]->foto ?> alt="">
+                    <img class="" onload="dimensionar(this);" src=<?= $imagenesproductos[$i][0]->foto ?> alt="">
                     
                     <div class="content">
                         <h3>

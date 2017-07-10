@@ -259,7 +259,7 @@ However, delay the fade out process for 2.5 seconds */
          
         </div> <!-- /texto-local+info -->
         
-        <div class="profile-text " style="float: center; margin: 0 auto; margin-left: 15%; ">
+        <div class="profile-text " style="float: center; margin: 0 auto; margin-left: 5%; max-width: 420px; text-align: center; ">
           <h4>
              <?= $negocio->descripcion ?>
           </h4>

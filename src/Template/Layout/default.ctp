@@ -38,6 +38,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
      <?= $this->Html->css('normalize.css') ?>
      <?= $this->Html->css('bootstrap.css') ?>
      <?= $this->Html->css('style.css') ?>
+     <?= $this->Html->css('productos.css') ?>
      
      <?= $this->Html->css('font-awesome.min.css') ?> 
      

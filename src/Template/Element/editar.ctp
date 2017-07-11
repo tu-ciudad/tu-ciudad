@@ -180,15 +180,15 @@ i {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>08:00 a 19:00</td>
-                <td>08:00 a 19:00</td>
-                <td>08:00 a 19:00</td>
-                <td>08:00 a 19:00</td>
-                <td>08:00 a 19:00</td>
-                <td>08:00 a 19:00</td>
-                <td>Cerrado</td>
-                
+              <tr id="horarios-dia">
+                <td><?= $negocio->lunes ?></td>
+                <td><?= $negocio->martes ?></td>
+                <td><?= $negocio->miercoles ?></td>
+                <td><?= $negocio->jueves ?></td>
+                <td><?= $negocio->viernes ?></td>
+                <td><?= $negocio->sabado ?></td>
+                <td><?= $negocio->domingo ?></td>
+
               </tr>
             </tbody>
           </table>
@@ -357,7 +357,7 @@ i {
                 <th>Horarios</th>
               </tr>
             </thead>
-                              <tbody>
+                              <tbody id="horarios-edit">
                                   <tr>
                                       <th style="width: 50px;">Lunes:</th>
                                       <td style="width: 50px;" >
@@ -491,6 +491,33 @@ i {
         </div><!-- /.modal-dalog -->
       </div><!-- /.modal -->
 <script>
+for (var i = 1; i <= 7; i++) {
+  var dia = $('#horarios-dia :nth-child('+ i +')');
+  if (dia.text().indexOf('|') > -1) {
+    var diaSplit = dia.text().split(' | ');
+    var hdia1 = diaSplit[0].split(' - ');
+    var hdia2 = diaSplit[1].split(' - ');
+    $('#horarios-edit :nth-child('+ i +') :nth-child(2) :nth-child(1)').prop('checked', true);
+    $('#horarios-edit :nth-child('+ i +') :nth-child(3) :nth-child(3)').removeClass('hidden');
+    $('#horarios-edit :nth-child('+ i +') :nth-child(3) :nth-child(1)').val(hdia1[0]);
+    $('#horarios-edit :nth-child('+ i +') :nth-child(3) :nth-child(2)').val(hdia1[1]);
+    $('#horarios-edit :nth-child('+ i +') :nth-child(3) :nth-child(3) :nth-child(1)').val(hdia2[0]);
+    $('#horarios-edit :nth-child('+ i +') :nth-child(3) :nth-child(3) :nth-child(2)').val(hdia2[1]);
+
+  } else {
+    if(dia.text().indexOf('-') > -1){
+      var hdia1 = dia.text().split(' - ');
+      $('#horarios-edit :nth-child('+ i +') :nth-child(3) :nth-child(1)').val(hdia1[0]);
+      $('#horarios-edit :nth-child('+ i +') :nth-child(3) :nth-child(2)').val(hdia1[1]);
+    } else {
+      console.log('el dia '+i+' está cerrado');
+    }
+    
+  }
+  
+}
+  
+  
 
   $('input#check-lunes').change(function(){
    var dia = '#hidden_lunes';

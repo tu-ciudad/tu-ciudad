@@ -251,7 +251,7 @@ D-F
 <div class='schedule'>
 <span class='fa fa-clock-o fa-lg'></span>
 <span class='time'>
-08:00 am a 5:30 pm
+<?= $negocio->lunes ?>
 </span>
 </div>
 </div>

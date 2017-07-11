@@ -361,7 +361,7 @@ i {
                                   <tr>
                                       <th style="width: 50px;">Lunes:</th>
                                       <td style="width: 50px;" >
-                                        <input type="checkbox" id="check-lunes">
+                                        <input type="checkbox" id="check-lunes" name="check-lunes">
                                       </td>
                                       <td id="td-lunes">de 
                                         <input name="lunes1" id="lunes1" type="time" step="60" value="">
@@ -379,7 +379,7 @@ i {
                                   <tr >
                                       <th style="width: 50px;">Martes:</th>
                                       <td style="width: 60px;">
-                                        <input type="checkbox" id="check-martes">
+                                        <input type="checkbox" id="check-martes" name="check-martes">
                                       </td>
                                      <td id="td-martes">de 
                                         <input name="martes1" id="martes1" type="time" step="60">
@@ -396,7 +396,7 @@ i {
                                   <tr >
                                       <th style="width: 50px;">Miercoles:</th>
                                       <td style="width: 60px;">
-                                        <input type="checkbox" id="check-miercoles">
+                                        <input type="checkbox" id="check-miercoles" name="check-miercoles">
                                       </td>
                                       <td id="td-miercoles">de 
                                         <input name="miercoles1" id="miercoles1" type="time" step="60">
@@ -413,7 +413,7 @@ i {
                                   <tr >
                                       <th style="width: 50px;">Jueves:</th>
                                       <td style="width: 60px;">
-                                        <input type="checkbox" id="check-jueves">
+                                        <input type="checkbox" id="check-jueves" name="check-jueves">
                                       </td>
                                       <td id="td-jueves">de 
                                         <input name="jueves1" id="jueves1" type="time" step="60">
@@ -430,7 +430,7 @@ i {
                                   <tr >
                                       <th style="width: 50px;">Viernes:</th>
                                       <td style="width: 60px;">
-                                        <input type="checkbox" id="check-viernes">
+                                        <input type="checkbox" id="check-viernes" name="check-viernes">
                                       </td>
                                       <td id="td-viernes">de 
                                         <input name="viernes1" id="viernes1" type="time" step="60">
@@ -447,7 +447,7 @@ i {
                                   <tr >
                                       <th style="width: 50px;">Sabado:</th>
                                       <td style="width: 60px;">
-                                        <input type="checkbox" id="check-sabado">
+                                        <input type="checkbox" id="check-sabado" name="check-sabado">
                                       </td>
                                       <td id="td-sabado">de 
                                         <input name="sabado1" id="sabado1" type="time" step="60">
@@ -464,7 +464,7 @@ i {
                                   <tr >
                                       <th style="width: 50px;">Domingo:</th>
                                       <td style="width: 60px;">
-                                        <input type="checkbox" id="check-domingo">
+                                        <input type="checkbox" id="check-domingo" name="check-domingo">
                                       </td>
                                       <td id="td-domingo">de 
                                         <input name="domingo1" id="domingo1" type="time" step="60">

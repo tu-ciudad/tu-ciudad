@@ -53,6 +53,8 @@
      text-align: center;
      font-weight: 100;
      color: rgb(40, 44, 48);
+     font-family: normal, 'roboto';
+     font-weight: 400;
 }
 .producto1 .item:hover .content  {
    opacity: 1;
@@ -63,8 +65,9 @@
     position: relative;
     text-align: center;
     margin-top: 30%;
-    font-weight: 100;
+    font-weight: 200;
     color: #515251;
+    font-size: 16px;
 }
 .producto1 .item .content a:link  { text-decoration: inherit;}
 .producto1 .item .content a:visited  { text-decoration: inherit;}
@@ -89,7 +92,10 @@
 .producto1 .item .content-bot h3 sup{
     font-size: 60%;
 }
-
+.producto1 .item .content-bot h4 {
+    color: #282c30;
+    line-height: 0;
+}
 
 
 
@@ -126,12 +132,20 @@
     .producto1 .item {
         height: 200px;
     }
+   
 }
+@media (max-width: 992px) {
+    .producto1 .item .content-bot h3 {
+        margin-top: 0;
+    }
+}
+
 /*col-md*/
 @media (min-width: 992px) {
    .producto1 .item {
     height: 210px;
    } 
+
 }
 /*col-lg*/
 @media (min-width: 1200px) {

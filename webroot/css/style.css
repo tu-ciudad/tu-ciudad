@@ -630,6 +630,9 @@ iframe {
 .footer-distributed .footer-icons {
     margin-top: 25px;
 }
+.footer-distributed .footer-icons i {
+    margin-top: 9px;
+}
 
 .footer-distributed .footer-icons a {
     display: inline-block;

@@ -6,18 +6,12 @@
 ?>
 <script>
   function dimensionar(elem){
-
     dwidth = $(elem).width();
     dheight = $(elem).height();
     if(dwidth > dheight){
-      $(elem).css({'width': '100%','height': 'auto'});
-      
-      
+      $(elem).css({'width': '100%','height': 'auto'});     
     }
-   console.log(dwidth +' x '+ dheight);
   }
-
-
 </script>
 <?= $this->element('jumbotron02') ?>
    
@@ -61,6 +55,7 @@
                        <h3>  
                             <span>$<?= $producto->precio ?></span><sup>00</sup>
                        </h3>
+                       <h4 class="hidden-md hidden-lg"><span><?= $producto->titulo ?></span></h4>
                     </div>
 
             
@@ -156,12 +151,16 @@
     }
     .tittle-map {
       position: absolute;
-      top: 10px;
+      top: 20px;
       left: 47%;
+      font-weight: 300;
+      font-family: normal, 'roboto';
     }
     .tittle-contacto{
+      font-family: normal, 'roboto';
       position: absolute;
-      top: 10px;
+      font-weight: 300;
+      top: 20px;
     }
 </style>
 

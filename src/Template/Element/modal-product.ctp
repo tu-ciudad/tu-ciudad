@@ -148,3 +148,10 @@
                 $i=$i+1;
  endforeach; ?>
 
+<script>
+  $('#modalProduct').on('show.bs.modal', function (e) {
+  if (window.innerWidth < 992) {
+    return e.preventDefault();
+  }
+})
+</script>

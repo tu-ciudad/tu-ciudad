@@ -250,9 +250,9 @@ class NegociosController extends AppController
             $id = $this->request->data['id'];
             //lunes
             $lunes = null;
-            if (!is_null($this->request->data['lunes1']) && !is_null($this->request->data['lunes2'])){
+            if ($this->request->data['lunes1'] !== '' && $this->request->data['lunes2'] !== ''){
                 $lunes = $this->request->data['lunes1'].' '.'-'.' '. $this->request->data['lunes2'];
-                if (!is_null($this->request->data['lunes3']) && !is_null($this->request->data['lunes4'])){
+                if ($this->request->data['lunes3'] !== '' && $this->request->data['lunes4'] !== ''){
                     $lunes = $lunes .' '.'|'.' ' . $this->request->data['lunes3'] .' '.'-'.' '. $this->request->data['lunes4'];
                 }
             }
@@ -261,9 +261,9 @@ class NegociosController extends AppController
             
             //martes
             $martes = null;
-            if (!is_null($this->request->data['martes1']) && !is_null($this->request->data['martes2'])){
+            if ($this->request->data['martes1'] !== '' && $this->request->data['martes2'] !== ''){
                 $martes = $this->request->data['martes1'].' '.'-'.' '. $this->request->data['martes2'];
-                if (!is_null($this->request->data['martes3']) && !is_null($this->request->data['martes4'])){
+                if ($this->request->data['martes3'] !== '' && $this->request->data['martes4'] !== ''){
                     $martes = $martes .' '.'|'.' ' . $this->request->data['martes3'] .' '.'-'.' '. $this->request->data['martes4'];
                 }
             }
@@ -272,9 +272,9 @@ class NegociosController extends AppController
             
             //miercoles
             $miercoles = null;
-            if (!is_null($this->request->data['miercoles1']) && !is_null($this->request->data['miercoles2'])){
+            if ($this->request->data['miercoles1'] !== '' && $this->request->data['miercoles2'] !== ''){
                 $miercoles = $this->request->data['miercoles1'].' '.'-'.' '. $this->request->data['miercoles2'];
-                if (!is_null($this->request->data['miercoles3']) && !is_null($this->request->data['miercoles4'])){
+                if ($this->request->data['miercoles3'] !== '' && $this->request->data['miercoles4'] !== ''){
                     $miercoles = $miercoles .' '.'|'.' ' . $this->request->data['miercoles3'] .' '.'-'.' '. $this->request->data['miercoles4'];
                 }
             }
@@ -283,9 +283,9 @@ class NegociosController extends AppController
             
             //jueves
             $jueves = null;
-            if (!is_null($this->request->data['jueves1']) && !is_null($this->request->data['jueves2'])){
+            if ($this->request->data['jueves1'] !== '' && $this->request->data['jueves2'] !== ''){
                 $jueves = $this->request->data['jueves1'].' '.'-'.' '. $this->request->data['jueves2'];
-                if (!is_null($this->request->data['jueves3']) && !is_null($this->request->data['jueves4'])){
+                if ($this->request->data['jueves3'] !== '' && $this->request->data['jueves4'] !== ''){
                     $jueves = $jueves .' '.'|'.' ' . $this->request->data['jueves3'] .' '.'-'.' '. $this->request->data['jueves4'];
                 }
             }
@@ -294,9 +294,9 @@ class NegociosController extends AppController
             
             //viernes
             $viernes = null;
-            if (!is_null($this->request->data['viernes1']) && !is_null($this->request->data['viernes2'])){
+            if ($this->request->data['viernes1'] !== '' && $this->request->data['viernes2'] !== ''){
                 $viernes = $this->request->data['viernes1'].' '.'-'.' '. $this->request->data['viernes2'];
-                if (!is_null($this->request->data['viernes3']) && !is_null($this->request->data['viernes4'])){
+                if ($this->request->data['viernes3'] !== '' && $this->request->data['viernes4'] !== ''){
                     $viernes = $viernes .' '.'|'.' ' . $this->request->data['viernes3'] .' '.'-'.' '. $this->request->data['viernes4'];
                 }
             }
@@ -305,9 +305,9 @@ class NegociosController extends AppController
             
             //sabado
             $sabado = null;
-            if (!is_null($this->request->data['sabado1']) && !is_null($this->request->data['sabado2'])){
+            if ($this->request->data['sabado1'] !== '' && $this->request->data['sabado2'] !== ''){
                 $sabado = $this->request->data['sabado1'].' '.'-'.' '. $this->request->data['sabado2'];
-                 if (!is_null($this->request->data['sabado3']) && !is_null($this->request->data['sabado4'])){
+                 if ($this->request->data['sabado3'] !== '' && $this->request->data['sabado4'] !== ''){
                     $sabado = $sabado .' '.'|'.' ' . $this->request->data['sabado3'] .' '.'-'.' '. $this->request->data['sabado4'];
                 }
             }
@@ -316,27 +316,28 @@ class NegociosController extends AppController
             
             //domingo
             $domingo = null;
-            if (!is_null($this->request->data['domingo1']) && !is_null($this->request->data['domingo2'])){
+            if ($this->request->data['domingo1'] !== '' && $this->request->data['domingo2'] !== ''){
                 $domingo = $this->request->data['domingo1'].' '.'-'.' '. $this->request->data['domingo2'];
-                if (!is_null($this->request->data['domingo3']) && !is_null($this->request->data['domingo4'])){
+                if ($this->request->data['domingo3'] !== '' && $this->request->data['domingo4'] !== ''){
                     $domingo = $domingo .' '.'|'.' ' . $this->request->data['domingo3'] .' '.'-'.' '. $this->request->data['domingo4'];
                 }
             }
 
             
             //feriado
+            /*
             $feriado = null;
-            if (!is_null($this->request->data['feriado1']) && !is_null($this->request->data['feriado2'])){
+            if ($this->request->data['feriado1'] !== '' && $this->request->data['feriado2'] !== ''){
                 $feriado = $this->request->data['feriado1'].' '.'-'.' '. $this->request->data['feriado2'];
-                if (!is_null($this->request->data['feriado3']) && !is_null($this->request->data['feriado4'])){
+                if ($this->request->data['feriado3'] !== '' && $this->request->data['feriado4'] !== ''){
                     $feriado = $feriado .' '.'|'.' ' . $this->request->data['feriado3'] .' '.'-'.' '. $this->request->data['feriado4'];
                 }
-            }       
+            }     */ 
             }
             $query = TableRegistry::get('negocios')->query();
-            $results = $query->update()->set(['lunes' => $lunes,'martes' => $martes,'miercoles' => $miercoles,'jueves' => $jueves,'viernes' => $viernes,'sabado' => $sabado,'domingo' => $domingo,'feriados' => $feriado])->where(['id' => $id])->execute();
-            if ($user['rol'] === 'admin'){
-                return $this->redirect(['action' => 'index']);
+            $results = $query->update()->set(['lunes' => $lunes,'martes' => $martes,'miercoles' => $miercoles,'jueves' => $jueves,'viernes' => $viernes,'sabado' => $sabado,'domingo' => $domingo])->where(['id' => $id])->execute();
+            if ($this->Auth->user['rol'] === 'admin'){
+                return $this->redirect(['action' => 'edit','id' => $id]);
             } else {
                 return $this->redirect(['action' => 'editar']);
             }

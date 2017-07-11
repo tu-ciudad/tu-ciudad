@@ -346,6 +346,7 @@ i {
 
             </div>
             <form enctype="multipart/form-data" action="/negocios/cambiohorario" method="post">
+            <input type="hidden" name="id" value="<?= $negocio->id ?>">
             <div class="modal-body" style="padding: 0;">
             <table class="table table-striped table-hover table-bordered" style="margin: 0;">
             <thead>
@@ -366,7 +367,12 @@ i {
                                         <input name="lunes1" id="lunes1" type="time" step="60" value="">
                                          a 
                                         <input name="lunes2" id="lunes2" type="time" step="60">
-                                       
+                                        <div id="hidden_lunes" class="hidden">
+                                        y de 
+                                        <input name="lunes3" id="lunes3" type="time" step="60" value="">
+                                        a
+                                        <input name="lunes4" id="lunes4" type="time" step="60" value="">
+                                        </div>
                                       </td>
                                       
                                   </tr>
@@ -379,6 +385,12 @@ i {
                                         <input name="martes1" id="martes1" type="time" step="60">
                                          a 
                                         <input name="martes2" id="martes2" type="time" step="60">
+                                        <div id="hidden_martes" class="hidden">
+                                        y de 
+                                        <input name="martes3" id="martes3" type="time" step="60" value="">
+                                        a
+                                        <input name="martes4" id="martes4" type="time" step="60" value="">
+                                        </div>
                                       </td>
                                   </tr>
                                   <tr >
@@ -390,6 +402,12 @@ i {
                                         <input name="miercoles1" id="miercoles1" type="time" step="60">
                                          a 
                                         <input name="miercoles2" id="miercoles2" type="time" step="60">
+                                        <div id="hidden_miercoles" class="hidden">
+                                        y de 
+                                        <input name="miercoles3" id="miercoles3" type="time" step="60" value="">
+                                        a
+                                        <input name="miercoles4" id="miercoles4" type="time" step="60" value="">
+                                        </div>
                                       </td>
                                   </tr>
                                   <tr >
@@ -401,6 +419,12 @@ i {
                                         <input name="jueves1" id="jueves1" type="time" step="60">
                                          a 
                                         <input name="jueves2" id="jueves2" type="time" step="60">
+                                        <div id="hidden_jueves" class="hidden">
+                                        y de 
+                                        <input name="jueves3" id="jueves3" type="time" step="60" value="">
+                                        a
+                                        <input name="jueves4" id="jueves4" type="time" step="60" value="">
+                                        </div>
                                       </td>
                                   </tr>
                                   <tr >
@@ -412,6 +436,12 @@ i {
                                         <input name="viernes1" id="viernes1" type="time" step="60">
                                          a 
                                         <input name="viernes2" id="viernes2" type="time" step="60">
+                                        <div id="hidden_viernes" class="hidden">
+                                        y de 
+                                        <input name="viernes3" id="viernes3" type="time" step="60" value="">
+                                        a
+                                        <input name="viernes4" id="viernes4" type="time" step="60" value="">
+                                        </div>
                                       </td>
                                   </tr>
                                   <tr >
@@ -423,6 +453,12 @@ i {
                                         <input name="sabado1" id="sabado1" type="time" step="60">
                                          a 
                                         <input name="sabado2" id="sabado2" type="time" step="60">
+                                        <div id="hidden_sabado" class="hidden">
+                                        y de 
+                                        <input name="sabado3" id="sabado3" type="time" step="60" value="">
+                                        a
+                                        <input name="sabado4" id="sabado4" type="time" step="60" value="">
+                                        </div>
                                       </td>
                                   </tr>
                                   <tr >
@@ -434,6 +470,12 @@ i {
                                         <input name="domingo1" id="domingo1" type="time" step="60">
                                          a 
                                         <input name="domingo2" id="domingo2" type="time" step="60">
+                                        <div id="hidden_domingo" class="hidden">
+                                        y de 
+                                        <input name="domingo3" id="domingo3" type="time" step="60" value="">
+                                        a
+                                        <input name="domingo4" id="domingo4" type="time" step="60" value="">
+                                        </div>
                                       </td>
                                   </tr>
                               </tbody>
@@ -449,64 +491,139 @@ i {
         </div><!-- /.modal-dalog -->
       </div><!-- /.modal -->
 <script>
-$('input#check-lunes').change(function(){
-  if($("input#check-lunes").is(':checked')){
-     // Code in the case checkbox is checked.
-     $('#td-lunes').append('<div id="lunes-cortado"> y de <input name="lunes3" id="lunes3" type="time" step="60"> a <input name="lunes4" id="lunes4" type="time" step="60"></div>')
+// $('input#check-lunes').change(function(){
+//   if($("input#check-lunes").is(':checked')){
+//      // Code in the case checkbox is checked.
+//      $('#td-lunes').append('<div id="lunes-cortado"> y de <input name="lunes3" id="lunes3" type="time" step="60"> a <input name="lunes4" id="lunes4" type="time" step="60"></div>')
+//     } else {
+//       $('#lunes-cortado').remove();
+// }
+// });
+// $('input#check-martes').change(function(){
+//   if($("input#check-martes").is(':checked')){
+//      // Code in the case checkbox is checked.
+//      $('#td-martes').append('<div id="martes-cortado"> y de <input name="martes3" id="martes3" type="time" step="60"> a <input name="martes4" id="martes4" type="time" step="60"></div>')
+//     } else {
+//       $('#martes-cortado').remove();
+// }
+// });
+// $('input#check-miercoles').change(function(){
+//   if($("input#check-miercoles").is(':checked')){
+//      // Code in the case checkbox is checked.
+//      $('#td-miercoles').append('<div id="miercoles-cortado"> y de <input name="miercoles3" id="miercoles3" type="time" step="60"> a <input name="miercoles4" id="miercoles4" type="time" step="60"></div>')
+//     } else {
+//       $('#miercoles-cortado').remove();
+// }
+// });
+// $('input#check-jueves').change(function(){
+//   if($("input#check-jueves").is(':checked')){
+//      // Code in the case checkbox is checked.
+//      $('#td-jueves').append('<div id="jueves-cortado"> y de <input name="jueves3" id="jueves3" type="time" step="60"> a <input name="jueves4" id="jueves4" type="time" step="60"></div>')
+//     } else {
+//       $('#jueves-cortado').remove();
+// }
+// });
+// $('input#check-viernes').change(function(){
+//   if($("input#check-viernes").is(':checked')){
+//      // Code in the case checkbox is checked.
+//      $('#td-viernes').append('<div id="viernes-cortado"> y de <input name="viernes3" id="viernes3" type="time" step="60"> a <input name="viernes4" id="viernes4" type="time" step="60"></div>')
+//     } else {
+//       $('#viernes-cortado').remove();
+// }
+// });
+// $('input#check-sabado').change(function(){
+//   if($("input#check-sabado").is(':checked')){
+//      // Code in the case checkbox is checked.
+//      $('#td-sabado').append('<div id="sabado-cortado"> y de <input name="sabado3" id="sabado3" type="time" step="60"> a <input name="sabado4" id="sabado4" type="time" step="60"></div>')
+//     } else {
+//       $('#sabado-cortado').remove();
+// }
+// });
+// $('input#check-domingo').change(function(){
+//   if($("input#check-domingo").is(':checked')){
+//      // Code in the case checkbox is checked.
+//      $('#td-domingo').append('<div id="domingo-cortado"> y de <input name="domingo3" id="domingo3" type="time" step="60"> a <input name="domingo4" id="domingo4" type="time" step="60"></div>')
+//     } else {
+//       $('#domingo-cortado').remove();
+// }
+// });
+  $('input#check-lunes').change(function(){
+   var dia = '#hidden_lunes';
+   if($(this).is(':checked')){
+    // Code in the case checkbox is checked.
+    $(dia).removeClass('hidden');
     } else {
-      $('#lunes-cortado').remove();
-}
-});
-$('input#check-martes').change(function(){
-  if($("input#check-martes").is(':checked')){
-     // Code in the case checkbox is checked.
-     $('#td-martes').append('<div id="martes-cortado"> y de <input name="martes3" id="martes3" type="time" step="60"> a <input name="martes4" id="martes4" type="time" step="60"></div>')
+    $(dia).addClass('hidden');
+    $(dia).find(':nth-child(1)').val('');
+    $(dia).find(':nth-child(2)').val('');
+    }
+  });
+  $('input#check-martes').change(function(){
+   var dia = '#hidden_martes';
+   if($(this).is(':checked')){
+    // Code in the case checkbox is checked.
+    $(dia).removeClass('hidden');
     } else {
-      $('#martes-cortado').remove();
-}
-});
-$('input#check-miercoles').change(function(){
-  if($("input#check-miercoles").is(':checked')){
-     // Code in the case checkbox is checked.
-     $('#td-miercoles').append('<div id="miercoles-cortado"> y de <input name="miercoles3" id="miercoles3" type="time" step="60"> a <input name="miercoles4" id="miercoles4" type="time" step="60"></div>')
+    $(dia).addClass('hidden');
+    $(dia).find(':nth-child(1)').val('');
+    $(dia).find(':nth-child(2)').val('');
+    }
+  });
+    $('input#check-miercoles').change(function(){
+   var dia = '#hidden_miercoles';
+   if($(this).is(':checked')){
+    // Code in the case checkbox is checked.
+    $(dia).removeClass('hidden');
     } else {
-      $('#miercoles-cortado').remove();
-}
-});
-$('input#check-jueves').change(function(){
-  if($("input#check-jueves").is(':checked')){
-     // Code in the case checkbox is checked.
-     $('#td-jueves').append('<div id="jueves-cortado"> y de <input name="jueves3" id="jueves3" type="time" step="60"> a <input name="jueves4" id="jueves4" type="time" step="60"></div>')
+    $(dia).addClass('hidden');
+    $(dia).find(':nth-child(1)').val('');
+    $(dia).find(':nth-child(2)').val('');
+    }
+  });
+      $('input#check-jueves').change(function(){
+   var dia = '#hidden_jueves';
+   if($(this).is(':checked')){
+    // Code in the case checkbox is checked.
+    $(dia).removeClass('hidden');
     } else {
-      $('#jueves-cortado').remove();
-}
-});
-$('input#check-viernes').change(function(){
-  if($("input#check-viernes").is(':checked')){
-     // Code in the case checkbox is checked.
-     $('#td-viernes').append('<div id="viernes-cortado"> y de <input name="viernes3" id="viernes3" type="time" step="60"> a <input name="viernes4" id="viernes4" type="time" step="60"></div>')
+    $(dia).addClass('hidden');
+    $(dia).find(':nth-child(1)').val('');
+    $(dia).find(':nth-child(2)').val('');
+    }
+  });
+        $('input#check-viernes').change(function(){
+   var dia = '#hidden_viernes';
+   if($(this).is(':checked')){
+    // Code in the case checkbox is checked.
+    $(dia).removeClass('hidden');
     } else {
-      $('#viernes-cortado').remove();
-}
-});
-$('input#check-sabado').change(function(){
-  if($("input#check-sabado").is(':checked')){
-     // Code in the case checkbox is checked.
-     $('#td-sabado').append('<div id="sabado-cortado"> y de <input name="sabado3" id="sabado3" type="time" step="60"> a <input name="sabado4" id="sabado4" type="time" step="60"></div>')
+    $(dia).addClass('hidden');
+    $(dia).find(':nth-child(1)').val('');
+    $(dia).find(':nth-child(2)').val('');
+    }
+  });
+          $('input#check-sabado').change(function(){
+   var dia = '#hidden_sabado';
+   if($(this).is(':checked')){
+    // Code in the case checkbox is checked.
+    $(dia).removeClass('hidden');
     } else {
-      $('#sabado-cortado').remove();
-}
-});
-$('input#check-domingo').change(function(){
-  if($("input#check-domingo").is(':checked')){
-     // Code in the case checkbox is checked.
-     $('#td-domingo').append('<div id="domingo-cortado"> y de <input name="domingo3" id="domingo3" type="time" step="60"> a <input name="domingo4" id="domingo4" type="time" step="60"></div>')
+    $(dia).addClass('hidden');
+    $(dia).find(':nth-child(1)').val('');
+    $(dia).find(':nth-child(2)').val('');
+    }
+  });
+            $('input#check-domingo').change(function(){
+   var dia = '#hidden_domingo';
+   if($(this).is(':checked')){
+    // Code in the case checkbox is checked.
+    $(dia).removeClass('hidden');
     } else {
-      $('#domingo-cortado').remove();
-}
-});
-  
-    
+    $(dia).addClass('hidden');
+    $(dia).find(':nth-child(1)').val('');
+    $(dia).find(':nth-child(2)').val('');
+    }
+  });
   
 
 </script>

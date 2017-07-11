@@ -40,7 +40,7 @@
    <div class="mainpage">
      <div class="artDes">
         <div class="jumbotron">
-        <h2><span class="title"> Articulos destacados &nbsp;&nbsp;</span><img src="../img/cart.png" alt=""></h2>
+        <h2><span class="title"> Productos destacados &nbsp;&nbsp;</span><img src="../img/cart.png" alt=""></h2>
         </div>
         </div>
    

@@ -29,11 +29,11 @@
           <a class="btn-trans" href="../../buscar?comercios">COMERCIOS</a>
 
         </li>
-        <li>
+        <!-- <li>
           <a class="btn-trans" <?= $this->Html->link('Tests', array('controller' => 'prueba', 'action' => 'index')) ?>
           </a>
 
-        </li>
+        </li> -->
         </ul>
         <ul class="nav navbar-nav navbar-right" style="margin-right: 0;">
         <li>
@@ -48,7 +48,7 @@
             </form>
           </ul>
         </li>
-        <li>
+        <!-- <li>
           <div class="navindex" >
             <li class="dropdown">
               <a href="#" class="dropdown-toggle " data-toggle="dropdown"><b>Login</b> <span class="caret"></span>
@@ -79,7 +79,7 @@
               </ul>
             </li>
           </div>
-      </li>
+      </li> -->
     </ul>
   
     </div>

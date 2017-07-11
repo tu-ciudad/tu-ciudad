@@ -691,7 +691,7 @@ iframe {
     /*-----logo navbar tuciudad---------*/
     color: #ffffff;
     font: normal 55px 'Cookie', cursive;
-    text-shadow: 1px 2px 2px rgba(1, 1, 1, 0.9);
+    /text-shadow: 1px 2px 2px rgba(1, 1, 1, 0.9);
     /margin: -75px;
     margin-top: -17px;
     vertical-align: middle;
@@ -2903,7 +2903,7 @@ border-radius: 5%
 .mainpage .header .jumbotron {
     background-color: inherit;
     background-image:url('../img/rain_cup.jpg') ;
-    background-position: center center; 
+    background-position: center -250px; 
     background-repeat: no-repeat;
     height: 300px;
     text-align: center;
@@ -2911,16 +2911,16 @@ border-radius: 5%
 }
 .mainpage .header .jumbotron .jumbox  {
     margin: 0 auto;
-    margin-top: 0 auto;
-    background-color: rgba(248, 248, 248, 0.1);
+    /margin-top: 0 auto;
+    /background-color: rgba(248, 248, 248, 0.1);
     /height: 500px;
     width: 50%;
     text-align: center;
     margin-bottom: 30px;
-    margin-top: 100px;
+    margin-top: 150px;
     padding-bottom: 10px;
     border-radius: 5px;
-    box-shadow:  1px 2px rgba(204, 204, 204,0.1);
+    /box-shadow:  1px 2px rgba(204, 204, 204,0.1);
     
 }
     .mainpage .jumbotron {
@@ -2933,7 +2933,10 @@ border-radius: 5%
 
 .mainpage .title {
     margin-top: 0;
-    font-family: 'Open Sans', sans-serif;
+    font: normal, 'roboto';
+   
+   
+    /letter-spacing: 1px;
     font-weight: 400;
    / display: inline-block;
    / margin-bottom: 20px;
@@ -2963,7 +2966,7 @@ border-radius: 5%
     /*-----logo navbar tuciudad---------*/
     color: #ffffff;
     font: normal 75px 'Cookie', cursive;
-    text-shadow: 1px 2px 2px rgba(1, 1, 1, 0.9);
+    text-shadow: 1px 1px 2px rgba(1, 1, 1, 0.9);
     /margin: -75px;
     /margin-top: 10px;
     vertical-align: middle;
@@ -3004,7 +3007,7 @@ border-radius: 5%
     color: #5383d3;
     font-family: 'Open Sans', sans-serif;
     font-style: oblique;
-    text-shadow: 1px 2px 2px rgba(1, 1, 1, 0.9);
+    text-shadow: 1px 1px 1px rgba(1, 1, 1, 0.9);
 }
 
 /****************************fin-main-page********************************/

@@ -125,8 +125,10 @@
 </address>
 
         <address>
-  <strong>Email</strong><br>
-  <a href="mailto:#"><?= $negocio->email ?></a>
+        <strong>Facebook</strong><br>
+        <a href="<?= $negocio->perfilfb ?>"><?= $negocio->nombre ?></a>
+        <strong>Email</strong><br>
+        <a href="mailto:#"><?= $negocio->email ?></a>
 </address>
     </div>
 
@@ -404,4 +406,5 @@ $('#caru  > .item').addClass('active');
       
     });
 </script>
-<!-- <?= dump($productos) ?> -->
+ <?= dump($productos) ?> 
+ <?= dump($negocio) ?> 

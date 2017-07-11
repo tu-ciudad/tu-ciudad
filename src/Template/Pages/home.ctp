@@ -5,18 +5,12 @@
 ?>
 <script>
   function dimensionar(elem){
-
     dwidth = $(elem).width();
     dheight = $(elem).height();
     if(dwidth > dheight){
       $(elem).css({'width': '100%','height': 'auto'});
-      
-      
     }
-   console.log(dwidth +' x '+ dheight);
   }
-
-
 </script>
 
  <div class="mainpage">

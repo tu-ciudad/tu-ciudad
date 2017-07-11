@@ -491,62 +491,7 @@ i {
         </div><!-- /.modal-dalog -->
       </div><!-- /.modal -->
 <script>
-// $('input#check-lunes').change(function(){
-//   if($("input#check-lunes").is(':checked')){
-//      // Code in the case checkbox is checked.
-//      $('#td-lunes').append('<div id="lunes-cortado"> y de <input name="lunes3" id="lunes3" type="time" step="60"> a <input name="lunes4" id="lunes4" type="time" step="60"></div>')
-//     } else {
-//       $('#lunes-cortado').remove();
-// }
-// });
-// $('input#check-martes').change(function(){
-//   if($("input#check-martes").is(':checked')){
-//      // Code in the case checkbox is checked.
-//      $('#td-martes').append('<div id="martes-cortado"> y de <input name="martes3" id="martes3" type="time" step="60"> a <input name="martes4" id="martes4" type="time" step="60"></div>')
-//     } else {
-//       $('#martes-cortado').remove();
-// }
-// });
-// $('input#check-miercoles').change(function(){
-//   if($("input#check-miercoles").is(':checked')){
-//      // Code in the case checkbox is checked.
-//      $('#td-miercoles').append('<div id="miercoles-cortado"> y de <input name="miercoles3" id="miercoles3" type="time" step="60"> a <input name="miercoles4" id="miercoles4" type="time" step="60"></div>')
-//     } else {
-//       $('#miercoles-cortado').remove();
-// }
-// });
-// $('input#check-jueves').change(function(){
-//   if($("input#check-jueves").is(':checked')){
-//      // Code in the case checkbox is checked.
-//      $('#td-jueves').append('<div id="jueves-cortado"> y de <input name="jueves3" id="jueves3" type="time" step="60"> a <input name="jueves4" id="jueves4" type="time" step="60"></div>')
-//     } else {
-//       $('#jueves-cortado').remove();
-// }
-// });
-// $('input#check-viernes').change(function(){
-//   if($("input#check-viernes").is(':checked')){
-//      // Code in the case checkbox is checked.
-//      $('#td-viernes').append('<div id="viernes-cortado"> y de <input name="viernes3" id="viernes3" type="time" step="60"> a <input name="viernes4" id="viernes4" type="time" step="60"></div>')
-//     } else {
-//       $('#viernes-cortado').remove();
-// }
-// });
-// $('input#check-sabado').change(function(){
-//   if($("input#check-sabado").is(':checked')){
-//      // Code in the case checkbox is checked.
-//      $('#td-sabado').append('<div id="sabado-cortado"> y de <input name="sabado3" id="sabado3" type="time" step="60"> a <input name="sabado4" id="sabado4" type="time" step="60"></div>')
-//     } else {
-//       $('#sabado-cortado').remove();
-// }
-// });
-// $('input#check-domingo').change(function(){
-//   if($("input#check-domingo").is(':checked')){
-//      // Code in the case checkbox is checked.
-//      $('#td-domingo').append('<div id="domingo-cortado"> y de <input name="domingo3" id="domingo3" type="time" step="60"> a <input name="domingo4" id="domingo4" type="time" step="60"></div>')
-//     } else {
-//       $('#domingo-cortado').remove();
-// }
-// });
+
   $('input#check-lunes').change(function(){
    var dia = '#hidden_lunes';
    if($(this).is(':checked')){

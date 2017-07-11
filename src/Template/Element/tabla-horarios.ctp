@@ -259,7 +259,7 @@ D-F
 <div class='schedule'>
 <span class='fa fa-clock-o fa-lg'></span>
 <span class='time'>
-08:00 am a 5:30 pm
+<?= $negocio->martes ?>
 </span>
 </div>
 </div>
@@ -267,7 +267,7 @@ D-F
 <div class='schedule'>
 <span class='fa fa-clock-o fa-lg'></span>
 <span class='time'>
-08:00 am a 5:30 pm
+<?= $negocio->miercoles ?>
 </span>
 </div>
 </div>
@@ -275,7 +275,7 @@ D-F
 <div class='schedule'>
 <span class='fa fa-clock-o fa-lg'></span>
 <span class='time'>
-08:00 am a 5:30 pm
+<?= $negocio->jueves ?>
 </span>
 </div>
 </div>
@@ -283,7 +283,7 @@ D-F
 <div class='schedule'>
 <span class='fa fa-clock-o fa-lg'></span>
 <span class='time'>
-08:00 am a 5:30 pm
+<?= $negocio->viernes ?>
 </span>
 </div>
 </div>
@@ -291,14 +291,14 @@ D-F
 <div class='schedule'>
 <span class='fa fa-clock-o fa-lg'></span>
 <span class='time'>
-08:00 am a 2:00 pm
+<?= $negocio->sabado ?>
 </span>
 </div>
 </div>
 <div class='tab-pane' id='tab-day-6' role='tabpanel'>
 <div class='schedule col-xs-12'>
 <span class='fa fa-clock-o fa-lg'></span>
-Cerrado
+<?= $negocio->domingo ?>
 </div>
 </div>
 </div>

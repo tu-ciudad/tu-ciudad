@@ -503,12 +503,13 @@ for (var i = 1; i <= 7; i++) {
     $('#horarios-edit :nth-child('+ i +') :nth-child(3) :nth-child(2)').val(hdia1[1]);
     $('#horarios-edit :nth-child('+ i +') :nth-child(3) :nth-child(3) :nth-child(1)').val(hdia2[0]);
     $('#horarios-edit :nth-child('+ i +') :nth-child(3) :nth-child(3) :nth-child(2)').val(hdia2[1]);
-
   } else {
     if(dia.text().indexOf('-') > -1){
       var hdia1 = dia.text().split(' - ');
       $('#horarios-edit :nth-child('+ i +') :nth-child(3) :nth-child(1)').val(hdia1[0]);
       $('#horarios-edit :nth-child('+ i +') :nth-child(3) :nth-child(2)').val(hdia1[1]);
+      $('#horarios-edit :nth-child('+ i +') :nth-child(3) :nth-child(3) :nth-child(1)').val('');
+      $('#horarios-edit :nth-child('+ i +') :nth-child(3) :nth-child(3) :nth-child(2)').val('');
     } else {
       console.log('el dia '+i+' está cerrado');
     }
@@ -516,7 +517,7 @@ for (var i = 1; i <= 7; i++) {
   }
   
 }
-  
+
   
 
   $('input#check-lunes').change(function(){

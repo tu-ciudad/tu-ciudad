@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Cookie');
 html {
-   min-width: 630px;
+   /min-width: 400px;
 }
 //body.modal-open { overflow:inherit; padding-right:inherit !important; }
 body {
@@ -3101,4 +3101,4 @@ border-radius: 5%
 }
 /***************************************fin-artPage***************************************/
 
-/*______________nuevo producto________________*/
+

@@ -6,7 +6,7 @@
     margin-left: 0;
     margin-right: auto;
     position: relative;
-    min-width: 630px;
+    /min-width: 630px;
 }
 
 .producto1 .item {
@@ -123,8 +123,8 @@
 /*col--768*/
 @media (max-width: 768px) {
     .producto1 .item {
-        height: 270px;
-        width: 270px;
+        height: 200px;
+        width: 200px;
     }
 }
 /*col-sm*/

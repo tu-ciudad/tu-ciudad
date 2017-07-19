@@ -291,7 +291,7 @@ if (!$variable) {
  $i = 0;
  foreach ($variable as $producto): ?>
                <div class=" col-xs-6 col-sm-4 col-md-4 col-lg-3 "> <!-- producto -->
-               <div class="producto1" >
+               <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">
                        <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
                    
 
@@ -312,7 +312,7 @@ if (!$variable) {
                     <div class="content-bot"> 
                         
                        <h3>  
-                            <span>$<?= $producto['precio'] ?></span>
+                            <span><?= $producto['precio'] ?></span>
                        </h3>
                        <h4 class="hidden-md hidden-lg"><span><?= $producto->titulo ?></span></h4>
                     </div>
@@ -499,6 +499,8 @@ $('#caru  > .item').addClass('active');
         $('#l-name').text(nNombre);
         $('#caru > div > img').attr('src', pImagen);
         $('#carui > li > img').attr('src', pImagen);
+        $('.vermasde > a').attr('href', '/negocios/perfil/');
+        $('#vermash1').text(nNombre);
 
           //j es la posicion de la imagen, arranca del 3 porque el 1 es la cantidad de imagenes y el 2 es la primer imagen
          var j = 3;
@@ -521,4 +523,4 @@ $('#caru  > .item').addClass('active');
       
     });
 </script>
-<!-- <?= dump($variable) ?> -->
+ <?= dump($variable) ?> 

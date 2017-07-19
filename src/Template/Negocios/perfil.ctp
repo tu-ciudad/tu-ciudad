@@ -32,7 +32,7 @@
  $i = 0;
  foreach ($productos as $producto): ?>
                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-4"> <!-- producto -->
-               <div class="producto1">
+               <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">
         <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
                    
 

@@ -113,8 +113,8 @@
     }
 </style>
 <div id="modalProduct" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog px">
-    <div class="modal-content">
+  <div class="modal-dialog px" >
+    <div class="modal-content" >
     <h4 class="modal-title _4-i0 nNombre" id="l-name">asdasd</h4>
       <span class="close pclose" data-dismiss="modal" aria-label="Close">×</span>
       <div class="modal-body" style="background-color: #FAFAFA;">
@@ -152,9 +152,19 @@
      </h2>
      <h2 class="text-danger pPrecio" id="pPrecio">$49.99</h2>
 	<p class="pCuerpo" id="pCuerpo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore totam delectus atque vel similique illo, praesentium, ratione eligendi esse officiis, accusantium nisi! Quis modi quia accusantium, sunt ab exercitationem nam.</p>
-	
+	<style>
+    .vermasde a:hover {text-decoration:nounderline; }
+    .vermasde a:link {text-decoration:none; } /* Link no visitado*/
+    .vermasde a:visited {text-decoration:none; } /*Link visitado*/
+    .vermasde a:active {text-decoration:none;  } /*Link activo*/
     
-            <div class="comercio-card  " >
+  </style>
+  <div class="vermasde">
+  <br>
+    <a href="" id="vermaslink" ><h2 style="margin-bottom: 0;">ver más de </h2><h1 id="vermash1" style="margin-top: 0;"></h1></a>
+  </div>
+  
+            <!-- <div class="comercio-card  " >
               <a href="../negocios/perfil/1">
                 <div class="card" style="">
                     <div class="card-img-top" style="background-image: no-repeat center center;" src="" alt="Card image cap"></div>
@@ -164,7 +174,7 @@
                     </div>
                 </div>
               </a>
-              </div>
+              </div> -->
 
 	</center>
 

@@ -38,7 +38,7 @@
         <ul class="nav navbar-nav navbar-right" style="margin-right: 0;">
         <li>
           <ul class="navbar-form navbar-left navi-search" role="search">
-            <form class="form-search" method="get" action="/buscar">
+            <form class="form-search" method="get" action="/buscar" id="ua-buscar-nav">
               <div class="input-group " >
                 <input type="text" id="dato" name="productos" class="form-control hidden-sm" placeholder="Buscar...">
                 <span class="input-group-btn">

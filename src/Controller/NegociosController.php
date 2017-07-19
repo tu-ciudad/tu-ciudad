@@ -58,7 +58,6 @@ class NegociosController extends AppController
                 case 2:
                     $productos = $query2->select(['id','titulo','cuerpo','fecha','precio'])->where(['negocios_id' => $negocio->id])->order(['precio' => 'ASC'])->toArray();
                     break;
-
                 default:
                     $productos = $query2->select(['id','titulo','cuerpo','fecha','precio'])->where(['negocios_id' => $negocio->id])->order(['fecha' => 'DESC'])->toArray();
             }
@@ -117,8 +116,8 @@ class NegociosController extends AppController
             if (is_null($tagsnegocio)) {
              $tagsnegocio = ' ';
             }
-            $this->set(compact('negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','tagsproducto'));
-            $this->set('_serialize', ['negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','tagsproducto']);
+            $this->set(compact('negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','tagsproducto','orden'));
+            $this->set('_serialize', ['negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','tagsproducto','orden']);
     }
 
     public function index()
@@ -208,24 +207,25 @@ class NegociosController extends AppController
     }
 
 
-    public function perfil($id = null){
+    public function perfil($id = null, $orden = null){
         $negocio = $this->Negocios->get($id, [
             'contain' => []
         ]);
-        negociosController::llenar($negocio);
-         if ($this->request->is('get') && $this->request->query['orden']){
-            if( $this->request->query['orden'] == 1 || $this->request->query['orden'] == 2 || $this->request->query['orden'] == 3){
+         if ($this->request->is('get')){
+            if(isset($this->request->query['orden'])){
                 $orden = $this->request->query['orden'];
+            }
+            if( $orden == 1 || $orden == 2 || $orden == 3){
                 negociosController::llenar($negocio,$orden);
             } else {
                 negociosController::llenar($negocio);
             }
         }
-        //traigo informacion de local
+
+        //traigo informacion de local $this->request->query['orden']
            
             //Ahora ya tengo la info de las imagenes y del comercio, solo la tengo que poner en el sitio.
-             //   return $this->redirect(['action' => 'index']);
-            
+             //   return $this->redirect(['action' => 'index']);       
     }
 
     public function editar(){

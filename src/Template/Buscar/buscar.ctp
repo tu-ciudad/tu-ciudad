@@ -389,7 +389,7 @@ if (!$variable) {
  foreach ($variable as $comercio): ?>
 
  <div class="comercio-card  " >
-      <a href="../negocios/perfil/1">
+      <a href="../negocios/perfil/<?= $comercio['id']?>" + >
         <div class="card" style="">
             <img class="card-img-top" src="<?= $comercio['foto']?>" alt="Card image cap">
           <div class="card-block">

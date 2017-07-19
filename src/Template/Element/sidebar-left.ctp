@@ -17,9 +17,9 @@
                             <div class="nav sort">
                             <li class="label label-gray" >Ordenar <span class="glyphicon glyphicon-sort"></span></li>
                                 <li id="sort">
-                                    <li class="nasted-sort active"><a href="#sort-relevante">Más relevantes</a></li>
-                                    <li class="nasted-sort"><a href="#sort-precio-down">Menor precio</a></li>
-                                    <li class="nasted-sort"><a href="#sort-precio-up">Mayor precio</a></li>
+                                    <li class="nasted-sort active"><a href="/../negocios/perfil/<?= $negocio->id?>?orden=3">Más relevantes</a></li>
+                                    <li class="nasted-sort"><a href="/../negocios/perfil/<?= $negocio->id?>?orden=2">Menor precio</a></li>
+                                    <li class="nasted-sort"><a href="/../negocios/perfil/<?= $negocio->id?>?orden=1">Mayor precio</a></li>
                                 </li>
                             </div>
                             

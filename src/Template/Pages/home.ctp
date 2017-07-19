@@ -20,7 +20,7 @@
    
     <h1><span class="title footer-distributed1"> 
                 
-                    <h3>Tu<span>Ciudad</span></h3></span>
+                    <h3>Paseo<span>Ciudad</span></h3></span>
      </h1>
      <div class="titlesub"><h3>¡Desde donde estés!</h3></div>
         </div>
@@ -56,7 +56,7 @@
                         </h3>
                         
                         <h5>
-                        <a href="#" >
+                        <a href=<?= '/negocios/perfil/'.$producto->negocios_id?>>
                             <span>negocio name</span>
                         </a>
                         </h5>
@@ -67,6 +67,7 @@
                        <h3>  
                             <span>$<?= $producto->precio?></span><sup>00</sup>
                        </h3>
+                       <h4 class="hidden-md hidden-lg"><span><?= $producto->titulo ?></span></h4>
                     </div>
 
             
@@ -182,3 +183,4 @@ $('#caru  > .item').addClass('active');
       
     });
 </script>
+<?= dump($productos) ?>

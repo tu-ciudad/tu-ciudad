@@ -12,7 +12,7 @@
       </button>
       <div class="navbar-brand  footer-distributed1 logoLink" style="margin-left: 15px;">
        <a href="/">
-       <h3>Tu<span>Ciudad</span></h3>
+       <h3>Paseo<span>Ciudad</span></h3>
         </a>
       </div>
     </div>

@@ -314,6 +314,7 @@ if (!$variable) {
                        <h3>  
                             <span>$<?= $producto['precio'] ?></span>
                        </h3>
+                       <h4 class="hidden-md hidden-lg"><span><?= $producto->titulo ?></span></h4>
                     </div>
 
             

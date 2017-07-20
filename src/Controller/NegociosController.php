@@ -63,19 +63,6 @@ class NegociosController extends AppController
             }
        
             foreach($productos as $producto):
-                $productostags = null;
-                //traigo los tags del producto
-                $conexion = ConnectionManager::get('default');
-                $tagsprod = $conexion->execute('Call traertagsproductos(?)',[$producto->id])->fetchAll('assoc');
-            foreach($tagsprod as $tag) {
-                if(is_null($productostags)){
-                    $productostags = implode($tag);
-                 } else {
-                  $productostags = $productostags .' '.'-'.' '. implode($tag); //recorro cada tag y lo voy concatenando
-                }
-            }
-            $tagsproducto[$i] = $productostags;
-            $i++;
                 //traigo las imagenes del producto
                 $query3 = TableRegistry::get('ImagenesProductos')->find(); //traigo las imagenes del producto
                 $imgproductos = $query3->select(['foto','numero'])->where(['productos_id' => $producto->id])->toArray();
@@ -116,8 +103,8 @@ class NegociosController extends AppController
             if (is_null($tagsnegocio)) {
              $tagsnegocio = ' ';
             }
-            $this->set(compact('negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','tagsproducto','orden'));
-            $this->set('_serialize', ['negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','tagsproducto','orden']);
+            $this->set(compact('negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','orden'));
+            $this->set('_serialize', ['negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','orden']);
     }
 
     public function index()

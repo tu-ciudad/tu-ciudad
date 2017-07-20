@@ -62,6 +62,7 @@ class PagesController extends AppController
         $productos = null;
         $imagenesnegocios = null;
         $imagenesproductos = null;
+        $negociosdeproductos = null;
         $cantidadproductos = $query->select(['*'])->count();
         $conexion = ConnectionManager::get('default');
         if ($cantidadproductos > 30){
@@ -72,6 +73,10 @@ class PagesController extends AppController
         }
         //Traigo imagenes de los productos
         foreach($productos as $producto):
+                //traigo el local del producto
+                $query4 = TableRegistry::get('Negocios')->find(); //traigo las imagenes del producto
+                $negocios = $query4->select([])->where(['id' => $producto->negocios_id])->toArray();
+                $negociosdeproductos[] = $negocios;
                 //traigo las imagenes del producto
                 $query3 = TableRegistry::get('ImagenesProductos')->find(); //traigo las imagenes del producto
                 $imgproductos = $query3->select(['foto','numero'])->where(['productos_id' => $producto->id])->toArray();
@@ -81,7 +86,7 @@ class PagesController extends AppController
             $imagenesproductos[] = $imgproductos;
             endforeach;
         //PARTE LOCALES //////////////////////////////////////////////////////////////
-            $query = TableRegistry::get('negocios')->find();
+            $query = TableRegistry::get('Negocios')->find();
             $cantidadlocales = $query->select(['*'])->count();
             if ($cantidadlocales > 6){
                 $negocios = $conexion->execute('SELECT * FROM bd_comercios.negocios order by rand() limit 30')->fetchAll('assoc');
@@ -97,7 +102,7 @@ class PagesController extends AppController
             endforeach;
 
 
-        $this->set(compact('page','subpage','productos','imagenesproductos','negocios','imagenesnegocios'));
+        $this->set(compact('page','subpage','productos','imagenesproductos','negocios','imagenesnegocios','negociosdeproductos'));
 
         try {
             $this->render(implode('/', $path));

@@ -42,7 +42,10 @@
 <div class="productos-container thumbnail" style="padding-bottom: 50px; padding-top: 15px; padding-left: 15px; padding-right: 15px; background-color: rgb(248, 248, 248); border-radius: 5px;">
     <?php
  $i = 0;
- foreach ($productos as $producto) { ?>
+ foreach ($productos as $producto) { 
+$negocio = $negociosdeproductos[$i][0];
+ ?>
+
                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3"> <!-- producto -->
                <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">
         <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
@@ -56,8 +59,8 @@
                         </h3>
                         
                         <h5>
-                        <a href=<?= '/negocios/perfil/'.$producto->negocios_id?>>
-                            <span>negocio name</span>
+                        <a href="../negocios/perfil/"<?= $producto->negocios_id ?>>
+                            <span><?= $negocio->nombre ?></span>
                         </a>
                         </h5>
                     </div>

@@ -140,7 +140,34 @@
 
 
     </section>
+<?php
+ $i = 0;
+ foreach ($productos as $producto): ?>
 
+<ul id="pid<?= $i?>" class="hidden">
+    <li><?= $negocio->nombre ?></li>
+   <li><?= $producto->titulo ?></li>
+   <li><?= $producto->precio ?></li>
+   <li><?= $producto->cuerpo ?></li>
+   <li><?= $imagenesproductos[$i][0]->foto ?></li>
+   <li><?= $negocio->id ?></li>
+   <ul>
+   <li><?= count($imagenesproductos[$i]) ?></li>
+   <?php
+
+        foreach ($imagenesproductos[$i] as $imagen):
+        ?>
+
+        <li><?= $imagen->foto ?></li>
+        <?php
+
+        endforeach; ?> 
+
+   </ul>
+        </ul>
+<?php
+                $i=$i+1;
+ endforeach; ?>
 <?= $this->element('footer') ?>
 
 
@@ -168,6 +195,9 @@
 
 
 <script>
+$('meta[property=og:description]').remove();
+    $('head').append( '<meta property="og:description" content="this is new">' );
+
     function initMap() {
    var locations = [
       
@@ -350,24 +380,7 @@ document.getElementById('shareBtn').onclick = function() {
 }, function(response){});
 }
 </script>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1363818250353028',
-      xfbml      : true,
-      version    : 'v2.7'
-    });
-    FB.AppEvents.logPageView();
-  };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
 <script>
   function pmodal(elem){
 $('#caru  > .item').addClass('active');
@@ -377,6 +390,7 @@ $('#caru  > .item').addClass('active');
         pPrecio = $('#pid' + id + ' > li:nth-child(3)').text();
         pCuerpo = $('#pid' + id + ' > li:nth-child(4)').text();
         pImagen = $('#pid' + id + ' > li:nth-child(5)').text();
+        pId = $('#pid' + id + ' > li:nth-child(6)').text();
         numImagen = $('#pid' + id + ' > ul > li:first-child').text();
         //asigno los datos del producto al modal incluyendo la primer imagen
         $('#pTitulo').text(pTitulo);
@@ -384,7 +398,8 @@ $('#caru  > .item').addClass('active');
         $('#pCuerpo').text(pCuerpo);
         $('#caru > div > img').attr('src', pImagen);
         $('#carui > li > img').attr('src', pImagen);
-
+        $('.vermasde > a').attr('href', '/negocios/perfil/'+pId);
+        $('#vermash1').text(nNombre);
           //j es la posicion de la imagen, arranca del 3 porque el 1 es la cantidad de imagenes y el 2 es la primer imagen
          var j = 3;
          for ( var i = 1; i < numImagen; i++ ) {
@@ -406,5 +421,5 @@ $('#caru  > .item').addClass('active');
       
     });
 </script>
- <?= dump($productos) ?> 
- <?= dump($negocio) ?> 
+<!--  <?= dump($productos) ?> 
+ <?= dump($negocio) ?>  -->

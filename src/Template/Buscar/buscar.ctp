@@ -491,6 +491,7 @@ $('#caru  > .item').addClass('active');
         pPrecio = $('#pid' + id + ' > li:nth-child(3)').text();
         pCuerpo = $('#pid' + id + ' > li:nth-child(4)').text();
         pImagen = $('#pid' + id + ' > li:nth-child(5)').text();
+        pId = $('#pid' + id + ' > li:nth-child(6)').text();
         numImagen = $('#pid' + id + ' > ul > li:first-child').text();
         //asigno los datos del producto al modal incluyendo la primer imagen
         $('#pTitulo').text(pTitulo);
@@ -499,7 +500,7 @@ $('#caru  > .item').addClass('active');
         $('#l-name').text(nNombre);
         $('#caru > div > img').attr('src', pImagen);
         $('#carui > li > img').attr('src', pImagen);
-        $('.vermasde > a').attr('href', '/negocios/perfil/');
+        $('.vermasde > a').attr('href', '/negocios/perfil/'+pId);
         $('#vermash1').text(nNombre);
 
           //j es la posicion de la imagen, arranca del 3 porque el 1 es la cantidad de imagenes y el 2 es la primer imagen
@@ -523,4 +524,4 @@ $('#caru  > .item').addClass('active');
       
     });
 </script>
- <?= dump($variable) ?> 
+<!--  <?= dump($variable) ?>  -->

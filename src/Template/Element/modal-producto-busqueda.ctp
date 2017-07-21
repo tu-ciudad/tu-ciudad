@@ -153,6 +153,12 @@
      <h2 class="text-danger pPrecio" id="pPrecio">$49.99</h2>
 	<p class="pCuerpo" id="pCuerpo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore totam delectus atque vel similique illo, praesentium, ratione eligendi esse officiis, accusantium nisi! Quis modi quia accusantium, sunt ab exercitationem nam.</p>
 	<style>
+    .vermash1 {
+      
+    }
+    .vermasde h2 {
+      
+    }
     .vermasde a:hover {text-decoration:nounderline; }
     .vermasde a:link {text-decoration:none; } /* Link no visitado*/
     .vermasde a:visited {text-decoration:none; } /*Link visitado*/
@@ -161,7 +167,7 @@
   </style>
   <div class="vermasde">
   <br>
-    <a href="" id="vermaslink" ><h2 style="margin-bottom: 0;">ver más de </h2><h1 id="vermash1" style="margin-top: 0;"></h1></a>
+    <a href="" id="vermaslink" ><h2 style="margin-bottom: 0; font-size: 20px;">Ver más de </h2><h1 id="vermash1" style="margin-top: 0; font-size: 30px;"></h1></a>
   </div>
   
             <!-- <div class="comercio-card  " >
@@ -220,6 +226,7 @@
    <li><?= $producto['precio'] ?></li>
    <li><?= $producto['cuerpo'] ?></li>
    <li><?= $producto['0']->foto ?></li>
+   
    <!-- <ul>
    <li><?= count($imagenesproductos[$i]) ?></li>
    <?php

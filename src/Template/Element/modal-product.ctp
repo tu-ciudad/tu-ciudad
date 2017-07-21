@@ -34,7 +34,7 @@
 <div id="modalProduct" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog px">
     <div class="modal-content">
-    <h4 class="modal-title _4-i0 nNombre" id="l-name"><?= $negocio->nombre ?></h4>
+    <h4 class="modal-title _4-i0 nNombre" id="l-name"></h4>
       <span class="close pclose" data-dismiss="modal" aria-label="Close">×</span>
       <div class="modal-body" style="background-color: #FAFAFA;">
 	
@@ -71,20 +71,18 @@
      </h2>
      <h2 class="text-danger pPrecio" id="pPrecio">$49.99</h2>
 	<p class="pCuerpo" id="pCuerpo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore totam delectus atque vel similique illo, praesentium, ratione eligendi esse officiis, accusantium nisi! Quis modi quia accusantium, sunt ab exercitationem nam.</p>
-	<br><br>
+<style>
+    .vermasde a:hover {text-decoration:nounderline; }
+    .vermasde a:link {text-decoration:none; } /* Link no visitado*/
+    .vermasde a:visited {text-decoration:none; } /*Link visitado*/
+    .vermasde a:active {text-decoration:none;  } /*Link activo*/
     
-            <div class="related categorias">
-            
-                <h4 style="position: absolute; top: -5px; margin-left: 5px">relacionados: </h4>
-                <li><a href="#">asdasd</a></li>
-                            <li><a href="#">asdasd</a></li>
-                            <li><a href="#">2123</a></li>
-                            <li><a href="#">asd12</a></li>
-                            <li><a href="#">ghgfh</a></li>
-                            <li><a href="#">45dfdf</a></li>
-                            <li><a href="#">g3235f gghdfbg</a></li>
-                            <li><a href="#">g435f</a></li>
-            </div>
+  </style>
+  <div class="vermasde">
+  <br>
+    <a href="" id="vermaslink" ><h2 style="margin-bottom: 0; font-size: 20px;">Ver más de </h2><h1 id="vermash1" style="margin-top: 0; font-size: 30px;"></h1></a>
+  </div>
+    
 
 	</center>
 
@@ -120,33 +118,7 @@
   </div>
 </div>
 
-<?php
- $i = 0;
- foreach ($productos as $producto): ?>
 
-<ul id="pid<?= $i?>" class="hidden">
-    <li><?= $negocio->nombre ?></li>
-   <li><?= $producto->titulo ?></li>
-   <li><?= $producto->precio ?></li>
-   <li><?= $producto->cuerpo ?></li>
-   <li><?= $imagenesproductos[$i][0]->foto ?></li>
-   <ul>
-   <li><?= count($imagenesproductos[$i]) ?></li>
-   <?php
-
-        foreach ($imagenesproductos[$i] as $imagen):
-        ?>
-
-        <li><?= $imagen->foto ?></li>
-        <?php
-
-        endforeach; ?> 
-
-   </ul>
-        </ul>
-<?php
-                $i=$i+1;
- endforeach; ?>
 
 <script>
   $('#modalProduct').on('show.bs.modal', function (e) {

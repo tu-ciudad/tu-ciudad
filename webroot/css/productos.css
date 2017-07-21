@@ -66,14 +66,17 @@
     text-align: center;
     margin-top: 30%;
     font-weight: 200;
-    color: #515251;
-    font-size: 16px;
+    color: rgb(83, 131, 211);
+    font-size: 19px;
 }
-.producto1 .item .content a:link  { text-decoration: inherit;}
+/.producto1 .item .content h5 span  {
+    color: rgb(83, 131, 211);
+}
+/.producto1 .item .content a:link  { text-decoration: inherit;}
 .producto1 .item .content a:visited  { text-decoration: inherit;}
 .producto1 .item .content a:active  { text-decoration: inherit;}
-.producto1 .item .content a  { text-decoration: inherit; color: #515251; transition: all 0.2s;}
-.producto1 .item .content a:hover  { color: rgb(83, 131, 211); }
+/.producto1 .item .content a  { text-decoration: inherit; color: #515251; transition: all 0.2s;}
+/.producto1 .item .content h5 span:hover  { color: rgb(39, 77, 154); }
 
 .producto1 .item .content-bot {
     position: absolute;

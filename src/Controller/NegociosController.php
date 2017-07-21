@@ -86,6 +86,10 @@ class NegociosController extends AppController
             $tags = $conexion->execute('Call traertags(?)',[$negocio->id])->fetchAll('assoc');
             //nada mas me falta algo que los saque del vector y los ponga interlacados por ,
           //  $tagsnegocio = implode(',',$tags);
+
+            //veo la cantidad de tags que  tiene el local. lo hardcodeo en 1 porque no me anda internet. la idea es ver ese tamaño y despues generar un rand de 0 a esa cantidad. para seleccionar un tag aleatorio
+
+            
             foreach ($tags as $tag) {
                 if(is_null($tagsnegocio)){
                     $tagsnegocio = implode($tag);
@@ -103,8 +107,16 @@ class NegociosController extends AppController
             if (is_null($tagsnegocio)) {
              $tagsnegocio = ' ';
             }
-            $this->set(compact('negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','orden'));
-            $this->set('_serialize', ['negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','orden']);
+        //traigo dos comercios que tengan tags coincidentes
+            $conexion = ConnectionManager::get('default');
+            $cantidadtags = count($tags);
+            $nrotag = rand(1,$cantidadtags) - 1;
+        //    $tags[0];//aca va el numero que me dio el aleatorio.este es el comodin que va
+            $relacionados = $conexion->execute('SELECT * FROM negocios inner join negocios_tags on (negocios.id = negocios_tags.negocios_id) inner join tags on (tags.id = negocios_tags.tags_id) where tags.nombre = ? and negocios.id <> ? order by rand() limit 2;',[$tags[$nrotag]['nombre'], $negocio->id])->fetchAll('assoc');
+        //traigo los tags de todos los negocios
+            
+            $this->set(compact('negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','orden','relacionados'));
+            $this->set('_serialize', ['negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','orden','relacionados']);
     }
 
     public function index()

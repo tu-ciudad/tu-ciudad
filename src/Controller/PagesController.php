@@ -66,7 +66,7 @@ class PagesController extends AppController
         $cantidadproductos = $query->select(['*'])->count();
         $conexion = ConnectionManager::get('default');
         if ($cantidadproductos > 30){
-            $productos = $conexion->execute('SELECT * FROM bd_comercios.productos order by rand() limit 30')->fetchAll('assoc');
+            $productos = $conexion->execute('SELECT * FROM productos order by rand() limit 30')->fetchAll('assoc');
         } else {
             $query = TableRegistry::get('productos')->find();
             $productos = $query->select([])->toArray();
@@ -89,7 +89,7 @@ class PagesController extends AppController
             $query = TableRegistry::get('Negocios')->find();
             $cantidadlocales = $query->select(['*'])->count();
             if ($cantidadlocales > 6){
-                $negocios = $conexion->execute('SELECT * FROM bd_comercios.negocios order by rand() limit 30')->fetchAll('assoc');
+                $negocios = $conexion->execute('SELECT * FROM negocios order by rand() limit 30')->fetchAll('assoc');
             } else {
                 $query = TableRegistry::get('negocios')->find();
                 $negocios = $query->select([])->toArray();

@@ -1,0 +1,17 @@
+Storeds Procedures:
+
+selectnegociostags:	Usado en:	Trae negocios asociados a un tag
+				Buscarcontroller.
+
+selectproductostags:	Usado en:	Trae productos asociados a un tag
+				Buscarcontroller.
+
+selecttagnegocio:	Usado en:	Trae los tags asociados a un negocio
+				Negocioscontroller.
+
+selecttagproducto:	Usado en:	Trae los tags asociados a un producto
+				Nada.
+selectproductosmismotag:Usado en:	Trae productos con un determinado tag
+				Nada.
+
+

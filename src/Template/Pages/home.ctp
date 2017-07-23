@@ -30,24 +30,84 @@
     </div>
 </div>
 
+  <style>
 
+  /*col-min*/
+
+@media (max-width: 430px) {
+    .container {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .mainpage .header .jumbotron .jumbox{
+    margin-left: 0;
+    width: 100%;
+   }
+  }
+/******home responsive**********/
+  .mainpage  .productos-container {
+    padding-bottom: 50px;
+     padding-top: 15px;
+      padding-left: 15px;
+       padding-right: 15px;
+        background-color: rgb(248, 248, 248);
+         border-radius: 5px;
+  }
+
+  @media (max-width: 500px) {
+  .mainpage .producto1 .item {
+        height: 170px;
+        width: 170px;
+    }
+  }
+@media (max-width: 430px) {
+    .mainpage .container {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .mainpage .producto1 .item {
+        height: 150px;
+        width: 150px;
+    }
+   .mainpage .productos-container {
+    padding: 0;
+    width: 100%;
+   }
+   .mainpage .col-min {
+    padding: 10px;
+   }
+    .mainpage .header .jumbotron .jumbox {
+    margin-left: 0;
+    width: 100%;
+   }
+   .mainpage .producto1 .item .content h5 { 
+    margin-top: 10%;
+   }
+}
+/****** end home responsive**********/
+</style>
 <div class="container">
    <div class="mainpage">
+   
      <div class="artDes">
         <div class="jumbotron">
         <h2><span class="title"> Productos destacados &nbsp;&nbsp;</span><img src="../img/cart.png" alt=""></h2>
         </div>
         </div>
-   
 
-<div class="productos-container thumbnail" style="padding-bottom: 50px; padding-top: 15px; padding-left: 15px; padding-right: 15px; background-color: rgb(248, 248, 248); border-radius: 5px;">
+
+<div class="productos-container thumbnail" style="">
     <?php
  $i = 0;
  foreach ($productos as $producto) { 
 $negocio = $negociosdeproductos[$i][0];
  ?>
 
-               <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3"> <!-- producto -->
+               <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-min"> <!-- producto -->
                <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">
         <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
                    
@@ -132,7 +192,7 @@ $negocio = $negociosdeproductos[$i][0];
         <div class="jumbotron">
         <h2><span class="title cookie">  
                 
-                    <co>Tu<co/><span>Ciudad</span><as class="opens"> en el mapa &nbsp;&nbsp; </as> </span><img src="../img/worldwide.png" style="max-width: 64px;" alt=""></h2>
+                    <co>Paseo<co/><span>Ciudad</span><as class="opens"> en el mapa &nbsp;&nbsp; </as> </span><img src="../img/worldwide.png" style="max-width: 64px;" alt=""></h2>
         </div>
         </div>
 <div class="proDes">

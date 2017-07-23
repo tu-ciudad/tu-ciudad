@@ -281,8 +281,42 @@ if (!$variable) {
 <br>
 
  <?= $this->element('side-menu-prod') ?>
-
-
+<style>
+  /******buscar responsive**********/
+  
+  
+  @media (max-width: 500px) {
+  .buscarpage .producto1 .item {
+        height: 170px;
+        width: 170px;
+    }
+  }
+@media (max-width: 430px) {
+    .buscarpage .container {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .buscarpage .producto1 .item {
+        height: 150px;
+        width: 150px;
+    }
+   .buscarpage .productos-container {
+    padding: 0;
+    width: 100%;
+   }
+   .buscarpage .col-min {
+    padding: 10px;
+   }
+    
+   .buscarpage .producto1 .item .content h5 { 
+    margin-top: 10%;
+   }
+}
+/****** end buscar responsive**********/
+</style>
+<div class="buscarpage">
 <div class="productos-container col-md-9">
 <div class="container thumbnail" style="padding-top: 15px;">
   
@@ -290,7 +324,7 @@ if (!$variable) {
 
  $i = 0;
  foreach ($variable as $producto): ?>
-               <div class=" col-xs-6 col-sm-4 col-md-4 col-lg-3 "> <!-- producto -->
+               <div class=" col-xs-6 col-sm-4 col-md-4 col-lg-3 col-min"> <!-- producto -->
                <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">
                        <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
                    
@@ -314,7 +348,7 @@ if (!$variable) {
                        <h3>  
                             <span><?= $producto['precio'] ?></span>
                        </h3>
-                       <h4 class="hidden-md hidden-lg"><span><?= $producto->titulo ?></span></h4>
+                       <h4 class="hidden-md hidden-lg"><span><?= $producto['titulo'] ?></span></h4>
                     </div>
 
             
@@ -332,7 +366,7 @@ if (!$variable) {
  <?= $this->element('modal-producto-busqueda') ?>
 </div>
 </div>
-
+</div>
 
 
 <?php

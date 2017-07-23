@@ -112,7 +112,7 @@
 .perf .thumbnail, .perf .container, .perf .container-fluid {
     /padding: 0;
     /margin: 0;
-    min-width: 500px;
+    /min-width: 500px;
 
 }
 }
@@ -123,6 +123,15 @@
 }
 }
 
+
+
+/*col--768*/
+@media (max-width: 768px) {
+    .producto1 .item {
+        height: 110px;
+        width: 110px;
+    }
+}
 /*col--768*/
 @media (max-width: 768px) {
     .producto1 .item {

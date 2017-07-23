@@ -3,14 +3,14 @@
 
     <div class="footer-left" style="margin-left: -15px;">
 
-        <h3 style="font-size: 45px;">Tu<span style="font-size: 45px;">Ciudad</span></h3>
-        <p class="footer-company-name">Tu Ciudad &copy; 2017</p>
+        <h3 style="font-size: 45px;">Paseo<span style="font-size: 45px;">Ciudad</span></h3>
+        <p class="footer-company-name">Paseo Ciudad &copy; 2017</p>
     
     </div>
     <div class="footer-center" style="margin-top: 25px; margin-left: -5px;">
         <div>
             <i class="fa fa-envelope"></i>
-            <p><a href="mailto:support@company.com">support@tuciudad.com</a></p>
+            <p><a href="mailto:contacto@paseociudad.com">contacto@paseociudad.com</a></p>
         </div>
     </div>
     <div class="footer-right">
@@ -32,7 +32,7 @@
         <div class="infoplus hidden-sm" id="downf"> <i class="fa fa-chevron-down fdown" aria-hidden="true"></i></div>
         <div class="footer-left" style="margin-left: -15px;">
 
-            <h3 style="font-size: 45px;">Tu<span style="font-size: 45px;">Ciudad</span></h3>
+            <h3 style="font-size: 45px;">Paseo<span style="font-size: 45px;">Ciudad</span></h3>
 
             <p class="footer-links">
                 <a href="#">Home</a> ·
@@ -43,7 +43,7 @@
                 <a href="#">Contact</a>
             </p>
 
-            <p class="footer-company-name">Tu Ciudad &copy; 2017</p>
+            <p class="footer-company-name">Paseo Ciudad &copy; 2017</p>
         </div>
 
         <div class="footer-center" style="margin-top: 25px; margin-left: -5px;">
@@ -60,7 +60,7 @@
 
             <div>
                 <i class="fa fa-envelope"></i>
-                <p><a href="mailto:support@company.com">support@tuciudad.com</a></p>
+                <p><a href="mailto:contacto@paseociudad.com">contacto@paseociudad.com</a></p>
             </div>
 
         </div>

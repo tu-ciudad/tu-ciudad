@@ -271,10 +271,11 @@ i {
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
               <h4 class="modal-title">Datos de contacto</h4>
             </div>
-            <form enctype="multipart/form-data" action="/productos/add" method="post">
+            <form enctype="multipart/form-data" action="/negocios/editardatos" method="post">
             <div class="modal-body" style="padding: 0;">
             <table class="table table-striped table-hover" style="margin: 0;">
                               <tbody>
+                                  <input type="hidden" name="id" value="<?= $negocio->id ?>">
                                   <tr>
                                       <th>Nombre:</th>
                                       <th><input type="text" class="form-control" id="foto1" name="nombre" value="<?= $negocio->nombre ?>"></th>

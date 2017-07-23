@@ -26,12 +26,14 @@
 <?= $this->element('tabla-horarios') ?>
 <div style="margin-bottom: 10px;"></div>
 
+
+<div class="perfilpage">
 <div class="productos-container thumbnail " style="padding-top: 10px;">
 <div class="container">
 <?php
  $i = 0;
  foreach ($productos as $producto): ?>
-               <div class="col-xs-6 col-sm-4 col-md-3 col-lg-4"> <!-- producto -->
+               <div class="col-xs-6 col-sm-4 col-md-3 col-lg-4 col-min"> <!-- producto -->
                <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">
         <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
                    
@@ -69,7 +71,7 @@
  endforeach; ?>
 </div>
 </div>
-
+</div>
 
 
 
@@ -401,6 +403,7 @@ $('#caru  > .item').addClass('active');
         $('#carui > li > img').attr('src', pImagen);
         $('.vermasde > a').attr('href', '/negocios/perfil/'+pId);
         $('#vermash1').text(nNombre);
+        $('#l-name').text(nNombre);
           //j es la posicion de la imagen, arranca del 3 porque el 1 es la cantidad de imagenes y el 2 es la primer imagen
          var j = 3;
          for ( var i = 1; i < numImagen; i++ ) {

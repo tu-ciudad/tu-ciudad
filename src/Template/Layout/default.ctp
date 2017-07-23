@@ -19,7 +19,8 @@
     
  */
  
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'PaseoCiudad';
+
 ?>
 
 <!DOCTYPE html>

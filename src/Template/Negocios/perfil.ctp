@@ -195,9 +195,6 @@
 
 
 <script>
-$('meta[property=og:description]').remove();
-    $('head').append( '<meta property="og:description" content="this is new">' );
-
     function initMap() {
    var locations = [
       
@@ -374,9 +371,13 @@ function dayOfTheWeek (weekDays) {
 </script>
 <script>
 document.getElementById('shareBtn').onclick = function() {
+
   FB.ui({
   method: 'share',
-  href: 'http://shopciudad.000webhostapp.com',
+  href: 'http://paseociudad.website/negocios/perfil/5',
+  //caption: 'An example caption',
+  //picture: 'http://paseociudad.website/files/ImagenesProductos/7315acfe5f85612ac3b95c54deee11a8.jpg',
+  
 }, function(response){});
 }
 </script>

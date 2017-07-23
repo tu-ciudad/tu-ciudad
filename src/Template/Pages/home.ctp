@@ -3,6 +3,7 @@
   * @var \App\View\AppView $this
   */
 ?>
+
 <script>
   function dimensionar(elem){
     dwidth = $(elem).width();

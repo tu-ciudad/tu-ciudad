@@ -32,7 +32,7 @@ class BuscarController extends AppController
             $productos=null;
             $tags = explode(' ',$this->request->query['productos']);
             foreach ($tags as $tag){
-                $consulta = $conexion->execute('Call traerproductostags(?)',[$tag])->fetchAll('assoc');
+                $consulta = $conexion->execute('Call selectproductostags(?)',[$tag])->fetchAll('assoc');
                 foreach ($consulta as $producto){
                     ///////// traigo las imagenes (no esta terminado)
                 $query3 = TableRegistry::get('ImagenesProductos')->find();
@@ -52,7 +52,7 @@ class BuscarController extends AppController
             $comercios=null;
         $tags = explode(' ',$this->request->query['comercios']);
             foreach ($tags as $tag){
-                $consulta = $conexion->execute('Call traercomercios(?)',[$tag])->fetchAll('assoc');
+                $consulta = $conexion->execute('Call selectnegociostags(?)',[$tag])->fetchAll('assoc');
                 foreach ($consulta as $comercio){
                     $comercio['foto'] = '../../files/ImagenesNegocios/foto/'.$comercio['foto'];
                     $comercios[] = $comercio;

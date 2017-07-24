@@ -83,7 +83,7 @@ class NegociosController extends AppController
         //traigo los tags del comercio
             $tagsnegocio = null;
             $conexion = ConnectionManager::get('default');
-            $tags = $conexion->execute('Call traertags(?)',[$negocio->id])->fetchAll('assoc');
+            $tags = $conexion->execute('Call selecttagnegocio(?)',[$negocio->id])->fetchAll('assoc');
             //nada mas me falta algo que los saque del vector y los ponga interlacados por ,
           //  $tagsnegocio = implode(',',$tags);
 
@@ -341,5 +341,26 @@ class NegociosController extends AppController
                 return $this->redirect(['action' => 'editar']);
             }
         }
+
+    public function editardatos($id = null){
+        $negocio = $this->Negocios->get($id, [
+            'contain' => []
+        ]);
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $negocio = $this->Productos->patchEntity($negocio, $this->request->getData());
+            if ($this->Productos->save($negocio)) {
+                $this->Flash->success(__('The negocio has been saved.'));
+                //cambio los tags
+                $negocios_tags = TableRegistry::get('negocios_tags');
+                $tags = $this->request->data['tags'];
+                $arraytags = explode(",", $tags);
+                foreach($arraytags as $tag):
+                    $querytags = $negocios_tags->query();
+                    $querytags->insert(['negocios_id','tags_id'])->values(['negocios_id' => $negocio->get('id'),
+                                                                        'tags_id' => $tag])->execute();
+        endforeach;
+                return $this->redirect(['action' => 'index']);
+            }
+        }
     }
-        
+}

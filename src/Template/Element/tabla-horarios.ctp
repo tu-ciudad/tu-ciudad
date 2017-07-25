@@ -9,7 +9,7 @@
 
 @media screen and (max-width: 767px) {
     .place-schedule {
-        
+        padding: 0;
     }
 }
 

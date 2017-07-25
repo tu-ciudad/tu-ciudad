@@ -7,12 +7,12 @@
 
 }
 .profile img.image-lg{ /*portada*/
-    z-index: 0;
-    width: 100%;  
+    /z-index: 0;
+    /width: 100%;  
     /margin-bottom: 10px;
-    height: 400px;
+    /height: 400px;
     
-    overflow: hidden;
+    /overflow: hidden;
     
 }
 
@@ -41,7 +41,16 @@ background: -webkit-linear-gradient(top, rgba(250,250,250,0) 0%,rgba(250,250,250
 background: linear-gradient(to bottom, rgba(250,250,250,0) 0%,rgba(250,250,250,0.5) 20%,rgba(250,250,250,.8) 80%,rgba(250,250,250,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00fafafa', endColorstr='#fafafa',GradientType=0 ); /* IE6-9 */
 }
-
+@media (max-width: 500px) {
+  
+    #sidefix {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .profile .user {
+        width: 100%;
+      }
+  }
 .profile .actions {
   float: right;
 }
@@ -83,12 +92,7 @@ div.show-image button.update {
 ************@media querys********/
 @media (max-width:1200px)
 {
-.profile-text {
-    font-weight: 500;
-    font-size:11px;
-    float: left;
-    margin-left: 7%;
-}
+
 .image-profile
 {
     margin: -110px 10px 0px 25px;
@@ -105,17 +109,7 @@ div.show-image button.update {
 
 @media (max-width:992px)
 {
-.profile-text {
-    font-weight: 500;
-    font-size:11px;
-    float: left;
-    margin-left: 5%;
-}
-.profile-text h1 {
-    font-weight: 600;
-    font-size:19px;
-    /float: left;
-}
+
 .image-profile
 {
     margin: -80px 10px 0px 25px;
@@ -132,17 +126,7 @@ div.show-image button.update {
 
 @media (max-width:768px)
 {
-.profile-text {
-    font-weight: 500;
-    font-size:11px;
-    float: left;
-    margin-left: 16%;
-}
 
-.profile-text>h1{
-    font-weight: 700;
-    font-size:16px;
-}
 
 .image-profile
 {
@@ -160,14 +144,14 @@ div.show-image button.update {
 
 @media (max-width: 768px) {
   .btn-responsive {
-    padding:2px 4px;
-    font-size:80%;
-    line-height: 1;
-    border-radius:3px;
+    /padding:2px 4px;
+    /font-size:80%;
+    /line-height: 1;
+    /border-radius:3px;
   }
 }
 
-@media (min-width: 769px) and (max-width: 992px) {
+@media  (max-width: 992px) {
   .btn-responsive {
     padding:4px 9px;
     font-size:90%;
@@ -242,10 +226,17 @@ However, delay the fade out process for 2.5 seconds */
   color: rgb(0, 148, 255);
 }
 /*************************fin jumbo nuevo*******************/
+.jumb02 {
+  position: relative;  
+  padding-left: 15px; 
+  padding-right: 15px;  
+  margin-bottom: 0; 
+  padding-bottom: 0;
+}
 </style>
  <!-- jumbotron nuevo fb style -->
 
-<div class="container-fluid " id="sidefix" style="position: relative; min-width:500px; padding-left: 15px; padding-right: 15px;  margin-bottom: 0; padding-bottom: 0;">
+<div class="container-fluid jumb02" id="sidefix" style="">
     <div class="profile clearfix  " style="padding-left: 0; padding-right: 0;"> <!-- imagenes -->
         <img align="left" class="image-lg" src=<?= $fportada ?> alt="Profile image example"/>
        

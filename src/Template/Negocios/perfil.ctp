@@ -4,6 +4,52 @@
   * @var \App\View\AppView $this
   */
 ?>
+<style>
+  .mainperf {
+    padding-right: 0; 
+    padding-left: 0;
+  }
+  /******home responsive**********/
+
+
+  @media (max-width: 500px) {
+  .perfilpage .producto1 .item {
+        height: 170px;
+        width: 170px;
+    }
+   .mainperf {
+    margin-left: 0;
+    margin-right: 0;
+   }
+   .profile img.image-lg {
+    max-height: 270px;
+   }
+  }
+@media (max-width: 430px) {
+    .perfilpage .container {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .perfilpage .producto1 .item {
+        height: 150px;
+        width: 150px;
+    }
+   .perfilpage .productos-container {
+    padding: 0;
+    width: 100%;
+   }
+   .perfilpage .col-min {
+    padding: 10px;
+   }
+  
+   .perfilpage .producto1 .item .content h5 { 
+    margin-top: 10%;
+   }
+}
+/****** end home responsive**********/
+</style>
 <script>
   function dimensionar(elem){
     dwidth = $(elem).width();
@@ -15,7 +61,7 @@
 </script>
 <?= $this->element('jumbotron02') ?>
    
-    <div class=" container-fluid" id="content" style="padding-right: 0; padding-left: 0;">
+    <div class=" container-fluid mainperf" id="content" style="">
 
         <div class=" perf  " >
 

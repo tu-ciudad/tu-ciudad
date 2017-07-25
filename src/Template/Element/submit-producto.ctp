@@ -131,10 +131,6 @@
             </div> -->   
 </form>
         </div>
-
-
-
-
         
        
       </div> 
@@ -157,21 +153,24 @@
     <strong>
       &nbsp;Carga exitosa!</a>
     </strong> la pagina se recargara en 5 segundos&nbsp;&nbsp; </div> <!-- fin de cartel -->
-      <script>
 
-var i = 1;
+
+
+<script>
+//declaro 'p', porque uso i en los for
+var p = 1;
 
 function agregar(num) {
-if (num >= i) {
-  var inpUp = '<input type="file" accept="image/*" id="foto'+(i += 1)+'" name="file[]" onchange="base64(this);" style="display: none;">';
-  var labUp = '<label for="foto'+ i +'" id="lab'+ i +'" class="label-input"><img  class="labelthumb" id="resultfoto'+ i +'" src=" " onload="agregar('+i+');" /><button type="button" class="close hidden" id="close'+i+'" onclick="cerrar('+i+');" >×</button></label>';
-  var agregar = '<div class="col-md-3  empty" id="div'+i+'" >'+ labUp + inpUp + '</div>';
+if (num >= p) {
+  var inpUp = '<input type="file" accept="image/*" id="foto'+(p += 1)+'" name="file[]" onchange="base64(this);" style="display: none;">';
+  var labUp = '<label for="foto'+ p +'" id="lab'+ p +'" class="label-input"><img  class="labelthumb" id="resultfoto'+ p +'" src=" " onload="agregar('+p+');" /><button type="button" class="close hidden" id="close'+p+'" onclick="cerrar('+p+');" >×</button></label>';
+  var agregar = '<div class="col-md-3  empty" id="div'+p+'" >'+ labUp + inpUp + '</div>';
       //$('#views').append(agregar); //agrega el input con el preview adentro de views
   
         //e.preventDefault();
         $('#subimp').append(agregar);
-        $('#cant').text(i); //cantidad de imagenes
-        //console.log(i);
+        $('#cant').text(p); //cantidad de imagenes
+        //console.log(p);
     }};
 
 
@@ -182,7 +181,7 @@ function cerrar(num){
   var y = num + 1;
       k = num;
 
-  for (var j = num; j < i; j++) {
+  for (var j = num; j < p; j++) {
 
     $('#div'+y).attr('id', 'div' + k);
     $('#foto'+y).attr('id', 'foto' + k);
@@ -197,15 +196,15 @@ function cerrar(num){
 
 }
     
-  i -=1 ;
+  p -=1 ;
   
  //funcion del boton - para borrar input
   //e.preventDefault();
   //alert('asdasdasd');
-      //$('#div'+i).remove(); //remueve el ultimo input
+      //$('#div'+p).remove(); //remueve el ultimo input
      // $(this+':parent').
-      // i -=1 ; //resta 1 a i, para continuar con el orden los ID de los input
-      $('#cant').text(i);
+      // p -=1 ; //resta 1 a p, para continuar con el orden los ID de los input
+      $('#cant').text(p);
       //console.log($('#cant').text());
     
     
@@ -229,9 +228,6 @@ var id = input.id;
 }
 
   
-    
-
-
 
 
 $('body').on('click', '#send', function(e){
@@ -280,7 +276,7 @@ $('body').on('click', '#send', function(e){
           z = z + 1;
           var srci = $('#resultfoto'+z).attr('src');
           formData.append('foto'+z, srci);
-          //console.log('foto'+z);
+          console.log('foto'+z+': '+srci);
         }
         formData.append("cantidad", cant);
         $.ajax({

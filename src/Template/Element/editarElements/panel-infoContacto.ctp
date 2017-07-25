@@ -34,6 +34,10 @@
                                 <th><?= $negocio->email ?></th>
                             </tr>
                             <tr>
+                                <th>Facebook:</th>
+                                <th><?= $negocio->perfilfb ?></th>
+                            </tr>
+                            <tr>
                                 <th>Telefono:</th>
                                 <th><?= $negocio->telefono ?></th>
                             </tr>
@@ -75,6 +79,10 @@
                                   <tr>
                                       <th>Email:</th>
                                       <th><input type="text" class="form-control" id="foto1" name="email" value="<?= $negocio->email ?>"></th>
+                                  </tr>
+                                  <tr>
+                                      <th>Facebook:</th>
+                                      <th><input type="text" class="form-control" id="foto1" name="facebook" value="<?= $negocio->perfilfb ?>"></th>
                                   </tr>
                                   <tr>
                                       <th>Telefono:</th>

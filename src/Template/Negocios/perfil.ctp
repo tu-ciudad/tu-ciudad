@@ -3,6 +3,7 @@
 /**
   * @var \App\View\AppView $this
   */
+$this->layout = 'perfil';
 ?>
 <style>
   .mainperf {

@@ -114,7 +114,6 @@ class NegociosController extends AppController
         //    $tags[0];//aca va el numero que me dio el aleatorio.este es el comodin que va
             $relacionados = $conexion->execute('SELECT * FROM negocios inner join negocios_tags on (negocios.id = negocios_tags.negocios_id) inner join tags on (tags.id = negocios_tags.tags_id) where tags.nombre = ? and negocios.id <> ? order by rand() limit 2;',[$tags[$nrotag]['nombre'], $negocio->id])->fetchAll('assoc');
         //traigo los tags de todos los negocios
-            
             $this->set(compact('negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','orden','relacionados'));
             $this->set('_serialize', ['negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','orden','relacionados']);
     }
@@ -342,25 +341,37 @@ class NegociosController extends AppController
             }
         }
 
-    public function editardatos($id = null){
-        $negocio = $this->Negocios->get($id, [
+    public function editardatos(){
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            if(isset($this->request->data['id'])){
+            $negocio = $this->Negocios->get($this->request->data['id'], [
             'contain' => []
         ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $negocio = $this->Productos->patchEntity($negocio, $this->request->getData());
-            if ($this->Productos->save($negocio)) {
-                $this->Flash->success(__('The negocio has been saved.'));
+
+            $negocio->set('nombre', $this->request->data['nombre']);
+            $negocio->set('descripcion', $this->request->data['descripcion']);
+            $negocio->set('direccion', $this->request->data['direccion']);
+            if(isset($this->request->data['email']))
+                $negocio->set('email', $this->request->data['email']);
+            if(isset($this->request->data['telefono']))
+                $negocio->set('telefono', $this->request->data['telefono']);
+            if(isset($this->request->data['perfilfb']))
+                $negocio->set('perfilfb', $this->request->data['perfilfb']);
+            if ($this->Negocios->save($negocio)) {
+            $conexion = ConnectionManager::get('default');
+            $conexion->execute('call deletetagsnegocio(?)',[$negocio->get('id')]);
                 //cambio los tags
                 $negocios_tags = TableRegistry::get('negocios_tags');
                 $tags = $this->request->data['tags'];
                 $arraytags = explode(",", $tags);
                 foreach($arraytags as $tag):
-                    $querytags = $negocios_tags->query();
-                    $querytags->insert(['negocios_id','tags_id'])->values(['negocios_id' => $negocio->get('id'),
-                                                                        'tags_id' => $tag])->execute();
-        endforeach;
+                        $querytags = $negocios_tags->query();
+                         $querytags->insert(['negocios_id','tags_id'])->values(['negocios_id' => $negocio->get('id'),
+                                                                 'tags_id' => $tag])->execute();
+                endforeach;
                 return $this->redirect(['action' => 'index']);
             }
         }
+    }
     }
 }

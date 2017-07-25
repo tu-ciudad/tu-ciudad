@@ -13,5 +13,5 @@ selecttagproducto:	Usado en:	Trae los tags asociados a un producto
 				Nada.
 selectproductosmismotag:Usado en:	Trae productos con un determinado tag
 				Nada.
-
-
+deletetagsnegocio:	Usado en:	Elimina todas las asociaciones de tags de un comercio
+				Negocioscontroller.

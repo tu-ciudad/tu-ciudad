@@ -171,7 +171,7 @@ if (num >= i) {
         //e.preventDefault();
         $('#subimp').append(agregar);
         $('#cant').text(i); //cantidad de imagenes
-        console.log(i);
+        //console.log(i);
     }};
 
 
@@ -206,7 +206,7 @@ function cerrar(num){
      // $(this+':parent').
       // i -=1 ; //resta 1 a i, para continuar con el orden los ID de los input
       $('#cant').text(i);
-      console.log($('#cant').text());
+      //console.log($('#cant').text());
     
     
   };
@@ -215,7 +215,7 @@ function cerrar(num){
 function base64(input){
 var img = input.files[0];
 var id = input.id;
-console.log(id);
+//console.log(id);
     if(!iEdit.open(img, false, function(res){
       $("#result"+id).attr("src", res); 
       $("#result"+id).parent().parent().removeClass('empty').addClass('full');
@@ -253,7 +253,7 @@ $('body').on('click', '#send', function(e){
                     }
                     
                 }
-                console.log(tags); /*fin tags*/
+                //console.log(tags); /*fin tags*/
          
 
 
@@ -274,13 +274,13 @@ $('body').on('click', '#send', function(e){
          formData.append("tags", tags);
          formData.append("fecha", fdate); //""
          var cant = $('#cant').text() - 1;
-         console.log(cant);
+         //console.log(cant);
          var z = 0;
         for (var x = 0; x < cant; x++){
           z = z + 1;
           var srci = $('#resultfoto'+z).attr('src');
           formData.append('foto'+z, srci);
-          console.log('foto'+z);
+          //console.log('foto'+z);
         }
         formData.append("cantidad", cant);
         $.ajax({
@@ -318,10 +318,10 @@ $('body').on('click', '#send', function(e){
                       x.className = "show";
 
                       // After 3 seconds, remove the show class from DIV
-                      setTimeout(function(){ 
+                      // setTimeout(function(){ 
                          
-                          window.location.reload()
-                          }, 5000);
+                      //     window.location.reload()
+                      //     }, 5000);
 
                      
                  

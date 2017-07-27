@@ -269,7 +269,7 @@ $i = 0;
             <h4 class="price">Comercio: </h4> <a href="../../negocios/perfil/<?= $producto->negocio->id ?>"><h4 class="product-description"><?= $producto->negocio->nombre ?></h4></a>
             <hr>
             <div class="action" style=" right: 1em;">
-              <a href="../../buscar?productos/<?= $producto->negocio->id ?>"><button class="add-to-cart btn btn-default" type="button">Ver más</button></a>
+              <a href="../../buscar?productos"><button class="add-to-cart btn btn-default" type="button">Ver más</button></a>
               <button class="share-fb btn btn-default" type="button"> Compartir</button>
             </div>
           </div>
@@ -291,7 +291,7 @@ $i = 0;
               <div class="row">
                   <div class="col-sm-6 col-md-12">
                       <figure>
-                          <img src="/files/imagenesnegocios/foto/<?= $fportada->foto ?>">
+                          <img src="/files/ImagenesNegocios/foto/<?= $fportada->foto ?>">
                       </figure>
                   </div>
                   <div class="col-sm-6 col-md-12">
@@ -335,7 +335,8 @@ $('.share-fb').click (function() {
 
   FB.ui({
   method: 'share',
-  //href: 'http://paseociudad.website/negocios/perfil/5',
+  fb:'1212074235563654',
+  href: 'http://paseociudad.website/productos/ver/<?= $producto->id ?>',
   //caption: 'An example caption',
   //picture: 'http://paseociudad.website/files/ImagenesProductos/7315acfe5f85612ac3b95c54deee11a8.jpg',
   

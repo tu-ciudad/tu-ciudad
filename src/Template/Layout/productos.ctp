@@ -43,10 +43,10 @@ $cakeDescription = 'PaseoCiudad';
     </title>
     
     <!-- metadata open graph -->
-    <meta property="og:title" content="<?= $producto->titulo ?>" />
-    <meta property="og:type" content="website" />
+    <meta property="og:title" content="<?= $producto->titulo ?> - <?= $producto->negocio->nombre ?>" />
+    <meta property="og:type" content="article" />
     <meta property="og:url" content="http://www.paseociudad.website/productos/ver/<?= $producto->id ?>" />
-    <meta property="og:image" content="http://www.paseociudad.website/files/imagenesnegocios/foto/<?= $fportada->foto ?>" />
+    <meta property="og:image" content="http://www.paseociudad.website/<?= $imagenesproductos[0]->foto ?>" />
     <meta property="og:description" 
   content="<?= $producto->negocio->descripcion ?>" />
     <!-- end metadata open graph -->

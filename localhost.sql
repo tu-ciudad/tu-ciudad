@@ -28,7 +28,7 @@
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `deletetagsnegocio`(in `idnegocio` int(10))
+CREATE DEFINER=`pasehmzs`@`localhost` PROCEDURE `deletetagsnegocio`(in `idnegocio` int(10))
 BEGIN
 DELETE FROM negocios_tags where negocios_id = idnegocio;
 END ;;
@@ -47,7 +47,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `editartagsnegocio`(in `idnegocio` int(10))
+CREATE DEFINER=`pasehmzs`@`localhost` PROCEDURE `editartagsnegocio`(in `idnegocio` int(10))
 BEGIN
 DELETE FROM negocios_tags where id_negocio = 'idnegocio';
 END ;;
@@ -66,7 +66,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `renombrarfoto`(IN `nombrefoto` VARCHAR(255))
+CREATE DEFINER=`pasehmzs`@`localhost` PROCEDURE `renombrarfoto`(IN `nombrefoto` VARCHAR(255))
 BEGIN
 set @id = (select id from imagenes_negocios where foto = nombrefoto limit 1); 
 if isnull(@id) then set @nuevafoto = 'error';
@@ -90,7 +90,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `renombrarfotoprod`(IN `nombrefoto` VARCHAR(255))
+CREATE DEFINER=`pasehmzs`@`localhost` PROCEDURE `renombrarfotoprod`(IN `nombrefoto` VARCHAR(255))
 BEGIN
 set @id = (select id from imagenes_productos where foto = nombrefoto limit 1); 
 if isnull(@id) then set @nuevafoto = 'error';
@@ -114,7 +114,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `selectnegociostags`(IN `comercios` VARCHAR(45))
+CREATE DEFINER=`pasehmzs`@`localhost` PROCEDURE `selectnegociostags`(IN `comercios` VARCHAR(45))
 BEGIN
 set @variable = (Select CONCAT("%" , comercios , "%"));
 SELECT negocios.id, negocios.nombre, negocios.telefono , negocios.direccion , negocios.descripcion, imagenes_negocios.foto  FROM pasehmzs_root.negocios
@@ -139,7 +139,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `selectproductosmismotag`(IN `tags` VARCHAR(45))
+CREATE DEFINER=`pasehmzs`@`localhost` PROCEDURE `selectproductosmismotag`(IN `tags` VARCHAR(45))
 BEGIN
 SELECT pasehmzs_root.negocios.nombre, pasehmzs_root.negocios.direccion,pasehmzs_root.productos.titulo,pasehmzs_root.productos.cuerpo,pasehmzs_root.productos.fecha,pasehmzs_root.productos.precio FROM pasehmzs_root.negocios
 inner join pasehmzs_root.productos on (negocios.id = productos.negocios_id)
@@ -162,7 +162,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `selectproductostags`(IN `tags` VARCHAR(45))
+CREATE DEFINER=`pasehmzs`@`localhost` PROCEDURE `selectproductostags`(IN `tags` VARCHAR(45))
 BEGIN
 set @variable = (Select CONCAT("%" , tags , "%"));
 set @variable1 = (Select CONCAT( tags , "%"));
@@ -187,7 +187,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `selecttagnegocio`(IN `idlocal` INT)
+CREATE DEFINER=`pasehmzs`@`localhost` PROCEDURE `selecttagnegocio`(IN `idlocal` INT)
 BEGIN
 SELECT tags.nombre FROM pasehmzs_root.negocios
  inner join pasehmzs_root.negocios_tags on (negocios.id = negocios_tags.negocios_id)
@@ -209,7 +209,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `selecttagsproducto`(IN `idproducto` INT)
+CREATE DEFINER=`pasehmzs`@`localhost` PROCEDURE `selecttagsproducto`(IN `idproducto` INT)
 BEGIN
 select tags.nombre from productos
 inner join pasehmzs_root.productos_tags on (productos.id = productos_tags.productos_id)

@@ -35,7 +35,7 @@
                 <td><?= $this->Number->format($producto->precio) ?></td>
                 <td><?= $producto->has('negocio') ? $this->Html->link($producto->negocio->id, ['controller' => 'Negocios', 'action' => 'view', $producto->negocio->id]) : '' ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $producto->id]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'ver', $producto->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $producto->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $producto->id], ['confirm' => __('Are you sure you want to delete # {0}?', $producto->id)]) ?>
                 </td>

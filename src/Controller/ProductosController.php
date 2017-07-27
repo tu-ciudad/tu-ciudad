@@ -62,14 +62,24 @@ class ProductosController extends AppController
      * @return \Cake\Network\Response|null
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null)
+    public function ver($id = null)
     {
         $producto = $this->Productos->get($id, [
             'contain' => ['Negocios']
         ]);
-
+        $query1 = TableRegistry::get('ImagenesProductos')->find(); //traigo las imagenes del producto
+        $imagenesproductos = $query1->select(['foto','numero'])->where(['productos_id' => $producto->id])->toArray();
+        foreach($imagenesproductos as $imgproducto):
+            $imgproducto->foto = '../../files/ImagenesProductos/'. $imgproducto->foto;
+        endforeach;
+        $query2 = TableRegistry::get('ImagenesNegocios')->find();
+        $fportada = $query2->select(['foto'])->where(['negocios_id'=>$producto->negocio->id,'ubicacion'=>'portada'])->toArray();
+        $fportada = $fportada[0];
         $this->set('producto', $producto);
         $this->set('_serialize', ['producto']);
+
+         $this->set(compact('fportada','producto','imagenesproductos'));
+            $this->set('_serialize', ['fportada','producto','imagenesproductos']);
     }
 
     /**

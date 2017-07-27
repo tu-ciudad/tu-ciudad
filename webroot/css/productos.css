@@ -64,10 +64,10 @@
 .producto1 .item .content h5  {
     position: relative;
     text-align: center;
-    margin-top: 30%;
-    font-weight: 200;
+    margin-top: 15%;
+    font-weight: 300;
     color: rgb(83, 131, 211);
-    font-size: 19px;
+    font-size: 20px;
 }
 /.producto1 .item .content h5 span  {
     color: rgb(83, 131, 211);
@@ -167,3 +167,27 @@
 }
 
 
+/***********boton ver*********/
+.btn-ver {
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  box-shadow: 0px 1px 3px #666666;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 3px 15px 3px 10px;
+  border-top: solid rgb(217, 217, 217) 1px;
+  border-right: solid rgb(217, 217, 217) 1px;
+  border-bottom: solid rgb(217, 217, 217) 1px;
+  text-decoration: none;
+  width: 30%;
+  margin-top: -1em;
+  position: absolute;
+}
+
+.btn-ver:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+/*******************************/

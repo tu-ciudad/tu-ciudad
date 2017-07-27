@@ -100,7 +100,9 @@ $this->layout = 'perfil';
                     </div>
 
                     <div class="content-bot"> 
-                        
+                        <a href="../../productos/ver/<?= $producto->id?>" class="visible-xs visible-sm">
+                          <div class="btn-ver">Ver</div>
+                        </a>
                        <h3>  
                             <span>$<?= $producto->precio ?></span><sup>00</sup>
                        </h3>

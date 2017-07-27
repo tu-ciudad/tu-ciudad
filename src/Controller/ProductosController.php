@@ -31,18 +31,7 @@ class ProductosController extends AppController
         ImageDestroy($img);
     }
 
-        public function isAuthorized($user)
-{
-    // The owner of an article can edit and delete it
-    if (in_array($this->request->getParam('action'), ['add','edit','delete'])) {
 
-        if (isset($user['rol']) && $user['rol'] === 'local') {
-            return true;
-        }
-    }
-
-    return parent::isAuthorized($user);
-}
 
     public function index()
     {

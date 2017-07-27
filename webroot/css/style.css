@@ -2667,7 +2667,7 @@ However, delay the fade out process for 2.5 seconds */
 #carousel-custom .carousel-indicators li img {
     display: block;
     /opacity: 0.5;
-    display: block;
+    /display: block;
     overflow: hidden;
       -webkit-background-clip: padding-box;
 background-clip: padding-box;

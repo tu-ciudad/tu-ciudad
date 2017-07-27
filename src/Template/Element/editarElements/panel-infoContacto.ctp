@@ -90,7 +90,14 @@
                                   </tr>
                                   <tr>
                                       <th>Tags:</th>
-                                      <th><input type="text" class="form-control" id="foto1" name="tags" value="<?= $tagsnegocio ?>"></th>
+                                      <th>
+                                      <!-- <input type="text" class="form-control" id="foto1" name="tags" value="<?= $tagsnegocio ?>"> -->
+                                        <form>
+
+                                              <textarea name='tags' id="tag1" placeholder='Tags'></textarea>
+                                        </form>
+                                        <button id="asd">asd</button>
+                                      </th>
                                   </tr>
                               </tbody>
                           </table>
@@ -104,3 +111,63 @@
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dalog -->
       </div><!-- /.modal -->
+
+
+
+<script>
+  var input3 = document.querySelector('textarea[name=tags]'),
+                // init Tagify script on the above inputs
+             
+                tagify3 = new Tagify(input3, {
+                    enforeWhitelist : true,
+                    whitelist       : diss,
+                    callbacks       : {
+                        add    : onAddTag,
+                        remove : onRemoveTag
+                    }
+                });
+
+            // add tag callback
+            function onAddTag(e){
+                //console.log(e, e.detail);
+                
+
+
+                //var jsonObj = JSON.stringify(data_array);
+                //var tags = jsonObj;
+          //console.log(array);
+          //console.log(data_array);
+          //console.log('array: '+jsonObj);
+            }
+
+            // remove tag callback
+            function onRemoveTag(e){
+               // console.log(e, e.detail);
+            }
+
+            function onDuplicateAdded(e){
+               // console.log(e, e.detail);
+            }
+
+
+$('#asd').click(function(e){
+  e.preventDefault();
+var tags1 = new Array();
+      
+       
+                 val = $('#tag1').val();
+                //console.log(val);
+                //compara  por cada tag agregado que exista en el array original
+                var data_array = val.split(", ");
+                for (i = 0; i < data_array.length; i++){
+                    for (x = 0; x < data.length; x++){
+                        if(data_array[i] == data[x].nombre){
+                            console.log(data[x].id +': '+ data_array[i] )
+                            tags1.push(data[x].id);
+                        }
+                    }
+                    
+                }
+});
+            
+</script>

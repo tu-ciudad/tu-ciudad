@@ -36,8 +36,8 @@ section {
 @media (max-width: 500px) {
   
    #content {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 5px;
+    margin-right: 5px;
    }
   }
 /**************scrolling-nav***************/
@@ -546,7 +546,7 @@ iframe {
 }
 
 
-/* Footer links */
+/* Footer links 
 
 .footer-distributed .footer-links {
     color: #ffffff;
@@ -569,7 +569,7 @@ iframe {
 }
 
 
-/* Footer Center */
+/* Footer Center 
 
 .footer-distributed .footer-center {
     width: 35%;
@@ -613,7 +613,7 @@ iframe {
 }
 
 
-/* Footer Right */
+/* Footer Right 
 
 .footer-distributed .footer-right {
     width: 20%;
@@ -658,7 +658,7 @@ iframe {
 }
 
 
-/* If you don't want the footer to be responsive, remove these media queries */
+/* If you don't want the footer to be responsive, remove these media queries 
 
 @media (max-width: 880px) {
     .footer-distributed {
@@ -678,7 +678,7 @@ iframe {
 }
 
 
-/****************fin-footer***********/
+/****************fin-footer***********/*/*/
 
 /**************navbar***************/
 .flexx {
@@ -2793,19 +2793,32 @@ border-radius: 5%
     width: calc(50% - 5px);
     }
     .comercio-card .card {
-    max-width: 200px;
+    /max-width: calc(100% - 200px);
+    /max-height: 200px;
     }
-
+    .comercio-card .card-img-top {
+  
+    height: 170px;
+    }
 }
 @media (min-width: 640px) {
     .comercio-card  {
-    width: calc(33.33% - 5px);
+    width: calc(50% - 5px);
     }
 
+}
+@media (max-width: 425px){
+    .comercio-card  {
+    width: calc(100% - 0px);
+    }
 }
 @media (min-width: 900px) {
     .comercio-card  {
      width: 33.33% ;
+    }
+    .comercio-card .card-img-top {
+  
+    height: 200px;
     }
 
 }
@@ -2815,16 +2828,12 @@ border-radius: 5%
     cursor: pointer;
     }
 
-@media screen and (max-width: 640px){
-   .comercio-card .card {
-    width: 300px;
-   } 
-}
+
 
 .comercio-card .card-img-top {
   border-top-right-radius: calc(0.25rem - 1px);
   border-top-left-radius: calc(0.25rem - 1px);
-  height: 200px;
+  //height: 200px;
 }
 .comercio-card .card-block {
   -webkit-box-flex: 1;

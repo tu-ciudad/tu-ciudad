@@ -36,8 +36,8 @@
 
 @media (max-width: 430px) {
     .container {
-      margin-left: 0;
-      margin-right: 0;
+      margin-left: 5px;
+      margin-right: 5px;
       padding-left: 0;
       padding-right: 0;
     }
@@ -56,39 +56,17 @@
          border-radius: 5px;
   }
 
-  @media (max-width: 500px) {
-  .mainpage .producto1 .item {
-        height: 170px;
-        width: 170px;
-    }
-  }
+  
 @media (max-width: 430px) {
-    .mainpage .container {
-      margin-left: 0;
-      margin-right: 0;
-      padding-left: 0;
-      padding-right: 0;
-    }
-    .mainpage .producto1 .item {
-        height: 150px;
-        width: 150px;
-    }
-   .mainpage .productos-container {
-    padding: 0;
-    width: 100%;
-   }
-   .mainpage .col-min {
-    padding: 10px;
-   }
-    .mainpage .header .jumbotron .jumbox {
+  .mainpage .header .jumbotron .jumbox {
     margin-left: 0;
     width: 100%;
    }
-   .mainpage .producto1 .item .content h5 { 
-    margin-top: 10%;
+   .mainpage .jumbotron .title {
+    font-size: 30px;
    }
-}
-/****** end home responsive**********/
+ }
+
 </style>
 <div class="container">
    <div class="mainpage">

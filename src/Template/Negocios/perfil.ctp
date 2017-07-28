@@ -10,46 +10,10 @@ $this->layout = 'perfil';
     padding-right: 0; 
     padding-left: 0;
   }
-  /******home responsive**********/
-
-
-  @media (max-width: 500px) {
-  .perfilpage .producto1 .item {
-        height: 170px;
-        width: 170px;
-    }
-   .mainperf {
+.mainperf {
     margin-left: 0;
     margin-right: 0;
    }
-   .profile img.image-lg {
-    max-height: 270px;
-   }
-  }
-@media (max-width: 430px) {
-    .perfilpage .container {
-      margin-left: 0;
-      margin-right: 0;
-      padding-left: 0;
-      padding-right: 0;
-    }
-    .perfilpage .producto1 .item {
-        height: 150px;
-        width: 150px;
-    }
-   .perfilpage .productos-container {
-    padding: 0;
-    width: 100%;
-   }
-   .perfilpage .col-min {
-    padding: 10px;
-   }
-  
-   .perfilpage .producto1 .item .content h5 { 
-    margin-top: 10%;
-   }
-}
-/****** end home responsive**********/
 </style>
 <script>
   function dimensionar(elem){
@@ -76,7 +40,7 @@ $this->layout = 'perfil';
 
 <div class="perfilpage">
 <div class="productos-container thumbnail " style="padding-top: 10px;">
-<div class="container">
+<div class="">
 <?php
  $i = 0;
  foreach ($productos as $producto): ?>

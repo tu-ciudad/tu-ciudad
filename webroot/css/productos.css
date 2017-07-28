@@ -1,4 +1,3 @@
-
 .productos-container {
     display: flex;
     flex-wrap: wrap;
@@ -99,8 +98,86 @@
     color: #282c30;
     line-height: 0;
 }
+/******home responsive**********/
+@media (max-width: 500px) {
+  .mainpage .producto1 .item {
+        height: 170px;
+        width: 100%;
+    }
+  }
 
-
+@media (max-width: 430px) {
+    .mainpage .container {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .mainpage .producto1 .item {
+        height: 150px;
+        width: 100%;
+    }
+    .productos-container {
+    padding: 0;
+    width: 100%;
+   }
+    .col-min {
+    padding: 10px;
+   }
+    
+    .producto1 .item .content h5 { 
+    margin-top: 10%;
+   }
+}
+  /******buscar responsive**********/
+  
+  
+  @media (max-width: 500px) {
+  .buscarpage .producto1 .item {
+        height: 170px;
+        width: 100%;
+    }
+  }
+@media (max-width: 430px) {
+    .buscarpage .container {
+      margin-left: 5px;
+      margin-right: 5px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .buscarpage .producto1 .item {
+        height: 150px;
+        width: 100%;
+    }
+}
+  /******perfil responsive**********/
+  @media (max-width: 500px) {
+  .perfilpage .producto1 .item {
+        height: 170px;
+        width: 100%;
+    }
+   .mainperf {
+    margin-left: 0;
+    margin-right: 0;
+   }
+   .profile img.image-lg {
+    max-height: 270px;
+   }
+  }
+@media (max-width: 430px) {
+    .perfilpage .container {
+      margin-left: 5px;
+      margin-right: 5px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .perfilpage .producto1 .item {
+        height: 150px;
+        width: 100%;
+    }
+   
+}
+/****** end perfil responsive**********/
 
 @media screen and (min-width: 500px) {
     .producto1 .item {
@@ -129,7 +206,7 @@
 @media (max-width: 768px) {
     .producto1 .item {
         height: 110px;
-        width: 110px;
+        width: 100%;;
     }
 }
 /*col--768*/

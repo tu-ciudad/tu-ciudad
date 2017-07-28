@@ -199,6 +199,7 @@ $negocio = $negociosdeproductos[$i][0];
    <li><?= $producto->cuerpo ?></li>
    <li><?= $imagenesproductos[$i][0]->foto ?></li>
    <li><?= $negocio->id ?></li>
+   <li><?= $producto->id ?></li>
    <ul>
    <li><?= count($imagenesproductos[$i]) ?></li>
    <?php
@@ -216,8 +217,21 @@ $negocio = $negociosdeproductos[$i][0];
 <?php
                 $i=$i+1;
  endforeach; ?>
-        <?= $this->element('footer') ?>
 
+        <?= $this->element('footer') ?>
+<script>
+function shareProd (id){
+  FB.ui({
+  method: 'share',
+  href: 'http://paseociudad.website/productos/ver/'+id,
+  //caption: 'An example caption',
+  //picture: 'http://paseociudad.website/files/ImagenesProductos/7315acfe5f85612ac3b95c54deee11a8.jpg',
+  
+}, function(response){
+});
+}
+
+</script>
         <script>
   function pmodal(elem){
 $('#caru  > .item').addClass('active');
@@ -228,6 +242,7 @@ $('#caru  > .item').addClass('active');
         pCuerpo = $('#pid' + id + ' > li:nth-child(4)').text();
         pImagen = $('#pid' + id + ' > li:nth-child(5)').text();
         pId = $('#pid' + id + ' > li:nth-child(6)').text();
+        pIdShare = $('#pid' + id + ' > li:nth-child(7)').text();
         numImagen = $('#pid' + id + ' > ul > li:first-child').text();
         //asigno los datos del producto al modal incluyendo la primer imagen
         $('#pTitulo').text(pTitulo);
@@ -238,6 +253,7 @@ $('#caru  > .item').addClass('active');
         $('#l-name').text(nNombre);
         $('.vermasde > a').attr('href', '/negocios/perfil/'+pId);
         $('#vermash1').text(nNombre);
+        $('#share-prod-fb').attr('onclick', 'shareProd('+pIdShare+');');
           //j es la posicion de la imagen, arranca del 3 porque el 1 es la cantidad de imagenes y el 2 es la primer imagen
          var j = 3;
          for ( var i = 1; i < numImagen; i++ ) {

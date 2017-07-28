@@ -200,7 +200,7 @@
 		<center>
 			<p> 
 	<h4 class="marg"><span class="glyphicon glyphicon-share-alt"></span> Compartir</h4>
-	<a class="btn btn-primary social-login-btn social-facebook" href="/auth/facebook"><i class="fa fa-facebook"></i></a>
+	<a class="btn btn-primary social-login-btn social-facebook" id="share-prod-fb"><i class="fa fa-facebook"></i></a>
 	<a class="btn btn-primary social-login-btn social-twitter" href="/auth/twitter"><i class="fa fa-twitter"></i></a>
 	<a class="btn btn-primary social-login-btn social-linkedin" href="/auth/linkedin"><i class="fa fa-linkedin"></i></a>
 	<a class="btn btn-primary social-login-btn social-google" href="/auth/google"><i class="fa fa-google-plus"></i></a>
@@ -226,6 +226,7 @@
    <li><?= $producto['precio'] ?></li>
    <li><?= $producto['cuerpo'] ?></li>
    <li><?= $producto['0']->foto ?></li>
+   <li><?= $producto['id'] ?></li>
    
    <!-- <ul>
    <li><?= count($imagenesproductos[$i]) ?></li>
@@ -245,3 +246,10 @@
                 $i=$i+1;
  endforeach; ?>
 
+<script>
+  $('#modalProduct').on('show.bs.modal', function (e) {
+  if (window.innerWidth < 992) {
+    return e.preventDefault();
+  }
+})
+</script>

@@ -29,19 +29,37 @@
         <div class="modal-body">
 
          <!--  <iframe src="" frameborder="0" class="iframe-modal" scrolling="no" style="width: 1100px"></iframe> -->
-         <input type="file" accept="image/*" id="fotoPortada" name="fotoPortada" style="" onchange="base64P(this);" >
-         <img src="" id="resultfotoPortada" class="labelthumb" alt="" onload="" >
-          <?= $this->Form->create('asdasd',['type' => 'file']) ?>
+
+
+         
+         <img src="" id="resultfoto1" class="labelthumb" alt="" onload="agregar(1);" >
+
+          <div class="row mleft" id="subimp" style="/border: 1px solid;">
+          <div class="col-md-3 empty" id="div1">
+            <label for="fotoPortada" class="label-input">
+            <img src="" id="resultfotoPortada" class="labelthumb" alt="" onload="agregar(1);" >
+            <input type="file" accept="image/*" id="fotoPortada" name="fotoPortada" style="" onchange="base64P(this);" >
+            <button type="button" class="close hidden" data-dismiss="label" onclick="cerrar(1);">×</button>
+            </label>
+            
+          </div>
+          
+    </div>
+
+
+          <?= $this->Form->create($negocio->id,['url' => ['controller' => 'imagenesNegocios' , 'action' =>'add']]) ?>
           <fieldset>
               <legend><?= __('Add Imagenes Negocio') ?></legend>
               <?php
                   echo $this->Form->control('ubicacion', ['options' => ['perfil'=>'portada']]); //nombre y valor al que equivalen
                   echo $this->Form->control('negocio_id', ['type' => 'hidden']);
-                  echo $this->Form->control('foto',['type' => 'hidden']);
+                  echo $this->Form->control('fotop1',['type' => 'hidden']);
               ?>
           </fieldset>
           <?= $this->Form->button(__('Submit')) ?>
           <?= $this->Form->end() ?>
+
+
         </div>
         <div class="modal-footer">
           <a href="#" class="btn">Close</a>
@@ -61,7 +79,9 @@ var img = input.files[0];
 var id = input.id;
 //console.log(id);
     if(!iEdit.open(img, false, function(res){
-      $("#resultP"+id).attr("src", res); 
+      $("#resultfotoPortada").attr("src", res); 
+      $('#fotop1').val(res);
+      console.log($('#fotop1').val())
     
     })){
       alert("Whoops! That is not an image!");

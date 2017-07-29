@@ -60,6 +60,8 @@ class ImagenesNegociosController extends AppController
          // $query = $this->ImagenesNegocios->query();
          // $query->delete()->where(['negocios_id' => $imagenesNegocio->negocios_id, 'ubicacion' => $imagenesNegocio->ubicacion])->execute();
           $imagen = $this->request->data['foto'];
+          //$imagenesNegocio->set('foto', $nombredelaimagen );
+          //$this->ImagenesNegocios->save($imagenesNegocio);
 
           if ($this->Auth->user['rol'] === 'admin'){
                 return $this->redirect(['controller' => 'negocios','action' => 'edit','id' => $id]);

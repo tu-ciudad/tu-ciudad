@@ -22,11 +22,8 @@
                 <p class="footer-company-name">Paseo Ciudad &copy; 2017</p>
 
                 <div class="footer-icons">
-
+                    <p class="follow-fb">Síguenos en Facebook</p>
                     <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                    <a href="#"><i class="fa fa-github"></i></a>
 
                 </div>
 

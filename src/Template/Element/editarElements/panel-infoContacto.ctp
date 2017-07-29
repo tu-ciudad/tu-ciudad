@@ -93,10 +93,8 @@
                                       <th>
                                       <!-- <input type="text" class="form-control" id="foto1" name="tags" value="<?= $tagsnegocio ?>"> -->
                                         <form>
-
                                               <textarea name='tags' id="tag1" placeholder='Tags'></textarea>
                                         </form>
-                                        <button id="asd">asd</button>
                                       </th>
                                   </tr>
                               </tbody>
@@ -104,8 +102,8 @@
                      
             </div>
             <div class="modal-footer">
-              <a href="#" class="btn">Close</a>
-              <button type="submit" class="btn btn-primary">Save changes</button>
+              <!-- <a href="#" class="btn">Close</a> -->
+              <button type="submit" class="btn btn-primary" id="submit-info">Save changes</button>
             </div>
             </form>
           </div><!-- /.modal-content -->
@@ -150,7 +148,7 @@
             }
 
 
-$('#asd').click(function(e){
+$('#submit-info').click(function(e){
   e.preventDefault();
 var tags1 = new Array();
       
@@ -168,6 +166,54 @@ var tags1 = new Array();
                     }
                     
                 }
+                 var formDataInfo = new FormData();
+        
+        //console.log(formData);
+        var iNombre = $('input:text[name=nombre]').val(); //valor del input text name
+        var iDie = $('input:text[name=direccion]').val(); 
+        var iDesc = $('input:text[name=descripcion]').val(); 
+        var iEmail = $('input:text[name=email]').val(); 
+        var iFb = $('input:text[name=facebook]').val(); 
+        var iTl = $('input:text[name=telefono]').val(); 
+        var nid = <?= $negocio->id ?>; //id de negocio 
+        
+         formData.append("titulo", iNombre); //agrega campo de texto dentro del formData
+         formData.append("direccion", iDie); 
+         formData.append("descripcion", iDesc); 
+         formData.append("email", iEmail); 
+         formData.append("facebook", iFb); 
+         formData.append("telefono", iTl); 
+         formData.append("id", nid); 
+        
+         formData.append("tags", tags1);
+
+        $.ajax({
+            url: '../../negocios/editardatos',
+            type: 'POST',
+            data: formDataInfo, //data que envia
+            success: function (data) {
+              console.log(data);
+               
+                  // Get the snackbar DIV
+                      var x = document.getElementById("snackbar")
+
+                      // Add the "show" class to DIV
+                      x.className = "show";
+
+                      // After 3 seconds, remove the show class from DIV
+                       setTimeout(function(){ 
+                         
+                           window.location.reload()
+                           }, 2000);
+       
+         },   
+            cache: false,
+            contentType: false,
+            processData: false,
+
+        });
+        return false;
+
 });
             
 </script>

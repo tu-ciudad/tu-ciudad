@@ -263,7 +263,7 @@ $('body').on('click', '#send', function(e){
         var precio = $('#precio').val(); //valor del campo de text id="precio"
         var nid = <?= $negocio->id ?>; //id de negocio 
        
-         formData.append("titulo", name); //agrega campo de texto dentro del formData
+         formData.append("nombre", name); //agrega campo de texto dentro del formData
          formData.append("cuerpo", desc); //""
          formData.append("precio", precio);
          formData.append("negociosid", nid);

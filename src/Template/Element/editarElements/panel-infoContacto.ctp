@@ -177,16 +177,16 @@ var tags1 = new Array();
         var iTl = $('input:text[name=telefono]').val(); 
         var nid = <?= $negocio->id ?>; //id de negocio 
         
-         formData.append("titulo", iNombre); //agrega campo de texto dentro del formData
-         formData.append("direccion", iDie); 
-         formData.append("descripcion", iDesc); 
-         formData.append("email", iEmail); 
-         formData.append("facebook", iFb); 
-         formData.append("telefono", iTl); 
-         formData.append("id", nid); 
+         formDataInfo.append("direccion", iDie); 
+         formDataInfo.append("nombre", iNombre); //agrega campo de texto dentro del formData
+         formDataInfo.append("descripcion", iDesc); 
+         formDataInfo.append("email", iEmail); 
+         formDataInfo.append("facebook", iFb); 
+         formDataInfo.append("telefono", iTl); 
+         formDataInfo.append("id", nid); 
         
-         formData.append("tags", tags1);
-
+         formDataInfo.append("tags", tags1);
+        console.log(iNombre+' '+iDie+' '+iDesc+' '+iEmail+' '+iFb+' '+iTl+' '+tags1 );
         $.ajax({
             url: '../../negocios/editardatos',
             type: 'POST',
@@ -201,10 +201,10 @@ var tags1 = new Array();
                       x.className = "show";
 
                       // After 3 seconds, remove the show class from DIV
-                       setTimeout(function(){ 
+                      //  setTimeout(function(){ 
                          
-                           window.location.reload()
-                           }, 2000);
+                       //    window.location.reload()
+                       //     }, 2000);
        
          },   
             cache: false,

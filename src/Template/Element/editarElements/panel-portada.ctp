@@ -28,8 +28,19 @@
         
         <div class="modal-body">
 
-          <iframe src="" frameborder="0" class="iframe-modal" scrolling="no" style="width: 1100px"></iframe>
-          
+         <!--  <iframe src="" frameborder="0" class="iframe-modal" scrolling="no" style="width: 1100px"></iframe> -->
+         <input type="file" accept="image/*" id="fotoPortada" name="fotoPortada" style="" onchange="base64P(this);" >
+          <?= $this->Form->create('asdasd',['type' => 'file']) ?>
+          <fieldset>
+              <legend><?= __('Add Imagenes Negocio') ?></legend>
+              <?php
+                  echo $this->Form->control('ubicacion', ['options' => ['perfil'=>'portada']]); //nombre y valor al que equivalen
+                  echo $this->Form->control('negocio_id', ['type' => 'hidden']);
+                  echo $this->Form->control('foto',['type' => 'hidden']);
+              ?>
+          </fieldset>
+          <?= $this->Form->button(__('Submit')) ?>
+          <?= $this->Form->end() ?>
         </div>
         <div class="modal-footer">
           <a href="#" class="btn">Close</a>

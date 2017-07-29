@@ -55,10 +55,21 @@ class ImagenesNegociosController extends AppController
     {
         $imagenesNegocio = $this->ImagenesNegocios->newEntity();
         if ($this->request->is(['post','delete'])) {
-            $imagenesNegocio = $this->ImagenesNegocios->patchEntity($imagenesNegocio, $this->request->getData());
             //borro una imagen si ya existe
-            $query->delete()->where(['negocios_id' => $imagenesNegocio->negocios_id, 'ubicacion' => $imagenesNegocio->ubicacion])->execute();
-            
+          $imagenesNegocio = $this->ImagenesNegocios->patchEntity($imagenesNegocio, $this->request->getData());
+         // $query = $this->ImagenesNegocios->query();
+         // $query->delete()->where(['negocios_id' => $imagenesNegocio->negocios_id, 'ubicacion' => $imagenesNegocio->ubicacion])->execute();
+          $imagen = $this->request->data['foto'];
+
+          if ($this->Auth->user['rol'] === 'admin'){
+                return $this->redirect(['controller' => 'negocios','action' => 'edit','id' => $id]);
+            } else {
+                return $this->redirect(['controller' => 'negocios','action' => 'editar']);
+            }
+        }
+        $negocios = $this->ImagenesNegocios->Negocios->find('list', ['limit' => 200]);
+        $this->set(compact('imagenesNegocio', 'negocios'));
+        $this->set('_serialize', ['imagenesNegocio']);
      /*
         $imagenesNegocio = $this->ImagenesNegocios->newEntity();
         if ($this->request->is(['post','delete'])) {

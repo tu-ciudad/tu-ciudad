@@ -369,7 +369,6 @@ class NegociosController extends AppController
                          $querytags->insert(['negocios_id','tags_id'])->values(['negocios_id' => $negocio->get('id'),
                                                                  'tags_id' => $tag])->execute();
                 endforeach;
-                return $this->redirect(['action' => 'index']);
             }
         }
     }

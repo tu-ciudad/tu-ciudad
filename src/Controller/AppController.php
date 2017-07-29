@@ -76,7 +76,7 @@ class AppController extends Controller
 
     public function beforeFilter(Event $event)
     {
-        $this->Auth->allow(['perfil','logout','home','display','buscar','editar','ver']);
+        $this->Auth->allow(['perfil','logout','home','display','buscar','editar','ver','add']);
         $this->Auth->config('authError', "Woopsie, you are not authorized to access this area.");
     }
 

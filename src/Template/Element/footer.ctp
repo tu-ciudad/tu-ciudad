@@ -22,7 +22,7 @@
                 <p class="footer-company-name">Paseo Ciudad &copy; 2017</p>
 
                 <div class="footer-icons">
-                    <p class="follow-fb">Síguenos en Facebook</p>
+                    <p class="follow-fb">Síguenos en <j class="fb-color">Facebook</j></p>
                     <a href="#"><i class="fa fa-facebook"></i></a>
 
                 </div>

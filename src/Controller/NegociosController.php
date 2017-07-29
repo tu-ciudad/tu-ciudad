@@ -348,8 +348,8 @@ class NegociosController extends AppController
             'contain' => []
         ]);
 
-            $negocio->set('nombre', $this->request->data['nombre']);
             $negocio->set('descripcion', $this->request->data['descripcion']);
+            $negocio->set('nombre', $this->request->data['nombre']);
             $negocio->set('direccion', $this->request->data['direccion']);
             if(isset($this->request->data['email']))
                 $negocio->set('email', $this->request->data['email']);

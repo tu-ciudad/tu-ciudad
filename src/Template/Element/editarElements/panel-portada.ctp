@@ -30,6 +30,7 @@
 
          <!--  <iframe src="" frameborder="0" class="iframe-modal" scrolling="no" style="width: 1100px"></iframe> -->
          <input type="file" accept="image/*" id="fotoPortada" name="fotoPortada" style="" onchange="base64P(this);" >
+         <img src="" id="resultfotoPortada" class="labelthumb" alt="" onload="" >
           <?= $this->Form->create('asdasd',['type' => 'file']) ?>
           <fieldset>
               <legend><?= __('Add Imagenes Negocio') ?></legend>
@@ -50,3 +51,21 @@
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dalog -->
   </div><!-- /.modal -->
+
+
+
+  <script>
+    //funcion de recorte
+function base64P(input){
+var img = input.files[0];
+var id = input.id;
+//console.log(id);
+    if(!iEdit.open(img, false, function(res){
+      $("#resultP"+id).attr("src", res); 
+    
+    })){
+      alert("Whoops! That is not an image!");
+    }
+}
+
+  </script>

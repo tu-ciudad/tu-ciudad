@@ -57,6 +57,13 @@ class ImagenesNegociosController extends AppController
         if ($this->request->is(['post','delete'])) {
             $imagenesNegocio = $this->ImagenesNegocios->patchEntity($imagenesNegocio, $this->request->getData());
             //borro una imagen si ya existe
+            $query->delete()->where(['negocios_id' => $imagenesNegocio->negocios_id, 'ubicacion' => $imagenesNegocio->ubicacion])->execute();
+            
+     /*
+        $imagenesNegocio = $this->ImagenesNegocios->newEntity();
+        if ($this->request->is(['post','delete'])) {
+            $imagenesNegocio = $this->ImagenesNegocios->patchEntity($imagenesNegocio, $this->request->getData());
+            //borro una imagen si ya existe
             $query = $this->ImagenesNegocios->query();
             $ruta = $this->ImagenesNegocios->find()->select(['foto'])->where(['negocios_id' => $imagenesNegocio->negocios_id, 'ubicacion' => $imagenesNegocio->ubicacion])
     ->toArray();
@@ -92,7 +99,7 @@ $ruta1 = '/files/ImagenesNegocios/foto/' . $mensaje;
         $negocios = $this->ImagenesNegocios->Negocios->find('list', ['limit' => 200]);
         $this->set(compact('imagenesNegocio', 'negocios'));
         $this->set('_serialize', ['imagenesNegocio']);
-    }
+    */}
 
 
 

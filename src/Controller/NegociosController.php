@@ -342,7 +342,7 @@ class NegociosController extends AppController
         }
 
     public function editardatos(){
-        if ($this->request->is(['patch', 'post', 'put'])) {
+        if ($this->request->is(['ajax'])) {
             if(isset($this->request->data['id'])){
             $negocio = $this->Negocios->get($this->request->data['id'], [
             'contain' => []

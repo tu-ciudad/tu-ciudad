@@ -47,12 +47,12 @@
     </div>
 
 
-          <?= $this->Form->create($negocio->id,['url' => ['controller' => 'imagenesNegocios' , 'action' =>'add']]) ?>
+          <?= $this->Form->create($imagenesNegocio,['url' => ['controller' => 'imagenesNegocios' , 'action' =>'add']]) ?>
           <fieldset>
               <legend><?= __('Add Imagenes Negocio') ?></legend>
               <?php
-                  echo $this->Form->control('ubicacion', ['options' => ['perfil'=>'portada']]); //nombre y valor al que equivalen
-                  echo $this->Form->control('negocio_id', ['type' => 'hidden']);
+                  $imagenesNegocio->set('ubicacion', 'portada' );
+                  $imagenesNegocio->set('negocio_id', $negocio->id );
                   echo $this->Form->control('fotop1',['type' => 'hidden']);
               ?>
           </fieldset>

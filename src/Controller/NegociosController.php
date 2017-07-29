@@ -114,8 +114,9 @@ class NegociosController extends AppController
         //    $tags[0];//aca va el numero que me dio el aleatorio.este es el comodin que va
             $relacionados = $conexion->execute('SELECT * FROM negocios inner join negocios_tags on (negocios.id = negocios_tags.negocios_id) inner join tags on (tags.id = negocios_tags.tags_id) where tags.nombre = ? and negocios.id <> ? order by rand() limit 2;',[$tags[$nrotag]['nombre'], $negocio->id])->fetchAll('assoc');
         //traigo los tags de todos los negocios
-            $this->set(compact('negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','orden','relacionados'));
-            $this->set('_serialize', ['negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','orden','relacionados']);
+            $imagenesNegocio = TableRegistry::get('ImagenesNegocios')->newEntity();
+            $this->set(compact('negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','orden','relacionados','imagenesNegocio'));
+            $this->set('_serialize', ['negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','orden','relacionados','imagenesNegocio']);
     }
 
     public function index()

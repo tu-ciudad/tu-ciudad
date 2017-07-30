@@ -54,18 +54,8 @@ $cakeDescription = 'PaseoCiudad';
     <?= $this->Html->meta('icon') ?>
 
 
-     <?= $this->Html->css('normalize.css') ?>
-     <?= $this->Html->css('bootstrap.css') ?>
-     <?= $this->Html->css('style.css') ?>
-     <?= $this->Html->css('productos.css') ?>
-     
-     <?= $this->Html->css('font-awesome.min.css') ?> 
-     
-    
-     
-    
-
-    <?= $this->Html->script(array('jquery-3.2.1.min', 'pace.min', 'bootstrap', 'scrolling-nav', 'afixx')); ?>
+     <!--  CSS y JS -->
+    <?= $this->element('CSSyJS-to-Layouts') ?>
 
     
 

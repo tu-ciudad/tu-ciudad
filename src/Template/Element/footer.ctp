@@ -1,4 +1,4 @@
- <?= $this->Html->css('footer-distributed-with-contact-form.css') ?> 
+ <?= $this->Html->css('footer-distributed-with-contact-form.css?v=1') ?> 
     <footer class="footer-distributed">
 
             <div class="footer-left">

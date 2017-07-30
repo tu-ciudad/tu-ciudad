@@ -71,14 +71,17 @@
 <div class="container">
    <div class="mainpage">
    
-     <div class="artDes">
-        <div class="jumbotron">
-        <h2><span class="title"> Productos destacados &nbsp;&nbsp;</span><img src="../img/cart.png" alt=""></h2>
+      <div class="artDes">
+        <div class="jumbotron" style="border-bottom: 0;">
+          <h2>
+            <span class="title"> Productos destacados &nbsp;&nbsp;</span>
+            <img src="../img/cart.png" style="z-index: 1000; position: relative;" alt="">
+          </h2>
         </div>
-        </div>
+      </div>
 
 
-<div class="productos-container thumbnail" style="">
+<div class="productos-container thumbnail" style=" border-top-right-radius: 0; border-top-left-radius: 0; ">
     <?php
  $i = 0;
  foreach ($productos as $producto) { 
@@ -132,7 +135,7 @@ $negocio = $negociosdeproductos[$i][0];
  </div>
  <div class="mainpage">
     <div class="jumbotron">
-    <h2><span class="title"> Comercios en Guaminí &nbsp;&nbsp;</span><img src="../img/store.png" alt=""></h2>
+    <h2><span class="title"> Comercios en Guaminí &nbsp;&nbsp;</span><img src="../img/store.png" style="z-index: 1000; position: relative;" alt=""></h2>
         
     </div>
 </div>
@@ -167,24 +170,26 @@ $negocio = $negociosdeproductos[$i][0];
     
         
         
+ <!-- fin container principal -->
+
+</div>
+
 <div class="mainpage">
-     <div class="artDes">
-        <div class="jumbotron">
-        <h2><span class="title cookie">  
-                
-                    <co>Paseo<co/><span>Ciudad</span><as class="opens"> en el mapa &nbsp;&nbsp; </as> </span><img src="../img/worldwide.png" style="max-width: 64px;" alt=""></h2>
-        </div>
-        </div>
+  <div class="artDes">
+     <div class="jumbotron" style=" border-left: 0; border-right: 0; border-bottom: 0;">
+       <h2>
+          <span class="title cookie">  
+            <co>Paseo<co/><span>Ciudad</span><as class="opens"> en el mapa &nbsp;&nbsp; </as> 
+          </span>
+          <img src="../img/worldwide.png" style="max-width: 64px; z-index: 1000; position: relative;" alt="">
+      </h2>
+    </div>
+  </div>
+</div>
 <div class="proDes">
         <?= $this->element('map-index') ?>
 </div>
-</div>
-            </div> <!-- fin container principal -->
 
-
-<br>
-<br>
-<br>
 
 <?= $this->element('modal-product') ?>
 <?php

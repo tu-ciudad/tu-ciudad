@@ -146,6 +146,12 @@
 	float: right;
 }
 
+.follow-fb {
+	color: white;
+}
+.follow-fb j {
+	color: rgb(79, 100, 152);
+}
 /* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width: 1000px) {
@@ -169,6 +175,19 @@
 
 }
 
+@media (max-width: 580px) {
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-right{
+		float: none;
+		width: 100%;
+		margin: 0 auto;
+	}
+	.footer-distributed form input,
+	.footer-distributed form textarea{
+		width: 100%;
+	}
+}
+
 @media (max-width: 800px) {
 
 	.footer-distributed{
@@ -178,7 +197,7 @@
 	.footer-distributed .footer-left,
 	.footer-distributed .footer-right{
 		float: none;
-		max-width: 300px;
+		/max-width: 300px;
 		margin: 0 auto;
 	}
 
@@ -199,9 +218,4 @@
 	}
 }
 
-.follow-fb {
-	color: white;
-}
-.follow-fb j {
-	color: rgb(79, 100, 152);
-}
+

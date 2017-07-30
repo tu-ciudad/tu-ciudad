@@ -1,10 +1,10 @@
 <style>
 	#map {
-		height: 350px;
-	    box-shadow: 1px 1px #ccc ;
+		height: 80vh;
+	    /box-shadow: 1px 1px #ccc ;
 	}
 </style>
- <div id="map" align="center" class="col-md-12 img-rounded "></div>
+ <div id="map" align="center" class="col-md-12  "></div>
 
 <script>
 	function initMap() {

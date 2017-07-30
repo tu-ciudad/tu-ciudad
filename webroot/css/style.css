@@ -527,9 +527,7 @@ iframe {
 
 /* Footer left */
 
-.footer-distributed .footer-left {
-    width: 40%;
-}
+
 
 
 /* The company logo */
@@ -2951,7 +2949,8 @@ border-radius: 5%
     height: 100px;
     text-align: center;
     padding: 1px;
-    box-shadow:  1px 1px #ccc;
+    /box-shadow:  1px 1px #ccc;
+    border: 1px solid #ddd;
 }
 
 .mainpage .title {
@@ -2969,8 +2968,18 @@ border-radius: 5%
 
 .mainpage .artDes {
     margin-top: 25px;
+    
 }
-
+.mainpage .artDes .jumbotron { 
+    margin-bottom: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+@media (max-width: 500px;) {
+    .mainpage .artDes .jumbotron {
+    margin-bottom:  50px;
+}
+}
 .mainpage #sec0 {
     margin-left: 0;
 }

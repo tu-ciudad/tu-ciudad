@@ -13,6 +13,21 @@ use Cake\Filesystem\File;
 class ImagenesNegociosController extends AppController
 {
 
+
+    private function redimensionar_jpeg($img_original, $img_nueva, $img_nueva_anchura, $img_nueva_altura, $img_nueva_calidad)
+    {
+        // crear una imagen desde el original 
+        $img = ImageCreateFromJPEG($img_original);
+        // crear una imagen nueva 
+        $thumb = imagecreatetruecolor($img_nueva_anchura,$img_nueva_altura);
+        // redimensiona la imagen original copiandola en la imagen 
+        ImageCopyResized($thumb,$img,0,0,0,0,$img_nueva_anchura,$img_nueva_altura,ImageSX($img),ImageSY($img));
+        // guardar la nueva imagen redimensionada donde indicia $img_nueva 
+        ImageJPEG($thumb,$img_nueva,$img_nueva_calidad);
+        ImageDestroy($img);
+    }
+
+
     /**
      * Index method
      *
@@ -59,19 +74,49 @@ class ImagenesNegociosController extends AppController
           $imagenesNegocio = $this->ImagenesNegocios->patchEntity($imagenesNegocio, $this->request->getData());
          // $query = $this->ImagenesNegocios->query();
          // $query->delete()->where(['negocios_id' => $imagenesNegocio->negocios_id, 'ubicacion' => $imagenesNegocio->ubicacion])->execute();
-          $imagen = $this->request->data['foto'];
-          //$imagenesNegocio->set('foto', $nombredelaimagen );
-          //$this->ImagenesNegocios->save($imagenesNegocio);
+          $imagen = $this->request->data['fotop1'];
 
-          if ($this->Auth->user['rol'] === 'admin'){
-                return $this->redirect(['controller' => 'negocios','action' => 'edit','id' => $id]);
-            } else {
-                return $this->redirect(['controller' => 'negocios','action' => 'editar']);
-            }
+          //hacer el trabajo que tomas no sabe hacer
+          $target_path = WWW_ROOT . 'files' .DS. 'ImagenesNegocios' .DS. 'foto' .DS;
+          $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $imagen));
+                $dimensions = imagecreatefromstring($data);
+                $imgx = imagesx($dimensions);
+                $imgy = imagesy($dimensions);
+                $nombre = md5(uniqid()) . "." ;
+                $target_path = $target_path . $nombre ;
+                //$jpeg_quality = 100;
+                if(file_put_contents($target_path . "jpg", $data)) {
+
+                    $tmp_path = WWW_ROOT . 'files' .DS. 'ImagenesNegocios' .DS. 'tmp' .DS;
+                    $origen = $target_path . "jpg";
+                    $destino = $target_path . "jpg";
+                    $destino_temporal = tempnam($tmp_path,"tmp");
+                    imagenesNegociosController::redimensionar_jpeg($origen, $destino_temporal, $imgx, $imgy, 85);
+                     
+                    // guardamos la imagen
+                    $fp=fopen($destino,"w");
+                    fputs($fp,fread(fopen($destino_temporal,"r"),filesize($destino_temporal)));
+                    fclose($fp);
+                     
+                    // mostramos la imagen
+                   $nombredelaimagen = $target_path . "jpg";
+                     
+
+                        
+                        unlink($destino_temporal);
+
+          $imagenesNegocio->set('foto', $nombredelaimagen );
+          $this->ImagenesNegocios->save($imagenesNegocio);
+
+         
         }
         $negocios = $this->ImagenesNegocios->Negocios->find('list', ['limit' => 200]);
         $this->set(compact('imagenesNegocio', 'negocios'));
         $this->set('_serialize', ['imagenesNegocio']);
+        echo ($destino);
+        }
+      }
+
      /*
         $imagenesNegocio = $this->ImagenesNegocios->newEntity();
         if ($this->request->is(['post','delete'])) {

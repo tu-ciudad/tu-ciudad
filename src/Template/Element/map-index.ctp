@@ -20,7 +20,7 @@
       ['Maroubra Beach', -37.0122, -62.417804, 1]
     ];
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 16,
+    zoom: 17,
     center: new google.maps.LatLng(-37.013179, -62.417755),
     scrollwheel: false,
 

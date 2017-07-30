@@ -1,5 +1,5 @@
  <?= $this->Html->css('footer-distributed-with-contact-form.css?v=2') ?> 
-    <footer class="footer-distributed">
+    <footer class="footer-distributed" style="margin-top: 0;">
 
             <div class="footer-left">
 

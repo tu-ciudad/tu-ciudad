@@ -16,7 +16,7 @@
 
  <div class="mainpage">
     <div class="header">
-    <div class="jumbotron">
+    <div class="jumbotron" style="box-shadow: 0; border: 0;">
     <div class="jumbox">
    
     <h1><span class="title footer-distributed1"> 

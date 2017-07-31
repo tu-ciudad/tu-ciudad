@@ -51,8 +51,8 @@
           <fieldset>
               <legend><?= __('Add Imagenes Negocio') ?></legend>
               <?php
-                  $imagenesNegocio->set('ubicacion', 'portada' );
-                  $imagenesNegocio->set('negocio_id', $negocio->id );
+                  echo $this->Form->control('ubicacion',['type' => 'hidden','default' => 'portada']);
+                  echo $this->Form->control('negocios_id',['type' => 'hidden','default' => $negocio->id]);
                   echo $this->Form->control('fotop1',['type' => 'hidden']);
               ?>
           </fieldset>

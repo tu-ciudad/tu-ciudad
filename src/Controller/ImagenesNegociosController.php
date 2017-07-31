@@ -72,12 +72,13 @@ class ImagenesNegociosController extends AppController
         if ($this->request->is(['post','delete'])) {
             //borro una imagen si ya existe
           $imagenesNegocio = $this->ImagenesNegocios->patchEntity($imagenesNegocio, $this->request->getData());
-         // $query = $this->ImagenesNegocios->query();
-         // $query->delete()->where(['negocios_id' => $imagenesNegocio->negocios_id, 'ubicacion' => $imagenesNegocio->ubicacion])->execute();
+          $target_path = WWW_ROOT . 'files' .DS. 'ImagenesNegocios' .DS. 'foto' .DS;
+          $path = WWW_ROOT . 'files' .DS. 'ImagenesNegocios' .DS. 'foto' .DS;
+
           $imagen = $this->request->data['fotop1'];
 
           //hacer el trabajo que tomas no sabe hacer
-          $target_path = WWW_ROOT . 'files' .DS. 'ImagenesNegocios' .DS. 'foto' .DS;
+          
           $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $imagen));
                 $dimensions = imagecreatefromstring($data);
                 $imgx = imagesx($dimensions);
@@ -99,22 +100,33 @@ class ImagenesNegociosController extends AppController
                     fclose($fp);
                      
                     // mostramos la imagen
-                   $nombredelaimagen = $target_path . "jpg";
+                   $imagen = $target_path . "jpg";
                      
 
                         
                         unlink($destino_temporal);
 
-          $imagenesNegocio->set('foto', $nombredelaimagen );
-          $this->ImagenesNegocios->save($imagenesNegocio);
+                   $imagenesNegocio->set('foto', $imagen );
 
-         
-        }
+            //borro una imagen si existe
+            $foto = $this->ImagenesNegocios->find()->select()->where(['negocios_id' => $imagenesNegocio->negocios_id, 'ubicacion' => $imagenesNegocio->ubicacion])
+    ->toArray();
+          foreach ($foto as $imagen) {
+            $imagen = $path . $imagen->foto;
+            unlink($imagen);
+          }
+            //borro los registros de la tabla si existen
+          $query = $this->ImagenesNegocios->query();
+          $query->delete()->where(['negocios_id' => $imagenesNegocio->negocios_id, 'ubicacion' => $imagenesNegocio->ubicacion])->execute();
+              //guardo la imagen nueva
+          
+                  $this->ImagenesNegocios->save($imagenesNegocio);
+
+                }
         $negocios = $this->ImagenesNegocios->Negocios->find('list', ['limit' => 200]);
         $this->set(compact('imagenesNegocio', 'negocios'));
         $this->set('_serialize', ['imagenesNegocio']);
-        echo ($destino);
-        }
+        } 
       }
 
      /*
@@ -157,7 +169,7 @@ $ruta1 = '/files/ImagenesNegocios/foto/' . $mensaje;
         $negocios = $this->ImagenesNegocios->Negocios->find('list', ['limit' => 200]);
         $this->set(compact('imagenesNegocio', 'negocios'));
         $this->set('_serialize', ['imagenesNegocio']);
-    */}
+    */
 
 
 

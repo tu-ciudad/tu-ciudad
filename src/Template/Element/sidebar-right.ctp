@@ -56,7 +56,7 @@
 <div class="recom-container   img-responsive  ">
 
  <div class="mainpage">
-    <div class="jumbotron">
+    <div class="jumbotron" style="box-shadow: inherit;">
     <h2>
     <span class=""> Comercios recomendados &nbsp;&nbsp;</span><img src="../../img/store.png" width="32" alt=""></h2>
         

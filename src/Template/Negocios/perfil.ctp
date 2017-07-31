@@ -24,7 +24,7 @@ $this->layout = 'perfil';
     }
   }
 </script>
-<?= $this->element('jumbotron02') ?>
+<?= $this->element('jumbotron03') ?>
    
     <div class=" container-fluid mainperf" id="content" style="">
 
@@ -309,5 +309,5 @@ $('#caru  > .item').addClass('active');
       
     });
 </script>
-<!--  <?= dump($productos) ?> 
- <?= dump($negocio) ?>  -->
+<!--   <?= dump($productos) ?> 
+ <?= dump($negocio) ?>   -->

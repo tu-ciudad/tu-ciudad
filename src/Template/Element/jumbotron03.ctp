@@ -3,7 +3,7 @@
   <div class="col-md-12">
     <div class="fb-profile-block">
           <div class="fb-profile-block-thumb">
-            <img src="../../files/imagenesNegocios/foto/110431.jpeg" alt="" title="">
+            <img src="<?= $fportada ?>" alt="" title="">
           </div>
           <!-- <div class="profile-img"><a href="#"><img src="http://themeboxer.com/demo/snipp/profile.jpg" alt="" title=""></a></div> -->
           <div class="profile-name">

@@ -90,7 +90,7 @@ i {
             <!--center-right-->
         <div class="col-md-6">
 
-          <?= $this->element('editarElements/panel-portada') ?>
+          <?= $this->element('editarElements/panel-portada') ?>   
 
         </div><!--/col-span-6-->
 

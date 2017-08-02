@@ -51,7 +51,7 @@ $(document).ready(function(){
 			//Using the supplied settings or using defaults in case of invalid settings
 
 			this.square = (square === true) ? true : false;
-			this.imageQuality = (Number(imageQuality) > 0 && Number(imageQuality) <= 1) ? Number(imageQuality) : 1;
+			this.imageQuality = 0.55;
 
 			if(imageType == "jpeg" || imageType == "png" || imageType == "gif" || imageType == "bmp"){ //JPG and any other would default to JPEG//
 				this.imageType = imageType;

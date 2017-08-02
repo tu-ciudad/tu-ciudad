@@ -1,5 +1,5 @@
 <?= $this->Html->css('iEdit.css') ?>
-<?= $this->Html->script('iEdit') ?>
+<script src="../../js/iEdit.js?v=2"></script>
     <style>
 
       .mleft .col-md-3{
@@ -262,23 +262,27 @@ $('body').on('click', '#send', function(e){
         var fdate = $('#fecha').val(); //valor de fecha en el input type="date" id="fecha"
         var precio = $('#precio').val(); //valor del campo de text id="precio"
         var nid = <?= $negocio->id ?>; //id de negocio 
-       
-         formData.append("nombre", name); //agrega campo de texto dentro del formData
+        var cant = $('#cant').text() - 1; 
+
+          formData.append("cantidad", cant);
+         formData.append("titulo", name); //agrega campo de texto dentro del formData
          formData.append("cuerpo", desc); //""
          formData.append("precio", precio);
          formData.append("negociosid", nid);
          formData.append("tags", tags);
          formData.append("fecha", fdate); //""
-         var cant = $('#cant').text() - 1;
-         //console.log(cant);
+         
+
+         
          var z = 0;
         for (var x = 0; x < cant; x++){
           z = z + 1;
           var srci = $('#resultfoto'+z).attr('src');
           formData.append('foto'+z, srci);
-          console.log('foto'+z+': '+srci);
+          // console.log('foto'+z+': '+srci);
         }
-        formData.append("cantidad", cant);
+        
+        console.log('cantidad front antes del ajax: '+cant);
         $.ajax({
             url: '../../productos/add',
             type: 'POST',
@@ -305,7 +309,8 @@ $('body').on('click', '#send', function(e){
                 return xhr;
             }, //barra de progreso fin
             success: function (data) {
-              console.log(data);
+              console.log('cantidad front cuando llega el DATA: '+cant);
+              console.log('respuesta back: '+data);
                
                   // Get the snackbar DIV
                       var x = document.getElementById("snackbar")

@@ -83,6 +83,9 @@ class ProductosController extends AppController
         //$data = $this->request->data;
         //echo "<pre>",print_r($data),"</pre>";
         if ($this->request->is('ajax')) {
+            $cantidad =  $this->request->data['cantidad'];
+            $tags = $this->request->data['tags'];
+            echo ('cantidad = ' . $cantidad . '.... tags = ' . $tags);
             $ImagenesProductos = TableRegistry::get('ImagenesProductos');
             $productos_tags = TableRegistry::get('productos_tags');
             $producto = $this->Productos->newEntity(); //se pueden asignar todos juntos pero tengo que poner unos campos en una lista blanca (verificar eso despues)
@@ -91,8 +94,9 @@ class ProductosController extends AppController
             $producto->set('precio', $this->request->data['precio']);
             $producto->set('cuerpo', $this->request->data['cuerpo']);
             $producto->set('negocios_id', $this->request->data['negociosid']);
-            $tags = $this->request->data['tags'];
-            $cantidad =  $this->request->data['cantidad'];
+            
+            
+            
             $arraytags = explode(",", $tags);
             if($this->Productos->save($producto)){
                 //traigo los ids de los tags
@@ -103,10 +107,13 @@ class ProductosController extends AppController
         endforeach;
 
             for($i=1; $i <= $cantidad; $i++){
+                echo ('si muestra pasé el for....');
                 $target_path = WWW_ROOT . 'files' .DS. 'ImagenesProductos' .DS;
                 //$ext = explode('.', basename( $_FILES['file']['name'][$i]));
                 $baseFromJavascript = $this->request->data['foto' . $i];
+                //echo ($baseFromJavascript);
                 $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $baseFromJavascript));
+                //echo ('la cosa------------------' . $data);
                 $dimensions = imagecreatefromstring($data);
                 $imgx = imagesx($dimensions);
                 $imgy = imagesy($dimensions);

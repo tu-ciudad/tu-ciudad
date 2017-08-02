@@ -17,7 +17,7 @@
     position: relative;
     cursor: pointer;
     transition: all 0.1s;
-    white-space: nowrap;
+    /white-space: nowrap;
     vertical-align: middle;
     text-align: center; margin: 1em 0;
 }
@@ -50,7 +50,7 @@
 }
 .producto1 .item .content h3  {
      text-align: center;
-     font-weight: 100;
+     /font-weight: 100;
      color: rgb(40, 44, 48);
      font-family: normal, 'roboto';
      font-weight: 400;
@@ -67,6 +67,7 @@
     font-weight: 300;
     color: rgb(83, 131, 211);
     font-size: 20px;
+
 }
 /.producto1 .item .content h5 span  {
     color: rgb(83, 131, 211);
@@ -97,6 +98,7 @@
 .producto1 .item .content-bot h4 {
     color: #282c30;
     line-height: 0;
+    white-space: nowrap;
 }
 /******home responsive**********/
 @media (max-width: 500px) {

@@ -7,8 +7,8 @@ use Cake\ORM\Entity;
  * UbicacionesNegocio Entity
  *
  * @property int $id
- * @property string $X
- * @property string $Y
+ * @property float $lat
+ * @property float $lng
  * @property int $negocios_id
  *
  * @property \App\Model\Entity\Negocio $negocio

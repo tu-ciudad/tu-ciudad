@@ -18,7 +18,8 @@ class UbicacionesNegociosControllerTest extends IntegrationTestCase
     public $fixtures = [
         'app.ubicaciones_negocios',
         'app.negocios',
-        'app.lugares'
+        'app.lugares',
+        'app.users'
     ];
 
     /**

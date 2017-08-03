@@ -55,12 +55,14 @@ class UbicacionesNegociosTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->requirePresence('X', 'create')
-            ->notEmpty('X');
+            ->numeric('lat')
+            ->requirePresence('lat', 'create')
+            ->notEmpty('lat');
 
         $validator
-            ->requirePresence('Y', 'create')
-            ->notEmpty('Y');
+            ->numeric('lng')
+            ->requirePresence('lng', 'create')
+            ->notEmpty('lng');
 
         return $validator;
     }

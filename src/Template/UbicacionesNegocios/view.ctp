@@ -25,13 +25,13 @@
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($ubicacionesNegocio->id) ?></td>
         </tr>
+        <tr>
+            <th scope="row"><?= __('Lat') ?></th>
+            <td><?= $this->Number->format($ubicacionesNegocio->lat) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Lng') ?></th>
+            <td><?= $this->Number->format($ubicacionesNegocio->lng) ?></td>
+        </tr>
     </table>
-    <div class="row">
-        <h4><?= __('X') ?></h4>
-        <?= $this->Text->autoParagraph(h($ubicacionesNegocio->X)); ?>
-    </div>
-    <div class="row">
-        <h4><?= __('Y') ?></h4>
-        <?= $this->Text->autoParagraph(h($ubicacionesNegocio->Y)); ?>
-    </div>
 </div>

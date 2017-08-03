@@ -17,6 +17,8 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('lat') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('lng') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('negocios_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -25,6 +27,8 @@
             <?php foreach ($ubicacionesNegocios as $ubicacionesNegocio): ?>
             <tr>
                 <td><?= $this->Number->format($ubicacionesNegocio->id) ?></td>
+                <td><?= $this->Number->format($ubicacionesNegocio->lat) ?></td>
+                <td><?= $this->Number->format($ubicacionesNegocio->lng) ?></td>
                 <td><?= $ubicacionesNegocio->has('negocio') ? $this->Html->link($ubicacionesNegocio->negocio->id, ['controller' => 'Negocios', 'action' => 'view', $ubicacionesNegocio->negocio->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $ubicacionesNegocio->id]) ?>

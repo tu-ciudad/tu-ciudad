@@ -22,8 +22,8 @@
     <fieldset>
         <legend><?= __('Edit Ubicaciones Negocio') ?></legend>
         <?php
-            echo $this->Form->control('X');
-            echo $this->Form->control('Y');
+            echo $this->Form->control('lat');
+            echo $this->Form->control('lng');
             echo $this->Form->control('negocios_id', ['options' => $negocios]);
         ?>
     </fieldset>

@@ -159,14 +159,14 @@ class NegociosController extends AppController
             $negocio = $this->Negocios->patchEntity($negocio, $this->request->getData());
             if ($this->Negocios->save($negocio)) {
                 $this->Flash->success(__('The negocio has been saved.'));
+                $ubicacionesnegocios = TableRegistry::get('UbicacionesNegocios');
                 $ubicacion = TableRegistry::get('UbicacionesNegocios')->newEntity([
                     'negocios_id' => $negocio->id,
                     'lat' => $negocio->lat,
                     'lng' => $negocio->lng
                 ]);
-                $this->UbicacionesNegocios->save($ubicacion);
-
-
+                $ubicacionesnegocios->save($ubicacion);
+            
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The negocio could not be saved. Please, try again.'));

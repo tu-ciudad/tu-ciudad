@@ -25,11 +25,8 @@
             echo $this->Form->control('perfilfb');
             echo $this->Form->control('email');
             echo $this->Form->control('users_id');
-            echo $this->Form->control('lat',['type' => 'hidden']);
-            echo $this->Form->control('lng',['type' => 'hidden']);
-            {
-                $this->foo = $foo;
-            }
+            echo $this->Form->control('lat',['type' => 'hidden','default' => '1234']);
+            echo $this->Form->control('lng',['type' => 'hidden','default' => '4321']);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

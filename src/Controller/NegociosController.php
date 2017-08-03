@@ -187,7 +187,7 @@ class NegociosController extends AppController
     public function edit($id = null)
     {
         $negocio = $this->Negocios->get($id, [
-            'contain' => []
+            'contain' => ['UbicacionesNegocios']
         ]);
         negociosController::llenar($negocio);
     }
@@ -215,7 +215,7 @@ class NegociosController extends AppController
 
     public function perfil($id = null, $orden = null){
         $negocio = $this->Negocios->get($id, [
-            'contain' => []
+              'contain' => ['UbicacionesNegocios']
         ]);
          if ($this->request->is('get')){
             if(isset($this->request->query['orden'])){
@@ -237,12 +237,12 @@ class NegociosController extends AppController
     public function editar(){
 
             if($this->Auth->user('rol') == 'local'){
-                    $negocio = $this->Negocios->find()->where(['users_id' =>  $this->Auth->user('id')])->limit('1');
+                $negocio = $this->Negocios->find()->where(['users_id' =>  $this->Auth->user('id')])->limit('1')->toArray();
                 //si esto esta vacio tengo que redirigir a error 500
                 //traigo informacion de local
-                    foreach ($negocio as $neg) {
-                        $negocio = $this->Negocios->patchEntity($neg, $this->request->getData());
-                    }
+                    $negocio = $this->Negocios->get($negocio[0]->id, [
+              'contain' => ['UbicacionesNegocios']
+        ]);
                    negociosController::llenar($negocio);
             } else {
                 return $this->redirect(['controller'=> 'pages', 'action' => 'display']);
@@ -342,7 +342,7 @@ class NegociosController extends AppController
             }
             $query = TableRegistry::get('negocios')->query();
             $results = $query->update()->set(['lunes' => $lunes,'martes' => $martes,'miercoles' => $miercoles,'jueves' => $jueves,'viernes' => $viernes,'sabado' => $sabado,'domingo' => $domingo])->where(['id' => $id])->execute();
-            if ($this->Auth->user['rol'] === 'admin'){
+            if ($this->Auth->user('rol')=== 'admin'){
                 return $this->redirect(['action' => 'edit','id' => $id]);
             } else {
                 return $this->redirect(['action' => 'editar']);

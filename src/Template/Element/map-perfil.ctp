@@ -1,129 +1,101 @@
-<div id="map" align="center" class="col-md-8 col-md-push-1 img-rounded "></div>
+ <style>
+#map-canvas {
+  margin: 0;
+  padding: 0;
+  height: 81vh;
+  /width: 80%;
+}
+#map-canvas img {
+  max-width: none !important;
+}
+.gm-style-iw {
+  width: 350px !important;
+  top: 15px !important;
+  left: 0px !important;
+  background-color: #fff;
+  box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
+  border: 1px solid rgba(83, 131, 211, 0.6);
+  /border-radius: 2px 2px 10px 10px;
+}
 
+#iw-container {
+  margin-bottom: 10px;
+}
+#iw-container .iw-title {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  padding: 10px;
+  background-color: rgb(83, 131, 211);
+  color: white;
+  margin: 0;
+  /border-radius: 2px 2px 0 0;
+  width: 350px;
+}
+#iw-container .iw-content {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  margin-right: 1px;
+  /padding: 15px 5px 20px 15px;
+  max-height: 140px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.iw-content img {
+  float: right;
+  margin: 0 5px 5px 10px; 
+}
+.iw-subTitle {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 5px 0;
+}
+.iw-bottom-gradient {
+  position: absolute;
+  width: 326px;
+  height: 25px;
+  bottom: 10px;
+  right: 18px;
+  
+}
+
+</style>
+<div id="map-canvas" align="center" class="col-md-10   "></div>
 <script>
     function initMap() {
    var locations = [
-      
       ['Maroubra Beach', -37.0122, -62.417804, 1]
     ];
-  var map = new google.maps.Map(document.getElementById('map'), {
+    var center = new google.maps.LatLng(-37.013179, -62.417755);
+  var map = new google.maps.Map(document.getElementById('map-canvas'), {
     zoom: 16,
-    center: new google.maps.LatLng(-37.013179, -62.417755),
+    center: center,
     scrollwheel: false,
-
-    styles: [
-          {elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},
-          {elementType: 'labels.text.fill', stylers: [{color: '#523735'}]},
-          {elementType: 'labels.text.stroke', stylers: [{color: '#f5f1e6'}]},
-          {
-            featureType: 'administrative',
-            elementType: 'geometry.stroke',
-            stylers: [{color: '#c9b2a6'}]
-          },
-          {
-            featureType: 'administrative.land_parcel',
-            elementType: 'geometry.stroke',
-            stylers: [{color: '#dcd2be'}]
-          },
-          {
-            featureType: 'administrative.land_parcel',
-            elementType: 'labels.text.fill',
-            stylers: [{color: '#ae9e90'}]
-          },
-          {
-            featureType: 'landscape.natural',
-            elementType: 'geometry',
-            stylers: [{color: '#dfd2ae'}]
-          },
-          {
-            featureType: 'poi',
-            elementType: 'geometry',
-            stylers: [{color: '#dfd2ae'}]
-          },
-          {
-            featureType: 'poi',
-            elementType: 'labels.text.fill',
-            stylers: [{color: '#93817c'}]
-          },
-          {
-            featureType: 'poi.park',
-            elementType: 'geometry.fill',
-            stylers: [{color: '#a5b076'}]
-          },
-          {
-            featureType: 'poi.park',
-            elementType: 'labels.text.fill',
-            stylers: [{color: '#447530'}]
-          },
-          {
-            featureType: 'road',
-            elementType: 'geometry',
-            stylers: [{color: '#f5f1e6'}]
-          },
-          {
-            featureType: 'road.arterial',
-            elementType: 'geometry',
-            stylers: [{color: '#fdfcf8'}]
-          },
-          {
-            featureType: 'road.highway',
-            elementType: 'geometry',
-            stylers: [{color: '#f8c967'}]
-          },
-          {
-            featureType: 'road.highway',
-            elementType: 'geometry.stroke',
-            stylers: [{color: '#e9bc62'}]
-          },
-          {
-            featureType: 'road.highway.controlled_access',
-            elementType: 'geometry',
-            stylers: [{color: '#e98d58'}]
-          },
-          {
-            featureType: 'road.highway.controlled_access',
-            elementType: 'geometry.stroke',
-            stylers: [{color: '#db8555'}]
-          },
-          {
-            featureType: 'road.local',
-            elementType: 'labels.text.fill',
-            stylers: [{color: '#806b63'}]
-          },
-          {
-            featureType: 'transit.line',
-            elementType: 'geometry',
-            stylers: [{color: '#dfd2ae'}]
-          },
-          {
-            featureType: 'transit.line',
-            elementType: 'labels.text.fill',
-            stylers: [{color: '#8f7d77'}]
-          },
-          {
-            featureType: 'transit.line',
-            elementType: 'labels.text.stroke',
-            stylers: [{color: '#ebe3cd'}]
-          },
-          {
-            featureType: 'transit.station',
-            elementType: 'geometry',
-            stylers: [{color: '#dfd2ae'}]
-          },
-          {
-            featureType: 'water',
-            elementType: 'geometry.fill',
-            stylers: [{color: '#b9d3c2'}]
-          },
-          {
-            featureType: 'water',
-            elementType: 'labels.text.fill',
-            stylers: [{color: '#92998d'}]
-          }
-        ],
   });
 
-  var infowindow = new google.maps.InfoWindow();
+
+  // InfoWindow content
+  var content = '<div id="iw-container">' +
+                    '<div class="iw-title">La Maga Comidas</div>' +
+                    '<img src="../../img/adidas.jpeg" alt="Porcelain Factory of Vista Alegre" height="115" width="350">' +
+                    '<div class="iw-content">' +
+                      '<div class="iw-subTitle"></div>' +
+                      '<p>Casa de comidas La Maga. ENVÍOS SIN CARGO.</p>' +
+                      '<div class="iw-subTitle">Perfil</div>' +
+                      '<a href="">La maga Comidas</a>'+
+                    '</div>' +
+                    '<div class="iw-bottom-gradient"></div>' +
+                  '</div>';
+
+  // A new Info Window is created and set content
+  var infowindow = new google.maps.InfoWindow({
+    //content: content,
+
+    // Assign a maximum value for the width of the infowindow allows
+    // greater control over the various content elements
+    maxWidth: 350
+  });
 
     var marker, i;
 
@@ -136,12 +108,74 @@
 
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
-          infowindow.setContent(locations[i][0]);
+          infowindow.setContent(content);
           infowindow.open(map, marker);
         }
       })(marker, i));
+
+    }//fin for
+google.maps.event.addListener(infowindow, 'domready', function() {
+
+    // Reference to the DIV that wraps the bottom of infowindow
+    var iwOuter = $('.gm-style-iw');
+
+    /* Since this div is in a position prior to .gm-div style-iw.
+     * We use jQuery and create a iwBackground variable,
+     * and took advantage of the existing reference .gm-style-iw for the previous div with .prev().
+    */
+    var iwBackground = iwOuter.prev();
+
+    // Removes background shadow DIV
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+
+    // Removes white background DIV
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+
+    // Moves the infowindow 115px to the right.
+    iwOuter.parent().parent().css({left: '115px'});
+
+    // Moves the shadow of the arrow 76px to the left margin.
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+
+    // Moves the arrow 76px to the left margin.
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+
+    // Changes the desired tail shadow color.
+    iwBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': 'rgba(83, 131, 211, 0.6) 0px 1px 6px', 'z-index' : '1'});
+
+    // Reference to the div that groups the close button elements.
+    var iwCloseBtn = iwOuter.next();
+
+    // Apply the desired effect to the close button
+    iwCloseBtn.css({opacity: '1', right: '38px', top: '3px', border: '0px solid #48b5e9', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+
+    // If the content of infowindow not exceed the set maximum height, then the gradient is removed.
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
     }
-}
+
+    // The API automatically applies 0.7 opacity to the button after the mouseout event. This function reverses this event to the desired value.
+    iwCloseBtn.mouseout(function(){
+      $(this).css({opacity: '1'});
+    });
+  });
+
+
+} //fin initMap
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkKG7urAJ1fTHIXbcuQDoePM2ReP-LKtQ&callback=initMap"
     async defer></script>

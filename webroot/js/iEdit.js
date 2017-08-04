@@ -36,37 +36,29 @@ $(document).ready(function(){
 		grcy: null,
 		callback: null,
 		imageType: null,
-		imageQuality: 0.85,
+		imageQuality: 1,
 
 		//Open the Image Editor with appropriate settings
 		open: function(imgObj, square, callback, imageType, imageQuality){
 
-			if(imgObj.constructor !== File || !imgObj.type.match('image.*')){
-				return false;
-			}
+			this.drag = false,
+			this.resize = false,
 
-			this.drag = false;
-			this.resize = false;
-			
-			//Using the supplied settings or using defaults in case of invalid settings
-
-			this.square = (square === true) ? true : false;
-			this.imageQuality = 0.55;
+			this.square = square || false,
+			this.imageQuality = imageQuality || 0.6;
 
 			if(imageType == "jpeg" || imageType == "png" || imageType == "gif" || imageType == "bmp"){ //JPG and any other would default to JPEG//
-				this.imageType = imageType;
+				this.imageType = imageType || "jpeg";
 			}else{
 				this.imageType = "jpeg";	
 			}
 
-			//false: Not In Use
-			this.grcx = false;
-			this.grcy = false;
+			//niu = Not In Use
+			this.grcx = "niu",
+			this.grcy = "niu",
 			
-			//Checking if callback is a valid function
-			var getType = {};
-			this.callback = (callback && getType.toString.call(callback) === '[object Function]') ? callback : false;
-			 
+			//Specifyinf user callback
+			this.callback = callback,
 			this.status = true;
 
 			var ctx = this.can.getContext("2d");
@@ -79,6 +71,10 @@ $(document).ready(function(){
 
 			//Draw the image on the visible canvas depending on the aspect ratio of the image.
 			$(img).on("load", function(){
+
+				var sel_ratio = 1;
+				if(typeof that.square === "number")
+					sel_ratio = that.square;
 
 				if(img.width > img.height){
 					that.can.width = img.width;
@@ -93,8 +89,8 @@ $(document).ready(function(){
 
 					ctx.drawImage(img, 0, 0, that.can.width, that.can.height);
 
-					iEdit.selectionBox.height($(that.can).height()-20);
-					iEdit.selectionBox.width($(that.can).height()-20);
+					iEdit.selectionBox.height( ($(that.can).height() - 20) / sel_ratio );
+					iEdit.selectionBox.width( $(that.can).height() - 20 );
 
 					iEdit.selectionBox.css({'left': (($(window).width()/2) - $(that.can).height()/2) + 10  + 'px' ,'top': $(window).height()/2 - $(that.can).height()/2 - 15 + 'px' });
 
@@ -111,8 +107,8 @@ $(document).ready(function(){
 
 					ctx.drawImage(img, 0, 0, that.can.width, that.can.height);
 
-					iEdit.selectionBox.height($(that.can).width()-20);
-					iEdit.selectionBox.width($(that.can).width()-20);
+					iEdit.selectionBox.height( ($(that.can).width() - 20) / sel_ratio );
+					iEdit.selectionBox.width( $(that.can).width() - 20 );
 
 					iEdit.selectionBox.css({'left': (($(window).width()/2) - $(that.can).width()/2) + 10  + 'px' ,'top': $(window).height()/2 - $(that.can).width()/2 - 15 + 'px' });
 
@@ -131,7 +127,7 @@ $(document).ready(function(){
 
 					ctx.drawImage(img, 0, 0, that.can.width, that.can.height);
 
-					iEdit.selectionBox.height($(that.can).width()-20);
+					iEdit.selectionBox.height( ($(that.can).width() - 20) / sel_ratio );
 					iEdit.selectionBox.width($(that.can).width()-20);
 				
 					iEdit.selectionBox.css({'left': (($(window).width()/2) - $(that.can).width()/2) + 10  + 'px' ,'top': $(window).height()/2 - $(that.can).width()/2 - 15 + 'px' });
@@ -140,7 +136,7 @@ $(document).ready(function(){
 			});
 			
 			img.src = URL.createObjectURL(imgObj);
-			return true;
+			
 		},
 
 		//Close the image editor and reset the settings.
@@ -181,13 +177,13 @@ $(document).ready(function(){
 		}
 	}
 
-	//Set flags to stop tracking mouse movement.
+	//Set flags to stop trachong mouse movement.
 	$(document).on("mouseup",function(){
 		iEdit.drag = false;
 		iEdit.resize = false;	
 
-		iEdit.grcx = false;
-		iEdit.grcy = false;
+		iEdit.grcx = 'niu';
+		iEdit.grcy = 'niu';
 	});
 
 
@@ -198,8 +194,8 @@ $(document).ready(function(){
 		var rcx = e.clientX - windowOffset(that).left;
 		var rcy = e.clientY - windowOffset(that).top;
 
-		iEdit.grcx = false;
-		iEdit.grcy = false;
+		iEdit.grcx = 'niu';
+		iEdit.grcy = 'niu';
 
 		if( (iEdit.selectionBox.width() - rcx <= 28) && (iEdit.selectionBox.height() - rcy <= 28)){
 			iEdit.drag = false;
@@ -221,11 +217,11 @@ $(document).ready(function(){
 
 		if(iEdit.drag === true && iEdit.status){
 
-			if(iEdit.grcx === false){
+			if(iEdit.grcx === 'niu'){
 				iEdit.grcx = rcx;
 			}
 
-			if(iEdit.grcy === false){
+			if(iEdit.grcy === 'niu'){
 				iEdit.grcy = rcy;
 			}
 
@@ -260,34 +256,74 @@ $(document).ready(function(){
 			var nHeight = rcy;
 
 			if(iEdit.square){
+
+				var sel_ratio = 1;
+				if(typeof iEdit.square === "number")
+					sel_ratio = iEdit.square;
+				
+
 				if(nWidth >= nHeight){//Width is the dominating dimension; 
-					nHeight = nWidth;
-					if(nWidth < 100){
-						nWidth = 100;
-						nHeight = 100;						
-					}
+					nHeight = nWidth/sel_ratio;
 				}else{//Height is the dominating dimension; 
 					nWidth = nHeight;
-					if(nHeight < 100){
-						nWidth = 100;
-						nHeight = 100;
-					}
-				}				
+					nHeight = nWidth/sel_ratio;
+				}	
 
-				if((nWidth + windowOffset(iEdit.selectionBox).left) >= $(iEdit.can).width() + windowOffset($(iEdit.can)).left){
-					nWidth = (windowOffset($(iEdit.can)).left + $(iEdit.can).width()) - (windowOffset(iEdit.selectionBox).left);
-					if(windowOffset(iEdit.selectionBox).top + nWidth > $(iEdit.can).height() + windowOffset($(iEdit.can)).top){
-						nWidth = (windowOffset($(iEdit.can)).top + $(iEdit.can).height()) - (windowOffset(iEdit.selectionBox).top);
-					}
-					nHeight = nWidth;
-				}else if((nHeight + windowOffset(iEdit.selectionBox).top) >= $(iEdit.can).height() + windowOffset($(iEdit.can)).top){
-					nHeight = (windowOffset($(iEdit.can)).top + $(iEdit.can).height()) - (windowOffset(iEdit.selectionBox).top);
-					if(windowOffset(iEdit.selectionBox).left + nHeight > $(iEdit.can).width() + windowOffset($(iEdit.can)).left){
-						nHeight = (windowOffset($(iEdit.can)).left + $(iEdit.can).width()) - (windowOffset(iEdit.selectionBox).left);
-					}
-					nWidth = nHeight;
+
+				if(nWidth < 100 && nWidth >= nHeight){
+					nWidth = 100;
+					nHeight = nWidth/sel_ratio;	
+				}
+				if(nHeight < 100 && nHeight >= nWidth){
+					nHeight = 100;
+					nWidth = nHeight*sel_ratio;
 				}
 
+				/*console.log('n', nWidth, nHeight);			
+				console.log('$(iEdit.can)', $(iEdit.can).width(), $(iEdit.can).height());			
+				console.log('$(iEdit.can) Offset', windowOffset($(iEdit.can)).left, windowOffset($(iEdit.can)).top);			
+				console.log('selectionBox', windowOffset(iEdit.selectionBox).left, windowOffset(iEdit.selectionBox).top, iEdit.selectionBox.width(), iEdit.selectionBox.height())*/
+
+
+				if(nWidth >= $(iEdit.can).width()){
+					nWidth = $(iEdit.can).width();
+					nHeight = nWidth/sel_ratio;
+
+					if(nHeight >= $(iEdit.can).height()){
+						nHeight = $(iEdit.can).height();
+						nWidth = nHeight*sel_ratio;
+					}
+				}
+				if(nHeight >= $(iEdit.can).height()){
+					nHeight = $(iEdit.can).height();
+					nWidth = nHeight*sel_ratio;
+
+					if(nWidth >= $(iEdit.can).width()){
+						nWidth = $(iEdit.can).width();
+						nHeight = nWidth/sel_ratio;
+					}
+
+				}
+
+
+				if( (windowOffset(iEdit.selectionBox).left - windowOffset($(iEdit.can)).left)+nWidth >= $(iEdit.can).width() ){
+					nWidth = $(iEdit.can).width() - (windowOffset(iEdit.selectionBox).left - windowOffset($(iEdit.can)).left);
+					nHeight = nWidth/sel_ratio;
+
+					if( (windowOffset(iEdit.selectionBox).top - windowOffset($(iEdit.can)).top)+nHeight >= $(iEdit.can).height() ){
+						nHeight = $(iEdit.can).height() - (windowOffset(iEdit.selectionBox).top - windowOffset($(iEdit.can)).top);
+						nWidth = nHeight*sel_ratio;
+					}
+				}
+				if( (windowOffset(iEdit.selectionBox).top - windowOffset($(iEdit.can)).top)+nHeight >= $(iEdit.can).height() ){
+					nHeight = $(iEdit.can).height() - (windowOffset(iEdit.selectionBox).top - windowOffset($(iEdit.can)).top);
+					nWidth = nHeight*sel_ratio;
+
+					if( (windowOffset(iEdit.selectionBox).left - windowOffset($(iEdit.can)).left)+nWidth >= $(iEdit.can).width() ){
+						nWidth = $(iEdit.can).width() - (windowOffset(iEdit.selectionBox).left - windowOffset($(iEdit.can)).left);
+						nHeight = nWidth/sel_ratio;
+					}
+				}
 
 			}else{
 
@@ -303,8 +339,10 @@ $(document).ready(function(){
 				if(e.clientY >= $(iEdit.can).height() + windowOffset($(iEdit.can)).top){	//REASON: Same logic as nWidth
 					nHeight = (windowOffset($(iEdit.can)).top + $(iEdit.can).height()) - (windowOffset(iEdit.selectionBox).top);
 				}
+
 			}
-			
+
+
 			iEdit.selectionBox.css({
 				"width":nWidth+"px",
 				"height":nHeight+"px",				
@@ -317,7 +355,7 @@ $(document).ready(function(){
 	//Process the selected region and return it as an image to the user defined callback.
 	iEdit.saveBtn.on("click", function(){
 
-		if(!iEdit.callback){
+		if(iEdit.callback == undefined){
 			iEdit.close();
 			return;
 		}

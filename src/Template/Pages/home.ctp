@@ -16,7 +16,7 @@
 
  <div class="mainpage">
     <div class="header">
-    <div class="jumbotron" style="box-shadow: 0; border: 0;">
+    <div class="jumbotron" style="box-shadow: 0; border: 0; margin-bottom: 0;">
     <div class="jumbox">
    
     <h1><span class="title footer-distributed1"> 
@@ -33,7 +33,9 @@
   <style>
 
   /*col-min*/
-
+.mainpage {
+  font-family: normal, 'Helvetica';
+}
 @media (max-width: 430px) {
     .container {
       margin-left: 5px;

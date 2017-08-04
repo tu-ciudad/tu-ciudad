@@ -17,21 +17,21 @@
                       <li><a>Información</a></li>
                       <li>
                         <a href="#"><span class="glyphicon glyphicon-earphone" style="left: -8px;"></span><?= $negocio->telefono ?></a></li>
-                        <li class="hidden-xs">
+                        <li class="hidden-xs hidden-sm" id="dirInfo">
                         <a href="#"><span class="glyphicon glyphicon-globe" style="left: -8px;"></span><?= $negocio->direccion ?></a></li>
-                      <li class="hidden-xs">
-                        <a href="#"><span class="glyphicon glyphicon-envelope" style="left: -8px;"></span>Email</a></li>
-                      <li class="hidden-xs">
+                      <li class="hidden-xs hidden-sm" id="emailInfo" data-toggle="tooltip" title="Click para ver" data-placement="top">
+                        <a href="#" data-toggle="popover" data-content="<?= $negocio->email ?>" data-placement="top"><span class="glyphicon glyphicon-envelope" style="left: -8px;"></span>Email</a></li>
+                      <li class="hidden-xs hidden-sm" id="fbInfo"  data-toggle="tooltip" title="Click para ir" data-placement="top">
                         <a href="<?= $negocio->perfilfb ?>" target="_blank">Facebook</a></li>
-                      <li class="hidden-xs">
-                        <a id="shareBtn"><span class="glyphicon glyphicon-share-alt" style="left: -8px;"></span>Compartir</a></li> 
-                      <li class="visible-xs">
-                        <a href="#">Más...</a></li>
+                      <li class="hidden-xs hidden-sm" target="_blank" data-toggle="tooltip" title="Compartir en Facebook" data-placement="top">
+                        <a id="shareBtn" href="#"><span class="glyphicon glyphicon-share-alt" style="left: -8px;"></span>Compartir</a></li> 
+                      <li class="hidden-md hidden-lg" onclick="moreInfo();">
+                        <a >Más...</a></li>
 
                         <!-- categorias -->
-                        <li class="navbar-right" style="margin-right: 0;">
+                        <li class="navbar-right hidden-xs hidden-sm" style="margin-right: 0;">
                          <a>Categorias: </a>
-                         <a href="../../../buscar?comercios=comida"><?= $tagsnegocio ?></a>
+                         <a href="../../../buscar?productos=<?= $tagsnegocio ?>" data-toggle="tooltip" title="ver más de esta categoría" data-placement="top" ><?= $tagsnegocio ?></a>
                         </li>
 
                     </ul>
@@ -39,11 +39,71 @@
           </div>
            
         </div>
+        <div class="more-info hidden">
+             <ul class="ul-more">
+               <li><a ><span class="glyphicon glyphicon-globe" style="left: -8px;"></span><?= $negocio->direccion ?></a></li>
+               <li data-toggle="popover" data-content="<?= $negocio->email ?>" data-placement="top"><a ><span class="glyphicon glyphicon-envelope" style="left: -8px;"></span>Email</a></a></li>
+               <li data-toggle="popover" data-content="<?= $negocio->perfilfb ?>" data-placement="top"><a >Facebook</a></li>
+             </ul>
+           </div>
   </div>
 </div>
 
+<script>
+  function moreInfo(){ 
+    $('.more-info').removeClass('hidden');
+  }
+  $(document).ready(function(){
+    $('[data-toggle="popover"]').popover(); 
+});
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+</script>
 <style>
+/***************more-info-jumbotron03************/
+.jumbotron03 .arrow { 
+margin-bottom: 0;
+}
+.jumbotron03 .popover { 
+  max-width: 300px;
+}
+.jumbotron03 .more-info {
+  border: 1px solid #d3d6db;
+  border-top: 0;
+  border-left: 0;
+  border-radius: 0 0 3px 3px;
+  background: #FAFAFA;
+  height: 44px;
+  position: relative;
+  width:100%;
+  /overflow:hidden;
+  -webkit-transition: all 1s;
+}
+.jumbotron03 .more-info ul {
+  margin:0;
+    padding:0;
+}
+.jumbotron03 .more-info ul li a {
+  border-right: 1px solid #e9eaed;
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+  height: 43px;
+  line-height: 3.0;
+  padding: 0 17px;
+  position: relative;
+  vertical-align: middle;
+  white-space: nowrap;
+  color:#4b4f56;
+  text-transform:capitalize;
+}
+.jumbotron03 .more-info ul li {
+  display:inline-block;
+}
+
   /*******************************jumbotron03**********************************/
+
 
 .jumbotron03 .fb-profile-block {
   /margin: auto;
@@ -60,7 +120,7 @@
 .jumbotron03 .fb-profile-block-thumb{
   display: block;
   max-height: 375px;
-  overflow: hidden;
+  /overflow: hidden;
   position: relative;
   text-decoration: none;
 }
@@ -94,8 +154,13 @@
 }
 .jumbotron03 .profile-name {
   bottom: 60px;
-  left: 50px;
+  /left: 50px;
   position: absolute;
+  background: rgba(0, 0, 0, .6);
+  padding-left: 30px;
+  padding-right: 20px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 .jumbotron03 .profile-name h2 {
   color: #fff;
@@ -118,7 +183,7 @@
   height: 44px;
   position: relative;
   width:100%;
-  overflow:hidden;
+  /overflow:hidden;
   }
 .jumbotron03 .block-menu {
   clear: right;
@@ -161,7 +226,7 @@
   }
   .jumbotron03 .profile-name {
     position: absolute;
-    left: 20px;
+    /left: 20px;
     bottom: 35px;
   }
   .jumbotron03 .visible-xs {

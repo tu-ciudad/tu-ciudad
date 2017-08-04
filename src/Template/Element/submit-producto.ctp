@@ -223,7 +223,7 @@ var id = input.id;
       $('#result'+id).siblings('.close').removeClass('hidden');  
     
     })){
-      alert("Whoops! That is not an image!");
+      // alert("Whoops! That is not an image!");
     }
 }
 

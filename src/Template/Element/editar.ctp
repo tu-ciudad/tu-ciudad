@@ -78,7 +78,7 @@ i {
       <h3><i class="glyphicon glyphicon-dashboard"></i> Información</h3>       
       <hr>
       
-      <div class="row">
+      <div class="row"> 
             <!-- center left--> 
         <div class="col-md-6">
           <!-- panel info de contacto -->

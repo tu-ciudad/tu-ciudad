@@ -78,13 +78,13 @@ function base64P(input){
 var img = input.files[0];
 var id = input.id;
 //console.log(id);
-    if(!iEdit.open(img, false, function(res){
+    if(!iEdit.open(img, 2/1, function(res){
       $("#resultfotoPortada").attr("src", res); 
       $('#fotop1').val(res);
       console.log($('#fotop1').val())
     
     })){
-      alert("Whoops! That is not an image!");
+     
     }
 }
 

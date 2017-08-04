@@ -92,7 +92,7 @@ class ImagenesNegociosController extends AppController
                     $origen = $target_path . "jpg";
                     $destino = $target_path . "jpg";
                     $destino_temporal = tempnam($tmp_path,"tmp");
-                    imagenesNegociosController::redimensionar_jpeg($origen, $destino_temporal, $imgx, $imgy, 85);
+                    imagenesNegociosController::redimensionar_jpeg($origen, $destino_temporal, $imgx, $imgy, 75);
                      
                     // guardamos la imagen
                     $fp=fopen($destino,"w");
@@ -100,7 +100,7 @@ class ImagenesNegociosController extends AppController
                     fclose($fp);
                      
                     // mostramos la imagen
-                   $imagen = $target_path . "jpg";
+                   $imagen = $nombre . "jpg";
                      
 
                         

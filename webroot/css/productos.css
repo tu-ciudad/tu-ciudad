@@ -251,17 +251,17 @@
   -webkit-box-shadow: 0px 1px 3px #666666;
   -moz-box-shadow: 0px 1px 3px #666666;
   box-shadow: 0px 1px 3px #666666;
-  font-family: Arial;
+  /font-family: Arial;
   color: #ffffff;
   font-size: 20px;
-  background: #3498db;
+  background: #5383D3;
   padding: 3px 15px 3px 10px;
   border-top: solid rgb(217, 217, 217) 1px;
   border-right: solid rgb(217, 217, 217) 1px;
   border-bottom: solid rgb(217, 217, 217) 1px;
   text-decoration: none;
   width: 30%;
-  margin-top: -1em;
+  margin-top: -.5em;
   position: absolute;
 }
 

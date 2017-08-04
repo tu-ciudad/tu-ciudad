@@ -126,6 +126,7 @@ $this->layout = 'perfil';
 
 
 <div id="fbot"></div>
+<section id="sec2" class="contact-section" style="height: 81vh; ">
     <div class="col-md-2 location hidden-xs hidden-sm ">
     <h2 class="tittle-contacto">Contacto</h2>
         <div class="topmap" alt=""></div>
@@ -147,10 +148,10 @@ $this->layout = 'perfil';
 </address>
     </div>
 
-    <section id="sec2" class="contact-section" style="height: 81vh; top: 25px;">
+    
        
    <?= $this->element('modal-product') ?>
-  <h2 class="tittle-map"><?= $negocio->nombre ?> en el mapa</h2>
+  <!-- <h2 class="tittle-map"><?= $negocio->nombre ?> en el mapa</h2> -->
 
             <?= $this->element('map-perfil') ?>
 
@@ -201,11 +202,7 @@ function shareProd (id){
 </script>
 
  <style>
-    #map {
-        height: 350px;
-        box-shadow: 1px 1px #ccc ;
-        margin-top: 90px;
-    }
+    
     .tittle-map {
       position: absolute;
       top: 20px;
@@ -218,6 +215,7 @@ function shareProd (id){
       position: absolute;
       font-weight: 300;
       top: 20px;
+      margin-left: 15px;
     }
 </style>
 

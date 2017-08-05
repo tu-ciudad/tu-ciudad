@@ -37,6 +37,16 @@ class TagsTable extends Table
         $this->setTable('tags');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
+        $this->belongsToMany('Productos', [
+            'foreignKey' => 'tags_id',
+            'targetForeignKey' => 'productos_id',
+            'joinTable' => 'productos_tags'
+        ]);
+        $this->belongsToMany('Negocios', [
+            'foreignKey' => 'tags_id',
+            'targetForeignKey' => 'negocios_id',
+            'joinTable' => 'negocios_tags'
+        ]);
 
     }
 

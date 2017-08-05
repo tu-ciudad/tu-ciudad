@@ -45,6 +45,7 @@ class NegociosTagsTable extends Table
             'foreignKey' => 'tagsnegocios_id',
             'joinType' => 'INNER'
         ]);
+
     }
 
     /**

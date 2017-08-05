@@ -41,9 +41,12 @@ class ProductosTable extends Table
             'foreignKey' => 'negocios_id',
             'joinType' => 'INNER'
         ]);
+        $this->hasMany('ImagenesProductos')
+        ->setForeignKey('productos_id')->dependent(true);
+        
         $this->belongsToMany('Tags', [
             'foreignKey' => 'productos_id',
-            'targetForeignKey' => 'tag_id',
+            'targetForeignKey' => 'tags_id',
             'joinTable' => 'productos_tags'
         ]);
     }

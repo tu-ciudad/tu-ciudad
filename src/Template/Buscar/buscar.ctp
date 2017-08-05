@@ -248,7 +248,7 @@
 </div> -->
 <div>
 <?php
-if (!$variable) {
+if (!isset($variable)) {
 
 ?>
 
@@ -295,7 +295,7 @@ if (!$variable) {
                        <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
                    
 
-                    <img class="" onload="dimensionar(this);" src=<?= $producto['0']->foto ?> alt="">
+                    <img class="" onload="dimensionar(this);" src=<?= $producto->imagenes_productos[0]->foto ?> alt="">
                     
                     <div class="content">
                         <h3>
@@ -393,7 +393,7 @@ if (!$variable) {
  <div class="comercio-card  " >
       <a href="../negocios/perfil/<?= $comercio['id']?>" + >
         <div class="card" style="">
-            <img class="card-img-top" src="<?= $comercio['foto']?>" alt="Card image cap">
+            <img class="card-img-top" src=<?= $comercio->imagenes_negocios[0]->foto?> alt="Card image cap">
           <div class="card-block">
               <h4 class="card-title"><?= $comercio['nombre'] ?></h4>
               <p class="card-text"><?= $comercio['descripcion'] ?></p>

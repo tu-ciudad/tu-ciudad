@@ -386,6 +386,13 @@ if (!isset($variable)) {
   <div class="container">
 
     <div class="comercio-grid">
+
+                <th scope="col"><?= $this->Paginator->sort('titulo') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('fecha') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('precio') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('negocios_id') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+          
   <?php
    $i = 0;
  foreach ($variable as $comercio): ?>
@@ -412,6 +419,13 @@ if (!isset($variable)) {
 }
 }
 ?>
+ <?= $this->Paginator->first('<< ' . __('first')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->last(__('last') . ' >>') ?>
+        </ul>
+        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
 </div>
 </div>
 <hr>

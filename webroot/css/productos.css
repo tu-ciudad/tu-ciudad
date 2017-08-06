@@ -47,12 +47,13 @@
     background: rgba(250,250,250,0.9);
     opacity: 0;
 
+
 }
 .producto1 .item .content h3  {
      text-align: center;
      /font-weight: 100;
      color: rgb(40, 44, 48);
-     font-family: normal, 'roboto';
+     //font-family: normal, 'roboto';
      font-weight: 400;
 }
 .producto1 .item:hover .content  {

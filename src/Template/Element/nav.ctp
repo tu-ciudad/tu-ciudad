@@ -27,7 +27,9 @@
         </li>
         <li>
           <a class="btn-trans" href="../../buscar?comercios">COMERCIOS</a>
-
+        </li>
+        <li>
+          <a class="btn-trans" href="../../contactanos">CONTÁCTANOS</a>
         </li>
         <!-- <li>
           <a class="btn-trans" <?= $this->Html->link('Tests', array('controller' => 'prueba', 'action' => 'index')) ?>
@@ -48,52 +50,12 @@
             </form>
           </ul>
         </li>
-        <!-- <li>
-          <div class="navindex" >
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle " data-toggle="dropdown"><b>Login</b> <span class="caret"></span>
-              </a>
-              <ul id="login-dp" class="dropdown-menu animate1">
-                <li>
-                  <div class="row ">
-                    <div class="col-md-12">
-                                            Login via
-                      <div class="social-buttons">
-                        <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                        <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
-                      </div>
-                                            or
-                      <form method="POST" action="/users/login">
-                        <fieldset>
-                          <input type="text" name="email">
-                          <input type="password" name="password">
-                        </fieldset>
-                        <button type="submit">submit</button>
-                      </form>
-                    </div>
-                  </div>
-                  <div class="bottom text-center">
-                    New here ? <a href="#"><b>Join Us</b></a>
-                  </div>
-                </li>
-              </ul>
-            </li>
-          </div>
-      </li> -->
     </ul>
-  
     </div>
             <!-- /.navbar-collapse -->
-        <!-- /.container -->
 </nav>
 
-
-
-
-
-
-
-    <script>
+<script>
   (function() {
     "use strict";
     var toggles = document.querySelectorAll(".c-hamburger");

@@ -113,7 +113,7 @@ $negocio = $negociosdeproductos[$i][0];
                         <a href="../../productos/ver/<?= $producto->id?>" class="visible-xs visible-sm">
                           <div class="btn-ver">Ver</div>
                         </a>
-                       <h3>  
+                       <h3 class="text-danger">  
                             <span>$<?= $producto->precio?></span><sup>00</sup>
                        </h3>
                        <h4 class="hidden-md hidden-lg"><span><?= $producto->titulo ?></span></h4>

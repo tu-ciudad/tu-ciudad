@@ -43,14 +43,13 @@ class NegociosTable extends Table
             'foreignKey' => 'lugares_id',
             'joinType' => 'INNER'
         ]);
-        $this->hasMany('UbicacionesNegocios', [
-        'foreignKey' => 'negocios_id'
-        ]);
         $this->belongsTo('Users', [
             'foreignKey' => 'users_id',
             'joinType' => 'INNER'
         ]);
         $this->hasMany('ImagenesNegocios')
+        ->setForeignKey('negocios_id')->dependent(true);
+        $this->hasMany('Productos')
         ->setForeignKey('negocios_id')->dependent(true);
         $this->belongsToMany('Tags', [
             'foreignKey' => 'negocios_id',

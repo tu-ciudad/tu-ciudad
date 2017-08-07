@@ -97,4 +97,15 @@ class ProductosTable extends Table
 
         return $rules;
     }
+        public function isOwnedBy($id, $userId)
+    {
+         $producto = $this->get($id,[
+            'contain' => ['Negocios']
+        ]);
+         $userIdproducto = $producto->negocio['users_id'];
+        if ($userIdproducto = $userId) {
+            return true;
+        }
+        return false;
+    }
 }

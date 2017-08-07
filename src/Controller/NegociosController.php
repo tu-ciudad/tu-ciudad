@@ -342,8 +342,8 @@ class NegociosController extends AppController
             }
             $query = TableRegistry::get('negocios')->query();
             $results = $query->update()->set(['lunes' => $lunes,'martes' => $martes,'miercoles' => $miercoles,'jueves' => $jueves,'viernes' => $viernes,'sabado' => $sabado,'domingo' => $domingo])->where(['id' => $id])->execute();
-            if ($this->Auth->user('rol')=== 'admin'){
-                return $this->redirect(['action' => 'edit','id' => $id]);
+            if ($this->Auth->user('rol') === 'admin'){
+                return $this->redirect(['action' => 'edit', $id]);
             } else {
                 return $this->redirect(['action' => 'editar']);
             }

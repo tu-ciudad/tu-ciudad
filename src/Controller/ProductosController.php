@@ -17,6 +17,17 @@ class ProductosController extends AppController
      *
      * @return \Cake\Network\Response|null
      */
+     public function isAuthorized($user)
+{
+    // The owner of an article can edit and delete it
+    if (in_array($this->request->getParam('action'), ['delete'])) {
+        $productoId = (int)$this->request->getParam('pass.0');
+        if ($this->Productos->isOwnedBy($productoId, $user['id'])) {
+            return true;
+        }
+    }
+    return parent::isAuthorized($user);
+}
 
     private function redimensionar_jpeg($img_original, $img_nueva, $img_nueva_anchura, $img_nueva_altura, $img_nueva_calidad)
     {
@@ -214,9 +225,19 @@ class ProductosController extends AppController
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
-        $producto = $this->Productos->get($id);
+        $producto = $this->Productos->get($id,[
+            'contain' => ['ImagenesProductos']
+        ]);
+        foreach ($producto->imagenes_productos as $imgproducto) {
+            unlink(WWW_ROOT . 'files' .DS. 'ImagenesProductos' .DS. $imgproducto->foto);
+        }
         if ($this->Productos->delete($producto)) {
             $this->Flash->success(__('The producto has been deleted.'));
+            if ($this->Auth->user('rol') === 'admin'){
+                return $this->redirect(['controller' => 'Negocios','action' => 'edit',$producto->negocios_id]);
+            } else {
+                return $this->redirect(['controller' => 'Negocios','action' => 'editar']);
+            }
         } else {
             $this->Flash->error(__('The producto could not be deleted. Please, try again.'));
         }

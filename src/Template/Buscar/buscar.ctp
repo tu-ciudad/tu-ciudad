@@ -218,6 +218,34 @@
     color: #fafafa;
     text-shadow: 1px 1px 1px rgba(1, 1, 1, 0.9);
 }
+
+  ul.pagination li a {
+    color: rgba(0, 0 ,0 , 0.54);
+}
+/***********paginator*************/
+ul.pagination li.active a {
+    /background-color: #DCE47E;
+    color: #FFF;
+    font-weight: bold;
+    cursor: default;
+}
+ul.pagination .disabled:hover a {
+    background: none;
+}
+
+.paginator {
+    text-align: center;
+}
+
+.paginator ul.pagination li {
+    float: none;
+    display: inline-block;
+}
+
+.paginator p {
+    text-align: right;
+    color: rgba(0, 0 ,0 , 0.54);
+}
 </style>
 <script>
   function dimensionar(elem){
@@ -303,8 +331,8 @@ if (!isset($variable)) {
                         </h3>
                         
                         <h5>
-                        <a href="#" >
-                            <span><?= $producto['nombre'] ?></span>
+                        <a href="../../negocios/perfil/<?= $producto->negocio->id ?>" >
+                            <span><?= $producto->negocio->nombre ?></span>
                         </a>
                         </h5>
                     </div>
@@ -313,8 +341,8 @@ if (!isset($variable)) {
                         <a href="../../productos/ver/<?= $producto['id'] ?>" class="visible-xs visible-sm">
                           <div class="btn-ver">Ver</div>
                         </a>
-                       <h3>  
-                            <span><?= $producto['precio'] ?></span>
+                       <h3 class="text-danger">  
+                            <span><?= $producto['precio'] ?></span><sup>00</sup>
                        </h3>
                        <h4 class="hidden-md hidden-lg"><span><?= $producto['titulo'] ?></span></h4>
                     </div>
@@ -331,6 +359,19 @@ if (!isset($variable)) {
                 $i=$i+1;
  endforeach;
   ?>
+ <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->first('<< ' . __('primero')) ?>
+            <?= $this->Paginator->prev('< ' . __('anterior')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('siguiente') . ' >') ?>
+            <?= $this->Paginator->last(__('ultimo') . ' >>') ?>
+        </ul>
+        <p><?= $this->Paginator->counter(['format' => __('Pagina {{page}} de {{pages}}, Mostrando {{current}} producto(s) de un total de {{count}}.')]) ?></p>
+    </div>
+
+
+
  <?= $this->element('modal-producto-busqueda') ?>
 </div>
 </div>
@@ -387,11 +428,7 @@ if (!isset($variable)) {
 
     <div class="comercio-grid">
 
-                <th scope="col"><?= $this->Paginator->sort('titulo') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('fecha') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('precio') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('negocios_id') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                
           
   <?php
    $i = 0;
@@ -419,13 +456,7 @@ if (!isset($variable)) {
 }
 }
 ?>
- <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
+ 
 </div>
 </div>
 <hr>

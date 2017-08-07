@@ -221,26 +221,26 @@
  foreach ($variable as $producto): ?>
 
 <ul id="pid<?= $i?>" class="hidden">
-   <li><?= $producto['nombre'] ?></li>
-   <li><?= $producto['titulo'] ?></li>
-   <li><?= $producto['precio'] ?></li>
-   <li><?= $producto['cuerpo'] ?></li>
-   <li><?= $producto['0']->foto ?></li>
-   <li><?= $producto['id'] ?></li>
+   <li><?= $producto->titulo ?></li>
+   <li><?= $producto->titulo ?></li>
+   <li><?= $producto->precio ?></li>
+   <li><?= $producto->cuerpo ?></li>
+   <li><?= $producto->imagenes_productos[0]->foto ?></li>
+   <li><?= $producto->negocios_id ?></li>
    
-   <!-- <ul>
-   <li><?= count($imagenesproductos[$i]) ?></li>
+   <ul>
+   <li><?= count($producto->imagenes_productos) ?></li>
    <?php
-
-        foreach ($imagenesproductos[$i] as $imagen):
+        $c = 0;
+        foreach ($producto->imagenes_productos[$c] as $imagen):
         ?>
 
         <li><?= $imagen->foto ?></li>
         <?php
-
+        $c = $c + 1;
         endforeach; ?> 
 
-   </ul> -->
+   </ul>
         </ul>
 <?php
                 $i=$i+1;

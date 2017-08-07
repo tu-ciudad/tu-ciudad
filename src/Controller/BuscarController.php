@@ -23,7 +23,7 @@ class BuscarController extends AppController
      */
     public $paginate = [
     // Other keys here.
-    'maxLimit' => 10
+    'maxLimit' => 12
 ];
     public function buscar()
     {

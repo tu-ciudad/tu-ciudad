@@ -25,7 +25,7 @@ class ProductosController extends AppController
         // crear una imagen nueva 
         $thumb = imagecreatetruecolor($img_nueva_anchura,$img_nueva_altura);
         // redimensiona la imagen original copiandola en la imagen 
-        ImageCopyResized($thumb,$img,0,0,0,0,$img_nueva_anchura,$img_nueva_altura,ImageSX($img),ImageSY($img));
+        ImageCopyResampled($thumb,$img,0,0,0,0,$img_nueva_anchura,$img_nueva_altura,ImageSX($img),ImageSY($img));
         // guardar la nueva imagen redimensionada donde indicia $img_nueva 
         ImageJPEG($thumb,$img_nueva,$img_nueva_calidad);
         ImageDestroy($img);
@@ -115,12 +115,14 @@ class ProductosController extends AppController
                 $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $baseFromJavascript));
                 //echo ('la cosa------------------' . $data);
                 $dimensions = imagecreatefromstring($data);
-                $imgx = imagesx($dimensions);
-                $imgy = imagesy($dimensions);
-                $nombre = md5(uniqid()) . "." ;
+                $imgxo = imagesx($dimensions) / 400;
+                $imgxot = imagesx($dimensions) / 40;
+                $imgy = imagesy($dimensions) / $imgxo;
+                $imgyt = imagesy($dimensions) / $imgxot;
+                $nombre = md5(uniqid())  ;
                 $target_path = $target_path . $nombre ;
                 //$jpeg_quality = 100;
-                if(file_put_contents($target_path . "jpg", $data)) {
+                if(file_put_contents($target_path . ".jpg", $data)) {
                     //$img = imagecreatefrompng($target_path . "png");
                     //imagejpeg($img, $target_path . "jpg", $jpeg_quality);
                     //list($width, $height) = getimagesize($_FILES['file']['tmp_name'][$i] );
@@ -131,27 +133,37 @@ class ProductosController extends AppController
                          //echo ($response_target);
                     //**********************************************************************
                     $tmp_path = WWW_ROOT . 'files' .DS. 'tmp' .DS;
-                    $origen = $target_path . "jpg";
-                    $destino = $target_path . "jpg";
+                    $origen = $target_path . ".jpg";
+                    $destino = $target_path . ".jpg";
+                    $destino1 = $target_path . "_th.jpg";
                     $destino_temporal = tempnam($tmp_path,"tmp");
-                    productosController::redimensionar_jpeg($origen, $destino_temporal, $imgx, $imgy, 85);
-                     
+                    $destino_temporal1 = tempnam($tmp_path,"tmp");
+                    productosController::redimensionar_jpeg($origen, $destino_temporal, 400, $imgy, 85);
+                    productosController::redimensionar_jpeg($origen, $destino_temporal1, 40, $imgyt, 85);
+
                     // guardamos la imagen
                     $fp=fopen($destino,"w");
                     fputs($fp,fread(fopen($destino_temporal,"r"),filesize($destino_temporal)));
                     fclose($fp);
+
+                    $fp1=fopen($destino1,"w");
+                    fputs($fp1,fread(fopen($destino_temporal1,"r"),filesize($destino_temporal1)));
+                    fclose($fp1);
                      
+
+                    
                     // mostramos la imagen
                    
                      
 
                         
                         unlink($destino_temporal);
+                        unlink($destino_temporal1);
 
                         //*****************************************************************
                         $query = $ImagenesProductos->query(); 
                          $query->insert(['foto','numero','productos_id'])->values([
-                        'foto' => $nombre . "jpg",
+                        'foto' => $nombre . ".jpg",
                         'numero' => $i,
                         'productos_id' => $producto->get('id')
                         ])

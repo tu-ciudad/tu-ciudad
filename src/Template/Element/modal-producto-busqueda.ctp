@@ -128,7 +128,7 @@
         <!-- me art lab slider -->
         <div class='carousel-inner' id="caru">
             <div class='item thumbnail active'>
-                <img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/print/image1xxl.jpg' alt="" />
+                <img src='' alt="" />
             </div>
             
         </div>
@@ -190,7 +190,7 @@
 <div class="col-md-6">
 <div id='carousel-custom' data-ride='carousel'>
   <ol class='carousel-indicators' id="carui">
-        <li data-target='#carousel-custom' data-slide-to='0' class='active'><img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/print/image1xxl.jpg' alt='' /></li>
+        <li data-target='#carousel-custom' data-slide-to='0' class='active'><img src='' alt='' /></li>
         
         
 
@@ -221,12 +221,13 @@
  foreach ($variable as $producto): ?>
 
 <ul id="pid<?= $i?>" class="hidden">
-   <li><?= $producto->titulo ?></li>
+   <li><?= $producto->negocio->nombre ?></li>
    <li><?= $producto->titulo ?></li>
    <li><?= $producto->precio ?></li>
    <li><?= $producto->cuerpo ?></li>
    <li><?= $producto->imagenes_productos[0]->foto ?></li>
    <li><?= $producto->negocios_id ?></li>
+   <li><?= $producto->id ?></li>
    
    <ul>
    <li><?= count($producto->imagenes_productos) ?></li>

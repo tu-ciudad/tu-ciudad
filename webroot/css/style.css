@@ -308,6 +308,7 @@ div#social-float4 { width: 200px; position: fixed; right: 810px; bottom: 10px; b
     margin-right: -px;
          border: 1px solid;
     border-color: #DFE0E4 ;
+    background: #FAFAFA;
 
 }
 /*fin alerta*/
@@ -1171,8 +1172,16 @@ border-radius: 5%
 
 
 .comercio .bshadow {
-    border-bottom: 1px solid #ccc;
-    border-right: 1px solid #ccc;
+    /border-bottom: 1px solid #ccc;
+    /border-right: 1px solid #ccc;
+}
+.comercio .navbar-default {
+background: #FAFAFA;
+border-top:0;
+border-color: #DFE0E4;
+border-radius: 0;
+border-left: 0;
+border-right: 0;
 }
 .comercio .navbar-nav {
   float: none;
@@ -1393,6 +1402,49 @@ border-radius: 5%
     color: #fafafa;
     text-shadow: 1px 1px 1px rgba(1, 1, 1, 0.9);
 }
-/***************************************fin-artPage***************************************/
+/*****map-perfil***/
+  
+    .tittle-map {
+      position: absolute;
+      top: 20px;
+      left: 47%;
+      font-weight: 300;
+      font-family: normal, 'roboto';
+    }
+    .tittle-contacto{
+      font-family: normal, 'roboto';
+      position: absolute;
+      font-weight: 300;
+      top: 20px;
+      margin-left: 15px;
+    }
 
+/*******paginador*********/
 
+  ul.pagination li a {
+    color: rgba(0, 0 ,0 , 0.54);
+}
+/***********paginator*************/
+ul.pagination li.active a {
+    /background-color: #DCE47E;
+    color: #FFF;
+    font-weight: bold;
+    cursor: default;
+}
+ul.pagination .disabled:hover a {
+    background: none;
+}
+
+.paginator {
+    text-align: center;
+}
+
+.paginator ul.pagination li {
+    float: none;
+    display: inline-block;
+}
+
+.paginator p {
+    text-align: right;
+    color: rgba(0, 0 ,0 , 0.54);
+}

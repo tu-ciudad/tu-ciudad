@@ -46,6 +46,8 @@
     height: 70%;
     background: rgba(250,250,250,0.9);
     opacity: 0;
+    display: none;
+    
 
 
 }
@@ -56,10 +58,7 @@
      //font-family: normal, 'roboto';
      font-weight: 400;
 }
-.producto1 .item:hover .content  {
-   opacity: 1;
-    
-}
+
 
 .producto1 .item .content h5  {
     position: relative;
@@ -196,12 +195,18 @@
 
 }
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 992px) {
     .producto1 .item {
-   /width: calc(230px - 2em);
+   /width: calc(230px - 2em);}
+   /*hover producto*/
+   .producto1 .item:hover .content  {
+   opacity: 1;
+   display: block;
+
     
+} 
 }
-}
+
 
 
 
@@ -270,4 +275,35 @@
   background: #3cb0fd;
   text-decoration: none;
 }
-/*******************************/
+/************previer preloader*******************/
+  .preview {
+        position: relative;
+        /z-index: 1000;
+        filter: blur(10px);
+        -webkit-filter: blur(10px);
+      }
+      .preloader {
+        position: absolute;
+        z-index: 1000;
+  width: 25px;
+  height: 25px;
+  top: calc(35% - 12px);
+  left: calc(50% - 12px);
+  border: 3px solid #ccc;
+  border-top: 3px solid #666;
+  border-radius: 50%;
+  animation-name: girar;
+  animation-duration: 1.3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*****************************/

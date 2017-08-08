@@ -223,7 +223,7 @@
   background: #FAFAFA;
   border-bottom: 1px solid #DFE0E4;
   margin-bottom: 0px;
-  background-image: url(../../img/pattern.png);
+  background-image: url(../../img/pattern2.svg);
   /background-size: cover;
   -webkit-filter: grayscale(1);
   -moz-filter: grayscale(100%);

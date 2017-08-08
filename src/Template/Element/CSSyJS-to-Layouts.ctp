@@ -8,8 +8,8 @@
 	<?= $this->Html->css('normalize.css') ?>
     <?= $this->Html->css('nav.css') ?> 
     <?= $this->Html->css('bootstrap.min.css') ?>
-    <?= $this->Html->css('style.css?=v4') ?>
-    <?= $this->Html->css('productos.css?=v7') ?>
+    <?= $this->Html->css('style.css?=v5') ?>
+    <?= $this->Html->css('productos.css?=v8') ?>
     <?= $this->Html->css('font-awesome.min.css') ?> 
       
      

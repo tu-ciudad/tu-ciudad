@@ -73,7 +73,7 @@ $negocio = $negociosdeproductos[$i][0];
         <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
                    
                     <div class="preloader"></div>
-                    <div class="preview" style="background-image: url(.../../files/imagenesproductos/blur70_th.jpg); background-size: contain;
+                    <div class="preview" style="background-image: url(../../files/ImagenesProductos/blur70_th.jpg); background-size: contain;
                       background-repeat: no-repeat; 
                       height: 100%; width: 100%;" >
                     <img class="" onload="dimensionar(this);" src=<?= $imagenesproductos[$i]['0']->foto?> alt="">

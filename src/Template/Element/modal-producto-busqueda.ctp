@@ -230,15 +230,13 @@
    <li><?= $producto->id ?></li>
    
    <ul>
-   <li><?= count($producto->imagenes_productos) ?></li>
+   <li><?php count($producto->imagenes_productos) ?></li>
    <?php
-        $c = 0;
-        foreach ($producto->imagenes_productos[$c] as $imagen):
+        foreach ($producto->imagenes_productos as $imagen):
         ?>
 
         <li><?= $imagen->foto ?></li>
         <?php
-        $c = $c + 1;
         endforeach; ?> 
 
    </ul>

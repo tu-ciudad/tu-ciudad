@@ -223,6 +223,11 @@
   background: #FAFAFA;
   border-bottom: 1px solid #DFE0E4;
   margin-bottom: 0px;
+  background-image: url(../../img/pattern.png);
+  /background-size: cover;
+  -webkit-filter: grayscale(1);
+  -moz-filter: grayscale(100%);
+  filter: grayscale(1);
 }
 </style>
 
@@ -303,6 +308,7 @@ if (!isset($variable)) {
                 $i=$i+1;
  endforeach;
   ?>
+  <div class="col-md-12">
  <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->first('<< ' . __('primero')) ?>
@@ -311,7 +317,8 @@ if (!isset($variable)) {
             <?= $this->Paginator->next(__('siguiente') . ' >') ?>
             <?= $this->Paginator->last(__('ultimo') . ' >>') ?>
         </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Pagina {{page}} de {{pages}}, Mostrando {{current}} producto(s) de un total de {{count}}.')]) ?></p>
+        <p><?= $this->Paginator->counter(['format' => __('Pagina {{page}} de {{pages}}.')]) ?></p>
+    </div>
     </div>
  <?= $this->element('modal-producto-busqueda') ?>
 </div>

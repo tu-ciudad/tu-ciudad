@@ -36,7 +36,7 @@ class BuscarController extends AppController
             $variable = $this->request->query['productos'];
             $tag = preg_replace('[^ A-Za-z0-9_-ñÑ]', '', $this->request->query['productos']);
                 $tag = "%".$tag."%";
-               $variable = $this->paginate($productos->find('all')->contain(['Negocios','ImagenesProductos','Tags'])->innerJoinWith('Tags')->where(['OR' => [['tags.nombre like :tag'],['productos.titulo like :tag']]])->bind(':tag',$tag,'string')->group(['negocios.nombre','negocios.telefono','negocios.direccion','negocios.descripcion','negocios.lugares_id','negocios.perfilfb','negocios.email','negocios.users_id','productos.id'])->order(['productos.fecha' => 'DESC']));
+               $variable = $this->paginate($productos->find('all')->contain(['Negocios','ImagenesProductos','Tags'])->innerJoinWith('Tags')->where(['OR' => [['Tags.nombre like :tag'],['Productos.titulo like :tag']]])->bind(':tag',$tag,'string')->group(['Negocios.nombre','Negocios.telefono','Negocios.direccion','Negocios.descripcion','Negocios.lugares_id','Negocios.perfilfb','Negocios.email','Negocios.users_id','Productos.id'])->order(['Productos.fecha' => 'DESC']));
                 foreach ($variable as $producto){
                     ///////// traigo las imagenes (no esta terminado)
                 foreach($producto->imagenes_productos as $imgproducto):
@@ -49,7 +49,7 @@ class BuscarController extends AppController
         $tags = explode(' ',$this->request->query['comercios']);
             foreach ($tags as $tag){
                 $tag = "%".$tag."%";
-                $variable = $this->paginate($comercios->find('all')->contain(['ImagenesNegocios','Tags'])->innerJoinWith('ImagenesNegocios')->innerJoinWith('Tags')->where(['AND' => [['OR' => [['tags.nombre like :tag'],['negocios.nombre like :tag']]],['imagenesnegocios.ubicacion' => 'portada']]])->bind(':tag',$tag,'string'));
+                $variable = $this->paginate($comercios->find('all')->contain(['ImagenesNegocios','Tags'])->innerJoinWith('ImagenesNegocios')->innerJoinWith('Tags')->where(['AND' => [['OR' => [['Tags.nombre like :tag'],['Negocios.nombre like :tag']]],['ImagenesNegocios.ubicacion' => 'portada']]])->bind(':tag',$tag,'string'));
                 foreach($variable as $comercio){
                     foreach ($comercio->imagenes_negocios as $imgcomercio){
                         $imgcomercio->foto = '../../files/ImagenesNegocios/foto/'.$imgcomercio->foto;

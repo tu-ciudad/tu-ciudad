@@ -47,6 +47,9 @@ class NegociosTable extends Table
             'foreignKey' => 'users_id',
             'joinType' => 'INNER'
         ]);
+        $this->hasMany('UbicacionesNegocios', [
+        'foreignKey' => 'negocios_id'
+        ]);
         $this->hasMany('ImagenesNegocios')
         ->setForeignKey('negocios_id')->dependent(true);
         $this->hasMany('Productos')

@@ -208,9 +208,11 @@
   height: 50px;
   width: 20em;
    background-image: url('../img/search.png');
+    background-color: rgba(255,255,255, 0.6);
     background-position: 5px 10px; 
     background-repeat: no-repeat;
     padding: 14px 20px 14px 40px;
+  
 }
 .busheader .busheader__search h2 {
    font: normal, 'Helvetica';
@@ -218,6 +220,7 @@
    text-align: center;
    margin-bottom: 25px;
    margin-top: 0;
+   text-shadow: 0 1px 2px #ccc;
 }
 .busheader .busheader__search .jumbotron {
   background: #FAFAFA;
@@ -225,9 +228,6 @@
   margin-bottom: 0px;
   background-image: url(../../img/pattern2.svg);
   /background-size: cover;
-  -webkit-filter: grayscale(1);
-  -moz-filter: grayscale(100%);
-  filter: grayscale(1);
 }
 </style>
 

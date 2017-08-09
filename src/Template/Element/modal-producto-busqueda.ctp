@@ -216,39 +216,3 @@
   </div>
 </div>
 
-<?php
- $i = 0;
- foreach ($variable as $producto): ?>
-
-<ul id="pid<?= $i?>" class="hidden">
-   <li><?= $producto->negocio->nombre ?></li>
-   <li><?= $producto->titulo ?></li>
-   <li><?= $producto->precio ?></li>
-   <li><?= $producto->cuerpo ?></li>
-   <li><?= $producto->imagenes_productos[0]->foto ?></li>
-   <li><?= $producto->negocios_id ?></li>
-   <li><?= $producto->id ?></li>
-   
-   <ul>
-   <li><?php count($producto->imagenes_productos) ?></li>
-   <?php
-        foreach ($producto->imagenes_productos as $imagen):
-        ?>
-
-        <li><?= $imagen->foto ?></li>
-        <?php
-        endforeach; ?> 
-
-   </ul>
-        </ul>
-<?php
-                $i=$i+1;
- endforeach; ?>
-
-<script>
-  $('#modalProduct').on('show.bs.modal', function (e) {
-  if (window.innerWidth < 992) {
-    return e.preventDefault();
-  }
-})
-</script>

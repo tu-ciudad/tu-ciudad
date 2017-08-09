@@ -248,16 +248,6 @@ if (!isset($variable)) {
               if ($comercios == 0){
 ?>
 
-<!-- <div class="buscar">
-  <div class="header">
-    <div class="jumbotron">
-    <div class="jumbox">
-  <h1><span class="title"> Productos &nbsp;&nbsp;</span><img src="../img/cart.png" style="top: -15px;" alt=""></h1>
-    
-  </div>
-  </div>
-  </div>
-</div> -->
 <div class="busheader" style="margin-top: 20px;">
   <div class="busheader__search">
   <div class="jumbotron">
@@ -276,7 +266,7 @@ if (!isset($variable)) {
  foreach ($variable as $producto): ?>
                <div class=" col-xs-6 col-sm-4 col-md-4 col-lg-3 col-min"> <!-- producto -->
                <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">
-                       <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
+                       <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick=" pmodal(this);">
                     <div class="preloader"></div>
                     <div class="preview" style="background-image: url(../../files/ImagenesProductos/blur70_th.jpg); background-size: contain;
                       background-repeat: no-repeat; 
@@ -308,7 +298,9 @@ if (!isset($variable)) {
                 $i=$i+1;
  endforeach;
   ?>
-  <div class="col-md-12">
+  
+ <?= $this->element('modal-producto-busqueda') ?>
+ <div class="col-xs-12">
  <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->first('<< ' . __('primero')) ?>
@@ -320,7 +312,6 @@ if (!isset($variable)) {
         <p><?= $this->Paginator->counter(['format' => __('Pagina {{page}} de {{pages}}.')]) ?></p>
     </div>
     </div>
- <?= $this->element('modal-producto-busqueda') ?>
 </div>
 </div>
 </div>
@@ -388,75 +379,42 @@ if (!isset($variable)) {
 ?> 
 </div>
 </div>
-<hr>
-<!-- 
-<div class="non-search" style="margin-bottom: 30px;">
-	<header>
-		<h2 class="tittle">¡Tambien puedes buscar estas categorias!</h2>
-	</header>
-	<div class="categorias">
-	
-		<ul class="list">
-			<li><a href="../buscar?articulos=asdasd+asdasd" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-		</ul>
-		<ul class="list">
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-		</ul>
-		<ul class="list">
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-			<li><a href="../buscar?articulos=categoria" tittle="Categoria ">Categoria </a></li>
-		</ul>
 
-	</div>
-</div> -->
 </div>
 <?= $this->element('footer') ?>
-<script>
-  var url = window.location.href; 
-  var firstplit = url.split('?');
-      secondplit = firstplit[1].split('=')
-  console.log(secondplit[0]);
-  if (secondplit[0] == 'productos') {
-      $('#comerCat > a').attr('href', '?comercios='+ secondplit[1]);
-      $('#artiCat > a').attr('href', '?productos='+ secondplit[1]);
-  } 
-  if (secondplit[0] == 'comercios') {
-      $('#artiCat').removeClass('active');
-      $('#comerCat').addClass('active');
-      $('#artiCat > a').attr('href', '?productos='+ secondplit[1]);
-      $('#comerCat > a').attr('href', '?comercios='+ secondplit[1]);
-  } 
-</script>
+<?php
+ $i = 0;
+ foreach ($variable as $producto): ?>
+
+<ul id="pid<?= $i?>" class="hidden">
+   <li><?= $producto->negocio->nombre ?></li>
+   <li><?= $producto->titulo ?></li>
+   <li><?= $producto->precio ?></li>
+   <li><?= $producto->cuerpo ?></li>
+   <li><?= $producto->imagenes_productos[0]->foto ?></li>
+   <li><?= $producto->negocios_id ?></li>
+   <li><?= $producto->id ?></li>
+   <ul>
+   <li><?= count($producto->imagenes_productos) ?></li>
+   <?php
+   
+        foreach ($producto->imagenes_productos as $imagen):
+        ?>
+        <li><?= $imagen->foto ?></li>
+        <?php
+
+        endforeach; ?> 
+
+   </ul>
+        </ul>
+<?php
+                $i=$i+1;
+ endforeach; ?>
+
 <script>  
     $('#modalProduct').on('hidden.bs.modal', function (e) {
       //elimina la imagenes (elementos virtuales) que crea, y deja solo la primera
       $('.dom').remove();
       $('#caru  > .item').addClass('active');
-    });</script>
-<!--   <?= dump($variable) ?>   -->
+    });
+    </script>

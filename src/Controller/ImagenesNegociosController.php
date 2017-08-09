@@ -21,7 +21,7 @@ class ImagenesNegociosController extends AppController
         // crear una imagen nueva 
         $thumb = imagecreatetruecolor($img_nueva_anchura,$img_nueva_altura);
         // redimensiona la imagen original copiandola en la imagen 
-        ImageCopyResized($thumb,$img,0,0,0,0,$img_nueva_anchura,$img_nueva_altura,ImageSX($img),ImageSY($img));
+        ImageCopyResampled($thumb,$img,0,0,0,0,$img_nueva_anchura,$img_nueva_altura,ImageSX($img),ImageSY($img));
         // guardar la nueva imagen redimensionada donde indicia $img_nueva 
         ImageJPEG($thumb,$img_nueva,$img_nueva_calidad);
         ImageDestroy($img);
@@ -81,32 +81,47 @@ class ImagenesNegociosController extends AppController
           
           $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $imagen));
                 $dimensions = imagecreatefromstring($data);
-                $imgx = imagesx($dimensions);
-                $imgy = imagesy($dimensions);
-                $nombre = md5(uniqid()) . "." ;
+
+                //dimensiones de original, thumbnail.. $imgy_t1 = width original / 40px. regla de 3 simple.
+                $imgx_o = imagesx($dimensions);
+                $imgy_o = imagesy($dimensions);
+                $imgx_t = 40;
+                $imgy_t1 = imagesx($dimensions) / 40;
+                $imgy_t2 = imagesy($dimensions) / $imgy_t1;
+                $nombre = md5(uniqid());
                 $target_path = $target_path . $nombre ;
                 //$jpeg_quality = 100;
-                if(file_put_contents($target_path . "jpg", $data)) {
+                if(file_put_contents($target_path . ".jpg", $data)) {
 
                     $tmp_path = WWW_ROOT . 'files' .DS. 'ImagenesNegocios' .DS. 'tmp' .DS;
-                    $origen = $target_path . "jpg";
-                    $destino = $target_path . "jpg";
+                    $origen = $target_path . ".jpg";
+                    $destino = $target_path . ".jpg";
+                    $destino_t = $target_path . "_th.jpg";
                     $destino_temporal = tempnam($tmp_path,"tmp");
-                    imagenesNegociosController::redimensionar_jpeg($origen, $destino_temporal, $imgx, $imgy, 75);
+                    $destino_temporal_t = tempnam($tmp_path,"tmp");
+                    imagenesNegociosController::redimensionar_jpeg($origen, $destino_temporal, $imgx_o, $imgy_o, 95);
+                    imagenesNegociosController::redimensionar_jpeg($origen, $destino_temporal_t, $imgx_t, $imgy_t2, 50);
                      
-                    // guardamos la imagen
+                    // guardamos la imagen original
                     $fp=fopen($destino,"w");
                     fputs($fp,fread(fopen($destino_temporal,"r"),filesize($destino_temporal)));
                     fclose($fp);
+
+                    // guardamos la imagen thumbnail
+                    $fp_t=fopen($destino_t,"w");
+                    fputs($fp_t,fread(fopen($destino_temporal_t,"r"),filesize($destino_temporal_t)));
+                    fclose($fp_t);
                      
                     // mostramos la imagen
-                   $imagen = $nombre . "jpg";
-                     
+                   $imagen = $nombre . ".jpg";
+                   $imagen_th = $nombre . "_th.jpg";
 
                         
                         unlink($destino_temporal);
+                        unlink($destino_temporal_t);
 
                    $imagenesNegocio->set('foto', $imagen );
+                   $imagenesNegocio->set('fototh', $imagen_th );
 
             //borro una imagen si existe
             $foto = $this->ImagenesNegocios->find()->select()->where(['negocios_id' => $imagenesNegocio->negocios_id, 'ubicacion' => $imagenesNegocio->ubicacion])

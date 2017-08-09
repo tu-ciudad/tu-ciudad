@@ -1,15 +1,5 @@
 /*dimanesionar*/
-function dimensionar(elem){
-    $(elem).css({opacity: '1'});
-    $(elem).parent().siblings('div .preloader').removeClass('preloader');
-    $(elem).parent().removeClass('preview');
-    $(elem).parent().css({'background-image':''});
-    dwidth = $(elem).width();
-    dheight = $(elem).height();
-    if(dwidth > dheight){
-      $(elem).css({'width': '100%','height': 'auto'});     
-    }
-  }
+
 
   /* script de horarios y dias */
 var d = new Date();
@@ -47,9 +37,9 @@ function shareProd (id){
 /*modal de home - buscar - perfil*/
 
 //variable de link del producto clickeado
-var prodlink = '';
 
-  function pmodal(elem){
+
+  function pmodal(elem, e){
 $('#caru  > .item').addClass('active');
     var id = $(elem).attr('pid');
         nNombre = $('#pid' + id + ' > li:nth-child(1)').text();
@@ -60,6 +50,17 @@ $('#caru  > .item').addClass('active');
         pId = $('#pid' + id + ' > li:nth-child(6)').text();
         pIdShare = $('#pid' + id + ' > li:nth-child(7)').text();
         numImagen = $('#pid' + id + ' > ul > li:first-child').text();
+
+       /*cambia de hovera tap en responsive*/
+      if (window.innerWidth < 992) {
+			$('#modalProduct').on('show.bs.modal', function (e) { 
+				e.preventDefault();
+			});
+	        //enviar al producto clickeado en pantalla menor a 992px, cambiar reaload por funcion de redirijir
+	        window.location = '../../../productos/ver/'+ pIdShare;
+ 
+      } else {
+$("body").addClass("modal-open");
         //asigno los datos del producto al modal incluyendo la primer imagen
         $('#pTitulo').text(pTitulo);
         $('#pPrecio').text(pPrecio);
@@ -80,15 +81,10 @@ $('#caru  > .item').addClass('active');
          
          $('#carui').append('<li data-target='+'#carousel-custom'+' class="dom" data-slide-to='+ i +'><img src='+ allImagenes +' /></li>');
          j = j + 1;
-         }
+         } 
+     }
     // console.log(numImagen )
     };
 
-  /*cambia de hovera tap en responsive*/
-    $('#modalProduct').on('show.bs.modal', function (e) {
-    if (window.innerWidth < 992) {
-      return e.preventDefault();
-      //enviar al producto clickeado en pantalla menor a 992px, cambiar reaload por funcion de redirijir
-      window.location.reload(prodlink);
-      }
-    });
+ 
+   

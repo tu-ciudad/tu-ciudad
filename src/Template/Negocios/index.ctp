@@ -3,6 +3,11 @@
   * @var \App\View\AppView $this
   */
 ?>
+<style>
+    body {
+        overflow: visible;
+    }
+</style>
 <div style="margin-top: 50px;"></div>
 <nav class="col-md-3" id="actions-sidebar">
     <ul class="side-nav nav">
@@ -14,7 +19,7 @@
 </nav>
 <div class="negocios index col-md-9">
     <h3><?= __('Negocios') ?></h3>
-    <table class="table table-striped" cellpadding="0" cellspacing="0">
+    <table class="table table-striped table-responsive" cellpadding="0" cellspacing="0">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>

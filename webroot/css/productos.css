@@ -276,13 +276,13 @@
   text-decoration: none;
 }
 /************previer preloader*******************/
-  .preview {
+  .item .preview {
         position: relative;
         /z-index: 1000;
         filter: blur(10px);
         -webkit-filter: blur(10px);
       }
-      .preloader {
+      .item .preloader {
         position: absolute;
         z-index: 1000;
   width: 25px;

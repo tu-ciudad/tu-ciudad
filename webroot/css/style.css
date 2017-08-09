@@ -13,7 +13,9 @@ body {
     margin-top: -35px;
     overflow-x: hidden;
 }
-
+body.modal-open {
+    overflow: hidden;
+}
 section {
     /*seccion header de local*/
     /height: calc(90% - 50px);

@@ -77,13 +77,13 @@
 
   // InfoWindow content
   var content = '<div id="iw-container">' +
-                    '<div class="iw-title">La Maga Comidas</div>' +
-                    '<img src="../../img/adidas.jpeg" alt="Porcelain Factory of Vista Alegre" height="115" width="350">' +
+                    '<div class="iw-title"><?= $negocio->nombre ?></div>' +
+                    '<img src="<?= $fportada ?>" alt="<?= $negocio->nombre ?>" height="115" width="350">' +
                     '<div class="iw-content">' +
                       '<div class="iw-subTitle"></div>' +
-                      '<p>Casa de comidas La Maga. ENVÍOS SIN CARGO.</p>' +
+                      '<p><?= $negocio->descripcion ?></p>' +
                       '<div class="iw-subTitle">Perfil</div>' +
-                      '<a href="">La maga Comidas</a>'+
+                      '<a href="../../negocios/perfil/<?= $negocio->id ?>"><?= $negocio->nombre ?></a>'+
                     '</div>' +
                     '<div class="iw-bottom-gradient"></div>' +
                   '</div>';

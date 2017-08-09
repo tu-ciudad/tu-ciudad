@@ -9,10 +9,23 @@
     <?= $this->Html->css('nav.css') ?> 
     <?= $this->Html->css('bootstrap.min.css') ?>
     <?= $this->Html->css('style.css?=v5') ?>
-    <?= $this->Html->css('productos.css?=v8') ?>
+    <?= $this->Html->css('productos.css?=v9') ?>
     <?= $this->Html->css('font-awesome.min.css') ?> 
       
      
     
 
     <?= $this->Html->script(array('jquery-3.2.1.min','main', 'pace.min', 'bootstrap.min')); ?>
+    <script>
+    	function dimensionar(elem){
+    $(elem).css({opacity: '1'});
+    $(elem).parent().siblings('div .preloader').removeClass('preloader');
+    $(elem).parent().removeClass('preview');
+    $(elem).parent().css({'background-image':''});
+    dwidth = $(elem).width();
+    dheight = $(elem).height();
+    if(dwidth > dheight){
+      $(elem).css({'width': '100%','height': 'auto'});     
+    }
+  }
+    </script>

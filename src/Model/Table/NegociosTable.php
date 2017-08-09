@@ -105,7 +105,6 @@ class NegociosTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->isUnique(['email']));
         $rules->add($rules->existsIn(['lugares_id'], 'Lugares'));
         $rules->add($rules->existsIn(['users_id'], 'Users'));
 

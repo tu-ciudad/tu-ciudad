@@ -75,7 +75,7 @@ class ImagenesNegociosTable extends Table
             ->requirePresence('ubicacion', 'create')
             ->notEmpty('ubicacion')
             ->add('ubicacion', 'inList', [
-                'rule' => ['inList', ['perfil','portada']], //si tengo que agregar una ubicacion nueva la agrego aca
+                'rule' => ['inList', ['perfil','portada','thumbnail','escalado']], //si tengo que agregar una ubicacion nueva la agrego aca
                 'message' => 'Ubicacion incorrecta']);
 
         $validator

@@ -7,19 +7,19 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * UbicacionesNegocios Model
+ * Ubicacionesnegocios Model
  *
  * @property \Cake\ORM\Association\BelongsTo $Negocios
  *
- * @method \App\Model\Entity\UbicacionesNegocio get($primaryKey, $options = [])
- * @method \App\Model\Entity\UbicacionesNegocio newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\UbicacionesNegocio[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\UbicacionesNegocio|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\UbicacionesNegocio patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\UbicacionesNegocio[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\UbicacionesNegocio findOrCreate($search, callable $callback = null, $options = [])
+ * @method \App\Model\Entity\Ubicacionesnegocio get($primaryKey, $options = [])
+ * @method \App\Model\Entity\Ubicacionesnegocio newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\Ubicacionesnegocio[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\Ubicacionesnegocio|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Ubicacionesnegocio patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\Ubicacionesnegocio[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\Ubicacionesnegocio findOrCreate($search, callable $callback = null, $options = [])
  */
-class UbicacionesNegociosTable extends Table
+class UbicacionesnegociosTable extends Table
 {
 
     /**
@@ -32,7 +32,7 @@ class UbicacionesNegociosTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('ubicaciones_negocios');
+        $this->setTable('ubicacionesnegocios');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 

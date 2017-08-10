@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\UbicacionesNegociosTable;
+use App\Model\Table\UbicacionesnegociosTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\UbicacionesNegociosTable Test Case
+ * App\Model\Table\UbicacionesnegociosTable Test Case
  */
-class UbicacionesNegociosTableTest extends TestCase
+class UbicacionesnegociosTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\UbicacionesNegociosTable
+     * @var \App\Model\Table\UbicacionesnegociosTable
      */
-    public $UbicacionesNegocios;
+    public $Ubicacionesnegocios;
 
     /**
      * Fixtures
@@ -24,10 +24,18 @@ class UbicacionesNegociosTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.ubicaciones_negocios',
+        'app.ubicacionesnegocios',
         'app.negocios',
         'app.lugares',
-        'app.users'
+        'app.users',
+        'app.ubicaciones_negocios',
+        'app.imagenes_negocios',
+        'app.productos',
+        'app.imagenes_productos',
+        'app.tags',
+        'app.productos_tags',
+        'app.negocios_tags',
+        'app.tagsnegocios'
     ];
 
     /**
@@ -38,8 +46,8 @@ class UbicacionesNegociosTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('UbicacionesNegocios') ? [] : ['className' => 'App\Model\Table\UbicacionesNegociosTable'];
-        $this->UbicacionesNegocios = TableRegistry::get('UbicacionesNegocios', $config);
+        $config = TableRegistry::exists('Ubicacionesnegocios') ? [] : ['className' => 'App\Model\Table\UbicacionesnegociosTable'];
+        $this->Ubicacionesnegocios = TableRegistry::get('Ubicacionesnegocios', $config);
     }
 
     /**
@@ -49,37 +57,17 @@ class UbicacionesNegociosTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->UbicacionesNegocios);
+        unset($this->Ubicacionesnegocios);
 
         parent::tearDown();
     }
 
     /**
-     * Test initialize method
+     * Test initial setup
      *
      * @return void
      */
-    public function testInitialize()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test validationDefault method
-     *
-     * @return void
-     */
-    public function testValidationDefault()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test buildRules method
-     *
-     * @return void
-     */
-    public function testBuildRules()
+    public function testInitialization()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

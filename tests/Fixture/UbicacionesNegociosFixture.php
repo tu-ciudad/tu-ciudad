@@ -4,18 +4,11 @@ namespace App\Test\Fixture;
 use Cake\TestSuite\Fixture\TestFixture;
 
 /**
- * UbicacionesnegociosFixture
+ * UbicacionesNegociosFixture
  *
  */
-class UbicacionesnegociosFixture extends TestFixture
+class UbicacionesNegociosFixture extends TestFixture
 {
-
-    /**
-     * Table name
-     *
-     * @var string
-     */
-    public $table = 'ubicaciones_negocios';
 
     /**
      * Fields

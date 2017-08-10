@@ -4,7 +4,7 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Ubicacionesnegocio Entity
+ * UbicacionesNegocio Entity
  *
  * @property int $id
  * @property float $lat
@@ -13,7 +13,7 @@ use Cake\ORM\Entity;
  *
  * @property \App\Model\Entity\Negocio $negocio
  */
-class Ubicacionesnegocio extends Entity
+class UbicacionesNegocio extends Entity
 {
 
     /**

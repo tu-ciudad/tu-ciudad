@@ -1,22 +1,22 @@
-@media (min-width: 768px) {
-  .navbar-nav.navbar-center {
-    position: absolute;
-    left: 50%;
-    transform: translatex(-50%);
-  }
-}
+
 
 
 .footer-distributed1 h3 {
     /*-----logo navbar tuciudad---------*/
     color: #ffffff;
-    font: normal 45px 'roboto', Helvetica; /*normal 55px 'Cookie', cursive;*/
+    font: normal 35px 'Roboto', Helvetica; /*normal 55px 'Cookie', cursive;*/
     /text-shadow: 1px 2px 2px rgba(1, 1, 1, 0.9);
     /margin: -75px;
-    margin-top: -15px;
+    margin-top: -10px;
     /vertical-align: middle;
     z-index: 1000;
 }
+
+.search-btn {
+  border-radius: 3px;
+}
+
+
 
 .footer-distributed1:hover,
 .footer-distributed1:focus,
@@ -29,7 +29,7 @@
 
 .footer-distributed1 h3 span {
     color: #5383d3;
-    font: normal 45px 'roboto', Helvetica;
+    font: normal 35px 'Roboto', Helvetica;
 }
 
 .border-bot {
@@ -172,5 +172,18 @@
 
 .nav-search {
     width: 15%;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav.navbar-center {
+    /position: absolute;
+    /left: 50%;
+    /transform: translatex(-50%);
+    float: none;
+      display: inline-block;
+  }
+  .navbar-fixed-top #navbar {
+  max-height: 50px;
+}
 }
 /*******************fin-navbar******************/

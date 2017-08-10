@@ -17,7 +17,7 @@
       </div>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="navbar">
+    <div class="collapse navbar-collapse " id="navbar" style="    text-align: center;">
       <ul class="nav navbar-nav navbar-center" >
         <li>
           <a class="btn-trans" href="../../../../">INICIO</a>
@@ -31,11 +31,6 @@
         <li>
           <a class="btn-trans" href="../../contactanos">CONTÁCTANOS</a>
         </li>
-        <!-- <li>
-          <a class="btn-trans" <?= $this->Html->link('Tests', array('controller' => 'prueba', 'action' => 'index')) ?>
-          </a>
-
-        </li> -->
         </ul>
         <ul class="nav navbar-nav navbar-right" style="margin-right: 0;">
         <li>

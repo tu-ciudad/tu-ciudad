@@ -122,7 +122,7 @@
                <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">
         <div class="item " data-toggle="modal" data-target="#modalProduct" pid="1" onclick="pmodal(this);">
                    <div class="preloader"></div>
-                    <div class="preview" style="background-image: url(.../../files/imagenesproductos/blur70_th.jpg); background-size: contain;
+                    <div class="preview" style="background-image: url(.../../files/imagenesproductos/919e2e56028d06f3002f93f63d559f46_th.jpg); background-size: contain;
         background-repeat: no-repeat; 
         height: 100%; width: 100%;" > 
 

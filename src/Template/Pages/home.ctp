@@ -109,9 +109,11 @@ $negocio = $negociosdeproductos[$i][0];
           <br>     
  </div>
  <div class="mainpage">
+ <div class="comerjum">
     <div class="jumbotron">
     <h2><span class="title"> Comercios en Guaminí &nbsp;&nbsp;</span><img src="../img/store.png" style="z-index: 1000; position: relative;" alt=""></h2>
         
+    </div>
     </div>
 </div>
     <div class="comercio-grid"> 

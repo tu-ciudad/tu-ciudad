@@ -1068,9 +1068,10 @@ border-radius: 5%
 .comercio-grid {
      display: flex;
     flex-wrap: wrap;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+    /max-width: 1000px;
+    justify-content: space-between;
+    margin-left: 5px;
+    margin-right: 5px;
     position: relative;
 }
 .comercio-card .card {
@@ -1126,7 +1127,7 @@ border-radius: 5%
     }
     .comercio-card .card-img-top {
   
-    height: 200px;
+    height: 170px;
     }
 
 }
@@ -1141,7 +1142,7 @@ border-radius: 5%
 .comercio-card .card-img-top {
   border-top-right-radius: calc(0.25rem - 1px);
   border-top-left-radius: calc(0.25rem - 1px);
-  //height: 200px;
+  max-height: 200px;
 }
 .comercio-card .card-block {
   -webkit-box-flex: 1;
@@ -1270,7 +1271,11 @@ border-right: 0;
     /box-shadow:  1px 1px #ccc;
     border: 1px solid #ddd;
 }
-
+.mainpage .comerjum .jumbotron {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 5px;
+}
 .mainpage .title {
     margin-top: 0;
     font: normal, 'roboto';

@@ -279,8 +279,8 @@
   .item .preview {
         position: relative;
         /z-index: 1000;
-        filter: blur(10px);
-        -webkit-filter: blur(10px);
+        /filter: blur(10px);
+        /-webkit-filter: blur(10px);
       }
       .item .preloader {
         position: absolute;

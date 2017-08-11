@@ -3,6 +3,8 @@
   * @var \App\View\AppView $this
   */
 ?>
+<img src="../../files/ImagenesProductos/9ad9ddf1f5721a670fabd95aefb9e737.jpg" style="display: none;" alt="">
+<img src="../../img/comerimg.jpg" style="display: none;" alt="">
  <div class="mainpage">
     <div class="header">
     <div class="jumbotron" style="box-shadow: 0; border: 0; margin-bottom: 0;">
@@ -73,10 +75,12 @@ $negocio = $negociosdeproductos[$i][0];
         <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
                    
                     <div class="preloader"></div>
-                    <div class="preview" style="background-image: url(../../files/ImagenesProductos/blur70_th.jpg); background-size: contain;
+                    <div class="preview" style="
+                      background-image: url(../../files/ImagenesProductos/9ad9ddf1f5721a670fabd95aefb9e737.jpg);
+                      background-size: cover;
                       background-repeat: no-repeat; 
-                      height: 100%; width: 100%;" >
-                    <img class="" onload="dimensionar(this);" src=<?= $imagenesproductos[$i]['0']->foto?> alt="">
+                      height: 100%; width: 100% !important;" >
+                    <img class="" style="opacity: 0;" onload="dimensionar(this);" src=<?= $imagenesproductos[$i]['0']->foto?> alt="">
                     </div>
                     <div class="content">
                         <h3>
@@ -124,7 +128,13 @@ $negocio = $negociosdeproductos[$i][0];
             <div class="comercio-card  " >
             <a href=<?= '/negocios/perfil/'.$negocio->id?>>
                 <div class="card" style="">
-                    <img class="card-img-top" src=<?= $imagenesnegocios[$i]['0']->foto?> alt="Card image cap">
+                    <div class="preview" style="
+                      background-image: url(../../img/comerimg.jpg);
+                      background-size: cover;
+                      background-repeat: no-repeat; 
+                      height: 100%; width: 100% !important;" >
+                    <img class="card-img-top" style="opacity: 0;" src=<?= $imagenesnegocios[$i]['0']->foto?> alt="Card image cap" onload="comready(this);">
+                    </div>
                     <div class="card-block">
                         <h4 class="card-title"><?= $negocio->nombre?></h4>
                         <p class="card-text"><?= $negocio->descripcion?></p>

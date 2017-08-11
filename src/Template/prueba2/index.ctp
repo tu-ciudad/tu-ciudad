@@ -42,8 +42,8 @@
     .preview {
         position: relative;
         /z-index: 1000;
-        filter: blur(10px);
-        -webkit-filter: blur(10px);
+        /filter: blur(10px);
+        /-webkit-filter: blur(10px);
       }
       .preloader {
         position: absolute;
@@ -160,7 +160,7 @@
                <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">
         <div class="item " data-toggle="modal" data-target="#modalProduct" pid="1" onclick="pmodal(this);">
                    <div class="preloader1"></div>
-                    <div class="preview" style="background-image: url(.../../files/imagenesproductos/blur85_th.jpg); background-size: contain;
+                    <div class="preview" style="background-image: url(.../../files/imagenesproductos/9ad9ddf1f5721a670fabd95aefb9e737.jpg); background-size: contain;
         background-repeat: no-repeat; 
         height: 100%;"> 
 

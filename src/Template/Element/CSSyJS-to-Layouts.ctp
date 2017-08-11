@@ -8,8 +8,8 @@
 	<?= $this->Html->css('normalize.css') ?>
     <?= $this->Html->css('nav.css') ?> 
     <?= $this->Html->css('bootstrap.min.css') ?>
-    <?= $this->Html->css('style.css?=v6') ?>
-    <?= $this->Html->css('productos.css?=v10') ?>
+    <?= $this->Html->css('style.css?=v8') ?>
+    <?= $this->Html->css('productos.css?=v11') ?>
     <?= $this->Html->css('font-awesome.min.css') ?> 
       
      
@@ -27,5 +27,10 @@
     if(dwidth > dheight){
       $(elem).css({'width': '100%','height': 'auto'});     
     }
-  }
+  };
+  		function comready(elem) {
+  			$(elem).css({opacity: '1'});
+  			$(elem).parent().removeClass('preview');
+  			$(elem).parent().css({'background-image':''});
+  		}
     </script>

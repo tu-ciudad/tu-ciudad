@@ -126,8 +126,8 @@ class ProductosController extends AppController
                 $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $baseFromJavascript));
                 //echo ('la cosa------------------' . $data);
                 $dimensions = imagecreatefromstring($data);
-                $imgxo = imagesx($dimensions) / 400;
-                $imgxot = imagesx($dimensions) / 20;
+                $imgxo = imagesx($dimensions) / 350;
+                $imgxot = imagesx($dimensions) / 200;
                 $imgy = imagesy($dimensions) / $imgxo;
                 $imgyt = imagesy($dimensions) / $imgxot;
                 $nombre = md5(uniqid())  ;
@@ -150,9 +150,9 @@ class ProductosController extends AppController
                     $destino_temporal = tempnam($tmp_path,"tmp");
                     $destino_temporal1 = tempnam($tmp_path,"tmp");
                     $calidad = 90;
-                    $calidad_th = 50;
-                    productosController::redimensionar_jpeg($origen, $destino_temporal, 400, $imgy, $calidad);
-                    productosController::redimensionar_jpeg($origen, $destino_temporal1, 20, $imgyt, $calidad_th);
+                    $calidad_th = 85;
+                    productosController::redimensionar_jpeg($origen, $destino_temporal, 350, $imgy, $calidad);
+                    productosController::redimensionar_jpeg($origen, $destino_temporal1, 200, $imgyt, $calidad_th);
 
                     // guardamos la imagen
                     $fp=fopen($destino,"w");

@@ -1092,7 +1092,7 @@ border-radius: 5%
   margin-bottom: 15px;
   /width: calc(50% - 5px);
   margin: 5px;
-  
+  overflow: hidden;
 }
 .comercio-card {
     transition: all 0.3s ease-in; 
@@ -1241,7 +1241,7 @@ border-right: 0;
 /*********************fin-comercios****************************/
 /***************************main-page*****************************/
 .mainpage .header .jumbotron {
-    background-color: inherit;
+    background:#555;
     background-image:url('../img/rain_cup.jpg') ;
     background-position: center -250px; 
     background-repeat: no-repeat;

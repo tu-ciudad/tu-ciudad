@@ -74,7 +74,13 @@
     scrollwheel: false,
   });
 
-
+<?php
+foreach ($negocio->imagenes_negocios as $imagen) {
+    if ($imagen->ubicacion = 'portada'){
+      $fportada = $imagen->foto;
+    }
+  }
+?>
   // InfoWindow content
   var content = '<div id="iw-container">' +
                     '<div class="iw-title"><?= $negocio->nombre ?></div>' +

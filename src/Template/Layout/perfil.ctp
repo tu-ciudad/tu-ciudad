@@ -42,6 +42,13 @@ $cakeDescription = 'PaseoCiudad';
 
     </title>
     <script>
+    <?php
+     foreach ($negocio->imagenes_negocios as $imagen) {
+    if ($imagen->ubicacion = 'portada'){
+      $fportada = $imagen->foto;
+    }
+  } 
+  ?>
      var fbimg = '<?= $fportada ?>';
          splitimg = fbimg.split('../');
          console.log(splitimg[2]);

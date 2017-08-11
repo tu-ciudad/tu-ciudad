@@ -115,7 +115,7 @@ $this->layout = 'perfil';
    <li><?= $negocio->id ?></li>
    <li><?= $producto->id ?></li>
    <ul>
-   <li><?= count($imagenesproductos[$i]) ?></li>
+   <li><?= count($producto->imagenes_productos) ?></li>
    <?php
 
         foreach ($producto->imagenes_productos as $imagen):

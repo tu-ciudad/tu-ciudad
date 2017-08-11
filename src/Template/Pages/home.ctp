@@ -70,7 +70,7 @@
  foreach ($productos as $producto) { 
 $negocio = $negociosdeproductos[$i][0];
  ?>
-               <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-min"> <!-- producto -->
+               <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-min"> <!-- producto -->
                <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">
         <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
                    

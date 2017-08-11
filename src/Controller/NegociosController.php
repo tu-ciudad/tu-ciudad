@@ -32,74 +32,49 @@ class NegociosController extends AppController
 
     return parent::isAuthorized($user);
 }
-    private function llenar($negocio,$orden = null){
+
+    public $paginate = [
+    // Other keys here.
+    'maxLimit' => 21
+];
+
+    private function llenar($id,$orden = null){
           //traigo informacion de local
             $fportada = null;
             $fperfil = null;
             $productostags = null;
             $i = 0;
-            $query = TableRegistry::get('ImagenesNegocios')->find();
-            $imagenes = $query->select(['foto','ubicacion'])->where(['negocios_id' => $negocio->id])->toArray();
-            foreach($imagenes as $imagen):
-                if ($imagen->ubicacion == 'perfil'){
-                $fperfil = '../../files/ImagenesNegocios/foto/'. $imagen->foto;
+            $negocio = $this->Negocios->get($id, [
+              'contain' => ['UbicacionesNegocios','ImagenesNegocios','Tags','Lugares']
+        ]);
+            $productos = TableRegistry::get('Productos');
+            $productos = $this->paginate($productos->find('all')->contain(['ImagenesProductos','Tags'])->where(['Productos.negocios_id = :id'])->bind(':id',$negocio->id,'integer')->group(['Productos.id'])->order(['Productos.fecha' => 'DESC']));
+            //acomodo la ruta de las imagenes de negocios
+            foreach($negocio->imagenes_negocios as $imagen):
+                $imagen->foto = '../../files/ImagenesNegocios/foto/'. $imagen->foto;
+            endforeach;
+            //acomodo la ruta de las imagenes de los productos
+            foreach ($productos as $producto) {
+                foreach ($producto->imagenes_productos as $imgproducto) {
+                     $imgproducto->foto = '../../files/ImagenesProductos/'. $imgproducto->foto;
                 }
-                if ($imagen->ubicacion == 'portada'){
-                $fportada = '../../files/ImagenesNegocios/foto/'. $imagen->foto;
-                }   
-            endforeach;
-        //traigo informacion de productos
-            $query2 = TableRegistry::get('Productos')->find();
-            switch($orden) {
-                case 1:
-                   $productos = $query2->select(['id','titulo','cuerpo','fecha','precio'])->where(['negocios_id' => $negocio->id])->order(['precio' => 'DESC'])->toArray();
-                    break;
-
-                case 2:
-                    $productos = $query2->select(['id','titulo','cuerpo','fecha','precio'])->where(['negocios_id' => $negocio->id])->order(['precio' => 'ASC'])->toArray();
-                    break;
-                default:
-                    $productos = $query2->select(['id','titulo','cuerpo','fecha','precio'])->where(['negocios_id' => $negocio->id])->order(['fecha' => 'DESC'])->toArray();
             }
-       
-            foreach($productos as $producto):
-                //traigo las imagenes del producto
-                $query3 = TableRegistry::get('ImagenesProductos')->find(); //traigo las imagenes del producto
-                $imgproductos = $query3->select(['foto','numero'])->where(['productos_id' => $producto->id])->toArray();
-                foreach($imgproductos as $imgproducto):
-                    $imgproducto->foto = '../../files/ImagenesProductos/'. $imgproducto->foto;
-                endforeach;   
-            $imagenesproductos[] = $imgproductos;
-            endforeach;
-            if(is_null($fperfil)){
-                $fperfil = '../../img/fotodeperfil.png';
-            }
-            if(is_null($fportada)){
-                $fportada = '../../img/fotodeportada.png';
-            }
-        //traigo la ciudad de la cual es el comercio
-            $query4 = TableRegistry::get('Lugares')->find();
-            $ubicacion = $query4->select(['nombre'])->where(['id' => $negocio->lugares_id])->toArray();
-        //traigo los tags del comercio
             $tagsnegocio = null;
-            $conexion = ConnectionManager::get('default');
-            $tags = $conexion->execute('Call selecttagnegocio(?)',[$negocio->id])->fetchAll('assoc');
-            //nada mas me falta algo que los saque del vector y los ponga interlacados por ,
-          //  $tagsnegocio = implode(',',$tags);
 
             //veo la cantidad de tags que  tiene el local. lo hardcodeo en 1 porque no me anda internet. la idea es ver ese tamaño y despues generar un rand de 0 a esa cantidad. para seleccionar un tag aleatorio
 
             
-            foreach ($tags as $tag) {
+            foreach ($negocio->tags as $tag) {
                 if(is_null($tagsnegocio)){
-                    $tagsnegocio = implode($tag);
+                    $tagsnegocio = $tag->nombre;
                  } else {
-                  $tagsnegocio = $tagsnegocio .' '.'-'.' '. implode($tag);
+                  $tagsnegocio = $tagsnegocio .' '.'-'.' '. $tag->nombre;
                 }
             }
             if (is_null($tagsnegocio)) {
              $tagsnegocio = ' ';
             }
+            /*
         $tagstable = TableRegistry::get('tags');
         $query = $tagstable->find();
         $data = $query->toArray();
@@ -113,10 +88,9 @@ class NegociosController extends AppController
             $nrotag = rand(1,$cantidadtags) - 1;
         //    $tags[0];//aca va el numero que me dio el aleatorio.este es el comodin que va
             $relacionados = $conexion->execute('SELECT * FROM negocios inner join negocios_tags on (negocios.id = negocios_tags.negocios_id) inner join tags on (tags.id = negocios_tags.tags_id) where tags.nombre = ? and negocios.id <> ? order by rand() limit 2;',[$tags[$nrotag]['nombre'], $negocio->id])->fetchAll('assoc');
-        //traigo los tags de todos los negocios
-            $imagenesNegocio = TableRegistry::get('ImagenesNegocios')->newEntity();
-            $this->set(compact('negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','orden','relacionados','imagenesNegocio'));
-            $this->set('_serialize', ['negocio','fperfil','fportada','productos','imagenesproductos','ubicacion','tagsnegocio','vectortags','orden','relacionados','imagenesNegocio']);
+    */    //traigo los tags de todos los negocios
+            $this->set(compact('negocio','productos','tagsnegocio'));
+            $this->set('_serialize', ['negocio','productos','tagsnegocio']);
     }
 
     public function index()
@@ -186,10 +160,8 @@ class NegociosController extends AppController
      */
     public function edit($id = null)
     {
-        $negocio = $this->Negocios->get($id, [
-            'contain' => ['UbicacionesNegocios']
-        ]);
-        negociosController::llenar($negocio);
+
+        negociosController::llenar($id);
     }
 
     /**
@@ -214,17 +186,15 @@ class NegociosController extends AppController
 
 
     public function perfil($id = null, $orden = null){
-        $negocio = $this->Negocios->get($id, [
-              'contain' => ['UbicacionesNegocios']
-        ]);
+
          if ($this->request->is('get')){
             if(isset($this->request->query['orden'])){
                 $orden = $this->request->query['orden'];
             }
             if( $orden == 1 || $orden == 2 || $orden == 3){
-                negociosController::llenar($negocio,$orden);
+                negociosController::llenar($id,$orden);
             } else {
-                negociosController::llenar($negocio);
+                negociosController::llenar($id);
             }
         }
 
@@ -240,10 +210,8 @@ class NegociosController extends AppController
                 $negocio = $this->Negocios->find()->where(['users_id' =>  $this->Auth->user('id')])->limit('1')->toArray();
                 //si esto esta vacio tengo que redirigir a error 500
                 //traigo informacion de local
-                    $negocio = $this->Negocios->get($negocio[0]->id, [
-              'contain' => ['UbicacionesNegocios']
-        ]);
-                   negociosController::llenar($negocio);
+
+                   negociosController::llenar($negocio[0]->id);
             } else {
                 return $this->redirect(['controller'=> 'pages', 'action' => 'display']);
             }

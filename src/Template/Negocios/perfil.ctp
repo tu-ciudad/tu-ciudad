@@ -39,7 +39,7 @@ $this->layout = 'perfil';
                     <div class="preview" style="background-image: url(../../files/ImagenesProductos/blur70_th.jpg); background-size: contain;
                       background-repeat: no-repeat; 
                       height: 100%; width: 100%;" >
-                    <img class="" onload="dimensionar(this);" src=<?= $imagenesproductos[$i][0]->foto ?> alt="">
+                    <img class="" onload="dimensionar(this);" src=<?= $producto->imagenes_productos[0]->foto ?> alt="">
                     </div>
                     <div class="content">
                         <h3>
@@ -87,7 +87,7 @@ $this->layout = 'perfil';
   <br>
   <?= $negocio->direccion ?> 
   <br>
-  <?= $ubicacion[0]->nombre ?>
+  <?= $negocio->lugare->nombre ?>
   <br>
   <abbr title="Phone">T:</abbr> <?= $negocio->telefono ?>
 </address>
@@ -111,14 +111,14 @@ $this->layout = 'perfil';
    <li><?= $producto->titulo ?></li>
    <li><?= $producto->precio ?></li>
    <li><?= $producto->cuerpo ?></li>
-   <li><?= $imagenesproductos[$i][0]->foto ?></li>
+   <li><?= $producto->imagenes_productos[0]->foto ?></li>
    <li><?= $negocio->id ?></li>
    <li><?= $producto->id ?></li>
    <ul>
    <li><?= count($imagenesproductos[$i]) ?></li>
    <?php
 
-        foreach ($imagenesproductos[$i] as $imagen):
+        foreach ($producto->imagenes_productos as $imagen):
         ?>
 
         <li><?= $imagen->foto ?></li>

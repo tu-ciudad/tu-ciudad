@@ -2,6 +2,11 @@
 /**
   * @var \App\View\AppView $this
   */
+  foreach ($negocio->imagenes_negocios as $imagen) {
+    if ($imagen->ubicacion = 'portada'){
+      $fportada = $imagen->foto;
+    }
+  }
 ?>
 <div class="panel panel-info">
             <div class="panel-heading">

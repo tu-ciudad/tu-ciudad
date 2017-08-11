@@ -1,4 +1,13 @@
-
+<?php
+/**
+  * @var \App\View\AppView $this
+  */
+  foreach ($negocio->imagenes_negocios as $imagen) {
+    if ($imagen->ubicacion = 'portada'){
+      $fportada = $imagen->foto;
+    }
+  }
+?>
 <div class="jumbotron03" style="margin-top: 20px; margin-bottom: 5px;">
   <div class="col-md-12">
     <div class="fb-profile-block">

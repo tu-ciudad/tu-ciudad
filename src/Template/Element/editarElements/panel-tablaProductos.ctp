@@ -29,7 +29,7 @@
                                                 <td><?= $producto->titulo ?></td>
                                                 <td><span>$<?= $producto->precio ?></span><sup>00</sup></td>
                                                 <td><?= $producto->cuerpo ?></td>
-                                                <td class="center" style="margin: 0; padding: 2px;"><img class="" src=<?= $imagenesproductos[$i][0]->foto ?> alt="" style="width: 40px; border: 1px solid #ccc; "></td>
+                                                <td class="center" style="margin: 0; padding: 2px;"><img class="" src=<?= $producto->imagenes_productos[0]->foto ?> alt="" style="width: 40px; border: 1px solid #ccc; "></td>
                                                 <td class="center">
                                                   <center>
                                                   <?= $this->Html->link(__('Editar'), ['controller'=>'productos','action' => 'edit', $producto->id]) ?> - 

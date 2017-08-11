@@ -33,6 +33,11 @@ class LugaresTable extends Table
         $this->setTable('lugares');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
+
+                $this->belongsTo('Negocios', [
+            'foreignKey' => 'negocios_id',
+            'joinType' => 'INNER'
+        ]);
     }
 
     /**

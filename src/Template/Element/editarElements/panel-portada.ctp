@@ -7,6 +7,7 @@
       $fportada = $imagen->foto;
     }
   }
+  $imagenesNegocio = null;
 ?>
 <div class="panel panel-info">
             <div class="panel-heading">

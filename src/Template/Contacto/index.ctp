@@ -30,17 +30,20 @@ $contacto = null;
 		  <div id="form-div">
 		  <?= $this->Form->create($contacto) ?>
 		    <form class="form" id="form1">
-		      <p class="name col-md-4"><?php echo $this->Form->control('nombre')?></p>      
-		      <p class="email col-md-4"><?php echo $this->Form->control('telefono')?></p>
-		      <p class="email col-md-4"><?php echo $this->Form->control('email')?></p>
-		      <p class="text col-md-12"><?php echo $this->Form->control('mensaje',['length' => 6,500])?></p>
+		      <p class="name col-md-4"><?php echo $this->Form->control('nombre', ['class' => 'feedback-input'])?></p>      
+		      <p class="email col-md-4"><?php echo $this->Form->control('telefono', ['class' => 'feedback-input'])?></p>
+		      <p class="email col-md-4">
+		      	<?php echo $this->Form->control('email', ['class' => 'feedback-input'])?>
+		      </p>
+		      <p class="text col-md-12"><?php echo $this->Form->textarea('mensaje', ['class' => 'feedback-input', 'id' => 'mensaje'])?></p>
 		      
 		      
 		      <div class="submit col-md-2">
 		      <?= $this->Form->button(__('Submit')) ?>
-		    <?= $this->Form->end() ?>
+		    
 		        
 		      </div>
+		      <?= $this->Form->end() ?>
 		    </form>
 		  </div>
 		</div>
@@ -236,14 +239,14 @@ $contacto = null;
 }
 
 /* Icons ---------------------------------- */
-#name{
+#nombre{
 	background-image: url(../../img/name.svg);
 	background-size: 30px 30px;
 	background-position: 11px 8px;
 	background-repeat: no-repeat;
 }
 
-#name:focus{
+#nombre:focus{
 	background-image: url(../../img/name.svg);
 	background-size: 30px 30px;
 	background-position: 8px 5px;
@@ -257,7 +260,7 @@ $contacto = null;
 	background-position: 11px 8px;
 	background-repeat: no-repeat;
 }
-#phone{
+#telefono{
 	background-image: url(../../img/phone-receiver.svg);
 	background-size: 30px 30px;
 	background-position: 11px 8px;
@@ -270,14 +273,14 @@ $contacto = null;
 	background-repeat: no-repeat;
 }
 
-#comment{
+#mensaje{
 	background-image: url(../../img/comment.svg);
 	background-size: 30px 30px;
 	background-position: 11px 8px;
 	background-repeat: no-repeat;
 	border: 3px solid #ccc;
 }
-#comment:focus {
+#mensaje:focus {
 	border: 3px solid #5383D3;
 }
 

@@ -202,14 +202,18 @@
    .producto1 .item:hover .content  {
    opacity: 1;
    display: block;
-
-    
 } 
+    
 }
 
-
-
-
+@media screen and (min-width: 1200px) {
+.productos-container .col-lg-3 {
+      width: 20% !important;
+    }
+    .producto1 .item { 
+      max-height: 190px;
+    }
+}
 /*col--768*/
 @media (max-width: 768px) {
     .producto1 .item {

@@ -39,9 +39,12 @@ class BuscarController extends AppController
         $comercios= 0;
         if (isset($this->request->query['productos'])){
             $variable = $this->request->query['productos'];
-            $tags = preg_replace('[^ A-Za-z0-9_-ñÑ]', '', $this->request->query['productos']);
+            $tags = preg_replace('[^ A-Za-z0-9_-ñÑ]','', $this->request->query['productos']);
+            $conectores = array("de", "para", "sin", "si", "con", "co", "no");
+            $tags = str_replace($conectores, "", $tags);
             $tags = explode(' ', $tags, 4);
             $p = sizeof($tags);
+            
 
             for ($i=0; $i < $p; $i++) { 
                  $tags[$i] = "%".$this->Stemmes->stemm($tags[$i])."%";

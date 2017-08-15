@@ -52,10 +52,44 @@
     font-size: 30px;
    }
  }
+
+
+ .homeprod {
+            width: 200px;
+        }
+        .catetext {
+          font: normal 22px 'Roboto', Helvetica;
+          text-transform: uppercase;
+        }
+        @media (max-width: 500px) {
+            .homeprod {
+            width: 170px;
+        }
+            .producto1 .item {
+                width: 100%;
+                height: 170px;
+            }
+        }
+        @media (max-width: 430px) {
+            .homeprod {
+            width: 120px;
+        }
+            .producto1 .item {
+                width: 100%;
+                height: 120px;
+            }
+        }
+        .owl-stage-outer {
+          max-height: 220px;
+        }
 </style>
+<?= $this->element('homeElements/categoriasNav') ?>
 <div class="container">
    <div class="mainpage">
-   
+      
+<?= $this->element('homeElements/carousels') ?>
+
+
       <div class="artDes">
         <div class="jumbotron" style="border-bottom: 0;">
           <h2>
@@ -64,6 +98,7 @@
           </h2>
         </div>
       </div>
+<<<<<<< HEAD
 <div class="productos-container thumbnail" style=" border-top-right-radius: 0; border-top-left-radius: 0; ">
     <?php
  $i = 0;
@@ -107,17 +142,24 @@
                 $i=$i+1;
               
  } ?>
+=======
+      
+      <div class="productos-container thumbnail" style=" border-top-right-radius: 0; border-top-left-radius: 0; ">
+         
+            <?= $this->element('homeElements/productos') ?>  
+                <div style="position: absolute; left: calc(50% - 40px); bottom: 15px;"><a class="btn btn-default" href="/buscar?productos"> Ver Más </a></div>
+                <br>     
+       </div>
+>>>>>>> origin/master
      
-          <div style="position: absolute; left: calc(50% - 40px); bottom: 15px;"><a class="btn btn-default" href="/buscar?productos"> Ver Más </a></div>
-          <br>     
- </div>
- <div class="mainpage">
- <div class="comerjum">
-    <div class="jumbotron">
-    <h2><span class="title"> Comercios en Guaminí &nbsp;&nbsp;</span><img src="../img/store.png" style="z-index: 1000; position: relative;" alt=""></h2>
-        
+ 
+  <div class="mainpage">
+    <div class="comerjum">
+      <div class="jumbotron">
+        <h2><span class="title"> Comercios en Guaminí &nbsp;&nbsp;</span><img src="../img/store.png" style="z-index: 1000; position: relative;" alt=""></h2>
+      </div>
     </div>
-    </div>
+<<<<<<< HEAD
 </div>
     <div class="comercio-grid"> 
             <?php
@@ -146,10 +188,18 @@
             }
             ?>
              </div>
+=======
+  </div>
+
+  <div class="comercio-grid"> 
+    <?= $this->element('homeElements/comercios') ?>           
+  </div>
+>>>>>>> origin/master
           <br>
           <center><a href="/comercios"><button  class="btn btn-default">Ver Todos</button></a></center> 
           <br>  
- </div>
+
+</div>
 </div>
 <div class="mainpage">
   <div class="artDes">
@@ -203,3 +253,33 @@
     });
 </script>
 <!-- <?= dump($negociosdeproductos) ?> -->
+<script>
+    $(document).ready(function(){
+  $(".owl-carousel").owlCarousel({
+      margin:10,
+    loop:true,
+    autoWidth:true,
+    items:5,
+      dots: false,
+    nav: true,
+    navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"] ,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:3,
+            margin: 5,
+            
+        },
+        600:{
+            items:3,
+            
+        },
+        1000:{
+            items:5,
+            
+        }
+    }  
+    
+  });
+});
+    </script>

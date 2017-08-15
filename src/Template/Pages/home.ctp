@@ -103,6 +103,7 @@
     <?php
  $i = 0;
  foreach ($productos as $producto) { 
+$negocio = $negociosdeproductos[$i][0];
  ?>
                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-min"> <!-- producto -->
                <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">
@@ -114,7 +115,7 @@
                       background-size: cover;
                       background-repeat: no-repeat; 
                       height: 100%; width: 100% !important;" >
-                    <img class="" style="opacity: 0;" onload="dimensionar(this);" src=<?= $producto->imagenes_productos['0']->foto?> alt="">
+                    <img class="" style="opacity: 0;" onload="dimensionar(this);" src=<?= $imagenesproductos[$i]['0']->foto?> alt="">
                     </div>
                     <div class="content">
                         <h3>
@@ -123,7 +124,7 @@
                         
                         <h5>
                         <a>
-                            <span><?= $producto->negocio->nombre ?></span>
+                            <span><?= $negocio->nombre ?></span>
                         </a>
                         </h5>
                     </div>
@@ -174,7 +175,7 @@
                       background-size: cover;
                       background-repeat: no-repeat; 
                       height: 100%; width: 100% !important;" >
-                    <img class="card-img-top" style="opacity: 0;" src=<?= $negocio->imagenes_negocios['0']->foto?> alt="Card image cap" onload="comready(this);">
+                    <img class="card-img-top" style="opacity: 0;" src=<?= $imagenesnegocios[$i]['0']->foto?> alt="Card image cap" onload="comready(this);">
                     </div>
                     <div class="card-block">
                         <h4 class="card-title"><?= $negocio->nombre?></h4>
@@ -220,20 +221,20 @@
 <?php
  $i = 0;
  foreach ($productos as $producto): 
- ?>
+  $negocio = $negociosdeproductos[$i][0]; ?>
 
 <ul id="pid<?= $i?>" class="hidden">
-    <li><?= $producto->negocio->nombre ?></li>
+    <li><?= $negocio->nombre ?></li>
    <li><?= $producto->titulo ?></li>
    <li><?= $producto->precio ?></li>
    <li><?= $producto->cuerpo ?></li>
-   <li><?= $producto->imagenes_productos[0]->foto ?></li>
-   <li><?= $producto->negocio->id ?></li>
+   <li><?= $imagenesproductos[$i][0]->foto ?></li>
+   <li><?= $negocio->id ?></li>
    <li><?= $producto->id ?></li>
    <ul>
-   <li><?= count($producto->imagenes_productos[$i]) ?></li>
+   <li><?= count($imagenesproductos[$i]) ?></li>
    <?php
-        foreach ($producto->imagenes_productos[$i] as $imagen):
+        foreach ($imagenesproductos[$i] as $imagen):
         ?>
         <li><?= $imagen->foto ?></li>
         <?php

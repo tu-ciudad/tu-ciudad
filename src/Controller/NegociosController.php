@@ -330,22 +330,17 @@ class NegociosController extends AppController
             if(isset($this->request->data['perfilfb']))
                 $negocio->set('perfilfb', $this->request->data['perfilfb']);
             if ($this->Negocios->save($negocio)) {
-            //$conexion = ConnectionManager::get('default');
-            //$conexion->execute('call deletetagsnegocio(?)',[$negocio->get('id')]);
-
+            $conexion = ConnectionManager::get('default');
+            $conexion->execute('call deletetagsnegocio(?)',[$negocio->get('id')]);
                 //cambio los tags
                 $negocios_tags = TableRegistry::get('negocios_tags');
-                $tags = $negocios_tags->find('all')->where(['negocios_id' => $negocio->get('id')]);
-                foreach ($tags as $tag) {
-                $negocios_tags->delete($tags);
-                }
-             /*   $tags = $this->request->data['tags'];
+                $tags = $this->request->data['tags'];
                 $arraytags = explode(",", $tags);
                 foreach($arraytags as $tag):
                         $querytags = $negocios_tags->query();
                          $querytags->insert(['negocios_id','tags_id'])->values(['negocios_id' => $negocio->get('id'),
                                                                  'tags_id' => $tag])->execute();
-                endforeach;*/
+                endforeach;
             }
         }
     }

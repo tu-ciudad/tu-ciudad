@@ -57,53 +57,52 @@ class PagesController extends AppController
             $subpage = $path[1];
         }
         //PARTE PRODUCTOS //////////////////////////////////////////////////////////////
-        $productos = TableRegistry::get('productos')->find();
+        $query = TableRegistry::get('productos')->find();
         $i = 0;
+        $productos = null;
         $imagenesnegocios = null;
         $imagenesproductos = null;
         $negociosdeproductos = null;
-        $cantidadproductos = $productos->select(['*'])->count();
-        $productos = TableRegistry::get('productos')->find();
+        $cantidadproductos = $query->select(['*'])->count();
+        $conexion = ConnectionManager::get('default');
         if ($cantidadproductos > 30){
-            $productos = $productos->find('all',[
-                'contain' => ['Negocios','ImagenesProductos','Tags'],
-                'order' => 'rand()',
-                'limit' => 30,
-                ]);
- 
+            $productos = $conexion->execute('SELECT * FROM productos order by rand() limit 30')->fetchAll('assoc');
         } else {
-                $productos = $productos->find('all',[
-                'contain' => ['Negocios','ImagenesProductos','Tags'],
-                'order' => 'rand()'
-                ]);
+            $query = TableRegistry::get('productos')->find();
+            $productos = $query->select([])->toArray();
         }
-                foreach ($productos as $producto){
-                    foreach($producto->imagenes_productos as $imgproducto):
-                         $imgproducto->foto = '../../files/ImagenesProductos/'. $imgproducto->foto;
-                   endforeach; 
-                } 
+        //Traigo imagenes de los productos
+        foreach($productos as $producto):
+                //traigo el local del producto
+                $query4 = TableRegistry::get('Negocios')->find(); //traigo las imagenes del producto
+                $negocios = $query4->select([])->where(['id' => $producto->negocios_id])->toArray();
+                $negociosdeproductos[] = $negocios;
+                //traigo las imagenes del producto
+                $query3 = TableRegistry::get('ImagenesProductos')->find(); //traigo las imagenes del producto
+                $imgproductos = $query3->select(['foto','numero'])->where(['productos_id' => $producto->id])->toArray();
+                foreach($imgproductos as $imgproducto):
+                    $imgproducto->foto = '../../files/ImagenesProductos/'. $imgproducto->foto;
+                endforeach;   
+            $imagenesproductos[] = $imgproductos;
+            endforeach;
         //PARTE LOCALES //////////////////////////////////////////////////////////////
-            $negocios = TableRegistry::get('Negocios')->find();
-            $cantidadlocales = $negocios->select(['*'])->count();
-            $negocios = TableRegistry::get('Negocios')->find();
+            $query = TableRegistry::get('Negocios')->find();
+            $cantidadlocales = $query->select(['*'])->count();
             if ($cantidadlocales > 6){
-                $negocios = $negocios->find('all',[
-                'contain' => ['ImagenesNegocios','Tags'],
-                'order' => 'rand()',
-                'limit' => 6,
-                ]);
+                $negocios = $conexion->execute('SELECT * FROM negocios order by rand() limit 30')->fetchAll('assoc');
             } else {
-                $negocios = $negocios->find('all',[
-                'contain' => ['ImagenesNegocios','Tags'],
-                'order' => 'rand()',
-                ]);
+                $query = TableRegistry::get('negocios')->find();
+                $negocios = $query->select([])->toArray();
             }
-            foreach($negocios as $negocio){
-                    foreach ($negocio->imagenes_negocios as $imgcomercio){
-                        $imgcomercio->foto = '../../files/ImagenesNegocios/foto/'.$imgcomercio->foto;
-                    }
-            }
-        $this->set(compact('page','subpage','productos','negocios'));
+            foreach($negocios as $negocio):
+                $query = TableRegistry::get('ImagenesNegocios')->find();
+                $portada = $query->select(['foto','ubicacion'])->where(['negocios_id'=>$negocio->id])->toArray();
+                $portada['0']->foto = '../../files/ImagenesNegocios/foto/'. $portada['0']->foto;
+                $imagenesnegocios[] = $portada;
+            endforeach;
+
+
+        $this->set(compact('page','subpage','productos','imagenesproductos','negocios','imagenesnegocios','negociosdeproductos'));
 
         try {
             $this->render(implode('/', $path));

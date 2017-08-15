@@ -30,12 +30,12 @@ $contacto = null;
 		  <div id="form-div">
 		  <?= $this->Form->create($contacto) ?>
 		    <form class="form" id="form1">
-		      <div class="nombre col-md-4"><?php echo $this->Form->control('nombre', ['class' => 'feedback-input', 'placeholder' => 'Nombre', 'label' =>false])?></div>      
-		      <div class="email col-md-4"><?php echo $this->Form->control('telefono', ['class' => 'feedback-input', 'placeholder' => 'Telefono', 'label' =>false])?></div>
-		      <div class="email col-md-4">
-		      	<?php echo $this->Form->control('email', ['class' => 'feedback-input', 'placeholder' => 'Email', 'label' =>false])?>
-		      </div>
-		      <div class="mensaje col-md-12"><?php echo $this->Form->textarea('mensaje', ['class' => 'feedback-input', 'id' => 'mensaje', 'placeholder' => 'Mensaje', 'label' =>false])?></div>
+		      <p class="name col-md-4"><?php echo $this->Form->control('nombre', ['class' => 'feedback-input'])?></p>      
+		      <p class="email col-md-4"><?php echo $this->Form->control('telefono', ['class' => 'feedback-input'])?></p>
+		      <p class="email col-md-4">
+		      	<?php echo $this->Form->control('email', ['class' => 'feedback-input'])?>
+		      </p>
+		      <p class="text col-md-12"><?php echo $this->Form->textarea('mensaje', ['class' => 'feedback-input', 'id' => 'mensaje'])?></p>
 		      
 		      
 		      <div class="submit col-md-2">
@@ -77,7 +77,7 @@ $contacto = null;
 	            
 	        </div>
 	        <div class="col-md-4" style="float: right;">
-	            <h3 style="margin-bottom: 15px;">Sígenos en Facebook</h3>
+	            <h3 style="margin-bottom: 15px;">Síganos en Facebook</h3>
 	            <div class="fb-page" data-href="https://www.facebook.com/paseociudad" data-tabs="messages" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/paseociudad" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/paseociudad">Paseo Ciudad Guaminí</a></blockquote></div>
 	            
 	        </div>
@@ -86,9 +86,6 @@ $contacto = null;
 
 
 <style>
-	.form-div .col-md-4 {
-		margin-bottom: 10px;
-	}
 	.contact-page {
 		position: relative;
 	}

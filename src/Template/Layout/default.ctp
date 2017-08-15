@@ -54,8 +54,7 @@ $cakeDescription = 'PaseoCiudad';
 
      <!--  CSS y JS -->
     <?= $this->element('CSSyJS-to-Layouts') ?>
-    <?= $this->Html->css('owl.carousel.min.css') ?> 
-    <?= $this->Html->css('owl.theme.default.min.css') ?> 
+
     
 
     <?= $this->fetch('meta') ?>
@@ -96,6 +95,6 @@ $cakeDescription = 'PaseoCiudad';
         <?= $this->fetch('content') ?>
     </div>
     
-  <?= $this->Html->script('owl.carousel.min'); ?>
+
 </body>
 </html>

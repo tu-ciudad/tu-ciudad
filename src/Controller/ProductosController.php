@@ -177,6 +177,7 @@ class ProductosController extends AppController
                         $query = $ImagenesProductos->query(); 
                          $query->insert(['foto','numero','productos_id'])->values([
                         'foto' => $nombre . ".jpg",
+                        'fototh' => $nombre . "_th.jpg",
                         'numero' => $i,
                         'productos_id' => $producto->get('id')
                         ])

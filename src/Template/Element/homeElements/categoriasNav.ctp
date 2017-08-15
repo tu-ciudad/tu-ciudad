@@ -60,7 +60,7 @@
 	color: inherit;
 	background: inherit;
 	border: inherit;
-	border-right: 1px solid;
+	border-right: 1px solid #DDDDDD;
 	box-shadow: inherit;
 	text-decoration: none !important;
 }
@@ -297,7 +297,7 @@ display:block;
 						<ul>
 							 <span style="border-bottom: 1px solid #dadada;">Ver</span>
 
-								<li><a href="#">Joyería y relojes</a></li>
+								<li><a href="#">Bijouterie y relojes</a></li>
 								<li><a href="#">Carteras, bolsos y accesorios</a></li>
 								<li><a href="#">Salud y belleza</a></li>
 								<li><a href="#">Calzado</a></li>
@@ -320,21 +320,14 @@ display:block;
 						<a href="#">Tecnología <i class="fa fa-caret-down" aria-hidden="true"></i></a>
 					 
 						<div class="mega-menu megadrop02 fadeIn animated">
-							<div class="mm-6column">
-								<span class="left-images">
-								<img  src="../../img/img1.jpg">
-								<p>Most Popular Styles </p>
-				</span>
+							<div class="mm-3column">
+								
 								<span class="categories-list">
 							<ul>
-							<span>Computer1</span>
-								<li>Desktops</li>
-								<li>Laptops</li>
-								<li>Tablets</li>
-								<li>Monitors</li>
-								<li>Networking Printers</li>
-								<li>Scanners</li>
-								<li>Jumpers & Cardigans</li>
+							<span>Categorías principales</span>
+								<li style="margin-top: 5px;"><a href="#">Mujer</a></li>
+								<li><a href="#">Hombre</a></li>
+								<li><a href="#">Niños</a></li>
 								<li><a class="mm-view-more" href="#">View more →</a></li>
 							</ul>
 						</span>
@@ -343,33 +336,23 @@ display:block;
 							<div class="mm-3column">
 						<span class="categories-list">
 						<ul>
-							 <span>TV & Video</span>
-								<li>LED TVs
-								<li>Plasma TVs
-								<li>3D TVs
-								<li>DVD & Blu-ray Players
-								<li>Home Theater Systems
-								<li>Cell Phones
-								<li>Apple iPhone
+							 <span style="border-bottom: 1px solid #dadada;">Ver</span>
+
+								<li><a href="#">Joyería y relojes</a></li>
+								<li><a href="#">Carteras, bolsos y accesorios</a></li>
+								<li><a href="#">Salud y belleza</a></li>
+								<li><a href="#">Calzado</a></li>
 								<li><a class="mm-view-more" href="#">View more →</a></li>
 							</ul>
-						</span>							
-							</div>
-							<div class="mm-3column">
-								<span class="categories-list">
-						<ul>
-							<span>Car Electronics</span>
-							<li>GPS & Navigation</li>
-							<li>In-Dash Stereos</li>
-							<li>Speakers</li>
-							<li>Subwoofers</li>
-							<li>Amplifiers</li>
-						    <li>MP3 Players</li>
-							<li>iPods</li>
-						   	<li><a class="mm-view-more" href="#">View more →</a></li>
-						</ul>
-					</span>
+						</span>	
 						</div>
+						<div class="mm-6column">
+						<span class="right-images">
+								<img  src="../../img/img1.jpg" width="200px" height="200px">
+								<p>Most Popular Styles </p>
+				</span>						
+							</div>
+							
 					</div>
 			 
 					</li>

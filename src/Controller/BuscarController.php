@@ -37,8 +37,8 @@ class BuscarController extends AppController
     if ($this->request->is('get')){
         $productos = TableRegistry::get('Productos');
         $comercios= 0;
+        $variable = null;
         if (isset($this->request->query['productos'])){
-            $variable = $this->request->query['productos'];
             $tags = preg_replace('[^ A-Za-z0-9_-ñÑ]','', $this->request->query['productos']);
             $conectores = array("de", "para", "sin", "si", "con", "co", "no");
             $tags = str_replace($conectores, "", $tags);

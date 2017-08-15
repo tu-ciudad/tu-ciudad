@@ -129,6 +129,8 @@ class ImagenesNegociosController extends AppController
           foreach ($foto as $imagen) {
             $imagen = $path . $imagen->foto;
             unlink($imagen);
+            $imagen = $path . $imagen->fototh;
+            unlink($imagen);
           }
             //borro los registros de la tabla si existen
           $query = $this->ImagenesNegocios->query();

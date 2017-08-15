@@ -143,20 +143,20 @@
 <?php
  $i = 0;
  foreach ($productos as $producto): 
-  $negocio = $negociosdeproductos[$i][0]; ?>
+ ?>
 
 <ul id="pid<?= $i?>" class="hidden">
-    <li><?= $negocio->nombre ?></li>
+    <li><?= $producto->negocio->nombre ?></li>
    <li><?= $producto->titulo ?></li>
    <li><?= $producto->precio ?></li>
    <li><?= $producto->cuerpo ?></li>
-   <li><?= $imagenesproductos[$i][0]->foto ?></li>
-   <li><?= $negocio->id ?></li>
+   <li><?= $producto->imagenes_productos[0]->foto ?></li>
+   <li><?= $producto->negocio->id ?></li>
    <li><?= $producto->id ?></li>
    <ul>
-   <li><?= count($imagenesproductos[$i]) ?></li>
+   <li><?= count($producto->imagenes_productos[$i]) ?></li>
    <?php
-        foreach ($imagenesproductos[$i] as $imagen):
+        foreach ($producto->imagenes_productos[$i] as $imagen):
         ?>
         <li><?= $imagen->foto ?></li>
         <?php

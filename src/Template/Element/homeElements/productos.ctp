@@ -1,7 +1,6 @@
 <?php
  $i = 0;
  foreach ($productos as $producto) { 
-$negocio = $negociosdeproductos[$i][0];
  ?>
               <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-min"> <!-- producto -->
                 <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">
@@ -12,7 +11,7 @@ $negocio = $negociosdeproductos[$i][0];
                           background-size: cover;
                           background-repeat: no-repeat; 
                           height: 100%; width: 100% !important;" >
-                        <img class="" style="opacity: 0;" onload="dimensionar(this);" src=<?= $imagenesproductos[$i]['0']->foto?> alt="">
+                        <img class="" style="opacity: 0;" onload="dimensionar(this);" src=<?= $producto->imagenes_productos['0']->foto?> alt="">
                       </div>
                       <div class="content">
                         <h3>
@@ -21,7 +20,7 @@ $negocio = $negociosdeproductos[$i][0];
                             
                         <h5>
                           <a>
-                            <span><?= $negocio->nombre ?></span>
+                            <span><?= $producto->negocio->nombre ?></span>
                           </a>
                         </h5>
                       </div>

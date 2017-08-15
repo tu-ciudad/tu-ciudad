@@ -98,51 +98,6 @@
           </h2>
         </div>
       </div>
-<<<<<<< HEAD
-<div class="productos-container thumbnail" style=" border-top-right-radius: 0; border-top-left-radius: 0; ">
-    <?php
- $i = 0;
- foreach ($productos as $producto) { 
- ?>
-               <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-min"> <!-- producto -->
-               <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">
-        <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
-                   
-                    <div class="preloader"></div>
-                    <div class="preview" style="
-                      background-image: url(../../files/ImagenesProductos/9ad9ddf1f5721a670fabd95aefb9e737.jpg);
-                      background-size: cover;
-                      background-repeat: no-repeat; 
-                      height: 100%; width: 100% !important;" >
-                    <img class="" style="opacity: 0;" onload="dimensionar(this);" src=<?= $producto->imagenes_productos['0']->foto?> alt="">
-                    </div>
-                    <div class="content">
-                        <h3>
-                            <span><?= $producto->titulo?></span> <!-- $producto->titulo -->
-                        </h3>
-                        
-                        <h5>
-                        <a>
-                            <span><?= $producto->negocio->nombre ?></span>
-                        </a>
-                        </h5>
-                    </div>
-
-                    <div class="content-bot"> 
-                        
-                       <h3 class="text-danger">  
-                            <span>$<?= $producto->precio?></span><sup>00</sup>
-                       </h3>
-                       <h4 class="hidden-md hidden-lg"><span><?= $producto->titulo ?></span></h4>
-                    </div>           
-        </div></div>
-    </div> <!-- /producto -->
-                 
-                <?php
-                $i=$i+1;
-              
- } ?>
-=======
       
       <div class="productos-container thumbnail" style=" border-top-right-radius: 0; border-top-left-radius: 0; ">
          
@@ -150,7 +105,6 @@
                 <div style="position: absolute; left: calc(50% - 40px); bottom: 15px;"><a class="btn btn-default" href="/buscar?productos"> Ver Más </a></div>
                 <br>     
        </div>
->>>>>>> origin/master
      
  
   <div class="mainpage">
@@ -159,42 +113,11 @@
         <h2><span class="title"> Comercios en Guaminí &nbsp;&nbsp;</span><img src="../img/store.png" style="z-index: 1000; position: relative;" alt=""></h2>
       </div>
     </div>
-<<<<<<< HEAD
-</div>
-    <div class="comercio-grid"> 
-            <?php
-            $i = 0;
-            foreach ($negocios as $negocio) {
-            ?>
-            <div class="comercio-card  " >
-            <a href=<?= '/negocios/perfil/'.$negocio->id?>>
-                <div class="card" style="">
-                    <div class="preview" style="
-                      background-image: url(../../img/comerimg.jpg);
-                      background-size: cover;
-                      background-repeat: no-repeat; 
-                      height: 100%; width: 100% !important;" >
-                    <img class="card-img-top" style="opacity: 0;" src=<?= $negocio->imagenes_negocios['0']->foto?> alt="Card image cap" onload="comready(this);">
-                    </div>
-                    <div class="card-block">
-                        <h4 class="card-title"><?= $negocio->nombre?></h4>
-                        <p class="card-text"><?= $negocio->descripcion?></p>
-                    </div>
-                </div>
-            </a>
-            </div>
-            <?php
-            $i = $i+1;
-            }
-            ?>
-             </div>
-=======
   </div>
 
   <div class="comercio-grid"> 
     <?= $this->element('homeElements/comercios') ?>           
   </div>
->>>>>>> origin/master
           <br>
           <center><a href="/comercios"><button  class="btn btn-default">Ver Todos</button></a></center> 
           <br>  
@@ -220,20 +143,20 @@
 <?php
  $i = 0;
  foreach ($productos as $producto): 
- ?>
+  $negocio = $negociosdeproductos[$i][0]; ?>
 
 <ul id="pid<?= $i?>" class="hidden">
-    <li><?= $producto->negocio->nombre ?></li>
+    <li><?= $negocio->nombre ?></li>
    <li><?= $producto->titulo ?></li>
    <li><?= $producto->precio ?></li>
    <li><?= $producto->cuerpo ?></li>
-   <li><?= $producto->imagenes_productos[0]->foto ?></li>
-   <li><?= $producto->negocio->id ?></li>
+   <li><?= $imagenesproductos[$i][0]->foto ?></li>
+   <li><?= $negocio->id ?></li>
    <li><?= $producto->id ?></li>
    <ul>
-   <li><?= count($producto->imagenes_productos[$i]) ?></li>
+   <li><?= count($imagenesproductos[$i]) ?></li>
    <?php
-        foreach ($producto->imagenes_productos[$i] as $imagen):
+        foreach ($imagenesproductos[$i] as $imagen):
         ?>
         <li><?= $imagen->foto ?></li>
         <?php

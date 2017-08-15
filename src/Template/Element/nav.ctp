@@ -29,7 +29,7 @@
           <a class="btn-trans" href="../../buscar?comercios">COMERCIOS</a>
         </li>
         <li>
-          <a class="btn-trans" href="../../contacto">CONTÁCTANOS</a>
+          <a class="btn-trans" href="../../contactanos">CONTÁCTANOS</a>
         </li>
         </ul>
         <ul class="nav navbar-nav navbar-right" style="margin-right: 0;">

@@ -2,7 +2,7 @@
 /vendor/*
 /tmp/*
 /logs/*
-
+/src/controller/AppController.php
 webroot/files/ImagenesProductos/2759d20757bd057d98b2ac832e658acc.jpg
 webroot/files/ImagenesProductos/78101c1c9523c150f857224779fd04d0.jpg
 webroot/files/ImagenesProductos/c86c59ad43765ace01386b315809ff0d.jpg

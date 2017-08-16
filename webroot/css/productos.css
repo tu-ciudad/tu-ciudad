@@ -20,6 +20,7 @@
     /white-space: nowrap;
     vertical-align: middle;
     text-align: center; margin: 1em 0;
+    font-family: normal, 'Roboto', Helvetica;
 }
 .producto1 {
     width: 100%;
@@ -58,6 +59,7 @@
      font-family: normal, 'Roboto', Helvetica;
      font-weight: 400;
      margin-top: 5px;
+     font-size: 20px;
 }
 
 
@@ -101,6 +103,7 @@
     color: #282c30;
     line-height: 0;
     white-space: nowrap;
+    font-size: 16px;
 }
 /******home responsive**********/
 @media (max-width: 500px) {
@@ -129,8 +132,9 @@
     padding: 10px;
    }
     
-    .producto1 .item .content h5 { 
+    .producto1 .item .content h4 { 
     margin-top: 0;
+    font-size: 16px;
    }
 }
   /******buscar responsive**********/

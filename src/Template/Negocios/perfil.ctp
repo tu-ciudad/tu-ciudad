@@ -36,16 +36,18 @@ $this->layout = 'perfil';
                <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">
         <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
                     <div class="preloader"></div>
-                    <div class="preview" style="background-image: url(../../files/ImagenesProductos/9ad9ddf1f5721a670fabd95aefb9e737.jpg); background-size: contain;
-                      background-repeat: no-repeat; 
-                      height: 100%; width: 100%;" >
+                    <div class="preview" style="
+                          background-image: url(../../files/ImagenesProductos/9ad9ddf1f5721a670fabd95aefb9e737.jpg);
+                          background-size: cover;
+                          background-repeat: no-repeat; 
+                          height: 100%; width: 100% !important;" >
                     <img class="" onload="dimensionar(this);" src=<?= $producto->imagenes_productos[0]->foto ?> alt="">
                     </div>
                     <div class="content">
                         <h3>
                             <span><?= $producto->titulo ?></span> <!-- $producto->titulo -->
                         </h3>
-                        
+                         <img src="../../../img/pointer.svg" style="height: 30px;" alt=""> 
                         <h5>
                         <a >
                             <span><?= $negocio->nombre ?></span>
@@ -94,9 +96,9 @@ $this->layout = 'perfil';
 
         <address>
         <strong>Facebook</strong><br>
-        <a href="<?= $negocio->perfilfb ?>"><?= $negocio->nombre ?></a>
+        <a href="<?= $negocio->perfilfb ?>"><?= $negocio->nombre ?></a><br>
         <strong>Email</strong><br>
-        <a href="mailto:#"><?= $negocio->email ?></a>
+        <a href="mailto:<?= $negocio->email ?>"><?= $negocio->email ?></a>
 </address>
     </div>   
    <?= $this->element('modal-product') ?>
@@ -151,7 +153,30 @@ $('#modalProduct').on('hidden.bs.modal', function (e) {
       $('.dom').remove();
       $('#caru  > .item').addClass('active');
     });
+
+
+
+var d = new Date();
+var weekday = new Array(7);
+weekday[0] =  "Sunday";
+weekday[1] = "Monday";
+weekday[2] = "Tuesday";
+weekday[3] = "Wednesday";
+weekday[4] = "Thursday";
+weekday[5] = "Friday";
+weekday[6] = "Saturday";
+var n = weekday[d.getDay()];
+var daysOfTheWeek = document.getElementsByTagName("li");
+dayOfTheWeek(daysOfTheWeek);
+function dayOfTheWeek (weekDays) {
+    for(var i = 0; i < weekDays.length; i++)
+  { 
+    if(weekDays[i].getAttribute("name") == n)
+    {
+        weekDays[i].className = 'active';
+      weekDays[i].childNodes[0].className = 'active';
+    }
+  }
+}
 </script>
 
-<!--   <?= dump($productos) ?> 
- <?= dump($negocio) ?>   -->

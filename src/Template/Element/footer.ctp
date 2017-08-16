@@ -33,19 +33,34 @@
 
                 <div class="fb-page " data-href="https://www.facebook.com/PaseoCiudad" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/PaseoCiudad" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/PaseoCiudad">Paseo Ciudad Guaminí</a></blockquote></div>
             </div> -->
+<style>
+    .footer-right h1{
+        font-family: normal, 'Roboto', Helvetica;
+        text-transform: uppercase;
+        word-break: break-word;
+        text-align: center;
+        margin-top: 0;
+        color: #FAFAFA;
+        font-size: 30px;
+    }
+    .footer-right .btn-lg{
+        padding: 20px 40px;
+    }
+    .wantshop {
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        font-size: 30px;
+        
 
+    }
+</style>
             <div class="footer-right">
 
-                <p>Contáctanos</p>
-
-                <form action="#" method="post">
-
-                    <input type="text" name="email" placeholder="Email" required />
-                    <input type="text" name="phone" placeholder="Telefono" required />
-                    <textarea name="message" placeholder="Mensaje"></textarea>
-                    <button>Enviar</button>
-
-                </form>
+                <h1>Sumá tu comercio a </h1>
+                <h1 style="color: #5383D3">PaseoCiudad!</h1>
+                <a href="#" class="btn btn-primary btn-lg wantshop">Quiero mi tienda!</a>
+                
 
             </div>
 

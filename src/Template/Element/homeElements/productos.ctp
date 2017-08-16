@@ -17,7 +17,7 @@
                         <h3>
                           <span><?= $producto->titulo?></span> <!-- $producto->titulo -->
                         </h3>
-                            
+                           <img src="../../../img/pointer.svg" style="height: 30px;" alt=""> 
                         <h5>
                           <a>
                             <span><?= $producto->negocio->nombre ?></span>

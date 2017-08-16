@@ -154,9 +154,9 @@
    <li><?= $producto->negocio->id ?></li>
    <li><?= $producto->id ?></li>
    <ul>
-   <li><?= count($producto->imagenes_productos[$i]) ?></li>
+   <li><?= count($producto->imagenes_productos) ?></li>
    <?php
-        foreach ($producto->imagenes_productos[$i] as $imagen):
+        foreach ($producto->imagenes_productos as $imagen):
         ?>
         <li><?= $imagen->foto ?></li>
         <?php
@@ -175,7 +175,7 @@
       $('#caru  > .item').addClass('active');
     });
 </script>
-<!-- <?= dump($negociosdeproductos) ?> -->
+
 <script>
     $(document).ready(function(){
   $(".owl-carousel").owlCarousel({

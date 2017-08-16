@@ -175,6 +175,7 @@ float: right;
     line-height: normal;
     margin: 0;
     padding: 5px 14px;
+    color: white;
 }
 .categoriasnav .categories-list span {
     padding-bottom: 3px;
@@ -247,31 +248,18 @@ display:block;
   animation-name: fadeIn;
 }
 
+a.disabled {
+  /* Make the disabled links grayish*/
+  color: gray;
+  /* And disable the pointer events */
+  pointer-events: none;
+}
 </style>
 <div class="categoriasnav">
 <div class="container">
 
 			
-			<div class="xs-menu-cont">
-			<a id="menutoggle"><i class="fa fa-align-justify"></i> </a>
-				<nav class="xs-menu displaynone">
-					<ul>
-						<li class="active">
-							<a href="#">Home</a>
-						</li>
-						<li>
-							<a href="#">About</a>
-						</li>
-						<li>
-							<a href="#">Services</a>
-						</li>
-						
-						
-						
-
-					</ul>
-				</nav>
-			</div>
+			
 			<nav class="menu">
 				<ul>
 					<li class="licat" ">Categorias</li>
@@ -287,7 +275,7 @@ display:block;
 								<li style="margin-top: 5px;"><a href="#">Mujer</a></li>
 								<li><a href="#">Hombre</a></li>
 								<li><a href="#">Niños</a></li>
-								<li><a class="mm-view-more" href="#">View more →</a></li>
+								<!-- <li><a class="mm-view-more" href="#">View more →</a></li> -->
 							</ul>
 						</span>
 							
@@ -297,11 +285,11 @@ display:block;
 						<ul>
 							 <span style="border-bottom: 1px solid #dadada;">Ver</span>
 
-								<li><a href="#">Bijouterie y relojes</a></li>
+								<li><a class="disabled" href="#">Bijouterie y relojes</a></li>
 								<li><a href="#">Carteras, bolsos y accesorios</a></li>
 								<li><a href="#">Salud y belleza</a></li>
 								<li><a href="#">Calzado</a></li>
-								<li><a class="mm-view-more" href="#">View more →</a></li>
+								<!-- <li><a class="mm-view-more" href="#">View more →</a></li> -->
 							</ul>
 						</span>	
 						</div>
@@ -325,10 +313,10 @@ display:block;
 								<span class="categories-list">
 							<ul>
 							<span>Categorías principales</span>
-								<li style="margin-top: 5px;"><a href="#">Mujer</a></li>
-								<li><a href="#">Hombre</a></li>
-								<li><a href="#">Niños</a></li>
-								<li><a class="mm-view-more" href="#">View more →</a></li>
+								<li style="margin-top: 5px;"><a class="disabled" href="#">Celulares y accesorios</a></li>
+								<li><a class="disabled"href="#">Cámaras y accesorios</a></li>
+								<li><a class="disabled" href="#">Computadoras y tablets</a></li>
+								<!-- <li><a class="mm-view-more" href="#">View more →</a></li> -->
 							</ul>
 						</span>
 							
@@ -336,13 +324,13 @@ display:block;
 							<div class="mm-3column">
 						<span class="categories-list">
 						<ul>
-							 <span style="border-bottom: 1px solid #dadada;">Ver</span>
+							 <span style="border-bottom: 1px solid #dadada;">Otras categorías</span>
 
-								<li><a href="#">Joyería y relojes</a></li>
-								<li><a href="#">Carteras, bolsos y accesorios</a></li>
-								<li><a href="#">Salud y belleza</a></li>
-								<li><a href="#">Calzado</a></li>
-								<li><a class="mm-view-more" href="#">View more →</a></li>
+								<li><a class="disabled" href="#">Audio, video y GPS para autos</a></li>
+								<li><a class="disabled" href="#">Samsung</a></li>
+								<li><a class="disabled" href="#">TV, sistemas de audio</a></li>
+								<li><a class="disabled" href="#">Consolas y videojuegos</a></li>
+								<!-- <li><a class="mm-view-more" href="#">View more →</a></li> -->
 							</ul>
 						</span>	
 						</div>
@@ -357,8 +345,130 @@ display:block;
 			 
 					</li>
 					
-         
+         			<li class="drop-down drop03">
+						<a href="#">Artículos deportivos <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+					 
+						<div class="mega-menu megadrop03 fadeIn animated">
+							<div class="mm-3column">
+								
+								<span class="categories-list">
+							<ul>
+							<span>Categorías principales</span>
+								<li style="margin-top: 5px;"><a href="#">Futbol</a></li>
+								<li><a href="#">Hockey</a></li>
+								<li><a href="#">Paddle</a></li>
+								<!-- <li><a class="mm-view-more" href="#">View more →</a></li> -->
+							</ul>
+						</span>
+							
+							</div>
+							<div class="mm-3column">
+						<span class="categories-list">
+						<ul>
+							 <span style="border-bottom: 1px solid #dadada;">Otras categorías</span>
 
+								<li><a href="#">Ejercicio y condición física</a></li>
+								<li><a class="disabled" href="#">Pesca</a></li>
+								<li><a class="disabled" href="#">Deportes al aire libre</a></li>
+								
+								<!-- <li><a class="mm-view-more" href="#">View more →</a></li> -->
+							</ul>
+						</span>	
+						</div>
+						<div class="mm-6column">
+						<span class="right-images">
+								<img  src="../../img/img1.jpg" width="200px" height="200px">
+								<p>Most Popular Styles </p>
+				</span>						
+							</div>
+							
+					</div>
+			 
+					</li>	
+
+					<li class="drop-down drop04">
+						<a href="#">Gastronomía <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+					 
+						<div class="mega-menu megadrop04 fadeIn animated">
+							<div class="mm-3column">
+								
+								<span class="categories-list">
+							<ul>
+							<span>Categorías principales</span>
+								<li style="margin-top: 5px;"><a href="#">De rotiseria</a></li>
+								<li><a href="#">De restaurant</a></li>
+								<li><a href="#">De supermercado</a></li>
+								
+								<!-- <li><a class="mm-view-more" href="#">View more →</a></li> -->
+							</ul>
+						</span>
+							
+							</div>
+							<div class="mm-3column">
+						<span class="categories-list">
+						<ul>
+							 <span style="border-bottom: 1px solid #dadada;">Otras categorías</span>
+								<li><a href="#">Postres y tortas</a></li>
+								<li><a href="#">Elaboraciones</a></li>
+								<li><a href="#">Envio a domicilio</a></li>
+								
+								
+								<!-- <li><a class="mm-view-more" href="#">View more →</a></li> -->
+							</ul>
+						</span>	
+						</div>
+						<div class="mm-6column">
+						<span class="right-images">
+								<img  src="../../img/img1.jpg" width="200px" height="200px">
+								<p>Most Popular Styles </p>
+				</span>						
+							</div>
+							
+					</div>
+			 
+					</li>
+
+					<li class="drop-down drop05">
+						<a href="#" style="font-weight: bold;">COMERCIOS <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+					 
+						<div class="mega-menu megadrop05 fadeIn animated">
+							<div class="mm-3column">
+								
+								<span class="categories-list">
+							<ul>
+							<span>Categorías principales</span>
+								<li style="margin-top: 5px;"><a href="#">Moda</a></li>
+								<li><a href="#">Regalería</a></li>
+								<li><a class="disabled" href="#">Tecnología</a></li>
+								<li><a class="disabled" href="#">Hogar y jardín</a></li>
+								<!-- <li><a class="mm-view-more" href="#">View more →</a></li> -->
+							</ul>
+						</span>
+							
+							</div>
+							<div class="mm-3column">
+						<span class="categories-list">
+						<ul>
+							  <span style="border-bottom: 1px solid #dadada;">&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+
+								<li><a href="#">Deportivo</a></li>
+								<li><a class="disabled" href="#">Pesca</a></li>
+								<li><a class="disabled" href="#">Automotor</a></li>
+								
+								<!-- <li><a class="mm-view-more" href="#">View more →</a></li> -->
+							</ul>
+						</span>	
+						</div>
+						<div class="mm-6column">
+						<span class="right-images">
+								<img  src="../../img/img1.jpg" width="200px" height="200px">
+								<p>Most Popular Styles </p>
+				</span>						
+							</div>
+							
+					</div>
+			 
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -370,12 +480,7 @@ $(document).ready(function() {
 					$('.xs-menu').toggleClass('displaynone');
 
 					});
-				//add active class on menu
-				$('ul li').click(function(e) {
-					e.preventDefault();
-					$('li').removeClass('active');
-					$(this).addClass('active');
-				});
+				
 			//drop down menu	
 					$(".drop01").hover(function() {
 						$('.megadrop01').addClass('display-on');
@@ -390,7 +495,29 @@ $(document).ready(function() {
 					$(".drop02").mouseleave(function() {
 						$('.megadrop02').removeClass('display-on');
 					});
-			
+					
+					$(".drop03").hover(function() {
+						$('.megadrop03').addClass('display-on');
+					});
+					$(".drop03").mouseleave(function() {
+						$('.megadrop03').removeClass('display-on');
+					});
+					
+					$(".drop04").hover(function() {
+						$('.megadrop04').addClass('display-on');
+					});
+					$(".drop04").mouseleave(function() {
+						$('.megadrop04').removeClass('display-on');
+					});
+
+					$(".drop05").hover(function() {
+						$('.megadrop05').addClass('display-on');
+					});
+					$(".drop05").mouseleave(function() {
+						$('.megadrop05').removeClass('display-on');
+					});
+
+					
 			});
 
 	 

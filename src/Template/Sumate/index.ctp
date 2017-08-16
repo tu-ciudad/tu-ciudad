@@ -3,32 +3,30 @@
 /**
   * @var \App\View\AppView $this
   */
-$contacto = null;
+$sumate = null;
 ?>
 
-
- <div class="contact-page">
- 	<div class="contact-us__img">
+<div class="sumate-page">
+<div class="contact-us__img">
  	<div class="contact-us__header">
  		<div class="container">
  			<div class="row">
 		        <div class="col-md-12 one-column-text">
-		            <h2>¡Contáctenos! Queremos Saber de Ud.</h2>
-		            <h3>Estamos del otro lado del teléfono y de la pantalla para resolver sus dudas y consultas o simplemente para recibir sus sugerencias y comentarios</h3>
+		            <h2>Sumá tu comercio a PaseoCiudad</h2>
+		            <h3>Sumate a nuestra <b>plataforma de exposición</b> de productos y servicios de forma online.</h3>
 		        </div>
     		</div>
  		</div>
  	</div>
  	</div>
- 	
-	<div class="contact-us__form" >
+<div class="contact-us__form" >
 		<div class="formtitle">
 			<h3>Escríbenos</h3>
 			<h4>Nos comunicaremos a la brevedad</h4>
 		</div>
 		<div id="form-main">
 		  <div id="form-div">
-		  <?= $this->Form->create($contacto) ?>
+		  <?= $this->Form->create($sumate) ?>
 		    <form class="form" id="form1">
 		      <div class="nombre col-md-4"><?php echo $this->Form->control('nombre', ['class' => 'feedback-input', 'placeholder' => 'Nombre', 'label' =>false])?></div>      
 		      <div class="email col-md-4"><?php echo $this->Form->control('telefono', ['class' => 'feedback-input', 'placeholder' => 'Telefono', 'label' =>false])?></div>
@@ -39,7 +37,7 @@ $contacto = null;
 		      
 		      
 		      <div class="submit col-md-2">
-		      <?= $this->Form->button(__('Submit')) ?>
+		      <?= $this->Form->button(__('Enviar')) ?>
 		    
 		        
 		      </div>
@@ -48,68 +46,35 @@ $contacto = null;
 		  </div>
 		</div>
  	</div>
- 	
-	
-	 <div class=" contact-info">
-		 <div class="">
-	        <div class="col-md-8" style="float: right;">
-	            <h3>Pongámonos en Contacto</h3>
-	            <p>Estaremos respondiendo sus preguntas todos los días hábiles hasta las 19:00 horas.</p>
-	            <div class="row">
-	                <div class="col-md-4">
-	                    <span>Teléfono</span>
-	                    <p>+54 291-15-4221334</p>
-	                    <p>+54 9 231 454-8310</p>
-	      
-	                </div>
-	                <div class="col-md-4">
-	                    <span>Email</span>
-	                    <p>contacto@paseociudad.com</p>
-	                </div>
-	                <div class="col-md-4">
-	                    <span>Redes Sociales</span>
-	                    <p>Facebook: <a href="https://www.facebook.com/paseociudad">/PaseoCiudad</a></p>
-	                   <!--  <p>Twitter: <a href="https://twitter.com/LegalProm">@LegalProm</a></p> -->
-	                </div>
-	            </div>
-	            <hr>
-	            
-	            
-	        </div>
-	        <div class="col-md-4" style="float: right;">
-	            <h3 style="margin-bottom: 15px;">Sígenos en Facebook</h3>
-	            <div class="fb-page" data-href="https://www.facebook.com/paseociudad" data-tabs="messages" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/paseociudad" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/paseociudad">Paseo Ciudad Guaminí</a></blockquote></div>
-	            
-	        </div>
-        </div>
-    </div>
 
 
-<style>
-	.form-div .col-md-4 {
-		margin-bottom: 10px;
-	}
-	.contact-page {
+
+</div>
+
+ 	<style>
+ 		.sumate-page {
 		position: relative;
 	}
-	.contact-page .contact-us__form {
+	.sumate-page .contact-us__form {
 		height: 80vh;
 		background: #FAFAFA;
 		margin-bottom: 3px;
 		box-shadow: 0 1px 2px #6d6d6d;
 	}
 	.contact-us__img {
-		max-height: 500px;
+		max-height: 400px;
 		overflow: hidden;
 		
 	}
 	.contact-us__img {
-		background-image: url(../../../img/contact-us.jpg);
+		background: #5383D3;
+		/background-image: url(../../../img/sumate.jpg);
 		width: 100%;
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: cover;
-		height: 28.125em;
+		height: 24.125em;
+		
 
 
 	}
@@ -125,7 +90,7 @@ $contacto = null;
     padding:80px 130px;}
 
 	.one-column-text h2{
-	    font-size:42px;
+	    font-size:48px;
 	    font-weight:300;
 	    color: #FAFAFA;
 	    line-height:48px;
@@ -151,34 +116,8 @@ $contacto = null;
 		text-align: center;
 		color: #6F7A7B;
 	  }
-
-/*-------------------------------------*/
-
-.contact-info{
-    /margin-top:100px;
-    padding-left: 35px;
-    padding-right: 35px;
-    width: 100%;
-    height: 100vh;
-    background: #E9EBEE;
-}
-    
-.contact-info h3{
-    font-weight:300;
-    margin:30px 0;}
-    
-.contact-info p{
-    font-weight:300;}
-    
-.contact-info span{
-    font-size:18px;
-    margin:20px 0 20px 0;
-    font-weight:300;}
-
-.contact-info hr{
-    border:solid 1px #eee;
-    margin:50px 0;}
-/*-----------------------------*/
+	/**************************/
+	/*-----------------------------*/
 
 	#feedback-page{
 	text-align:center;
@@ -323,9 +262,12 @@ input:focus, textarea:focus {
 	color: #5383D3;
 	border: 3px solid #5383D3;
 }
-	
 
-@media (max-width: 995px) {
+
+
+
+	  /***************************/
+	  @media (max-width: 995px) {
 
 	.contact-us__header .container {
 		padding: 0 25px;
@@ -367,11 +309,6 @@ input:focus, textarea:focus {
 	    }
 }
 
+ 	</style>
 
-</style>
-
-
-<?= $this->element('footer') ?>
-
-
-
+ 	<?= $this->element('footer') ?>

@@ -9,7 +9,7 @@ use Cake\Mailer\Email;
  *
  * @property \App\Model\Table\UsersTable $Users
  */
-class ContactoController extends AppController
+class SumateController extends AppController
 {
 
     /**
@@ -20,18 +20,18 @@ class ContactoController extends AppController
     public function index()
     {
         if ($this->request->is('post')) {
-            $contacto = $this->request->getData();
+            $sumate = $this->request->getData();
             $email = new Email();
-            $email->from([ $contacto['email'] => $contacto['nombre']])
-    		->to('contacto@paseociudad.com')
-   			->subject('Mensaje desde el sitio')
-    		->send('La persona escribio:  <br>\n  ' . $contacto['mensaje'] . ' \n '.'Sus datos de contacto son, mail: '. $sumate['email']. ' y telefono: '.$sumate['telefono']);
+            $email->from([ $sumate['email'] => $sumate['nombre']])
+            ->to('paseociudad@gmail.com')
+            ->subject('Nuevo Comercio')
+            ->send('La persona escribio:  <br>\n  ' . $sumate['mensaje'] . ' \n '.'Sus datos de contacto son, mail: '. $sumate['email']. ' y telefono: '.$sumate['telefono']);
             
             
                // return $this->redirect(['action' => 'index']);
-            $this->set(compact('contacto'));
-        $this->set('_serialize', ['contacto']);
+            $this->set(compact('sumate'));
+            $this->set('_serialize', ['sumate']);
             }
             $this->Flash->error(__('The negocio could not be saved. Please, try again.'));
         }
-    }
+}

@@ -259,3 +259,23 @@
 }
 
 
+.footer-right h1{
+        font-family: normal, 'Roboto', Helvetica;
+        text-transform: uppercase;
+        word-break: break-word;
+        text-align: center;
+        margin-top: 0;
+        color: #FAFAFA;
+        font-size: 30px;
+    }
+    .footer-right .btn-lg{
+        padding: 20px 40px;
+    }
+    .wantshop {
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        font-size: 30px;
+        
+
+    }

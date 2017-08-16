@@ -81,17 +81,15 @@ class NegociosController extends AppController
         $cantidadtags = count($negocio->tags);
         $recomendados[] = 0;
         if($cantidadtags > 1){
-            $recomendados = $this->Negocios->find('all',[
-                'contain' => ['UbicacionesNegocios','ImagenesNegocios','Tags','Lugares'],
-                'where' => ['OR' => [['Tags.nombre' => $negocio->tags[0]->nombre],['Tags.nombre' => $negocio->tags[1]->nombre]]]
-                ]);
+            $recomendados = $this->Negocios->find('all')->contain(['UbicacionesNegocios','ImagenesNegocios','Tags','Lugares'])->innerJoinWith('Tags')->group(['Negocios.id','Negocios.nombre','Negocios.telefono','Negocios.direccion','Negocios.descripcion','Negocios.lugares_id','Negocios.perfilfb','Negocios.email','Negocios.users_id'])->where(['AND' => [['OR' => [['Tags.nombre' => $negocio->tags[0]->nombre],['Tags.nombre' => $negocio->tags[1]->nombre]]],['Negocios.id !=' =>  $negocio->id]]])->limit('2')->order('rand()');
         }
-        if($cantidadtags == 1){
-            $recomendados = $this->Negocios->find('all',[
-                'contain' => ['UbicacionesNegocios','ImagenesNegocios','Tags','Lugares'],
-                'where' => ['Tags.nombre' => $negocio->tags[0]->nombre]
-                ]);
-        }
+        if($cantidadtags === 1){
+            $recomendados = $this->Negocios->find('all')->contain(['UbicacionesNegocios','ImagenesNegocios','Tags','Lugares'])->innerJoinWith('Tags')->group(['Negocios.id','Negocios.nombre','Negocios.telefono','Negocios.direccion','Negocios.descripcion','Negocios.lugares_id','Negocios.perfilfb','Negocios.email','Negocios.users_id'])->where(['AND' => [['Tags.nombre' => $negocio->tags[0]->nombre],['Negocios.id !=' =>  $negocio->id]]])->group(['Negocios.id'])->limit('2')->order('rand()');
+                    }
+        $cantrecomendados = (count($recomendados));
+        if($cantrecomendados <> 2){
+            $recomendados = $this->Negocios->find('all')->contain(['UbicacionesNegocios','ImagenesNegocios','Tags','Lugares'])->innerJoinWith('Tags')->group(['Negocios.id','Negocios.nombre','Negocios.telefono','Negocios.direccion','Negocios.descripcion','Negocios.lugares_id','Negocios.perfilfb','Negocios.email','Negocios.users_id'])->where(['Negocios.id !=' =>  $negocio->id])->group(['Negocios.id'])->limit('2')->order('rand()');
+                    }
 
         //traigo los tags de todos los negocios
             $this->set(compact('negocio','productos','tagsnegocio','vectortags','recomendados'));
@@ -350,7 +348,7 @@ class NegociosController extends AppController
                 $arraytags = explode(",", $tags);
                 foreach($arraytags as $tag):
                         $querytags = $negocios_tags->query();
-                         $querytags->insert(['negocios_id','tags_id'])->values(['negocios_id' => $negocio->get('id'),
+                        $querytags->insert(['negocios_id','tags_id'])->values(['negocios_id' => $negocio->get('id'),
                                                                  'tags_id' => $tag])->execute();
                 endforeach;
             if ($this->Auth->user('rol') === 'admin'){

@@ -77,16 +77,25 @@ class NegociosController extends AppController
         $tagstable = TableRegistry::get('tags');
         $data = $tagstable->find()->toArray();
         $vectortags = json_encode($data);
+        //traigo dos comercios que tengan tags coincidentes
+        $cantidadtags = count($negocio->tags);
+        $recomendados[] = 0;
+        if($cantidadtags > 1){
+            $recomendados = $this->Negocios->find('all',[
+                'contain' => ['UbicacionesNegocios','ImagenesNegocios','Tags','Lugares'],
+                'where' => ['OR' => [['Tags.nombre' => $negocio->tags[0]->nombre],['Tags.nombre' => $negocio->tags[1]->nombre]]]
+                ]);
+        }
+        if($cantidadtags == 1){
+            $recomendados = $this->Negocios->find('all',[
+                'contain' => ['UbicacionesNegocios','ImagenesNegocios','Tags','Lugares'],
+                'where' => ['Tags.nombre' => $negocio->tags[0]->nombre]
+                ]);
+        }
 
-/*        //traigo dos comercios que tengan tags coincidentes
-            $conexion = ConnectionManager::get('default');
-            $cantidadtags = count($tags);
-            $nrotag = rand(1,$cantidadtags) - 1;
-        //    $tags[0];//aca va el numero que me dio el aleatorio.este es el comodin que va
-            $relacionados = $conexion->execute('SELECT * FROM negocios inner join negocios_tags on (negocios.id = negocios_tags.negocios_id) inner join tags on (tags.id = negocios_tags.tags_id) where tags.nombre = ? and negocios.id <> ? order by rand() limit 2;',[$tags[$nrotag]['nombre'], $negocio->id])->fetchAll('assoc');
-    */    //traigo los tags de todos los negocios
-            $this->set(compact('negocio','productos','tagsnegocio','vectortags'));
-            $this->set('_serialize', ['negocio','productos','tagsnegocio','vectortags']);
+        //traigo los tags de todos los negocios
+            $this->set(compact('negocio','productos','tagsnegocio','vectortags','recomendados'));
+            $this->set('_serialize', ['negocio','productos','tagsnegocio','vectortags','recomendados']);
     }
 
     public function index()
@@ -330,22 +339,25 @@ class NegociosController extends AppController
             if(isset($this->request->data['perfilfb']))
                 $negocio->set('perfilfb', $this->request->data['perfilfb']);
             if ($this->Negocios->save($negocio)) {
-            //$conexion = ConnectionManager::get('default');
-            //$conexion->execute('call deletetagsnegocio(?)',[$negocio->get('id')]);
 
                 //cambio los tags
                 $negocios_tags = TableRegistry::get('negocios_tags');
                 $tags = $negocios_tags->find('all')->where(['negocios_id' => $negocio->get('id')]);
                 foreach ($tags as $tag) {
-                $negocios_tags->delete($tags);
+                $negocios_tags->delete($tag);
                 }
-             /*   $tags = $this->request->data['tags'];
+                $tags = $this->request->data['tags'];
                 $arraytags = explode(",", $tags);
                 foreach($arraytags as $tag):
                         $querytags = $negocios_tags->query();
                          $querytags->insert(['negocios_id','tags_id'])->values(['negocios_id' => $negocio->get('id'),
                                                                  'tags_id' => $tag])->execute();
-                endforeach;*/
+                endforeach;
+            if ($this->Auth->user('rol') === 'admin'){
+                return $this->redirect(['action' => 'edit', $negocio->id]);
+            } else {
+                return $this->redirect(['action' => 'editar']);
+            }
             }
         }
     }

@@ -46,7 +46,7 @@
 </div>
 
 
-<h3 class="catetext">Gastronomía</h3>
+<h3 class="catetext">Deportivo</h3>
         <div class="owl-carousel owl-theme">
           
 

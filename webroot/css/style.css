@@ -1169,6 +1169,11 @@ border-radius: 5%
 .comercio-card a:active {text-decoration:none;  } /*Link activo*/
 .comercio-card a:hover {text-decoration:nounderline; } /*Mause sobre el link*/  
 
+
+
+
+
+
 .comercio .bshadow {
     /border-bottom: 1px solid #ccc;
     /border-right: 1px solid #ccc;
@@ -1237,11 +1242,10 @@ border-right: 0;
 /***************************main-page*****************************/
 .mainpage .header .jumbotron {
     background:#555;
-    background-image:url('../img/portadaboceto.jpg') ;
-    background-size: cover;
-    background-position: center center; 
+    background-image:url('../img/rain_cup.jpg') ;
+    background-position: center -250px; 
     background-repeat: no-repeat;
-    height: 350px;
+    height: 300px;
     text-align: center;
      box-shadow: 1px 2px 1px #ccc;
 }
@@ -1455,51 +1459,3 @@ ul.pagination .disabled:hover a {
     text-align: right;
     color: rgba(0, 0 ,0 , 0.54);
 }
-
-/***onepagesub-home***/
- .onepagesub {
-    position: relative;
-    height: 60vh;
-    width: 100%;
-  }
-  .onepagesub .subimg {
-    height: 100%;
-    width: 100%;
-    /filter: blur(2px);
-    position: absolute;
-  }
-  .onepagesub .container {
-
-  }
-  .onepagesub h2 {
-    padding: 0 250px;
-    margin-top: 60px;
-    text-align: center;
-    position: relative;
-    z-index: 100;
-    color: white;
-    font-size: 34px;
-  }
-  .onepagesub a:link {text-decoration:none; } /* Link no visitado*/
-.onepagesub a:visited {text-decoration:none; } /*Link visitado*/
-.onepagesub a:active {text-decoration:none;  } /*Link activo*/
-.onepagesub a:hover {text-decoration:nounderline; } /*Mause sobre el link*/  
-  .onepagesub .boxsub {
-    font: normal, 'Roboto', Helvetica;
-    font-size: 30px;
-    color: white;
-    text-align: center;
-    width: 15em;
-    border: 3px solid white;
-    border-radius: 1.5rem;
-    padding: 15px 30px;
-    position: relative;
-    z-index: 100;
-    margin: 40px auto;
-    cursor: pointer;
-  }
-  .onepagesub .boxsub:hover {
-    background: #292C2F;
-    
-    
-  }

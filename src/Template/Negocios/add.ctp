@@ -20,7 +20,7 @@
             echo $this->Form->control('nombre');
             echo $this->Form->control('telefono');
             echo $this->Form->control('direccion');
-            echo $this->Form->control('descripcion',['maxlength' => '140']);
+            echo $this->Form->control('descripcion');
             echo $this->Form->control('lugares_id', ['options' => $lugares]);
             echo $this->Form->control('perfilfb');
             echo $this->Form->control('email');

@@ -90,21 +90,6 @@
 <?= $this->element('homeElements/carousels') ?>
 
 
-      <div class="artDes">
-        <div class="jumbotron" style="border-bottom: 0;">
-          <h2>
-            <span class="title"> Productos destacados &nbsp;&nbsp;</span>
-            <img src="../img/cart.png" style="z-index: 1000; position: relative;" alt="">
-          </h2>
-        </div>
-      </div>
-      
-      <div class="productos-container thumbnail" style=" border-top-right-radius: 0; border-top-left-radius: 0; ">
-         
-            
-                <div style="position: absolute; left: calc(50% - 40px); bottom: 15px;"><a class="btn btn-default" href="/buscar?productos"> Ver Más </a></div>
-                <br>     
-       </div>
      
  
   <div class="mainpage">
@@ -124,74 +109,17 @@
 
 </div>
 </div>
-<!-- <div class="mainpage">
-  <div class="artDes">
-     <div class="jumbotron" style=" border-left: 0; border-right: 0; border-bottom: 0;">
-       <h2>
-          <span class="title cookie">  
-            <co>Paseo<co/><span>Ciudad</span><as class="opens"> en el mapa &nbsp;&nbsp; </as> 
-          </span>
-          <img src="../img/worldwide.png" style="max-width: 64px; z-index: 1000; position: relative;" alt="">
-      </h2>
-    </div>
-  </div>
-</div>
-<div class="proDes">
-        <?= $this->element('map-index') ?>
-</div> -->
+
 
 <div class="onepagesub">
   <img class="subimg" src="img/subimg.jpg" alt="guamini">
   <div class="container">
     <h2>Sumate a nuestra <b>plataforma de exposición</b> de productos y servicios de forma online.</h2>
-    <div class="boxsub">Sumate</div>
+    <a href="/sumate"><div class="boxsub">Comienzá hoy mismo!</div></a>
   </div>
 
 </div>
-<style>
-  .onepagesub {
-    position: relative;
-    height: 60vh;
-    width: 100%;
-  }
-  .onepagesub .subimg {
-    height: 100%;
-    width: 100%;
-    /filter: blur(2px);
-    position: absolute;
-  }
-  .onepagesub .container {
 
-  }
-  .onepagesub h2 {
-    padding: 0 250px;
-    margin-top: 60px;
-    text-align: center;
-    position: relative;
-    z-index: 100;
-    color: white;
-    font-size: 34px;
-  }
-  .onepagesub .boxsub {
-    font: normal, 'Roboto', Helvetica;
-    font-size: 30px;
-    color: white;
-    text-align: center;
-    width: 15em;
-    border: 3px solid white;
-    border-radius: 1.5rem;
-    padding: 15px 30px;
-    position: relative;
-    z-index: 100;
-    margin: 40px auto;
-    transition: all .2s ease-out;
-  }
-  .onepagesub .boxsub:hover {
-    background: #337AB7;
-    padding-bottom: 12px;
-    box-shadow: 0 3px 0 1px white;
-  }
-</style>
 
 <?= $this->element('modal-product') ?>
 <?php

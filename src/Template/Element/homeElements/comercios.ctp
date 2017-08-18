@@ -10,7 +10,7 @@
                       background-size: cover;
                       background-repeat: no-repeat; 
                       height: 100%; width: 100% !important;" >
-                    <img class="card-img-top" style="opacity: 0; width: 100%;" src=<?= $negocio->imagenes_negocios[0]->foto?> alt="Card image cap" onload="comready(this);">
+                    <img class="card-img-top" style="opacity: 0;" src=<?= $negocio->imagenes_negocios[0]->foto?> alt="Card image cap" onload="comready(this);">
                     </div>
                     <div class="card-block">
                         <h4 class="card-title"><?= $negocio->nombre?></h4>

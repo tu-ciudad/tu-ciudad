@@ -3,13 +3,13 @@
   * @var \App\View\AppView $this
   */
 ?>
-<img src="../../files/ImagenesProductos/9ad9ddf1f5721a670fabd95aefb9e737.jpg" style="display: none;" alt="producto">
-<img src="../../img/comerimg.jpg" style="display: none;" alt="comercio">
+<img src="../../files/ImagenesProductos/9ad9ddf1f5721a670fabd95aefb9e737.jpg" style="display: none;" alt="">
+<img src="../../img/comerimg.jpg" style="display: none;" alt="">
  <div class="mainpage">
     <div class="header">
     <div class="jumbotron" style="box-shadow: 0; border: 0; margin-bottom: 0;">
     <div class="jumbox">  
-    <h1 itemprop="name"><span class="title footer-distributed1"> 
+    <h1><span class="title footer-distributed1"> 
                     <h3>Paseo<span>Ciudad</span></h3></span>
      </h1>
      <div class="titlesub"><h3>¡Desde donde estés!</h3></div>
@@ -101,7 +101,7 @@
       
       <div class="productos-container thumbnail" style=" border-top-right-radius: 0; border-top-left-radius: 0; ">
          
-            
+            <?= $this->element('homeElements/productos') ?>  
                 <div style="position: absolute; left: calc(50% - 40px); bottom: 15px;"><a class="btn btn-default" href="/buscar?productos"> Ver Más </a></div>
                 <br>     
        </div>
@@ -124,7 +124,7 @@
 
 </div>
 </div>
-<!-- <div class="mainpage">
+<div class="mainpage">
   <div class="artDes">
      <div class="jumbotron" style=" border-left: 0; border-right: 0; border-bottom: 0;">
        <h2>
@@ -138,69 +138,11 @@
 </div>
 <div class="proDes">
         <?= $this->element('map-index') ?>
-</div> -->
-
-<div class="onepagesub">
-  <img class="subimg" src="img/subimg.jpg" alt="guamini">
-  <div class="container">
-    <h2>Sumate a nuestra <b>plataforma de exposición</b> de productos y servicios de forma online.</h2>
-    <div class="boxsub">Sumate</div>
-  </div>
-
 </div>
-<style>
-  .onepagesub {
-    position: relative;
-    height: 60vh;
-    width: 100%;
-  }
-  .onepagesub .subimg {
-    height: 100%;
-    width: 100%;
-    /filter: blur(2px);
-    position: absolute;
-  }
-  .onepagesub .container {
-
-  }
-  .onepagesub h2 {
-    padding: 0 250px;
-    margin-top: 60px;
-    text-align: center;
-    position: relative;
-    z-index: 100;
-    color: white;
-    font-size: 34px;
-  }
-  .onepagesub .boxsub {
-    font: normal, 'Roboto', Helvetica;
-    font-size: 30px;
-    color: white;
-    text-align: center;
-    width: 15em;
-    border: 3px solid white;
-    border-radius: 1.5rem;
-    padding: 15px 30px;
-    position: relative;
-    z-index: 100;
-    margin: 40px auto;
-    transition: all .2s ease-out;
-  }
-  .onepagesub .boxsub:hover {
-    background: #337AB7;
-    padding-bottom: 12px;
-    box-shadow: 0 3px 0 1px white;
-  }
-</style>
-
 <?= $this->element('modal-product') ?>
 <?php
-
-
  $i = 0;
-  foreach ($matriz as $matriz): 
-
- foreach ($matriz as $producto): 
+ foreach ($productos as $producto): 
  ?>
 
 <ul id="pid<?= $i?>" class="hidden">
@@ -208,7 +150,7 @@
    <li><?= $producto->titulo ?></li>
    <li><?= $producto->precio ?></li>
    <li><?= $producto->cuerpo ?></li>
-   <li>../../files/ImagenesProductos/<?= $producto->imagenes_productos[0]->foto ?></li>
+   <li><?= $producto->imagenes_productos[0]->foto ?></li>
    <li><?= $producto->negocio->id ?></li>
    <li><?= $producto->id ?></li>
    <ul>
@@ -216,17 +158,14 @@
    <?php
         foreach ($producto->imagenes_productos as $imagen):
         ?>
-        <li>../../files/ImagenesProductos/<?= $imagen->foto ?></li>
+        <li><?= $imagen->foto ?></li>
         <?php
         endforeach; ?> 
    </ul>
         </ul>
 <?php
                 $i=$i+1;
- endforeach;
-endforeach;
-
-  ?>
+ endforeach; ?>
 
         <?= $this->element('footer') ?>
 <script>

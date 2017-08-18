@@ -260,7 +260,7 @@ a.disabled {
 
 			
 			
-			<nav itemprop="breadcrumb" class="menu">
+			<nav class="menu">
 				<ul>
 					<li class="licat" ">Categorias</li>
 					<li class="drop-down drop01">

@@ -85,10 +85,10 @@ class PagesController extends AppController
         //TRAIGO PRODUCTOS POR CATEGORIA
 
         
-        $categorias = ['deporte', 'comida'];
+        $categorias = ['comida','deporte'];
         foreach ($categorias as $categoria){
             $productostabla = TableRegistry::get('productos')->find();
-            $productoscategorias = $productostabla->find('all')->contain(['Negocios','ImagenesProductos','Tags'])->innerJoinWith('Tags')->where(['Tags.nombre = :tag'])->bind(':tag',$categoria,'string')->group(['Negocios.nombre','Negocios.telefono','Negocios.direccion','Negocios.descripcion','Negocios.lugares_id','Negocios.perfilfb','Negocios.email','Negocios.users_id','Productos.id']);
+            $productoscategorias = $productostabla->find('all')->contain(['Negocios','ImagenesProductos','Tags'])->innerJoinWith('Tags')->where(['Tags.nombre = :tag'])->bind(':tag',$categoria,'string')->group(['Negocios.nombre','Negocios.telefono','Negocios.direccion','Negocios.descripcion','Negocios.lugares_id','Negocios.perfilfb','Negocios.email','Negocios.users_id','Productos.id'])->order('rand()');
             $matriz[] = $productoscategorias;
         }
 

@@ -1069,7 +1069,7 @@ border-radius: 5%
      display: flex;
     flex-wrap: wrap;
     /max-width: 1000px;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-left: 5px;
     margin-right: 5px;
     position: relative;
@@ -1320,7 +1320,8 @@ border-right: 0;
 .jumbox .footer-distributed1 h3 {
     /*-----logo navbar tuciudad---------*/
     color: #ffffff;
-    font: normal 75px 'Cookie', cursive;
+    font: italic 65px 'Roboto', Helvetica;
+    font-weight: 500;
     text-shadow: 1px 1px 2px rgba(1, 1, 1, 0.9);
     /margin: -75px;
     /margin-top: 10px;
@@ -1335,18 +1336,21 @@ border-right: 0;
 .logoLink a:hover {text-decoration:nounderline; } /*Mause sobre el link*/  
 .jumbox .footer-distributed1 h3 span {
     color: #5383d3;
-    font: normal 75px 'Cookie', cursive;
+    font: italic 65px 'Roboto', Helvetica;
+    font-weight: 400;
 }
 .cookie co {
     /*-----logo navbar tuciudad---------*/
     color: #ffffff;
-    font: normal 42px 'Cookie', cursive;
+    font: italic 42px 'Roboto', helvetica;
+    font-weight: 500
     text-shadow: 1px 2px 2px rgba(1, 1, 1, 0.9);
 }
 
 .cookie co span {
     color: #5383d3;
-    font: normal 42px 'Cookie', cursive;
+    font: italic 42px 'Roboto', helvetica;
+    font-weight: 400
 }
 
 .opens {
@@ -1360,8 +1364,8 @@ border-right: 0;
 
 .jumbox .titlesub {
     color: #5383d3;
-    font-family: 'Open Sans', sans-serif;
-    font-style: oblique;
+    font-family: 'Roboto', Helvetica;
+    /font-style: oblique;
     text-shadow: 1px 1px 1px rgba(1, 1, 1, 0.9);
 }
 

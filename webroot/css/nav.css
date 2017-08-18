@@ -3,13 +3,15 @@
 
 .footer-distributed1 h3 {
     /*-----logo navbar tuciudad---------*/
-    color: #ffffff;
-    font: normal 35px 'Roboto', Helvetica; /*normal 55px 'Cookie', cursive;*/
+    color: #FAFAFA;
+    font: italic 35px 'Roboto', Helvetica; /*normal 55px 'Cookie', cursive;*/
+    font-weight: 500;
     /text-shadow: 1px 2px 2px rgba(1, 1, 1, 0.9);
     /margin: -75px;
     margin-top: -10px;
     /vertical-align: middle;
     z-index: 1000;
+  
 }
 
 .search-btn {
@@ -23,26 +25,27 @@
 .footer-distributed1:active,
 .footer-distributed1.active,
 .open .dropdown-toggle.footer-distributed1 h3 {
-    color: #ffffff;
-    border-color: #4D6FB8;
+    color: #FAFAFA;
+    border-color: #5383d3;
 }
 
 .footer-distributed1 h3 span {
     color: #5383d3;
-    font: normal 35px 'Roboto', Helvetica;
+    font: italic 35px 'Roboto', Helvetica;
+    font-weight: 400;
 }
 
 .border-bot {
     border-bottom-color: rgba(40, 44, 48, 0.3);
     border-bottom: 0;
-    background-color: rgba(40, 44, 48, 1);
+    background-color: #292C2F;
     box-shadow: 0 1px 2px rgba(40, 44, 48, 1);;
 }
 
 .btn-trans {
     display: inline-block;
     color: #ffffff;
-    background-color: rgba(40, 44, 48, 0.8);
+    background-color: #292C2F;
     border-color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
     font: normal, 'roboto';
@@ -125,7 +128,7 @@
 }
 
 .c-hamburger--htx {
-  background-color: #ff3264;
+  background-color: #F36C35;
 }
 
 .c-hamburger--htx span {
@@ -148,7 +151,7 @@
 
 /* active state, i.e. menu open */
 .c-hamburger--htx.is-active {
-  background-color: #cb0032;
+  background-color: #E14A0E;
 }
 
 .c-hamburger--htx.is-active span {

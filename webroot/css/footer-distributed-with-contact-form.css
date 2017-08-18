@@ -46,7 +46,7 @@
 	font: bold 16px sans-serif;
 	text-align: left;
 
-	padding: 30px 60px 20px;
+	padding: 15px 60px 15px;
 	margin-top: 25px;
 	overflow: hidden;
 }
@@ -61,11 +61,14 @@
 
 .footer-distributed h3{
 	color:  #ffffff;
-	font: normal 36px 'Cookie', cursive;
+	font: italic 33px 'Roboto', Helvetica; /*normal 55px 'Cookie', cursive;*/
+    font-weight: 500;
 	margin: 0 0 10px;
 }
 
 .footer-distributed h3 span{
+	font: italic 35px 'Roboto', Helvetica; /*normal 55px 'Cookie', cursive;*/
+    font-weight: 400;
 	color:  #5383d3;
 }
 

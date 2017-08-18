@@ -33,7 +33,7 @@ $sumate = null;
 		      <div class="email col-md-4">
 		      	<?php echo $this->Form->control('email', ['class' => 'feedback-input', 'placeholder' => 'Email', 'label' =>false])?>
 		      </div>
-		      <div class="mensaje col-md-12"><?php echo $this->Form->textarea('mensaje', ['class' => 'feedback-input', 'id' => 'mensaje', 'placeholder' => 'Mensaje', 'label' =>false])?></div>
+		      <div class="mensaje col-md-12"><?php echo $this->Form->textarea('mensaje', ['class' => 'feedback-input', 'id' => 'mensaje', 'placeholder' => 'Dinos que tipo de comercio o servicio tienes', 'label' =>false])?></div>
 		      
 		      
 		      <div class="submit col-md-2">

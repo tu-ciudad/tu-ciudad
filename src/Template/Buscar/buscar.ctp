@@ -281,7 +281,7 @@ if (!isset($variable)) {
 
                     <div class="content">
                         <h3>
-                            <span><?= $producto->titulo ?></span>
+                            <span><?= $producto['titulo'] ?></span>
                         </h3>
                          <img src="../../../img/pointer.svg" style="height: 30px;" alt=""> 
                         <h5>
@@ -293,9 +293,9 @@ if (!isset($variable)) {
 
                     <div class="content-bot"> 
                        <h3 class="text-danger">  
-                            <span><?= $producto->precio ?></span><sup>00</sup>
+                            <span><?= $producto['precio'] ?></span><sup>00</sup>
                        </h3>
-                       <h4 class="hidden-md hidden-lg"><span><?= $producto->titulo ?></span></h4>
+                       <h4 class="hidden-md hidden-lg"><span><?= $producto['titulo'] ?></span></h4>
                     </div>      
         </div>
         </div>

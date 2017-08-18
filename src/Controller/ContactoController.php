@@ -17,7 +17,7 @@ class ContactoController extends AppController
      *
      * @return \Cake\Network\Response|null
      */
-    public function contacto()
+    public function index()
     {
         if ($this->request->is('post')) {
             $contacto = $this->request->getData();

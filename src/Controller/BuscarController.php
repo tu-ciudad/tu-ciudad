@@ -107,24 +107,10 @@ class BuscarController extends AppController
        
         $this->set(compact('variable','comercios','tags'));
         $this->set('_serialize', ['variable','comercios','tags']);
-        }
     }
 
-   /*public function categorias(){
-        if ($this->request->is('get')){
-            $productos = TableRegistry::get('Productos');
-             $tags = explode(' ',$this->request->query['categorias']);
-            $variable = $this->paginate($productos->find('all')->contain(['Negocios','ImagenesProductos','Tags'])->innerJoinWith('Tags')->where(['OR' => [['Productos.cuerpo like :tag'],['Productos.titulo like :tag']]])->bind(':tag',$tags[0],'string')->group(['Negocios.nombre','Negocios.telefono','Negocios.direccion','Negocios.descripcion','Negocios.lugares_id','Negocios.perfilfb','Negocios.email','Negocios.users_id','Productos.id'])->order(['Productos.fecha' => 'DESC']));
-        foreach ($variable as $producto){
-                    foreach($producto->imagenes_productos as $imgproducto):
-                         $imgproducto->foto = '../../files/ImagenesProductos/'. $imgproducto->foto;
-                    endforeach; 
-        }  
-
-
-        }
     }
-*/
+
     //lematizador-------------
 
 

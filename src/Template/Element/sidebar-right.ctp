@@ -62,22 +62,40 @@
         
     </div>
 </div>
-    <?php
-    foreach ($recomendados as $recomendado) {
-    ?>
+
     <div class="comercio-card " id="com1">
-            <a href="/negocios/perfil/<?= $recomendado->id ?>">
+            <a href="/negocios/perfil/1">
                 <div class="card" style="">
-                    <img class="card-img-top" src= <?=$recomendado->imagenes_negocios[0]->foto ?> alt="Card image cap">
+                    <img class="card-img-top" src="../../img/comercio1.jpg" alt="Card image cap">
                     <div class="card-block">
-                        <h4 class="card-title"><?= $recomendado->nombre ?></h4>
-                        <p class="card-text"><?= $recomendado->descripcion ?></p>
+                        <h4 class="card-title">Comercio Name 1</h4>
+                        <p class="card-text">Some quick example text to build on the Comercio Name and make up the bulk of the card's content.</p>
                     </div>
                 </div>
             </a>
-    </div>
-    <?php }
-    ?>
+            </div>
+            <div class="comercio-card  " id="com2">
+            <a href="/negocios/perfil/2">
+                <div class="card" style="">
+                    <img class="card-img-top" src="../../img/comercio2.jpg" alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">Comercio Name 2</h4>
+                        <p class="card-text">Some quick example text to build on the Comercio Name and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </a>
+            </div>
+            <div class="comercio-card  " id="com3">
+            <a href="/negocios/perfil/3">
+                <div class="card" style="">
+                    <img class="card-img-top" src="../../img/comercio3.jpg" alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">Comercio Name 3</h4>
+                        <p class="card-text">Some quick example text to build on the Comercio Name and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </a>
+            </div>
              </div>
 </div>
 

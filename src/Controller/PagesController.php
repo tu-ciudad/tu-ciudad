@@ -81,7 +81,17 @@ class PagesController extends AppController
                     foreach($producto->imagenes_productos as $imgproducto):
                          $imgproducto->foto = '../../files/ImagenesProductos/'. $imgproducto->foto;
                    endforeach; 
-                } 
+                }
+        //TRAIGO PRODUCTOS POR CATEGORIA
+
+        
+        $categorias = ['comida','deporte'];
+        foreach ($categorias as $categoria){
+            $productostabla = TableRegistry::get('productos')->find();
+            $productoscategorias = $productostabla->find('all')->contain(['Negocios','ImagenesProductos','Tags'])->innerJoinWith('Tags')->where(['Tags.nombre = :tag'])->bind(':tag',$categoria,'string')->group(['Negocios.nombre','Negocios.telefono','Negocios.direccion','Negocios.descripcion','Negocios.lugares_id','Negocios.perfilfb','Negocios.email','Negocios.users_id','Productos.id'])->order('rand()');
+            $matriz[] = $productoscategorias;
+        }
+
         //PARTE LOCALES //////////////////////////////////////////////////////////////
             $negocios = TableRegistry::get('Negocios')->find();
             $cantidadlocales = $negocios->select(['*'])->count();
@@ -103,7 +113,7 @@ class PagesController extends AppController
                         $imgcomercio->foto = '../../files/ImagenesNegocios/foto/'.$imgcomercio->foto;
                     }
             }
-        $this->set(compact('page','subpage','productos','negocios'));
+        $this->set(compact('page','subpage','productos','negocios','matriz'));
 
         try {
             $this->render(implode('/', $path));

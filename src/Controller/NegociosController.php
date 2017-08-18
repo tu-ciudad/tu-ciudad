@@ -90,6 +90,11 @@ class NegociosController extends AppController
         if($cantrecomendados <> 2){
             $recomendados = $this->Negocios->find('all')->contain(['UbicacionesNegocios','ImagenesNegocios','Tags','Lugares'])->innerJoinWith('Tags')->group(['Negocios.id','Negocios.nombre','Negocios.telefono','Negocios.direccion','Negocios.descripcion','Negocios.lugares_id','Negocios.perfilfb','Negocios.email','Negocios.users_id'])->where(['Negocios.id !=' =>  $negocio->id])->group(['Negocios.id'])->limit('2')->order('rand()');
                     }
+        foreach($recomendados as $recomendado):
+            foreach($recomendado->imagenes_negocios as $imagen):
+                $imagen->foto = '../../files/ImagenesNegocios/foto/'. $imagen->foto;
+            endforeach;
+        endforeach;
 
         //traigo los tags de todos los negocios
             $this->set(compact('negocio','productos','tagsnegocio','vectortags','recomendados'));

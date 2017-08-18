@@ -88,6 +88,8 @@ class NegociosTable extends Table
 
         $validator
             ->allowEmpty('perfilfb');
+        $validator
+            ->allowEmpty('perfilinstragram');
 
         $validator
             ->email('email')

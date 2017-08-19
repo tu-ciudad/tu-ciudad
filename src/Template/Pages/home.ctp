@@ -79,18 +79,25 @@
                 height: 120px;
             }
         }
-        .owl-stage-outer {
+        .proproca .owl-stage-outer {
           max-height: 220px;
         }
 </style>
-<?= $this->element('homeElements/categoriasNav') ?>
+<div class="container"><?= $this->element('homeElements/comerciosCarousel') ?>
+          <center><a href="/buscar?comercios"><button  class="btn btn-default">Ver Todos</button></a></center> 
+          <br>
+</div>
 <div class="container">
    <div class="mainpage">
-      
+            
+
+<?= $this->element('homeElements/categoriasNav') ?>
+
+<div class="proproca">
 <?= $this->element('homeElements/carousels') ?>
 
 
-     
+     </div>
  
   <div class="mainpage">
     <div class="comerjum">
@@ -100,12 +107,8 @@
     </div>
   </div>
 
-  <div class="comercio-grid"> 
-    <?= $this->element('homeElements/comercios') ?>           
-  </div>
-          <br>
-          <center><a href="/comercios"><button  class="btn btn-default">Ver Todos</button></a></center> 
-          <br>  
+
+           
 
 </div>
 </div>

@@ -17,7 +17,7 @@ class SumateController extends AppController
      *
      * @return \Cake\Network\Response|null
      */
-    public function index()
+    public function sumate()
     {
         if ($this->request->is('post')) {
             $sumate = $this->request->getData();

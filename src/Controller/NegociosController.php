@@ -35,7 +35,7 @@ class NegociosController extends AppController
 
     public $paginate = [
     // Other keys here.
-    'maxLimit' => 21
+    'maxLimit' => 25
 ];
 
     private function llenar($id,$orden = null){
@@ -48,7 +48,18 @@ class NegociosController extends AppController
               'contain' => ['UbicacionesNegocios','ImagenesNegocios','Tags','Lugares']
         ]);
             $productos = TableRegistry::get('Productos');
-            $productos = $this->paginate($productos->find('all')->contain(['ImagenesProductos','Tags'])->where(['Productos.negocios_id = :id'])->bind(':id',$negocio->id,'integer')->group(['Productos.id'])->order(['Productos.fecha' => 'DESC']));
+            switch ($orden) {
+                case 1:
+                    $productos = $productos->find('all')->contain(['ImagenesProductos','Tags'])->where(['Productos.negocios_id = :id'])->bind(':id',$negocio->id,'integer')->group(['Productos.id'])->order(['Productos.precio' => 'DESC']);
+                    break;
+                
+                case 2:
+                    $productos = $productos->find('all')->contain(['ImagenesProductos','Tags'])->where(['Productos.negocios_id = :id'])->bind(':id',$negocio->id,'integer')->group(['Productos.id'])->order(['Productos.precio' => 'ASC']);
+                    break;
+                default:
+                    $productos = $productos->find('all')->contain(['ImagenesProductos','Tags'])->where(['Productos.negocios_id = :id'])->bind(':id',$negocio->id,'integer')->group(['Productos.id'])->order(['Productos.fecha' => 'DESC']);
+                    break;
+            }
             //acomodo la ruta de las imagenes de negocios
             foreach($negocio->imagenes_negocios as $imagen):
                 $imagen->foto = '../../files/ImagenesNegocios/foto/'. $imagen->foto;

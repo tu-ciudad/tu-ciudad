@@ -3,7 +3,7 @@
 
             <div class="footer-left">
 
-                <h3>Paseo<span>Ciudad</span></h3>
+                <h3>paseo<span>ciudad</span></h3>
 
                 <p class="footer-links">
                     <a href="../../../../">Inicio</a>

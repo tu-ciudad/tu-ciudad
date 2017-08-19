@@ -103,9 +103,9 @@
 			<p> 
 	<h4 class="marg"><span class="glyphicon glyphicon-share-alt"></span> Compartir</h4>
 	<a class="btn btn-primary social-login-btn social-facebook" id="share-prod-fb" ><i class="fa fa-facebook"></i></a>
-	<a class="btn btn-primary social-login-btn social-twitter" href="/auth/twitter"><i class="fa fa-twitter"></i></a>
+<!-- 	<a class="btn btn-primary social-login-btn social-twitter" href="/auth/twitter"><i class="fa fa-twitter"></i></a>
 	<a class="btn btn-primary social-login-btn social-linkedin" href="/auth/linkedin"><i class="fa fa-linkedin"></i></a>
-	<a class="btn btn-primary social-login-btn social-google" href="/auth/google"><i class="fa fa-google-plus"></i></a>
+	<a class="btn btn-primary social-login-btn social-google" href="/auth/google"><i class="fa fa-google-plus"></i></a> -->
 			</p>
 		</center>
  </div>  

@@ -19,13 +19,13 @@
     
  */
  
-$cakeDescription = 'PaseoCiudad';
+$cakeDescription = 'paseociudad';
 
 ?>
 
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns#">
-<head>
+<head itemscope itemtype="http://schema.org/WebSite">
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -36,10 +36,11 @@ $cakeDescription = 'PaseoCiudad';
 
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
+    <title itemprop='name'>
+        <?= $cakeDescription ?>
+       
     </title>
+    <link rel="canonical" href="https://paseociudad.com/" itemprop="url">
     <!-- metadata open graph -->
     <meta property="og:title" content="PaseoCiudad" />
     <meta property="og:type" content="website" />

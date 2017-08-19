@@ -5,17 +5,16 @@
 ?>
 <img src="../../files/ImagenesProductos/9ad9ddf1f5721a670fabd95aefb9e737.jpg" style="display: none;" alt="producto">
 <img src="../../img/comerimg.jpg" style="display: none;" alt="comercio">
+
  <div class="mainpage">
+  <div class="">
     <div class="header">
     <div class="jumbotron" style="box-shadow: 0; border: 0; margin-bottom: 0;">
     <div class="jumbox">  
-    <h1 itemprop="name"><span class="title footer-distributed1"> 
-                    <h3>Paseo<span>Ciudad</span></h3></span>
-     </h1>
-     <div class="titlesub"><h3>¡Desde donde estés!</h3></div>
-        </div>
+    
     </div>
     </div>
+</div>
 </div>
   <style>
   /*col-min*/

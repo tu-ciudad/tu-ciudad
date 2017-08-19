@@ -93,7 +93,19 @@
                                       <th>
                                       <!-- <input type="text" class="form-control" id="foto1" name="tags" value="<?= $tagsnegocio ?>"> -->
                                         <form>
+                                        <?php
+                                            if (!isset($tagsnegocio)) {
+                                            ?>
                                               <textarea name='tags' id="tag1" placeholder='Tags'><?= $tagsnegocio ?></textarea>
+                                            <?php
+                                              } else {
+
+                                                ?>
+                                              <textarea name='tags' id="tag1" placeholder='Tags'></textarea>
+                                              <?php
+                                              } 
+
+                                                ?>
                                         </form>
                                       </th>
                                   </tr>

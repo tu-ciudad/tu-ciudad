@@ -1,4 +1,4 @@
-  <div class="owl-carousel owl-theme" id="carucomer" style=" height: 300px">
+  <div class="owl-carousel owl-theme" id="carucomer" style=" height: 300px; margin-left: -5px;">
 <?php
             $i = 0;
             foreach ($negocios as $negocio) {

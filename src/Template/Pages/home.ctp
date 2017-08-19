@@ -83,7 +83,9 @@
           max-height: 220px;
         }
 </style>
-<div class="container"><?= $this->element('homeElements/comerciosCarousel') ?>
+<div class="container">
+<?= $this->element('homeElements/categoriasNav') ?>
+<?= $this->element('homeElements/comerciosCarousel') ?>
           <center><a href="/buscar?comercios"><button  class="btn btn-default">Ver Todos</button></a></center> 
           <br>
 </div>
@@ -91,21 +93,15 @@
    <div class="mainpage">
             
 
-<?= $this->element('homeElements/categoriasNav') ?>
+
 
 <div class="proproca">
+
 <?= $this->element('homeElements/carousels') ?>
 
 
      </div>
  
-  <div class="mainpage">
-    <div class="comerjum">
-      <div class="jumbotron">
-        <h2><span class="title"> Comercios en Guaminí &nbsp;&nbsp;</span><img src="../img/store.png" style="z-index: 1000; position: relative;" alt=""></h2>
-      </div>
-    </div>
-  </div>
 
 
            

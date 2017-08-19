@@ -11,8 +11,8 @@
 	position: relative;
 	height: 40px;
 	/height: 100%;
-    border-bottom: 1px solid #DDDDDD;
-    border-top: 1px solid #DDDDDD;
+    border-bottom: 1px solid #5383D3;
+    border-top: 1px solid #5383D3;
     margin-top: 20px;
 }
 
@@ -28,8 +28,8 @@
 }
 .categoriasnav .menu > ul > li:hover {
 	background: #fff;
-	border-left: 1px solid #DDDDDD;
-	border-right: 1px solid #DDDDDD;
+	border-left: 1px solid #5383D3;
+	border-right: 1px solid #5383D3;
 	border-bottom: 1px solid;
 	border-bottom-color: transparent;
 	/box-shadow: 0 1px 1px #DDDDDD;
@@ -52,7 +52,7 @@
 	display: inline-block;
 	line-height: 25px;
 	border: inherit;
-	border-right: 1px solid #DDDDDD;
+	border-right: 1px solid #5383D3;
 	padding: 0 40px 0 0;
 }
 .categoriasnav .menu .licat:hover {
@@ -60,7 +60,7 @@
 	color: inherit;
 	background: inherit;
 	border: inherit;
-	border-right: 1px solid #DDDDDD;
+	border-right: 1px solid #5383D3;
 	box-shadow: inherit;
 	text-decoration: none !important;
 }
@@ -109,7 +109,7 @@ text-decoration:none;
 	display:none;
 	 transition-duration: 0.9s;
 	 z-index: 10;
-	 border: 1px solid #DDDDDD;
+	 border: 1px solid #5383D3;
 	 border-top: none;
 	 box-shadow: 3px 3px 1px rgba(0,0,0,0.08);
     
@@ -180,7 +180,7 @@ float: right;
 .categoriasnav .categories-list span {
     padding-bottom: 3px;
     text-transform: uppercase;
-    border-bottom: 1px solid #dadada;
+    border-bottom: 1px solid #5383D3;
     font-weight: bold;
     min-width: 190px;
     display: table-cell;
@@ -255,8 +255,8 @@ a.disabled {
   pointer-events: none;
 }
 </style>
-<div class="categoriasnav">
-<div class="container">
+<div class="categoriasnav" style="margin-bottom: 15px;">
+<div class="">
 
 			
 			
@@ -283,7 +283,7 @@ a.disabled {
 							<div class="mm-3column">
 						<span class="categories-list">
 						<ul>
-							 <span style="border-bottom: 1px solid #dadada;">Ver</span>
+							 <span style="border-bottom: 1px solid #5383D3;">Ver</span>
 
 								<li><a class="disabled" href="../../buscar?productos=">Bijouterie y relojes</a></li>
 								<li><a href="../../buscar?productos=">Carteras, bolsos y accesorios</a></li>
@@ -324,7 +324,7 @@ a.disabled {
 							<div class="mm-3column">
 						<span class="categories-list">
 						<ul>
-							 <span style="border-bottom: 1px solid #dadada;">Otras categorías</span>
+							 <span style="border-bottom: 1px solid #5383D3;">Otras categorías</span>
 
 								<li><a class="disabled" href="../../buscar?productos=">Audio, video y GPS para autos</a></li>
 								<li><a class="disabled" href="../../buscar?productos=">Samsung</a></li>
@@ -365,7 +365,7 @@ a.disabled {
 							<div class="mm-3column">
 						<span class="categories-list">
 						<ul>
-							 <span style="border-bottom: 1px solid #dadada;">Otras categorías</span>
+							 <span style="border-bottom: 1px solid #5383D3;">Otras categorías</span>
 
 								<li><a href="../../buscar?productos=">Ejercicio y condición física</a></li>
 								<li><a class="disabled" href="../../buscar?productos=">Pesca</a></li>
@@ -407,7 +407,7 @@ a.disabled {
 							<div class="mm-3column">
 						<span class="categories-list">
 						<ul>
-							 <span style="border-bottom: 1px solid #dadada;">Otras categorías</span>
+							 <span style="border-bottom: 1px solid #5383D3;">Otras categorías</span>
 								<li><a href="../../buscar?productos=">Postres y tortas</a></li>
 								<li><a href="../../buscar?productos=">Elaboraciones</a></li>
 								<li><a href="../../buscar?productos=">Envio a domicilio</a></li>
@@ -449,7 +449,7 @@ a.disabled {
 							<div class="mm-3column">
 						<span class="categories-list">
 						<ul>
-							  <span style="border-bottom: 1px solid #dadada;">&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+							  <span style="border-bottom: 1px solid #5383D3;">&nbsp;&nbsp;&nbsp;&nbsp;</span> 
 
 								<li><a href="../../buscar?comercios=">Deportivo</a></li>
 								<li><a class="disabled" href="../../buscar?comercios=">Pesca</a></li>

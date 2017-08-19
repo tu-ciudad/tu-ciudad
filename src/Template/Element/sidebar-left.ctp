@@ -17,9 +17,9 @@
                             <div class="nav sort">
                             <li class="label label-gray" >Ordenar <span class="glyphicon glyphicon-sort"></span></li>
                                 <li id="sort">
-                                    <li class="nasted-sort active"><a href="/../negocios/perfil/<?= $negocio->id?>?orden=3">Más relevantes</a></li>
-                                    <li class="nasted-sort"><a href="/../negocios/perfil/<?= $negocio->id?>?orden=2">Menor precio</a></li>
-                                    <li class="nasted-sort"><a href="/../negocios/perfil/<?= $negocio->id?>?orden=1">Mayor precio</a></li>
+                                    <li class="nasted-sort active orden3"><a href="/../negocios/perfil/<?= $negocio->id?>?orden=3">Más relevantes</a></li>
+                                    <li class="nasted-sort orden2"><a href="/../negocios/perfil/<?= $negocio->id?>?orden=2">Menor precio</a></li>
+                                    <li class="nasted-sort orden1"><a href="/../negocios/perfil/<?= $negocio->id?>?orden=1">Mayor precio</a></li>
                                 </li>
                             </div>
                             
@@ -29,29 +29,20 @@
                     </ul>
 
                 </div>
-   <!--  <div class="visible-lg" id="artAffix">
-    <li class="header label headd " >
-    <hr>
-        <h4 text-align="left" style="z-index:1003;">Sugerencias</h4>
-        <hr style="margin-bottom: 0;">
 
-    </li>
-        <div class="art120 visible-lg">
-        <center>
-            <img src="../../img/productos/art120.png" alt="">
-        </center><br>
-        </div>
-        <div class="art120">
-        <center>
-            <img src="../../img/productos/art120.png" alt="">
-        </center><br>
-        </div>
-        <div class="art120">
-        <center>
-            <img src="../../img/productos/art120.png" alt="">
-        </center><br>
-        </div>
-        
-    </div> -->
 </div>
 </div>
+
+<script>
+    var URLactual = window.location+ '';
+    var orden = URLactual.split("?orden=");
+    if (orden[1] == '1') {
+        $('.orden3').removeClass('active');
+        $('.orden1').addClass('active');
+    } else {
+        if (orden[1] == '2') {
+           $('.orden3').removeClass('active');
+            $('.orden2').addClass('active');
+    }
+}
+</script>

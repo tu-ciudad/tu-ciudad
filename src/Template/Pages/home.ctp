@@ -85,8 +85,8 @@
 <div class="container">
 <?= $this->element('homeElements/categoriasNav') ?>
 <?= $this->element('homeElements/comerciosCarousel') ?>
-          <center><a href="/buscar?comercios"><button  class="btn btn-default">Ver Todos</button></a></center> 
-          <br>
+          <!-- <center><a href="/buscar?comercios"><button  class="btn btn-default">Ver Todos</button></a></center> 
+          <br> -->
 </div>
 <div class="container">
    <div class="mainpage">

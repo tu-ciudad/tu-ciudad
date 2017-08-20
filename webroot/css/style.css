@@ -1149,11 +1149,11 @@ border-radius: 5%
   -webkit-flex: 1 1 auto;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  padding: 1.25rem;
+  padding: 0.25rem;
 }
 
 .comercio-card .card-title {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.10rem;
   text-align: center;
   color: black;
 }

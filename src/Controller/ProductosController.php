@@ -49,6 +49,9 @@ class ProductosController extends AppController
         $this->paginate = [
             'contain' => ['Negocios']
         ];
+         $tagstable = TableRegistry::get('tags');
+        $data = $tagstable->find()->toArray();
+        $vectortags = json_encode($data);
         $productos = $this->Productos->find('all')->contain(['ImagenesProductos','Tags','Negocios']);
         foreach ($productos as $producto){
                     foreach($producto->imagenes_productos as $imgproducto):
@@ -56,8 +59,8 @@ class ProductosController extends AppController
                     endforeach; 
         }  
 
-        $this->set(compact('productos'));
-        $this->set('_serialize', ['productos']);
+        $this->set(compact('productos','vectortags'));
+        $this->set('_serialize', ['productos','vectortags']);
     }
 
     /**

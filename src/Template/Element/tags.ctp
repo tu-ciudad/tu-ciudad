@@ -4,7 +4,7 @@
 
         
         <?= $this->Html->css('tagify.css') ?>
-<?= $this->Html->script('tagify') ?>
+        <?= $this->Html->script('tagify') ?>
  
 
         <style>
@@ -31,9 +31,9 @@
             .disabled tags input,
             .disabled tags textarea{ display:initial; border:1px inset; }
         </style>
-    </head>
+    
 
-    <body>
+
  
 
         <form>

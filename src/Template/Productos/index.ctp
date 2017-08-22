@@ -204,7 +204,7 @@ div.dataTables_wrapper {
                         }
                     }
                   } 
-                  $(currentEle).html(nuevosTags);
+                  
                  
 			            var formData = new FormData();
 			            formData.append("id", id[0]);
@@ -232,9 +232,17 @@ div.dataTables_wrapper {
 
 			        });
 			        return false;
-                }
+                } 
+
                 //console.log(tags); /*fin tags*/
 			  });
+		 $(document).keyup(function (event) {
+			  	if(event.keyCode == 27) {
+			  		unblockScreen();
+                	$(currentEle).html(value);
+                	
+                }
+            });
 			};
 
     		//funcion editar campos
@@ -273,7 +281,10 @@ div.dataTables_wrapper {
 
 			        });
 			        return false;
-				}
+				} else if(event.keyCode == 27) {
+                	$(currentEle).html(value);
+                	unblockScreen();
+                }
 			  });
 
 			  $(document).click(function () { // you can use $('html')

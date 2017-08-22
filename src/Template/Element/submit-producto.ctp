@@ -319,10 +319,10 @@ $('body').on('click', '#send', function(e){
                       x.className = "show";
 
                       // After 3 seconds, remove the show class from DIV
-                      // setTimeout(function(){ 
+                       setTimeout(function(){ 
                          
-                      //     window.location.reload()
-                      //     }, 5000);
+                           window.location.reload()
+                           }, 1000);
 
                      
                  

@@ -209,7 +209,7 @@ div.dataTables_wrapper {
 			            var formData = new FormData();
 			            formData.append("id", id[0]);
 			            formData.append("cambio", title);
-			            formData.append("valor", tags);
+			            formData.append("valor", nuevosTags);
 			          $.ajax({
 			            url: '../../productos/modificar',
 			            type: 'POST',

@@ -11,46 +11,65 @@
         <li><?= $this->Html->link(__('New Negocio'), ['controller' => 'Negocios', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="productos index col-md-8 columns content">
-    <h3><?= __('Productos') ?></h3>
-    <table class="table table-striped" cellpadding="0" cellspacing="0">
-        <thead>
-            <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('titulo') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('cuerpo') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('fecha') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('precio') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('negocios_id') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($productos as $producto): ?>
-            <tr>
-                <td><?= $this->Number->format($producto->id) ?></td>
-                <td><?= h($producto->titulo) ?></td>
-                <td><?= h($producto->cuerpo) ?></td>
-                <td><?= h($producto->fecha) ?></td>
-                <td><?= $this->Number->format($producto->precio) ?></td>
-                <td><?= $producto->has('negocio') ? $this->Html->link($producto->negocio->id, ['controller' => 'Negocios', 'action' => 'view', $producto->negocio->id]) : '' ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'ver', $producto->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $producto->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $producto->id], ['confirm' => __('Are you sure you want to delete # {0}?', $producto->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
-    </div>
-</div>
+
+
+
+<div id="page-inner"> 
+
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                             Todos los productos
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>Titulo</th>
+                                            <th>Precio</th>
+                                            <th>Descripción</th>
+                                            <th>Imagenes</th>
+                                            <th>Editar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       <?php
+                                         $i = 0;
+                                         foreach ($productos as $producto): ?>
+                                             <tr class="gradeU">
+                                                <td><?= $producto->titulo ?></td>
+                                                <td><span>$<?= $producto->precio ?></span><sup>00</sup></td>
+                                                <td><?= $producto->cuerpo ?></td>
+                                                <td class="center" style="margin: 0; padding: 2px;"></td>
+                                                <td class="center">
+                                                  <center>
+                                                  <?= $this->Html->link(__('Editar'), ['controller'=>'productos','action' => 'edit', $producto->id]) ?> - 
+                                                  <a data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">Ver</a> - 
+                                                  <?= $this->Form->postLink(__('Eliminar'), ['controller'=>'productos','action' => 'delete', $producto->id], ['confirm' => __('Are you sure you want to delete # {0}?', $producto->id)]) ?>
+                                                  </center>
+                                                </td>
+                                              </tr>
+
+                                                        <?php
+                                                        $i=$i+1;
+                                         endforeach; ?>
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+    
+                   </div>
+
+<?= $this->Html->script('dataTables.bootstrap') ?>
+<?= $this->Html->script('jquery.dataTables') ?>
+<script>
+    $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+
+</script>
+

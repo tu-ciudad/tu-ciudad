@@ -4,14 +4,15 @@
   */
 ?>
 <nav class="navbar  navbar-fixed-top border-bot"  role="navigation" id="navv">
-
+<div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header footer-distributed1">
       <button class="c-hamburger c-hamburger--htx pull-right visible-xs" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span>toggle menu</span>
       </button>
-      <div class="navbar-brand  footer-distributed1 logoLink" style="margin-left: 15px;">
+      <div class="navbar-brand  footer-distributed1 logoLink" style="/margin-left: 15px;">
        <a href="/">
+       <img src="img/navicon7.png" style="margin-top: -9px; margin-left: -55px; position: absolute;" alt="">
        <h3>paseo<span>ciudad</span></h3>
         </a>
       </div>
@@ -34,7 +35,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right" style="margin-right: 0;">
         <li>
-          <ul class="navbar-form navbar-left navi-search" role="search">
+          <ul class="navbar-form navbar-left navi-search" role="search" style="padding-right: 0;">
             <form class="form-search" method="get" action="/buscar" id="ua-buscar-nav">
               <div class="input-group " >
                 <input type="text" id="dato" name="productos" class="form-control hidden-sm" placeholder="Buscar...">
@@ -47,7 +48,7 @@
         </li>
     </ul>
     </div>
-            <!-- /.navbar-collapse -->
+    </div>        <!-- /.navbar-collapse -->
 </nav>
 
 <script>

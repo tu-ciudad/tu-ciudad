@@ -6,9 +6,9 @@
  **/
 ?>
 	<?= $this->Html->css('normalize.css') ?>
-    <?= $this->Html->css('nav.css') ?> 
+    <?= $this->Html->css('nav.css?=v2') ?> 
     <?= $this->Html->css('bootstrap.min.css') ?>
-    <?= $this->Html->css('style.css?=v12') ?>
+    <?= $this->Html->css('style.css?=v14') ?>
     <?= $this->Html->css('productos.css?=v13') ?>
     <?= $this->Html->css('font-awesome.min.css') ?> 
 

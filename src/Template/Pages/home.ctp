@@ -7,7 +7,7 @@
 <img src="../../img/comerimg.jpg" style="display: none;" alt="comercio">
 
  <div class="mainpage">
-  <div class="">
+  <div class="container">
     <div class="header">
     <div class="jumbotron" style="box-shadow: 0; border: 0; margin-bottom: 0;">
     <div class="jumbox">  

@@ -293,7 +293,13 @@ if (!isset($variable)) {
 
                     <div class="content-bot"> 
                        <h3 class="text-danger">  
-                            <span><?= $producto->precio ?></span><sup>00</sup>
+                            <?php
+                        if (isset($producto->precio)) {
+                        ?>
+                            <span>$<?= $producto->precio ?></span><sup>00</sup>
+                        <?php   
+                        }
+                        ?>
                        </h3>
                        <h4 class="hidden-md hidden-lg"><span><?= $producto->titulo ?></span></h4>
                     </div>      

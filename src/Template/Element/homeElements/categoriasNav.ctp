@@ -264,7 +264,7 @@ a.disabled {
 				<ul>
 					<li class="licat" ">Categorias</li>
 					<li class="drop-down drop01">
-						<a href="../../buscar?productos=">Moda <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+						<a href="../../buscar?categorias=moda">Moda <i class="fa fa-caret-down" aria-hidden="true"></i></a>
 					 
 						<div class="mega-menu megadrop01 fadeIn animated">
 							<div class="mm-3column">
@@ -272,9 +272,9 @@ a.disabled {
 								<span class="categories-list">
 							<ul>
 							<span>Categorías principales</span>
-								<li style="margin-top: 5px;"><a href="../../buscar?productos=">Mujer</a></li>
-								<li><a href="../../buscar?productos=">Hombre</a></li>
-								<li><a href="../../buscar?productos=">Niños</a></li>
+								<li style="margin-top: 5px;"><a href="../../buscar?categorias=">Mujer</a></li>
+								<li><a href="../../buscar?categorias=">Hombre</a></li>
+								<li><a href="../../buscar?categorias=">Niños</a></li>
 								<!-- <li><a class="mm-view-more" href="#">View more →</a></li> -->
 							</ul>
 						</span>
@@ -285,10 +285,10 @@ a.disabled {
 						<ul>
 							 <span style="border-bottom: 1px solid #5383D3;">Ver</span>
 
-								<li><a class="disabled" href="../../buscar?productos=">Bijouterie y relojes</a></li>
-								<li><a href="../../buscar?productos=">Carteras, bolsos y accesorios</a></li>
-								<li><a href="../../buscar?productos=">Salud y belleza</a></li>
-								<li><a href="../../buscar?productos=">Calzado</a></li>
+								<li><a class="disabled" href="../../buscar?categorias=">Bijouterie y relojes</a></li>
+								<li><a href="../../buscar?categorias=">Carteras, bolsos y accesorios</a></li>
+								<li><a href="../../buscar?categorias=">Salud y belleza</a></li>
+								<li><a href="../../buscar?categorias=calzado+zapatillas">Calzado</a></li>
 								<!-- <li><a class="mm-view-more" href="#">View more →</a></li> -->
 							</ul>
 						</span>	
@@ -305,7 +305,7 @@ a.disabled {
 					</li>
 
 					<li class="drop-down drop02">
-						<a href="../../buscar?productos=">Tecnología <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+						<a href="../../buscar?categorias=">Tecnología <i class="fa fa-caret-down" aria-hidden="true"></i></a>
 					 
 						<div class="mega-menu megadrop02 fadeIn animated">
 							<div class="mm-3column">
@@ -313,9 +313,9 @@ a.disabled {
 								<span class="categories-list">
 							<ul>
 							<span>Categorías principales</span>
-								<li style="margin-top: 5px;"><a class="disabled" href="../../buscar?productos=">Celulares y accesorios</a></li>
-								<li><a class="disabled" href="../../buscar?productos=">Cámaras y accesorios</a></li>
-								<li><a class="disabled" href="../../buscar?productos=">Computadoras y tablets</a></li>
+								<li style="margin-top: 5px;"><a class="disabled" href="../../buscar?categorias=">Celulares y accesorios</a></li>
+								<li><a class="disabled" href="../../buscar?categorias=">Cámaras y accesorios</a></li>
+								<li><a class="disabled" href="../../buscar?categorias=">Computadoras y tablets</a></li>
 								<!-- <li><a class="mm-view-more" href="#">View more →</a></li> -->
 							</ul>
 						</span>
@@ -326,10 +326,10 @@ a.disabled {
 						<ul>
 							 <span style="border-bottom: 1px solid #5383D3;">Otras categorías</span>
 
-								<li><a class="disabled" href="../../buscar?productos=">Audio, video y GPS para autos</a></li>
-								<li><a class="disabled" href="../../buscar?productos=">Samsung</a></li>
-								<li><a class="disabled" href="../../buscar?productos=">TV, sistemas de audio</a></li>
-								<li><a class="disabled" href="../../buscar?productos=">Consolas y videojuegos</a></li>
+								<li><a class="disabled" href="../../buscar?categorias=">Audio, video y GPS para autos</a></li>
+								<li><a class="disabled" href="../../buscar?categorias=">Samsung</a></li>
+								<li><a class="disabled" href="../../buscar?categorias=">TV, sistemas de audio</a></li>
+								<li><a class="disabled" href="../../buscar?categorias=">Consolas y videojuegos</a></li>
 								<!-- <li><a class="mm-view-more" href="#">View more →</a></li> -->
 							</ul>
 						</span>	
@@ -346,7 +346,7 @@ a.disabled {
 					</li>
 					
          			<li class="drop-down drop03">
-						<a href="../../buscar?productos=deportivo+deporte?ref=navhome">Artículos deportivos <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+						<a href="../../buscar?categorias=deportivo+deporte?ref=navhome">Artículos deportivos <i class="fa fa-caret-down" aria-hidden="true"></i></a>
 					 
 						<div class="mega-menu megadrop03 fadeIn animated">
 							<div class="mm-3column">
@@ -354,9 +354,9 @@ a.disabled {
 								<span class="categories-list">
 							<ul>
 							<span>Categorías principales</span>
-								<li style="margin-top: 5px;"><a href="../../buscar?productos=">Futbol</a></li>
-								<li><a href="../../buscar?productos=">Hockey</a></li>
-								<li><a href="../../buscar?productos=">Paddle</a></li>
+								<li style="margin-top: 5px;"><a href="../../buscar?categorias=">Futbol</a></li>
+								<li><a href="../../buscar?categorias=">Hockey</a></li>
+								<li><a href="../../buscar?categorias=">Paddle</a></li>
 								<!-- <li><a class="mm-view-more" href="#">View more →</a></li> -->
 							</ul>
 						</span>
@@ -367,9 +367,9 @@ a.disabled {
 						<ul>
 							 <span style="border-bottom: 1px solid #5383D3;">Otras categorías</span>
 
-								<li><a href="../../buscar?productos=">Ejercicio y condición física</a></li>
-								<li><a class="disabled" href="../../buscar?productos=">Pesca</a></li>
-								<li><a class="disabled" href="../../buscar?productos=">Deportes al aire libre</a></li>
+								<li><a href="../../buscar?categorias=">Ejercicio y condición física</a></li>
+								<li><a class="disabled" href="../../buscar?categorias=">Pesca</a></li>
+								<li><a class="disabled" href="../../buscar?categorias=">Deportes al aire libre</a></li>
 								
 								<!-- <li><a class="mm-view-more" href="#">View more →</a></li> -->
 							</ul>
@@ -387,7 +387,7 @@ a.disabled {
 					</li>	
 
 					<li class="drop-down drop04">
-						<a href="../../buscar?productos=">Gastronomía <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+						<a href="../../buscar?categorias=">Gastronomía <i class="fa fa-caret-down" aria-hidden="true"></i></a>
 					 
 						<div class="mega-menu megadrop04 fadeIn animated">
 							<div class="mm-3column">
@@ -395,9 +395,9 @@ a.disabled {
 								<span class="categories-list">
 							<ul>
 							<span>Categorías principales</span>
-								<li style="margin-top: 5px;"><a href="../../buscar?productos=">De rotiseria</a></li>
-								<li><a href="../../buscar?productos=">De restaurant</a></li>
-								<li><a href="../../buscar?productos=">De supermercado</a></li>
+								<li style="margin-top: 5px;"><a href="../../buscar?categorias=">De rotiseria</a></li>
+								<li><a href="../../buscar?categorias=">De restaurant</a></li>
+								<li><a href="../../buscar?categorias=">De supermercado</a></li>
 								
 								<!-- <li><a class="mm-view-more" href="#">View more →</a></li> -->
 							</ul>
@@ -408,9 +408,9 @@ a.disabled {
 						<span class="categories-list">
 						<ul>
 							 <span style="border-bottom: 1px solid #5383D3;">Otras categorías</span>
-								<li><a href="../../buscar?productos=">Postres y tortas</a></li>
-								<li><a href="../../buscar?productos=">Elaboraciones</a></li>
-								<li><a href="../../buscar?productos=">Envio a domicilio</a></li>
+								<li><a href="../../buscar?categorias=">Postres y tortas</a></li>
+								<li><a href="../../buscar?categorias=">Elaboraciones</a></li>
+								<li><a href="../../buscar?categorias=">Envio a domicilio</a></li>
 								
 								
 								<!-- <li><a class="mm-view-more" href="#">View more →</a></li> -->

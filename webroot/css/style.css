@@ -1242,15 +1242,16 @@ border-right: 0;
 /***************************main-page*****************************/
 .mainpage .header .jumbotron {
     background:#555;
-    background-image:url('../img/bocetop6.jpg') ;
+    background-image:url('../img/portada1140.jpg') ;
     background-size: cover;
     background-position: center center;
     margin-top: 20px;
     /background-position: center -250px; 
     background-repeat: no-repeat;
-    height: 350px;
+    height: 300px;
     text-align: center;
      box-shadow: 1px 2px 1px #ccc;
+     border-radius: 2px;
 }
 .mainpage .header .jumbotron .jumbox  {
     margin: 0 auto;

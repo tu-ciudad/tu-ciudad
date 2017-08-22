@@ -129,15 +129,16 @@ div.dataTables_wrapper {
 <?= $this->Html->script('dataTables.bootstrap') ?>
 <?= $this->Html->script('jquery.dataTables') ?>
 <script>
+var currentId = 0;
     $(document).ready(function () {
                 $('#dataTables-example').DataTable( {
         			"scrollX": true
     			} );
     			var table = $('#dataTables-example').DataTable();
-    			var currentId = 0;
+    			
     			$('#dataTables-example tbody').on("dblclick", 'tr', function () {
 			       currentId = table.row( this ).data();
-			       //console.log(currentId[0]);
+			       console.log(currentId[0]);
 			    });
     			
     			$('#dataTables-example tbody').on("dblclick", 'td', function () {
@@ -149,18 +150,20 @@ div.dataTables_wrapper {
     			   var currentTitle = $(title).html();
     			   if (currentTitle == 'tags' || currentTitle=='id' || currentTitle=='comercio') {
     			   		if (currentTitle=='tags') {
-    			   			updateTags(currentEle, value, currentId, currentTitle);
+    			   			updateTags(currentEle, value, currentTitle);
+    			   			 
     			   		}
 
 			   } else {
-			   	updateVal(currentEle, value, currentId, currentTitle);
+			   	updateVal(currentEle, value, currentTitle);
+			   	 
 			   }
 
 			    });
 			});
 
     		//tags
-    		function updateTags(currentEle, value, id, title){
+    		function updateTags(currentEle, value, title){
     			blockScreen();
     			$(currentEle).html('<form><textarea name="tags2" id="tag" placeholder="Tags">'+value+'</textarea></form>');
 			  
@@ -207,16 +210,16 @@ div.dataTables_wrapper {
                   
                  
 			            var formData = new FormData();
-			            formData.append("id", id[0]);
+			            formData.append("id", currentId[0]);
 			            formData.append("cambio", title);
 			            formData.append("valor", nuevosTags);
 			          $.ajax({
-			            url: '../../productos/modificar',
+			            url: 'productos/modificar',
 			            type: 'POST',
 			            data: formData, //data que envia
 			            async: true, //para la barra de progreso
-			            xhr: function() { }, //barra de progreso fin
-			            success: function (data) {
+			           
+			            success: function () {
 			            	$(currentEle).html(nuevosTags);
 			            	unblockScreen();
 			               console.log('success');
@@ -225,7 +228,11 @@ div.dataTables_wrapper {
 
 			                      // Add the "show" class to DIV
 			                     // x.className = "show";          
-			         },   
+			         }, 
+			         error: function(xhr, status, error) {
+						  var err = eval("(" + xhr.responseText + ")");
+						  alert(err.Message);
+						},  
 			            cache: false,
 			            contentType: false,
 			            processData: false,
@@ -246,7 +253,7 @@ div.dataTables_wrapper {
 			};
 
     		//funcion editar campos
-			function updateVal(currentEle, value, id, title) {
+			function updateVal(currentEle, value, title) {
 				blockScreen();
 			  $(currentEle).html('<input class="thVal" type="text" value="' + value + '" />');
 			  $(".thVal").focus();
@@ -256,16 +263,16 @@ div.dataTables_wrapper {
 			          //$(currentEle).html($(".thVal").val().trim());
 			         	var cambio = $(".thVal").val();
 			            var formData = new FormData();
-			            formData.append("id", id[0]);
+			            formData.append("id", currentId[0]);
 			            formData.append("cambio", title);
 			            formData.append("valor", cambio);
+			            console.log(cambio+','+ title +', '+currentId[0]);
 			          $.ajax({
 			            url: '../../productos/modificar',
 			            type: 'POST',
 			            data: formData, //data que envia
-			            async: true, //para la barra de progreso
-			            xhr: function() { }, //barra de progreso fin
-			            success: function (data) {
+			            
+			            success: function () {
 			            	$(currentEle).html($(".thVal").val().trim());
 			            	unblockScreen();
 			               console.log('success');
@@ -274,7 +281,12 @@ div.dataTables_wrapper {
 
 			                      // Add the "show" class to DIV
 			                     // x.className = "show";          
-			         },   
+			         },  
+			         error: function(xhr, status, error) {
+						  var err = eval("(" + xhr.responseText + ")");
+						  alert(err.Message);
+						},
+
 			            cache: false,
 			            contentType: false,
 			            processData: false,

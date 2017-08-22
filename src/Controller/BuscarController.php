@@ -99,7 +99,7 @@ class BuscarController extends AppController
         }
         if (isset($this->request->query['categorias'])){
             $tags = explode(' ',$this->request->query['categorias']);
-                $variable = $productos->find('all')->contain(['Negocios','ImagenesProductos','Tags'])->innerJoinWith('Tags')->where(['Tags.nombre IN' => $tags])->group(['Negocios.nombre','Negocios.telefono','Negocios.direccion','Negocios.descripcion','Negocios.lugares_id','Negocios.perfilfb','Negocios.email','Negocios.users_id','Productos.id'])->order(['Productos.fecha' => 'DESC']);
+                $variable = $this->paginate($productos->find('all')->contain(['Negocios','ImagenesProductos','Tags'])->innerJoinWith('Tags')->where(['Tags.nombre IN' => $tags])->group(['Negocios.nombre','Negocios.telefono','Negocios.direccion','Negocios.descripcion','Negocios.lugares_id','Negocios.perfilfb','Negocios.email','Negocios.users_id','Productos.id'])->order(['Productos.fecha' => 'DESC']));
 
         foreach ($variable as $producto){
                     foreach($producto->imagenes_productos as $imgproducto):

@@ -253,4 +253,30 @@ class ProductosController extends AppController
             $this->Flash->error(__('The producto could not be deleted. Please, try again.'));
         }
     }
+
+    public function modificar(){
+                if ($this->request->is(['ajax'])) {
+            $id = $this->request->data['id'];
+            $cambio = $this->request->data['cambio'];
+            $valor = $this->request->data['valor'];
+            $producto = $this->Productos->get($id);
+            if ($valor === 'tags') {
+                $tags = explode(',', $valor, 15);
+                $negocios_tags = TableRegistry::get('negocios_tags');
+                $tagsviejos = $negocios_tags->find('all')->where(['negocios_id' => $negocio->get('id')]);
+                if($this->Productos->Tags->unlink($producto,$tagsviejos)){
+                    if($this->Productos->Tags->link($producto,$tags)){
+                        $this->Flash->success(__('The producto has been saved.'));
+                    }
+                }
+            } else {
+                $producto->set([$cambio => $valor]);
+                if ($this->Productos->save($producto)) {
+                $this->Flash->success(__('The producto has been saved.'));
+
+                }
+            }
+
+    }
+    }
 }

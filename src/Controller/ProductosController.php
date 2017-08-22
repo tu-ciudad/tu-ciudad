@@ -49,7 +49,12 @@ class ProductosController extends AppController
         $this->paginate = [
             'contain' => ['Negocios']
         ];
-        $productos = $this->paginate($this->Productos);
+        $productos = $this->Productos->find('all')->contain(['ImagenesProductos','Tags','Negocios']);
+        foreach ($productos as $producto){
+                    foreach($producto->imagenes_productos as $imgproducto):
+                         $imgproducto->foto = '../../files/ImagenesProductos/'. $imgproducto->foto;
+                    endforeach; 
+        }  
 
         $this->set(compact('productos'));
         $this->set('_serialize', ['productos']);

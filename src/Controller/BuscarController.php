@@ -37,6 +37,7 @@ class BuscarController extends AppController
     if ($this->request->is('get')){
         $productos = TableRegistry::get('Productos');
         $comercios= 0;
+        $categorias = 0;
         $variable = null;
         if (isset($this->request->query['productos'])){
             $tags = preg_replace('[^ A-Za-z0-9_-ñÑ]','', $this->request->query['productos']);
@@ -96,10 +97,21 @@ class BuscarController extends AppController
                 }
             $comercios = 1;
         }
+        if (isset($this->request->query['categorias'])){
+            $tags = explode(' ',$this->request->query['categorias']);
+                $variable = $productos->find('all')->contain(['Negocios','ImagenesProductos','Tags'])->innerJoinWith('Tags')->where(['Tags.nombre IN' => $tags])->group(['Negocios.nombre','Negocios.telefono','Negocios.direccion','Negocios.descripcion','Negocios.lugares_id','Negocios.perfilfb','Negocios.email','Negocios.users_id','Productos.id'])->order(['Productos.fecha' => 'DESC']);
+
+        foreach ($variable as $producto){
+                    foreach($producto->imagenes_productos as $imgproducto):
+                         $imgproducto->foto = '../../files/ImagenesProductos/'. $imgproducto->foto;
+                    endforeach; 
+        }
+        $categorias = 1;  
+        }
         }
        
-        $this->set(compact('variable','comercios','tags'));
-        $this->set('_serialize', ['variable','comercios','tags']);
+        $this->set(compact('variable','comercios','tags','categorias'));
+        $this->set('_serialize', ['variable','comercios','tags','categorias']);
         }
     
 

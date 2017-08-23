@@ -25,11 +25,15 @@ class TagsTableTest extends TestCase
      */
     public $fixtures = [
         'app.tags',
+        'app.productos',
         'app.negocios',
         'app.lugares',
         'app.users',
-        'app.tags_negocios',
-        'app.productos',
+        'app.ubicaciones_negocios',
+        'app.imagenes_negocios',
+        'app.negocios_tags',
+        'app.tagsnegocios',
+        'app.imagenes_productos',
         'app.productos_tags'
     ];
 

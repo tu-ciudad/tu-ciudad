@@ -34,7 +34,7 @@ class TagsController extends AppController
     public function view($id = null)
     {
         $tag = $this->Tags->get($id, [
-            'contain' => ['Negocios', 'Productos']
+            'contain' => ['Productos', 'Negocios']
         ]);
 
         $this->set('tag', $tag);
@@ -58,7 +58,9 @@ class TagsController extends AppController
             }
             $this->Flash->error(__('The tag could not be saved. Please, try again.'));
         }
-        $this->set(compact('tag'));
+        $productos = $this->Tags->Productos->find('list', ['limit' => 200]);
+        $negocios = $this->Tags->Negocios->find('list', ['limit' => 200]);
+        $this->set(compact('tag', 'productos', 'negocios'));
         $this->set('_serialize', ['tag']);
     }
 
@@ -72,7 +74,7 @@ class TagsController extends AppController
     public function edit($id = null)
     {
         $tag = $this->Tags->get($id, [
-            'contain' => ['Negocios', 'Productos']
+            'contain' => ['Productos', 'Negocios']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $tag = $this->Tags->patchEntity($tag, $this->request->getData());
@@ -83,9 +85,9 @@ class TagsController extends AppController
             }
             $this->Flash->error(__('The tag could not be saved. Please, try again.'));
         }
-        $negocios = $this->Tags->Negocios->find('list', ['limit' => 200]);
         $productos = $this->Tags->Productos->find('list', ['limit' => 200]);
-        $this->set(compact('tag', 'negocios', 'productos'));
+        $negocios = $this->Tags->Negocios->find('list', ['limit' => 200]);
+        $this->set(compact('tag', 'productos', 'negocios'));
         $this->set('_serialize', ['tag']);
     }
 

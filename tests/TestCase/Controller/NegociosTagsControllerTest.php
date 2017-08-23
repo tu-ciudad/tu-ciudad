@@ -20,8 +20,13 @@ class NegociosTagsControllerTest extends IntegrationTestCase
         'app.negocios',
         'app.lugares',
         'app.users',
+        'app.ubicaciones_negocios',
+        'app.imagenes_negocios',
+        'app.productos',
+        'app.imagenes_productos',
         'app.tags',
-        'app.tags_negocios'
+        'app.productos_tags',
+        'app.tagsnegocios'
     ];
 
     /**

@@ -86,8 +86,7 @@ class NegociosController extends AppController
              $tagsnegocio = ' ';
             }
         $tagstable = TableRegistry::get('tags');
-        $data = $tagstable->find()->toArray();
-        $vectortags = json_encode($data);
+        $vectortags = $tagstable->find()->select('nombre');
         //traigo dos comercios que tengan tags coincidentes
         $cantidadtags = count($negocio->tags);
         $recomendados[] = 0;
@@ -353,11 +352,10 @@ class NegociosController extends AppController
             if(isset($this->request->data['perfilfb']))
                 $negocio->set('perfilfb', $this->request->data['perfilfb']);
             if ($this->Negocios->save($negocio)) {
-                $tags = $this->request->data['tags'];
-                $arraytags = explode(",", $tags);
+                $tags = explode(",",$this->request->data['tags'],15);
                 //cambio los tags
                 if($this->Negocios->Tags->unlink($negocio,$negocio->tags)){
-                    $tags = $this->Negocios->Tags->find()->where(['id IN' => $tags])->toArray();
+                    $tags = $this->Negocios->Tags->find()->where(['nombre IN' => $tags])->toArray();
                     if($this->Negocios->Tags->link($negocio,$tags)){
 
                         $this->Flash->success(__('The producto has been saved.'));

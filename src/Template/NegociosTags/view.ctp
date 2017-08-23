@@ -12,6 +12,8 @@
         <li><?= $this->Html->link(__('New Negocios Tag'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Negocios'), ['controller' => 'Negocios', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Negocio'), ['controller' => 'Negocios', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Tags'), ['controller' => 'Tags', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Tag'), ['controller' => 'Tags', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="negociosTags view large-9 medium-8 columns content">
@@ -22,12 +24,12 @@
             <td><?= $negociosTag->has('negocio') ? $this->Html->link($negociosTag->negocio->id, ['controller' => 'Negocios', 'action' => 'view', $negociosTag->negocio->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($negociosTag->id) ?></td>
+            <th scope="row"><?= __('Tag') ?></th>
+            <td><?= $negociosTag->has('tag') ? $this->Html->link($negociosTag->tag->id, ['controller' => 'Tags', 'action' => 'view', $negociosTag->tag->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Tagsnegocios Id') ?></th>
-            <td><?= $this->Number->format($negociosTag->tagsnegocios_id) ?></td>
+            <th scope="row"><?= __('Id') ?></th>
+            <td><?= $this->Number->format($negociosTag->id) ?></td>
         </tr>
     </table>
 </div>

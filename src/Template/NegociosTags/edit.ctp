@@ -15,6 +15,8 @@
         <li><?= $this->Html->link(__('List Negocios Tags'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Negocios'), ['controller' => 'Negocios', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Negocio'), ['controller' => 'Negocios', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Tags'), ['controller' => 'Tags', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Tag'), ['controller' => 'Tags', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="negociosTags form large-9 medium-8 columns content">
@@ -23,7 +25,7 @@
         <legend><?= __('Edit Negocios Tag') ?></legend>
         <?php
             echo $this->Form->control('negocios_id', ['options' => $negocios]);
-            echo $this->Form->control('tagsnegocios_id');
+            echo $this->Form->control('tags_id', ['options' => $tags]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

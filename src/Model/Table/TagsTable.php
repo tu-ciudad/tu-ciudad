@@ -11,7 +11,6 @@ use Cake\Validation\Validator;
  *
  * @property \Cake\ORM\Association\BelongsToMany $Negocios
  * @property \Cake\ORM\Association\BelongsToMany $Productos
- * @property \Cake\ORM\Association\BelongsToMany $Negocios
  *
  * @method \App\Model\Entity\Tag get($primaryKey, $options = [])
  * @method \App\Model\Entity\Tag newEntity($data = null, array $options = [])
@@ -37,19 +36,18 @@ class TagsTable extends Table
         $this->setTable('tags');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
-        $this->belongsToMany('Productos', [
-            'foreignKey' => 'tags_id',
-            'targetForeignKey' => 'productos_id',
-            'joinTable' => 'productos_tags'
-        ]);
+
         $this->belongsToMany('Negocios', [
-            'foreignKey' => 'tags_id',
-            'targetForeignKey' => 'negocios_id',
+            'foreignKey' => 'tag_id',
+            'targetForeignKey' => 'negocio_id',
             'joinTable' => 'negocios_tags'
         ]);
-
+        $this->belongsToMany('Productos', [
+            'foreignKey' => 'tag_id',
+            'targetForeignKey' => 'producto_id',
+            'joinTable' => 'productos_tags'
+        ]);
     }
-
     /**
      * Default validation rules.
      *

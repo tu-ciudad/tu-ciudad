@@ -9,8 +9,8 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $nombre
  *
- * @property \App\Model\Entity\Negocio[] $negocios
  * @property \App\Model\Entity\Producto[] $productos
+ * @property \App\Model\Entity\Negocio[] $negocios
  */
 class Tag extends Entity
 {

@@ -17,6 +17,7 @@ use Cake\ORM\Entity;
  * @property int $users_id
  *
  * @property \App\Model\Entity\Lugare $lugare
+ * @property \App\Model\Entity\Tag[] $tags
  */
 class Negocio extends Entity
 {

@@ -8,10 +8,10 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property int $negocios_id
- * @property int $tagsnegocios_id
+ * @property int $tags_id
  *
  * @property \App\Model\Entity\Negocio $negocio
- * @property \App\Model\Entity\TagsNegocio $tags_negocio
+ * @property \App\Model\Entity\Tagsnegocio $tagsnegocio
  */
 class NegociosTag extends Entity
 {

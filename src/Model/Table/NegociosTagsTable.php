@@ -41,10 +41,6 @@ class NegociosTagsTable extends Table
             'foreignKey' => 'negocios_id',
             'joinType' => 'INNER'
         ]);
-        $this->belongsTo('Tagsnegocios', [
-            'foreignKey' => 'tagsnegocios_id',
-            'joinType' => 'INNER'
-        ]);
 
     }
 
@@ -73,8 +69,6 @@ class NegociosTagsTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['negocios_id'], 'Negocios'));
-        $rules->add($rules->existsIn(['tagsnegocios_id'], 'Tagsnegocios'));
-
         return $rules;
     }
 }

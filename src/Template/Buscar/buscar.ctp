@@ -264,16 +264,10 @@ if (!isset($variable)) {
 <div class="buscarpage">
 <div class="productos-container col-md-9">
 
-<div class="container thumbnail" style="padding-top: 15px;">
+<div class="container thumbnail" style="//padding-top: 15px;">
 <div class="col-xs-12">
  <div class="paginator">
-        <ul class="pagination" style="margin: 0;">
-            <?= $this->Paginator->first('<< ' . __('primero')) ?>
-            <?= $this->Paginator->prev('< ' . __('anterior')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('siguiente') . ' >') ?>
-            <?= $this->Paginator->last(__('ultimo') . ' >>') ?>
-        </ul>
+        <p style="margin-bottom: 0;"><?= $this->Paginator->counter(['format' => __('Pagina {{page}} de {{pages}}.')]) ?></p>
         
     </div>
     </div>

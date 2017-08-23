@@ -17,9 +17,16 @@
                 </h4>
               </div>
             </div>
+            <?php
+            if (isset($fportada)) {
+            ?>
+            
             <div class="panel-body" style="padding: 5px; padding-bottom: 0; margin-bottom: 0;">  
               <div class=""><img src="<?= $fportada ?>" class="thumbnail img-responsive"></div>
             </div>
+            <?php
+            }
+            ?>
           </div><!--/panel-->
 
 

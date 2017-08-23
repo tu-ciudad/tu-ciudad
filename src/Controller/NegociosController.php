@@ -50,14 +50,14 @@ class NegociosController extends AppController
             $productos = TableRegistry::get('Productos');
             switch ($orden) {
                 case 1:
-                    $productos = $productos->find('all')->contain(['ImagenesProductos','Tags'])->where(['Productos.negocios_id = :id'])->bind(':id',$negocio->id,'integer')->group(['Productos.id'])->order(['Productos.precio' => 'DESC']);
+                    $productos = $productos->find('all')->contain(['ImagenesProductos','Tags'])->where(['Productos.negocios_id' => $negocio->id])->group(['Productos.id'])->order(['Productos.precio' => 'DESC']);
                     break;
                 
                 case 2:
-                    $productos = $productos->find('all')->contain(['ImagenesProductos','Tags'])->where(['Productos.negocios_id = :id'])->bind(':id',$negocio->id,'integer')->group(['Productos.id'])->order(['Productos.precio' => 'ASC']);
+                    $productos = $productos->find('all')->contain(['ImagenesProductos','Tags'])->where(['Productos.negocios_id' => $negocio->id])->group(['Productos.id'])->order(['Productos.precio' => 'ASC']);
                     break;
                 default:
-                    $productos = $productos->find('all')->contain(['ImagenesProductos','Tags'])->where(['Productos.negocios_id = :id'])->bind(':id',$negocio->id,'integer')->group(['Productos.id'])->order(['Productos.fecha' => 'DESC']);
+                    $productos = $productos->find('all')->contain(['ImagenesProductos','Tags'])->where(['Productos.negocios_id' => $negocio->id])group(['Productos.id'])->order(['Productos.fecha' => 'DESC']);
                     break;
             }
             //acomodo la ruta de las imagenes de negocios

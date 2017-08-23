@@ -255,7 +255,7 @@ class ProductosController extends AppController
     }
 
     public function modificar(){
-                if ($this->request->is(['ajax'])) {
+        if ($this->request->is(['ajax'])) {
             $id = $this->request->data['id'];
             $cambio = $this->request->data['cambio'];
             $valor = $this->request->data['valor'];

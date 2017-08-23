@@ -31,6 +31,7 @@ $this->layout = 'perfil';
 <div class="">
 <?php
  $i = 0;
+  if(isset($productos)){
  foreach ($productos as $producto): ?>
                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-4 col-min"> <!-- producto -->
                <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">
@@ -78,7 +79,8 @@ $this->layout = 'perfil';
 
                 <?php
                 $i=$i+1;
- endforeach; ?>
+ endforeach;
+ } ?>
 </div>
 </div>
 </div>

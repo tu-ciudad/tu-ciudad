@@ -87,8 +87,8 @@ class PagesController extends AppController
         
         $categorias = ['deporte', 'comida'];
         foreach ($categorias as $categoria){
-            $productostabla = TableRegistry::get('productos')->find();
-            $productoscategorias = $productostabla->find('all')->contain(['Negocios','ImagenesProductos','Tags'])->innerJoinWith('Tags')->where(['Tags.nombre = :tag'])->bind(':tag',$categoria,'string')->group(['Negocios.nombre','Negocios.telefono','Negocios.direccion','Negocios.descripcion','Negocios.lugares_id','Negocios.perfilfb','Negocios.email','Negocios.users_id','Productos.id']);
+            $productostabla = TableRegistry::get('Productos')->find();
+            $productoscategorias = $productostabla->find('all')->contain(['Negocios','ImagenesProductos','Tags'])->innerJoinWith('Tags')->where(['Tags.nombre' => $categoria])->group(['Negocios.nombre','Negocios.telefono','Negocios.direccion','Negocios.descripcion','Negocios.lugares_id','Negocios.perfilfb','Negocios.email','Negocios.users_id','Productos.id']);
             $matriz[] = $productoscategorias;
         }
 
@@ -97,16 +97,9 @@ class PagesController extends AppController
             $cantidadlocales = $negocios->select(['*'])->count();
             $negocios = TableRegistry::get('Negocios')->find();
             if ($cantidadlocales > 6){
-                $negocios = $negocios->find('all',[
-                'contain' => ['ImagenesNegocios','Tags'],
-                'order' => 'rand()',
-                'limit' => 6,
-                ]);
+                $negocios = $negocios->find('all')->contain(['ImagenesNegocios'])->innerJoinWith('ImagenesNegocios')->where(['ImagenesNegocios.ubicacion' => 'portada'])->group(['Negocios.id','Negocios.nombre','Negocios.telefono','Negocios.direccion','Negocios.descripcion','Negocios.lugares_id','Negocios.perfilfb','Negocios.email','Negocios.users_id'])->order('rand()')->limit('6');
             } else {
-                $negocios = $negocios->find('all',[
-                'contain' => ['ImagenesNegocios','Tags'],
-                'order' => 'rand()',
-                ]);
+                    $negocios = $negocios->find('all')->contain(['ImagenesNegocios'])->innerJoinWith('ImagenesNegocios')->where(['ImagenesNegocios.ubicacion' => 'portada'])->group(['Negocios.id','Negocios.nombre','Negocios.telefono','Negocios.direccion','Negocios.descripcion','Negocios.lugares_id','Negocios.perfilfb','Negocios.email','Negocios.users_id'])->order('rand()');
             }
             foreach($negocios as $negocio){
                     foreach ($negocio->imagenes_negocios as $imgcomercio){

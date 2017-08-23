@@ -5,7 +5,7 @@
             ?>
             <div class="comercio-card  " style="width: 330px; ">
             <a href=<?= '/negocios/perfil/'.$negocio->id?>>
-                <div class="card" style="min-height: 275px">
+                <div class="card" style="min-height: 275px; max-height: 275px;" >
                     <div class="preview" style="
                       background-image: url(../../img/comerimg.jpg);
                       background-size: cover;

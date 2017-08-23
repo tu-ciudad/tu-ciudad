@@ -9,7 +9,7 @@
  <div class="mainpage">
   <div class="container">
     <div class="header">
-    <div class="jumbotron" style="box-shadow: 0; border: 0; margin-bottom: 0;">
+    <img src="../img/portada1140.jpg" class="img-responsive" alt="">
     <div class="jumbox">  
     
     </div>
@@ -32,6 +32,7 @@
     margin-left: 0;
     width: 100%;
    }
+   
   }
 /******home responsive**********/
   .mainpage  .productos-container {

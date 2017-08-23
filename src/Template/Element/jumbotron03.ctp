@@ -8,7 +8,7 @@
     }
   }
 ?>
-<div class="jumbotron03" style="margin-top: 20px; margin-bottom: 5px;">
+<div class="jumbotron03" style=" /margin-bottom: 5px;">
   <div class="col-md-12">
     <div class="fb-profile-block">
           <div class="fb-profile-block-thumb">

@@ -7,12 +7,12 @@
 <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header footer-distributed1">
-      <button class="c-hamburger c-hamburger--htx pull-right visible-xs" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <button class="c-hamburger c-hamburger--htx pull-right hidden-lg" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span>toggle menu</span>
       </button>
       <div class="navbar-brand  footer-distributed1 logoLink" style="/margin-left: 15px;">
        <a href="/">
-       <img src="img/navicon7.png" style="margin-top: -9px; margin-left: -55px; position: absolute;" alt="">
+       <img src="../../../../img/navicon7.png" style="margin-top: -9px; margin-left: -55px; position: absolute;" alt="">
        <h3>paseo<span>ciudad</span></h3>
         </a>
       </div>

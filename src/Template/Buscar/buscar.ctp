@@ -248,7 +248,7 @@ if (!isset($variable)) {
               if ($comercios == 0){
 ?>
 
-<div class="busheader" style="margin-top: 20px;">
+<div class="busheader" >
   <div class="busheader__search">
   <div class="jumbotron">
   <h2 class="tittle"><span>Todos los productos</span></h2>
@@ -263,7 +263,20 @@ if (!isset($variable)) {
  <?= $this->element('side-menu-prod') ?>
 <div class="buscarpage">
 <div class="productos-container col-md-9">
+
 <div class="container thumbnail" style="padding-top: 15px;">
+<div class="col-xs-12">
+ <div class="paginator">
+        <ul class="pagination" style="margin: 0;">
+            <?= $this->Paginator->first('<< ' . __('primero')) ?>
+            <?= $this->Paginator->prev('< ' . __('anterior')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('siguiente') . ' >') ?>
+            <?= $this->Paginator->last(__('ultimo') . ' >>') ?>
+        </ul>
+        
+    </div>
+    </div>
 <?php
  $i = 0;
  foreach ($variable as $producto): ?>
@@ -330,7 +343,7 @@ if (!isset($variable)) {
 <?php
 } else {
   ?>
-  <div class="busheader" style="margin-top: 20px;">
+  <div class="busheader">
   <div class="busheader__search">
   <div class="jumbotron">
   <h2 class="tittle"><span>Comercios en Guaminí</span></h2>

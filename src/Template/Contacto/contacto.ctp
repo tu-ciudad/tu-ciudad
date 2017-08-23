@@ -7,7 +7,7 @@ $contacto = null;
 ?>
 
 
- <div class="contact-page">
+ <div class="contact-page" style="">
  	<div class="contact-us__img">
  	<div class="contact-us__header">
  		<div class="container">
@@ -359,6 +359,7 @@ input:focus, textarea:focus {
     padding:40px 30px;}
 
 	.one-column-text h2{
+		margin-top: 0;
 	    font-size:35px;
 	    }
 

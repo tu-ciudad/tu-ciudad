@@ -86,7 +86,8 @@ class NegociosController extends AppController
              $tagsnegocio = ' ';
             }
         $tagstable = TableRegistry::get('tags');
-        $vectortags = $tagstable->find()->select('nombre');
+        $data = $tagstable->find()->toArray();
+        $vectortags = json_encode($data);
         //traigo dos comercios que tengan tags coincidentes
         $cantidadtags = count($negocio->tags);
         $recomendados[] = 0;

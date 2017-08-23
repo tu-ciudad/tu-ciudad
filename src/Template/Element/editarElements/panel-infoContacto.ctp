@@ -163,7 +163,7 @@
 $('#submit-info').click(function(e){
   e.preventDefault();
 var tags1 = new Array();
-      
+var nuevosTags = new Array();
        
                  val = $('#tag1').val();
                 //console.log(val);
@@ -173,6 +173,8 @@ var tags1 = new Array();
                     for (x = 0; x < data.length; x++){
                         if(data_array[i] == data[x].nombre){
                             console.log(data[x].id +': '+ data_array[i] )
+                            nuevosTags.push(data_array[i]+',');
+                            /console.log(nuevosTags);
                             tags1.push(data[x].id);
                         }
                     }
@@ -197,7 +199,7 @@ var tags1 = new Array();
          formDataInfo.append("telefono", iTl); 
          formDataInfo.append("id", nid); 
         
-         formDataInfo.append("tags", tags1);
+         formDataInfo.append("tags", nuevosTags);
         console.log(iNombre+' '+iDie+' '+iDesc+' '+iEmail+' '+iFb+' '+iTl+' '+tags1 );
         $.ajax({
             url: '../../negocios/editardatos',

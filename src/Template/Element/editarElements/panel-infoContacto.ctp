@@ -174,7 +174,6 @@ var nuevosTags = new Array();
                         if(data_array[i] == data[x].nombre){
                             console.log(data[x].id +': '+ data_array[i] )
                             nuevosTags.push(data_array[i]+',');
-                            /console.log(nuevosTags);
                             tags1.push(data[x].id);
                         }
                     }

@@ -259,20 +259,21 @@ class ProductosController extends AppController
             $id = $this->request->data['id'];
             $cambio = $this->request->data['cambio'];
             $valor = $this->request->data['valor'];
-            $producto = $this->Productos->get($id);
-            if ($valor === 'tags') {
+            $producto = $this->Productos->get($id,['contain' => ['Tags']]);
+            if ($cambio === 'tags') {
                 $tags = explode(',', $valor, 15);
-                $negocios_tags = TableRegistry::get('negocios_tags');
-                $tagsviejos = $negocios_tags->find('all')->where(['negocios_id' => $negocio->get('id')]);
-                if($this->Productos->Tags->unlink($producto,$tagsviejos)){
+                if($this->Productos->Tags->unlink($producto,$producto->tags)){
+                    $tags = $this->Productos->Tags->find()->where(['nombre IN' => $tags])->toArray();
                     if($this->Productos->Tags->link($producto,$tags)){
                         $this->Flash->success(__('The producto has been saved.'));
+                        $this->layout=null;
                     }
                 }
             } else {
                 $producto->set([$cambio => $valor]);
                 if ($this->Productos->save($producto)) {
                 $this->Flash->success(__('The producto has been saved.'));
+                $this->layout=null;
 
                 }
             }

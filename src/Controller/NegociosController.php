@@ -57,7 +57,7 @@ class NegociosController extends AppController
                     $productos = $productos->find('all')->contain(['ImagenesProductos','Tags'])->where(['Productos.negocios_id' => $negocio->id])->group(['Productos.id'])->order(['Productos.precio' => 'ASC']);
                     break;
                 default:
-                    $productos = $productos->find('all')->contain(['ImagenesProductos','Tags'])->where(['Productos.negocios_id' => $negocio->id])group(['Productos.id'])->order(['Productos.fecha' => 'DESC']);
+                    $productos = $productos->find('all')->contain(['ImagenesProductos','Tags'])->where(['Productos.negocios_id' => $negocio->id])->group(['Productos.id'])->order(['Productos.fecha' => 'DESC']);
                     break;
             }
             //acomodo la ruta de las imagenes de negocios
@@ -340,7 +340,7 @@ class NegociosController extends AppController
         if ($this->request->is(['ajax'])) {
             if(isset($this->request->data['id'])){
             $negocio = $this->Negocios->get($this->request->data['id'], [
-            'contain' => []
+            'contain' => ['Tags']
         ]);
 
             $negocio->set('descripcion', $this->request->data['descripcion']);
@@ -353,20 +353,16 @@ class NegociosController extends AppController
             if(isset($this->request->data['perfilfb']))
                 $negocio->set('perfilfb', $this->request->data['perfilfb']);
             if ($this->Negocios->save($negocio)) {
-
-                //cambio los tags
-                $negocios_tags = TableRegistry::get('negocios_tags');
-                $tags = $negocios_tags->find('all')->where(['negocios_id' => $negocio->get('id')]);
-                foreach ($tags as $tag) {
-                $negocios_tags->delete($tag);
-                }
                 $tags = $this->request->data['tags'];
                 $arraytags = explode(",", $tags);
-                foreach($arraytags as $tag):
-                        $querytags = $negocios_tags->query();
-                        $querytags->insert(['negocios_id','tags_id'])->values(['negocios_id' => $negocio->get('id'),
-                                                                 'tags_id' => $tag])->execute();
-                endforeach;
+                //cambio los tags
+                if($this->Negocios->Tags->unlink($negocio,$negocio->tags)){
+                    $tags = $this->Negocios->Tags->find()->where(['id IN' => $tags])->toArray();
+                    if($this->Negocios->Tags->link($negocio,$tags)){
+
+                        $this->Flash->success(__('The producto has been saved.'));
+                    }
+                }
             if ($this->Auth->user('rol') === 'admin'){
                 return $this->redirect(['action' => 'edit', $negocio->id]);
             } else {

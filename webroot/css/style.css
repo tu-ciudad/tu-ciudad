@@ -47,9 +47,9 @@ section {
 .footer-distributed1 h3 {
     /*-----logo navbar tuciudad---------*/
     color: #FAFAFA;
-    font: italic 35px 'Roboto', Helvetica; /*normal 55px 'Cookie', cursive;*/
+    font: italic 25px 'Roboto', Helvetica; /*normal 55px 'Cookie', cursive;*/
     font-weight: 500;
-    margin-top: -10px;
+    margin-top: -5px;
     z-index: 1000;
   
 }
@@ -69,7 +69,7 @@ section {
 
 .footer-distributed1 h3 span {
     color: #5383d3;
-    font: italic 35px 'Roboto', Helvetica;
+    font: italic 25px 'Roboto', Helvetica;
     font-weight: 400;
 }
 
@@ -2184,11 +2184,11 @@ a.disabled {
   margin: 0 auto;
   height: 50px;
   width: 20em;
-   background-image: url('../img/search.png');
+   /background-image: url('../img/search.png');
     background-color: rgba(255,255,255, 0.6);
-    background-position: 5px 10px; 
-    background-repeat: no-repeat;
-    padding: 14px 20px 14px 40px;
+    /background-position: 5px 10px; 
+    /background-repeat: no-repeat;
+    /padding: 14px 20px 14px 40px;
   
 }
 .busheader .busheader__search h2 {

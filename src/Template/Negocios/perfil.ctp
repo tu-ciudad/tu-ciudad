@@ -61,7 +61,10 @@ $this->layout = 'perfil';
                        <h3 class="text-danger">  
                         <?php 
                         if (isset($producto->precio)) {
-                         if (sizeof($precio)==2) {  
+                         if (sizeof($precio)==2) {
+                          if ($precio[1] < 10){
+                            $precio[1]=$precio[1]*10;
+                            }  
                         ?>
                         <span>$<?= $precio[0] ?></span><sup><?= $precio[1] ?></sup>
                         <?php } else { ?>

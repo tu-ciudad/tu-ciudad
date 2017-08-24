@@ -28,12 +28,18 @@ if (!isset($variable)) {
 
 <div class="busheader" >
   <div class="busheader__search">
-  <div class="jumbotron">
+  <div class="jumbotron" style="height: 200px;">
   <h2 class="tittle"><span>Todos los productos</span></h2>
-  <form method="get" action="/buscar">
-    <input type="text" class="prodsearch form-control" id="dato" name="productos" placeholder="Buscar productos...">
-    <button type="submit" class="hidden"></button>
+  <div class="col-md-3 " style="float: initial; margin: 0 auto;">
+   <form  method="get" action="/buscar" >
+    <div class="input-group">
+     <input type="text" class="prodsearch form-control" id="dato" name="productos"  placeholder="Buscar Productos...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit" style="height: 50px;"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
+      </span>
+    </div><!-- /input-group -->
     </form>
+  </div>
     </div>
   </div>
 </div>
@@ -96,7 +102,10 @@ if (!isset($variable)) {
                        <h3 class="text-danger">  
                         <?php 
                         if (isset($producto->precio)) {
-                         if (sizeof($precio)==2) {  
+                         if (sizeof($precio)==2) {
+                          if ($precio[1] < 10){
+                            $precio[1]=$precio[1]*10;
+                            }  
                         ?>
                         <span>$<?= $precio[0] ?></span><sup><?= $precio[1] ?></sup>
                         <?php } else { ?>
@@ -132,23 +141,31 @@ if (!isset($variable)) {
   ?>
   <div class="busheader">
   <div class="busheader__search">
-  <div class="jumbotron">
+  <div class="jumbotron" style="height: 200px;">
   <h2 class="tittle"><span>Comercios en Guaminí</span></h2>
-    <input type="text" class="prodsearch form-control" placeholder="Buscar Comercios...">
-    </div>
+<div class="col-md-3 " style="float: initial; margin: 0 auto;">
+   <form  method="get" action="/buscar" >
+    <div class="input-group">
+     <input type="text" class="prodsearch form-control" id="dato" name="comercios"  placeholder="Buscar Comercios...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit" style="height: 50px;"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
+      </span>
+    </div><!-- /input-group -->
+    </form>
+  </div>
   </div>
 </div>
   <div class="comercio">
     <nav class="navbar navbar-default bshadow">
       <div class="container-fluid">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Todos</a></li>
-          <li><a href="?comercios=Moda">Moda</a></li>
-          <li><a href="?comercios=Regaleria">Regaleria</a></li>
-          <li><a href="?comercios=Tecnología">Tecnología</a></li>
-          <li><a href="?comercios=Bazar">Bazar</a></li>
-          <li><a href="?comercios=Jugueteria">Jugueteria</a></li>
-          <li class="dropdown">
+          <li class="active"><a href="?comercios&ref=navComercios">Todos</a></li>
+          <li><a href="?comercios=Moda&ref=navComercios">Moda</a></li>
+          <li><a href="?comercios=regaleria&ref=navComercios">Regalería</a></li>
+          <li><a href="?comercios=supermercado&ref=navComercios">Supermercados</a></li>
+          <li><a href="?comercios=deportivo&ref=navComercios">Deportivo</a></li>
+          <li><a href="?comercios=comida&ref=navComercios">Rotiserías</a></li>
+          <!-- <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Más
             <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -161,7 +178,7 @@ if (!isset($variable)) {
           <div class="comercio">  
           <input type="text" name="search" placeholder="Buscar..">
           </div>
-          </li>
+          </li> -->
         </ul>
       </div>
     </nav>
@@ -174,7 +191,7 @@ if (!isset($variable)) {
 
  <div class="comercio-card  " >
       <a href="../negocios/perfil/<?= $comercio['id']?>" + >
-        <div class="card" style="">
+        <div class="card" style="min-height: 275px; max-height: 275px;">
             <img class="card-img-top" src=<?= $comercio->imagenes_negocios[0]->foto?> alt="Card image cap">
           <div class="card-block">
               <h4 class="card-title"><?= $comercio['nombre'] ?></h4>
@@ -190,6 +207,7 @@ if (!isset($variable)) {
 }
 ?> 
 </div>
+<div style="margin-top: 50px;"></div>
 </div>
 
 </div>

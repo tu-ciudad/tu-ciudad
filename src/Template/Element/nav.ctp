@@ -3,6 +3,14 @@
   * @var \App\View\AppView $this
   */
 ?>
+<style>
+  @media (min-width: 768px) {
+  
+.navbar-brand {
+  margin-left: 40px !important;
+}
+}
+</style>
 <nav class="navbar  navbar-fixed-top border-bot"  role="navigation" id="navv">
 <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -10,7 +18,7 @@
       <button class="c-hamburger c-hamburger--htx pull-right hidden-lg" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span>toggle menu</span>
       </button>
-      <div class="navbar-brand  footer-distributed1 logoLink" style="/margin-left: 15px;">
+      <div class="navbar-brand  footer-distributed1 logoLink" style="">
        <a href="/">
        <img src="../../../../img/navicon7.png" style="margin-top: -9px; margin-left: -55px; position: absolute;" alt="">
        <h3>paseo<span>ciudad</span></h3>

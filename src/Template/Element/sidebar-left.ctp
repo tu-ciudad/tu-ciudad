@@ -4,7 +4,7 @@
                     <ul class="nav nav-stacked"  id="sidebar">
 
                         <li class="header label headd">
-                            <h4 text-align="left" style="z-index:1003;"><?= $negocio->nombre ?></h4>
+                            <h4 text-align="left" style="z-index:1003; white-space: initial;"><?= $negocio->nombre ?></h4>
                             <hr>
 
                         </li>

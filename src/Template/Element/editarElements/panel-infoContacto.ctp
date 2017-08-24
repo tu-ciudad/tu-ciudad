@@ -220,6 +220,10 @@ var nuevosTags = new Array();
                        //     }, 2000);
        
          },   
+          error: function(xhr, status, error) {
+              var err = eval("(" + xhr.responseText + ")");
+              alert(err.Message);
+            },
             cache: false,
             contentType: false,
             processData: false,

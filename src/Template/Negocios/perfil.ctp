@@ -32,7 +32,8 @@ $this->layout = 'perfil';
 <?php
  $i = 0;
   if(isset($productos)){
- foreach ($productos as $producto): ?>
+ foreach ($productos as $producto): 
+  $precio = explode(".",$producto->precio,2);?>
                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-4 col-min"> <!-- producto -->
                <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">
         <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
@@ -42,7 +43,7 @@ $this->layout = 'perfil';
                           background-size: cover;
                           background-repeat: no-repeat; 
                           height: 100%; width: 100% !important;" >
-                    <img class="" onload="dimensionar(this);" src=<?= $producto->imagenes_productos[0]->foto ?> alt="">
+                    <img class="" style="opacity: 0;" onload="dimensionar(this);" src=<?= $producto->imagenes_productos[0]->foto ?> alt="">
                     </div>
                     <div class="content">
                         <h3>
@@ -57,19 +58,18 @@ $this->layout = 'perfil';
                     </div>
 
                     <div class="content-bot"> 
-                       
                        <h3 class="text-danger">  
-                       <?php
+                        <?php 
                         if (isset($producto->precio)) {
+                         if (sizeof($precio)==2) {  
                         ?>
-                            <span>$<?= $producto->precio ?></span><sup>00</sup>
-                        <?php   
-                        }
-                        ?>           
-
+                        <span>$<?= $precio[0] ?></span><sup><?= $precio[1] ?></sup>
+                        <?php } else { ?>
+                        <span>$<?= $precio[0] ?></span><sup>00</sup>
+                        <?php }} ?>
                        </h3>
                        <h4 class="hidden-md hidden-lg"><span><?= $producto->titulo ?></span></h4>
-                    </div>
+                    </div>   
 
             
         </div></div>
@@ -105,7 +105,7 @@ $this->layout = 'perfil';
 
         <address>
         <strong>Facebook</strong><br>
-        <a href="<?= $negocio->perfilfb ?>"><?= $negocio->nombre ?></a><br>
+        <a href="http://<?= $negocio->perfilfb ?>" target="_blank"><?= $negocio->nombre ?></a><br>
         <strong>Email</strong><br>
         <a href="mailto:<?= $negocio->email ?>"><?= $negocio->email ?></a>
 </address>

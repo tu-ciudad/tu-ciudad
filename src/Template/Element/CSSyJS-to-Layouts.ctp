@@ -7,7 +7,7 @@
 ?>
 	<?= $this->Html->css('normalize.css') ?>
     <?= $this->Html->css('bootstrap.min.css') ?>
-    <?= $this->Html->css('style.css?=v17') ?>
+    <?= $this->Html->css('style.css?=v18') ?>
     <?= $this->Html->css('productos.css?=v15') ?>
     <?= $this->Html->css('font-awesome.min.css') ?> 
 

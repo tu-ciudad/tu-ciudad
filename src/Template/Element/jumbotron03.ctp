@@ -40,7 +40,13 @@
                         <!-- categorias -->
                         <li class="navbar-right hidden-xs hidden-sm" style="margin-right: 0;">
                          <a>Categorias: </a>
-                         <a href="../../../buscar?productos=<?= $tagsnegocio ?>" data-toggle="tooltip" title="ver más de esta categoría" data-placement="top" ><?= $tagsnegocio ?></a>
+                         <a href="../../../buscar?productos=<?= $tagsnegocio ?>" data-toggle="tooltip" title="ver más de esta categoría" data-placement="top" ><?= $negocio->tags[0]->nombre ?></a>
+                         <?php if(isset($negocio->tags[1]->nombre)){?>
+                         <a href="../../../buscar?productos=<?= $tagsnegocio ?>" data-toggle="tooltip" title="ver más de esta categoría" data-placement="top" ><?= $negocio->tags[1]->nombre ?></a>
+                         <?php }?>
+                         <?php if(isset($negocio->tags[2]->nombre)){?>
+                         <a href="../../../buscar?productos=<?= $tagsnegocio ?>" data-toggle="tooltip" title="ver más de esta categoría" data-placement="top" ><?= $negocio->tags[2]->nombre ?></a>
+                         <?php }?>
                         </li>
 
                     </ul>
@@ -170,6 +176,7 @@ margin-bottom: 0;
   padding-right: 20px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
+  max-width: 500px;
 }
 .jumbotron03 .profile-name h2 {
   color: #fff;

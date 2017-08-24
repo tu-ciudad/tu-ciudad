@@ -8,7 +8,7 @@
 				<ul>
 					<li class="licat" ">Categorias</li>
 					<li class="drop-down drop01">
-						<a href="../../buscar?categorias=moda">Moda <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+						<a href="../../buscar?categorias=moda&ref=navhome">Moda <i class="fa fa-caret-down" aria-hidden="true"></i></a>
 					 
 						<div class="mega-menu megadrop01 fadeIn animated">
 							<div class="mm-3column">
@@ -49,7 +49,7 @@
 					</li>
 
 					<li class="drop-down drop02">
-						<a href="../../buscar?categorias=">Tecnología <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+						<a href="../../buscar?categorias=deporte+deporivo&ref=navhome">Deportívo <i class="fa fa-caret-down" aria-hidden="true"></i></a>
 					 
 						<div class="mega-menu megadrop02 fadeIn animated">
 							<div class="mm-3column">
@@ -90,7 +90,7 @@
 					</li>
 					
          			<li class="drop-down drop03">
-						<a href="../../buscar?categorias=deportivo+deporte?ref=navhome">Artículos deportivos <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+						<a href="../../buscar?categorias=infantil+juguetes&ref=navhome">Infantíl<i class="fa fa-caret-down" aria-hidden="true"></i></a>
 					 
 						<div class="mega-menu megadrop03 fadeIn animated">
 							<div class="mm-3column">
@@ -131,7 +131,7 @@
 					</li>	
 
 					<li class="drop-down drop04">
-						<a href="../../buscar?categorias=">Gastronomía <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+						<a href="../../buscar?categorias=rotiseria+comida+elaboraciones&ref=navhome">Elaboraciones y de rotisería<i class="fa fa-caret-down" aria-hidden="true"></i></a>
 					 
 						<div class="mega-menu megadrop04 fadeIn animated">
 							<div class="mm-3column">
@@ -171,11 +171,51 @@
 					</div>
 			 
 					</li>
-
 					<li class="drop-down drop05">
-						<a href="../../buscar?comercios=" style="font-weight: bold;">COMERCIOS <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+						<a href="../../buscar?categorias=OFERTA&ref=navhome" style="font-weight: bold;">OFERTAS! <i class="fa fa-caret-down" aria-hidden="true"></i></a>
 					 
 						<div class="mega-menu megadrop05 fadeIn animated">
+							<div class="mm-3column">
+								
+								<span class="categories-list">
+							<ul>
+							<span>Categorías principales</span>
+								<li style="margin-top: 5px;"><a href="../../buscar?comercios=">Moda</a></li>
+								<li><a href="../../buscar?comercios=">Regalería</a></li>
+								<li><a class="disabled" href="../../buscar?comercios=">Tecnología</a></li>
+								<li><a class="disabled" href="../../buscar?comercios=">Hogar y jardín</a></li>
+								<!-- <li><a class="mm-view-more" href="#">View more →</a></li> -->
+							</ul>
+						</span>
+							
+							</div>
+							<div class="mm-3column">
+						<span class="categories-list">
+						<ul>
+							  <span style="border-bottom: 1px solid #5383D3;">&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+
+								<li><a href="../../buscar?comercios=">Deportivo</a></li>
+								<li><a class="disabled" href="../../buscar?comercios=">Pesca</a></li>
+								<li><a class="disabled" href="../../buscar?comercios=">Automotor</a></li>
+								
+								<!-- <li><a class="mm-view-more" href="#">View more →</a></li> -->
+							</ul>
+						</span>	
+						</div>
+						<div class="mm-6column">
+						<span class="right-images">
+								<img  src="../../img/img1.jpg" width="200px" height="200px">
+								<p>Most Popular Styles </p>
+				</span>						
+							</div>
+							
+					</div>
+			 
+					</li>
+					<li class="drop-down drop06">
+						<a href="../../buscar?comercios=&ref=navhome" style="font-weight: bold;">COMERCIOS <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+					 
+						<div class="mega-menu megadrop06 fadeIn animated">
 							<div class="mm-3column">
 								
 								<span class="categories-list">

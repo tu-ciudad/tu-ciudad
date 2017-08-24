@@ -9,35 +9,35 @@ $this->layout = 'productos';
 
 
 .prodpage {
-  margin-top: 20px;
+  //margin-top: 20px;
 }
-.imgnegocio>img{
+.prodpage .imgnegocio>img{
   /width: 100%;
 }
-article{
+.prodpage article{
     background-color: #E0E0E0;
     padding: 10px;
     margin-bottom: 10px;
     margin-top: 10px;
 }
-figure img{
+.prodpage figure img{
     width: 100%;
     height: 100%;
 }
-.glyphicon-folder-open,
-.glyphicon-user,
-.glyphicon-calendar,
-.glyphicon-eye-open,
-.glyphicon-comment{
+.prodpage .glyphicon-folder-open,
+.prodpage .glyphicon-user,
+.prodpage .glyphicon-calendar,
+.prodpage .glyphicon-eye-open,
+.prodpage .glyphicon-comment{
     padding: 5px;
 }
 
    
    
-img {
+.prodpage img {
   max-width: 100%; }
 
-.preview {
+.prodpage .preview {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -53,50 +53,50 @@ img {
     .preview {
       margin-bottom: 20px; } }
 
-.preview-pic {
+.prodpage .preview-pic {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1; }
 
-.preview-thumbnail.nav-tabs {
+.prodpage .preview-thumbnail.nav-tabs {
   border: none;
   margin-top: 15px; }
-  .preview-thumbnail.nav-tabs li {
+  .prodpage .preview-thumbnail.nav-tabs li {
     width: 18%;
     margin-right: 2.5%; }
-    .preview-thumbnail.nav-tabs li img {
+    .prodpage .preview-thumbnail.nav-tabs li img {
       max-width: 100%;
       display: block; }
-    .preview-thumbnail.nav-tabs li a {
+    .prodpage .preview-thumbnail.nav-tabs li a {
       padding: 0;
       margin: 0; }
-    .preview-thumbnail.nav-tabs li:last-of-type {
+    .prodpage .preview-thumbnail.nav-tabs li:last-of-type {
       margin-right: 0; }
 
-.tab-content {
+.prodpage .tab-content {
   overflow: hidden; }
-  .tab-content img {
+  .prodpage .tab-content img {
     width: 100%;
     -webkit-animation-name: opacity;
             animation-name: opacity;
     -webkit-animation-duration: .3s;
             animation-duration: .3s; }
 
-.card {
+.prodpage .card {
   margin-top: 10px;
   background: #E0E0E0;
   padding: 1em;
   line-height: 1.5em; }
 
 @media screen and (min-width: 997px) {
-  .wrapper {
+  .prodpage .wrapper {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex; } }
 
-.details {
+.prodpage .details {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -107,31 +107,31 @@ img {
       -ms-flex-direction: column;
           flex-direction: column; }
 
-.colors {
+.prodpage .colors {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1; }
 
-.product-title, .price, .sizes, .colors {
+.prodpage .product-title, .price, .sizes, .colors {
   text-transform: UPPERCASE;
   font-weight: bold; }
 
-.checked, .price span {
+.prodpage .checked, .price span {
   /color: #ff9f1a; }
 
-.product-title, .rating, .product-description, .price, .vote, .sizes {
+.prodpage .product-title, .rating, .product-description, .price, .vote, .sizes {
   /margin-bottom: 15px; }
 
-.product-title {
+.prodpage .product-title {
   margin-top: 0; }
 
-.size {
+.prodpage .size {
   margin-right: 10px; }
   .size:first-of-type {
     margin-left: 40px; }
 
-.color {
+.prodpage .color {
   display: inline-block;
   vertical-align: middle;
   margin-right: 10px;
@@ -141,7 +141,7 @@ img {
   .color:first-of-type {
     margin-left: 20px; }
 
-.add-to-cart, .like {
+.prodpage .add-to-cart, .like {
   background: #ff9f1a;
   padding: 1.2em 1.5em;
   border: none;
@@ -150,11 +150,11 @@ img {
   color: #fff;
   -webkit-transition: background .3s ease;
           transition: background .3s ease; }
-  .add-to-cart:hover, .like:hover {
+  .prodpage .add-to-cart:hover, .like:hover {
     background: #b36800;
     color: #fff; }
 
-.share-fb {
+.prodpage .share-fb {
    background: #4c699e;;
   padding: 1.2em 1.5em;
   border: none;
@@ -165,34 +165,34 @@ img {
           transition: background .3s ease; 
         }
 
-  .share-fb:hover {
+  .prodpage .share-fb:hover {
     background: #47618d;
     color: #fff; 
   }
-.share-fb:active {
+.prodpage .share-fb:active {
     background: #47618d;
     color: #fff; 
   }
 
 
-.not-available {
+.prodpage .not-available {
   text-align: center;
   line-height: 2em; }
-  .not-available:before {
+  .prodpage .not-available:before {
     font-family: fontawesome;
     content: "\f00d";
     color: #fff; }
 
-.orange {
+.prodpage .orange {
   background: #ff9f1a; }
 
-.green {
+.prodpage .green {
   background: #85ad00; }
 
-.blue {
+.prodpage .blue {
   background: #0076ad; }
 
-.tooltip-inner {
+.prodpage .tooltip-inner {
   padding: 1.3em; }
 
 @-webkit-keyframes opacity {
@@ -216,7 +216,7 @@ img {
             transform: scale(1); } }
 
 /*# sourceMappingURL=style.css.map */
-hr {
+.prodpage hr {
   margin-top: 15px;
   margin-bottom: 15px;
   border: 0;
@@ -269,8 +269,10 @@ $i = 0;
             <h4 class="price">Comercio: </h4> <a href="../../negocios/perfil/<?= $producto->negocio->id ?>"><h4 class="product-description"><?= $producto->negocio->nombre ?></h4></a>
             <hr>
             <div class="action" style=" right: 1em;">
-              <a href="../../buscar?productos"><button class="add-to-cart btn btn-default" type="button">Ver más</button></a>
-              <button class="share-fb btn btn-default" type="button"> Compartir</button>
+            <a class=" btn btn-default btn-lg" href="javascript:history.back()">< Volvér</a>
+              <a href="../../buscar?productos"><button class=" btn btn-default btn-lg" type="button">Ver más</button></a>
+               
+              <button class="share-fb btn btn-default btn-lg" style="margin-top: 5px;" type="button"> Compartir en facebook</button>
             </div>
           </div>
         </div>
@@ -299,10 +301,10 @@ $i = 0;
                       <h2><?= $producto->negocio->nombre ?></h2>
                       <p><?= $producto->negocio->descripcion ?></p>
                       <section>
-                          <i class="glyphicon glyphicon-folder-open"></i>tags
+                          <!-- <i class="glyphicon glyphicon-folder-open"></i>tags
                           <i class="glyphicon glyphicon-user"></i>tags
                           <i class="glyphicon glyphicon-calendar"></i>tags
-                          <i class="glyphicon glyphicon-eye-open"></i>tags
+                          <i class="glyphicon glyphicon-eye-open"></i>tags -->
                           <a href="../../negocios/perfil/<?= $producto->negocio->id ?>" class="btn btn-default btn-sm pull-right">Entrar ... </a>
                       </section>
                   </div>

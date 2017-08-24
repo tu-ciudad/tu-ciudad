@@ -4,231 +4,7 @@
   */
 ?>
 <style>
-.buscar .header .jumbotron {
-     background-color: inherit;
-    background-image:url('../img/buscar.jpg') ;
-    background-position: center center; 
-    background-repeat: no-repeat;
-    width: 100% !important;
-    height: 300px;
-    text-align: center;
-    box-shadow: 1px 2px 1px #ccc;
-    margin-bottom: 0;
-}
-.buscar .header .jumbotron .jumbox  {
-    margin: 0 auto;
-    margin-top: 0 auto;
-    background-color: rgba(248, 248, 248, 0.1);
-    /height: 500px;
-    width: 50%;
-    text-align: center;
-    margin-bottom: 30px;
-    margin-top: 100px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    border-radius: 5px;
-}
-    .buscar .jumbotron {
-    background-color: #F8F8F8;
-    height: 100px;
-    text-align: center;
-    padding: 1px;
-    box-shadow:  1px 1px #ccc;
-}
-.buscar .title {
-    margin-top: 0;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-   / display: inline-block;
-   / margin-bottom: 20px;
-    font-size: 43px;
-    /padding-bottom: 10px;
-    color: #fafafa;
-    text-shadow: 1px 1px 1px rgba(1, 1, 1, 0.9);
-}
-.buscar .navbar .container-fluid {
-	margin: 0;
-	padding: 0;
-}
-.buscar .bshadow {
-    border-bottom: 1px solid #ccc;
-    border-right: 0px solid #ccc;
-}
-.buscar .navbar-nav > li > a {
-      padding-top: 0;
-      padding-bottom: 0px;
-  }
-.buscar .navbar-nav {
-  float: none;
-  text-align: center;
-}
-.buscar .navbar {
-  border-top: 0px;
-}
-.buscar .navbar-nav li {
-  float: none;
-  display: inline-block;
-  margin: 0;
-}
-.buscar .navbar-nav  .active {
-   background-color: #5383d3; 
-}
-.buscar .navbar-nav  .active:hover, .buscar .navbar-nav  .active:focus {
-   background-color: #5383d3; 
-}
-.buscar .navbar-nav  .active a{
-        cursor: default;
-        background-color: #5383d3; 
-        color: #fff;
-        padding: 5px;
-}
-.buscar .navbar-nav .active:hover{
-        border: 0px;
-}
-.buscar .navbar-nav li:hover{       
-        border: 2px solid #5383d3;
-        color: #fff;
-}
-.buscar .navbar-nav  .active a:hover, .buscar .navbar-nav  .active a:active, .buscar .navbar-nav  .active a:focus{
-    cursor: default;
-        background-color: #5383d3; 
-        color: #fff;
-}
-.non-search .tittle {
-	font-family: Arial,Helvetica,"Nimbus Sans L",sans-serif;
-	color: #666666;
-	font-size: 32px;
-	text-align: center;
-}
-.non-search .categorias {
-	margin: 0 auto;
-	max-width: 600px;
-	padding: 15px 20px 0 0;
-	vertical-align: top;
-}
-@media (min-width: 1000px) {
-  .non-search {
-    margin-left: 350px;
-  }
-}
-.non-search .categorias h3 {
-	margin: 5px 0 8px;
-	font-size: 13px;
-	color: #999;
-	line-height: 1em;
-}
-.non-search .categorias ul{
-    list-style: none;
-}
-.non-search .categorias .list{
-    margin-right: 3%;
-    /float: left;
-    width: 30%;
-}
-.non-search .categorias .list li a{
-    -webkit-border-radius:4px;
-    border-radius:4px;
-    background-color:#ddd;
-    color:#444;
-    /line-height:22px;
-    padding:1px 10px;
-    display:inline-block;
-    /max-width:85%;
-    vertical-align:middle;
-    margin: 3px;
-    float: left;
-}
-.non-search .categorias .list li a:hover{
-    text-decoration:none;
-    background-color:#B7B7B7;
-}
 
-.mainpage .jumbotron {
-    background-color: #F8F8F8;
-    height: 100px;
-    text-align: center;
-    padding: 1px;
-    box-shadow:  1px 1px #ccc;
-}
-
-.mainpage .title {
-    margin-top: 0;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-   / display: inline-block;
-   / margin-bottom: 20px;
-    font-size: 37px;
-    /padding-bottom: 10px;
-    color: #666666;
-    padding: 0 auto;
-}
-.comercio .header .jumbotron {
-     background-color: inherit;
-    background-image:url('../img/nature.jpg') ;
-    background-position: center center; 
-    background-repeat: no-repeat;
-    height: 300px;
-    text-align: center;
-    box-shadow: 1px 2px 1px #ccc;
-}
-.comercio .header .jumbotron .jumbox  {
-    margin: 0 auto;
-    margin-top: 0 auto;
-    background-color: rgba(248, 248, 248, 0.1);
-    /height: 500px;
-    width: 50%;
-    text-align: center;
-    margin-bottom: 30px;
-    margin-top: 100px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    border-radius: 5px;
-}
-    .comercio .jumbotron {
-    background-color: #F8F8F8;
-    height: 100px;
-    text-align: center;
-    padding: 1px;
-    box-shadow:  1px 1px #ccc;
-}
-.comercio .title {
-    margin-top: 0;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-   / display: inline-block;
-   / margin-bottom: 20px;
-    font-size: 43px;
-    /padding-bottom: 10px;
-    color: #fafafa;
-    text-shadow: 1px 1px 1px rgba(1, 1, 1, 0.9);
-}
-
-.busheader .busheader__search .prodsearch {
-  margin: 0 auto;
-  height: 50px;
-  width: 20em;
-   background-image: url('../img/search.png');
-    background-color: rgba(255,255,255, 0.6);
-    background-position: 5px 10px; 
-    background-repeat: no-repeat;
-    padding: 14px 20px 14px 40px;
-  
-}
-.busheader .busheader__search h2 {
-   font: normal, 'Helvetica';
-   margin: 0 auto;
-   text-align: center;
-   margin-bottom: 25px;
-   margin-top: 0;
-   text-shadow: 0 1px 2px #ccc;
-}
-.busheader .busheader__search .jumbotron {
-  background: #FAFAFA;
-  border-bottom: 1px solid #DFE0E4;
-  margin-bottom: 0px;
-  background-image: url(../../img/pattern2.svg);
-  /background-size: cover;
-}
 </style>
 
 
@@ -237,10 +13,12 @@ if (!isset($variable)) {
 ?>
 <div class="container">
  <div class="mainpage">
-    <div class="jumbotron">
+    <div class="jumbotron"  style="margin-top: 30px;">
+
     <h2><span class="title"> No encontramos lo que buscas :(</span></h2>
-        <h4 style="color: #666666;">Pero no te preocupes! </h4>
+       <!--  <h4 style="color: #666666;">Pero no te preocupes! </h4> -->
     </div>
+    <div style="height: 350px;"></div>
 </div>
 </div>
 <?php
@@ -259,6 +37,20 @@ if (!isset($variable)) {
     </div>
   </div>
 </div>
+<div class="comercio">
+    <nav class="navbar navbar-default bshadow">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <li class=""><a href="../../buscar?productos=&ref=navProductos">Todos</a></li>
+          <li style="font-weight: bold;"><a href="?categorias=OFERTA&ref=navProductos">OFERTAS!</a></li>
+          <li><a href="?categorias=Moda&ref=navProductos">Moda</a></li>
+          <li><a href="?categorias=infantil+juguetes&ref=navProductos">Infantíl</a></li>
+          <li><a href="?categorias=deporte+deportivo&ref=navProductos">Derpotívo</a></li>
+          <li><a href="?categorias=comida+rotiseria&ref=navProductos">De rotisería</a></li>
+        </ul>
+      </div>
+    </nav>
+    </div>
 <br>
  <?= $this->element('side-menu-prod') ?>
 <div class="buscarpage">
@@ -273,7 +65,9 @@ if (!isset($variable)) {
     </div>
 <?php
  $i = 0;
- foreach ($variable as $producto): ?>
+ foreach ($variable as $producto):
+ $precio = explode(".",$producto->precio,2); ?>
+
                <div class=" col-xs-6 col-sm-4 col-md-4 col-lg-3 col-min"> <!-- producto -->
                <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">
                        <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick=" pmodal(this);">
@@ -300,16 +94,17 @@ if (!isset($variable)) {
 
                     <div class="content-bot"> 
                        <h3 class="text-danger">  
-                            <?php
+                        <?php 
                         if (isset($producto->precio)) {
+                         if (sizeof($precio)==2) {  
                         ?>
-                            <span>$<?= $producto->precio ?></span><sup>00</sup>
-                        <?php   
-                        }
-                        ?>
+                        <span>$<?= $precio[0] ?></span><sup><?= $precio[1] ?></sup>
+                        <?php } else { ?>
+                        <span>$<?= $precio[0] ?></span><sup>00</sup>
+                        <?php }} ?>
                        </h3>
                        <h4 class="hidden-md hidden-lg"><span><?= $producto->titulo ?></span></h4>
-                    </div>      
+                    </div>        
         </div>
         </div>
     </div> <!-- /producto -->
@@ -322,11 +117,9 @@ if (!isset($variable)) {
  <div class="col-xs-12">
  <div class="paginator">
         <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('primero')) ?>
             <?= $this->Paginator->prev('< ' . __('anterior')) ?>
             <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('siguiente') . ' >') ?>
-            <?= $this->Paginator->last(__('ultimo') . ' >>') ?>
+            <?= $this->Paginator->next(__('siguiente') . ' >') ?> 
         </ul>
         <p><?= $this->Paginator->counter(['format' => __('Pagina {{page}} de {{pages}}.')]) ?></p>
     </div>

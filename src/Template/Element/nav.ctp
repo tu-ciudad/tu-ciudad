@@ -21,16 +21,16 @@
     <div class="collapse navbar-collapse " id="navbar" style="    text-align: center;">
       <ul class="nav navbar-nav navbar-center" >
         <li>
-          <a class="btn-trans" href="../../../../">INICIO</a>
+          <a class="btn-trans" href="../../../../?ref=nav">INICIO</a>
         </li>
         <li>
-          <a class="btn-trans" href="../../buscar?productos">PRODUCTOS</a>
+          <a class="btn-trans" href="../../buscar?productos&ref=nav">PRODUCTOS</a>
         </li>
         <li>
-          <a class="btn-trans" href="../../buscar?comercios">COMERCIOS</a>
+          <a class="btn-trans" href="../../buscar?comercios&ref=nav">COMERCIOS</a>
         </li>
         <li>
-          <a class="btn-trans" href="../../contacto">CONTÁCTANOS</a>
+          <a class="btn-trans" href="../../contacto&ref=nav">CONTÁCTANOS</a>
         </li>
         </ul>
         <ul class="nav navbar-nav navbar-right" style="margin-right: 0;">

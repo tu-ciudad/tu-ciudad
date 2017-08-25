@@ -19,7 +19,7 @@
     
  */
  
-$cakeDescription = 'paseociudad';
+$cakeDescription = 'Paseociudad';
 
 ?>
 
@@ -42,12 +42,12 @@ $cakeDescription = 'paseociudad';
     </title>
     <link rel="canonical" href="https://paseociudad.com/" itemprop="url">
     <!-- metadata open graph -->
-    <meta property="og:title" content="PaseoCiudad" />
+    <meta property="og:title" content="Paseociudad Guaminí" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://www.paseociudad.website" />
-    <meta property="og:image" content="http://www.paseociudad.website/img/metaimg.png" />
+    <meta property="og:url" content="https://paseociudad.com" />
+    <meta property="og:image" content="https://paseociudad.com/img/metaimg2.jpg" />
     <meta property="og:description" 
-  content="Todo lo busques en Guaminí desde la comodidad de tu hogar" />
+  content="Todo lo que busques en Guaminí desde la comodidad de tu hogar" />
     <!-- end metadata open graph -->
 
     <?= $this->Html->meta('icon') ?>

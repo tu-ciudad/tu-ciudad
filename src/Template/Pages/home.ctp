@@ -114,7 +114,7 @@
   <img class="subimg" src="img/subimg.jpg" alt="guamini">
   <div class="container">
     <h2>Sumate a nuestra <b>plataforma de exposición</b> de productos y servicios de forma online.</h2>
-    <a href="/sumate"><div class="boxsub">Comienzá hoy mismo!</div></a>
+    <a href="/contacto?ref=screensumate"><div class="boxsub">Comienza hoy mismo!</div></a>
   </div>
 
 </div>

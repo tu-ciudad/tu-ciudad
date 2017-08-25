@@ -1371,8 +1371,10 @@ background: #FAFAFA;
 border-top:0;
 border-color: #DFE0E4;
 border-radius: 0;
-border-left: 0;
-border-right: 0;
+/border-left: 0;
+/border-right: 0;
+border-bottom-left-radius: 3px;
+border-bottom-right-radius: 3px;
 }
 .comercio .navbar-nav {
   float: none;
@@ -2183,7 +2185,7 @@ a.disabled {
 .busheader .busheader__search .prodsearch {
   margin: 0 auto;
   height: 50px;
-  width: 20em;
+  //width: 20em;
    /background-image: url('../img/search.png');
     background-color: rgba(255,255,255, 0.6);
     /background-position: 5px 10px; 
@@ -2202,7 +2204,10 @@ a.disabled {
 .busheader .busheader__search .jumbotron {
   background: #FAFAFA;
   border-bottom: 1px solid #DFE0E4;
+  border-left: 1px solid #DFE0E4;
+  border-right: 1px solid #DFE0E4;
   margin-bottom: 0px;
   background-image: url(../../img/pattern2.svg);
   /background-size: cover;
+  border-radius: 0;
 }

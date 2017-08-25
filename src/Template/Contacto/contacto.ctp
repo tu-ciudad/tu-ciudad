@@ -7,7 +7,7 @@ $contacto = null;
 ?>
 
 
- <div class="contact-page" style="">
+ <div class="contact-page" style="margin-top: -20px;">
  	<div class="contact-us__img">
  	<div class="contact-us__header">
  		<div class="container">
@@ -21,7 +21,7 @@ $contacto = null;
  	</div>
  	</div>
  	
-	<div class="contact-us__form" >
+	<!-- <div class="contact-us__form" >
 		<div class="formtitle">
 			<h3>Escríbenos</h3>
 			<h4>Nos comunicaremos a la brevedad</h4>
@@ -47,7 +47,7 @@ $contacto = null;
 		    </form>
 		  </div>
 		</div>
- 	</div>
+ 	</div> -->
  	
 	
 	 <div class=" contact-info">

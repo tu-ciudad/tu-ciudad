@@ -8,15 +8,15 @@
                 <p class="footer-links">
                     <a href="../../../../?ref=footer">Inicio</a>
                     ·
-                    <a href="../../../../buscar?=productos&ref=footer">Productos</a>
+                    <a href="../../../../buscar?productos?ref=footer">Productos</a>
                     ·
-                    <a href="../../../../buscar?=comercios&ref=footer">Comercios</a>
+                    <a href="../../../../buscar?comercios?ref=footer">Comercios</a>
                     ·
                     <!-- <a href="#">About</a>
                     ·
                     <a href="#">Faq</a>
                     · -->
-                    <a href="../../../../contacto&ref=footer">Contacto</a>
+                    <a href="../../../../contacto?ref=footer">Contacto</a>
                 </p>
 
                 <p class="footer-company-name">Paseo Ciudad &copy; 2017</p>
@@ -37,7 +37,7 @@
 
                 <h1>Sumá tu comercio a </h1>
                 <h1 style="color: #5383D3">PaseoCiudad!</h1>
-                <a href="../../../../sumate&ref=footer" class="btn btn-primary btn-lg wantshop">Quiero mi tienda!</a>
+                <a href="../../../../contacto?ref=footersumate" class="btn btn-primary btn-lg wantshop">Quiero mi tienda!</a>
                 
 
             </div>

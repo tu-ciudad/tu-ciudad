@@ -27,7 +27,7 @@ if (!isset($variable)) {
 ?>
 
 <div class="busheader" >
-  <div class="busheader__search">
+  <div class="busheader__search container">
   <div class="jumbotron" style="height: 200px;">
   <h2 class="tittle"><span>Todos los productos</span></h2>
   <div class="col-md-3 " style="float: initial; margin: 0 auto;">
@@ -43,7 +43,7 @@ if (!isset($variable)) {
     </div>
   </div>
 </div>
-<div class="comercio">
+<div class="comercio container">
     <nav class="navbar navbar-default bshadow">
       <div class="container-fluid">
         <ul class="nav navbar-nav">
@@ -57,10 +57,10 @@ if (!isset($variable)) {
       </div>
     </nav>
     </div>
-<br>
- <?= $this->element('side-menu-prod') ?>
+
+
 <div class="buscarpage">
-<div class="productos-container col-md-9">
+<div class="productos-container container" style="float: initial; margin: 0 auto;">
 
 <div class="container thumbnail" style="//padding-top: 15px;">
 <div class="col-xs-12">
@@ -137,6 +137,34 @@ if (!isset($variable)) {
 </div>
 </div>
 <?php
+ $i = 0;
+ foreach ($variable as $producto): ?>
+
+<ul id="pid<?= $i?>" class="hidden">
+   <li><?= $producto->negocio->nombre ?></li>
+   <li><?= $producto->titulo ?></li>
+   <li><?= $producto->precio ?></li>
+   <li><?= $producto->cuerpo ?></li>
+   <li><?= $producto->imagenes_productos[0]->foto ?></li>
+   <li><?= $producto->negocios_id ?></li>
+   <li><?= $producto->id ?></li>
+   <ul>
+   <li><?= count($producto->imagenes_productos) ?></li>
+   <?php
+   
+        foreach ($producto->imagenes_productos as $imagen):
+        ?>
+        <li><?= $imagen->foto ?></li>
+        <?php
+
+        endforeach; ?> 
+
+   </ul>
+        </ul>
+<?php
+                $i=$i+1;
+ endforeach; ?>
+<?php
 } else {
   ?>
   <div class="busheader">
@@ -212,34 +240,7 @@ if (!isset($variable)) {
 
 </div>
 <?= $this->element('footer') ?>
-<?php
- $i = 0;
- foreach ($variable as $producto): ?>
 
-<ul id="pid<?= $i?>" class="hidden">
-   <li><?= $producto->negocio->nombre ?></li>
-   <li><?= $producto->titulo ?></li>
-   <li><?= $producto->precio ?></li>
-   <li><?= $producto->cuerpo ?></li>
-   <li><?= $producto->imagenes_productos[0]->foto ?></li>
-   <li><?= $producto->negocios_id ?></li>
-   <li><?= $producto->id ?></li>
-   <ul>
-   <li><?= count($producto->imagenes_productos) ?></li>
-   <?php
-   
-        foreach ($producto->imagenes_productos as $imagen):
-        ?>
-        <li><?= $imagen->foto ?></li>
-        <?php
-
-        endforeach; ?> 
-
-   </ul>
-        </ul>
-<?php
-                $i=$i+1;
- endforeach; ?>
 
 <script>  
     $('#modalProduct').on('hidden.bs.modal', function (e) {

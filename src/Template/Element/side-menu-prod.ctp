@@ -30,7 +30,7 @@
     </div>
 		<nav class="nav-side-menu ">
 			<ul class="nav  tabs" style="margin-top: 50px;">
-				<li class="active"><a href="?productos=Alimentos+Bebidas" style="border-top: 1px solid rgba(83, 131, 211,0.5);">Alimentos y Bebidas</a></li>
+				<li class="active"><?= $this->Paginator->sort('precio') ?></li>
 				<li class="dropdown">
 		          <a href="" class="dropdown-toggle" data-toggle="dropdown">Articulos deportivos <span class="fa fa-angle-down" style="position: absolute; top: 20%; right: 20px; font-size: 28px;"></span></a>
 		          <ul class="dropdown-menu forAnimate" role="menu">

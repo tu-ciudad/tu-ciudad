@@ -6,7 +6,7 @@
 $sumate = null;
 ?>
 
-<div class="sumate-page">
+<div class="sumate-page" style="margin-top: -20px;">
 <div class="contact-us__img">
  	<div class="contact-us__header">
  		<div class="container">

@@ -19,7 +19,7 @@
     
  */
  
-$cakeDescription = 'PaseoCiudad';
+$cakeDescription = 'Paseociudad';
 
 ?>
 
@@ -52,12 +52,12 @@ $cakeDescription = 'PaseoCiudad';
      var fbimg = '<?= $fportada ?>';
          splitimg = fbimg.split('../');
          console.log(splitimg[2]);
-         $('meta[name=og\\:image]').attr('content', 'http://www.paseociudad.website/'+splitimg[2]);
+         $('meta[name=og\\:image]').attr('content', 'https://www.paseociudad.com/'+splitimg[2]);
     </script>
     <!-- metadata open graph -->
     <meta property="og:title" content="<?= $negocio->nombre ?>" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://www.paseociudad.website/negocios/perfil/<?= $negocio->id ?>" />
+    <meta property="og:url" content="https://paseociudad.com/negocios/perfil/<?= $negocio->id ?>" />
     <meta property="og:image" content="" />
     <meta property="og:description" 
   content="<?= $negocio->descripcion ?>" />

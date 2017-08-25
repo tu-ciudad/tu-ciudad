@@ -5,9 +5,9 @@
    *lo mismo para js
  **/
 ?>
-	<?= $this->Html->css('normalize.css') ?>
-    <?= $this->Html->css('bootstrap.min.css') ?>
-    <?= $this->Html->css('style.css?=v19') ?>
+	
+    <?= $this->Html->css('bootstrap.min.css?=v2') ?>
+    <?= $this->Html->css('style.css?=v20') ?>
     <?= $this->Html->css('productos.css?=v15') ?>
     <?= $this->Html->css('font-awesome.min.css') ?> 
 

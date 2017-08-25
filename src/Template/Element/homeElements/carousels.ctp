@@ -64,6 +64,7 @@
       <?php
 
  foreach ($matriz[1] as $producto) { 
+  $precio = explode(".",$producto->precio,2);
  ?>    
         <div class="homeprod" > <!-- producto -->
               <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">
@@ -120,6 +121,7 @@
       <?php
 
  foreach ($matriz[2] as $producto) { 
+  $precio = explode(".",$producto->precio,2);
  ?>    
         <div class="homeprod" > <!-- producto -->
               <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">
@@ -177,6 +179,7 @@
       <?php
 
  foreach ($matriz[3] as $producto) { 
+  $precio = explode(".",$producto->precio,2);
  ?>    
         <div class="homeprod" > <!-- producto -->
               <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">

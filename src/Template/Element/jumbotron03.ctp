@@ -31,7 +31,7 @@
                       <li class="hidden-xs hidden-sm" id="emailInfo" data-toggle="tooltip" title="Click para ver" data-placement="top">
                         <a href="#" data-toggle="popover" data-content="<?= $negocio->email ?>" data-placement="top"><span class="glyphicon glyphicon-envelope" style="left: -8px;"></span>Email</a></li>
                       <li class="hidden-xs hidden-sm" id="fbInfo"  data-toggle="tooltip" title="Click para ir" data-placement="top">
-                        <a href="<?= $negocio->perfilfb ?>" target="_blank">Facebook</a></li>
+                        <a href="https://<?= $negocio->perfilfb ?>" target="_blank">Facebook</a></li>
                       <li class="hidden-xs hidden-sm" target="_blank" data-toggle="tooltip" title="Compartir en Facebook" data-placement="top">
                         <a id="shareBtn" href="#"><span class="glyphicon glyphicon-share-alt" style="left: -8px;"></span>Compartir</a></li> 
                       <li class="hidden-md hidden-lg" onclick="moreInfo();">

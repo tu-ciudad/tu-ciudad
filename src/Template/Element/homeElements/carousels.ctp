@@ -1,8 +1,10 @@
+<?php 
+ $carou = ['Ofertas','Deportivo','Infantil'];
+ $link = ['oferta', 'deportivo+deporte', 'infantil+juguete']
+ ?>
 <hr>
-<h3 class="catetext" style="margin-top: 25px;">OFERTAS <a href="/buscar?categorias=oferta&ref=feedhome" class="btn btn-xs btn-default" style="text-transform: initial;">Ver más</a></h3>
+<h3 class="catetext" style="margin-top: 25px;"><?= $carou[0] ?> <a href="/buscar?categorias=<?= $link[0] ?>&ref=feedhome" class="btn btn-xs btn-default" style="text-transform: initial;">Ver más</a></h3>
         <div class="owl-carousel owl-theme">
-          
-
       <?php
 
  $i = 0;
@@ -11,7 +13,7 @@
  ?>    
         <div class="homeprod" > <!-- producto -->
               <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">
-                  <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
+                   <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
                       <div class="preloader"></div>
                       <div class="preview" style="
                           background-image: url(../../files/ImagenesProductos/9ad9ddf1f5721a670fabd95aefb9e737.jpg);
@@ -24,7 +26,7 @@
                         <h3>
                           <span id="tituloGTM"><?= $producto->titulo?></span> <!-- $producto->titulo -->
                         </h3>
-                           <img src="../../../img/pointer.svg" style="height: 30px;" alt=""> 
+                           
                         <h5>
                           <a>
                             <span id="negocioGTM"><?= $producto->negocio->nombre ?></span>
@@ -33,6 +35,10 @@
                       </div>
 
                       <div class="content-bot"> 
+                       <div class="ver-prod">
+                         <img src="../../img/pointer.svg" style="height: 23px; width: 23px;" alt="pointer">
+                         <div class="ver">ver</div>
+                       </div>
                        <h3 class="text-danger">  
                         <?php 
                         if (isset($producto->precio)) {
@@ -46,7 +52,7 @@
                         <span>$<?= $precio[0] ?></span><sup>00</sup>
                         <?php }} ?>
                        </h3>
-                       <h4 class="hidden-md hidden-lg"><span><?= $producto->titulo ?></span></h4>
+                       <div class="hidden-md hidden-lg ellipsis"><p><?= $producto->titulo?></p></div>
                     </div>              
                     </div>
                 </div>
@@ -55,9 +61,36 @@
                 $i=$i+1;
               
  } ?>
-</div>
 
-<h3 class="catetext">Deportivo <a href="/buscar?categorias=deportivo+deporte&ref=feedhome" class="btn btn-xs btn-default" style="text-transform: initial;">Ver más</a></h3>
+
+<div class="homeprod" > <!-- producto -->
+              <div class="producto1" >
+              <div class="morecat">
+                  <div class="item">
+                      <a href="/buscar?categorias=<?= $link[0] ?>&ref=lastItemCarousel">
+                      <div class="content-top">
+                        <h3>Ver más</h3>
+                      </div>
+                      <div class="content-mid">
+                        <img src="../../img/pointer.svg" style="height: 40px;" alt="">
+                       
+                      </div>
+                      <div class="content-bot-more"> 
+                       <h3><?= $carou[0] ?></h3>
+                      </div>
+                      </a>
+                    </div>              
+                    </div>
+                </div>
+    </div>
+
+</div>
+<style>
+
+</style>
+
+
+<h3 class="catetext" style="margin-top: 25px;"><?= $carou[1] ?> <a href="/buscar?categorias=<?= $link[1] ?>&ref=feedhome" class="btn btn-xs btn-default" style="text-transform: initial;">Ver más</a></h3>
         <div class="owl-carousel owl-theme">
           
 
@@ -81,7 +114,6 @@
                         <h3>
                           <span id="tituloGTM"><?= $producto->titulo?></span> <!-- $producto->titulo -->
                         </h3>
-                           <img src="../../../img/pointer.svg" style="height: 30px;" alt=""> 
                         <h5>
                           <a>
                             <span><?= $producto->negocio->nombre ?></span>
@@ -90,6 +122,10 @@
                       </div>
 
                      <div class="content-bot"> 
+                     <div class="ver-prod">
+                         <img src="../../img/pointer.svg" style="height: 23px; width: 23px;" alt="pointer">
+                         <div class="ver">ver</div>
+                       </div>
                        <h3 class="text-danger">  
                         <?php 
                         if (isset($producto->precio)) {
@@ -103,7 +139,7 @@
                         <span>$<?= $precio[0] ?></span><sup>00</sup>
                         <?php }} ?>
                        </h3>
-                       <h4 class="hidden-md hidden-lg"><span><?= $producto->titulo ?></span></h4>
+                       <div class="hidden-md hidden-lg ellipsis"><p><?= $producto->titulo?></p></div>
                     </div>                   
                     </div>
                 </div>
@@ -112,11 +148,31 @@
                 $i=$i+1;
               
  } ?>
+<div class="homeprod" > <!-- producto -->
+              <div class="producto1" >
+              <div class="morecat">
+                  <div class="item">
+                      <a href="/buscar?categorias=<?= $link[1] ?>&ref=lastItemCarousel">
+                      <div class="content-top">
+                        <h3>Ver más</h3>
+                      </div>
+                      <div class="content-mid">
+                        <img src="../../img/pointer.svg" style="height: 40px;" alt="">
+                       
+                      </div>
+                      <div class="content-bot-more"> 
+                       <h3><?= $carou[1] ?></h3>
+                      </div>
+                      </a>
+                    </div>              
+                    </div>
+                </div>
+    </div>
 </div>
 
 
 
-<h3 class="catetext">infantil <a href="/buscar?categorias=infantil+juguetes&ref=feedhome" class="btn btn-xs btn-default" style="text-transform: initial;">Ver más</a></h3>
+<h3 class="catetext" style="margin-top: 25px;"><?= $carou[2] ?> <a href="/buscar?categorias=<?= $link[2] ?>&ref=feedhome" class="btn btn-xs btn-default" style="text-transform: initial;">Ver más</a></h3>
        <div class="owl-carousel owl-theme">
           
 
@@ -140,7 +196,6 @@
                         <h3>
                           <span><?= $producto->titulo?></span> <!-- $producto->titulo -->
                         </h3>
-                           <img src="../../../img/pointer.svg" style="height: 30px;" alt=""> 
                         <h5>
                           <a>
                             <span><?= $producto->negocio->nombre ?></span>
@@ -149,6 +204,10 @@
                       </div>
 
                       <div class="content-bot"> 
+                      <div class="ver-prod">
+                         <img src="../../img/pointer.svg" style="height: 23px; width: 23px;" alt="pointer">
+                         <div class="ver">ver</div>
+                       </div>
                        <h3 class="text-danger">  
                         <?php 
                         if (isset($producto->precio)) {
@@ -162,7 +221,7 @@
                         <span>$<?= $precio[0] ?></span><sup>00</sup>
                         <?php }} ?>
                        </h3>
-                       <h4 class="hidden-md hidden-lg"><span><?= $producto->titulo ?></span></h4>
+                      <div class="hidden-md hidden-lg ellipsis"><p><?= $producto->titulo?></p></div>
                     </div>                     
                     </div>
                 </div>
@@ -171,4 +230,24 @@
                 $i=$i+1;
               
  } ?>
+ <div class="homeprod" > <!-- producto -->
+              <div class="producto1" >
+              <div class="morecat">
+                  <div class="item">
+                      <a href="/buscar?categorias=<?= $link[2] ?>&ref=lastItemCarousel">
+                      <div class="content-top">
+                        <h3>Ver más</h3>
+                      </div>
+                      <div class="content-mid">
+                        <img src="../../img/pointer.svg" style="height: 40px;" alt="">
+                       
+                      </div>
+                      <div class="content-bot-more"> 
+                       <h3><?= $carou[2] ?></h3>
+                      </div>
+                      </a>
+                    </div>              
+                    </div>
+                </div>
+    </div>
 </div>

@@ -17,6 +17,9 @@
 </div>
 </div>
   <style>
+  .c-hamburger { 
+  margin-right: 10px;
+  }
   /*col-min*/
 .mainpage {
   font-family: normal, 'Helvetica';

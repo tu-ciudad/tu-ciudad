@@ -9,8 +9,8 @@
     
     
     <?= $this->Html->css('bootstrap.min.css?=v3') ?>
-    <?= $this->Html->css('style.css?=v21') ?>
-    <?= $this->Html->css('productos.css?=v15') ?>
+    <?= $this->Html->css('style.css?=v22') ?>
+    <?= $this->Html->css('productos.css?=v16') ?>
     <?= $this->Html->css('owl.carousel.min.css') ?> 
     <?= $this->Html->css('owl.theme.default.min.css') ?>
     <?= $this->Html->css('font-awesome.min.css') ?> 
@@ -18,7 +18,8 @@
      
     
 
-    <?= $this->Html->script(array('jquery-3.2.1.min','main', 'pace.min', 'bootstrap.min')); ?>
+    <?= $this->Html->script(array('jquery-3.2.1.min', 'pace.min', 'bootstrap.min')); ?>
+    <script src="../../../../js/main.js?v=3"></script>
     <script>
     	function dimensionar(elem){
     $(elem).css({opacity: '1'});

@@ -7,7 +7,7 @@ $contacto = null;
 ?>
 
 
- <div class="contact-page" style="margin-top: -20px;">
+ <div class="contact-page" style="">
  	<div class="contact-us__img">
  	<div class="contact-us__header">
  		<div class="container">

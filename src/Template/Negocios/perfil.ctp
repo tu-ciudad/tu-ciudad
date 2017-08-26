@@ -47,17 +47,21 @@ $this->layout = 'perfil';
                     </div>
                     <div class="content">
                         <h3>
-                            <span><?= $producto->titulo ?></span> <!-- $producto->titulo -->
+                          <span id="tituloGTM"><?= $producto->titulo?></span> <!-- $producto->titulo -->
                         </h3>
-                         <img src="../../../img/pointer.svg" style="height: 30px;" alt=""> 
+                           
                         <h5>
-                        <a >
-                            <span><?= $negocio->nombre ?></span>
-                        </a>
+                          <a>
+                            <span id="negocioGTM"><?= $negocio->nombre ?></span>
+                          </a>
                         </h5>
-                    </div>
+                      </div>
 
                     <div class="content-bot"> 
+                       <div class="ver-prod">
+                         <img src="../../img/pointer.svg" style="height: 23px; width: 23px;" alt="pointer">
+                         <div class="ver">ver</div>
+                       </div>
                        <h3 class="text-danger">  
                         <?php 
                         if (isset($producto->precio)) {
@@ -71,7 +75,7 @@ $this->layout = 'perfil';
                         <span>$<?= $precio[0] ?></span><sup>00</sup>
                         <?php }} ?>
                        </h3>
-                       <h4 class="hidden-md hidden-lg"><span><?= $producto->titulo ?></span></h4>
+                       <div class="hidden-md hidden-lg ellipsis"><p><?= $producto->titulo?></p></div>
                     </div>   
 
             

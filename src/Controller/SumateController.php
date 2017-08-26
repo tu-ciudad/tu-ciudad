@@ -32,6 +32,6 @@ class SumateController extends AppController
             $this->set(compact('sumate'));
             $this->set('_serialize', ['sumate']);
             }
-            $this->Flash->error(__('The negocio could not be saved. Please, try again.'));
+           
         }
 }

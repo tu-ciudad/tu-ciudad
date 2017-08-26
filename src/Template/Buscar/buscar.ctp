@@ -76,29 +76,32 @@ if (!isset($variable)) {
 
                <div class=" col-xs-6 col-sm-4 col-md-4 col-lg-3 col-min"> <!-- producto -->
                <div class="producto1" onclick="dataLayer.push({'event': 'producto-visited'});">
-                       <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick=" pmodal(this);">
-                    <div class="preloader"></div>
-                    <div class="preview" style="
+                   <div class="item" data-toggle="modal" data-target="#modalProduct" pid="<?= $i?>" onclick="pmodal(this);">
+                      <div class="preloader"></div>
+                      <div class="preview" style="
                           background-image: url(../../files/ImagenesProductos/9ad9ddf1f5721a670fabd95aefb9e737.jpg);
                           background-size: cover;
                           background-repeat: no-repeat; 
                           height: 100%; width: 100% !important;" >
-                   <img class="" style="opacity: 0;" onload="dimensionar(this); dataLayer.push({'event': 'producto-mostrado','namep': '<?= $producto->titulo?>', 'namen': '<?= $producto->negocio->nombre ?>'});" src=/files/ImagenesProductos/<?= $producto->imagenes_productos['0']->fototh?> alt="">
-                    </div>
-
-                    <div class="content">
+                        <img class="" style="opacity: 0;" onload="dimensionar(this); dataLayer.push({'event': 'producto-mostrado','namep': '<?= $producto->titulo?>', 'namen': '<?= $producto->negocio->nombre ?>'});" src=/files/ImagenesProductos/<?= $producto->imagenes_productos['0']->fototh?> alt="">
+                      </div>
+                      <div class="content">
                         <h3>
-                            <span><?= $producto->titulo ?></span>
+                          <span id="tituloGTM"><?= $producto->titulo?></span> <!-- $producto->titulo -->
                         </h3>
-                         <img src="../../../img/pointer.svg" style="height: 30px;" alt=""> 
+                           
                         <h5>
-                        <a  >
-                            <span><?= $producto->negocio->nombre ?></span>
-                        </a>
+                          <a>
+                            <span id="negocioGTM"><?= $producto->negocio->nombre ?></span>
+                          </a>
                         </h5>
-                    </div>
+                      </div>
 
-                    <div class="content-bot"> 
+                      <div class="content-bot"> 
+                       <div class="ver-prod">
+                         <img src="../../img/pointer.svg" style="height: 23px; width: 23px;" alt="pointer">
+                         <div class="ver">ver</div>
+                       </div>
                        <h3 class="text-danger">  
                         <?php 
                         if (isset($producto->precio)) {
@@ -112,10 +115,10 @@ if (!isset($variable)) {
                         <span>$<?= $precio[0] ?></span><sup>00</sup>
                         <?php }} ?>
                        </h3>
-                       <h4 class="hidden-md hidden-lg"><span><?= $producto->titulo ?></span></h4>
-                    </div>        
-        </div>
-        </div>
+                       <div class="hidden-md hidden-lg ellipsis"><p><?= $producto->titulo?></p></div>
+                    </div>              
+                    </div>
+                </div>
     </div> <!-- /producto -->
                 <?php
                 $i=$i+1;

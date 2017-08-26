@@ -44,8 +44,8 @@
     position: absolute;
     top: 0;
     width: 100%;
-    height: 70%;
-    background: rgba(250,250,250,0.9);
+    height: 73%;
+    background: rgba(250,250,250,0.75);
     opacity: 0;
     display: none;
     
@@ -86,15 +86,16 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 30%;
+    height: 27%;
     text-align: right;
-    color: rgba(83, 131, 211, 0.9);
-    background: rgba(250,250,250,0.9);
+    color: rgba(83, 131, 211, 1);
+    background: rgba(250,250,250,0.75);
 }
 
 .producto1 .item .content-bot h3 {
     font-weight: 600;
     font-family: sans-serif;
+    min-height: 25px;
 }
 .producto1 .item .content-bot h3 sup{
     font-size: 60%;
@@ -104,6 +105,9 @@
     line-height: 0;
     white-space: nowrap;
     font-size: 16px;
+}
+.content-bot p {
+  margin: -3px 0 10px;
 }
 /******home responsive**********/
 @media (max-width: 500px) {
@@ -262,29 +266,38 @@
 }
 
 
-/***********boton ver*********/
-.btn-ver {
-  -webkit-box-shadow: 0px 1px 3px #666666;
-  -moz-box-shadow: 0px 1px 3px #666666;
-  box-shadow: 0px 1px 3px #666666;
-  /font-family: Arial;
-  color: #ffffff;
-  font-size: 20px;
-  background: #5383D3;
-  padding: 3px 15px 3px 10px;
-  border-top: solid rgb(217, 217, 217) 1px;
-  border-right: solid rgb(217, 217, 217) 1px;
-  border-bottom: solid rgb(217, 217, 217) 1px;
-  text-decoration: none;
-  width: 30%;
-  margin-top: -.5em;
-  position: absolute;
-}
 
-.btn-ver:hover {
-  background: #3cb0fd;
-  text-decoration: none;
-}
+  .ver-prod {
+    position: absolute;
+    width: 50%;
+    text-align: left;
+  
+
+  }
+  .ver-prod img {
+    position: absolute;
+    float: left;
+    left: 0px;
+    top: 0px;
+  }
+  .ver-prod .ver{
+  position: absolute;
+  float: left;
+  left: 20px;
+  top: 0px;
+
+ 
+  }
+  .content-bot h3 {
+    margin: 0;
+  }
+  .content-bot div {
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    color: #4f4f4f;
+  }
+
 /************previer preloader*******************/
   .item .preview {
         position: relative;
@@ -317,3 +330,47 @@
 }
 
 /*****************************/
+ .morecat {
+  background: white;
+  background: url(../../img/pattern2.svg);
+  background-size: cover; 
+ }
+ .morecat .content-top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 33%;
+    color: #4E5256;
+  }
+ .morecat .content-mid {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    height: 26%;
+  }
+  .morecat .content-mid .moreprod {
+    width: 100%; 
+    height: 100%;
+  }
+ .morecat .content-mid .moreprod:after {
+    content: "";
+    background: url(../../img/pointer.svg);
+    height: 40px;
+    width: 40px;
+    color: #878A8D;
+
+  }
+ .morecat .content-bot-more {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 37%;
+    color: #4E5256;
+  }
+  .morecat.content-top h2 {
+    font-size: 2em;
+  }  
+  .morecat.content-bot-more h2 {
+    font-size: 2em;
+  }
+

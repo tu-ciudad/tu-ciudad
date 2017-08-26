@@ -182,14 +182,15 @@ class ProductosController extends AppController
                         unlink($destino_temporal1);
 
                         //*****************************************************************
-                        $query = $ImagenesProductos->query(); 
-                         $query->insert(['foto','numero','productos_id'])->values([
-                        'foto' => $nombre . ".jpg",
-                        'fototh' => $nombre . "_th.jpg",
-                        'numero' => $i,
-                        'productos_id' => $producto->get('id')
-                        ])
-                        ->execute();
+
+                        $ImagenesProductos = TableRegistry::get('ImagenesProductos');
+                        $foto = $ImagenesProductos->newEntity();
+                        $foto->foto = $nombre . ".jpg";
+                        $foto->fototh = $nombre . "_th.jpg";
+                        $foto->numero = $i;
+                        $foto->productos_id = $producto->get('id');
+                        $ImagenesProductos->save($foto);
+                        
                  } else{
                     echo "There was an error uploading the file, please try again! <br />";
                  }

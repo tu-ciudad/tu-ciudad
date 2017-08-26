@@ -37,7 +37,7 @@
 
                 <h1>Sumá tu comercio a </h1>
                 <h1 style="color: #5383D3">PaseoCiudad!</h1>
-                <a href="../../../../contacto?ref=footersumate" class="btn btn-primary btn-lg wantshop">Quiero mi tienda!</a>
+                <a href="../../../../sumate?ref=footersumate" class="btn btn-primary btn-lg wantshop">Quiero mi tienda!</a>
                 
 
             </div>

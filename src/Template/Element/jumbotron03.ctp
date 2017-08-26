@@ -48,7 +48,7 @@
           </div>
            
         </div>
-        <div class="more-info hidden">
+        <div class="more-info hidden" id="horarios">
              <ul class="ul-more">
                <li><a ><span class="glyphicon glyphicon-globe" style="left: -8px;"></span><?= $negocio->direccion ?></a></li>
                <li data-toggle="popover" data-content="<?= $negocio->email ?>" data-placement="top"><a ><span class="glyphicon glyphicon-envelope" style="left: -8px;"></span>Email</a></a></li>

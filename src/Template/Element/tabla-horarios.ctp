@@ -169,7 +169,7 @@
 }
 /************************************fin-tabla-horarios************************************/
 </style>
-<div id="horarios "></div>
+
 <div class='col-md-12 col-centered thumbnail' >
 <div class='place-schedule' style="margin-bottom: 0;">
 <div class='schedule-tab' role='tabpanel'>

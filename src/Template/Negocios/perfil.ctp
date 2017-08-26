@@ -43,7 +43,7 @@ $this->layout = 'perfil';
                           background-size: cover;
                           background-repeat: no-repeat; 
                           height: 100%; width: 100% !important;" >
-                    <img class="" style="opacity: 0;" onload="dimensionar(this);" src=<?= $producto->imagenes_productos[0]->foto ?> alt="">
+                    <img class="" style="opacity: 0;" onload="dimensionar(this); dataLayer.push({'event': 'producto-mostrado','namep': '<?= $producto->titulo?>', 'namen': '<?= $negocio->nombre ?>'});" src=/files/ImagenesProductos/<?= $producto->imagenes_productos['0']->fototh?> alt="">
                     </div>
                     <div class="content">
                         <h3>

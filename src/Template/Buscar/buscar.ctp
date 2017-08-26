@@ -50,8 +50,8 @@ if (!isset($variable)) {
           <li class=""><a href="../../buscar?productos=&ref=navProductos">Todos</a></li>
           <li style="font-weight: bold;"><a href="?categorias=OFERTA&ref=navProductos">OFERTAS!</a></li>
           <li><a href="?categorias=Moda&ref=navProductos">Moda</a></li>
-          <li><a href="?categorias=infantil+juguetes&ref=navProductos">Infantíl</a></li>
-          <li><a href="?categorias=deporte+deportivo&ref=navProductos">Derpotívo</a></li>
+          <li><a href="?categorias=infantil+juguetes&ref=navProductos">Infantil</a></li>
+          <li><a href="?categorias=deporte+deportivo&ref=navProductos">Deportivo</a></li>
           <li><a href="?categorias=comida+rotiseria&ref=navProductos">De rotisería</a></li>
         </ul>
       </div>
@@ -83,7 +83,7 @@ if (!isset($variable)) {
                           background-size: cover;
                           background-repeat: no-repeat; 
                           height: 100%; width: 100% !important;" >
-                    <img class="" onload="dimensionar(this);" src=<?= $producto->imagenes_productos[0]->foto ?> alt="">
+                   <img class="" style="opacity: 0;" onload="dimensionar(this); dataLayer.push({'event': 'producto-mostrado','namep': '<?= $producto->titulo?>', 'namen': '<?= $producto->negocio->nombre ?>'});" src=/files/ImagenesProductos/<?= $producto->imagenes_productos['0']->fototh?> alt="">
                     </div>
 
                     <div class="content">

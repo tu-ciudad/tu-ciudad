@@ -114,7 +114,7 @@
   <img class="subimg" src="img/subimg.jpg" alt="guamini">
   <div class="container">
     <h2>Sumate a nuestra <b>plataforma de exposición</b> de productos y servicios de forma online.</h2>
-    <a href="/contacto?ref=screensumate"><div class="boxsub">Comienza hoy mismo!</div></a>
+    <a href="/sumate?ref=screensumate"><div class="boxsub">Comienza hoy mismo!</div></a>
   </div>
 
 </div>
@@ -168,7 +168,7 @@ endforeach;
     $(document).ready(function(){
   $(".owl-carousel").owlCarousel({
       margin:10,
-    loop:true,
+    loop:false,
     autoWidth:true,
     items:5,
       dots: false,

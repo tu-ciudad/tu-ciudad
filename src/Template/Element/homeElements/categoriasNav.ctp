@@ -39,7 +39,7 @@
 						</div>
 						<div class="mm-6column">
 						<span class="right-images">
-								<img  src="../../img/img1.jpg" width="200px" height="200px">
+								<img  src="../../files/ImagenesProductos/9ad9ddf1f5721a670fabd95aefb9e737.jpg" width="200px" height="200px">
 								<p>Most Popular Styles </p>
 				</span>						
 							</div>
@@ -49,7 +49,7 @@
 					</li>
 
 					<li class="drop-down drop02">
-						<a href="../../buscar?categorias=deporte+deporivo&ref=navhome">Deportívo <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+						<a href="../../buscar?categorias=deporte+deporivo&ref=navhome">Deportivo <i class="fa fa-caret-down" aria-hidden="true"></i></a>
 					 
 						<div class="mega-menu megadrop02 fadeIn animated">
 							<div class="mm-3column">
@@ -80,7 +80,7 @@
 						</div>
 						<div class="mm-6column">
 						<span class="right-images">
-								<img  src="../../img/img1.jpg" width="200px" height="200px">
+								<img  src="../../files/ImagenesProductos/9ad9ddf1f5721a670fabd95aefb9e737.jpg" width="200px" height="200px">
 								<p>Most Popular Styles </p>
 				</span>						
 							</div>
@@ -90,7 +90,7 @@
 					</li>
 					
          			<li class="drop-down drop03">
-						<a href="../../buscar?categorias=infantil+juguetes&ref=navhome">Infantíl<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+						<a href="../../buscar?categorias=infantil+juguetes&ref=navhome">Infantil<i class="fa fa-caret-down" aria-hidden="true"></i></a>
 					 
 						<div class="mega-menu megadrop03 fadeIn animated">
 							<div class="mm-3column">
@@ -121,7 +121,7 @@
 						</div>
 						<div class="mm-6column">
 						<span class="right-images">
-								<img  src="../../img/img1.jpg" width="200px" height="200px">
+								<img  src="../../files/ImagenesProductos/9ad9ddf1f5721a670fabd95aefb9e737.jpg" width="200px" height="200px">
 								<p>Most Popular Styles </p>
 				</span>						
 							</div>
@@ -131,7 +131,7 @@
 					</li>	
 
 					<li class="drop-down drop04">
-						<a href="../../buscar?categorias=rotiseria+comida+elaboraciones&ref=navhome">Elaboraciones y de rotisería<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+						<a href="../../buscar?categorias=rotiseria+comida+elaboraciones&ref=navhome">Elaboraciones y rotisería<i class="fa fa-caret-down" aria-hidden="true"></i></a>
 					 
 						<div class="mega-menu megadrop04 fadeIn animated">
 							<div class="mm-3column">
@@ -163,7 +163,7 @@
 						</div>
 						<div class="mm-6column">
 						<span class="right-images">
-								<img  src="../../img/img1.jpg" width="200px" height="200px">
+								<img  src="../../files/ImagenesProductos/9ad9ddf1f5721a670fabd95aefb9e737.jpg" width="200px" height="200px">
 								<p>Most Popular Styles </p>
 				</span>						
 							</div>
@@ -204,7 +204,7 @@
 						</div>
 						<div class="mm-6column">
 						<span class="right-images">
-								<img  src="../../img/img1.jpg" width="200px" height="200px">
+								<img  src="../../files/ImagenesProductos/9ad9ddf1f5721a670fabd95aefb9e737.jpg" width="200px" height="200px">
 								<p>Most Popular Styles </p>
 				</span>						
 							</div>
@@ -245,7 +245,7 @@
 						</div>
 						<div class="mm-6column">
 						<span class="right-images">
-								<img  src="../../img/img1.jpg" width="200px" height="200px">
+								<img  src="../../files/ImagenesProductos/9ad9ddf1f5721a670fabd95aefb9e737.jpg" width="200px" height="200px">
 								<p>Most Popular Styles </p>
 				</span>						
 							</div>

@@ -6,9 +6,13 @@
  **/
 ?>
 	
-    <?= $this->Html->css('bootstrap.min.css?=v2') ?>
-    <?= $this->Html->css('style.css?=v20') ?>
+    
+    
+    <?= $this->Html->css('bootstrap.min.css?=v3') ?>
+    <?= $this->Html->css('style.css?=v21') ?>
     <?= $this->Html->css('productos.css?=v15') ?>
+    <?= $this->Html->css('owl.carousel.min.css') ?> 
+    <?= $this->Html->css('owl.theme.default.min.css') ?>
     <?= $this->Html->css('font-awesome.min.css') ?> 
 
      

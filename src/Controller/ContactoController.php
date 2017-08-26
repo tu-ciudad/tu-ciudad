@@ -32,6 +32,5 @@ class ContactoController extends AppController
             $this->set(compact('contacto'));
         $this->set('_serialize', ['contacto']);
             }
-            $this->Flash->error(__('The negocio could not be saved. Please, try again.'));
         }
     }
